@@ -3,6 +3,9 @@ export interface Product {
   name: string;
   slug: string;
   description: string;
+  fullDescription?: string;
+  features?: string[];
+  specifications?: { label: string; value: string }[];
   price: number;
   compareAtPrice?: number;
   images: { url: string; alt: string }[];
