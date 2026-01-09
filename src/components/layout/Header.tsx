@@ -3,22 +3,21 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Heart, User, ShoppingCart, Menu, X, ChevronDown, Leaf } from 'lucide-react';
+import { Search, Heart, User, ShoppingCart, ChevronDown, Leaf } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Shop', href: '/shop', hasDropdown: true },
-  { name: 'Collections', href: '/collections' },
-  { name: 'Track Order', href: '/track-order' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Beranda', href: '/' },
+  { name: 'Belanja', href: '/shop', hasDropdown: true },
+  { name: 'Koleksi', href: '/collections' },
+  { name: 'Lacak Pesanan', href: '/track-order' },
+  { name: 'Tentang', href: '/about' },
+  { name: 'Kontak', href: '/contact' },
 ];
 
 export function Header() {
   const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
   const cartCount = useCartStore((s) => s.getItemCount());
   const wishlistCount = useWishlistStore((s) => s.getItemCount());
@@ -44,7 +43,7 @@ export function Header() {
             <Leaf style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
             <div>
               <div style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B', lineHeight: 1.2 }}>Sesoris</div>
-              <div style={{ fontSize: '10px', color: '#6C757D' }}>Do It With Ease</div>
+              <div style={{ fontSize: '10px', color: '#6C757D' }}>Hidup Lebih Teratur</div>
             </div>
           </Link>
 
@@ -94,10 +93,10 @@ export function Header() {
                       border: '1px solid #E9ECEF'
                     }}>
                       {[
-                        { name: 'All Products', href: '/shop' },
-                        { name: 'New Arrivals', href: '/collection/new-arrivals' },
-                        { name: 'Best Sellers', href: '/collection/best-sellers' },
-                        { name: 'On Sale', href: '/collection/sale' },
+                        { name: 'Semua Produk', href: '/shop' },
+                        { name: 'Produk Terbaru', href: '/new-arrivals' },
+                        { name: 'Terlaris', href: '/best-sellers' },
+                        { name: 'Promo', href: '/on-sale' },
                       ].map((item) => (
                         <Link
                           key={item.name}
@@ -168,15 +167,13 @@ export function Header() {
               <User style={{ width: '20px', height: '20px', color: '#343A40' }} />
             </Link>
 
-            <button
-              onClick={openCart}
+            <Link
+              href="/cart"
               style={{
                 position: 'relative',
                 padding: '10px',
                 borderRadius: '8px',
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer'
+                display: 'flex'
               }}
             >
               <ShoppingCart style={{ width: '20px', height: '20px', color: '#343A40' }} />
@@ -199,7 +196,7 @@ export function Header() {
                   {cartCount}
                 </span>
               )}
-            </button>
+            </Link>
           </div>
         </div>
       </div>

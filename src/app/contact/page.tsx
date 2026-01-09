@@ -9,7 +9,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Message sent! We will get back to you soon.');
+    alert('Pesan terkirim! Kami akan segera menghubungi Anda.');
     setFormData({ name: '', email: '', subject: 'general', message: '' });
   };
 
@@ -23,48 +23,52 @@ export default function ContactPage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Contact</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Kontak</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>Contact Us</h1>
+          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>Hubungi Kami</h1>
           <p style={{ color: '#6C757D', fontSize: '16px' }}>
-            We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+            Ada pertanyaan? Kami siap membantu! Kirim pesan dan kami akan merespons secepatnya.
           </p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '64px' }}>
           {/* Contact Info */}
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Get in Touch</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Informasi Kontak</h2>
 
             <div style={{ marginBottom: '24px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
                 <Mail style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Email</div>
-                  <a href="mailto:hello@sesoris.com" style={{ color: '#1B5E3B' }}>hello@sesoris.com</a>
+                  <a href="mailto:halo@sesoris.id" style={{ color: '#1B5E3B' }}>halo@sesoris.id</a>
                 </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
                 <Phone style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Phone</div>
-                  <a href="tel:+12345678900" style={{ color: '#6C757D' }}>+1 (234) 567-8900</a>
+                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Telepon</div>
+                  <a href="tel:+62274123456" style={{ color: '#6C757D' }}>+62 274 123 4567</a>
+                  <div style={{ fontSize: '13px', color: '#6C757D', marginTop: '4px' }}>
+                    WhatsApp: +62 812 3456 7890
+                  </div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
                 <MapPin style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Address</div>
+                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Alamat</div>
                   <div style={{ color: '#6C757D', lineHeight: 1.5 }}>
-                    123 Main Street<br />
-                    New York, NY 10001
+                    Jl. Malioboro No. 123<br />
+                    Gedongtengen, Yogyakarta<br />
+                    DIY 55271, Indonesia
                   </div>
                 </div>
               </div>
@@ -72,18 +76,18 @@ export default function ContactPage() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                 <Clock style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Business Hours</div>
+                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Jam Operasional</div>
                   <div style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.6 }}>
-                    Mon-Fri: 9AM - 6PM<br />
-                    Sat: 10AM - 4PM<br />
-                    Sun: Closed
+                    Senin - Jumat: 09.00 - 18.00 WIB<br />
+                    Sabtu: 10.00 - 16.00 WIB<br />
+                    Minggu & Libur: Tutup
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <div style={{ fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Follow Us</div>
+              <div style={{ fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Ikuti Kami</div>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Facebook style={{ width: '18px', height: '18px', color: '#343A40' }} />
@@ -103,16 +107,17 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Send us a Message</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Kirim Pesan</h2>
             <form onSubmit={handleSubmit}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Your Name</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Nama Lengkap</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Masukkan nama Anda"
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -123,12 +128,13 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Email Address</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Alamat Email</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="email@contoh.com"
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -141,7 +147,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Subject</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Subjek</label>
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -154,21 +160,22 @@ export default function ContactPage() {
                     background: 'white'
                   }}
                 >
-                  <option value="general">General Inquiry</option>
-                  <option value="order">Order Question</option>
-                  <option value="return">Returns & Refunds</option>
-                  <option value="feedback">Feedback</option>
+                  <option value="general">Pertanyaan Umum</option>
+                  <option value="order">Pertanyaan Pesanan</option>
+                  <option value="return">Pengembalian & Refund</option>
+                  <option value="feedback">Kritik & Saran</option>
+                  <option value="business">Kerja Sama Bisnis</option>
                 </select>
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Message</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Pesan</label>
                 <textarea
                   required
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="How can we help you?"
+                  placeholder="Tulis pesan Anda di sini..."
                   style={{
                     width: '100%',
                     padding: '12px 16px',
@@ -186,9 +193,27 @@ export default function ContactPage() {
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <Send style={{ width: '16px', height: '16px' }} />
-                Send Message
+                Kirim Pesan
               </button>
             </form>
+          </div>
+        </div>
+
+        {/* Map placeholder */}
+        <div style={{
+          marginTop: '64px',
+          height: '300px',
+          background: '#F8F9FA',
+          borderRadius: '16px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#6C757D',
+        }}>
+          <div style={{ textAlign: 'center' }}>
+            <MapPin style={{ width: '32px', height: '32px', marginBottom: '12px', color: '#1B5E3B' }} />
+            <div style={{ fontWeight: 600, color: '#212529' }}>Sesoris Store Yogyakarta</div>
+            <div style={{ fontSize: '14px' }}>Jl. Malioboro No. 123, Yogyakarta</div>
           </div>
         </div>
       </div>
