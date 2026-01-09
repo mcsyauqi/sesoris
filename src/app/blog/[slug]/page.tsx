@@ -304,19 +304,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <article>
         {/* Hero */}
-        <div style={{ position: 'relative', height: '400px' }}>
+        <div style={{ position: 'relative', minHeight: '450px', display: 'flex', alignItems: 'flex-end' }}>
           <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} />
           <div style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+            background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
           }} />
-        </div>
-
-        <div className="container" style={{ padding: '0 16px' }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            {/* Header */}
-            <div style={{ marginTop: '-80px', position: 'relative', zIndex: 1 }}>
+          <div className="container" style={{ position: 'relative', zIndex: 1, padding: '0 16px 48px' }}>
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <span style={{
                 display: 'inline-block',
                 background: '#1B5E3B',
@@ -338,7 +334,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               }}>
                 {post.title}
               </h1>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: 'rgba(255,255,255,0.8)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: 'rgba(255,255,255,0.9)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Calendar style={{ width: '16px', height: '16px' }} />
                   <span style={{ fontSize: '14px' }}>{post.date}</span>
@@ -349,6 +345,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="container" style={{ padding: '0 16px' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
             {/* Author */}
             <div style={{
@@ -357,7 +358,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               justifyContent: 'space-between',
               padding: '24px 0',
               borderBottom: '1px solid #E9ECEF',
-              marginTop: '32px',
+              marginTop: '24px',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <div style={{
