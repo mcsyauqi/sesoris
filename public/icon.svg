@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 90">
+  <!-- Shopping Bag Icon -->
+  <g transform="translate(5, 5)">
+    <!-- Bag Handle -->
+    <path d="M25 8 Q25 0 35 0 L45 0 Q55 0 55 8 L55 18 L48 18 L48 12 Q48 6 43 6 L37 6 Q32 6 32 12 L32 18 L25 18 Z" fill="#5BC0DE"/>
+
+    <!-- Back layer (blue) -->
+    <path d="M12 20 L68 20 L62 82 L6 82 Z" fill="#0099CC"/>
+
+    <!-- Middle layer (green-yellow gradient) -->
+    <defs>
+      <linearGradient id="greenGradIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#8DC63F"/>
+        <stop offset="100%" style="stop-color:#FFC107"/>
+      </linearGradient>
+    </defs>
+    <path d="M18 26 L62 26 L56 76 L12 76 Z" fill="url(#greenGradIcon)"/>
+
+    <!-- Front frame (cyan) -->
+    <path d="M15 30 L60 30 L54 72 L10 72 Z" fill="none" stroke="#5BC0DE" stroke-width="4"/>
+
+    <!-- Inner frame (yellow) -->
+    <path d="M20 35 L55 35 L50 67 L15 67 Z" fill="none" stroke="#FFC107" stroke-width="3"/>
+
+    <!-- Arrow -->
+    <path d="M18 58 Q24 40 48 40 L48 30 L68 48 L48 66 L48 56 Q30 56 24 68 Z" fill="white"/>
+  </g>
+</svg>

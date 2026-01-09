@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80">
+  <!-- Shopping Bag Icon -->
+  <g transform="translate(0, 5)">
+    <!-- Bag Handle -->
+    <path d="M25 8 Q25 0 33 0 L47 0 Q55 0 55 8 L55 15 L50 15 L50 10 Q50 5 45 5 L35 5 Q30 5 30 10 L30 15 L25 15 Z" fill="#5BC0DE"/>
+
+    <!-- Back layer (blue) -->
+    <path d="M15 18 L65 18 L60 70 L10 70 Z" fill="#0099CC"/>
+
+    <!-- Middle layer (green-yellow gradient) -->
+    <defs>
+      <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#8DC63F"/>
+        <stop offset="100%" style="stop-color:#FFC107"/>
+      </linearGradient>
+    </defs>
+    <path d="M20 22 L60 22 L55 65 L15 65 Z" fill="url(#greenGrad)"/>
+
+    <!-- Front frame (cyan-yellow) -->
+    <path d="M18 25 L58 25 L53 62 L13 62 Z" fill="none" stroke="#5BC0DE" stroke-width="3"/>
+    <path d="M22 28 L54 28 L50 58 L18 58 Z" fill="none" stroke="#FFC107" stroke-width="2"/>
+
+    <!-- Arrow -->
+    <path d="M20 50 Q25 35 45 35 L45 28 L60 40 L45 52 L45 45 Q30 45 25 55 Z" fill="white"/>
+  </g>
+
+  <!-- Sesoris Text -->
+  <text x="85" y="55" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="42" fill="#0099CC" font-style="italic">Sesoris</text>
+</svg>

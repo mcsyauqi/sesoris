@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Search, Heart, User, ShoppingCart, ChevronDown, Leaf } from 'lucide-react';
+import { Search, Heart, User, ShoppingCart, ChevronDown } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
 
@@ -39,12 +40,15 @@ export function Header() {
           height: '72px'
         }}>
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Leaf style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
-            <div>
-              <div style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B', lineHeight: 1.2 }}>Sesoris</div>
-              <div style={{ fontSize: '10px', color: '#6C757D' }}>Hidup Lebih Teratur</div>
-            </div>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+            <Image
+              src="/logo.svg"
+              alt="Sesoris"
+              width={160}
+              height={50}
+              priority
+              style={{ height: '45px', width: 'auto' }}
+            />
           </Link>
 
           {/* Desktop Nav */}
