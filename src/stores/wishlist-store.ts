@@ -2,69 +2,41 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Product, WishlistItem } from '@/types';
+import type { Product } from '@/types';
 
 interface WishlistState {
-  items: WishlistItem[];
-
-  // Actions
+  items: Product[];
   addItem: (product: Product) => void;
   removeItem: (productId: string) => void;
   toggleItem: (product: Product) => void;
-  clearWishlist: () => void;
   isInWishlist: (productId: string) => boolean;
   getItemCount: () => number;
+  clearWishlist: () => void;
 }
 
 export const useWishlistStore = create<WishlistState>()(
   persist(
     (set, get) => ({
       items: [],
-
       addItem: (product) => {
-        const items = get().items;
-        const exists = items.some((item) => item.productId === product.id);
-
-        if (!exists) {
-          const newItem: WishlistItem = {
-            id: `wishlist-${product.id}-${Date.now()}`,
-            productId: product.id,
-            product,
-            addedAt: new Date().toISOString(),
-          };
-          set({ items: [...items, newItem] });
+        if (!get().isInWishlist(product.id)) {
+          set({ items: [...get().items, product] });
         }
       },
-
       removeItem: (productId) => {
-        set({
-          items: get().items.filter((item) => item.productId !== productId),
-        });
+        set({ items: get().items.filter((item) => item.id !== productId) });
       },
-
       toggleItem: (product) => {
-        const isInList = get().isInWishlist(product.id);
-        if (isInList) {
+        if (get().isInWishlist(product.id)) {
           get().removeItem(product.id);
         } else {
           get().addItem(product);
         }
       },
-
-      clearWishlist: () => {
-        set({ items: [] });
-      },
-
-      isInWishlist: (productId) => {
-        return get().items.some((item) => item.productId === productId);
-      },
-
-      getItemCount: () => {
-        return get().items.length;
-      },
+      isInWishlist: (productId) => get().items.some((item) => item.id === productId),
+      getItemCount: () => get().items.length,
+      clearWishlist: () => set({ items: [] }),
     }),
-    {
-      name: 'sesoris-wishlist',
-    }
+    { name: 'sesoris-wishlist' }
   )
 );

@@ -4,8 +4,8 @@ import {
   CategorySection,
   FeaturedProducts,
   NewsletterSection,
-  TestimonialsSection,
   AboutSection,
+  TestimonialsSection,
 } from '@/components/home';
 
 export default function HomePage() {

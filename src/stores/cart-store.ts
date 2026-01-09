@@ -2,31 +2,19 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { CartItem, Product, ProductVariant } from '@/types';
+import type { Product, CartItem } from '@/types';
 
 interface CartState {
   items: CartItem[];
   isOpen: boolean;
-  couponCode: string | null;
-  discount: number;
-
-  // Actions
-  addItem: (product: Product, quantity?: number, variant?: ProductVariant) => void;
-  removeItem: (itemId: string) => void;
-  updateQuantity: (itemId: string, quantity: number) => void;
+  addItem: (product: Product) => void;
+  removeItem: (productId: string) => void;
+  updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
-  toggleCart: () => void;
   openCart: () => void;
   closeCart: () => void;
-  applyCoupon: (code: string, discountPercent: number) => void;
-  removeCoupon: () => void;
-
-  // Computed
   getItemCount: () => number;
   getSubtotal: () => number;
-  getShipping: () => number;
-  getTax: () => number;
-  getTotal: () => number;
 }
 
 export const useCartStore = create<CartState>()(
@@ -34,113 +22,42 @@ export const useCartStore = create<CartState>()(
     (set, get) => ({
       items: [],
       isOpen: false,
-      couponCode: null,
-      discount: 0,
-
-      addItem: (product, quantity = 1, variant) => {
+      addItem: (product) => {
         const items = get().items;
-        const existingItemIndex = items.findIndex(
-          (item) =>
-            item.productId === product.id &&
-            (!variant || item.variantId === variant?.id)
-        );
-
-        if (existingItemIndex > -1) {
-          const updatedItems = [...items];
-          updatedItems[existingItemIndex].quantity += quantity;
-          set({ items: updatedItems });
+        const existing = items.find((item) => item.product.id === product.id);
+        if (existing) {
+          set({
+            items: items.map((item) =>
+              item.product.id === product.id
+                ? { ...item, quantity: item.quantity + 1 }
+                : item
+            ),
+          });
         } else {
-          const newItem: CartItem = {
-            id: `${product.id}-${variant?.id || 'default'}-${Date.now()}`,
-            productId: product.id,
-            product,
-            variantId: variant?.id,
-            variant,
-            quantity,
-            price: variant?.price || product.price,
-          };
-          set({ items: [...items, newItem] });
+          set({ items: [...items, { product, quantity: 1 }] });
         }
       },
-
-      removeItem: (itemId) => {
-        set({ items: get().items.filter((item) => item.id !== itemId) });
+      removeItem: (productId) => {
+        set({ items: get().items.filter((item) => item.product.id !== productId) });
       },
-
-      updateQuantity: (itemId, quantity) => {
+      updateQuantity: (productId, quantity) => {
         if (quantity <= 0) {
-          get().removeItem(itemId);
-          return;
+          get().removeItem(productId);
+        } else {
+          set({
+            items: get().items.map((item) =>
+              item.product.id === productId ? { ...item, quantity } : item
+            ),
+          });
         }
-
-        const items = get().items.map((item) =>
-          item.id === itemId ? { ...item, quantity } : item
-        );
-        set({ items });
       },
-
-      clearCart: () => {
-        set({ items: [], couponCode: null, discount: 0 });
-      },
-
-      toggleCart: () => {
-        set({ isOpen: !get().isOpen });
-      },
-
-      openCart: () => {
-        set({ isOpen: true });
-      },
-
-      closeCart: () => {
-        set({ isOpen: false });
-      },
-
-      applyCoupon: (code, discountPercent) => {
-        set({ couponCode: code, discount: discountPercent });
-      },
-
-      removeCoupon: () => {
-        set({ couponCode: null, discount: 0 });
-      },
-
-      getItemCount: () => {
-        return get().items.reduce((total, item) => total + item.quantity, 0);
-      },
-
-      getSubtotal: () => {
-        return get().items.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0
-        );
-      },
-
-      getShipping: () => {
-        const subtotal = get().getSubtotal();
-        // Free shipping over $50
-        return subtotal >= 50 ? 0 : 5.99;
-      },
-
-      getTax: () => {
-        const subtotal = get().getSubtotal();
-        // 8% tax rate
-        return subtotal * 0.08;
-      },
-
-      getTotal: () => {
-        const subtotal = get().getSubtotal();
-        const shipping = get().getShipping();
-        const tax = get().getTax();
-        const discountAmount = (subtotal * get().discount) / 100;
-        return subtotal + shipping + tax - discountAmount;
-      },
+      clearCart: () => set({ items: [] }),
+      openCart: () => set({ isOpen: true }),
+      closeCart: () => set({ isOpen: false }),
+      getItemCount: () => get().items.reduce((acc, item) => acc + item.quantity, 0),
+      getSubtotal: () =>
+        get().items.reduce((acc, item) => acc + item.product.price * item.quantity, 0),
     }),
-    {
-      name: 'sesoris-cart',
-      partialize: (state) => ({
-        items: state.items,
-        couponCode: state.couponCode,
-        discount: state.discount,
-      }),
-    }
+    { name: 'sesoris-cart' }
   )
 );

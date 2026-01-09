@@ -1,256 +1,192 @@
 'use client';
 
-import { useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { Package, Check, Truck, Home, Search } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Breadcrumb } from '@/components/ui/breadcrumb';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import Link from 'next/link';
+import { Home, ChevronRight, Search, Package, Truck, CheckCircle, Clock } from 'lucide-react';
 
-const trackingSteps = [
-  { id: 'confirmed', label: 'Confirmed', icon: Check },
-  { id: 'shipped', label: 'Shipped', icon: Package },
-  { id: 'transit', label: 'In Transit', icon: Truck },
-  { id: 'delivered', label: 'Delivered', icon: Home },
-];
-
-const mockTrackingHistory = [
-  {
-    date: 'Jan 18, 2024',
-    time: '10:30 AM',
-    location: 'New York, NY',
-    status: 'Package arrived at local facility',
-  },
-  {
-    date: 'Jan 17, 2024',
-    time: '3:45 PM',
-    location: 'Chicago, IL',
-    status: 'Package in transit',
-  },
-  {
-    date: 'Jan 16, 2024',
-    time: '9:00 AM',
-    location: 'Warehouse',
-    status: 'Package shipped',
-  },
-  {
-    date: 'Jan 15, 2024',
-    time: '2:30 PM',
-    location: '',
-    status: 'Order confirmed',
-  },
-];
-
-function TrackOrderContent() {
-  const searchParams = useSearchParams();
-  const initialOrder = searchParams.get('order') || '';
-
-  const [orderNumber, setOrderNumber] = useState(initialOrder);
+export default function TrackOrderPage() {
+  const [orderNumber, setOrderNumber] = useState('');
   const [email, setEmail] = useState('');
-  const [isTracking, setIsTracking] = useState(false);
-  const [trackingResult, setTrackingResult] = useState<boolean | null>(
-    initialOrder ? true : null
-  );
-  const [currentStep] = useState(2); // In Transit
+  const [showResult, setShowResult] = useState(false);
 
-  const handleTrack = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!orderNumber || !email) return;
-
-    setIsTracking(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setTrackingResult(true);
-    setIsTracking(false);
+    setShowResult(true);
   };
 
   return (
     <>
-      {/* Header */}
-      <section className="py-12 text-center">
+      {/* Breadcrumb */}
+      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
-          <h1 className="text-4xl font-bold text-[#212529] mb-4">
-            Track Your Order
-          </h1>
-          <p className="text-lg text-[#6C757D] max-w-md mx-auto">
-            Enter your order number and email to track your shipment.
-          </p>
-        </div>
-      </section>
-
-      <section className="pb-16">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-            {/* Search Form */}
-            <div className="bg-[#F8F9FA] rounded-2xl p-8 mb-8">
-              <form onSubmit={handleTrack} className="space-y-4">
-                <Input
-                  label="Order Number"
-                  value={orderNumber}
-                  onChange={(e) => setOrderNumber(e.target.value)}
-                  placeholder="e.g., SES-2024-001234"
-                  required
-                  fullWidth
-                />
-                <Input
-                  label="Email Address"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email used for order"
-                  required
-                  fullWidth
-                />
-                <Button type="submit" isLoading={isTracking} size="lg" fullWidth>
-                  <Search className="w-4 h-4 mr-2" />
-                  Track Order
-                </Button>
-              </form>
-            </div>
-
-            {/* Tracking Result */}
-            {trackingResult && (
-              <div className="bg-white border rounded-2xl p-8 animate-fade-in">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h2 className="text-xl font-semibold text-[#212529]">
-                      Order #{orderNumber || 'SES-2024-001234'}
-                    </h2>
-                    <p className="text-sm text-[#6C757D]">
-                      Estimated delivery: January 20, 2024
-                    </p>
-                  </div>
-                  <span className="px-3 py-1 bg-[#FFC107]/20 text-[#856404] text-sm font-medium rounded-full">
-                    In Transit
-                  </span>
-                </div>
-
-                {/* Progress Steps */}
-                <div className="relative mb-8">
-                  <div className="flex justify-between">
-                    {trackingSteps.map((step, index) => (
-                      <div
-                        key={step.id}
-                        className="flex flex-col items-center relative z-10"
-                      >
-                        <div
-                          className={cn(
-                            'w-10 h-10 rounded-full flex items-center justify-center mb-2',
-                            index <= currentStep
-                              ? 'bg-[#1B5E3B] text-white'
-                              : 'bg-gray-200 text-[#6C757D]'
-                          )}
-                        >
-                          <step.icon className="w-5 h-5" />
-                        </div>
-                        <span
-                          className={cn(
-                            'text-xs font-medium text-center',
-                            index <= currentStep
-                              ? 'text-[#1B5E3B]'
-                              : 'text-[#6C757D]'
-                          )}
-                        >
-                          {step.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  {/* Progress Line */}
-                  <div className="absolute top-5 left-0 right-0 h-0.5 bg-gray-200 -z-0">
-                    <div
-                      className="h-full bg-[#1B5E3B] transition-all"
-                      style={{
-                        width: `${(currentStep / (trackingSteps.length - 1)) * 100}%`,
-                      }}
-                    />
-                  </div>
-                </div>
-
-                {/* Shipping Info */}
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h3 className="font-medium text-[#212529] mb-2">Carrier</h3>
-                    <p className="text-[#6C757D]">FedEx Ground</p>
-                    <p className="text-sm text-[#1B5E3B]">
-                      Tracking #: 1234567890
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-[#212529] mb-2">
-                      Shipping Address
-                    </h3>
-                    <p className="text-[#6C757D]">
-                      John Doe<br />
-                      123 Main Street<br />
-                      New York, NY 10001
-                    </p>
-                  </div>
-                </div>
-
-                {/* Tracking History */}
-                <div>
-                  <h3 className="font-semibold text-[#212529] mb-4">
-                    Tracking History
-                  </h3>
-                  <div className="space-y-4">
-                    {mockTrackingHistory.map((event, index) => (
-                      <div
-                        key={index}
-                        className="flex gap-4 pb-4 border-b last:border-0"
-                      >
-                        <div className="text-sm text-[#6C757D] w-28 flex-shrink-0">
-                          <p>{event.date}</p>
-                          <p>{event.time}</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-[#212529]">
-                            {event.status}
-                          </p>
-                          {event.location && (
-                            <p className="text-sm text-[#6C757D]">
-                              {event.location}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Home style={{ width: '14px', height: '14px' }} />
+            </Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <span style={{ color: '#212529', fontWeight: 500 }}>Track Order</span>
           </div>
         </div>
-      </section>
-    </>
-  );
-}
-
-function TrackOrderLoading() {
-  return (
-    <section className="py-12 text-center">
-      <div className="container">
-        <div className="h-10 w-64 bg-gray-200 rounded mx-auto mb-4 animate-pulse" />
-        <div className="h-6 w-96 bg-gray-200 rounded mx-auto animate-pulse" />
       </div>
-    </section>
-  );
-}
 
-export default function TrackOrderPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Breadcrumb */}
-      <div className="bg-[#F8F9FA] py-4">
-        <div className="container">
-          <Breadcrumb items={[{ label: 'Track Order' }]} />
+      <div className="container" style={{ padding: '48px 16px 80px' }}>
+        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <div style={{
+              width: '64px',
+              height: '64px',
+              borderRadius: '50%',
+              background: '#E8F5E9',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 20px',
+            }}>
+              <Package style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
+            </div>
+            <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+              Track Your Order
+            </h1>
+            <p style={{ color: '#6C757D' }}>
+              Enter your order details to see the current status of your shipment.
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} style={{ marginBottom: '40px' }}>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+                Order Number
+              </label>
+              <input
+                type="text"
+                required
+                value={orderNumber}
+                onChange={(e) => setOrderNumber(e.target.value)}
+                placeholder="e.g., SES-123456"
+                style={{
+                  width: '100%',
+                  padding: '14px 16px',
+                  borderRadius: '10px',
+                  border: '1px solid #E9ECEF',
+                  fontSize: '15px',
+                }}
+              />
+            </div>
+            <div style={{ marginBottom: '24px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+                Email Address
+              </label>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email used for the order"
+                style={{
+                  width: '100%',
+                  padding: '14px 16px',
+                  borderRadius: '10px',
+                  border: '1px solid #E9ECEF',
+                  fontSize: '15px',
+                }}
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+            >
+              <Search style={{ width: '18px', height: '18px' }} />
+              Track Order
+            </button>
+          </form>
+
+          {showResult && (
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              border: '1px solid #E9ECEF',
+              overflow: 'hidden',
+            }}>
+              <div style={{ padding: '24px', borderBottom: '1px solid #E9ECEF' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Order Number</span>
+                  <span style={{ fontWeight: 600, color: '#212529' }}>{orderNumber || 'SES-123456'}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Estimated Delivery</span>
+                  <span style={{ fontWeight: 600, color: '#1B5E3B' }}>Jan 15, 2026</span>
+                </div>
+              </div>
+
+              <div style={{ padding: '24px' }}>
+                <div style={{ position: 'relative' }}>
+                  {/* Progress Line */}
+                  <div style={{
+                    position: 'absolute',
+                    left: '15px',
+                    top: '30px',
+                    bottom: '30px',
+                    width: '2px',
+                    background: '#E9ECEF',
+                  }} />
+                  <div style={{
+                    position: 'absolute',
+                    left: '15px',
+                    top: '30px',
+                    height: '50%',
+                    width: '2px',
+                    background: '#1B5E3B',
+                  }} />
+
+                  {/* Steps */}
+                  {[
+                    { icon: CheckCircle, title: 'Order Confirmed', date: 'Jan 9, 2026 - 10:30 AM', done: true },
+                    { icon: Package, title: 'Processing', date: 'Jan 9, 2026 - 2:15 PM', done: true },
+                    { icon: Truck, title: 'Shipped', date: 'Jan 10, 2026 - 9:00 AM', done: true },
+                    { icon: Clock, title: 'Out for Delivery', date: 'Expected Jan 15, 2026', done: false },
+                  ].map((step, index) => (
+                    <div key={index} style={{ display: 'flex', gap: '16px', marginBottom: index < 3 ? '32px' : '0' }}>
+                      <div style={{
+                        width: '32px',
+                        height: '32px',
+                        borderRadius: '50%',
+                        background: step.done ? '#1B5E3B' : '#E9ECEF',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        position: 'relative',
+                        zIndex: 1,
+                      }}>
+                        <step.icon style={{ width: '16px', height: '16px', color: step.done ? 'white' : '#6C757D' }} />
+                      </div>
+                      <div>
+                        <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>{step.title}</div>
+                        <div style={{ fontSize: '13px', color: '#6C757D' }}>{step.date}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div style={{
+            marginTop: '40px',
+            padding: '24px',
+            background: '#F8F9FA',
+            borderRadius: '12px',
+            textAlign: 'center',
+          }}>
+            <p style={{ fontSize: '14px', color: '#6C757D', marginBottom: '12px' }}>
+              Need help with your order?
+            </p>
+            <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>
+              Contact Support
+            </Link>
+          </div>
         </div>
       </div>
-
-      <Suspense fallback={<TrackOrderLoading />}>
-        <TrackOrderContent />
-      </Suspense>
-    </div>
+    </>
   );
 }

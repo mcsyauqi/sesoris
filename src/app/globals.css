@@ -1,72 +1,27 @@
 @import "tailwindcss";
 
-/* ============================================
-   SESORIS DESIGN SYSTEM
-   ============================================ */
-
+/* Design System Colors */
 :root {
-  /* Primary Colors */
-  --primary-green: #1B5E3B;
-  --primary-green-light: #2E7D4A;
-  --primary-green-dark: #0D3D23;
-  --primary-green-pale: #E8F5E9;
-
-  /* Secondary Colors */
-  --accent-orange: #FF6B35;
-  --accent-yellow: #FFD93D;
-  --accent-teal: #20C997;
-
-  /* Neutral Colors */
-  --white: #FFFFFF;
-  --off-white: #F8F9FA;
-  --light-gray: #E9ECEF;
-  --medium-gray: #6C757D;
-  --dark-gray: #343A40;
-  --black: #212529;
-
-  /* Status Colors */
+  --primary: #1B5E3B;
+  --primary-light: #2E7D4A;
+  --primary-dark: #0D3D23;
+  --primary-pale: #E8F5E9;
+  --accent: #FF6B35;
+  --gray-50: #F8F9FA;
+  --gray-100: #E9ECEF;
+  --gray-200: #DEE2E6;
+  --gray-500: #6C757D;
+  --gray-700: #343A40;
+  --gray-900: #212529;
   --success: #28A745;
   --warning: #FFC107;
   --error: #DC3545;
-  --info: #17A2B8;
 }
-
-/* Theme Configuration for Tailwind CSS v4 */
-@theme inline {
-  /* Colors */
-  --color-primary: #1B5E3B;
-  --color-primary-light: #2E7D4A;
-  --color-primary-dark: #0D3D23;
-  --color-primary-pale: #E8F5E9;
-
-  --color-accent-orange: #FF6B35;
-  --color-accent-yellow: #FFD93D;
-  --color-accent-teal: #20C997;
-
-  --color-off-white: #F8F9FA;
-  --color-light-gray: #E9ECEF;
-  --color-medium-gray: #6C757D;
-  --color-dark-gray: #343A40;
-
-  --color-success: #28A745;
-  --color-warning: #FFC107;
-  --color-error: #DC3545;
-  --color-info: #17A2B8;
-
-  /* Fonts - using system font stacks */
-  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* ============================================
-   BASE STYLES
-   ============================================ */
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -74,18 +29,10 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #FFFFFF;
-  color: #212529;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--gray-900);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 600;
-  line-height: 1.3;
+  background: #fff;
 }
 
 a {
@@ -103,259 +50,75 @@ button {
   font-family: inherit;
 }
 
-/* ============================================
-   CONTAINER - Using fixed pixel values
-   ============================================ */
-
+/* Container */
 .container {
   width: 100%;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 @media (min-width: 768px) {
   .container {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 0 24px;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 0 32px;
   }
 }
 
-/* ============================================
-   SECTION PADDING
-   ============================================ */
-
-.section {
-  padding-top: 64px;
-  padding-bottom: 64px;
+/* Utility Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .section {
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
+.btn-primary {
+  background: var(--primary);
+  color: white;
 }
 
-/* ============================================
-   CUSTOM SCROLLBAR
-   ============================================ */
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.btn-primary:hover {
+  background: var(--primary-light);
 }
 
-::-webkit-scrollbar-track {
-  background: #E9ECEF;
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #6C757D;
-  border-radius: 9999px;
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #343A40;
-}
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-
-/* Hide scrollbar for horizontal scrolling */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Line clamp utilities */
-.line-clamp-1 {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-
+/* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
 }
 
-@keyframes slideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideRight {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-5%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 250ms ease forwards;
-}
-
-.animate-slide-up {
-  animation: slideUp 250ms ease forwards;
-}
-
-.animate-slide-down {
-  animation: slideDown 250ms ease forwards;
-}
-
-.animate-slide-left {
-  animation: slideLeft 250ms ease forwards;
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-.animate-bounce {
-  animation: bounce 1s infinite;
-}
-
-/* ============================================
-   SKELETON LOADING
-   ============================================ */
-
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    #E9ECEF 25%,
-    #F8F9FA 50%,
-    #E9ECEF 75%
-  );
-  background-size: 200% 100%;
-  animation: skeleton-loading 1.5s infinite;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-/* ============================================
-   FOCUS STYLES
-   ============================================ */
-
-*:focus-visible {
-  outline: 2px solid #1B5E3B;
-  outline-offset: 2px;
-}
-
-/* ============================================
-   SELECTION STYLES
-   ============================================ */
-
-::selection {
-  background: #E8F5E9;
-  color: #0D3D23;
+.animate-slideUp {
+  animation: slideUp 0.3s ease forwards;
 }

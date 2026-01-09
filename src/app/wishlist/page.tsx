@@ -2,141 +2,168 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, ShoppingCart, Trash2 } from 'lucide-react';
-import { formatPrice } from '@/lib/utils';
-import { Breadcrumb } from '@/components/ui/breadcrumb';
-import { Button } from '@/components/ui/button';
-import { Rating } from '@/components/ui/rating';
+import { Home, ChevronRight, Heart, Trash2, ShoppingCart } from 'lucide-react';
 import { useWishlistStore } from '@/stores/wishlist-store';
 import { useCartStore } from '@/stores/cart-store';
-import { toast } from '@/components/ui/toast';
+import { formatPrice } from '@/lib/utils';
 
 export default function WishlistPage() {
   const { items, removeItem, clearWishlist } = useWishlistStore();
-  const addToCart = useCartStore((state) => state.addItem);
-  const openCart = useCartStore((state) => state.openCart);
-
-  const handleAddToCart = (item: (typeof items)[0]) => {
-    addToCart(item.product);
-    toast.success('Added to cart!', {
-      label: 'View Cart',
-      onClick: openCart,
-    });
-  };
-
-  const handleAddAllToCart = () => {
-    items.forEach((item) => addToCart(item.product));
-    toast.success(`Added ${items.length} items to cart!`);
-    clearWishlist();
-  };
+  const { addItem } = useCartStore();
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-white">
-        <div className="bg-[#F8F9FA] py-4">
+      <>
+        {/* Breadcrumb */}
+        <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
           <div className="container">
-            <Breadcrumb items={[{ label: 'Wishlist' }]} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+                <Home style={{ width: '14px', height: '14px' }} />
+              </Link>
+              <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+              <span style={{ color: '#212529', fontWeight: 500 }}>Wishlist</span>
+            </div>
           </div>
         </div>
 
-        <div className="container py-16">
-          <div className="max-w-md mx-auto text-center">
-            <Heart className="w-24 h-24 text-[#E9ECEF] mx-auto mb-6" />
-            <h1 className="text-2xl font-bold text-[#212529] mb-3">
-              Your wishlist is empty
-            </h1>
-            <p className="text-[#6C757D] mb-8">
-              Save items you love to your wishlist and come back to them later.
-            </p>
-            <Button asChild size="lg">
-              <Link href="/shop">Start Shopping</Link>
-            </Button>
+        <div className="container" style={{ padding: '80px 16px', textAlign: 'center' }}>
+          <div style={{
+            width: '80px',
+            height: '80px',
+            borderRadius: '50%',
+            background: '#F8F9FA',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 24px',
+          }}>
+            <Heart style={{ width: '32px', height: '32px', color: '#6C757D' }} />
           </div>
+          <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+            Your wishlist is empty
+          </h1>
+          <p style={{ color: '#6C757D', marginBottom: '24px' }}>
+            Save items you love by clicking the heart icon on any product.
+          </p>
+          <Link href="/shop" className="btn btn-primary">
+            Browse Products
+          </Link>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-[#F8F9FA] py-4">
+    <>
+      {/* Breadcrumb */}
+      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
-          <Breadcrumb items={[{ label: 'Wishlist' }]} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Home style={{ width: '14px', height: '14px' }} />
+            </Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <span style={{ color: '#212529', fontWeight: 500 }}>Wishlist ({items.length} items)</span>
+          </div>
         </div>
       </div>
 
-      <div className="container py-8">
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold text-[#212529]">
-            My Wishlist ({items.length} {items.length === 1 ? 'item' : 'items'})
+      <div className="container" style={{ padding: '48px 16px 80px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+          <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529' }}>
+            My Wishlist
           </h1>
-          <Button onClick={handleAddAllToCart}>
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            Add All to Cart
-          </Button>
+          <button
+            onClick={clearWishlist}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: '#6C757D',
+              background: 'none',
+              border: '1px solid #E9ECEF',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontSize: '14px',
+            }}
+          >
+            <Trash2 style={{ width: '14px', height: '14px' }} />
+            Clear All
+          </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
           {items.map((item) => (
-            <div key={item.id} className="group relative">
-              <Link
-                href={`/product/${item.product.slug}`}
-                className="block relative aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3"
-              >
-                <Image
-                  src={item.product.images[0]?.url || '/placeholder.jpg'}
-                  alt={item.product.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform"
-                />
-              </Link>
-
-              {/* Remove Button */}
-              <button
-                onClick={() => {
-                  removeItem(item.productId);
-                  toast.info('Removed from wishlist');
-                }}
-                className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50 hover:text-red-500 transition-colors"
-              >
-                <Trash2 className="w-4 h-4" />
-              </button>
-
-              <div className="space-y-1">
-                <Link href={`/product/${item.product.slug}`}>
-                  <h3 className="font-medium text-[#212529] group-hover:text-[#1B5E3B] transition-colors line-clamp-2">
-                    {item.product.name}
-                  </h3>
-                </Link>
-                <Rating
-                  value={item.product.rating}
-                  reviewCount={item.product.reviewCount}
-                  size="sm"
-                />
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-[#1B5E3B]">
-                    {formatPrice(item.product.price)}
-                  </span>
-                  {item.product.compareAtPrice && (
-                    <span className="text-sm text-[#6C757D] line-through">
-                      {formatPrice(item.product.compareAtPrice)}
-                    </span>
-                  )}
-                </div>
-                <Button
-                  onClick={() => handleAddToCart(item)}
-                  size="sm"
-                  fullWidth
-                  className="mt-2"
+            <div
+              key={item.id}
+              style={{
+                background: 'white',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+              }}
+            >
+              <div style={{ aspectRatio: '1', position: 'relative', background: '#F8F9FA' }}>
+                <Image src={item.images[0]?.url || '/placeholder.jpg'} alt={item.name} fill style={{ objectFit: 'cover' }} />
+                <button
+                  onClick={() => removeItem(item.id)}
+                  style={{
+                    position: 'absolute',
+                    top: '12px',
+                    right: '12px',
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '50%',
+                    background: 'white',
+                    border: 'none',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                  }}
                 >
-                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  <Heart style={{ width: '18px', height: '18px', fill: '#DC3545', color: '#DC3545' }} />
+                </button>
+              </div>
+              <div style={{ padding: '16px' }}>
+                <Link
+                  href={`/product/${item.slug}`}
+                  style={{ fontSize: '15px', fontWeight: 600, color: '#212529', marginBottom: '8px', display: 'block' }}
+                >
+                  {item.name}
+                </Link>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#1B5E3B', marginBottom: '12px' }}>
+                  {formatPrice(item.price)}
+                </div>
+                <button
+                  onClick={() => addItem(item)}
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    padding: '10px',
+                    background: '#1B5E3B',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                  }}
+                >
+                  <ShoppingCart style={{ width: '16px', height: '16px' }} />
                   Add to Cart
-                </Button>
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }

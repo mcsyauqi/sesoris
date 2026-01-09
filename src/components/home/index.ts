@@ -1,7 +1,7 @@
-export * from './hero-slider';
-export * from './trust-badges';
-export * from './category-section';
-export * from './featured-products';
-export * from './newsletter-section';
-export * from './testimonials-section';
-export * from './about-section';
+export { HeroSlider } from './HeroSlider';
+export { TrustBadges } from './TrustBadges';
+export { CategorySection } from './CategorySection';
+export { FeaturedProducts } from './FeaturedProducts';
+export { NewsletterSection } from './NewsletterSection';
+export { AboutSection } from './AboutSection';
+export { TestimonialsSection } from './TestimonialsSection';

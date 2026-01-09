@@ -1,24 +1,10 @@
 'use client';
 
-import { useState, useMemo, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { SlidersHorizontal, X, Grid, List } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Breadcrumb } from '@/components/ui/breadcrumb';
-import { Button } from '@/components/ui/button';
-import { Select } from '@/components/ui/select';
-import { ProductGrid } from '@/components/product/product-grid';
+import { useState } from 'react';
+import Link from 'next/link';
+import { Home, ChevronRight, Grid, List } from 'lucide-react';
+import { ProductCard } from '@/components/product';
 import { products, categories } from '@/data/products';
-import type { SortOption } from '@/types';
-
-const sortOptions = [
-  { value: 'featured', label: 'Featured' },
-  { value: 'newest', label: 'Newest First' },
-  { value: 'price-asc', label: 'Price: Low to High' },
-  { value: 'price-desc', label: 'Price: High to Low' },
-  { value: 'rating', label: 'Highest Rated' },
-  { value: 'best-selling', label: 'Best Selling' },
-];
 
 const priceRanges = [
   { label: 'Under $25', min: 0, max: 25 },
@@ -27,91 +13,19 @@ const priceRanges = [
   { label: 'Over $100', min: 100, max: Infinity },
 ];
 
-function ShopContent() {
-  const searchParams = useSearchParams();
-  const searchQuery = searchParams.get('q') || '';
-
-  const [sortBy, setSortBy] = useState<SortOption>('featured');
+export default function ShopPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [selectedPriceRange, setSelectedPriceRange] = useState<number | null>(null);
-  const [inStockOnly, setInStockOnly] = useState(false);
-  const [onSaleOnly, setOnSaleOnly] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
+  const [sortBy, setSortBy] = useState('featured');
 
-  const filteredProducts = useMemo(() => {
-    let filtered = [...products];
-
-    // Search query
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (p) =>
-          p.name.toLowerCase().includes(query) ||
-          p.description.toLowerCase().includes(query)
-      );
+  const filteredProducts = products.filter((p) => {
+    if (selectedCategories.length > 0 && !selectedCategories.includes(p.category.slug)) return false;
+    if (selectedPrice !== null) {
+      const range = priceRanges[selectedPrice];
+      if (p.price < range.min || p.price >= range.max) return false;
     }
-
-    // Category filter
-    if (selectedCategories.length > 0) {
-      filtered = filtered.filter((p) =>
-        selectedCategories.includes(p.category.slug)
-      );
-    }
-
-    // Price range filter
-    if (selectedPriceRange !== null) {
-      const range = priceRanges[selectedPriceRange];
-      filtered = filtered.filter(
-        (p) => p.price >= range.min && p.price < range.max
-      );
-    }
-
-    // In stock filter
-    if (inStockOnly) {
-      filtered = filtered.filter((p) => p.quantity > 0);
-    }
-
-    // On sale filter
-    if (onSaleOnly) {
-      filtered = filtered.filter(
-        (p) => p.compareAtPrice && p.compareAtPrice > p.price
-      );
-    }
-
-    // Sort
-    switch (sortBy) {
-      case 'newest':
-        filtered.sort(
-          (a, b) =>
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        );
-        break;
-      case 'price-asc':
-        filtered.sort((a, b) => a.price - b.price);
-        break;
-      case 'price-desc':
-        filtered.sort((a, b) => b.price - a.price);
-        break;
-      case 'rating':
-        filtered.sort((a, b) => b.rating - a.rating);
-        break;
-      case 'best-selling':
-        filtered.sort((a, b) => b.reviewCount - a.reviewCount);
-        break;
-      default:
-        filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-    }
-
-    return filtered;
-  }, [
-    searchQuery,
-    selectedCategories,
-    selectedPriceRange,
-    inStockOnly,
-    onSaleOnly,
-    sortBy,
-  ]);
+    return true;
+  });
 
   const toggleCategory = (slug: string) => {
     setSelectedCategories((prev) =>
@@ -119,354 +33,136 @@ function ShopContent() {
     );
   };
 
-  const clearFilters = () => {
-    setSelectedCategories([]);
-    setSelectedPriceRange(null);
-    setInStockOnly(false);
-    setOnSaleOnly(false);
-  };
-
-  const hasActiveFilters =
-    selectedCategories.length > 0 ||
-    selectedPriceRange !== null ||
-    inStockOnly ||
-    onSaleOnly;
-
   return (
     <>
-      {/* Header */}
-      <div className="container py-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#212529] mb-2">
-          {searchQuery ? `Search results for "${searchQuery}"` : 'All Products'}
-        </h1>
-        <p className="text-[#6C757D]">
-          Showing {filteredProducts.length} products
-        </p>
+      {/* Breadcrumb */}
+      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+        <div className="container">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Home style={{ width: '14px', height: '14px' }} />
+            </Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <span style={{ color: '#212529', fontWeight: 500 }}>Shop</span>
+          </div>
+        </div>
       </div>
 
-      <div className="container pb-16">
-        <div className="flex gap-8">
-          {/* Sidebar Filters - Desktop */}
-          <aside className="hidden lg:block w-64 flex-shrink-0">
-            <div className="sticky top-24 space-y-6">
-              {/* Categories */}
-              <div>
-                <h3 className="font-semibold text-[#212529] mb-3">Categories</h3>
-                <div className="space-y-2">
-                  {categories.map((cat) => (
-                    <label
-                      key={cat.id}
-                      className="flex items-center gap-2 cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={selectedCategories.includes(cat.slug)}
-                        onChange={() => toggleCategory(cat.slug)}
-                        className="w-4 h-4 rounded border-gray-300 text-[#1B5E3B] focus:ring-[#1B5E3B]"
-                      />
-                      <span className="text-sm text-[#343A40]">
-                        {cat.name}
-                      </span>
-                      <span className="text-xs text-[#6C757D] ml-auto">
-                        ({cat.productCount})
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
+      <div className="container" style={{ padding: '32px 16px' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
+          All Products
+        </h1>
+        <p style={{ color: '#6C757D', marginBottom: '32px' }}>
+          Showing {filteredProducts.length} products
+        </p>
 
-              {/* Price Range */}
-              <div>
-                <h3 className="font-semibold text-[#212529] mb-3">Price Range</h3>
-                <div className="space-y-2">
-                  {priceRanges.map((range, index) => (
-                    <label
-                      key={range.label}
-                      className="flex items-center gap-2 cursor-pointer"
-                    >
-                      <input
-                        type="radio"
-                        name="priceRange"
-                        checked={selectedPriceRange === index}
-                        onChange={() =>
-                          setSelectedPriceRange(
-                            selectedPriceRange === index ? null : index
-                          )
-                        }
-                        className="w-4 h-4 text-[#1B5E3B] focus:ring-[#1B5E3B]"
-                      />
-                      <span className="text-sm text-[#343A40]">
-                        {range.label}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Availability */}
-              <div>
-                <h3 className="font-semibold text-[#212529] mb-3">Availability</h3>
-                <div className="space-y-2">
-                  <label className="flex items-center gap-2 cursor-pointer">
+        <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: '48px' }}>
+          {/* Sidebar */}
+          <aside>
+            {/* Categories */}
+            <div style={{ marginBottom: '32px' }}>
+              <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px' }}>Categories</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {categories.map((cat) => (
+                  <label key={cat.id} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
                     <input
                       type="checkbox"
-                      checked={inStockOnly}
-                      onChange={() => setInStockOnly(!inStockOnly)}
-                      className="w-4 h-4 rounded border-gray-300 text-[#1B5E3B] focus:ring-[#1B5E3B]"
+                      checked={selectedCategories.includes(cat.slug)}
+                      onChange={() => toggleCategory(cat.slug)}
+                      style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }}
                     />
-                    <span className="text-sm text-[#343A40]">In Stock</span>
+                    <span style={{ fontSize: '14px', color: '#343A40' }}>{cat.name}</span>
+                    <span style={{ fontSize: '12px', color: '#6C757D', marginLeft: 'auto' }}>({cat.productCount})</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={onSaleOnly}
-                      onChange={() => setOnSaleOnly(!onSaleOnly)}
-                      className="w-4 h-4 rounded border-gray-300 text-[#1B5E3B] focus:ring-[#1B5E3B]"
-                    />
-                    <span className="text-sm text-[#343A40]">On Sale</span>
-                  </label>
-                </div>
+                ))}
               </div>
+            </div>
 
-              {/* Clear Filters */}
-              {hasActiveFilters && (
-                <button
-                  onClick={clearFilters}
-                  className="text-sm text-[#DC3545] hover:underline"
-                >
-                  Clear All Filters
-                </button>
-              )}
+            {/* Price Range */}
+            <div style={{ marginBottom: '32px' }}>
+              <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px' }}>Price Range</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {priceRanges.map((range, i) => (
+                  <label key={range.label} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
+                    <input
+                      type="radio"
+                      name="price"
+                      checked={selectedPrice === i}
+                      onChange={() => setSelectedPrice(selectedPrice === i ? null : i)}
+                      style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }}
+                    />
+                    <span style={{ fontSize: '14px', color: '#343A40' }}>{range.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Availability */}
+            <div>
+              <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px' }}>Availability</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
+                  <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
+                  <span style={{ fontSize: '14px', color: '#343A40' }}>In Stock</span>
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
+                  <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
+                  <span style={{ fontSize: '14px', color: '#343A40' }}>On Sale</span>
+                </label>
+              </div>
             </div>
           </aside>
 
-          {/* Main Content */}
-          <div className="flex-grow">
+          {/* Products */}
+          <div>
             {/* Toolbar */}
-            <div className="flex items-center justify-between gap-4 mb-6">
-              <div className="flex items-center gap-2">
-                {/* Mobile Filter Button */}
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="lg:hidden"
-                  onClick={() => setShowFilters(true)}
-                >
-                  <SlidersHorizontal className="w-4 h-4 mr-2" />
-                  Filters
-                  {hasActiveFilters && (
-                    <span className="ml-1 px-1.5 py-0.5 bg-[#1B5E3B] text-white text-xs rounded-full">
-                      {selectedCategories.length +
-                        (selectedPriceRange !== null ? 1 : 0) +
-                        (inStockOnly ? 1 : 0) +
-                        (onSaleOnly ? 1 : 0)}
-                    </span>
-                  )}
-                </Button>
-
-                {/* Active Filters Tags */}
-                {hasActiveFilters && (
-                  <div className="hidden md:flex items-center gap-2 flex-wrap">
-                    {selectedCategories.map((slug) => {
-                      const cat = categories.find((c) => c.slug === slug);
-                      return (
-                        <span
-                          key={slug}
-                          className="inline-flex items-center gap-1 px-2 py-1 bg-[#E8F5E9] text-[#1B5E3B] text-sm rounded-full"
-                        >
-                          {cat?.name}
-                          <button onClick={() => toggleCategory(slug)}>
-                            <X className="w-3 h-3" />
-                          </button>
-                        </span>
-                      );
-                    })}
-                    {selectedPriceRange !== null && (
-                      <span className="inline-flex items-center gap-1 px-2 py-1 bg-[#E8F5E9] text-[#1B5E3B] text-sm rounded-full">
-                        {priceRanges[selectedPriceRange].label}
-                        <button onClick={() => setSelectedPriceRange(null)}>
-                          <X className="w-3 h-3" />
-                        </button>
-                      </span>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              <div className="flex items-center gap-3">
-                {/* Sort */}
-                <Select
-                  value={sortBy}
-                  onChange={(value) => setSortBy(value as SortOption)}
-                  options={sortOptions}
-                  className="w-48"
-                />
-
-                {/* View Toggle */}
-                <div className="hidden md:flex items-center border rounded-lg">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={cn(
-                      'p-2 transition-colors',
-                      viewMode === 'grid'
-                        ? 'bg-[#1B5E3B] text-white'
-                        : 'hover:bg-gray-100'
-                    )}
-                  >
-                    <Grid className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={cn(
-                      'p-2 transition-colors',
-                      viewMode === 'list'
-                        ? 'bg-[#1B5E3B] text-white'
-                        : 'hover:bg-gray-100'
-                    )}
-                  >
-                    <List className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Product Grid */}
-            <ProductGrid products={filteredProducts} />
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Filters Modal */}
-      {showFilters && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setShowFilters(false)}
-          />
-          <div className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-xl animate-slide-left overflow-y-auto">
-            <div className="sticky top-0 flex items-center justify-between p-4 border-b bg-white">
-              <h2 className="text-lg font-semibold">Filters</h2>
-              <button
-                onClick={() => setShowFilters(false)}
-                className="p-2 hover:bg-gray-100 rounded-full"
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              gap: '16px',
+              marginBottom: '24px'
+            }}>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                style={{
+                  padding: '10px 16px',
+                  borderRadius: '8px',
+                  border: '1px solid #E9ECEF',
+                  fontSize: '14px',
+                  background: 'white'
+                }}
               >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
 
-            <div className="p-4 space-y-6">
-              {/* Categories */}
-              <div>
-                <h3 className="font-semibold text-[#212529] mb-3">Categories</h3>
-                <div className="space-y-2">
-                  {categories.map((cat) => (
-                    <label
-                      key={cat.id}
-                      className="flex items-center gap-2 cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={selectedCategories.includes(cat.slug)}
-                        onChange={() => toggleCategory(cat.slug)}
-                        className="w-4 h-4 rounded border-gray-300 text-[#1B5E3B] focus:ring-[#1B5E3B]"
-                      />
-                      <span className="text-sm text-[#343A40]">{cat.name}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Price Range */}
-              <div>
-                <h3 className="font-semibold text-[#212529] mb-3">Price Range</h3>
-                <div className="space-y-2">
-                  {priceRanges.map((range, index) => (
-                    <label
-                      key={range.label}
-                      className="flex items-center gap-2 cursor-pointer"
-                    >
-                      <input
-                        type="radio"
-                        name="priceRangeMobile"
-                        checked={selectedPriceRange === index}
-                        onChange={() =>
-                          setSelectedPriceRange(
-                            selectedPriceRange === index ? null : index
-                          )
-                        }
-                        className="w-4 h-4 text-[#1B5E3B] focus:ring-[#1B5E3B]"
-                      />
-                      <span className="text-sm text-[#343A40]">
-                        {range.label}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Availability */}
-              <div>
-                <h3 className="font-semibold text-[#212529] mb-3">Availability</h3>
-                <div className="space-y-2">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={inStockOnly}
-                      onChange={() => setInStockOnly(!inStockOnly)}
-                      className="w-4 h-4 rounded border-gray-300 text-[#1B5E3B] focus:ring-[#1B5E3B]"
-                    />
-                    <span className="text-sm text-[#343A40]">In Stock</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={onSaleOnly}
-                      onChange={() => setOnSaleOnly(!onSaleOnly)}
-                      className="w-4 h-4 rounded border-gray-300 text-[#1B5E3B] focus:ring-[#1B5E3B]"
-                    />
-                    <span className="text-sm text-[#343A40]">On Sale</span>
-                  </label>
-                </div>
+              <div style={{ display: 'flex', border: '1px solid #E9ECEF', borderRadius: '8px', overflow: 'hidden' }}>
+                <button style={{ padding: '8px', background: '#1B5E3B', color: 'white', border: 'none' }}>
+                  <Grid style={{ width: '18px', height: '18px' }} />
+                </button>
+                <button style={{ padding: '8px', background: 'white', border: 'none' }}>
+                  <List style={{ width: '18px', height: '18px', color: '#6C757D' }} />
+                </button>
               </div>
             </div>
 
-            <div className="sticky bottom-0 p-4 border-t bg-white flex gap-2">
-              <Button variant="outline" onClick={clearFilters} fullWidth>
-                Clear All
-              </Button>
-              <Button onClick={() => setShowFilters(false)} fullWidth>
-                Show Results ({filteredProducts.length})
-              </Button>
+            {/* Grid */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '24px'
+            }}>
+              {filteredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
             </div>
           </div>
         </div>
-      )}
-    </>
-  );
-}
-
-function ShopLoading() {
-  return (
-    <div className="container py-8">
-      <div className="h-10 w-48 bg-gray-200 rounded mb-2 animate-pulse" />
-      <div className="h-6 w-32 bg-gray-200 rounded animate-pulse" />
-    </div>
-  );
-}
-
-export default function ShopPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Breadcrumb */}
-      <div className="bg-[#F8F9FA] py-4">
-        <div className="container">
-          <Breadcrumb items={[{ label: 'Shop' }]} />
-        </div>
       </div>
-
-      <Suspense fallback={<ShopLoading />}>
-        <ShopContent />
-      </Suspense>
-    </div>
+    </>
   );
 }

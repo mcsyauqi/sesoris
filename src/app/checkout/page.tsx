@@ -3,403 +3,278 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { Leaf, Lock, CreditCard, Check } from 'lucide-react';
-import { formatPrice, generateOrderNumber } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Select } from '@/components/ui/select';
+import { Home, ChevronRight, Lock, CreditCard, Truck, ShieldCheck } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
-import { toast } from '@/components/ui/toast';
-
-const shippingMethods = [
-  { value: 'standard', label: 'Standard (5-7 days)', price: 0 },
-  { value: 'express', label: 'Express (2-3 days)', price: 9.99 },
-  { value: 'overnight', label: 'Next Day', price: 19.99 },
-];
-
-const countries = [
-  { value: 'US', label: 'United States' },
-  { value: 'CA', label: 'Canada' },
-  { value: 'GB', label: 'United Kingdom' },
-  { value: 'AU', label: 'Australia' },
-];
+import { formatPrice } from '@/lib/utils';
 
 export default function CheckoutPage() {
-  const router = useRouter();
-  const { items, getSubtotal, clearCart, discount } = useCartStore();
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [shippingMethod, setShippingMethod] = useState('standard');
-
-  const [formData, setFormData] = useState({
-    email: '',
-    firstName: '',
-    lastName: '',
-    address: '',
-    apartment: '',
-    city: '',
-    state: '',
-    zip: '',
-    country: 'US',
-    phone: '',
-    cardNumber: '',
-    expiry: '',
-    cvv: '',
-    nameOnCard: '',
-  });
+  const { items, getSubtotal, getItemCount } = useCartStore();
+  const [step, setStep] = useState(1);
 
   const subtotal = getSubtotal();
-  const selectedShipping = shippingMethods.find((m) => m.value === shippingMethod);
-  const shipping = subtotal >= 50 && shippingMethod === 'standard' ? 0 : (selectedShipping?.price || 0);
-  const discountAmount = (subtotal * discount) / 100;
-  const tax = (subtotal - discountAmount) * 0.08;
-  const total = subtotal - discountAmount + shipping + tax;
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (items.length === 0) {
-      toast.error('Your cart is empty');
-      return;
-    }
-
-    setIsProcessing(true);
-
-    // Simulate payment processing
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    const orderNumber = generateOrderNumber();
-    clearCart();
-
-    router.push(`/order/confirmation/${orderNumber}`);
-  };
+  const shipping = subtotal > 50 ? 0 : 5.99;
+  const tax = subtotal * 0.08;
+  const total = subtotal + shipping + tax;
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-[#212529] mb-4">
+      <>
+        <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+          <div className="container">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+                <Home style={{ width: '14px', height: '14px' }} />
+              </Link>
+              <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+              <span style={{ color: '#212529', fontWeight: 500 }}>Checkout</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="container" style={{ padding: '80px 16px', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
             Your cart is empty
           </h1>
-          <Button asChild>
-            <Link href="/shop">Continue Shopping</Link>
-          </Button>
+          <p style={{ color: '#6C757D', marginBottom: '24px' }}>
+            Add some items to your cart before checking out.
+          </p>
+          <Link href="/shop" className="btn btn-primary">
+            Start Shopping
+          </Link>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA]">
-      {/* Header */}
-      <header className="bg-white border-b">
-        <div className="container py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <Leaf className="w-7 h-7 text-[#1B5E3B]" />
-              <span className="text-lg font-bold text-[#1B5E3B]">Sesoris</span>
+    <>
+      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+        <div className="container">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <div className="flex items-center gap-2 text-sm text-[#6C757D]">
-              <Lock className="w-4 h-4" />
-              Secure Checkout
-            </div>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <Link href="/cart" style={{ color: '#6C757D' }}>Cart</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <span style={{ color: '#212529', fontWeight: 500 }}>Checkout</span>
           </div>
         </div>
-      </header>
+      </div>
 
-      <div className="container py-8">
-        <form onSubmit={handleSubmit}>
-          <div className="grid lg:grid-cols-5 gap-8">
-            {/* Checkout Form */}
-            <div className="lg:col-span-3 space-y-8">
-              {/* Contact */}
-              <div className="bg-white rounded-xl p-6">
-                <h2 className="text-lg font-semibold text-[#212529] mb-4">
-                  Contact Information
-                </h2>
-                <Input
-                  label="Email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  required
-                  fullWidth
-                />
+      <div className="container" style={{ padding: '48px 16px 80px' }}>
+        {/* Progress Steps */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', marginBottom: '48px' }}>
+          {['Shipping', 'Payment', 'Review'].map((label, i) => (
+            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                background: step > i ? '#1B5E3B' : step === i + 1 ? '#1B5E3B' : '#E9ECEF',
+                color: step >= i + 1 ? 'white' : '#6C757D',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 600,
+                fontSize: '14px',
+              }}>
+                {i + 1}
               </div>
+              <span style={{ fontWeight: step === i + 1 ? 600 : 400, color: step === i + 1 ? '#212529' : '#6C757D' }}>
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
 
-              {/* Shipping Address */}
-              <div className="bg-white rounded-xl p-6">
-                <h2 className="text-lg font-semibold text-[#212529] mb-4">
-                  Shipping Address
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '48px' }}>
+          {/* Form */}
+          <div>
+            {step === 1 && (
+              <div>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
+                  Shipping Information
                 </h2>
-                <div className="grid gap-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input
-                      label="First Name"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                      fullWidth
-                    />
-                    <Input
-                      label="Last Name"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
-                      fullWidth
-                    />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>First Name</label>
+                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
-                  <Input
-                    label="Address"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleChange}
-                    placeholder="Street address"
-                    required
-                    fullWidth
-                  />
-                  <Input
-                    label="Apartment, suite, etc. (optional)"
-                    name="apartment"
-                    value={formData.apartment}
-                    onChange={handleChange}
-                    fullWidth
-                  />
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input
-                      label="City"
-                      name="city"
-                      value={formData.city}
-                      onChange={handleChange}
-                      required
-                      fullWidth
-                    />
-                    <Input
-                      label="State"
-                      name="state"
-                      value={formData.state}
-                      onChange={handleChange}
-                      required
-                      fullWidth
-                    />
+                  <div>
+                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Last Name</label>
+                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input
-                      label="ZIP Code"
-                      name="zip"
-                      value={formData.zip}
-                      onChange={handleChange}
-                      required
-                      fullWidth
-                    />
-                    <Select
-                      label="Country"
-                      value={formData.country}
-                      onChange={(value) =>
-                        setFormData({ ...formData, country: value })
-                      }
-                      options={countries}
-                      fullWidth
-                    />
-                  </div>
-                  <Input
-                    label="Phone (optional)"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    fullWidth
-                  />
                 </div>
+                <div style={{ marginBottom: '20px' }}>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Email</label>
+                  <input type="email" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                </div>
+                <div style={{ marginBottom: '20px' }}>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Address</label>
+                  <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '24px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>City</label>
+                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>State</label>
+                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>ZIP</label>
+                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                  </div>
+                </div>
+                <button onClick={() => setStep(2)} className="btn btn-primary" style={{ width: '100%' }}>
+                  Continue to Payment
+                </button>
               </div>
+            )}
 
-              {/* Shipping Method */}
-              <div className="bg-white rounded-xl p-6">
-                <h2 className="text-lg font-semibold text-[#212529] mb-4">
-                  Shipping Method
+            {step === 2 && (
+              <div>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
+                  Payment Method
                 </h2>
-                <div className="space-y-3">
-                  {shippingMethods.map((method) => (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
+                  {['Credit Card', 'PayPal', 'Apple Pay'].map((method) => (
                     <label
-                      key={method.value}
-                      className={`flex items-center justify-between p-4 rounded-lg border-2 cursor-pointer transition-colors ${
-                        shippingMethod === method.value
-                          ? 'border-[#1B5E3B] bg-[#E8F5E9]'
-                          : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                      key={method}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        padding: '16px',
+                        border: '1px solid #E9ECEF',
+                        borderRadius: '10px',
+                        cursor: 'pointer',
+                      }}
                     >
-                      <div className="flex items-center gap-3">
-                        <input
-                          type="radio"
-                          name="shippingMethod"
-                          value={method.value}
-                          checked={shippingMethod === method.value}
-                          onChange={(e) => setShippingMethod(e.target.value)}
-                          className="w-4 h-4 text-[#1B5E3B]"
-                        />
-                        <span className="font-medium">{method.label}</span>
-                      </div>
-                      <span className="font-semibold">
-                        {method.price === 0 ||
-                        (method.value === 'standard' && subtotal >= 50)
-                          ? 'FREE'
-                          : formatPrice(method.price)}
-                      </span>
+                      <input type="radio" name="payment" defaultChecked={method === 'Credit Card'} />
+                      <span style={{ fontWeight: 500 }}>{method}</span>
                     </label>
                   ))}
                 </div>
-              </div>
 
-              {/* Payment */}
-              <div className="bg-white rounded-xl p-6">
-                <h2 className="text-lg font-semibold text-[#212529] mb-4">
-                  Payment
-                </h2>
-                <div className="grid gap-4">
-                  <Input
-                    label="Card Number"
-                    name="cardNumber"
-                    value={formData.cardNumber}
-                    onChange={handleChange}
-                    placeholder="1234 5678 9012 3456"
-                    required
-                    fullWidth
-                    rightIcon={<CreditCard className="w-5 h-5" />}
-                  />
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input
-                      label="Expiry Date"
-                      name="expiry"
-                      value={formData.expiry}
-                      onChange={handleChange}
-                      placeholder="MM/YY"
-                      required
-                      fullWidth
-                    />
-                    <Input
-                      label="CVV"
-                      name="cvv"
-                      value={formData.cvv}
-                      onChange={handleChange}
-                      placeholder="123"
-                      required
-                      fullWidth
-                    />
+                <div style={{ marginBottom: '20px' }}>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Card Number</label>
+                  <div style={{ position: 'relative' }}>
+                    <input type="text" placeholder="1234 5678 9012 3456" style={{ width: '100%', padding: '12px 16px', paddingRight: '48px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <CreditCard style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#6C757D' }} />
                   </div>
-                  <Input
-                    label="Name on Card"
-                    name="nameOnCard"
-                    value={formData.nameOnCard}
-                    onChange={handleChange}
-                    required
-                    fullWidth
-                  />
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Expiry Date</label>
+                    <input type="text" placeholder="MM/YY" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>CVV</label>
+                    <input type="text" placeholder="123" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <button onClick={() => setStep(1)} style={{ flex: 1, padding: '14px', border: '1px solid #E9ECEF', borderRadius: '10px', background: 'white', cursor: 'pointer', fontWeight: 500 }}>
+                    Back
+                  </button>
+                  <button onClick={() => setStep(3)} className="btn btn-primary" style={{ flex: 2 }}>
+                    Review Order
+                  </button>
                 </div>
               </div>
-            </div>
+            )}
 
-            {/* Order Summary */}
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl p-6 sticky top-4">
-                <h2 className="text-lg font-semibold text-[#212529] mb-4">
-                  Order Summary
+            {step === 3 && (
+              <div>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
+                  Review Your Order
                 </h2>
-
-                {/* Items */}
-                <div className="space-y-4 max-h-64 overflow-y-auto">
-                  {items.map((item) => (
-                    <div key={item.id} className="flex gap-3">
-                      <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
-                        <Image
-                          src={item.product.images[0]?.url || '/placeholder.jpg'}
-                          alt={item.product.name}
-                          fill
-                          className="object-cover"
-                        />
-                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#1B5E3B] text-white text-xs rounded-full flex items-center justify-center">
-                          {item.quantity}
-                        </span>
-                      </div>
-                      <div className="flex-grow min-w-0">
-                        <p className="font-medium text-sm text-[#212529] line-clamp-1">
-                          {item.product.name}
-                        </p>
-                        {item.variant && (
-                          <p className="text-xs text-[#6C757D]">
-                            {Object.values(item.variant.options).join(' / ')}
-                          </p>
-                        )}
-                      </div>
-                      <p className="font-medium text-sm">
-                        {formatPrice(item.price * item.quantity)}
-                      </p>
+                <div style={{ background: '#F8F9FA', borderRadius: '12px', padding: '20px', marginBottom: '24px' }}>
+                  <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid #E9ECEF' }}>
+                    <div style={{ fontWeight: 600, marginBottom: '8px' }}>Shipping Address</div>
+                    <div style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.5 }}>
+                      John Doe<br />
+                      123 Main Street<br />
+                      New York, NY 10001
                     </div>
-                  ))}
-                </div>
-
-                <hr className="my-4" />
-
-                {/* Totals */}
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-[#6C757D]">Subtotal</span>
-                    <span>{formatPrice(subtotal)}</span>
                   </div>
-                  {discount > 0 && (
-                    <div className="flex justify-between text-[#1B5E3B]">
-                      <span>Discount ({discount}%)</span>
-                      <span>-{formatPrice(discountAmount)}</span>
+                  <div>
+                    <div style={{ fontWeight: 600, marginBottom: '8px' }}>Payment Method</div>
+                    <div style={{ color: '#6C757D', fontSize: '14px' }}>
+                      Credit Card ending in 3456
                     </div>
-                  )}
-                  <div className="flex justify-between">
-                    <span className="text-[#6C757D]">Shipping</span>
-                    <span>{shipping === 0 ? 'FREE' : formatPrice(shipping)}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-[#6C757D]">Tax</span>
-                    <span>{formatPrice(tax)}</span>
                   </div>
                 </div>
-
-                <hr className="my-4" />
-
-                <div className="flex justify-between text-lg font-semibold mb-6">
-                  <span>Total</span>
-                  <span className="text-[#1B5E3B]">{formatPrice(total)}</span>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <button onClick={() => setStep(2)} style={{ flex: 1, padding: '14px', border: '1px solid #E9ECEF', borderRadius: '10px', background: 'white', cursor: 'pointer', fontWeight: 500 }}>
+                    Back
+                  </button>
+                  <button className="btn btn-primary" style={{ flex: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <Lock style={{ width: '16px', height: '16px' }} />
+                    Place Order
+                  </button>
                 </div>
+              </div>
+            )}
+          </div>
 
-                <Button
-                  type="submit"
-                  size="lg"
-                  fullWidth
-                  isLoading={isProcessing}
-                >
-                  {isProcessing ? 'Processing...' : `Pay ${formatPrice(total)}`}
-                </Button>
+          {/* Order Summary */}
+          <div>
+            <div style={{ background: '#F8F9FA', borderRadius: '16px', padding: '24px', position: 'sticky', top: '100px' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '20px' }}>Order Summary ({getItemCount()} items)</h3>
 
-                <p className="text-xs text-center text-[#6C757D] mt-4">
-                  By placing your order, you agree to our{' '}
-                  <Link href="/terms" className="underline">
-                    Terms
-                  </Link>{' '}
-                  and{' '}
-                  <Link href="/privacy" className="underline">
-                    Privacy Policy
-                  </Link>
-                </p>
+              <div style={{ maxHeight: '240px', overflowY: 'auto', marginBottom: '20px' }}>
+                {items.map((item) => (
+                  <div key={item.product.id} style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
+                    <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', position: 'relative', background: 'white' }}>
+                      <Image src={item.product.images[0]?.url || '/placeholder.jpg'} alt={item.product.name} fill style={{ objectFit: 'cover' }} />
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: '14px', fontWeight: 500, marginBottom: '4px' }}>{item.product.name}</div>
+                      <div style={{ fontSize: '13px', color: '#6C757D' }}>Qty: {item.quantity}</div>
+                    </div>
+                    <div style={{ fontWeight: 500 }}>{formatPrice(item.product.price * item.quantity)}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                  <span style={{ color: '#6C757D' }}>Subtotal</span>
+                  <span>{formatPrice(subtotal)}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                  <span style={{ color: '#6C757D' }}>Shipping</span>
+                  <span style={{ color: shipping === 0 ? '#28A745' : '#212529' }}>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                  <span style={{ color: '#6C757D' }}>Tax</span>
+                  <span>{formatPrice(tax)}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '12px', borderTop: '1px solid #E9ECEF' }}>
+                  <span style={{ fontWeight: 600 }}>Total</span>
+                  <span style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B' }}>{formatPrice(total)}</span>
+                </div>
+              </div>
+
+              {/* Trust Badges */}
+              <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #E9ECEF' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6C757D', marginBottom: '8px' }}>
+                  <ShieldCheck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />
+                  Secure checkout
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6C757D' }}>
+                  <Truck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />
+                  Free shipping on orders over $50
+                </div>
               </div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
