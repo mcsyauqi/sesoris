@@ -21,31 +21,68 @@ export function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="section">
+    <section style={{ padding: '80px 0' }}>
       <div className="container">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-3">
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h2 style={{
+            fontSize: 'clamp(24px, 4vw, 36px)',
+            fontWeight: 700,
+            color: '#212529',
+            marginBottom: '12px'
+          }}>
             What Our Customers Say
           </h2>
-          <p className="text-[#6C757D] max-w-md mx-auto">
+          <p style={{ color: '#6C757D', maxWidth: '400px', margin: '0 auto' }}>
             Read reviews from our happy customers
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl relative">
-            <Quote className="absolute top-6 left-6 w-10 h-10 text-[#E8F5E9]" />
+        <div style={{ maxWidth: '768px', margin: '0 auto' }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '16px',
+            padding: '48px',
+            boxShadow: '0 16px 32px rgba(0,0,0,0.1)',
+            position: 'relative'
+          }}>
+            <Quote style={{
+              position: 'absolute',
+              top: '24px',
+              left: '24px',
+              width: '40px',
+              height: '40px',
+              color: '#E8F5E9'
+            }} />
 
-            <div className="text-center">
-              <p className="text-lg md:text-xl text-[#343A40] mb-6 italic relative z-10">
-                "{currentTestimonial.content}"
+            <div style={{ textAlign: 'center' }}>
+              <p style={{
+                fontSize: '18px',
+                color: '#343A40',
+                marginBottom: '24px',
+                fontStyle: 'italic',
+                position: 'relative',
+                zIndex: 10,
+                lineHeight: 1.6
+              }}>
+                &ldquo;{currentTestimonial.content}&rdquo;
               </p>
 
               <Rating value={currentTestimonial.rating} className="justify-center mb-4" />
 
-              <div className="flex items-center justify-center gap-3">
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '12px'
+              }}>
                 {currentTestimonial.avatar && (
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                  <div style={{
+                    position: 'relative',
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '50%',
+                    overflow: 'hidden'
+                  }}>
                     <Image
                       src={currentTestimonial.avatar}
                       alt={currentTestimonial.name}
@@ -54,13 +91,19 @@ export function TestimonialsSection() {
                     />
                   </div>
                 )}
-                <div className="text-left">
-                  <p className="font-semibold text-[#212529]">
+                <div style={{ textAlign: 'left' }}>
+                  <p style={{ fontWeight: 600, color: '#212529' }}>
                     {currentTestimonial.name}
                   </p>
                   {currentTestimonial.verified && (
-                    <p className="text-sm text-[#28A745] flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3" />
+                    <p style={{
+                      fontSize: '14px',
+                      color: '#28A745',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}>
+                      <CheckCircle style={{ width: '12px', height: '12px' }} />
                       Verified Buyer
                     </p>
                   )}
@@ -69,26 +112,40 @@ export function TestimonialsSection() {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between mt-8">
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginTop: '32px'
+            }}>
               <button
                 onClick={prevTestimonial}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                style={{
+                  padding: '8px',
+                  background: 'transparent',
+                  border: 'none',
+                  borderRadius: '50%',
+                  cursor: 'pointer'
+                }}
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="w-6 h-6 text-[#343A40]" />
+                <ChevronLeft style={{ width: '24px', height: '24px', color: '#343A40' }} />
               </button>
 
-              <div className="flex gap-2">
+              <div style={{ display: 'flex', gap: '8px' }}>
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={cn(
-                      'w-2 h-2 rounded-full transition-all',
-                      index === currentIndex
-                        ? 'bg-[#1B5E3B] w-6'
-                        : 'bg-gray-300 hover:bg-gray-400'
-                    )}
+                    style={{
+                      width: index === currentIndex ? '24px' : '8px',
+                      height: '8px',
+                      borderRadius: '9999px',
+                      background: index === currentIndex ? '#1B5E3B' : '#E9ECEF',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease'
+                    }}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}
@@ -96,10 +153,16 @@ export function TestimonialsSection() {
 
               <button
                 onClick={nextTestimonial}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                style={{
+                  padding: '8px',
+                  background: 'transparent',
+                  border: 'none',
+                  borderRadius: '50%',
+                  cursor: 'pointer'
+                }}
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="w-6 h-6 text-[#343A40]" />
+                <ChevronRight style={{ width: '24px', height: '24px', color: '#343A40' }} />
               </button>
             </div>
           </div>

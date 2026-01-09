@@ -1,39 +1,67 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
 import { categories } from '@/data/products';
 
 export function CategorySection() {
   return (
-    <section className="section">
+    <section style={{ padding: '80px 0' }}>
       <div className="container">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-3">
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h2 style={{
+            fontSize: 'clamp(24px, 4vw, 36px)',
+            fontWeight: 700,
+            color: '#212529',
+            marginBottom: '12px'
+          }}>
             Shop by Category
           </h2>
-          <p className="text-[#6C757D] max-w-md mx-auto">
+          <p style={{ color: '#6C757D', maxWidth: '400px', margin: '0 auto' }}>
             Find the perfect product for every need
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gap: '24px'
+        }}>
           {categories.map((category) => (
             <Link
               key={category.id}
               href={`/category/${category.slug}`}
-              className="group"
+              style={{ display: 'block', textDecoration: 'none' }}
             >
-              <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
+              <div style={{
+                position: 'relative',
+                aspectRatio: '1',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                background: '#F1F3F5'
+              }}>
                 <Image
                   src={category.image || '/placeholder.jpg'}
                   alt={category.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover"
+                  style={{ transition: 'transform 0.5s ease' }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                  <h3 className="font-semibold text-lg mb-0.5">{category.name}</h3>
-                  <p className="text-sm text-white/70">
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2), transparent)'
+                }} />
+                <div style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  padding: '16px',
+                  color: 'white'
+                }}>
+                  <h3 style={{ fontWeight: 600, fontSize: '18px', marginBottom: '2px' }}>
+                    {category.name}
+                  </h3>
+                  <p style={{ fontSize: '14px', opacity: 0.7 }}>
                     {category.productCount} items
                   </p>
                 </div>

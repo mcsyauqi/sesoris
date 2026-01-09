@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Send, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/toast';
 
 export function NewsletterSection() {
@@ -22,47 +21,92 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="py-16 bg-[#1B5E3B] relative overflow-hidden">
+    <section style={{ padding: '64px 0', background: '#1B5E3B', position: 'relative', overflow: 'hidden' }}>
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
+      <div style={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
+        <div style={{
+          position: 'absolute',
+          inset: 0,
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
       </div>
 
-      <div className="container relative z-10">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
-            <Gift className="w-8 h-8 text-white" />
+      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+        <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '64px',
+            height: '64px',
+            background: 'rgba(255,255,255,0.1)',
+            borderRadius: '50%',
+            marginBottom: '24px'
+          }}>
+            <Gift style={{ width: '32px', height: '32px', color: 'white' }} />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 style={{
+            fontSize: 'clamp(24px, 4vw, 36px)',
+            fontWeight: 700,
+            color: 'white',
+            marginBottom: '16px'
+          }}>
             Subscribe to Our Newsletter
           </h2>
-          <p className="text-white/80 text-lg mb-8">
+          <p style={{
+            color: 'rgba(255,255,255,0.8)',
+            fontSize: '18px',
+            marginBottom: '32px'
+          }}>
             Get special offers, new product updates, and exclusive deals directly to your inbox.
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <Input
+          <form onSubmit={handleSubmit} style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '12px',
+            maxWidth: '480px',
+            margin: '0 auto',
+            flexWrap: 'wrap',
+            justifyContent: 'center'
+          }}>
+            <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
-              className="flex-grow bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-white/30"
-              fullWidth
+              style={{
+                flex: '1 1 200px',
+                minWidth: '200px',
+                padding: '12px 16px',
+                borderRadius: '8px',
+                border: '1px solid rgba(255,255,255,0.2)',
+                background: 'rgba(255,255,255,0.1)',
+                color: 'white',
+                fontSize: '16px',
+                outline: 'none'
+              }}
             />
             <Button
               type="submit"
               isLoading={isLoading}
-              className="bg-white text-[#1B5E3B] hover:bg-white/90 whitespace-nowrap"
+              style={{
+                background: 'white',
+                color: '#1B5E3B',
+                whiteSpace: 'nowrap'
+              }}
             >
-              <Send className="w-4 h-4 mr-2" />
+              <Send style={{ width: '16px', height: '16px', marginRight: '8px' }} />
               Subscribe
             </Button>
           </form>
 
-          <p className="text-sm text-white/60 mt-4">
+          <p style={{
+            fontSize: '14px',
+            color: 'rgba(255,255,255,0.6)',
+            marginTop: '16px'
+          }}>
             No spam, unsubscribe anytime. We respect your privacy.
           </p>
         </div>

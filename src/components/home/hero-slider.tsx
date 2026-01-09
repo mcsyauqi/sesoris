@@ -29,12 +29,16 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-[#E8F5E9] to-white"
+      className="relative overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #E8F5E9 0%, #ffffff 100%)' }}
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
       <div className="container">
-        <div className="relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center">
+        <div
+          className="relative flex items-center"
+          style={{ minHeight: '500px' }}
+        >
           {heroSlides.map((slide, index) => (
             <div
               key={slide.id}
@@ -47,21 +51,54 @@ export function HeroSlider() {
                   : 'opacity-0 translate-x-full z-0'
               )}
             >
-              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full py-12">
+              <div
+                className="w-full py-12"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gap: '48px',
+                  alignItems: 'center'
+                }}
+              >
                 {/* Content */}
-                <div className="text-center lg:text-left">
-                  <span className="inline-block px-4 py-1.5 bg-[#1B5E3B]/10 text-[#1B5E3B] text-sm font-medium rounded-full mb-4">
+                <div style={{ textAlign: 'left' }}>
+                  <span
+                    className="inline-block mb-4"
+                    style={{
+                      padding: '6px 16px',
+                      background: 'rgba(27, 94, 59, 0.1)',
+                      color: '#1B5E3B',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      borderRadius: '9999px'
+                    }}
+                  >
                     {slide.subtitle}
                   </span>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#212529] mb-4 leading-tight">
+                  <h1
+                    style={{
+                      fontSize: 'clamp(32px, 5vw, 56px)',
+                      fontWeight: 700,
+                      color: '#212529',
+                      marginBottom: '16px',
+                      lineHeight: 1.2
+                    }}
+                  >
                     {slide.title}
                   </h1>
                   {slide.description && (
-                    <p className="text-lg text-[#6C757D] mb-8 max-w-md mx-auto lg:mx-0">
+                    <p
+                      style={{
+                        fontSize: '18px',
+                        color: '#6C757D',
+                        marginBottom: '32px',
+                        maxWidth: '400px'
+                      }}
+                    >
                       {slide.description}
                     </p>
                   )}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                     <Button asChild size="lg">
                       <Link href={slide.buttonLink}>{slide.buttonText}</Link>
                     </Button>
@@ -76,7 +113,7 @@ export function HeroSlider() {
                 </div>
 
                 {/* Image */}
-                <div className="relative h-[300px] md:h-[400px] lg:h-[500px] hidden md:block">
+                <div style={{ position: 'relative', height: '400px' }}>
                   <Image
                     src={slide.image}
                     alt={slide.title}
@@ -95,28 +132,31 @@ export function HeroSlider() {
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/80 hover:bg-white rounded-full shadow-lg transition-all hover:scale-110"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="w-6 h-6 text-[#343A40]" />
+            <ChevronLeft className="w-6 h-6" style={{ color: '#343A40' }} />
           </button>
           <button
             onClick={nextSlide}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/80 hover:bg-white rounded-full shadow-lg transition-all hover:scale-110"
             aria-label="Next slide"
           >
-            <ChevronRight className="w-6 h-6 text-[#343A40]" />
+            <ChevronRight className="w-6 h-6" style={{ color: '#343A40' }} />
           </button>
 
           {/* Dots */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20" style={{ display: 'flex', gap: '8px' }}>
             {heroSlides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={cn(
-                  'w-2.5 h-2.5 rounded-full transition-all',
-                  index === currentSlide
-                    ? 'bg-[#1B5E3B] w-8'
-                    : 'bg-[#1B5E3B]/30 hover:bg-[#1B5E3B]/50'
-                )}
+                style={{
+                  width: index === currentSlide ? '32px' : '10px',
+                  height: '10px',
+                  borderRadius: '9999px',
+                  background: index === currentSlide ? '#1B5E3B' : 'rgba(27, 94, 59, 0.3)',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

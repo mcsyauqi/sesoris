@@ -15,10 +15,8 @@ import {
   Mail,
   Leaf,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
-import { useUIStore } from '@/stores/ui-store';
 import { categories } from '@/data/products';
 import { SearchModal } from '@/components/search/search-modal';
 import { CartSidebar } from '@/components/cart/cart-sidebar';
@@ -72,84 +70,141 @@ export function Header() {
   return (
     <>
       <header
-        className={cn(
-          'sticky top-0 z-40 bg-white transition-all duration-300',
-          isScrolled ? 'shadow-md py-3' : 'py-4'
-        )}
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 40,
+          background: 'white',
+          transition: 'all 0.3s ease',
+          boxShadow: isScrolled ? '0 4px 8px rgba(0,0,0,0.08)' : 'none',
+          padding: isScrolled ? '12px 0' : '16px 0'
+        }}
       >
         <div className="container">
-          <div className="flex items-center justify-between gap-4">
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '16px'
+          }}>
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden p-2 -ml-2 hover:bg-gray-100 rounded-lg transition-colors"
+              style={{
+                padding: '8px',
+                marginLeft: '-8px',
+                borderRadius: '8px',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'none'
+              }}
+              className="lg-hidden"
             >
-              <Menu className="w-6 h-6" />
+              <Menu style={{ width: '24px', height: '24px' }} />
             </button>
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="relative">
-                <Leaf className="w-8 h-8 text-[#1B5E3B]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-[#1B5E3B] leading-tight">
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+              <Leaf style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B', lineHeight: 1.2 }}>
                   Sesoris
                 </span>
-                <span className="text-[10px] text-[#6C757D] leading-none hidden sm:block">
+                <span style={{ fontSize: '10px', color: '#6C757D', lineHeight: 1 }}>
                   Do It With Ease
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
               {navigation.map((item) => (
                 <div
                   key={item.name}
-                  className="relative"
+                  style={{ position: 'relative' }}
                   onMouseEnter={() => setHoveredNav(item.name)}
                   onMouseLeave={() => setHoveredNav(null)}
                 >
                   <Link
                     href={item.href}
-                    className={cn(
-                      'flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors',
-                      pathname === item.href
-                        ? 'text-[#1B5E3B] bg-[#E8F5E9]'
-                        : 'text-[#343A40] hover:text-[#1B5E3B] hover:bg-[#E8F5E9]'
-                    )}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '8px 16px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      borderRadius: '8px',
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      color: pathname === item.href ? '#1B5E3B' : '#343A40',
+                      background: pathname === item.href ? '#E8F5E9' : 'transparent'
+                    }}
                   >
                     {item.name}
                     {item.children && (
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown style={{ width: '16px', height: '16px' }} />
                     )}
                   </Link>
 
                   {/* Dropdown Menu */}
                   {item.children && hoveredNav === item.name && (
-                    <div className="absolute top-full left-0 pt-2">
-                      <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[200px] animate-fade-in">
+                    <div style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: 0,
+                      paddingTop: '8px'
+                    }}>
+                      <div style={{
+                        background: 'white',
+                        borderRadius: '8px',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+                        border: '1px solid #E9ECEF',
+                        padding: '8px 0',
+                        minWidth: '200px'
+                      }}>
                         {item.name === 'Shop' && (
                           <>
                             {item.children.map((child) => (
                               <Link
                                 key={child.name}
                                 href={child.href}
-                                className="block px-4 py-2 text-sm text-[#343A40] hover:bg-[#E8F5E9] hover:text-[#1B5E3B] transition-colors"
+                                style={{
+                                  display: 'block',
+                                  padding: '8px 16px',
+                                  fontSize: '14px',
+                                  color: '#343A40',
+                                  textDecoration: 'none'
+                                }}
                               >
                                 {child.name}
                               </Link>
                             ))}
-                            <div className="border-t border-gray-100 my-2" />
-                            <div className="px-4 py-2 text-xs font-semibold text-[#6C757D] uppercase">
+                            <div style={{
+                              borderTop: '1px solid #E9ECEF',
+                              margin: '8px 0'
+                            }} />
+                            <div style={{
+                              padding: '8px 16px',
+                              fontSize: '11px',
+                              fontWeight: 600,
+                              color: '#6C757D',
+                              textTransform: 'uppercase'
+                            }}>
                               Categories
                             </div>
                             {categories.map((cat) => (
                               <Link
                                 key={cat.id}
                                 href={`/category/${cat.slug}`}
-                                className="block px-4 py-2 text-sm text-[#343A40] hover:bg-[#E8F5E9] hover:text-[#1B5E3B] transition-colors"
+                                style={{
+                                  display: 'block',
+                                  padding: '8px 16px',
+                                  fontSize: '14px',
+                                  color: '#343A40',
+                                  textDecoration: 'none'
+                                }}
                               >
                                 {cat.name}
                               </Link>
@@ -164,23 +219,49 @@ export function Header() {
             </nav>
 
             {/* Actions */}
-            <div className="flex items-center gap-1">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2.5 hover:bg-gray-100 rounded-lg transition-colors"
+                style={{
+                  padding: '10px',
+                  borderRadius: '8px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
                 aria-label="Search"
               >
-                <Search className="w-5 h-5 text-[#343A40]" />
+                <Search style={{ width: '20px', height: '20px', color: '#343A40' }} />
               </button>
 
               <Link
                 href="/wishlist"
-                className="relative p-2.5 hover:bg-gray-100 rounded-lg transition-colors hidden sm:flex"
+                style={{
+                  position: 'relative',
+                  padding: '10px',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  textDecoration: 'none'
+                }}
                 aria-label="Wishlist"
               >
-                <Heart className="w-5 h-5 text-[#343A40]" />
+                <Heart style={{ width: '20px', height: '20px', color: '#343A40' }} />
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-[#FF6B35] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  <span style={{
+                    position: 'absolute',
+                    top: '2px',
+                    right: '2px',
+                    width: '18px',
+                    height: '18px',
+                    background: '#FF6B35',
+                    color: 'white',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
                     {wishlistCount}
                   </span>
                 )}
@@ -188,20 +269,46 @@ export function Header() {
 
               <Link
                 href="/account"
-                className="p-2.5 hover:bg-gray-100 rounded-lg transition-colors hidden sm:flex"
+                style={{
+                  padding: '10px',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  textDecoration: 'none'
+                }}
                 aria-label="Account"
               >
-                <User className="w-5 h-5 text-[#343A40]" />
+                <User style={{ width: '20px', height: '20px', color: '#343A40' }} />
               </Link>
 
               <button
                 onClick={openCart}
-                className="relative p-2.5 hover:bg-gray-100 rounded-lg transition-colors"
+                style={{
+                  position: 'relative',
+                  padding: '10px',
+                  borderRadius: '8px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
                 aria-label="Cart"
               >
-                <ShoppingCart className="w-5 h-5 text-[#343A40]" />
+                <ShoppingCart style={{ width: '20px', height: '20px', color: '#343A40' }} />
                 {cartItemCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-[#1B5E3B] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  <span style={{
+                    position: 'absolute',
+                    top: '2px',
+                    right: '2px',
+                    width: '18px',
+                    height: '18px',
+                    background: '#1B5E3B',
+                    color: 'white',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
                     {cartItemCount}
                   </span>
                 )}
@@ -213,52 +320,88 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div style={{ position: 'fixed', inset: 0, zIndex: 50 }}>
           <div
-            className="absolute inset-0 bg-black/50"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'rgba(0,0,0,0.5)'
+            }}
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="absolute left-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-xl animate-slide-right">
-            <div className="flex items-center justify-between p-4 border-b">
+          <div style={{
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: '100%',
+            maxWidth: '384px',
+            background: 'white',
+            boxShadow: '8px 0 32px rgba(0,0,0,0.2)'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '16px',
+              borderBottom: '1px solid #E9ECEF'
+            }}>
               <Link
                 href="/"
-                className="flex items-center gap-2"
+                style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Leaf className="w-7 h-7 text-[#1B5E3B]" />
-                <span className="text-lg font-bold text-[#1B5E3B]">Sesoris</span>
+                <Leaf style={{ width: '28px', height: '28px', color: '#1B5E3B' }} />
+                <span style={{ fontSize: '18px', fontWeight: 700, color: '#1B5E3B' }}>Sesoris</span>
               </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 hover:bg-gray-100 rounded-lg"
+                style={{
+                  padding: '8px',
+                  borderRadius: '8px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
               >
-                <X className="w-6 h-6" />
+                <X style={{ width: '24px', height: '24px' }} />
               </button>
             </div>
 
-            <nav className="p-4 space-y-1 overflow-y-auto max-h-[calc(100vh-200px)]">
+            <nav style={{ padding: '16px', overflowY: 'auto', maxHeight: 'calc(100vh - 200px)' }}>
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      'flex items-center justify-between px-4 py-3 rounded-lg transition-colors',
-                      pathname === item.href
-                        ? 'bg-[#E8F5E9] text-[#1B5E3B]'
-                        : 'text-[#343A40] hover:bg-gray-100'
-                    )}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '12px 16px',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      fontWeight: 500,
+                      color: pathname === item.href ? '#1B5E3B' : '#343A40',
+                      background: pathname === item.href ? '#E8F5E9' : 'transparent'
+                    }}
                   >
-                    <span className="font-medium">{item.name}</span>
+                    {item.name}
                   </Link>
                   {item.children && (
-                    <div className="ml-4 mt-1 space-y-1">
+                    <div style={{ marginLeft: '16px', marginTop: '4px' }}>
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block px-4 py-2 text-sm text-[#6C757D] hover:text-[#1B5E3B] transition-colors"
+                          style={{
+                            display: 'block',
+                            padding: '8px 16px',
+                            fontSize: '14px',
+                            color: '#6C757D',
+                            textDecoration: 'none'
+                          }}
                         >
                           {child.name}
                         </Link>
@@ -269,32 +412,78 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="absolute bottom-0 left-0 right-0 p-4 border-t bg-gray-50">
-              <div className="flex gap-2 mb-4">
+            <div style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              padding: '16px',
+              borderTop: '1px solid #E9ECEF',
+              background: '#F8F9FA'
+            }}>
+              <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
                 <Link
                   href="/account"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-[#1B5E3B] text-white rounded-lg hover:bg-[#2E7D4A] transition-colors"
+                  style={{
+                    flex: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    padding: '10px',
+                    background: '#1B5E3B',
+                    color: 'white',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontWeight: 500
+                  }}
                 >
-                  <User className="w-4 h-4" />
-                  <span className="font-medium">Account</span>
+                  <User style={{ width: '16px', height: '16px' }} />
+                  Account
                 </Link>
                 <Link
                   href="/wishlist"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex-1 flex items-center justify-center gap-2 py-2.5 border border-[#1B5E3B] text-[#1B5E3B] rounded-lg hover:bg-[#E8F5E9] transition-colors"
+                  style={{
+                    flex: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    padding: '10px',
+                    border: '1px solid #1B5E3B',
+                    color: '#1B5E3B',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontWeight: 500,
+                    background: 'white'
+                  }}
                 >
-                  <Heart className="w-4 h-4" />
-                  <span className="font-medium">Wishlist ({wishlistCount})</span>
+                  <Heart style={{ width: '16px', height: '16px' }} />
+                  Wishlist ({wishlistCount})
                 </Link>
               </div>
-              <div className="space-y-2 text-sm text-[#6C757D]">
-                <a href="mailto:hello@sesoris.com" className="flex items-center gap-2 hover:text-[#1B5E3B]">
-                  <Mail className="w-4 h-4" />
+              <div style={{ fontSize: '14px', color: '#6C757D' }}>
+                <a href="mailto:hello@sesoris.com" style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  marginBottom: '8px',
+                  color: 'inherit',
+                  textDecoration: 'none'
+                }}>
+                  <Mail style={{ width: '16px', height: '16px' }} />
                   hello@sesoris.com
                 </a>
-                <a href="tel:+12345678900" className="flex items-center gap-2 hover:text-[#1B5E3B]">
-                  <Phone className="w-4 h-4" />
+                <a href="tel:+12345678900" style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: 'inherit',
+                  textDecoration: 'none'
+                }}>
+                  <Phone style={{ width: '16px', height: '16px' }} />
                   +1 234 567 8900
                 </a>
               </div>

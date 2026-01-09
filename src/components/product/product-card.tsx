@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, ShoppingCart, Eye } from 'lucide-react';
+import { Heart, ShoppingCart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { formatPrice, calculateDiscount } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
@@ -52,13 +52,20 @@ export function ProductCard({ product, className }: ProductCardProps) {
 
   return (
     <div
-      className={cn('group relative', className)}
+      style={{ position: 'relative' }}
+      className={className}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Container */}
-      <Link href={`/product/${product.slug}`} className="block relative">
-        <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-100">
+      <Link href={`/product/${product.slug}`} style={{ display: 'block', position: 'relative' }}>
+        <div style={{
+          position: 'relative',
+          aspectRatio: '1',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          background: '#F1F3F5'
+        }}>
           {!imageLoaded && (
             <div className="absolute inset-0 skeleton" />
           )}
@@ -66,59 +73,83 @@ export function ProductCard({ product, className }: ProductCardProps) {
             src={product.images[0]?.url || '/placeholder.jpg'}
             alt={product.name}
             fill
-            className={cn(
-              'object-cover transition-transform duration-500',
-              isHovered && 'scale-105',
-              imageLoaded ? 'opacity-100' : 'opacity-0'
-            )}
+            style={{
+              objectFit: 'cover',
+              transition: 'transform 0.5s ease',
+              transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+              opacity: imageLoaded ? 1 : 0
+            }}
             onLoad={() => setImageLoaded(true)}
           />
 
           {/* Badges */}
-          <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+          <div style={{
+            position: 'absolute',
+            top: '12px',
+            left: '12px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '6px'
+          }}>
             {isOnSale && <Badge variant="sale">-{discount}%</Badge>}
             {product.isNew && <Badge variant="new">New</Badge>}
             {product.quantity === 0 && <Badge variant="soldout">Sold Out</Badge>}
           </div>
 
           {/* Quick Actions */}
-          <div
-            className={cn(
-              'absolute top-3 right-3 flex flex-col gap-2 transition-all duration-200',
-              isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'
-            )}
-          >
+          <div style={{
+            position: 'absolute',
+            top: '12px',
+            right: '12px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+            transition: 'all 0.2s ease',
+            opacity: isHovered ? 1 : 0,
+            transform: isHovered ? 'translateX(0)' : 'translateX(8px)'
+          }}>
             <button
               onClick={handleToggleWishlist}
-              className={cn(
-                'p-2 rounded-full bg-white shadow-md transition-colors',
-                isWishlisted
-                  ? 'text-red-500 hover:bg-red-50'
-                  : 'text-[#343A40] hover:bg-gray-50'
-              )}
+              style={{
+                padding: '8px',
+                borderRadius: '50%',
+                background: 'white',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                transition: 'all 0.2s ease',
+                border: 'none',
+                cursor: 'pointer',
+                color: isWishlisted ? '#DC3545' : '#343A40'
+              }}
               aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
             >
               <Heart
-                className={cn('w-4 h-4', isWishlisted && 'fill-current')}
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  fill: isWishlisted ? 'currentColor' : 'none'
+                }}
               />
             </button>
           </div>
 
           {/* Add to Cart Button */}
-          <div
-            className={cn(
-              'absolute bottom-3 left-3 right-3 transition-all duration-200',
-              isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-            )}
-          >
+          <div style={{
+            position: 'absolute',
+            bottom: '12px',
+            left: '12px',
+            right: '12px',
+            transition: 'all 0.2s ease',
+            opacity: isHovered ? 1 : 0,
+            transform: isHovered ? 'translateY(0)' : 'translateY(8px)'
+          }}>
             <Button
               onClick={handleAddToCart}
               disabled={product.quantity === 0}
               fullWidth
               size="sm"
-              className="shadow-lg"
+              style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}
             >
-              <ShoppingCart className="w-4 h-4 mr-2" />
+              <ShoppingCart style={{ width: '16px', height: '16px', marginRight: '8px' }} />
               Add to Cart
             </Button>
           </div>
@@ -126,9 +157,17 @@ export function ProductCard({ product, className }: ProductCardProps) {
       </Link>
 
       {/* Product Info */}
-      <div className="mt-3 space-y-1">
+      <div style={{ marginTop: '12px' }}>
         <Link href={`/product/${product.slug}`}>
-          <h3 className="font-medium text-[#212529] group-hover:text-[#1B5E3B] transition-colors line-clamp-2">
+          <h3 style={{
+            fontWeight: 500,
+            color: '#212529',
+            marginBottom: '4px',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden'
+          }}>
             {product.name}
           </h3>
         </Link>
@@ -139,12 +178,12 @@ export function ProductCard({ product, className }: ProductCardProps) {
           size="sm"
         />
 
-        <div className="flex items-center gap-2">
-          <span className="font-semibold text-[#1B5E3B]">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
+          <span style={{ fontWeight: 600, color: '#1B5E3B' }}>
             {formatPrice(product.price)}
           </span>
           {isOnSale && (
-            <span className="text-sm text-[#6C757D] line-through">
+            <span style={{ fontSize: '14px', color: '#6C757D', textDecoration: 'line-through' }}>
               {formatPrice(product.compareAtPrice!)}
             </span>
           )}

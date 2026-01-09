@@ -20,30 +20,48 @@ export function FeaturedProducts() {
   const products = activeTabData ? activeTabData.getData() : [];
 
   return (
-    <section className="section bg-[#F8F9FA]">
+    <section style={{ padding: '80px 0', background: '#F8F9FA' }}>
       <div className="container">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '16px',
+          marginBottom: '40px'
+        }}>
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-2">
+            <h2 style={{
+              fontSize: 'clamp(24px, 4vw, 36px)',
+              fontWeight: 700,
+              color: '#212529',
+              marginBottom: '8px'
+            }}>
               Popular This Week
             </h2>
-            <p className="text-[#6C757D]">
+            <p style={{ color: '#6C757D' }}>
               Discover what everyone is loving right now
             </p>
           </div>
 
           {/* Tabs */}
-          <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={cn(
-                  'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors',
-                  activeTab === tab.id
-                    ? 'bg-[#1B5E3B] text-white'
-                    : 'bg-white text-[#343A40] hover:bg-[#E8F5E9]'
-                )}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '9999px',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  whiteSpace: 'nowrap',
+                  transition: 'all 0.2s ease',
+                  border: 'none',
+                  cursor: 'pointer',
+                  background: activeTab === tab.id ? '#1B5E3B' : 'white',
+                  color: activeTab === tab.id ? 'white' : '#343A40'
+                }}
               >
                 {tab.label}
               </button>
@@ -53,11 +71,11 @@ export function FeaturedProducts() {
 
         <ProductGrid products={products.slice(0, 8)} />
 
-        <div className="text-center mt-10">
+        <div style={{ textAlign: 'center', marginTop: '40px' }}>
           <Button asChild variant="outline" size="lg">
-            <Link href="/shop" className="flex items-center gap-2">
+            <Link href="/shop" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               View All Products
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight style={{ width: '16px', height: '16px' }} />
             </Link>
           </Button>
         </div>

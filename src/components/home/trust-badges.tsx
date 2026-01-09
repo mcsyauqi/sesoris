@@ -1,5 +1,4 @@
 import { Truck, RefreshCw, Shield, Headphones } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 const badges = [
   {
@@ -26,22 +25,46 @@ const badges = [
 
 export function TrustBadges() {
   return (
-    <section className="py-8 bg-[#F8F9FA] border-y border-[#E9ECEF]">
+    <section style={{
+      padding: '32px 0',
+      background: '#F8F9FA',
+      borderTop: '1px solid #E9ECEF',
+      borderBottom: '1px solid #E9ECEF'
+    }}>
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '24px'
+        }}>
           {badges.map((badge) => (
             <div
               key={badge.title}
-              className="flex items-center gap-4 justify-center md:justify-start"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                justifyContent: 'center'
+              }}
             >
-              <div className="p-3 bg-[#E8F5E9] rounded-xl">
-                <badge.icon className="w-6 h-6 text-[#1B5E3B]" />
+              <div style={{
+                padding: '12px',
+                background: '#E8F5E9',
+                borderRadius: '12px'
+              }}>
+                <badge.icon style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
               </div>
               <div>
-                <h3 className="font-semibold text-[#212529] text-sm">
+                <h3 style={{
+                  fontWeight: 600,
+                  color: '#212529',
+                  fontSize: '14px'
+                }}>
                   {badge.title}
                 </h3>
-                <p className="text-xs text-[#6C757D]">{badge.description}</p>
+                <p style={{ fontSize: '12px', color: '#6C757D' }}>
+                  {badge.description}
+                </p>
               </div>
             </div>
           ))}

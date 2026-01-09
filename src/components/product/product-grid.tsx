@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils';
 import { ProductCard } from './product-card';
 import { ProductGridSkeleton } from '@/components/ui/skeleton';
 import type { Product } from '@/types';
@@ -16,31 +15,26 @@ export function ProductGrid({
   columns = 4,
   className,
 }: ProductGridProps) {
-  const gridCols = {
-    2: 'grid-cols-2',
-    3: 'grid-cols-2 md:grid-cols-3',
-    4: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
-  };
-
   if (isLoading) {
     return <ProductGridSkeleton count={8} />;
   }
 
   if (products.length === 0) {
     return (
-      <div className="text-center py-16">
-        <p className="text-[#6C757D]">No products found.</p>
+      <div style={{ textAlign: 'center', padding: '64px 0' }}>
+        <p style={{ color: '#6C757D' }}>No products found.</p>
       </div>
     );
   }
 
   return (
     <div
-      className={cn(
-        'grid gap-4 md:gap-6',
-        gridCols[columns],
-        className
-      )}
+      style={{
+        display: 'grid',
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gap: '24px'
+      }}
+      className={className}
     >
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
