@@ -22,8 +22,10 @@ function isDueToday(card: TrelloCard): boolean {
   const due = new Date(card.due);
   const today = new Date();
   // Due today or overdue (but not more than 7 days overdue)
+  // Use FORCE_DAYS_AHEAD env to expand lookahead for testing
+  const lookahead = parseInt(process.env.FORCE_DAYS_AHEAD || '1', 10);
   const diffDays = (today.getTime() - due.getTime()) / (1000 * 60 * 60 * 24);
-  return diffDays >= -1 && diffDays <= 7;
+  return diffDays >= -lookahead && diffDays <= 7;
 }
 
 function getLabel(card: TrelloCard): string {
