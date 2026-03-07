@@ -1,0 +1,43 @@
+name: Generate Daily Blog Post
+
+on:
+  schedule:
+    # 01:00 UTC = 08:00 WIB
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run generate:blog
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/blog/
+          if git diff --staged --quiet; then
+            echo "No new blog post generated"
+            exit 0
+          fi
+          git commit -m "blog: auto-generate daily article $(date +%Y-%m-%d)"
+          git push

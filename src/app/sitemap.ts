@@ -1,16 +1,7 @@
 import { MetadataRoute } from 'next';
+import { getAllSlugs } from '@/lib/blog';
 
 const baseUrl = 'https://www.sesoris.com';
-
-// Blog post slugs
-const blogSlugs = [
-  'tips-menata-rumah-minimalis-marie-kondo',
-  'cara-merawat-peralatan-dapur-stainless-steel',
-  'inspirasi-dekorasi-kamar-tidur-2026',
-  'sustainable-living-mulai-dari-rumah',
-  'mengorganisir-dapur-kecil-dengan-efektif',
-  'review-koleksi-kontainer-serbaguna-sesoris',
-];
 
 // Category slugs
 const categorySlugs = [
@@ -170,7 +161,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Blog article pages
-  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+  const blogPages: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly',

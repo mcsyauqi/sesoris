@@ -1,74 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
-
-const featuredPost = {
-  id: 1,
-  slug: 'tips-menata-rumah-minimalis-marie-kondo',
-  title: '10 Tips Menata Rumah Minimalis ala Marie Kondo',
-  excerpt: 'Pelajari metode KonMari untuk merapikan rumah Anda dan hanya menyimpan barang yang membawa kebahagiaan.',
-  image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=600&fit=crop',
-  category: 'Tips & Trik',
-  date: '5 Januari 2026',
-  readTime: '8 menit',
-};
-
-const posts = [
-  {
-    id: 2,
-    slug: 'cara-merawat-peralatan-dapur-stainless-steel',
-    title: 'Cara Merawat Peralatan Dapur Stainless Steel',
-    excerpt: 'Panduan lengkap membersihkan dan merawat peralatan dapur stainless steel agar tetap mengkilap.',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
-    category: 'Tutorial',
-    date: '2 Januari 2026',
-    readTime: '5 menit',
-  },
-  {
-    id: 3,
-    slug: 'inspirasi-dekorasi-kamar-tidur-2026',
-    title: 'Inspirasi Dekorasi Kamar Tidur 2026',
-    excerpt: 'Tren dekorasi kamar tidur terbaru yang cozy dan instagramable untuk tahun ini.',
-    image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&h=400&fit=crop',
-    category: 'Inspirasi',
-    date: '28 Desember 2025',
-    readTime: '6 menit',
-  },
-  {
-    id: 4,
-    slug: 'sustainable-living-mulai-dari-rumah',
-    title: 'Sustainable Living: Mulai dari Rumah',
-    excerpt: 'Langkah-langkah sederhana untuk memulai gaya hidup ramah lingkungan dari rumah Anda.',
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop',
-    category: 'Lifestyle',
-    date: '20 Desember 2025',
-    readTime: '7 menit',
-  },
-  {
-    id: 5,
-    slug: 'mengorganisir-dapur-kecil-dengan-efektif',
-    title: 'Mengorganisir Dapur Kecil dengan Efektif',
-    excerpt: 'Solusi cerdas untuk memaksimalkan ruang di dapur mungil Anda.',
-    image: 'https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&h=400&fit=crop',
-    category: 'Tips & Trik',
-    date: '15 Desember 2025',
-    readTime: '5 menit',
-  },
-  {
-    id: 6,
-    slug: 'review-koleksi-kontainer-serbaguna-sesoris',
-    title: 'Review: Koleksi Kontainer Serbaguna Sesoris',
-    excerpt: 'Ulasan lengkap tentang koleksi kontainer terbaru dari Sesoris untuk berbagai kebutuhan.',
-    image: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=400&fit=crop',
-    category: 'Review',
-    date: '10 Desember 2025',
-    readTime: '4 menit',
-  },
-];
+import { getAllPosts } from '@/lib/blog';
 
 const categories = ['Semua', 'Tips & Trik', 'Tutorial', 'Inspirasi', 'Lifestyle', 'Review'];
 
 export default function BlogPage() {
+  const allPosts = getAllPosts();
+  const featuredPost = allPosts[0];
+  const posts = allPosts.slice(1);
+
   return (
     <>
       {/* Breadcrumb */}
@@ -116,68 +57,70 @@ export default function BlogPage() {
         </div>
 
         {/* Featured Post */}
-        <Link href={`/blog/${featuredPost.slug}`} style={{ display: 'block', textDecoration: 'none' }}>
-          <div style={{
-            marginBottom: '64px',
-            borderRadius: '20px',
-            overflow: 'hidden',
-            background: 'white',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
-            transition: 'transform 0.2s, box-shadow 0.2s',
-          }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-              <div style={{ aspectRatio: '4/3', position: 'relative' }}>
-                <Image src={featuredPost.image} alt={featuredPost.title} fill style={{ objectFit: 'cover' }} />
-              </div>
-              <div style={{ padding: '48px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+        {featuredPost && (
+          <Link href={`/blog/${featuredPost.slug}`} style={{ display: 'block', textDecoration: 'none' }}>
+            <div style={{
+              marginBottom: '64px',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              background: 'white',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+            }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+                <div style={{ aspectRatio: '4/3', position: 'relative' }}>
+                  <Image src={featuredPost.image} alt={featuredPost.title} fill style={{ objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '48px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                    <span style={{
+                      background: '#E8F5E9',
+                      color: '#1B5E3B',
+                      padding: '6px 12px',
+                      borderRadius: '6px',
+                      fontSize: '13px',
+                      fontWeight: 500,
+                    }}>
+                      {featuredPost.category}
+                    </span>
+                    <span style={{ fontSize: '13px', color: '#6C757D' }}>Artikel Pilihan</span>
+                  </div>
+                  <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '16px', lineHeight: 1.3 }}>
+                    {featuredPost.title}
+                  </h2>
+                  <p style={{ color: '#6C757D', lineHeight: 1.6, marginBottom: '24px' }}>
+                    {featuredPost.excerpt}
+                  </p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
+                      <Calendar style={{ width: '14px', height: '14px' }} />
+                      {featuredPost.dateFormatted}
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
+                      <Clock style={{ width: '14px', height: '14px' }} />
+                      {featuredPost.readTime} baca
+                    </div>
+                  </div>
                   <span style={{
-                    background: '#E8F5E9',
-                    color: '#1B5E3B',
-                    padding: '6px 12px',
-                    borderRadius: '6px',
-                    fontSize: '13px',
-                    fontWeight: 500,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: '#1B5E3B',
+                    color: 'white',
+                    padding: '14px 28px',
+                    borderRadius: '10px',
+                    fontWeight: 600,
+                    fontSize: '15px',
+                    width: 'fit-content',
                   }}>
-                    {featuredPost.category}
+                    Baca Artikel
+                    <ArrowRight style={{ width: '18px', height: '18px' }} />
                   </span>
-                  <span style={{ fontSize: '13px', color: '#6C757D' }}>Artikel Pilihan</span>
                 </div>
-                <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '16px', lineHeight: 1.3 }}>
-                  {featuredPost.title}
-                </h2>
-                <p style={{ color: '#6C757D', lineHeight: 1.6, marginBottom: '24px' }}>
-                  {featuredPost.excerpt}
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
-                    <Calendar style={{ width: '14px', height: '14px' }} />
-                    {featuredPost.date}
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
-                    <Clock style={{ width: '14px', height: '14px' }} />
-                    {featuredPost.readTime} baca
-                  </div>
-                </div>
-                <span style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#1B5E3B',
-                  color: 'white',
-                  padding: '14px 28px',
-                  borderRadius: '10px',
-                  fontWeight: 600,
-                  fontSize: '15px',
-                  width: 'fit-content',
-                }}>
-                  Baca Artikel
-                  <ArrowRight style={{ width: '18px', height: '18px' }} />
-                </span>
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        )}
 
         {/* Posts Grid */}
         <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '32px' }}>
@@ -185,7 +128,7 @@ export default function BlogPage() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
           {posts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+            <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
               <article style={{
                 background: 'white',
                 borderRadius: '16px',
@@ -210,7 +153,7 @@ export default function BlogPage() {
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <span style={{ fontSize: '12px', color: '#6C757D' }}>{post.date}</span>
+                      <span style={{ fontSize: '12px', color: '#6C757D' }}>{post.dateFormatted}</span>
                       <span style={{ fontSize: '12px', color: '#6C757D' }}>{post.readTime}</span>
                     </div>
                     <span style={{
