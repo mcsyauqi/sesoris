@@ -87,6 +87,16 @@ PANDUAN SEO PENTING:
 - Keyword utama WAJIB ada di: judul, paragraf pertama, minimal 2 heading H2, dan kesimpulan
 - Setiap gambar harus punya alt text yang mendeskripsikan gambar secara spesifik
 - Heading H2 harus mengandung variasi keyword (LSI keywords)
+- Tulis meta description (excerpt) yang mengandung keyword dan CTA, maks 155 karakter
+
+EXTERNAL LINKING (WAJIB minimal 2 external link):
+Sisipkan link ke sumber kredibel/otoritatif secara natural dalam konten:
+- Situs berita/media: kompas.com, detik.com, cnnindonesia.com
+- Marketplace referensi: tokopedia.com, shopee.co.id
+- Sumber edukasi: wikipedia.org, kbbi.kemdikbud.go.id
+- Situs inspirasi: pinterest.com, houzz.com, ideaonline.co.id
+- Sertakan data/statistik dengan sumber yang bisa diverifikasi
+Format: [teks anchor natural](https://url-lengkap)
 
 INTERNAL LINKING (WAJIB minimal 5 internal link):
 Sisipkan internal link secara natural di dalam paragraf menggunakan format [teks](url).

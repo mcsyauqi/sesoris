@@ -330,8 +330,76 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     relatedPosts.push(...more);
   }
 
+  // JSON-LD Structured Data
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image.startsWith('http') ? post.image : `https://www.sesoris.com${post.image}`,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author.name,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Sesoris',
+      url: 'https://www.sesoris.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.sesoris.com/images/logo.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.sesoris.com/blog/${slug}`,
+    },
+    articleSection: post.category,
+    wordCount: post.content.join(' ').split(/\s+/).length,
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://www.sesoris.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.sesoris.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.sesoris.com/blog/${slug}` },
+    ],
+  };
+
+  // Extract FAQ from content if present
+  const faqItems: { question: string; answer: string }[] = [];
+  for (let i = 0; i < post.content.length; i++) {
+    const line = post.content[i];
+    if (line.startsWith('**Q:') || line.startsWith('**Q :')) {
+      const question = line.replace(/^\*\*Q\s*:\s*/, '').replace(/\*\*$/, '').trim();
+      const answer = (i + 1 < post.content.length) ? post.content[i + 1].replace(/\*\*/g, '').trim() : '';
+      if (question && answer && !answer.startsWith('##') && !answer.startsWith('**Q')) {
+        faqItems.push({ question, answer });
+      }
+    }
+  }
+
+  const faqLd = faqItems.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  } : null;
+
   return (
     <>
+      {/* JSON-LD Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
+
       {/* Breadcrumb */}
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
