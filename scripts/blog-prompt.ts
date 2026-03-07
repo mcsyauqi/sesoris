@@ -1,7 +1,6 @@
 // Shared blog article prompt builder for rich content generation
 import fs from 'fs';
 import path from 'path';
-import { imagePool, getRandomImage } from './image-pool';
 
 const blogDir = path.join(process.cwd(), 'content', 'blog');
 
@@ -44,25 +43,23 @@ export function getInternalLinksContext(existing: ExistingPost[]): string {
   return `HALAMAN SITUS:\n${sitePages}\n\nARTIKEL BLOG YANG SUDAH ADA:\n${blogLinks}`;
 }
 
-export function getSectionImages(topic: string): string[] {
-  const images = imagePool[topic] || imagePool['home-organization'];
-  // Return 2-3 random images for section use
-  const shuffled = [...images].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, 3);
-}
-
-export function buildRichContentPrompt(basePrompt: string, imageTopic?: string): string {
+export function buildRichContentPrompt(basePrompt: string): string {
   const existing = getExistingPosts();
   const internalLinks = getInternalLinksContext(existing);
-  const imageTopics = Object.keys(imagePool).join(', ');
-  const sectionImages = imageTopic ? getSectionImages(imageTopic) : [];
 
   const existingTitles = existing
     .slice(-20)
     .map((p) => `- ${p.title} (${p.category})`)
     .join('\n');
 
+  const currentYear = new Date().getFullYear();
+  const currentDate = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
   return `Kamu adalah penulis blog profesional untuk Sesoris, toko e-commerce Indonesia yang menjual produk home organization, peralatan dapur, dan kebutuhan rumah tangga. Tagline: "Hidup Lebih Teratur". Website: https://www.sesoris.com
+
+TANGGAL HARI INI: ${currentDate}
+TAHUN SEKARANG: ${currentYear}
+PENTING: Selalu gunakan tahun ${currentYear} dalam konten. JANGAN gunakan tahun lama seperti 2024 atau 2025.
 
 ${basePrompt}
 
@@ -72,6 +69,8 @@ PANDUAN KONTEN BERKUALITAS:
 - Gunakan data/angka spesifik (contoh: "mengurangi kekacauan 40%", "harga mulai Rp 50.000")
 - Sertakan tips praktis yang actionable
 - Target keyword harus ada di paragraf pertama, minimal 2 H2, dan kesimpulan
+- SELALU tulis tahun ${currentYear}, JANGAN pernah tulis 2024 atau 2025
+- Konteks harga dalam Rupiah (Rp), relevan untuk pasar Indonesia
 
 FORMAT KONTEN (array of strings):
 - "## Heading H2" — heading utama (5-8 per artikel)
@@ -80,8 +79,14 @@ FORMAT KONTEN (array of strings):
 - "• Bullet point item" — untuk list items (tanpa nesting)
 - "1. Numbered item" — untuk ordered list
 - "> Quote text" — untuk blockquote/highlight
-- "![Deskripsi gambar](URL_GAMBAR)" — untuk gambar di dalam artikel
+- "![Alt text SEO deskriptif dalam bahasa Indonesia](PLACEHOLDER_IMAGE)" — placeholder gambar (akan di-generate otomatis)
 - ":::baca-juga" diikuti link-link, ditutup ":::" — untuk box "Baca Juga"
+
+PANDUAN SEO PENTING:
+- Alt text gambar WAJIB deskriptif dan mengandung keyword dalam bahasa Indonesia
+- Keyword utama WAJIB ada di: judul, paragraf pertama, minimal 2 heading H2, dan kesimpulan
+- Setiap gambar harus punya alt text yang mendeskripsikan gambar secara spesifik
+- Heading H2 harus mengandung variasi keyword (LSI keywords)
 
 INTERNAL LINKING (WAJIB minimal 5 internal link):
 Sisipkan internal link secara natural di dalam paragraf menggunakan format [teks](url).
@@ -92,11 +97,6 @@ ${internalLinks}
 ARTIKEL YANG SUDAH ADA (jangan duplikasi topik):
 ${existingTitles || 'Belum ada artikel.'}
 
-${sectionImages.length > 0 ? `GAMBAR UNTUK SECTION (gunakan 2-3 di dalam artikel):
-${sectionImages.map((url, i) => `- Gambar ${i + 1}: ${url}`).join('\n')}` : ''}
-
-TOPIK GAMBAR yang tersedia (pilih satu untuk image_topic): ${imageTopics}
-
 BALAS HANYA dalam format JSON (tanpa markdown code block):
 {
   "title": "Judul Artikel SEO-Friendly",
@@ -104,24 +104,36 @@ BALAS HANYA dalam format JSON (tanpa markdown code block):
   "excerpt": "Meta description 1-2 kalimat, maks 160 karakter",
   "category": "Tips & Trik atau Tutorial atau Inspirasi atau Lifestyle atau Review",
   "readTime": "X menit",
-  "image_topic": "salah satu dari: ${imageTopics}",
+  "image_prompts": [
+    {
+      "filename": "hero",
+      "prompt": "Deskripsi foto untuk AI image generator dalam bahasa Inggris, konteks Indonesia, 16:9",
+      "alt": "Alt text SEO deskriptif dalam bahasa Indonesia"
+    },
+    {
+      "filename": "section-1",
+      "prompt": "Deskripsi foto kedua...",
+      "alt": "Alt text kedua..."
+    }
+  ],
   "content": [
     "Paragraf pembuka yang menarik dengan **keyword utama** dan hook...",
-    "![Deskripsi gambar](URL_GAMBAR)",
-    "## Heading H2 Pertama",
+    "![Alt text SEO Indonesia](PLACEHOLDER_IMAGE_hero)",
+    "## Heading H2 dengan Keyword",
     "Paragraf informatif dengan [internal link](url)...",
     "### Sub-heading H3",
     "• Bullet point 1 dengan **bold**",
     "• Bullet point 2",
+    "![Alt text gambar kedua](PLACEHOLDER_IMAGE_section-1)",
     ":::baca-juga",
     "- [Judul Artikel Terkait](/blog/slug-artikel)",
     "- [Judul Artikel Lain](/blog/slug-lain)",
     ":::",
-    "## Heading H2 Kedua",
+    "## Heading H2 Kedua dengan LSI Keyword",
     "1. Numbered item pertama",
     "2. Numbered item kedua",
     "> Quote atau highlight penting",
-    "## FAQ",
+    "## FAQ: Pertanyaan Seputar [Keyword]",
     "**Q: Pertanyaan umum?**",
     "Jawaban lengkap...",
     "## Kesimpulan",

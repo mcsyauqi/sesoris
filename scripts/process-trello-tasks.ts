@@ -4,8 +4,8 @@ import path from 'path';
 import nodemailer from 'nodemailer';
 import { getBoardCards, moveCardToList, addComment, addAttachment, type TrelloCard } from './trello-client';
 import { authors } from './authors';
-import { getRandomImage } from './image-pool';
 import { buildRichContentPrompt } from './blog-prompt';
+import { generateArticleImages } from './generate-image';
 
 // --- Config ---
 const BOARD_ID = '67cd86248c2571637e6ba911';
@@ -80,26 +80,55 @@ async function processContentTask(card: TrelloCard): Promise<void> {
   const generated = JSON.parse(responseText);
   const today = new Date();
   const author = authors[Math.floor(Math.random() * authors.length)];
-  const image = getRandomImage(generated.image_topic || 'home-organization');
+
+  const filePath = path.join(blogDir, `${generated.slug}.json`);
+  if (fs.existsSync(filePath)) {
+    console.log(`  [Content] Post already exists: ${generated.slug}, skipping`);
+    return;
+  }
+
+  // Generate images via Gemini Imagen 4
+  let heroImage = '/images/blog/default-hero.webp';
+  let contentArray: string[] = generated.content;
+
+  if (generated.image_prompts && generated.image_prompts.length > 0) {
+    const imageDescs = generated.image_prompts.map((ip: { filename: string; prompt: string; alt: string }) => ({
+      prompt: ip.prompt,
+      filename: ip.filename,
+      altText: ip.alt,
+    }));
+
+    const images = await generateArticleImages(generated.slug, imageDescs);
+
+    // Replace PLACEHOLDER_IMAGE references in content with actual paths
+    contentArray = generated.content.map((line: string) => {
+      for (const img of images) {
+        const placeholder = `PLACEHOLDER_IMAGE_${img.filename.replace(`${generated.slug}-`, '')}`;
+        if (line.includes(placeholder)) {
+          return line.replace(placeholder, img.publicPath);
+        }
+      }
+      return line;
+    });
+
+    // Use first image as hero
+    if (images.length > 0) {
+      heroImage = images[0].publicPath;
+    }
+  }
 
   const post = {
     slug: generated.slug,
     title: generated.title,
     excerpt: generated.excerpt,
-    image,
+    image: heroImage,
     category: generated.category,
     date: toISODate(today),
     dateFormatted: formatDateID(today),
     readTime: generated.readTime,
     author,
-    content: generated.content,
+    content: contentArray,
   };
-
-  const filePath = path.join(blogDir, `${post.slug}.json`);
-  if (fs.existsSync(filePath)) {
-    console.log(`  [Content] Post already exists: ${post.slug}, skipping`);
-    return;
-  }
 
   fs.writeFileSync(filePath, JSON.stringify(post, null, 2), 'utf-8');
   console.log(`  [Content] Blog post saved: ${post.slug}`);

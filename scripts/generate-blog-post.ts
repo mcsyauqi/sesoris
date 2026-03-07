@@ -2,8 +2,8 @@ import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 import path from 'path';
 import { authors } from './authors';
-import { getRandomImage } from './image-pool';
 import { buildRichContentPrompt, getExistingPosts } from './blog-prompt';
+import { generateArticleImages } from './generate-image';
 
 const client = new Anthropic();
 const blogDir = path.join(process.cwd(), 'content', 'blog');
@@ -58,7 +58,7 @@ KONTEKS TOPIK:
 - Kategori yang paling jarang dipakai: ${leastUsedCategory} (prioritaskan ini)
 - Kategori yang tersedia: ${categories.join(', ')}`;
 
-  const prompt = buildRichContentPrompt(basePrompt, topicBias);
+  const prompt = buildRichContentPrompt(basePrompt);
 
   console.log('Generating blog post with Claude Sonnet...');
 
@@ -81,37 +81,66 @@ KONTEKS TOPIK:
 
   const generated = JSON.parse(responseText);
 
-  // Pick random author and image
+  // Validate required fields
+  const required = ['slug', 'title', 'excerpt', 'category', 'content'] as const;
+  for (const field of required) {
+    if (!generated[field]) throw new Error(`Missing required field: ${field}`);
+  }
+  if (!Array.isArray(generated.content) || generated.content.length < 5) {
+    throw new Error('Content must be an array with at least 5 paragraphs');
+  }
+
+  const filePath = path.join(blogDir, `${generated.slug}.json`);
+  if (fs.existsSync(filePath)) {
+    throw new Error(`Post already exists: ${generated.slug}`);
+  }
+
+  // Pick random author
   const author = authors[Math.floor(Math.random() * authors.length)];
-  const image = getRandomImage(generated.image_topic || topicBias);
+
+  // Generate images via Gemini Imagen 4
+  let heroImage = '/images/blog/default-hero.webp';
+  let contentArray: string[] = generated.content;
+
+  if (generated.image_prompts && generated.image_prompts.length > 0) {
+    console.log(`Generating ${generated.image_prompts.length} images...`);
+    const imageDescs = generated.image_prompts.map((ip: { filename: string; prompt: string; alt: string }) => ({
+      prompt: ip.prompt,
+      filename: ip.filename,
+      altText: ip.alt,
+    }));
+
+    const images = await generateArticleImages(generated.slug, imageDescs);
+
+    // Replace PLACEHOLDER_IMAGE references in content with actual paths
+    contentArray = generated.content.map((line: string) => {
+      for (const img of images) {
+        const placeholder = `PLACEHOLDER_IMAGE_${img.filename.replace(`${generated.slug}-`, '')}`;
+        if (line.includes(placeholder)) {
+          return line.replace(placeholder, img.publicPath);
+        }
+      }
+      return line;
+    });
+
+    // Use first image as hero
+    if (images.length > 0) {
+      heroImage = images[0].publicPath;
+    }
+  }
 
   const post = {
     slug: generated.slug,
     title: generated.title,
     excerpt: generated.excerpt,
-    image,
+    image: heroImage,
     category: generated.category,
     date: toISODate(today),
     dateFormatted: formatDate(today),
     readTime: generated.readTime,
     author,
-    content: generated.content,
+    content: contentArray,
   };
-
-  // Validate required fields
-  const required = ['slug', 'title', 'excerpt', 'category', 'content'] as const;
-  for (const field of required) {
-    if (!post[field]) throw new Error(`Missing required field: ${field}`);
-  }
-  if (!Array.isArray(post.content) || post.content.length < 5) {
-    throw new Error('Content must be an array with at least 5 paragraphs');
-  }
-
-  // Write to file
-  const filePath = path.join(blogDir, `${post.slug}.json`);
-  if (fs.existsSync(filePath)) {
-    throw new Error(`Post already exists: ${post.slug}`);
-  }
 
   fs.writeFileSync(filePath, JSON.stringify(post, null, 2), 'utf-8');
   console.log(`Blog post created: ${filePath}`);
