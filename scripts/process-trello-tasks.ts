@@ -5,6 +5,7 @@ import nodemailer from 'nodemailer';
 import { getBoardCards, moveCardToList, addComment, addAttachment, type TrelloCard } from './trello-client';
 import { authors } from './authors';
 import { getRandomImage } from './image-pool';
+import { buildRichContentPrompt } from './blog-prompt';
 
 // --- Config ---
 const BOARD_ID = '67cd86248c2571637e6ba911';
@@ -57,12 +58,14 @@ async function processContentTask(card: TrelloCard): Promise<void> {
     return;
   }
 
+  const richPrompt = buildRichContentPrompt(prompt);
+
   const message = await client.messages.create({
     model: 'claude-sonnet-4-20250514',
-    max_tokens: 4096,
+    max_tokens: 8192,
     messages: [{
       role: 'user',
-      content: `${prompt}\n\nBALAS HANYA dalam format JSON (tanpa markdown code block):\n{\n  "title": "Judul",\n  "slug": "judul-kebab-case",\n  "excerpt": "Ringkasan 1-2 kalimat",\n  "category": "Tips & Trik atau Tutorial atau Inspirasi atau Lifestyle atau Review",\n  "readTime": "X menit",\n  "image_topic": "home-organization atau kitchen atau bedroom atau lifestyle atau bathroom atau workspace atau storage atau plants",\n  "content": ["Paragraf...", "## Heading", "Paragraf...", "## Kesimpulan", "Paragraf..."]\n}`,
+      content: richPrompt,
     }],
   });
 

@@ -2,7 +2,8 @@ import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 import path from 'path';
 import { authors } from './authors';
-import { imagePool, getRandomImage } from './image-pool';
+import { getRandomImage } from './image-pool';
+import { buildRichContentPrompt, getExistingPosts } from './blog-prompt';
 
 const client = new Anthropic();
 const blogDir = path.join(process.cwd(), 'content', 'blog');
@@ -18,15 +19,6 @@ const topicsByDay: Record<number, string> = {
   5: 'storage',           // Jumat
   6: 'plants',            // Sabtu
 };
-
-function getExistingPosts(): { slug: string; title: string; category: string }[] {
-  const files = fs.readdirSync(blogDir).filter((f) => f.endsWith('.json'));
-  return files.map((file) => {
-    const raw = fs.readFileSync(path.join(blogDir, file), 'utf-8');
-    const post = JSON.parse(raw);
-    return { slug: post.slug, title: post.title, category: post.category };
-  });
-}
 
 function getLeastUsedCategory(existing: { category: string }[]): string {
   const counts: Record<string, number> = {};
@@ -57,56 +49,22 @@ async function generatePost() {
   const existing = getExistingPosts();
   const leastUsedCategory = getLeastUsedCategory(existing);
 
-  const recentTitles = existing
-    .slice(-20)
-    .map((p) => `- ${p.title} (${p.category})`)
-    .join('\n');
-
-  const imageTopics = Object.keys(imagePool).join(', ');
-
-  const prompt = `Kamu adalah penulis blog profesional untuk Sesoris, toko e-commerce Indonesia yang menjual produk home organization, peralatan dapur, dan kebutuhan rumah tangga. Tagline: "Hidup Lebih Teratur".
-
-Tulis artikel blog BARU dalam Bahasa Indonesia. Artikel harus:
-- Informatif, praktis, dan bermanfaat untuk pembaca Indonesia
-- Panjang 800-1200 kata
-- Memiliki 5-8 heading (## format)
-- Menggunakan bahasa yang natural dan ramah, bukan formal kaku
+  const basePrompt = `Tulis artikel blog BARU dalam Bahasa Indonesia. Artikel harus:
+- Informatif, praktis, dan komprehensif untuk pembaca Indonesia
 - Relevan dengan produk home & living
 
 KONTEKS TOPIK:
 - Hari ini adalah hari ${['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'][dayOfWeek]}, bias topik: ${topicBias}
 - Kategori yang paling jarang dipakai: ${leastUsedCategory} (prioritaskan ini)
-- Kategori yang tersedia: ${categories.join(', ')}
+- Kategori yang tersedia: ${categories.join(', ')}`;
 
-ARTIKEL YANG SUDAH ADA (jangan duplikasi):
-${recentTitles}
-
-TOPIK GAMBAR yang tersedia (pilih satu untuk image_topic): ${imageTopics}
-
-Balas HANYA dalam format JSON berikut (tanpa markdown code block):
-{
-  "title": "Judul Artikel",
-  "slug": "judul-artikel-dalam-kebab-case",
-  "excerpt": "Ringkasan 1-2 kalimat",
-  "category": "Salah satu dari: ${categories.join(', ')}",
-  "readTime": "X menit",
-  "image_topic": "salah satu dari: ${imageTopics}",
-  "content": [
-    "Paragraf pembuka...",
-    "## Heading Pertama",
-    "Paragraf...",
-    "## Heading Kedua",
-    "Paragraf...",
-    "## Kesimpulan",
-    "Paragraf penutup..."
-  ]
-}`;
+  const prompt = buildRichContentPrompt(basePrompt, topicBias);
 
   console.log('Generating blog post with Claude Sonnet...');
 
   const message = await client.messages.create({
     model: 'claude-sonnet-4-20250514',
-    max_tokens: 4096,
+    max_tokens: 8192,
     messages: [{ role: 'user', content: prompt }],
   });
 

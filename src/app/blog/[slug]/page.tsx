@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Share2 } from 'lucide-react';
+import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Share2, BookOpen } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { getPostBySlug, getAllSlugs } from '@/lib/blog';
+import { getPostBySlug, getAllSlugs, getAllPosts } from '@/lib/blog';
+import React from 'react';
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -27,12 +28,306 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+// --- Rich Markdown Renderer ---
+
+function renderInline(text: string): React.ReactNode[] {
+  // Parse inline markdown: **bold**, [link](url)
+  const parts: React.ReactNode[] = [];
+  const regex = /(\*\*(.+?)\*\*)|(\[([^\]]+)\]\(([^)]+)\))/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    if (match[1]) {
+      // Bold: **text**
+      parts.push(<strong key={match.index}>{match[2]}</strong>);
+    } else if (match[3]) {
+      // Link: [text](url)
+      const href = match[5];
+      const isInternal = href.startsWith('/') || href.includes('sesoris.com');
+      if (isInternal) {
+        const cleanHref = href.replace('https://www.sesoris.com', '').replace('https://sesoris.com', '') || '/';
+        parts.push(
+          <Link key={match.index} href={cleanHref} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
+            {match[4]}
+          </Link>
+        );
+      } else {
+        parts.push(
+          <a key={match.index} href={href} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
+            {match[4]}
+          </a>
+        );
+      }
+    }
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [text];
+}
+
+function renderContentBlocks(content: string[]): React.ReactNode[] {
+  const elements: React.ReactNode[] = [];
+  let i = 0;
+
+  while (i < content.length) {
+    const line = content[i];
+
+    // H2 heading
+    if (line.startsWith('## ')) {
+      const headingText = line.replace('## ', '');
+      const headingId = headingText.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+      elements.push(
+        <h2 key={i} id={headingId} style={{
+          fontSize: '24px',
+          fontWeight: 700,
+          color: '#1B5E3B',
+          marginTop: '40px',
+          marginBottom: '16px',
+          paddingBottom: '8px',
+          borderBottom: '2px solid rgba(27,94,59,0.15)',
+          lineHeight: 1.3,
+        }}>
+          {headingText}
+        </h2>
+      );
+      i++;
+      continue;
+    }
+
+    // H3 heading
+    if (line.startsWith('### ')) {
+      elements.push(
+        <h3 key={i} style={{
+          fontSize: '19px',
+          fontWeight: 600,
+          color: '#212529',
+          marginTop: '28px',
+          marginBottom: '12px',
+          lineHeight: 1.4,
+        }}>
+          {line.replace('### ', '')}
+        </h3>
+      );
+      i++;
+      continue;
+    }
+
+    // Image: ![alt](url)
+    if (line.startsWith('![')) {
+      const imgMatch = line.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+      if (imgMatch) {
+        elements.push(
+          <figure key={i} style={{ margin: '32px 0', borderRadius: '12px', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
+              <Image src={imgMatch[2]} alt={imgMatch[1]} fill style={{ objectFit: 'cover', borderRadius: '12px' }} />
+            </div>
+            {imgMatch[1] && (
+              <figcaption style={{
+                fontSize: '13px',
+                color: '#6C757D',
+                textAlign: 'center',
+                marginTop: '8px',
+                fontStyle: 'italic',
+              }}>
+                {imgMatch[1]}
+              </figcaption>
+            )}
+          </figure>
+        );
+        i++;
+        continue;
+      }
+    }
+
+    // "Baca Juga" box
+    if (line.startsWith(':::baca-juga')) {
+      const links: React.ReactNode[] = [];
+      i++;
+      while (i < content.length && content[i] !== ':::') {
+        const linkMatch = content[i].match(/\[([^\]]+)\]\(([^)]+)\)/);
+        if (linkMatch) {
+          const href = linkMatch[2].replace('https://www.sesoris.com', '').replace('https://sesoris.com', '') || '/';
+          links.push(
+            <li key={i} style={{ marginBottom: '8px' }}>
+              <Link href={href} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
+                {linkMatch[1]}
+              </Link>
+            </li>
+          );
+        }
+        i++;
+      }
+      if (links.length > 0) {
+        elements.push(
+          <div key={`baca-${i}`} style={{
+            background: 'linear-gradient(135deg, rgba(27,94,59,0.06), rgba(27,94,59,0.02))',
+            border: '1px solid rgba(27,94,59,0.15)',
+            borderLeft: '4px solid #1B5E3B',
+            borderRadius: '0 12px 12px 0',
+            padding: '20px 24px',
+            margin: '28px 0',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', fontWeight: 600, color: '#1B5E3B', fontSize: '15px' }}>
+              <BookOpen style={{ width: '16px', height: '16px' }} />
+              Baca Juga
+            </div>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>{links}</ul>
+          </div>
+        );
+      }
+      i++;
+      continue;
+    }
+
+    // Bullet points: group consecutive • or - lines
+    if (line.startsWith('• ') || line.startsWith('- ')) {
+      const items: React.ReactNode[] = [];
+      while (i < content.length && (content[i].startsWith('• ') || content[i].startsWith('- '))) {
+        const itemText = content[i].replace(/^[•-]\s*/, '');
+        items.push(
+          <li key={i} style={{ marginBottom: '8px', paddingLeft: '4px' }}>
+            {renderInline(itemText)}
+          </li>
+        );
+        i++;
+      }
+      elements.push(
+        <ul key={`ul-${i}`} style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: '16px 0 20px',
+        }}>
+          {items.map((item, idx) => (
+            <div key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+              <span style={{ color: '#1B5E3B', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>&#x2022;</span>
+              <div style={{ fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>{item}</div>
+            </div>
+          ))}
+        </ul>
+      );
+      continue;
+    }
+
+    // Numbered list: group consecutive 1. 2. 3. lines
+    if (/^\d+\.\s/.test(line)) {
+      const items: React.ReactNode[] = [];
+      while (i < content.length && /^\d+\.\s/.test(content[i])) {
+        const itemText = content[i].replace(/^\d+\.\s*/, '');
+        items.push(
+          <li key={i} style={{ marginBottom: '8px', paddingLeft: '4px' }}>
+            {renderInline(itemText)}
+          </li>
+        );
+        i++;
+      }
+      elements.push(
+        <ol key={`ol-${i}`} style={{
+          paddingLeft: '24px',
+          margin: '16px 0 20px',
+          counterReset: 'item',
+          listStyle: 'none',
+        }}>
+          {items.map((item, idx) => (
+            <div key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px' }}>
+              <span style={{
+                color: '#fff',
+                background: '#1B5E3B',
+                width: '24px',
+                height: '24px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '12px',
+                fontWeight: 700,
+                flexShrink: 0,
+                marginTop: '3px',
+              }}>
+                {idx + 1}
+              </span>
+              <div style={{ fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>{item}</div>
+            </div>
+          ))}
+        </ol>
+      );
+      continue;
+    }
+
+    // Blockquote
+    if (line.startsWith('> ')) {
+      elements.push(
+        <blockquote key={i} style={{
+          borderLeft: '4px solid #1B5E3B',
+          paddingLeft: '20px',
+          margin: '24px 0',
+          color: '#495057',
+          fontStyle: 'italic',
+          fontSize: '17px',
+          lineHeight: 1.7,
+        }}>
+          {renderInline(line.replace('> ', ''))}
+        </blockquote>
+      );
+      i++;
+      continue;
+    }
+
+    // Regular paragraph
+    elements.push(
+      <p key={i} style={{
+        fontSize: '16px',
+        lineHeight: 1.8,
+        color: '#343A40',
+        marginBottom: '20px',
+      }}>
+        {renderInline(line)}
+      </p>
+    );
+    i++;
+  }
+
+  return elements;
+}
+
+// --- Table of Contents ---
+
+function generateTOC(content: string[]): { text: string; id: string; level: number }[] {
+  return content
+    .filter((line) => line.startsWith('## ') || line.startsWith('### '))
+    .map((line) => {
+      const level = line.startsWith('### ') ? 3 : 2;
+      const text = line.replace(/^#{2,3}\s/, '');
+      const id = text.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+      return { text, id, level };
+    });
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
+  }
+
+  const toc = generateTOC(post.content);
+  const allPosts = getAllPosts();
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== slug)
+    .filter((p) => p.category === post.category)
+    .slice(0, 3);
+  if (relatedPosts.length < 3) {
+    const more = allPosts.filter((p) => p.slug !== slug && !relatedPosts.some((r) => r.slug === p.slug)).slice(0, 3 - relatedPosts.length);
+    relatedPosts.push(...more);
   }
 
   return (
@@ -130,102 +425,94 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '8px' }}>
-                <button style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
-                  background: '#F8F9FA',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  <Facebook style={{ width: '16px', height: '16px', color: '#343A40' }} />
-                </button>
-                <button style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
-                  background: '#F8F9FA',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  <Twitter style={{ width: '16px', height: '16px', color: '#343A40' }} />
-                </button>
-                <button style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
-                  background: '#F8F9FA',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  <Linkedin style={{ width: '16px', height: '16px', color: '#343A40' }} />
-                </button>
-                <button style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
-                  background: '#F8F9FA',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  <Share2 style={{ width: '16px', height: '16px', color: '#343A40' }} />
-                </button>
+                {[Facebook, Twitter, Linkedin, Share2].map((Icon, idx) => (
+                  <button key={idx} style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '8px',
+                    background: '#F8F9FA',
+                    border: 'none',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <Icon style={{ width: '16px', height: '16px', color: '#343A40' }} />
+                  </button>
+                ))}
               </div>
             </div>
 
+            {/* Table of Contents */}
+            {toc.length > 3 && (
+              <nav style={{
+                background: '#F8FAF9',
+                border: '1px solid rgba(27,94,59,0.12)',
+                borderRadius: '12px',
+                padding: '24px 28px',
+                marginTop: '32px',
+              }}>
+                <div style={{ fontWeight: 700, fontSize: '15px', color: '#1B5E3B', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <BookOpen style={{ width: '16px', height: '16px' }} />
+                  Daftar Isi
+                </div>
+                <ol style={{ listStyle: 'none', padding: 0, margin: 0, counterReset: 'toc' }}>
+                  {toc.map((item, idx) => (
+                    <li key={idx} style={{
+                      marginBottom: '6px',
+                      paddingLeft: item.level === 3 ? '20px' : '0',
+                    }}>
+                      <a href={`#${item.id}`} style={{
+                        color: item.level === 2 ? '#343A40' : '#6C757D',
+                        textDecoration: 'none',
+                        fontSize: item.level === 2 ? '14px' : '13px',
+                        fontWeight: item.level === 2 ? 500 : 400,
+                        lineHeight: 1.6,
+                      }}>
+                        {item.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
+
             {/* Content */}
-            <div style={{ padding: '40px 0 80px' }}>
-              {post.content.map((paragraph, index) => {
-                if (paragraph.startsWith('## ')) {
-                  return (
-                    <h2 key={index} style={{
-                      fontSize: '22px',
-                      fontWeight: 600,
-                      color: '#212529',
-                      marginTop: '32px',
-                      marginBottom: '16px',
-                    }}>
-                      {paragraph.replace('## ', '')}
-                    </h2>
-                  );
-                }
-                if (paragraph.includes('\n')) {
-                  return (
-                    <div key={index} style={{
-                      fontSize: '16px',
-                      lineHeight: 1.8,
-                      color: '#343A40',
-                      marginBottom: '20px',
-                      whiteSpace: 'pre-line',
-                    }}>
-                      {paragraph}
-                    </div>
-                  );
-                }
-                return (
-                  <p key={index} style={{
-                    fontSize: '16px',
-                    lineHeight: 1.8,
-                    color: '#343A40',
-                    marginBottom: '20px',
-                  }}>
-                    {paragraph}
-                  </p>
-                );
-              })}
+            <div style={{ padding: '40px 0 48px' }}>
+              {renderContentBlocks(post.content)}
             </div>
+
+            {/* Related Posts */}
+            {relatedPosts.length > 0 && (
+              <div style={{
+                borderTop: '1px solid #E9ECEF',
+                paddingTop: '40px',
+                paddingBottom: '40px',
+              }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#212529', marginBottom: '24px' }}>
+                  Artikel Terkait
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
+                  {relatedPosts.map((related) => (
+                    <Link key={related.slug} href={`/blog/${related.slug}`} style={{ textDecoration: 'none' }}>
+                      <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #E9ECEF' }}>
+                        <div style={{ position: 'relative', aspectRatio: '16/9' }}>
+                          <Image src={related.image} alt={related.title} fill style={{ objectFit: 'cover' }} />
+                        </div>
+                        <div style={{ padding: '14px' }}>
+                          <span style={{ fontSize: '11px', color: '#1B5E3B', fontWeight: 600, textTransform: 'uppercase' }}>
+                            {related.category}
+                          </span>
+                          <h4 style={{ fontSize: '14px', fontWeight: 600, color: '#212529', marginTop: '4px', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                            {related.title}
+                          </h4>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Back to Blog */}
             <div style={{
