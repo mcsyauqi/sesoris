@@ -8,12 +8,12 @@ export function NewsletterSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thanks for subscribing!');
+    alert('Terima kasih telah berlangganan!');
     setEmail('');
   };
 
   return (
-    <section style={{ padding: '80px 0', background: '#1B5E3B', position: 'relative', overflow: 'hidden' }}>
+    <section className="section-padding" style={{ background: '#1B5E3B', position: 'relative', overflow: 'hidden' }}>
       {/* Pattern Background */}
       <div style={{
         position: 'absolute',
@@ -25,45 +25,47 @@ export function NewsletterSection() {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{
-            width: '64px',
-            height: '64px',
+            width: '56px',
+            height: '56px',
             borderRadius: '50%',
             background: 'rgba(255,255,255,0.1)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            margin: '0 auto 24px'
+            margin: '0 auto 20px'
           }}>
-            <Gift style={{ width: '28px', height: '28px', color: 'white' }} />
+            <Gift style={{ width: '24px', height: '24px', color: 'white' }} />
           </div>
 
-          <h2 style={{ fontSize: '32px', fontWeight: 700, color: 'white', marginBottom: '12px' }}>
-            Subscribe to Our Newsletter
+          <h2 style={{
+            fontFamily: 'var(--font-heading), Georgia, serif',
+            fontSize: 'clamp(24px, 4vw, 32px)',
+            fontWeight: 400,
+            color: 'white',
+            marginBottom: '12px'
+          }}>
+            Berlangganan Newsletter
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '32px' }}>
-            Get special offers, new product updates, and exclusive deals directly to your inbox.
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', marginBottom: '28px' }}>
+            Dapatkan promo spesial, update produk baru, dan penawaran eksklusif langsung di inbox Anda.
           </p>
 
-          <form onSubmit={handleSubmit} style={{
-            display: 'flex',
-            gap: '12px',
-            maxWidth: '440px',
-            margin: '0 auto'
-          }}>
+          <form onSubmit={handleSubmit} className="newsletter-form">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email address"
+              placeholder="Alamat email Anda"
               required
               style={{
                 flex: 1,
                 padding: '14px 18px',
                 borderRadius: '8px',
                 border: 'none',
-                background: 'rgba(255,255,255,0.1)',
+                background: 'rgba(255,255,255,0.15)',
                 color: 'white',
-                fontSize: '15px'
+                fontSize: '15px',
+                minWidth: 0
               }}
             />
             <button
@@ -79,16 +81,18 @@ export function NewsletterSection() {
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px'
+                gap: '8px',
+                whiteSpace: 'nowrap',
+                justifyContent: 'center'
               }}
             >
               <Send style={{ width: '16px', height: '16px' }} />
-              Subscribe
+              Langganan
             </button>
           </form>
 
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', marginTop: '16px' }}>
-            No spam, unsubscribe anytime. We respect your privacy.
+            Tanpa spam, bisa berhenti kapan saja. Kami menghargai privasi Anda.
           </p>
         </div>
       </div>

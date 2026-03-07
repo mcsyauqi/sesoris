@@ -10,35 +10,41 @@ export function TestimonialsSection() {
   const testimonial = testimonials[current];
 
   return (
-    <section style={{ padding: '80px 0' }}>
+    <section className="section-padding">
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
-            What Our Customers Say
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-heading), Georgia, serif',
+            fontSize: 'clamp(24px, 4vw, 32px)',
+            fontWeight: 400,
+            color: '#212529',
+            marginBottom: '12px'
+          }}>
+            Apa Kata Pelanggan
           </h2>
-          <p style={{ color: '#6C757D' }}>Read reviews from our happy customers</p>
+          <p style={{ color: '#6C757D', fontSize: '15px' }}>Ulasan dari pelanggan setia kami</p>
         </div>
 
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <div style={{
             background: 'white',
             borderRadius: '20px',
-            padding: '48px',
+            padding: 'clamp(24px, 4vw, 48px)',
             boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
             position: 'relative',
             textAlign: 'center'
           }}>
             <Quote style={{
               position: 'absolute',
-              top: '24px',
-              left: '24px',
-              width: '40px',
-              height: '40px',
+              top: '20px',
+              left: '20px',
+              width: '36px',
+              height: '36px',
               color: '#E8F5E9'
             }} />
 
             <p style={{
-              fontSize: '18px',
+              fontSize: 'clamp(15px, 2vw, 18px)',
               color: '#343A40',
               lineHeight: 1.7,
               fontStyle: 'italic',
@@ -67,7 +73,8 @@ export function TestimonialsSection() {
                 height: '48px',
                 borderRadius: '50%',
                 overflow: 'hidden',
-                position: 'relative'
+                position: 'relative',
+                flexShrink: 0
               }}>
                 <Image src={testimonial.avatar} alt={testimonial.name} fill style={{ objectFit: 'cover' }} />
               </div>
@@ -76,7 +83,7 @@ export function TestimonialsSection() {
                 {testimonial.verified && (
                   <div style={{ fontSize: '13px', color: '#28A745', display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <CheckCircle style={{ width: '12px', height: '12px' }} />
-                    Verified Buyer
+                    Pembeli Terverifikasi
                   </div>
                 )}
               </div>
@@ -87,7 +94,7 @@ export function TestimonialsSection() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              marginTop: '32px'
+              marginTop: '28px'
             }}>
               <button
                 onClick={() => setCurrent((p) => (p - 1 + testimonials.length) % testimonials.length)}

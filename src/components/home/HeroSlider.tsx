@@ -8,30 +8,30 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    subtitle: 'Limited Time Sale',
-    title: 'Up to 50% Off',
-    description: 'Grab amazing deals on selected items. Hurry, while stocks last!',
+    subtitle: 'Promo Terbatas',
+    title: 'Diskon Hingga 50%',
+    description: 'Dapatkan penawaran terbaik untuk produk pilihan. Buruan sebelum kehabisan!',
     image: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=600&fit=crop',
-    buttonText: 'Shop Now',
+    buttonText: 'Belanja Sekarang',
     buttonLink: '/shop',
   },
   {
     id: 2,
-    subtitle: 'The Ultimate Gift Shop',
-    title: 'Gift Your Loved Ones',
-    description: 'Find perfect presents for everyone you care about.',
+    subtitle: 'Hadiah Sempurna',
+    title: 'Berikan yang Terbaik',
+    description: 'Temukan hadiah spesial untuk orang-orang tersayang.',
     image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&h=600&fit=crop',
-    buttonText: 'Explore Gifts',
+    buttonText: 'Lihat Koleksi',
     buttonLink: '/category/gift-sets',
   },
   {
     id: 3,
-    subtitle: 'Fresh Finds',
-    title: 'New Arrivals',
-    description: 'Discover our latest collection of innovative products.',
+    subtitle: 'Baru Datang',
+    title: 'Produk Terbaru',
+    description: 'Jelajahi koleksi terbaru produk inovatif kami.',
     image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=600&fit=crop',
-    buttonText: 'View New',
-    buttonLink: '/collection/new-arrivals',
+    buttonText: 'Lihat Semua',
+    buttonLink: '/new-arrivals',
   },
 ];
 
@@ -54,16 +54,9 @@ export function HeroSlider() {
       overflow: 'hidden'
     }}>
       <div className="container">
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '48px',
-          alignItems: 'center',
-          minHeight: '480px',
-          padding: '48px 0'
-        }}>
+        <div className="grid-hero">
           {/* Content */}
-          <div>
+          <div style={{ order: 1 }}>
             <span style={{
               display: 'inline-block',
               padding: '6px 16px',
@@ -77,8 +70,9 @@ export function HeroSlider() {
               {slide.subtitle}
             </span>
             <h1 style={{
-              fontSize: '48px',
-              fontWeight: 700,
+              fontFamily: 'var(--font-heading), Georgia, serif',
+              fontSize: 'clamp(32px, 5vw, 52px)',
+              fontWeight: 400,
               color: '#212529',
               lineHeight: 1.1,
               marginBottom: '16px'
@@ -86,11 +80,11 @@ export function HeroSlider() {
               {slide.title}
             </h1>
             <p style={{
-              fontSize: '16px',
+              fontSize: '15px',
               color: '#6C757D',
-              marginBottom: '32px',
+              marginBottom: '28px',
               maxWidth: '400px',
-              lineHeight: 1.6
+              lineHeight: 1.7
             }}>
               {slide.description}
             </p>
@@ -104,7 +98,13 @@ export function HeroSlider() {
           </div>
 
           {/* Image */}
-          <div style={{ position: 'relative', height: '400px', borderRadius: '16px', overflow: 'hidden' }}>
+          <div style={{
+            position: 'relative',
+            aspectRatio: '4/3',
+            borderRadius: '16px',
+            overflow: 'hidden',
+            order: 2
+          }}>
             <Image
               src={slide.image}
               alt={slide.title}
@@ -115,14 +115,12 @@ export function HeroSlider() {
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Dots Navigation */}
         <div style={{
-          position: 'absolute',
-          bottom: '24px',
-          left: '50%',
-          transform: 'translateX(-50%)',
           display: 'flex',
-          gap: '8px'
+          justifyContent: 'center',
+          gap: '8px',
+          paddingBottom: '24px'
         }}>
           {slides.map((_, i) => (
             <button
@@ -141,8 +139,9 @@ export function HeroSlider() {
           ))}
         </div>
 
-        {/* Arrows */}
+        {/* Arrows - hidden on mobile */}
         <button
+          className="hide-mobile"
           onClick={() => setCurrent((prev) => (prev - 1 + slides.length) % slides.length)}
           style={{
             position: 'absolute',
@@ -156,7 +155,6 @@ export function HeroSlider() {
             border: 'none',
             boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
             cursor: 'pointer',
-            display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}
@@ -164,6 +162,7 @@ export function HeroSlider() {
           <ChevronLeft style={{ width: '20px', height: '20px' }} />
         </button>
         <button
+          className="hide-mobile"
           onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
           style={{
             position: 'absolute',
@@ -177,7 +176,6 @@ export function HeroSlider() {
             border: 'none',
             boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
             cursor: 'pointer',
-            display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}

@@ -30,7 +30,9 @@ export function ProductCard({ product }: { product: Product }) {
           borderRadius: '12px',
           overflow: 'hidden',
           background: '#F8F9FA',
-          marginBottom: '12px'
+          marginBottom: '12px',
+          boxShadow: hovered ? '0 12px 32px rgba(0,0,0,0.1)' : '0 2px 8px rgba(0,0,0,0.04)',
+          transition: 'box-shadow 0.3s ease'
         }}>
           <Image
             src={product.images[0]?.url || ''}
@@ -39,12 +41,12 @@ export function ProductCard({ product }: { product: Product }) {
             style={{
               objectFit: 'cover',
               transform: hovered ? 'scale(1.05)' : 'scale(1)',
-              transition: 'transform 0.4s ease'
+              transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           />
 
           {/* Badges */}
-          <div style={{ position: 'absolute', top: '12px', left: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <div style={{ position: 'absolute', top: '10px', left: '10px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
             {onSale && (
               <span style={{
                 padding: '4px 10px',
@@ -52,7 +54,7 @@ export function ProductCard({ product }: { product: Product }) {
                 color: 'white',
                 fontSize: '11px',
                 fontWeight: 600,
-                borderRadius: '4px'
+                borderRadius: '6px'
               }}>
                 -{discount}%
               </span>
@@ -60,13 +62,13 @@ export function ProductCard({ product }: { product: Product }) {
             {product.isNew && (
               <span style={{
                 padding: '4px 10px',
-                background: '#20C997',
+                background: '#1B5E3B',
                 color: 'white',
                 fontSize: '11px',
                 fontWeight: 600,
-                borderRadius: '4px'
+                borderRadius: '6px'
               }}>
-                NEW
+                BARU
               </span>
             )}
           </div>
@@ -76,26 +78,26 @@ export function ProductCard({ product }: { product: Product }) {
             onClick={(e) => { e.preventDefault(); toggleItem(product); }}
             style={{
               position: 'absolute',
-              top: '12px',
-              right: '12px',
-              width: '36px',
-              height: '36px',
+              top: '10px',
+              right: '10px',
+              width: '34px',
+              height: '34px',
               borderRadius: '50%',
               background: 'white',
               border: 'none',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              opacity: hovered ? 1 : 0,
-              transform: hovered ? 'translateX(0)' : 'translateX(8px)',
-              transition: 'all 0.2s'
+              opacity: wishlisted ? 1 : (hovered ? 1 : 0),
+              transform: hovered || wishlisted ? 'translateX(0)' : 'translateX(8px)',
+              transition: 'all 0.25s ease'
             }}
           >
             <Heart style={{
-              width: '18px',
-              height: '18px',
+              width: '16px',
+              height: '16px',
               color: wishlisted ? '#DC3545' : '#343A40',
               fill: wishlisted ? '#DC3545' : 'none'
             }} />
@@ -104,12 +106,12 @@ export function ProductCard({ product }: { product: Product }) {
           {/* Add to Cart */}
           <div style={{
             position: 'absolute',
-            bottom: '12px',
-            left: '12px',
-            right: '12px',
+            bottom: '10px',
+            left: '10px',
+            right: '10px',
             opacity: hovered ? 1 : 0,
             transform: hovered ? 'translateY(0)' : 'translateY(8px)',
-            transition: 'all 0.2s'
+            transition: 'all 0.25s ease'
           }}>
             <button
               onClick={(e) => { e.preventDefault(); addToCart(product); }}
@@ -129,8 +131,8 @@ export function ProductCard({ product }: { product: Product }) {
                 gap: '8px'
               }}
             >
-              <ShoppingCart style={{ width: '16px', height: '16px' }} />
-              Add to Cart
+              <ShoppingCart style={{ width: '15px', height: '15px' }} />
+              Tambah ke Keranjang
             </button>
           </div>
         </div>
@@ -143,7 +145,11 @@ export function ProductCard({ product }: { product: Product }) {
           fontSize: '14px',
           color: '#212529',
           marginBottom: '6px',
-          lineHeight: 1.4
+          lineHeight: 1.4,
+          display: '-webkit-box',
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: 'vertical' as const,
+          overflow: 'hidden'
         }}>
           {product.name}
         </h3>

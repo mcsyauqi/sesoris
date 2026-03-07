@@ -2,6 +2,19 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 import { Header, Footer, AnnouncementBar } from '@/components/layout';
+import { DM_Sans, DM_Serif_Display } from 'next/font/google';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-body',
+});
+
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-heading',
+});
 
 const GA_MEASUREMENT_ID = 'G-V2Y9KVBKFP';
 
@@ -66,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
+    <html lang="id" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <head>
         {/* JSON-LD Organization Schema */}
         <script
@@ -122,7 +135,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className={dmSans.className}>
         {/* Google Analytics 4 */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}

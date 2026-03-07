@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { X, Gift, Truck, Sparkles } from 'lucide-react';
 
 const messages = [
-  { icon: Gift, text: 'Great Products, Free Shipping & Easy Returns!' },
-  { icon: Truck, text: 'Free Shipping on Orders Over $50' },
-  { icon: Sparkles, text: 'New Arrivals Every Week - Shop Now!' },
+  { icon: Gift, text: 'Produk Berkualitas, Gratis Ongkir & Pengembalian Mudah!' },
+  { icon: Truck, text: 'Gratis Ongkir untuk Pesanan di Atas Rp 200.000' },
+  { icon: Sparkles, text: 'Produk Baru Setiap Minggu - Belanja Sekarang!' },
 ];
 
 export function AnnouncementBar() {
@@ -29,16 +29,17 @@ export function AnnouncementBar() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '8px'
+        gap: '8px',
+        paddingRight: '24px'
       }}>
-        <Icon style={{ width: '14px', height: '14px' }} />
-        <span>{text}</span>
+        <Icon style={{ width: '14px', height: '14px', flexShrink: 0 }} />
+        <span style={{ textAlign: 'center', fontSize: '12px' }}>{text}</span>
       </div>
       <button
         onClick={() => setIsVisible(false)}
         style={{
           position: 'absolute',
-          right: '16px',
+          right: '12px',
           top: '50%',
           transform: 'translateY(-50%)',
           background: 'none',

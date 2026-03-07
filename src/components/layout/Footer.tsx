@@ -29,14 +29,9 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer style={{ background: '#1B5E3B', color: 'white', paddingTop: '64px' }}>
+    <footer style={{ background: '#1B5E3B', color: 'white', paddingTop: '48px' }}>
       <div className="container">
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '48px',
-          paddingBottom: '48px'
-        }}>
+        <div className="grid-footer" style={{ paddingBottom: '40px' }}>
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
@@ -51,7 +46,7 @@ export function Footer() {
               Temukan solusi penyimpanan dan peralatan rumah tangga terbaik untuk gaya hidup modern Anda.
             </p>
             <div style={{ marginBottom: '16px' }}>
-              <p style={{ fontWeight: 600, marginBottom: '12px' }}>Berlangganan Newsletter</p>
+              <p style={{ fontWeight: 600, marginBottom: '12px', fontSize: '14px' }}>Berlangganan Newsletter</p>
               <p style={{ fontSize: '13px', opacity: 0.7, marginBottom: '12px' }}>
                 Dapatkan promo dan info produk terbaru langsung di inbox Anda.
               </p>
@@ -66,7 +61,8 @@ export function Footer() {
                     border: 'none',
                     background: 'rgba(255,255,255,0.1)',
                     color: 'white',
-                    fontSize: '14px'
+                    fontSize: '14px',
+                    minWidth: 0
                   }}
                 />
                 <button style={{
@@ -76,7 +72,11 @@ export function Footer() {
                   color: '#1B5E3B',
                   border: 'none',
                   fontWeight: 600,
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
                 }}>
                   <Mail style={{ width: '16px', height: '16px' }} />
                 </button>
@@ -86,10 +86,10 @@ export function Footer() {
 
           {/* Shop Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px' }}>Belanja</h3>
+            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Belanja</h3>
             <ul style={{ listStyle: 'none' }}>
               {footerLinks.shop.map((link) => (
-                <li key={link.name} style={{ marginBottom: '12px' }}>
+                <li key={link.name} style={{ marginBottom: '10px' }}>
                   <Link href={link.href} style={{ fontSize: '14px', opacity: 0.8 }}>
                     {link.name}
                   </Link>
@@ -100,10 +100,10 @@ export function Footer() {
 
           {/* Help Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px' }}>Bantuan</h3>
+            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Bantuan</h3>
             <ul style={{ listStyle: 'none' }}>
               {footerLinks.help.map((link) => (
-                <li key={link.name} style={{ marginBottom: '12px' }}>
+                <li key={link.name} style={{ marginBottom: '10px' }}>
                   <Link href={link.href} style={{ fontSize: '14px', opacity: 0.8 }}>
                     {link.name}
                   </Link>
@@ -114,10 +114,10 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px' }}>Perusahaan</h3>
+            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Perusahaan</h3>
             <ul style={{ listStyle: 'none', marginBottom: '24px' }}>
               {footerLinks.company.map((link) => (
-                <li key={link.name} style={{ marginBottom: '12px' }}>
+                <li key={link.name} style={{ marginBottom: '10px' }}>
                   <Link href={link.href} style={{ fontSize: '14px', opacity: 0.8 }}>
                     {link.name}
                   </Link>
@@ -126,15 +126,15 @@ export function Footer() {
             </ul>
             <div style={{ fontSize: '14px', opacity: 0.8 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <Mail style={{ width: '14px', height: '14px' }} />
+                <Mail style={{ width: '14px', height: '14px', flexShrink: 0 }} />
                 halo@sesoris.id
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <Phone style={{ width: '14px', height: '14px' }} />
+                <Phone style={{ width: '14px', height: '14px', flexShrink: 0 }} />
                 +62 274 123 4567
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                <MapPin style={{ width: '14px', height: '14px', marginTop: '2px' }} />
+                <MapPin style={{ width: '14px', height: '14px', marginTop: '2px', flexShrink: 0 }} />
                 <span>
                   Jl. Malioboro No. 123<br />
                   Yogyakarta, DIY 55271
@@ -145,36 +145,30 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{
-          borderTop: '1px solid rgba(255,255,255,0.1)',
-          padding: '24px 0',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '16px'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <span style={{ fontSize: '13px', opacity: 0.7 }}>Ikuti kami:</span>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-              <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-              <Twitter style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-              <Youtube style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '20px 0' }}>
+          <div className="footer-bottom">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <span style={{ fontSize: '13px', opacity: 0.7 }}>Ikuti kami:</span>
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                <Twitter style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                <Youtube style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+              </div>
             </div>
-          </div>
 
-          <p style={{ fontSize: '13px', opacity: 0.7 }}>
-            © 2026 Sesoris. Hak cipta dilindungi.
-          </p>
+            <p style={{ fontSize: '13px', opacity: 0.7 }}>
+              © 2026 Sesoris. Hak cipta dilindungi.
+            </p>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '13px', opacity: 0.7 }}>Pembayaran:</span>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>BCA</span>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>Mandiri</span>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>GoPay</span>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>OVO</span>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>DANA</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <span style={{ fontSize: '13px', opacity: 0.7 }}>Pembayaran:</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>BCA</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>Mandiri</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>GoPay</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>OVO</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>DANA</span>
+            </div>
           </div>
         </div>
 

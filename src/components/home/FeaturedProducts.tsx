@@ -7,9 +7,9 @@ import { ProductCard } from '@/components/product/ProductCard';
 import { getFeaturedProducts, getNewArrivals, products } from '@/data/products';
 
 const tabs = [
-  { id: 'popular', label: 'Popular', getData: getFeaturedProducts },
-  { id: 'new', label: 'New Arrivals', getData: getNewArrivals },
-  { id: 'best', label: 'Best Sellers', getData: () => products.slice(0, 6) },
+  { id: 'popular', label: 'Populer', getData: getFeaturedProducts },
+  { id: 'new', label: 'Terbaru', getData: getNewArrivals },
+  { id: 'best', label: 'Terlaris', getData: () => products.slice(0, 6) },
 ];
 
 export function FeaturedProducts() {
@@ -18,24 +18,23 @@ export function FeaturedProducts() {
   const productList = currentTab.getData();
 
   return (
-    <section style={{ padding: '80px 0', background: '#F8F9FA' }}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }}>
       <div className="container">
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          marginBottom: '40px',
-          flexWrap: 'wrap',
-          gap: '20px'
-        }}>
+        <div className="featured-header">
           <div>
-            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
-              Popular This Week
+            <h2 style={{
+              fontFamily: 'var(--font-heading), Georgia, serif',
+              fontSize: 'clamp(24px, 4vw, 32px)',
+              fontWeight: 400,
+              color: '#212529',
+              marginBottom: '8px'
+            }}>
+              Populer Minggu Ini
             </h2>
-            <p style={{ color: '#6C757D' }}>Discover what everyone is loving right now</p>
+            <p style={{ color: '#6C757D', fontSize: '15px' }}>Temukan produk favorit semua orang</p>
           </div>
 
-          <div style={{ display: 'flex', gap: '8px' }}>
+          <div className="tab-pills">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -49,7 +48,9 @@ export function FeaturedProducts() {
                   fontWeight: 500,
                   fontSize: '14px',
                   cursor: 'pointer',
-                  transition: 'all 0.2s'
+                  transition: 'all 0.2s',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0
                 }}
               >
                 {tab.label}
@@ -58,12 +59,7 @@ export function FeaturedProducts() {
           </div>
         </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '24px',
-          marginBottom: '40px'
-        }}>
+        <div className="grid-products" style={{ marginBottom: '40px' }}>
           {productList.slice(0, 8).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -75,7 +71,7 @@ export function FeaturedProducts() {
             className="btn btn-outline"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
           >
-            View All Products
+            Lihat Semua Produk
             <ArrowRight style={{ width: '16px', height: '16px' }} />
           </Link>
         </div>

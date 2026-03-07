@@ -4,14 +4,9 @@ import { Leaf, ArrowRight } from 'lucide-react';
 
 export function AboutSection() {
   return (
-    <section style={{ padding: '80px 0', background: '#F8F9FA' }}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }}>
       <div className="container">
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '64px',
-          alignItems: 'center'
-        }}>
+        <div className="grid-about">
           {/* Image */}
           <div style={{ position: 'relative' }}>
             <div style={{
@@ -28,7 +23,7 @@ export function AboutSection() {
               />
             </div>
             {/* Floating Card */}
-            <div style={{
+            <div className="hide-mobile" style={{
               position: 'absolute',
               bottom: '-20px',
               right: '-20px',
@@ -60,36 +55,37 @@ export function AboutSection() {
               borderRadius: '50px',
               marginBottom: '16px'
             }}>
-              About Us
+              Tentang Kami
             </span>
-            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '20px' }}>
-              Why Choose Sesoris?
+            <h2 style={{
+              fontFamily: 'var(--font-heading), Georgia, serif',
+              fontSize: 'clamp(24px, 4vw, 32px)',
+              fontWeight: 400,
+              color: '#212529',
+              marginBottom: '20px'
+            }}>
+              Kenapa Pilih Sesoris?
             </h2>
-            <p style={{ color: '#6C757D', fontSize: '16px', lineHeight: 1.7, marginBottom: '16px' }}>
-              Sesoris brings you the best deals for anyone. If you know yourself or looking to treat yourself better, check out our exciting products!
+            <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
+              Sesoris menghadirkan produk-produk terbaik untuk Anda. Kami percaya bahwa kualitas, fungsionalitas, dan gaya bisa berjalan beriringan.
             </p>
-            <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '32px' }}>
-              We carefully curate each product to ensure quality, functionality, and style. Our mission is to make finding the perfect gift or treat for yourself as easy as possible.
+            <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px' }}>
+              Setiap produk dikurasi dengan cermat untuk memastikan Anda mendapatkan yang terbaik. Misi kami adalah membuat hidup Anda lebih teratur dan menyenangkan.
             </p>
 
             {/* Stats */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '24px',
-              marginBottom: '32px'
-            }}>
+            <div className="grid-stats" style={{ marginBottom: '28px' }}>
               <div>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: '#1B5E3B' }}>50K+</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Happy Customers</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>50K+</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Pelanggan Puas</div>
               </div>
               <div>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: '#1B5E3B' }}>500+</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Products</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>500+</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Produk</div>
               </div>
               <div>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: '#1B5E3B' }}>4.8</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Avg. Rating</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>4.8</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Rating Rata-rata</div>
               </div>
             </div>
 
@@ -98,7 +94,7 @@ export function AboutSection() {
               className="btn btn-primary"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
             >
-              Learn More
+              Selengkapnya
               <ArrowRight style={{ width: '16px', height: '16px' }} />
             </Link>
           </div>
