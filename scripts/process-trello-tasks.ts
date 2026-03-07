@@ -237,17 +237,41 @@ async function processGenericTask(card: TrelloCard): Promise<void> {
 const NOTIFY_EMAIL = 'ahmadthariqsyauqi@gmail.com';
 
 async function sendEmailReport(results: { name: string; label: string; status: string }[], processed: number, errors: number) {
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+  const refreshToken = process.env.GOOGLE_REFRESH_TOKEN;
+
+  // Fallback to App Password if OAuth2 not configured
   const gmailUser = process.env.GMAIL_USER;
   const gmailPass = process.env.GMAIL_APP_PASSWORD;
-  if (!gmailUser || !gmailPass) {
-    console.log('  [Email] GMAIL_USER or GMAIL_APP_PASSWORD not set, skipping email');
+
+  if (!clientId && !gmailUser) {
+    console.log('  [Email] No email credentials configured, skipping email');
     return;
   }
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: { user: gmailUser, pass: gmailPass },
-  });
+  let transporter;
+  if (gmailUser && gmailPass) {
+    // Prefer App Password (simpler, more reliable)
+    transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: { user: gmailUser, pass: gmailPass },
+    });
+  } else if (clientId && clientSecret && refreshToken) {
+    transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        type: 'OAuth2',
+        user: NOTIFY_EMAIL,
+        clientId,
+        clientSecret,
+        refreshToken,
+      },
+    });
+  } else {
+    console.log('  [Email] Incomplete email credentials, skipping');
+    return;
+  }
 
   const today = formatDateID(new Date());
   const taskRows = results
