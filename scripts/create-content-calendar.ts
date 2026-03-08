@@ -5,7 +5,7 @@ import { getBoardCards, type TrelloCard } from './trello-client';
 const TRELLO_API_KEY = process.env.TRELLO_API_KEY!;
 const TRELLO_TOKEN = process.env.TRELLO_TOKEN!;
 const LIST_TODO = '69ac323c20d7386e9533a861';
-const LABEL_CONTENT = '69ac325b0cf5668e7e4b5d37'; // Content label ID
+const LABEL_CONTENT = '69ac323f5c05ef22cbdca8f0'; // Content label ID
 
 interface ArticlePlan {
   keyword: string;

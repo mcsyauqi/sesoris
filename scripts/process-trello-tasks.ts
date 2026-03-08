@@ -50,7 +50,7 @@ function toISODate(date: Date): string {
 
 // --- Task Processors ---
 
-async function processContentTask(card: TrelloCard): Promise<void> {
+async function processContentTask(card: TrelloCard): Promise<{ url: string; title: string; category: string; readTime: string } | undefined> {
   console.log(`  [Content] Generating blog article...`);
   const prompt = extractPrompt(card.desc);
   if (!prompt) {
@@ -138,6 +138,8 @@ async function processContentTask(card: TrelloCard): Promise<void> {
   await addComment(card.id, `✅ Artikel telah dipublikasikan!\n\n**${post.title}**\n${articleUrl}\n\nKategori: ${post.category}\nWaktu baca: ${post.readTime}\nPenulis: ${post.author.name}`);
   await moveCardToList(card.id, LIST_DONE);
   console.log(`  [Content] Card moved to Done`);
+
+  return { url: articleUrl, title: post.title, category: post.category, readTime: post.readTime };
 }
 
 async function processGBPTask(card: TrelloCard): Promise<void> {
@@ -236,7 +238,7 @@ async function processGenericTask(card: TrelloCard): Promise<void> {
 // --- Email Notification ---
 const NOTIFY_EMAIL = 'ahmadthariqsyauqi@gmail.com';
 
-async function sendEmailReport(results: { name: string; label: string; status: string }[], processed: number, errors: number) {
+async function sendEmailReport(results: { name: string; label: string; status: string; articleUrl?: string; articleTitle?: string; category?: string; readTime?: string }[], processed: number, errors: number) {
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
   const refreshToken = process.env.GOOGLE_REFRESH_TOKEN;
@@ -278,6 +280,23 @@ async function sendEmailReport(results: { name: string; label: string; status: s
     .map((r) => `<tr><td style="padding:8px;border:1px solid #e0e0e0">${r.status === 'OK' ? '&#9989;' : '&#10060;'}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.name}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.label}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.status}</td></tr>`)
     .join('\n');
 
+  // Build published articles section
+  const publishedArticles = results.filter((r) => r.articleUrl && r.status === 'OK');
+  const articlesHtml = publishedArticles.length > 0
+    ? `<div style="margin:16px 0;padding:16px;background:#e8f5e9;border-radius:8px;border-left:4px solid #1B5E3B">
+        <h3 style="margin:0 0 12px;color:#1B5E3B">📝 Artikel Dipublikasikan Hari Ini</h3>
+        ${publishedArticles.map((r) => `
+          <div style="margin:8px 0;padding:12px;background:white;border-radius:6px">
+            <a href="${r.articleUrl}" style="color:#1B5E3B;font-weight:bold;font-size:16px;text-decoration:none">${r.articleTitle}</a>
+            <div style="margin-top:4px;color:#666;font-size:13px">
+              ${r.category ? `📂 ${r.category}` : ''} ${r.readTime ? `&nbsp;•&nbsp; ⏱️ ${r.readTime}` : ''}
+            </div>
+            <a href="${r.articleUrl}" style="display:inline-block;margin-top:8px;padding:6px 16px;background:#1B5E3B;color:white;border-radius:4px;text-decoration:none;font-size:13px">Baca Artikel →</a>
+          </div>
+        `).join('')}
+      </div>`
+    : '';
+
   const html = `
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
       <div style="background:#1B5E3B;color:white;padding:20px;border-radius:8px 8px 0 0">
@@ -286,6 +305,7 @@ async function sendEmailReport(results: { name: string; label: string; status: s
       </div>
       <div style="padding:20px;background:#f9f9f9;border-radius:0 0 8px 8px">
         <p><strong>${processed}</strong> task selesai, <strong>${errors}</strong> error</p>
+        ${articlesHtml}
         <table style="width:100%;border-collapse:collapse;margin:16px 0">
           <thead>
             <tr style="background:#1B5E3B;color:white">
@@ -332,7 +352,7 @@ async function main() {
 
   let processed = 0;
   let errors = 0;
-  const results: { name: string; label: string; status: string }[] = [];
+  const results: { name: string; label: string; status: string; articleUrl?: string; articleTitle?: string; category?: string; readTime?: string }[] = [];
 
   for (const card of dueTasks) {
     const label = getLabel(card);
@@ -340,9 +360,10 @@ async function main() {
     console.log(`  Label: ${label} | Due: ${card.due}`);
 
     try {
+      let articleInfo: { url: string; title: string; category: string; readTime: string } | undefined;
       switch (label) {
         case 'Content':
-          await processContentTask(card);
+          articleInfo = await processContentTask(card);
           break;
         case 'Local SEO':
           await processGBPTask(card);
@@ -357,7 +378,13 @@ async function main() {
           await processGenericTask(card);
       }
       processed++;
-      results.push({ name: card.name, label, status: 'OK' });
+      results.push({
+        name: card.name, label, status: 'OK',
+        articleUrl: articleInfo?.url,
+        articleTitle: articleInfo?.title,
+        category: articleInfo?.category,
+        readTime: articleInfo?.readTime,
+      });
     } catch (err) {
       console.error(`  ERROR processing ${card.name}:`, err);
       errors++;
