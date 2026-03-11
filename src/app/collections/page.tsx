@@ -83,7 +83,7 @@ export default function CollectionsPage() {
           {collections.map((collection) => (
             <Link
               key={collection.id}
-              href={`/shop?collection=${collection.slug}`}
+              href="/shop"
               style={{
                 display: 'block',
                 borderRadius: '16px',

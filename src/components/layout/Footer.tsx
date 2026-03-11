@@ -150,10 +150,18 @@ export function Footer() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <span style={{ fontSize: '13px', opacity: 0.7 }}>Ikuti kami:</span>
               <div style={{ display: 'flex', gap: '12px' }}>
-                <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-                <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-                <Twitter style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-                <Youtube style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                </a>
+                <a href="https://instagram.com/sesoris.id" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                </a>
+                <a href="https://twitter.com/sesoris_id" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  <Twitter style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                </a>
+                <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  <Youtube style={{ width: '18px', height: '18px', opacity: 0.8 }} />
+                </a>
               </div>
             </div>
 

@@ -103,7 +103,9 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
     // Replace PLACEHOLDER_IMAGE references in content with actual paths
     contentArray = generated.content.map((line: string) => {
       for (const img of images) {
-        const placeholder = `PLACEHOLDER_IMAGE_${img.filename.replace(`${generated.slug}-`, '')}`;
+        // Strip slug prefix and .webp extension to match the placeholder name
+        const baseName = img.filename.replace(`${generated.slug}-`, '').replace(/\.webp$/, '');
+        const placeholder = `PLACEHOLDER_IMAGE_${baseName}`;
         if (line.includes(placeholder)) {
           return line.replace(placeholder, img.publicPath);
         }
@@ -116,6 +118,9 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
       heroImage = images[0].publicPath;
     }
   }
+
+  // Remove any remaining unresolved PLACEHOLDER_IMAGE lines (if image gen failed)
+  contentArray = contentArray.filter((line) => !line.includes('PLACEHOLDER_IMAGE'));
 
   const post = {
     slug: generated.slug,

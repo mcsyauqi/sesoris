@@ -89,16 +89,16 @@ export default function ContactPage() {
             <div>
               <div style={{ fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Ikuti Kami</div>
               <div style={{ display: 'flex', gap: '12px' }}>
-                <a href="#" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Facebook style={{ width: '18px', height: '18px', color: '#343A40' }} />
                 </a>
-                <a href="#" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <a href="https://instagram.com/sesoris.id" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Instagram style={{ width: '18px', height: '18px', color: '#343A40' }} />
                 </a>
-                <a href="#" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <a href="https://twitter.com/sesoris_id" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Twitter style={{ width: '18px', height: '18px', color: '#343A40' }} />
                 </a>
-                <a href="#" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Youtube style={{ width: '18px', height: '18px', color: '#343A40' }} />
                 </a>
               </div>

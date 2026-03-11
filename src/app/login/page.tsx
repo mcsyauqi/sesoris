@@ -129,9 +129,13 @@ export default function LoginPage() {
                 <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
                 <span style={{ fontSize: '14px', color: '#6C757D' }}>Remember me</span>
               </label>
-              <Link href="/forgot-password" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500 }}>
+              <button
+                type="button"
+                onClick={() => alert('Fitur reset password akan segera tersedia.')}
+                style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+              >
                 Forgot password?
-              </Link>
+              </button>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ width: '100%', marginBottom: '20px' }}>
