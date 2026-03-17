@@ -262,6 +262,67 @@ function renderContentBlocks(content: string[]): React.ReactNode[] {
       continue;
     }
 
+    // Table: group consecutive | lines
+    if (line.startsWith('|') && line.endsWith('|')) {
+      const tableRows: string[][] = [];
+      while (i < content.length && content[i].startsWith('|') && content[i].endsWith('|')) {
+        const row = content[i].split('|').slice(1, -1).map(cell => cell.trim());
+        // Skip separator rows (| --- | --- |)
+        if (!row.every(cell => /^[-:]+$/.test(cell))) {
+          tableRows.push(row);
+        }
+        i++;
+      }
+      if (tableRows.length > 0) {
+        const headerRow = tableRows[0];
+        const bodyRows = tableRows.slice(1);
+        elements.push(
+          <div key={`table-${i}`} style={{ overflowX: 'auto', margin: '20px 0' }}>
+            <table style={{
+              width: '100%',
+              borderCollapse: 'collapse',
+              fontSize: '15px',
+              lineHeight: 1.6,
+            }}>
+              <thead>
+                <tr>
+                  {headerRow.map((cell, ci) => (
+                    <th key={ci} style={{
+                      padding: '12px 16px',
+                      background: '#1B5E3B',
+                      color: '#fff',
+                      fontWeight: 600,
+                      textAlign: 'left',
+                      borderBottom: '2px solid #1B5E3B',
+                      whiteSpace: 'nowrap',
+                    }}>
+                      {renderInline(cell)}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {bodyRows.map((row, ri) => (
+                  <tr key={ri} style={{ background: ri % 2 === 0 ? '#f8f9fa' : '#fff' }}>
+                    {row.map((cell, ci) => (
+                      <td key={ci} style={{
+                        padding: '10px 16px',
+                        borderBottom: '1px solid #dee2e6',
+                        color: '#343A40',
+                      }}>
+                        {renderInline(cell)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+      continue;
+    }
+
     // Blockquote
     if (line.startsWith('> ')) {
       elements.push(
