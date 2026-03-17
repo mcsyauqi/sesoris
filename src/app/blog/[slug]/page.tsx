@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Share2, BookOpen } from 'lucide-react';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { Metadata } from 'next';
-import { getPostBySlug, getAllSlugs, getAllPosts } from '@/lib/blog';
+import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug } from '@/lib/blog';
 import React from 'react';
 
 export function generateStaticParams() {
@@ -377,6 +377,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getPostBySlug(slug);
 
   if (!post) {
+    const closest = findClosestSlug(slug);
+    if (closest) {
+      redirect(`/blog/${closest}`);
+    }
     notFound();
   }
 

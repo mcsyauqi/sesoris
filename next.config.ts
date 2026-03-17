@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog/rumah-minimalis-modern',
+        destination: '/blog/desain-rumah-minimalis',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

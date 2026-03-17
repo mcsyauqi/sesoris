@@ -51,6 +51,23 @@ export function getPostBySlug(slug: string): BlogPost | null {
   return JSON.parse(raw) as BlogPost;
 }
 
+export function findClosestSlug(slug: string): string | null {
+  const allSlugs = getAllSlugs();
+  const words = slug.split('-').filter((w) => w.length > 2);
+  let best: string | null = null;
+  let bestScore = 0;
+  let bestLen = Infinity;
+  for (const s of allSlugs) {
+    const score = words.filter((w) => s.includes(w)).length;
+    if (score > bestScore || (score === bestScore && s.length < bestLen)) {
+      bestScore = score;
+      best = s;
+      bestLen = s.length;
+    }
+  }
+  return bestScore >= 2 ? best : null;
+}
+
 export function getAllSlugs(): string[] {
   return fs.readdirSync(blogDir)
     .filter((f) => f.endsWith('.json'))
