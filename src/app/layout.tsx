@@ -45,20 +45,11 @@ export const metadata: Metadata = {
     siteName: 'Sesoris',
     title: 'Sesoris - Hidup Lebih Teratur',
     description: 'Temukan produk-produk berkualitas untuk rumah, dapur, dan gaya hidup Anda.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Sesoris - Hidup Lebih Teratur',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sesoris - Hidup Lebih Teratur',
     description: 'Temukan produk-produk berkualitas untuk rumah, dapur, dan gaya hidup Anda.',
-    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,

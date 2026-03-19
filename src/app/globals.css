@@ -897,6 +897,20 @@ select:focus-visible {
   display: none;
 }
 
+/* Product detail page layout */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+}
+
 /* Shop page layout */
 .shop-layout {
   display: grid;

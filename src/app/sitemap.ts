@@ -8,25 +8,25 @@ const categorySlugs = [
   'home-living',
   'kitchen-dining',
   'tools-gadgets',
-  'bags-pouches',
-  'office-desk',
-  'outdoor-travel',
+  'gift-sets',
+  'personal-care',
+  'tech-accessories',
 ];
 
 // Product slugs (from products data)
 const productSlugs = [
-  'stackable-storage-box-large',
-  'bamboo-drawer-organizer',
-  'premium-knife-set-block',
-  'cotton-rope-basket',
-  'modular-spice-rack',
-  'travel-toiletry-bag',
-  'desk-organizer-set',
-  'vacuum-storage-bags',
-  'kitchen-utensil-holder',
-  'fabric-storage-bin',
-  'japanese-bento-box',
-  'jewelry-organizer-box',
+  'bamboo-desk-organizer',
+  'smart-water-bottle',
+  'led-desk-lamp-wireless-charger',
+  'premium-gift-box-set',
+  'minimalist-wallet',
+  'wireless-earbuds-pro',
+  'portable-blender',
+  'aromatherapy-diffuser',
+  'ceramic-plant-pot-set',
+  'multi-tool-pocket-knife',
+  'foldable-storage-bins',
+  'electric-wine-opener',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
