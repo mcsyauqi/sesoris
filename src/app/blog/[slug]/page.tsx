@@ -414,7 +414,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       url: 'https://www.sesoris.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.sesoris.com/images/logo.png',
+        url: 'https://www.sesoris.com/images/logo.webp',
       },
     },
     mainEntityOfPage: {

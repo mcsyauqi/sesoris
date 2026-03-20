@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon.png', type: 'image/png' },
+      { url: '/icon.webp', type: 'image/png' },
     ],
-    apple: '/icon.png',
+    apple: '/icon.webp',
   },
   openGraph: {
     type: 'website',

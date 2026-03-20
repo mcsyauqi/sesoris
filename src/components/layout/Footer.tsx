@@ -37,7 +37,7 @@ export function Footer() {
           <div>
             <div style={{ marginBottom: '16px' }}>
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Sesoris"
                 width={280}
                 height={90}

@@ -67,7 +67,7 @@ export function Header() {
             {/* Logo */}
             <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Sesoris"
                 width={280}
                 height={90}
@@ -265,7 +265,7 @@ export function Header() {
           borderBottom: '1px solid #E9ECEF'
         }}>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-            <Image src="/logo.png" alt="Sesoris" width={280} height={90} style={{ height: '32px', width: 'auto' }} />
+            <Image src="/logo.webp" alt="Sesoris" width={280} height={90} style={{ height: '32px', width: 'auto' }} />
           </Link>
           <button
             onClick={() => setMobileMenuOpen(false)}
