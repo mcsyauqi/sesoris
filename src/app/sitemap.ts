@@ -1,38 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getAllSlugs } from '@/lib/blog';
+import { products, categories } from '@/data/products';
 
 const baseUrl = 'https://www.sesoris.com';
-
-// Category slugs
-const categorySlugs = [
-  'home-living',
-  'kitchen-dining',
-  'tools-gadgets',
-  'gift-sets',
-  'personal-care',
-  'tech-accessories',
-];
-
-// Product slugs (from products data)
-const productSlugs = [
-  'bamboo-desk-organizer',
-  'smart-water-bottle',
-  'led-desk-lamp-wireless-charger',
-  'premium-gift-box-set',
-  'minimalist-wallet',
-  'wireless-earbuds-pro',
-  'portable-blender',
-  'aromatherapy-diffuser',
-  'ceramic-plant-pot-set',
-  'multi-tool-pocket-knife',
-  'foldable-storage-bins',
-  'electric-wine-opener',
-  'rak-piring-stainless-steel-2-tier',
-  'rak-sepatu-minimalis-5-tingkat',
-  'rak-dinding-floating-shelf-set',
-  'gantungan-kunci-dinding-magnetik',
-  'rak-buku-minimalis-industrial',
-];
 
 // Use fixed dates for sitemap lastmod to avoid changing on every build.
 // Update these dates when actual content changes are deployed.
@@ -154,7 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Category pages
-  const categoryPages: MetadataRoute.Sitemap = categorySlugs.map((slug) => ({
+  const categoryPages: MetadataRoute.Sitemap = categories.map(({ slug }) => ({
     url: `${baseUrl}/category/${slug}`,
     lastModified: LAST_CONTENT_UPDATE,
     changeFrequency: 'weekly',
@@ -162,7 +132,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Product pages
-  const productPages: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
+  const productPages: MetadataRoute.Sitemap = products.map(({ slug }) => ({
     url: `${baseUrl}/product/${slug}`,
     lastModified: LAST_CONTENT_UPDATE,
     changeFrequency: 'weekly',
