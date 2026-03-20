@@ -55,7 +55,7 @@ export function AboutSection() {
               borderRadius: '50px',
               marginBottom: '16px'
             }}>
-              Tentang Kami
+              About Us
             </span>
             <h2 style={{
               fontFamily: 'var(--font-heading), Georgia, serif',
@@ -64,28 +64,28 @@ export function AboutSection() {
               color: '#212529',
               marginBottom: '20px'
             }}>
-              Kenapa Pilih Sesoris?
+              Why Choose Sesoris?
             </h2>
             <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
-              Sesoris menghadirkan produk-produk terbaik untuk Anda. Kami percaya bahwa kualitas, fungsionalitas, dan gaya bisa berjalan beriringan.
+              Sesoris brings you the best products for your home. We believe that quality, functionality, and style can go hand in hand.
             </p>
             <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px' }}>
-              Setiap produk dikurasi dengan cermat untuk memastikan Anda mendapatkan yang terbaik. Misi kami adalah membuat hidup Anda lebih teratur dan menyenangkan.
+              Every product is carefully curated to ensure you get the best. Our mission is to make your life more organized and enjoyable.
             </p>
 
             {/* Stats */}
             <div className="grid-stats" style={{ marginBottom: '28px' }}>
               <div>
                 <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>50K+</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Pelanggan Puas</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Happy Customers</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>500+</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Produk</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Products</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>4.8</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Rating Rata-rata</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Average Rating</div>
               </div>
             </div>
 
@@ -94,7 +94,7 @@ export function AboutSection() {
               className="btn btn-primary"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
             >
-              Selengkapnya
+              Learn More
               <ArrowRight style={{ width: '16px', height: '16px' }} />
             </Link>
           </div>

@@ -12,7 +12,7 @@ export default function TermsPage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Syarat & Ketentuan</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Terms & Conditions</span>
           </div>
         </div>
       </div>
@@ -33,33 +33,33 @@ export default function TermsPage() {
               <FileText style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
             </div>
             <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
-              Syarat & Ketentuan
+              Terms & Conditions
             </h1>
             <p style={{ color: '#6C757D', fontSize: '16px' }}>
-              Terakhir diperbarui: 1 Januari 2026
+              Last updated: January 1, 2026
             </p>
           </div>
 
           <div style={{ background: '#F8F9FA', padding: '20px 24px', borderRadius: '12px', marginBottom: '32px' }}>
             <p style={{ color: '#495057', lineHeight: 1.7, margin: 0 }}>
-              Selamat datang di Sesoris. Dengan mengakses dan menggunakan situs web kami, Anda menyetujui untuk terikat
-              dengan syarat dan ketentuan berikut. Mohon baca dengan seksama sebelum melakukan pembelian.
+              Welcome to Sesoris. By accessing and using our website, you agree to be bound
+              by the following terms and conditions. Please read them carefully before making a purchase.
             </p>
           </div>
 
           {/* Section 1 */}
           <section style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
-              1. Ketentuan Umum
+              1. General Terms
             </h2>
             <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '16px' }}>
-              Dengan menggunakan layanan Sesoris, Anda menyatakan bahwa:
+              By using Sesoris services, you represent that:
             </p>
             <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-              <li style={{ marginBottom: '8px' }}>Anda berusia minimal 18 tahun atau memiliki izin dari orang tua/wali.</li>
-              <li style={{ marginBottom: '8px' }}>Informasi yang Anda berikan adalah akurat dan lengkap.</li>
-              <li style={{ marginBottom: '8px' }}>Anda bertanggung jawab untuk menjaga kerahasiaan akun Anda.</li>
-              <li style={{ marginBottom: '8px' }}>Anda tidak akan menggunakan layanan kami untuk tujuan ilegal.</li>
+              <li style={{ marginBottom: '8px' }}>You are at least 18 years old or have parental/guardian consent.</li>
+              <li style={{ marginBottom: '8px' }}>The information you provide is accurate and complete.</li>
+              <li style={{ marginBottom: '8px' }}>You are responsible for maintaining the confidentiality of your account.</li>
+              <li style={{ marginBottom: '8px' }}>You will not use our services for any illegal purpose.</li>
             </ul>
           </section>
 
@@ -68,25 +68,25 @@ export default function TermsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <ShoppingBag style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
               <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
-                2. Pemesanan dan Pembayaran
+                2. Orders and Payment
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>2.1 Proses Pemesanan</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>2.1 Order Process</h3>
               <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px', marginBottom: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Semua pesanan tunduk pada ketersediaan produk.</li>
-                <li style={{ marginBottom: '8px' }}>Kami berhak menolak atau membatalkan pesanan dengan alasan yang wajar.</li>
-                <li style={{ marginBottom: '8px' }}>Konfirmasi pesanan akan dikirimkan melalui email setelah pembayaran berhasil.</li>
-                <li style={{ marginBottom: '8px' }}>Harga dapat berubah tanpa pemberitahuan sebelumnya, namun tidak mempengaruhi pesanan yang sudah dikonfirmasi.</li>
+                <li style={{ marginBottom: '8px' }}>All orders are subject to product availability.</li>
+                <li style={{ marginBottom: '8px' }}>We reserve the right to refuse or cancel orders for reasonable cause.</li>
+                <li style={{ marginBottom: '8px' }}>Order confirmation will be sent via email after successful payment.</li>
+                <li style={{ marginBottom: '8px' }}>Prices may change without prior notice, but will not affect confirmed orders.</li>
               </ul>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>2.2 Metode Pembayaran</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>2.2 Payment Methods</h3>
               <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Transfer Bank (BCA, Mandiri, BNI, BRI)</li>
-                <li style={{ marginBottom: '8px' }}>Kartu Kredit/Debit (Visa, Mastercard)</li>
-                <li style={{ marginBottom: '8px' }}>E-Wallet (GoPay, OVO, DANA, ShopeePay)</li>
-                <li style={{ marginBottom: '8px' }}>Virtual Account</li>
-                <li style={{ marginBottom: '8px' }}>Cicilan 0% (untuk pembelian minimum tertentu)</li>
+                <li style={{ marginBottom: '8px' }}>Credit/Debit Cards (Visa, Mastercard, American Express)</li>
+                <li style={{ marginBottom: '8px' }}>PayPal</li>
+                <li style={{ marginBottom: '8px' }}>Apple Pay and Google Pay</li>
+                <li style={{ marginBottom: '8px' }}>Bank Transfer</li>
+                <li style={{ marginBottom: '8px' }}>Buy Now, Pay Later (for qualifying orders)</li>
               </ul>
             </div>
           </section>
@@ -96,17 +96,17 @@ export default function TermsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <Truck style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
               <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
-                3. Pengiriman
+                3. Shipping
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
               <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Pesanan diproses dalam 1-2 hari kerja setelah pembayaran dikonfirmasi.</li>
-                <li style={{ marginBottom: '8px' }}>Estimasi waktu pengiriman: 2-5 hari kerja (tergantung lokasi).</li>
-                <li style={{ marginBottom: '8px' }}>Biaya pengiriman dihitung berdasarkan berat dan lokasi pengiriman.</li>
-                <li style={{ marginBottom: '8px' }}>Gratis ongkir untuk pembelian di atas Rp500.000 (area tertentu).</li>
-                <li style={{ marginBottom: '8px' }}>Risiko kehilangan atau kerusakan selama pengiriman ditanggung oleh jasa ekspedisi.</li>
-                <li style={{ marginBottom: '8px' }}>Harap periksa paket saat diterima dan laporkan kerusakan dalam 24 jam.</li>
+                <li style={{ marginBottom: '8px' }}>Orders are processed within 1-2 business days after payment is confirmed.</li>
+                <li style={{ marginBottom: '8px' }}>Estimated delivery time: 3-7 business days (depending on location).</li>
+                <li style={{ marginBottom: '8px' }}>Shipping costs are calculated based on weight and delivery location.</li>
+                <li style={{ marginBottom: '8px' }}>Free shipping on orders over $50 (select regions).</li>
+                <li style={{ marginBottom: '8px' }}>Risk of loss or damage during shipping is borne by the carrier.</li>
+                <li style={{ marginBottom: '8px' }}>Please inspect your package upon receipt and report any damage within 48 hours.</li>
               </ul>
             </div>
           </section>
@@ -116,27 +116,27 @@ export default function TermsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <RefreshCw style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
               <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
-                4. Pengembalian dan Refund
+                4. Returns and Refunds
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>4.1 Kebijakan Pengembalian</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>4.1 Return Policy</h3>
               <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px', marginBottom: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Produk dapat dikembalikan dalam waktu 30 hari setelah diterima.</li>
-                <li style={{ marginBottom: '8px' }}>Produk harus dalam kondisi asli, belum digunakan, dengan kemasan lengkap.</li>
-                <li style={{ marginBottom: '8px' }}>Produk yang sudah dipersonalisasi atau custom tidak dapat dikembalikan.</li>
-                <li style={{ marginBottom: '8px' }}>Biaya pengiriman pengembalian ditanggung pembeli, kecuali produk cacat/salah kirim.</li>
+                <li style={{ marginBottom: '8px' }}>Products can be returned within 30 days of receipt.</li>
+                <li style={{ marginBottom: '8px' }}>Products must be in original condition, unused, with complete packaging.</li>
+                <li style={{ marginBottom: '8px' }}>Personalized or custom products cannot be returned.</li>
+                <li style={{ marginBottom: '8px' }}>Return shipping costs are borne by the buyer, unless the product is defective or incorrectly shipped.</li>
               </ul>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>4.2 Proses Refund</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>4.2 Refund Process</h3>
               <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Refund diproses dalam 7-14 hari kerja setelah produk diterima dan diverifikasi.</li>
-                <li style={{ marginBottom: '8px' }}>Refund akan dikembalikan ke metode pembayaran asli.</li>
-                <li style={{ marginBottom: '8px' }}>Untuk pembayaran COD, refund melalui transfer bank.</li>
+                <li style={{ marginBottom: '8px' }}>Refunds are processed within 7-14 business days after the product is received and verified.</li>
+                <li style={{ marginBottom: '8px' }}>Refunds will be credited to the original payment method.</li>
+                <li style={{ marginBottom: '8px' }}>For COD payments, refunds are issued via bank transfer.</li>
               </ul>
               <p style={{ color: '#495057', lineHeight: 1.7, marginTop: '16px' }}>
-                Untuk informasi lengkap, silakan kunjungi halaman{' '}
-                <Link href="/returns" style={{ color: '#1B5E3B', fontWeight: 500 }}>Pengembalian</Link>.
+                For full details, please visit our{' '}
+                <Link href="/returns" style={{ color: '#1B5E3B', fontWeight: 500 }}>Returns</Link> page.
               </p>
             </div>
           </section>
@@ -144,33 +144,33 @@ export default function TermsPage() {
           {/* Section 5 */}
           <section style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
-              5. Garansi Produk
+              5. Product Warranty
             </h2>
             <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-              <li style={{ marginBottom: '8px' }}>Semua produk Sesoris dijamin bebas cacat produksi.</li>
-              <li style={{ marginBottom: '8px' }}>Garansi berlaku 1 tahun untuk cacat produksi (bukan kerusakan akibat penggunaan).</li>
-              <li style={{ marginBottom: '8px' }}>Klaim garansi harus disertai bukti pembelian.</li>
-              <li style={{ marginBottom: '8px' }}>Garansi tidak berlaku untuk keausan normal, kerusakan akibat kesalahan penggunaan, atau modifikasi produk.</li>
+              <li style={{ marginBottom: '8px' }}>All Sesoris products are guaranteed free from manufacturing defects.</li>
+              <li style={{ marginBottom: '8px' }}>Warranty is valid for 1 year for manufacturing defects (not damage from use).</li>
+              <li style={{ marginBottom: '8px' }}>Warranty claims must include proof of purchase.</li>
+              <li style={{ marginBottom: '8px' }}>Warranty does not cover normal wear and tear, damage from misuse, or product modifications.</li>
             </ul>
           </section>
 
           {/* Section 6 */}
           <section style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
-              6. Hak Kekayaan Intelektual
+              6. Intellectual Property
             </h2>
             <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '16px' }}>
-              Semua konten di situs ini, termasuk namun tidak terbatas pada:
+              All content on this site, including but not limited to:
             </p>
             <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-              <li style={{ marginBottom: '8px' }}>Logo, merek dagang, dan nama "Sesoris"</li>
-              <li style={{ marginBottom: '8px' }}>Foto produk dan gambar</li>
-              <li style={{ marginBottom: '8px' }}>Deskripsi produk dan teks</li>
-              <li style={{ marginBottom: '8px' }}>Desain dan tata letak situs web</li>
+              <li style={{ marginBottom: '8px' }}>Logos, trademarks, and the &quot;Sesoris&quot; name</li>
+              <li style={{ marginBottom: '8px' }}>Product photos and images</li>
+              <li style={{ marginBottom: '8px' }}>Product descriptions and text</li>
+              <li style={{ marginBottom: '8px' }}>Website design and layout</li>
             </ul>
             <p style={{ color: '#495057', lineHeight: 1.7 }}>
-              adalah milik Sesoris dan dilindungi oleh hukum hak cipta Indonesia. Dilarang menyalin, mendistribusikan,
-              atau menggunakan konten tanpa izin tertulis dari kami.
+              are the property of Sesoris and are protected by applicable copyright laws. Copying, distributing,
+              or using content without our written permission is prohibited.
             </p>
           </section>
 
@@ -179,21 +179,21 @@ export default function TermsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <AlertTriangle style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
               <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
-                7. Batasan Tanggung Jawab
+                7. Limitation of Liability
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
               <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '16px' }}>
-                Sesoris tidak bertanggung jawab atas:
+                Sesoris shall not be liable for:
               </p>
               <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Kerugian tidak langsung atau konsekuensial dari penggunaan produk</li>
-                <li style={{ marginBottom: '8px' }}>Keterlambatan pengiriman yang disebabkan oleh jasa ekspedisi atau force majeure</li>
-                <li style={{ marginBottom: '8px' }}>Kerusakan yang disebabkan oleh penggunaan yang tidak sesuai</li>
-                <li style={{ marginBottom: '8px' }}>Gangguan layanan akibat pemeliharaan sistem atau faktor di luar kendali kami</li>
+                <li style={{ marginBottom: '8px' }}>Indirect or consequential damages from product use</li>
+                <li style={{ marginBottom: '8px' }}>Shipping delays caused by carriers or force majeure</li>
+                <li style={{ marginBottom: '8px' }}>Damage caused by improper use</li>
+                <li style={{ marginBottom: '8px' }}>Service interruptions due to system maintenance or factors beyond our control</li>
               </ul>
               <p style={{ color: '#495057', lineHeight: 1.7 }}>
-                Tanggung jawab maksimum kami terbatas pada nilai produk yang dibeli.
+                Our maximum liability is limited to the value of the product purchased.
               </p>
             </div>
           </section>
@@ -203,14 +203,14 @@ export default function TermsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <Scale style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
               <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
-                8. Hukum yang Berlaku
+                8. Governing Law
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
               <p style={{ color: '#495057', lineHeight: 1.7 }}>
-                Syarat dan Ketentuan ini diatur oleh dan ditafsirkan sesuai dengan hukum Republik Indonesia.
-                Setiap perselisihan yang timbul akan diselesaikan melalui musyawarah. Jika tidak tercapai kesepakatan,
-                perselisihan akan diselesaikan melalui Pengadilan Negeri Yogyakarta.
+                These Terms and Conditions are governed by and construed in accordance with applicable laws.
+                Any disputes arising shall be resolved through mutual discussion. If no agreement is reached,
+                disputes shall be settled through the appropriate jurisdiction.
               </p>
             </div>
           </section>
@@ -218,12 +218,12 @@ export default function TermsPage() {
           {/* Section 9 */}
           <section style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
-              9. Perubahan Syarat & Ketentuan
+              9. Changes to Terms & Conditions
             </h2>
             <p style={{ color: '#495057', lineHeight: 1.7 }}>
-              Kami berhak untuk mengubah Syarat & Ketentuan ini sewaktu-waktu. Perubahan akan berlaku segera setelah
-              dipublikasikan di situs web. Penggunaan berkelanjutan atas layanan kami setelah perubahan dianggap sebagai
-              persetujuan Anda terhadap syarat yang diperbarui.
+              We reserve the right to modify these Terms & Conditions at any time. Changes take effect immediately upon
+              publication on the website. Continued use of our services after changes constitutes your
+              acceptance of the updated terms.
             </p>
           </section>
 
@@ -237,18 +237,18 @@ export default function TermsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <Mail style={{ width: '24px', height: '24px' }} />
               <h2 style={{ fontSize: '20px', fontWeight: 600, margin: 0 }}>
-                Pertanyaan?
+                Questions?
               </h2>
             </div>
             <p style={{ opacity: 0.9, lineHeight: 1.7, marginBottom: '16px' }}>
-              Jika Anda memiliki pertanyaan tentang Syarat & Ketentuan ini, silakan hubungi tim kami:
+              If you have any questions about these Terms & Conditions, please contact our team:
             </p>
             <div style={{ opacity: 0.9, lineHeight: 1.8 }}>
               <p style={{ margin: '0 0 4px' }}><strong>Sesoris Customer Service</strong></p>
               <p style={{ margin: '0 0 4px' }}>Email: halo@sesoris.com</p>
-              <p style={{ margin: '0 0 4px' }}>Telepon: +62 274 123 4567</p>
+              <p style={{ margin: '0 0 4px' }}>Phone: +62 274 123 4567</p>
               <p style={{ margin: '0 0 4px' }}>WhatsApp: +62 812 3456 7890</p>
-              <p style={{ margin: 0 }}>Jam Operasional: Senin - Jumat, 09.00 - 18.00 WIB</p>
+              <p style={{ margin: 0 }}>Business Hours: Monday - Friday, 09:00 - 18:00 WIB</p>
             </div>
           </section>
         </div>

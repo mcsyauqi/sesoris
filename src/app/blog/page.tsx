@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog';
 
-const categories = ['Semua', 'Tips & Trik', 'Tutorial', 'Inspirasi', 'Lifestyle', 'Review'];
+const categories = ['All', 'Tips & Tricks', 'Tutorial', 'Inspiration', 'Lifestyle', 'Review'];
 
 export default function BlogPage() {
   const allPosts = getAllPosts();
@@ -31,7 +31,7 @@ export default function BlogPage() {
             Blog Sesoris
           </h1>
           <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
-            Tips, inspirasi, dan panduan untuk membuat rumah Anda lebih terorganisir dan nyaman
+            Tips, inspiration, and guides to make your home more organized and comfortable
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function BlogPage() {
                     }}>
                       {featuredPost.category}
                     </span>
-                    <span style={{ fontSize: '13px', color: '#6C757D' }}>Artikel Pilihan</span>
+                    <span style={{ fontSize: '13px', color: '#6C757D' }}>Featured Article</span>
                   </div>
                   <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '16px', lineHeight: 1.3 }}>
                     {featuredPost.title}
@@ -98,7 +98,7 @@ export default function BlogPage() {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
                       <Clock style={{ width: '14px', height: '14px' }} />
-                      {featuredPost.readTime} baca
+                      {featuredPost.readTime} read
                     </div>
                   </div>
                   <span style={{
@@ -113,7 +113,7 @@ export default function BlogPage() {
                     fontSize: '15px',
                     width: 'fit-content',
                   }}>
-                    Baca Artikel
+                    Read Article
                     <ArrowRight style={{ width: '18px', height: '18px' }} />
                   </span>
                 </div>
@@ -124,7 +124,7 @@ export default function BlogPage() {
 
         {/* Posts Grid */}
         <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '32px' }}>
-          Artikel Terbaru
+          Latest Articles
         </h2>
         <div className="blog-posts-grid" style={{ display: 'grid', gap: '24px' }}>
           {posts.map((post) => (
@@ -164,7 +164,7 @@ export default function BlogPage() {
                       alignItems: 'center',
                       gap: '4px',
                     }}>
-                      Baca
+                      Read
                       <ArrowRight style={{ width: '14px', height: '14px' }} />
                     </span>
                   </div>
@@ -186,7 +186,7 @@ export default function BlogPage() {
             fontSize: '15px',
             color: '#212529',
           }}>
-            Muat Lebih Banyak
+            Load More
           </button>
         </div>
 
@@ -200,15 +200,15 @@ export default function BlogPage() {
           textAlign: 'center',
         }}>
           <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '12px' }}>
-            Dapatkan Tips Terbaru
+            Get the Latest Tips
           </h3>
           <p style={{ opacity: 0.9, marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
-            Berlangganan newsletter kami untuk mendapatkan artikel dan tips terbaru langsung di inbox Anda.
+            Subscribe to our newsletter to get the latest articles and tips delivered straight to your inbox.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', maxWidth: '450px', margin: '0 auto' }}>
             <input
               type="email"
-              placeholder="Alamat email Anda"
+              placeholder="Your email address"
               style={{
                 flex: 1,
                 padding: '14px 18px',
@@ -226,7 +226,7 @@ export default function BlogPage() {
               fontWeight: 600,
               cursor: 'pointer',
             }}>
-              Berlangganan
+              Subscribe
             </button>
           </div>
         </div>

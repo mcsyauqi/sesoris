@@ -8,7 +8,7 @@ const jobs = [
     department: 'Design',
     location: 'Yogyakarta',
     type: 'Full-time',
-    desc: 'Merancang pengalaman produk yang indah dan fungsional untuk jutaan pengguna.',
+    desc: 'Design beautiful and functional product experiences for millions of users.',
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const jobs = [
     department: 'Engineering',
     location: 'Yogyakarta / Remote',
     type: 'Full-time',
-    desc: 'Membangun platform e-commerce yang scalable dan performant.',
+    desc: 'Build a scalable and performant e-commerce platform.',
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const jobs = [
     department: 'Marketing',
     location: 'Yogyakarta',
     type: 'Full-time',
-    desc: 'Mengembangkan strategi marketing digital untuk pertumbuhan brand.',
+    desc: 'Develop digital marketing strategies for brand growth.',
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const jobs = [
     department: 'Marketing',
     location: 'Yogyakarta',
     type: 'Full-time',
-    desc: 'Membuat konten kreatif untuk social media dan kampanye marketing.',
+    desc: 'Create creative content for social media and marketing campaigns.',
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const jobs = [
     department: 'Operations',
     location: 'Yogyakarta',
     type: 'Full-time',
-    desc: 'Memimpin tim customer service untuk memberikan pengalaman terbaik.',
+    desc: 'Lead the customer service team to deliver the best experience.',
   },
   {
     id: 6,
@@ -48,15 +48,15 @@ const jobs = [
     department: 'Operations',
     location: 'Yogyakarta',
     type: 'Full-time',
-    desc: 'Mengelola rantai pasok dan hubungan dengan vendor.',
+    desc: 'Manage the supply chain and vendor relationships.',
   },
 ];
 
 const benefits = [
-  { icon: Heart, title: 'Asuransi Kesehatan', desc: 'BPJS & asuransi swasta untuk karyawan dan keluarga' },
-  { icon: Coffee, title: 'Flexible Working', desc: 'WFH 2x seminggu dan jam kerja fleksibel' },
-  { icon: Zap, title: 'Learning Budget', desc: 'Rp 5 juta/tahun untuk pengembangan diri' },
-  { icon: Users, title: 'Team Events', desc: 'Outing, gathering, dan team building rutin' },
+  { icon: Heart, title: 'Health Insurance', desc: 'Comprehensive health insurance for employees and family' },
+  { icon: Coffee, title: 'Flexible Working', desc: 'Work from home twice a week and flexible hours' },
+  { icon: Zap, title: 'Learning Budget', desc: 'Annual learning budget for personal development' },
+  { icon: Users, title: 'Team Events', desc: 'Regular outings, gatherings, and team building activities' },
 ];
 
 export default function CareersPage() {
@@ -70,7 +70,7 @@ export default function CareersPage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Karir</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Careers</span>
           </div>
         </div>
       </div>
@@ -84,11 +84,11 @@ export default function CareersPage() {
       }}>
         <div className="container">
           <h1 style={{ fontSize: '42px', fontWeight: 700, marginBottom: '16px' }}>
-            Bergabung dengan Tim Sesoris
+            Join the Sesoris Team
           </h1>
           <p style={{ fontSize: '18px', opacity: 0.9, maxWidth: '600px', margin: '0 auto 32px' }}>
-            Bangun karir yang bermakna bersama kami. Kami mencari talenta terbaik
-            untuk menciptakan produk yang membantu jutaan orang hidup lebih terorganisir.
+            Build a meaningful career with us. We are looking for the best talent
+            to create products that help millions of people live more organized lives.
           </p>
           <a href="#openings" style={{
             display: 'inline-block',
@@ -99,7 +99,7 @@ export default function CareersPage() {
             fontWeight: 600,
             fontSize: '15px',
           }}>
-            Lihat Lowongan
+            View Open Positions
           </a>
         </div>
       </div>
@@ -108,10 +108,10 @@ export default function CareersPage() {
         {/* Why Join Us */}
         <div style={{ marginBottom: '64px' }}>
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', textAlign: 'center', marginBottom: '16px' }}>
-            Mengapa Bergabung dengan Sesoris?
+            Why Join Sesoris?
           </h2>
           <p style={{ color: '#6C757D', textAlign: 'center', maxWidth: '600px', margin: '0 auto 40px' }}>
-            Kami percaya bahwa karyawan yang bahagia akan menghasilkan karya terbaik
+            We believe that happy employees produce the best work
           </p>
           <div className="careers-benefits-grid" style={{ display: 'grid', gap: '24px' }}>
             {benefits.map((benefit) => (
@@ -147,7 +147,7 @@ export default function CareersPage() {
         {/* Open Positions */}
         <div id="openings">
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '32px' }}>
-            Lowongan Terbuka
+            Open Positions
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {jobs.map((job) => (
@@ -204,7 +204,7 @@ export default function CareersPage() {
                   fontWeight: 500,
                   fontSize: '14px',
                 }}>
-                  Lamar
+                  Apply
                   <ArrowRight style={{ width: '16px', height: '16px' }} />
                 </button>
               </div>
@@ -222,10 +222,10 @@ export default function CareersPage() {
         }}>
           <Briefcase style={{ width: '40px', height: '40px', color: '#1B5E3B', marginBottom: '16px' }} />
           <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
-            Tidak menemukan posisi yang cocok?
+            Don&apos;t see a position that fits?
           </h3>
           <p style={{ color: '#6C757D', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
-            Kirimkan CV dan portfolio Anda. Kami selalu terbuka untuk talenta luar biasa!
+            Send us your resume and portfolio. We are always open to exceptional talent!
           </p>
           <a href="mailto:careers@sesoris.com" style={{
             display: 'inline-block',
@@ -236,7 +236,7 @@ export default function CareersPage() {
             fontWeight: 600,
             fontSize: '15px',
           }}>
-            Kirim CV ke careers@sesoris.com
+            Send Resume to careers@sesoris.com
           </a>
         </div>
       </div>

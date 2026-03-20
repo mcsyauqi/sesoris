@@ -9,19 +9,19 @@ import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
 
 const navLinks = [
-  { name: 'Beranda', href: '/' },
-  { name: 'Belanja', href: '/shop', hasDropdown: true },
-  { name: 'Koleksi', href: '/collections' },
-  { name: 'Lacak Pesanan', href: '/track-order' },
-  { name: 'Tentang', href: '/about' },
-  { name: 'Kontak', href: '/contact' },
+  { name: 'Home', href: '/' },
+  { name: 'Shop', href: '/shop', hasDropdown: true },
+  { name: 'Collections', href: '/collections' },
+  { name: 'Track Order', href: '/track-order' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const shopLinks = [
-  { name: 'Semua Produk', href: '/shop' },
-  { name: 'Produk Terbaru', href: '/new-arrivals' },
-  { name: 'Terlaris', href: '/best-sellers' },
-  { name: 'Promo', href: '/on-sale' },
+  { name: 'All Products', href: '/shop' },
+  { name: 'New Arrivals', href: '/new-arrivals' },
+  { name: 'Best Sellers', href: '/best-sellers' },
+  { name: 'On Sale', href: '/on-sale' },
 ];
 
 export function Header() {
@@ -376,7 +376,7 @@ export function Header() {
             }}
           >
             <User style={{ width: '18px', height: '18px' }} />
-            Akun Saya
+            My Account
           </Link>
           <Link
             href="/track-order"
@@ -394,7 +394,7 @@ export function Header() {
             }}
           >
             <Search style={{ width: '18px', height: '18px' }} />
-            Lacak Pesanan
+            Track Order
           </Link>
         </div>
       </div>

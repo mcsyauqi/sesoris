@@ -131,7 +131,7 @@ export default function LoginPage() {
               </label>
               <button
                 type="button"
-                onClick={() => alert('Fitur reset password akan segera tersedia.')}
+                onClick={() => alert('Password reset feature coming soon.')}
                 style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
               >
                 Forgot password?

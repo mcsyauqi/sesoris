@@ -7,10 +7,10 @@ import { ProductCard } from '@/components/product';
 import { products, categories } from '@/data/products';
 
 const priceRanges = [
-  { label: 'Di bawah Rp 200rb', min: 0, max: 200000 },
-  { label: 'Rp 200rb - Rp 500rb', min: 200000, max: 500000 },
-  { label: 'Rp 500rb - Rp 1jt', min: 500000, max: 1000000 },
-  { label: 'Di atas Rp 1jt', min: 1000000, max: Infinity },
+  { label: 'Under Rp 200K', min: 0, max: 200000 },
+  { label: 'Rp 200K - Rp 500K', min: 200000, max: 500000 },
+  { label: 'Rp 500K - Rp 1M', min: 500000, max: 1000000 },
+  { label: 'Over Rp 1M', min: 1000000, max: Infinity },
 ];
 
 export default function ShopPage() {
@@ -38,7 +38,7 @@ export default function ShopPage() {
     <>
       {/* Categories */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Kategori</h3>
+        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Category</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {categories.map((cat) => (
             <label key={cat.id} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
@@ -57,7 +57,7 @@ export default function ShopPage() {
 
       {/* Price Range */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Rentang Harga</h3>
+        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Price Range</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {priceRanges.map((range, i) => (
             <label key={range.label} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
@@ -76,15 +76,15 @@ export default function ShopPage() {
 
       {/* Availability */}
       <div>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Ketersediaan</h3>
+        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Availability</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
             <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
-            <span style={{ fontSize: '14px', color: '#343A40' }}>Stok Tersedia</span>
+            <span style={{ fontSize: '14px', color: '#343A40' }}>In Stock</span>
           </label>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
             <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
-            <span style={{ fontSize: '14px', color: '#343A40' }}>Sedang Promo</span>
+            <span style={{ fontSize: '14px', color: '#343A40' }}>On Sale</span>
           </label>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function ShopPage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Belanja</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Shop</span>
           </div>
         </div>
       </div>
@@ -123,10 +123,10 @@ export default function ShopPage() {
               color: '#212529',
               marginBottom: '4px'
             }}>
-              Semua Produk
+              All Products
             </h1>
             <p style={{ color: '#6C757D', fontSize: '14px' }}>
-              Menampilkan {filteredProducts.length} produk
+              Showing {filteredProducts.length} products
             </p>
           </div>
 
@@ -161,10 +161,10 @@ export default function ShopPage() {
                 background: 'white'
               }}
             >
-              <option value="featured">Pilihan</option>
-              <option value="newest">Terbaru</option>
-              <option value="price-asc">Harga: Rendah ke Tinggi</option>
-              <option value="price-desc">Harga: Tinggi ke Rendah</option>
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
             </select>
 
             <div className="hide-mobile" style={{ border: '1px solid #E9ECEF', borderRadius: '8px', overflow: 'hidden' }}>

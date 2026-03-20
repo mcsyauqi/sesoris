@@ -5,24 +5,24 @@ import { Leaf, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from
 
 const footerLinks = {
   shop: [
-    { name: 'Semua Produk', href: '/shop' },
-    { name: 'Produk Terbaru', href: '/new-arrivals' },
-    { name: 'Terlaris', href: '/best-sellers' },
-    { name: 'Promo', href: '/on-sale' },
-    { name: 'Koleksi', href: '/collections' },
+    { name: 'All Products', href: '/shop' },
+    { name: 'New Arrivals', href: '/new-arrivals' },
+    { name: 'Best Sellers', href: '/best-sellers' },
+    { name: 'On Sale', href: '/on-sale' },
+    { name: 'Collections', href: '/collections' },
   ],
   help: [
     { name: 'FAQ', href: '/faq' },
-    { name: 'Hubungi Kami', href: '/contact' },
-    { name: 'Pengiriman', href: '/shipping' },
-    { name: 'Pengembalian', href: '/returns' },
-    { name: 'Panduan Ukuran', href: '/size-guide' },
-    { name: 'Lacak Pesanan', href: '/track-order' },
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Shipping', href: '/shipping' },
+    { name: 'Returns', href: '/returns' },
+    { name: 'Size Guide', href: '/size-guide' },
+    { name: 'Track Order', href: '/track-order' },
   ],
   company: [
-    { name: 'Tentang Kami', href: '/about' },
+    { name: 'About Us', href: '/about' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Karir', href: '/careers' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Press', href: '/press' },
   ],
 };
@@ -38,22 +38,22 @@ export function Footer() {
               <Leaf style={{ width: '28px', height: '28px' }} />
               <div>
                 <div style={{ fontSize: '18px', fontWeight: 700 }}>Sesoris</div>
-                <div style={{ fontSize: '10px', opacity: 0.7 }}>Hidup Lebih Teratur</div>
+                <div style={{ fontSize: '10px', opacity: 0.7 }}>Organize Your Life with Ease</div>
               </div>
             </div>
             <p style={{ fontSize: '14px', opacity: 0.8, lineHeight: 1.6, marginBottom: '24px' }}>
-              Sesoris hadir untuk membantu Anda menata kehidupan dengan produk berkualitas tinggi.
-              Temukan solusi penyimpanan dan peralatan rumah tangga terbaik untuk gaya hidup modern Anda.
+              Sesoris is here to help you organize your life with high-quality products.
+              Discover the best storage solutions and home essentials for modern living.
             </p>
             <div style={{ marginBottom: '16px' }}>
-              <p style={{ fontWeight: 600, marginBottom: '12px', fontSize: '14px' }}>Berlangganan Newsletter</p>
+              <p style={{ fontWeight: 600, marginBottom: '12px', fontSize: '14px' }}>Subscribe to Newsletter</p>
               <p style={{ fontSize: '13px', opacity: 0.7, marginBottom: '12px' }}>
-                Dapatkan promo dan info produk terbaru langsung di inbox Anda.
+                Get the latest deals and product updates straight to your inbox.
               </p>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <input
                   type="email"
-                  placeholder="Email Anda"
+                  placeholder="Your email address"
                   style={{
                     flex: 1,
                     padding: '10px 14px',
@@ -86,7 +86,7 @@ export function Footer() {
 
           {/* Shop Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Belanja</h3>
+            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Shop</h3>
             <ul style={{ listStyle: 'none' }}>
               {footerLinks.shop.map((link) => (
                 <li key={link.name} style={{ marginBottom: '10px' }}>
@@ -100,7 +100,7 @@ export function Footer() {
 
           {/* Help Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Bantuan</h3>
+            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Help</h3>
             <ul style={{ listStyle: 'none' }}>
               {footerLinks.help.map((link) => (
                 <li key={link.name} style={{ marginBottom: '10px' }}>
@@ -114,7 +114,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Perusahaan</h3>
+            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Company</h3>
             <ul style={{ listStyle: 'none', marginBottom: '24px' }}>
               {footerLinks.company.map((link) => (
                 <li key={link.name} style={{ marginBottom: '10px' }}>
@@ -148,7 +148,7 @@ export function Footer() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '20px 0' }}>
           <div className="footer-bottom">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <span style={{ fontSize: '13px', opacity: 0.7 }}>Ikuti kami:</span>
+              <span style={{ fontSize: '13px', opacity: 0.7 }}>Follow us:</span>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                   <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
@@ -166,11 +166,11 @@ export function Footer() {
             </div>
 
             <p style={{ fontSize: '13px', opacity: 0.7 }}>
-              © 2026 Sesoris. Hak cipta dilindungi.
+              © 2026 Sesoris. All rights reserved.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <span style={{ fontSize: '13px', opacity: 0.7 }}>Pembayaran:</span>
+              <span style={{ fontSize: '13px', opacity: 0.7 }}>Payment:</span>
               <span style={{ fontSize: '12px', fontWeight: 600 }}>BCA</span>
               <span style={{ fontSize: '12px', fontWeight: 600 }}>Mandiri</span>
               <span style={{ fontSize: '12px', fontWeight: 600 }}>GoPay</span>
@@ -188,8 +188,8 @@ export function Footer() {
           justifyContent: 'center',
           gap: '24px'
         }}>
-          <Link href="/privacy" style={{ fontSize: '12px', opacity: 0.6 }}>Kebijakan Privasi</Link>
-          <Link href="/terms" style={{ fontSize: '12px', opacity: 0.6 }}>Syarat & Ketentuan</Link>
+          <Link href="/privacy" style={{ fontSize: '12px', opacity: 0.6 }}>Privacy Policy</Link>
+          <Link href="/terms" style={{ fontSize: '12px', opacity: 0.6 }}>Terms & Conditions</Link>
         </div>
       </div>
     </footer>

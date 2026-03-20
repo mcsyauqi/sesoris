@@ -17,7 +17,7 @@ export default function NewArrivalsPage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Produk Terbaru</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>New Arrivals</span>
           </div>
         </div>
       </div>
@@ -34,13 +34,13 @@ export default function NewArrivalsPage() {
             fontWeight: 500,
             marginBottom: '16px',
           }}>
-            Koleksi Terbaru
+            Latest Collection
           </span>
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
-            Produk Terbaru
+            New Arrivals
           </h1>
           <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
-            Temukan koleksi terbaru kami dengan desain modern dan kualitas premium
+            Discover our latest collection with modern designs and premium quality
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default function NewArrivalsPage() {
                   fontSize: '12px',
                   fontWeight: 500,
                 }}>
-                  Baru
+                  New
                 </span>
                 <button
                   style={{
@@ -131,7 +131,7 @@ export default function NewArrivalsPage() {
 
         {newProducts.length === 0 && (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ color: '#6C757D' }}>Belum ada produk terbaru saat ini.</p>
+            <p style={{ color: '#6C757D' }}>No new products available at the moment.</p>
           </div>
         )}
       </div>

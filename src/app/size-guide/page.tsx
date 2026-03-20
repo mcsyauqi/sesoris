@@ -12,7 +12,7 @@ export default function SizeGuidePage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Panduan Ukuran</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Size Guide</span>
           </div>
         </div>
       </div>
@@ -33,35 +33,35 @@ export default function SizeGuidePage() {
               <Ruler style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
             </div>
             <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
-              Panduan Ukuran
+              Size Guide
             </h1>
             <p style={{ color: '#6C757D', fontSize: '16px' }}>
-              Temukan ukuran yang tepat untuk produk Sesoris
+              Find the right size for your Sesoris products
             </p>
           </div>
 
           {/* Storage Containers */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-              Kontainer Penyimpanan
+              Storage Containers
             </h2>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
                 <thead>
                   <tr style={{ background: '#1B5E3B', color: 'white' }}>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Ukuran</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Dimensi (P x L x T)</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Kapasitas</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Cocok Untuk</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Size</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Dimensions (L x W x H)</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Capacity</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Ideal For</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { size: 'XS', dim: '15 x 10 x 8 cm', cap: '0.5 L', use: 'Bumbu, aksesoris kecil' },
-                    { size: 'S', dim: '20 x 15 x 10 cm', cap: '1.5 L', use: 'Snack, alat tulis' },
-                    { size: 'M', dim: '30 x 20 x 15 cm', cap: '4.5 L', use: 'Pakaian dalam, mainan' },
-                    { size: 'L', dim: '40 x 30 x 20 cm', cap: '12 L', use: 'Pakaian, sepatu' },
-                    { size: 'XL', dim: '50 x 40 x 30 cm', cap: '30 L', use: 'Selimut, perlengkapan' },
+                    { size: 'XS', dim: '15 x 10 x 8 cm', cap: '0.5 L', use: 'Spices, small accessories' },
+                    { size: 'S', dim: '20 x 15 x 10 cm', cap: '1.5 L', use: 'Snacks, stationery' },
+                    { size: 'M', dim: '30 x 20 x 15 cm', cap: '4.5 L', use: 'Undergarments, toys' },
+                    { size: 'L', dim: '40 x 30 x 20 cm', cap: '12 L', use: 'Clothing, shoes' },
+                    { size: 'XL', dim: '50 x 40 x 30 cm', cap: '30 L', use: 'Blankets, gear' },
                   ].map((row, i) => (
                     <tr key={row.size} style={{ background: i % 2 === 0 ? '#F8F9FA' : 'white' }}>
                       <td style={{ padding: '14px 16px', fontWeight: 600, color: '#1B5E3B' }}>{row.size}</td>
@@ -78,25 +78,25 @@ export default function SizeGuidePage() {
           {/* Kitchen Items */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-              Peralatan Dapur
+              Kitchen Items
             </h2>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
                 <thead>
                   <tr style={{ background: '#1B5E3B', color: 'white' }}>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Produk</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Ukuran</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Kapasitas</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Porsi</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Product</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Size</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Capacity</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Serving</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { prod: 'Lunch Box', size: '21 x 15 x 6 cm', cap: '1 L', portion: '1 porsi dewasa' },
-                    { prod: 'Lunch Box Family', size: '28 x 20 x 8 cm', cap: '2.5 L', portion: '2-3 porsi' },
-                    { prod: 'Tumbler Mini', size: 'Ø 7 x 15 cm', cap: '350 ml', portion: '1-2 gelas' },
-                    { prod: 'Tumbler Standard', size: 'Ø 7 x 22 cm', cap: '500 ml', portion: '2-3 gelas' },
-                    { prod: 'Tumbler Large', size: 'Ø 8 x 26 cm', cap: '750 ml', portion: '3-4 gelas' },
+                    { prod: 'Lunch Box', size: '21 x 15 x 6 cm', cap: '1 L', portion: '1 adult serving' },
+                    { prod: 'Lunch Box Family', size: '28 x 20 x 8 cm', cap: '2.5 L', portion: '2-3 servings' },
+                    { prod: 'Tumbler Mini', size: '\u00D8 7 x 15 cm', cap: '350 ml', portion: '1-2 cups' },
+                    { prod: 'Tumbler Standard', size: '\u00D8 7 x 22 cm', cap: '500 ml', portion: '2-3 cups' },
+                    { prod: 'Tumbler Large', size: '\u00D8 8 x 26 cm', cap: '750 ml', portion: '3-4 cups' },
                   ].map((row, i) => (
                     <tr key={row.prod} style={{ background: i % 2 === 0 ? '#F8F9FA' : 'white' }}>
                       <td style={{ padding: '14px 16px', fontWeight: 500, color: '#212529' }}>{row.prod}</td>
@@ -113,23 +113,23 @@ export default function SizeGuidePage() {
           {/* Bags */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-              Tas & Organizer
+              Bags & Organizers
             </h2>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
                 <thead>
                   <tr style={{ background: '#1B5E3B', color: 'white' }}>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Tipe</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Dimensi</th>
-                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Cocok Untuk</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Type</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Dimensions</th>
+                    <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Ideal For</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { type: 'Pouch Mini', dim: '15 x 10 cm', use: 'Kosmetik, kabel, aksesoris' },
+                    { type: 'Pouch Mini', dim: '15 x 10 cm', use: 'Cosmetics, cables, accessories' },
                     { type: 'Pouch Medium', dim: '22 x 15 cm', use: 'Tablet, charger, toiletries' },
-                    { type: 'Tote Bag S', dim: '30 x 25 x 10 cm', use: 'Belanja ringan, buku' },
-                    { type: 'Tote Bag M', dim: '40 x 35 x 12 cm', use: 'Laptop 13", belanja harian' },
+                    { type: 'Tote Bag S', dim: '30 x 25 x 10 cm', use: 'Light shopping, books' },
+                    { type: 'Tote Bag M', dim: '40 x 35 x 12 cm', use: 'Laptop 13", daily shopping' },
                     { type: 'Tote Bag L', dim: '45 x 40 x 15 cm', use: 'Laptop 15", gym, travel' },
                   ].map((row, i) => (
                     <tr key={row.type} style={{ background: i % 2 === 0 ? '#F8F9FA' : 'white' }}>
@@ -152,14 +152,14 @@ export default function SizeGuidePage() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
               <HelpCircle style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
-              <span style={{ fontWeight: 600, color: '#1B5E3B' }}>Tips Mengukur</span>
+              <span style={{ fontWeight: 600, color: '#1B5E3B' }}>Measurement Tips</span>
             </div>
             <ul style={{ margin: 0, paddingLeft: '20px', color: '#212529', fontSize: '14px', lineHeight: 1.8 }}>
-              <li>P = Panjang (sisi terpanjang)</li>
-              <li>L = Lebar (sisi kedua terpanjang)</li>
-              <li>T = Tinggi (dari dasar ke atas)</li>
-              <li>Ø = Diameter (untuk produk bulat)</li>
-              <li>Kapasitas diukur hingga bibir wadah</li>
+              <li>L = Length (longest side)</li>
+              <li>W = Width (second longest side)</li>
+              <li>H = Height (from base to top)</li>
+              <li>{'\u00D8'} = Diameter (for round products)</li>
+              <li>Capacity is measured to the rim of the container</li>
             </ul>
           </div>
 
@@ -171,10 +171,10 @@ export default function SizeGuidePage() {
             textAlign: 'center',
           }}>
             <p style={{ color: '#6C757D', marginBottom: '12px' }}>
-              Masih bingung memilih ukuran yang tepat?
+              Still unsure about which size to choose?
             </p>
             <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>
-              Tanya Customer Service Kami
+              Ask Our Customer Service
             </Link>
           </div>
         </div>

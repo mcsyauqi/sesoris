@@ -178,7 +178,7 @@ function renderContentBlocks(content: string[]): React.ReactNode[] {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', fontWeight: 600, color: '#1B5E3B', fontSize: '15px' }}>
               <BookOpen style={{ width: '16px', height: '16px' }} />
-              Baca Juga
+              Also Read
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>{links}</ul>
           </div>
@@ -429,7 +429,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://www.sesoris.com' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.sesoris.com' },
       { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.sesoris.com/blog' },
       { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.sesoris.com/blog/${slug}` },
     ],
@@ -519,7 +519,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Clock style={{ width: '16px', height: '16px' }} />
-                  <span style={{ fontSize: '14px' }}>{post.readTime} baca</span>
+                  <span style={{ fontSize: '14px' }}>{post.readTime} read</span>
                 </div>
               </div>
             </div>
@@ -587,7 +587,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               }}>
                 <div style={{ fontWeight: 700, fontSize: '15px', color: '#1B5E3B', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <BookOpen style={{ width: '16px', height: '16px' }} />
-                  Daftar Isi
+                  Table of Contents
                 </div>
                 <ol style={{ listStyle: 'none', padding: 0, margin: 0, counterReset: 'toc' }}>
                   {toc.map((item, idx) => (
@@ -623,7 +623,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 paddingBottom: '40px',
               }}>
                 <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#212529', marginBottom: '24px' }}>
-                  Artikel Terkait
+                  Related Articles
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
                   {relatedPosts.map((related) => (
@@ -661,7 +661,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 fontWeight: 500,
               }}>
                 <ArrowLeft style={{ width: '18px', height: '18px' }} />
-                Kembali ke Blog
+                Back to Blog
               </Link>
             </div>
           </div>

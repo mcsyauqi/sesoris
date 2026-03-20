@@ -17,7 +17,7 @@ export default function OnSalePage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Promo</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>On Sale</span>
           </div>
         </div>
       </div>
@@ -33,11 +33,11 @@ export default function OnSalePage() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '12px' }}>
             <Percent style={{ width: '32px', height: '32px' }} />
             <h1 style={{ fontSize: '36px', fontWeight: 700, margin: 0 }}>
-              PROMO SPESIAL
+              SPECIAL SALE
             </h1>
           </div>
           <p style={{ fontSize: '18px', opacity: 0.9 }}>
-            Diskon hingga 50% untuk produk pilihan!
+            Up to 50% off on selected products!
           </p>
         </div>
       </div>
@@ -138,7 +138,7 @@ export default function OnSalePage() {
 
         {saleProducts.length === 0 && (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ color: '#6C757D' }}>Tidak ada produk promo saat ini. Nantikan promo selanjutnya!</p>
+            <p style={{ color: '#6C757D' }}>No products on sale right now. Stay tuned for upcoming deals!</p>
           </div>
         )}
       </div>

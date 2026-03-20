@@ -5,23 +5,23 @@ import { Home, ChevronRight, Newspaper, Download, ExternalLink, Mail } from 'luc
 const pressReleases = [
   {
     id: 1,
-    title: 'Sesoris Raih Penghargaan Brand Lokal Terbaik 2025',
-    date: '15 Desember 2025',
-    excerpt: 'Sesoris dinobatkan sebagai brand lokal terbaik dalam kategori home & living oleh Indonesia Brand Award 2025.',
+    title: 'Sesoris Wins Best Local Brand Award 2025',
+    date: 'December 15, 2025',
+    excerpt: 'Sesoris was named the best local brand in the home & living category at the Indonesia Brand Award 2025.',
     image: 'https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=600&h=400&fit=crop',
   },
   {
     id: 2,
-    title: 'Ekspansi Sesoris ke 5 Kota Besar Indonesia',
-    date: '28 November 2025',
-    excerpt: 'Sesoris membuka 5 experience store baru di Jakarta, Surabaya, Bandung, Medan, dan Makassar.',
+    title: 'Sesoris Expands to 5 Major Cities in Indonesia',
+    date: 'November 28, 2025',
+    excerpt: 'Sesoris opens 5 new experience stores in Jakarta, Surabaya, Bandung, Medan, and Makassar.',
     image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop',
   },
   {
     id: 3,
-    title: 'Kolaborasi Sesoris x Artisan Lokal Yogyakarta',
-    date: '10 Oktober 2025',
-    excerpt: 'Meluncurkan koleksi terbatas hasil kolaborasi dengan 20 pengrajin lokal Yogyakarta.',
+    title: 'Sesoris x Yogyakarta Local Artisan Collaboration',
+    date: 'October 10, 2025',
+    excerpt: 'Launching a limited edition collection in collaboration with 20 local artisans from Yogyakarta.',
     image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=600&h=400&fit=crop',
   },
 ];
@@ -69,14 +69,14 @@ export default function PressPage() {
             Press & Media
           </h1>
           <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
-            Berita terbaru, press release, dan liputan media tentang Sesoris
+            Latest news, press releases, and media coverage about Sesoris
           </p>
         </div>
 
         {/* Media Features */}
         <div style={{ marginBottom: '64px' }}>
           <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', textAlign: 'center', marginBottom: '24px' }}>
-            Diliput oleh
+            Featured In
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '32px', flexWrap: 'wrap' }}>
             {mediaFeatures.map((media) => (
@@ -101,7 +101,7 @@ export default function PressPage() {
         {/* Press Releases */}
         <div style={{ marginBottom: '64px' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '32px' }}>
-            Press Release Terbaru
+            Latest Press Releases
           </h2>
           <div className="press-releases-grid" style={{ display: 'grid', gap: '24px' }}>
             {pressReleases.map((release) => (
@@ -136,7 +136,7 @@ export default function PressPage() {
                     fontWeight: 500,
                     padding: 0,
                   }}>
-                    Baca Selengkapnya
+                    Read More
                     <ExternalLink style={{ width: '14px', height: '14px' }} />
                   </button>
                 </div>
@@ -159,8 +159,8 @@ export default function PressPage() {
                 Press Kit
               </h2>
               <p style={{ opacity: 0.9, marginBottom: '24px', lineHeight: 1.6 }}>
-                Download press kit kami yang berisi logo, foto produk high-resolution,
-                company profile, dan fact sheet untuk kebutuhan publikasi Anda.
+                Download our press kit containing logos, high-resolution product photos,
+                company profile, and fact sheet for your publication needs.
               </p>
               <button style={{
                 display: 'inline-flex',
@@ -198,11 +198,11 @@ export default function PressPage() {
         {/* Media Contact */}
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
-            Kontak Media
+            Media Contact
           </h2>
           <p style={{ color: '#6C757D', marginBottom: '24px', lineHeight: 1.6 }}>
-            Untuk keperluan wawancara, kolaborasi media, atau informasi lebih lanjut,
-            silakan hubungi tim Public Relations kami.
+            For interviews, media collaborations, or further information,
+            please contact our Public Relations team.
           </p>
           <div style={{
             display: 'inline-flex',

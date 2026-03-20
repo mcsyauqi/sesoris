@@ -20,11 +20,11 @@ const GA_MEASUREMENT_ID = 'G-V2Y9KVBKFP';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sesoris - Hidup Lebih Teratur',
+    default: 'Sesoris - Home & Living Accessories',
     template: '%s | Sesoris',
   },
-  description: 'Temukan produk-produk berkualitas untuk rumah, dapur, dan gaya hidup Anda. Belanja mudah dengan Sesoris.',
-  keywords: ['organizer', 'home organization', 'kitchen storage', 'kontainer', 'penyimpanan', 'rumah tangga', 'Yogyakarta'],
+  description: 'Discover quality products for your home, kitchen, and lifestyle. Shop smart with Sesoris.',
+  keywords: ['organizer', 'home organization', 'kitchen storage', 'containers', 'storage solutions', 'home accessories', 'Yogyakarta'],
   authors: [{ name: 'Sesoris' }],
   creator: 'Sesoris',
   publisher: 'Sesoris',
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'id_ID',
+    locale: 'en_US',
     url: 'https://www.sesoris.com',
     siteName: 'Sesoris',
-    title: 'Sesoris - Hidup Lebih Teratur',
-    description: 'Temukan produk-produk berkualitas untuk rumah, dapur, dan gaya hidup Anda.',
+    title: 'Sesoris - Home & Living Accessories',
+    description: 'Discover quality products for your home, kitchen, and lifestyle.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sesoris - Hidup Lebih Teratur',
-    description: 'Temukan produk-produk berkualitas untuk rumah, dapur, dan gaya hidup Anda.',
+    title: 'Sesoris - Home & Living Accessories',
+    description: 'Discover quality products for your home, kitchen, and lifestyle.',
   },
   robots: {
     index: true,
@@ -70,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <head>
         {/* JSON-LD Organization Schema */}
         <script
@@ -82,7 +82,7 @@ export default function RootLayout({
               name: 'Sesoris',
               url: 'https://www.sesoris.com',
               logo: 'https://www.sesoris.com/logo.svg',
-              description: 'Toko online produk organizer dan penyimpanan berkualitas di Indonesia',
+              description: 'Online store for quality home organizers and storage solutions in Indonesia',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Jl. Malioboro No. 123',

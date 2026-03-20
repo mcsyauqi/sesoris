@@ -8,7 +8,7 @@ export function NewsletterSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Terima kasih telah berlangganan!');
+    alert('Thank you for subscribing!');
     setEmail('');
   };
 
@@ -44,10 +44,10 @@ export function NewsletterSection() {
             color: 'white',
             marginBottom: '12px'
           }}>
-            Berlangganan Newsletter
+            Subscribe to Our Newsletter
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', marginBottom: '28px' }}>
-            Dapatkan promo spesial, update produk baru, dan penawaran eksklusif langsung di inbox Anda.
+            Get special promotions, new product updates, and exclusive offers delivered straight to your inbox.
           </p>
 
           <form onSubmit={handleSubmit} className="newsletter-form">
@@ -55,7 +55,7 @@ export function NewsletterSection() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Alamat email Anda"
+              placeholder="Your email address"
               required
               style={{
                 flex: 1,
@@ -87,12 +87,12 @@ export function NewsletterSection() {
               }}
             >
               <Send style={{ width: '16px', height: '16px' }} />
-              Langganan
+              Subscribe
             </button>
           </form>
 
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', marginTop: '16px' }}>
-            Tanpa spam, bisa berhenti kapan saja. Kami menghargai privasi Anda.
+            No spam, unsubscribe anytime. We respect your privacy.
           </p>
         </div>
       </div>

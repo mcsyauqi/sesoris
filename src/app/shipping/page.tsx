@@ -12,7 +12,7 @@ export default function ShippingPage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Pengiriman</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Shipping</span>
           </div>
         </div>
       </div>
@@ -33,23 +33,23 @@ export default function ShippingPage() {
               <Truck style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
             </div>
             <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
-              Informasi Pengiriman
+              Shipping Information
             </h1>
             <p style={{ color: '#6C757D', fontSize: '16px' }}>
-              Kami berkomitmen mengirimkan pesanan Anda dengan cepat dan aman
+              We are committed to delivering your orders quickly and safely
             </p>
           </div>
 
           {/* Shipping Options */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-              Pilihan Pengiriman
+              Shipping Options
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
-                { name: 'Reguler', time: '3-5 hari kerja', price: 'Rp 15.000', desc: 'Pengiriman standar ke seluruh Indonesia' },
-                { name: 'Express', time: '1-2 hari kerja', price: 'Rp 30.000', desc: 'Pengiriman cepat untuk kebutuhan mendesak' },
-                { name: 'Same Day', time: 'Hari yang sama', price: 'Rp 50.000', desc: 'Khusus area Yogyakarta dan sekitarnya' },
+                { name: 'Standard', time: '5-7 business days', price: '$5.99', desc: 'Standard shipping across all regions' },
+                { name: 'Express', time: '2-3 business days', price: '$12.99', desc: 'Fast shipping for urgent needs' },
+                { name: 'Same Day', time: 'Same day delivery', price: '$19.99', desc: 'Available in select metro areas only' },
               ].map((option) => (
                 <div key={option.name} style={{
                   padding: '20px',
@@ -84,10 +84,10 @@ export default function ShippingPage() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
               <Package style={{ width: '24px', height: '24px' }} />
-              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: 0 }}>Gratis Ongkir!</h3>
+              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: 0 }}>Free Shipping!</h3>
             </div>
             <p style={{ opacity: 0.9, marginBottom: '16px' }}>
-              Nikmati gratis ongkos kirim untuk setiap pembelian minimal Rp 500.000 ke seluruh Indonesia.
+              Enjoy free shipping on all orders over $50. No promo code needed!
             </p>
             <Link href="/shop" style={{
               display: 'inline-block',
@@ -98,32 +98,32 @@ export default function ShippingPage() {
               fontWeight: 500,
               fontSize: '14px',
             }}>
-              Belanja Sekarang
+              Shop Now
             </Link>
           </div>
 
           {/* Coverage Area */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-              Area Pengiriman
+              Shipping Areas
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div style={{ padding: '20px', background: '#F8F9FA', borderRadius: '12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                   <MapPin style={{ width: '18px', height: '18px', color: '#1B5E3B' }} />
-                  <span style={{ fontWeight: 600, color: '#212529' }}>Pulau Jawa</span>
+                  <span style={{ fontWeight: 600, color: '#212529' }}>Domestic</span>
                 </div>
                 <p style={{ fontSize: '14px', color: '#6C757D', margin: 0 }}>
-                  Estimasi 2-4 hari kerja untuk pengiriman reguler
+                  Estimated 3-7 business days for standard shipping
                 </p>
               </div>
               <div style={{ padding: '20px', background: '#F8F9FA', borderRadius: '12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                   <MapPin style={{ width: '18px', height: '18px', color: '#1B5E3B' }} />
-                  <span style={{ fontWeight: 600, color: '#212529' }}>Luar Jawa</span>
+                  <span style={{ fontWeight: 600, color: '#212529' }}>International</span>
                 </div>
                 <p style={{ fontSize: '14px', color: '#6C757D', margin: 0 }}>
-                  Estimasi 4-7 hari kerja untuk pengiriman reguler
+                  Estimated 10-14 business days for standard shipping
                 </p>
               </div>
             </div>
@@ -132,13 +132,13 @@ export default function ShippingPage() {
           {/* Shipping Partners */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-              Mitra Pengiriman
+              Shipping Partners
             </h2>
             <p style={{ color: '#6C757D', marginBottom: '16px' }}>
-              Kami bekerja sama dengan ekspedisi terpercaya untuk memastikan paket Anda sampai dengan aman:
+              We partner with trusted carriers to ensure your packages arrive safely:
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-              {['JNE', 'J&T Express', 'SiCepat', 'AnterAja', 'Ninja Express', 'GoSend'].map((partner) => (
+              {['FedEx', 'UPS', 'DHL', 'USPS', 'Royal Mail', 'Australia Post'].map((partner) => (
                 <span key={partner} style={{
                   padding: '8px 16px',
                   background: '#F8F9FA',
@@ -155,13 +155,13 @@ export default function ShippingPage() {
           {/* FAQ */}
           <div>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-              Pertanyaan Umum
+              Frequently Asked Questions
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
-                { q: 'Bagaimana cara melacak pesanan saya?', a: 'Setelah pesanan dikirim, Anda akan menerima email berisi nomor resi. Gunakan nomor tersebut untuk melacak di halaman Track Order atau website ekspedisi.' },
-                { q: 'Apakah bisa kirim ke luar negeri?', a: 'Saat ini kami hanya melayani pengiriman ke seluruh wilayah Indonesia. Untuk pengiriman internasional, silakan hubungi customer service kami.' },
-                { q: 'Bagaimana jika paket rusak saat pengiriman?', a: 'Jika paket rusak saat diterima, segera hubungi kami dalam 24 jam dengan melampirkan foto bukti kerusakan. Kami akan memproses penggantian atau refund.' },
+                { q: 'How can I track my order?', a: 'Once your order is shipped, you will receive an email with a tracking number. Use this number to track your package on our Track Order page or the carrier\'s website.' },
+                { q: 'Do you ship internationally?', a: 'Yes, we ship to most countries worldwide. International shipping costs and delivery times vary by location. Customers may be responsible for customs duties and taxes.' },
+                { q: 'What if my package is damaged during shipping?', a: 'If your package arrives damaged, please contact us within 48 hours with photos of the damage. We will arrange a replacement or refund.' },
               ].map((item, i) => (
                 <div key={i} style={{ padding: '20px', background: '#F8F9FA', borderRadius: '12px' }}>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '8px' }}>{item.q}</div>
@@ -180,10 +180,10 @@ export default function ShippingPage() {
             textAlign: 'center',
           }}>
             <p style={{ color: '#6C757D', marginBottom: '12px' }}>
-              Punya pertanyaan lain tentang pengiriman?
+              Have more questions about shipping?
             </p>
             <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>
-              Hubungi Kami
+              Contact Us
             </Link>
           </div>
         </div>

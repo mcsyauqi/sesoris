@@ -17,7 +17,7 @@ export default function BestSellersPage() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Terlaris</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Best Sellers</span>
           </div>
         </div>
       </div>
@@ -37,13 +37,13 @@ export default function BestSellersPage() {
             marginBottom: '16px',
           }}>
             <TrendingUp style={{ width: '16px', height: '16px' }} />
-            Paling Populer
+            Most Popular
           </span>
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
-            Produk Terlaris
+            Best Sellers
           </h1>
           <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
-            Produk favorit pelanggan kami dengan rating dan ulasan terbaik
+            Our customers' favorites with the best ratings and reviews
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function BestSellersPage() {
                   fontSize: '12px',
                   fontWeight: 600,
                 }}>
-                  #{index + 1} Terlaris
+                  #{index + 1} Best Seller
                 </span>
                 <button
                   style={{
@@ -106,7 +106,7 @@ export default function BestSellersPage() {
                 </Link>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '8px' }}>
                   <Star style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
-                  <span style={{ fontSize: '13px', color: '#6C757D' }}>{product.rating} ({product.reviewCount} ulasan)</span>
+                  <span style={{ fontSize: '13px', color: '#6C757D' }}>{product.rating} ({product.reviewCount} reviews)</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span style={{ fontSize: '16px', fontWeight: 700, color: '#1B5E3B' }}>
@@ -135,7 +135,7 @@ export default function BestSellersPage() {
 
         {bestSellers.length === 0 && (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ color: '#6C757D' }}>Belum ada produk terlaris saat ini.</p>
+            <p style={{ color: '#6C757D' }}>No best-selling products available at the moment.</p>
           </div>
         )}
       </div>

@@ -68,7 +68,7 @@ export function ProductCard({ product }: { product: Product }) {
                 fontWeight: 600,
                 borderRadius: '6px'
               }}>
-                BARU
+                NEW
               </span>
             )}
           </div>
@@ -132,7 +132,7 @@ export function ProductCard({ product }: { product: Product }) {
               }}
             >
               <ShoppingCart style={{ width: '15px', height: '15px' }} />
-              Tambah ke Keranjang
+              Add to Cart
             </button>
           </div>
         </div>

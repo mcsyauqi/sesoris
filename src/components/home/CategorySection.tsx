@@ -14,10 +14,10 @@ export function CategorySection() {
             color: '#212529',
             marginBottom: '12px'
           }}>
-            Belanja per Kategori
+            Shop by Category
           </h2>
           <p style={{ color: '#6C757D', fontSize: '15px' }}>
-            Temukan produk yang tepat untuk setiap kebutuhan
+            Find the right products for every need
           </p>
         </div>
 
