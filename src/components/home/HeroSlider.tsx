@@ -1,187 +1,158 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Star, Truck, ShieldCheck } from 'lucide-react';
 
 const slides = [
   {
     id: 1,
-    subtitle: 'Promo Terbatas',
-    title: 'Diskon Hingga 50%',
-    description: 'Dapatkan penawaran terbaik untuk produk pilihan. Buruan sebelum kehabisan!',
-    image: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=600&fit=crop',
-    buttonText: 'Belanja Sekarang',
+    tagline: 'Koleksi Terbaru 2026',
+    title: 'Rumah Rapi,',
+    titleAccent: 'Hidup Tenang.',
+    description: 'Temukan solusi penyimpanan cerdas yang bikin rumah lebih terorganisir dan estetik.',
+    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1200&h=800&fit=crop',
+    buttonText: 'Jelajahi Koleksi',
     buttonLink: '/shop',
+    stat: { value: '500+', label: 'Produk' },
   },
   {
     id: 2,
-    subtitle: 'Hadiah Sempurna',
-    title: 'Berikan yang Terbaik',
-    description: 'Temukan hadiah spesial untuk orang-orang tersayang.',
-    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&h=600&fit=crop',
-    buttonText: 'Lihat Koleksi',
-    buttonLink: '/category/gift-sets',
+    tagline: 'Best Seller',
+    title: 'Dapur Bersih,',
+    titleAccent: 'Masak Jadi Fun.',
+    description: 'Rak dapur, organizer, dan wadah makanan premium. Solusi lengkap untuk dapur impian.',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop',
+    buttonText: 'Lihat Best Seller',
+    buttonLink: '/best-sellers',
+    stat: { value: '4.8', label: 'Rating' },
   },
   {
     id: 3,
-    subtitle: 'Baru Datang',
-    title: 'Produk Terbaru',
-    description: 'Jelajahi koleksi terbaru produk inovatif kami.',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=600&fit=crop',
-    buttonText: 'Lihat Semua',
-    buttonLink: '/new-arrivals',
+    tagline: 'Promo Spesial',
+    title: 'Hemat Hingga',
+    titleAccent: '50% Off.',
+    description: 'Penawaran terbatas untuk produk pilihan. Upgrade rumahmu tanpa bikin kantong bolong.',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=800&fit=crop',
+    buttonText: 'Belanja Sekarang',
+    buttonLink: '/on-sale',
+    stat: { value: '50K+', label: 'Pelanggan' },
   },
 ];
 
 export function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const goToSlide = useCallback((index: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrent(index);
+    setTimeout(() => setIsTransitioning(false), 600);
+  }, [isTransitioning]);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+      goToSlide((current + 1) % slides.length);
+    }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [current, goToSlide]);
 
   const slide = slides[current];
 
   return (
-    <section style={{
-      background: 'linear-gradient(135deg, #E8F5E9 0%, #fff 100%)',
-      position: 'relative',
-      overflow: 'hidden'
-    }}>
-      <div className="container">
-        <div className="grid-hero">
-          {/* Content */}
-          <div style={{ order: 1 }}>
-            <span style={{
-              display: 'inline-block',
-              padding: '6px 16px',
-              background: 'rgba(27, 94, 59, 0.1)',
-              color: '#1B5E3B',
-              fontSize: '13px',
-              fontWeight: 600,
-              borderRadius: '50px',
-              marginBottom: '16px'
-            }}>
-              {slide.subtitle}
-            </span>
-            <h1 style={{
-              fontFamily: 'var(--font-heading), Georgia, serif',
-              fontSize: 'clamp(32px, 5vw, 52px)',
-              fontWeight: 400,
-              color: '#212529',
-              lineHeight: 1.1,
-              marginBottom: '16px'
-            }}>
-              {slide.title}
-            </h1>
-            <p style={{
-              fontSize: '15px',
-              color: '#6C757D',
-              marginBottom: '28px',
-              maxWidth: '400px',
-              lineHeight: 1.7
-            }}>
-              {slide.description}
-            </p>
-            <Link
-              href={slide.buttonLink}
-              className="btn btn-primary"
-              style={{ fontSize: '15px' }}
-            >
-              {slide.buttonText}
-            </Link>
-          </div>
-
-          {/* Image */}
-          <div style={{
-            position: 'relative',
-            aspectRatio: '4/3',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            order: 2
-          }}>
+    <section className="hero-section">
+      {/* Background image with overlay */}
+      <div className="hero-bg">
+        {slides.map((s, i) => (
+          <div
+            key={s.id}
+            className={`hero-bg-slide ${i === current ? 'active' : ''}`}
+          >
             <Image
-              src={slide.image}
-              alt={slide.title}
+              src={s.image}
+              alt={s.title}
               fill
               style={{ objectFit: 'cover' }}
-              priority
+              priority={i === 0}
             />
+          </div>
+        ))}
+        <div className="hero-overlay" />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="hero-content-grid">
+          {/* Main content */}
+          <div className="hero-text">
+            <span className="hero-tagline">
+              {slide.tagline}
+            </span>
+
+            <h1 className="hero-title">
+              {slide.title}
+              <br />
+              <span className="hero-title-accent">{slide.titleAccent}</span>
+            </h1>
+
+            <p className="hero-description">
+              {slide.description}
+            </p>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <Link
+                href={slide.buttonLink}
+                className="hero-cta"
+              >
+                {slide.buttonText}
+                <ArrowRight style={{ width: '18px', height: '18px' }} />
+              </Link>
+
+              <div className="hero-rating">
+                <div style={{ display: 'flex', gap: '2px' }}>
+                  {[1,2,3,4,5].map(i => (
+                    <Star key={i} style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
+                  ))}
+                </div>
+                <span style={{ fontSize: '13px', opacity: 0.9 }}>50,000+ pelanggan puas</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right side - floating stat card */}
+          <div className="hero-side">
+            <div className="hero-stat-card">
+              <div className="hero-stat-value">{slide.stat.value}</div>
+              <div className="hero-stat-label">{slide.stat.label}</div>
+            </div>
           </div>
         </div>
 
-        {/* Dots Navigation */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '8px',
-          paddingBottom: '24px'
-        }}>
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              style={{
-                width: i === current ? '32px' : '8px',
-                height: '8px',
-                borderRadius: '50px',
-                background: i === current ? '#1B5E3B' : 'rgba(27, 94, 59, 0.3)',
-                border: 'none',
-                cursor: 'pointer',
-                transition: 'all 0.3s'
-              }}
-            />
-          ))}
-        </div>
+        {/* Bottom bar: dots + trust badges */}
+        <div className="hero-bottom">
+          <div className="hero-dots">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goToSlide(i)}
+                className={`hero-dot ${i === current ? 'active' : ''}`}
+                aria-label={`Slide ${i + 1}`}
+              />
+            ))}
+          </div>
 
-        {/* Arrows - hidden on mobile */}
-        <button
-          className="hide-mobile"
-          onClick={() => setCurrent((prev) => (prev - 1 + slides.length) % slides.length)}
-          style={{
-            position: 'absolute',
-            left: '16px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: '40px',
-            height: '40px',
-            borderRadius: '50%',
-            background: 'white',
-            border: 'none',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-            cursor: 'pointer',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <ChevronLeft style={{ width: '20px', height: '20px' }} />
-        </button>
-        <button
-          className="hide-mobile"
-          onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
-          style={{
-            position: 'absolute',
-            right: '16px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: '40px',
-            height: '40px',
-            borderRadius: '50%',
-            background: 'white',
-            border: 'none',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-            cursor: 'pointer',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <ChevronRight style={{ width: '20px', height: '20px' }} />
-        </button>
+          <div className="hero-mini-badges">
+            <div className="hero-mini-badge">
+              <Truck style={{ width: '16px', height: '16px' }} />
+              <span>Gratis Ongkir</span>
+            </div>
+            <div className="hero-mini-badge">
+              <ShieldCheck style={{ width: '16px', height: '16px' }} />
+              <span>Garansi 30 Hari</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
