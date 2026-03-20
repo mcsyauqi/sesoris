@@ -38,10 +38,10 @@ function extractPrompt(desc: string): string {
   return match ? match[1].trim() : '';
 }
 
-function formatDateID(date: Date): string {
-  const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+function formatDate(date: Date): string {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 function toISODate(date: Date): string {
@@ -129,7 +129,7 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
     image: heroImage,
     category: generated.category,
     date: toISODate(today),
-    dateFormatted: formatDateID(today),
+    dateFormatted: formatDate(today),
     readTime: generated.readTime,
     author,
     content: contentArray,
@@ -140,7 +140,7 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
 
   const articleUrl = `${SITE_URL}/blog/${post.slug}`;
   await addAttachment(card.id, articleUrl, `📝 ${post.title}`);
-  await addComment(card.id, `✅ Artikel telah dipublikasikan!\n\n**${post.title}**\n${articleUrl}\n\nKategori: ${post.category}\nWaktu baca: ${post.readTime}\nPenulis: ${post.author.name}`);
+  await addComment(card.id, `✅ Article published!\n\n**${post.title}**\n${articleUrl}\n\nCategory: ${post.category}\nRead time: ${post.readTime}\nAuthor: ${post.author.name}`);
   await moveCardToList(card.id, LIST_DONE);
   console.log(`  [Content] Card moved to Done`);
 
@@ -203,8 +203,8 @@ async function processMonitoringTask(card: TrelloCard): Promise<void> {
     messages: [{
       role: 'user',
       content: prompt
-        ? `${prompt}\n\nNote: Saya belum punya data aktual. Buatkan template monitoring report yang siap diisi dengan data, beserta panduan singkat cara mendapatkan setiap data point.`
-        : `Buatkan template weekly SEO monitoring report untuk sesoris.com. Include: rankings check, traffic analysis, indexation status, technical issues, backlink review, dan action items. Format yang mudah diisi.`,
+        ? `${prompt}\n\nNote: I don't have actual data yet. Create a monitoring report template ready to be filled with data, along with a brief guide on how to obtain each data point.`
+        : `Create a weekly SEO monitoring report template for sesoris.com. Include: rankings check, traffic analysis, indexation status, technical issues, backlink review, and action items. Use an easy-to-fill format.`,
     }],
   });
 
@@ -280,7 +280,7 @@ async function sendEmailReport(results: { name: string; label: string; status: s
     return;
   }
 
-  const today = formatDateID(new Date());
+  const today = formatDate(new Date());
   const taskRows = results
     .map((r) => `<tr><td style="padding:8px;border:1px solid #e0e0e0">${r.status === 'OK' ? '&#9989;' : '&#10060;'}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.name}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.label}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.status}</td></tr>`)
     .join('\n');
@@ -289,14 +289,14 @@ async function sendEmailReport(results: { name: string; label: string; status: s
   const publishedArticles = results.filter((r) => r.articleUrl && r.status === 'OK');
   const articlesHtml = publishedArticles.length > 0
     ? `<div style="margin:16px 0;padding:16px;background:#e8f5e9;border-radius:8px;border-left:4px solid #1B5E3B">
-        <h3 style="margin:0 0 12px;color:#1B5E3B">📝 Artikel Dipublikasikan Hari Ini</h3>
+        <h3 style="margin:0 0 12px;color:#1B5E3B">📝 Articles Published Today</h3>
         ${publishedArticles.map((r) => `
           <div style="margin:8px 0;padding:12px;background:white;border-radius:6px">
             <a href="${r.articleUrl}" style="color:#1B5E3B;font-weight:bold;font-size:16px;text-decoration:none">${r.articleTitle}</a>
             <div style="margin-top:4px;color:#666;font-size:13px">
               ${r.category ? `📂 ${r.category}` : ''} ${r.readTime ? `&nbsp;•&nbsp; ⏱️ ${r.readTime}` : ''}
             </div>
-            <a href="${r.articleUrl}" style="display:inline-block;margin-top:8px;padding:6px 16px;background:#1B5E3B;color:white;border-radius:4px;text-decoration:none;font-size:13px">Baca Artikel →</a>
+            <a href="${r.articleUrl}" style="display:inline-block;margin-top:8px;padding:6px 16px;background:#1B5E3B;color:white;border-radius:4px;text-decoration:none;font-size:13px">Read Article →</a>
           </div>
         `).join('')}
       </div>`
@@ -309,7 +309,7 @@ async function sendEmailReport(results: { name: string; label: string; status: s
         <p style="margin:4px 0 0;opacity:0.8">${today}</p>
       </div>
       <div style="padding:20px;background:#f9f9f9;border-radius:0 0 8px 8px">
-        <p><strong>${processed}</strong> task selesai, <strong>${errors}</strong> error</p>
+        <p><strong>${processed}</strong> tasks completed, <strong>${errors}</strong> errors</p>
         ${articlesHtml}
         <table style="width:100%;border-collapse:collapse;margin:16px 0">
           <thead>
@@ -322,7 +322,7 @@ async function sendEmailReport(results: { name: string; label: string; status: s
           </thead>
           <tbody>${taskRows}</tbody>
         </table>
-        <p style="color:#666;font-size:13px">Semua task sudah dipindah ke list <strong>Done</strong> di Trello.<br>
+        <p style="color:#666;font-size:13px">All tasks have been moved to the <strong>Done</strong> list on Trello.<br>
         <a href="https://trello.com/b/EPQSmskz/sesoris">Buka Trello Board</a></p>
       </div>
     </div>`;
@@ -330,7 +330,7 @@ async function sendEmailReport(results: { name: string; label: string; status: s
   await transporter.sendMail({
     from: `"Sesoris Bot" <${gmailUser}>`,
     to: NOTIFY_EMAIL,
-    subject: `[Sesoris] ${processed} task selesai - ${today}`,
+    subject: `[Sesoris] ${processed} tasks completed - ${today}`,
     html,
   });
 

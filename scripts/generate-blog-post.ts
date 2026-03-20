@@ -8,16 +8,16 @@ import { generateArticleImages } from './generate-image';
 const client = new Anthropic();
 const blogDir = path.join(process.cwd(), 'content', 'blog');
 
-const categories = ['Tips & Trik', 'Tutorial', 'Inspirasi', 'Lifestyle', 'Review'];
+const categories = ['Tips & Tricks', 'Tutorial', 'Inspiration', 'Lifestyle', 'Review'];
 
 const topicsByDay: Record<number, string> = {
-  0: 'lifestyle',        // Minggu
-  1: 'home-organization', // Senin
-  2: 'kitchen',           // Selasa
-  3: 'workspace',         // Rabu
-  4: 'bedroom',           // Kamis
-  5: 'storage',           // Jumat
-  6: 'plants',            // Sabtu
+  0: 'lifestyle',        // Sunday
+  1: 'home-organization', // Monday
+  2: 'kitchen',           // Tuesday
+  3: 'workspace',         // Wednesday
+  4: 'bedroom',           // Thursday
+  5: 'storage',           // Friday
+  6: 'plants',            // Saturday
 };
 
 function getLeastUsedCategory(existing: { category: string }[]): string {
@@ -32,10 +32,10 @@ function getLeastUsedCategory(existing: { category: string }[]): string {
 
 function formatDate(date: Date): string {
   const months = [
-    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember',
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
   ];
-  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 function toISODate(date: Date): string {
@@ -49,14 +49,14 @@ async function generatePost() {
   const existing = getExistingPosts();
   const leastUsedCategory = getLeastUsedCategory(existing);
 
-  const basePrompt = `Tulis artikel blog BARU dalam Bahasa Indonesia. Artikel harus:
-- Informatif, praktis, dan komprehensif untuk pembaca Indonesia
-- Relevan dengan produk home & living
+  const basePrompt = `Write a NEW blog article in English. The article should be:
+- Informative, practical, and comprehensive for an international audience
+- Relevant to home & living products
 
-KONTEKS TOPIK:
-- Hari ini adalah hari ${['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'][dayOfWeek]}, bias topik: ${topicBias}
-- Kategori yang paling jarang dipakai: ${leastUsedCategory} (prioritaskan ini)
-- Kategori yang tersedia: ${categories.join(', ')}`;
+TOPIC CONTEXT:
+- Today is ${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dayOfWeek]}, topic bias: ${topicBias}
+- Least used category: ${leastUsedCategory} (prioritize this)
+- Available categories: ${categories.join(', ')}`;
 
   const prompt = buildRichContentPrompt(basePrompt);
 

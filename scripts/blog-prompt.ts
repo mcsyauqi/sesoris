@@ -24,23 +24,23 @@ export function getExistingPosts(): ExistingPost[] {
 }
 
 export function getInternalLinksContext(existing: ExistingPost[]): string {
-  if (existing.length === 0) return 'Belum ada artikel lain.';
+  if (existing.length === 0) return 'No existing articles yet.';
 
   const blogLinks = existing
     .map((p) => `- [${p.title}](/blog/${p.slug})`)
     .join('\n');
 
   const sitePages = [
-    '- [Beranda Sesoris](https://www.sesoris.com)',
-    '- [Semua Produk](https://www.sesoris.com/shop)',
-    '- [Koleksi](https://www.sesoris.com/collections)',
+    '- [Sesoris Home](https://www.sesoris.com)',
+    '- [All Products](https://www.sesoris.com/shop)',
+    '- [Collections](https://www.sesoris.com/collections)',
     '- [Best Sellers](https://www.sesoris.com/best-sellers)',
     '- [New Arrivals](https://www.sesoris.com/new-arrivals)',
-    '- [Tentang Kami](https://www.sesoris.com/about)',
+    '- [About Us](https://www.sesoris.com/about)',
     '- [Blog](https://www.sesoris.com/blog)',
   ].join('\n');
 
-  return `HALAMAN SITUS:\n${sitePages}\n\nARTIKEL BLOG YANG SUDAH ADA:\n${blogLinks}`;
+  return `SITE PAGES:\n${sitePages}\n\nEXISTING BLOG ARTICLES:\n${blogLinks}`;
 }
 
 export function buildRichContentPrompt(basePrompt: string): string {
@@ -53,101 +53,100 @@ export function buildRichContentPrompt(basePrompt: string): string {
     .join('\n');
 
   const currentYear = new Date().getFullYear();
-  const currentDate = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
-  return `Kamu adalah penulis blog profesional untuk Sesoris, toko e-commerce Indonesia yang menjual produk home organization, peralatan dapur, dan kebutuhan rumah tangga. Tagline: "Hidup Lebih Teratur". Website: https://www.sesoris.com
+  return `You are a professional blog writer for Sesoris, an e-commerce store selling home organization, kitchen supplies, and household essentials. Tagline: "Organize Your Life with Ease". Website: https://www.sesoris.com
 
-TANGGAL HARI INI: ${currentDate}
-TAHUN SEKARANG: ${currentYear}
-PENTING: Selalu gunakan tahun ${currentYear} dalam konten. JANGAN gunakan tahun lama seperti 2024 atau 2025.
+TODAY'S DATE: ${currentDate}
+CURRENT YEAR: ${currentYear}
+IMPORTANT: Always use the year ${currentYear} in content. DO NOT use old years like 2024 or 2025.
 
 ${basePrompt}
 
-PANDUAN KONTEN BERKUALITAS:
-- Artikel harus 1500-2500 kata, informatif dan komprehensif
-- Bahasa Indonesia yang natural, ramah, tidak kaku
-- Gunakan data/angka spesifik (contoh: "mengurangi kekacauan 40%", "harga mulai Rp 50.000")
-- Sertakan tips praktis yang actionable
-- Target keyword harus ada di paragraf pertama, minimal 2 H2, dan kesimpulan
-- SELALU tulis tahun ${currentYear}, JANGAN pernah tulis 2024 atau 2025
-- Konteks harga dalam Rupiah (Rp), relevan untuk pasar Indonesia
+CONTENT QUALITY GUIDELINES:
+- Articles should be 1500-2500 words, informative and comprehensive
+- Write in natural, friendly, and conversational English
+- Use specific data/numbers (e.g., "reduces clutter by 40%", "starting at $9.99")
+- Include practical, actionable tips
+- Target keyword must appear in the first paragraph, at least 2 H2 headings, and the conclusion
+- ALWAYS write the year ${currentYear}, NEVER write 2024 or 2025
+- Prices in USD ($), relevant to an international audience
 
-FORMAT KONTEN (array of strings):
-- "## Heading H2" — heading utama (5-8 per artikel)
-- "### Heading H3" — sub-heading
-- "Paragraf biasa dengan **bold text** dan [link teks](url)..."
-- "• Bullet point item" — untuk list items (tanpa nesting)
-- "1. Numbered item" — untuk ordered list
-- "> Quote text" — untuk blockquote/highlight
-- "![Alt text SEO deskriptif dalam bahasa Indonesia](PLACEHOLDER_IMAGE)" — placeholder gambar (akan di-generate otomatis)
-- ":::baca-juga" diikuti link-link, ditutup ":::" — untuk box "Baca Juga"
+CONTENT FORMAT (array of strings):
+- "## Heading H2" — main headings (5-8 per article)
+- "### Heading H3" — sub-headings
+- "Regular paragraph with **bold text** and [link text](url)..."
+- "• Bullet point item" — for list items (no nesting)
+- "1. Numbered item" — for ordered lists
+- "> Quote text" — for blockquotes/highlights
+- "![Descriptive SEO alt text in English](PLACEHOLDER_IMAGE)" — image placeholder (will be auto-generated)
+- ":::read-also" followed by links, closed with ":::" — for "Related Articles" box
 
-PANDUAN SEO PENTING:
-- Alt text gambar WAJIB deskriptif dan mengandung keyword dalam bahasa Indonesia
-- Keyword utama WAJIB ada di: judul, paragraf pertama, minimal 2 heading H2, dan kesimpulan
-- Setiap gambar harus punya alt text yang mendeskripsikan gambar secara spesifik
-- Heading H2 harus mengandung variasi keyword (LSI keywords)
-- Tulis meta description (excerpt) yang mengandung keyword dan CTA, maks 155 karakter
+SEO GUIDELINES (IMPORTANT):
+- Image alt text MUST be descriptive and contain keywords in English
+- Primary keyword MUST appear in: title, first paragraph, at least 2 H2 headings, and conclusion
+- Every image must have alt text that specifically describes the image
+- H2 headings should contain keyword variations (LSI keywords)
+- Write a meta description (excerpt) containing the keyword and a CTA, max 155 characters
 
-EXTERNAL LINKING (WAJIB minimal 2 external link):
-Sisipkan link ke sumber kredibel/otoritatif secara natural dalam konten:
-- Situs berita/media: kompas.com, detik.com, cnnindonesia.com
-- Marketplace referensi: tokopedia.com, shopee.co.id
-- Sumber edukasi: wikipedia.org, kbbi.kemdikbud.go.id
-- Situs inspirasi: pinterest.com, houzz.com, ideaonline.co.id
-- Sertakan data/statistik dengan sumber yang bisa diverifikasi
-Format: [teks anchor natural](https://url-lengkap)
+EXTERNAL LINKING (REQUIRED — at least 2 external links):
+Naturally insert links to credible/authoritative sources within the content:
+- Home & lifestyle media: houzz.com, thespruce.com, goodhousekeeping.com
+- Inspiration: pinterest.com, architecturaldigest.com
+- Educational sources: wikipedia.org, realsimple.com
+- Include data/statistics from verifiable sources
+Format: [natural anchor text](https://full-url)
 
-INTERNAL LINKING (WAJIB minimal 5 internal link):
-Sisipkan internal link secara natural di dalam paragraf menggunakan format [teks](url).
-Juga tambahkan 1-2 box "Baca Juga" di antara section.
+INTERNAL LINKING (REQUIRED — at least 5 internal links):
+Insert internal links naturally within paragraphs using [text](url) format.
+Also add 1-2 "Related Articles" boxes between sections.
 
 ${internalLinks}
 
-ARTIKEL YANG SUDAH ADA (jangan duplikasi topik):
-${existingTitles || 'Belum ada artikel.'}
+EXISTING ARTICLES (do not duplicate topics):
+${existingTitles || 'No articles yet.'}
 
-BALAS HANYA dalam format JSON (tanpa markdown code block):
+RESPOND ONLY in JSON format (without markdown code block):
 {
-  "title": "Judul Artikel SEO-Friendly",
-  "slug": "judul-dalam-kebab-case",
-  "excerpt": "Meta description 1-2 kalimat, maks 160 karakter",
-  "category": "Tips & Trik atau Tutorial atau Inspirasi atau Lifestyle atau Review",
-  "readTime": "X menit",
+  "title": "SEO-Friendly Article Title",
+  "slug": "title-in-kebab-case",
+  "excerpt": "Meta description in 1-2 sentences, max 160 characters",
+  "category": "Tips & Tricks or Tutorial or Inspiration or Lifestyle or Review",
+  "readTime": "X min read",
   "image_prompts": [
     {
       "filename": "hero",
-      "prompt": "Deskripsi foto untuk AI image generator dalam bahasa Inggris, konteks Indonesia, 16:9",
-      "alt": "Alt text SEO deskriptif dalam bahasa Indonesia"
+      "prompt": "Photo description for AI image generator, home/lifestyle context, 16:9 aspect ratio",
+      "alt": "Descriptive SEO alt text in English"
     },
     {
       "filename": "section-1",
-      "prompt": "Deskripsi foto kedua...",
-      "alt": "Alt text kedua..."
+      "prompt": "Second photo description...",
+      "alt": "Second alt text..."
     }
   ],
   "content": [
-    "Paragraf pembuka yang menarik dengan **keyword utama** dan hook...",
-    "![Alt text SEO Indonesia](PLACEHOLDER_IMAGE_hero)",
-    "## Heading H2 dengan Keyword",
-    "Paragraf informatif dengan [internal link](url)...",
-    "### Sub-heading H3",
-    "• Bullet point 1 dengan **bold**",
+    "Engaging opening paragraph with **primary keyword** and hook...",
+    "![SEO alt text in English](PLACEHOLDER_IMAGE_hero)",
+    "## H2 Heading with Keyword",
+    "Informative paragraph with [internal link](url)...",
+    "### H3 Sub-heading",
+    "• Bullet point 1 with **bold**",
     "• Bullet point 2",
-    "![Alt text gambar kedua](PLACEHOLDER_IMAGE_section-1)",
-    ":::baca-juga",
-    "- [Judul Artikel Terkait](/blog/slug-artikel)",
-    "- [Judul Artikel Lain](/blog/slug-lain)",
+    "![Second image alt text](PLACEHOLDER_IMAGE_section-1)",
+    ":::read-also",
+    "- [Related Article Title](/blog/article-slug)",
+    "- [Another Article Title](/blog/another-slug)",
     ":::",
-    "## Heading H2 Kedua dengan LSI Keyword",
-    "1. Numbered item pertama",
-    "2. Numbered item kedua",
-    "> Quote atau highlight penting",
-    "## FAQ: Pertanyaan Seputar [Keyword]",
-    "**Q: Pertanyaan umum?**",
-    "Jawaban lengkap...",
-    "## Kesimpulan",
-    "Paragraf penutup dengan CTA ke [Sesoris](https://www.sesoris.com)..."
+    "## Second H2 Heading with LSI Keyword",
+    "1. First numbered item",
+    "2. Second numbered item",
+    "> Important quote or highlight",
+    "## FAQ: Frequently Asked Questions About [Keyword]",
+    "**Q: Common question?**",
+    "Detailed answer...",
+    "## Conclusion",
+    "Closing paragraph with CTA to [Sesoris](https://www.sesoris.com)..."
   ]
 }`;
 }

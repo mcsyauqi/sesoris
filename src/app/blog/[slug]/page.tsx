@@ -147,8 +147,8 @@ function renderContentBlocks(content: string[]): React.ReactNode[] {
       }
     }
 
-    // "Baca Juga" box
-    if (line.startsWith(':::baca-juga')) {
+    // "Read Also" box (supports both old :::baca-juga and new :::read-also)
+    if (line.startsWith(':::baca-juga') || line.startsWith(':::read-also')) {
       const links: React.ReactNode[] = [];
       i++;
       while (i < content.length && content[i] !== ':::') {

@@ -139,7 +139,7 @@ export default function PrivacyPage() {
               </ul>
               <p style={{ color: '#495057', lineHeight: 1.7 }}>
                 To exercise these rights, please contact us via email at{' '}
-                <a href="mailto:privasi@sesoris.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>privacy@sesoris.com</a>.
+                <a href="mailto:support@sesoris.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>support@sesoris.com</a>.
               </p>
             </div>
           </section>
@@ -222,7 +222,7 @@ export default function PrivacyPage() {
             </p>
             <div style={{ opacity: 0.9, lineHeight: 1.8 }}>
               <p style={{ margin: '0 0 4px' }}><strong>Sesoris - Privacy Team</strong></p>
-              <p style={{ margin: '0 0 4px' }}>Email: privacy@sesoris.com</p>
+              <p style={{ margin: '0 0 4px' }}>Email: support@sesoris.com</p>
               <p style={{ margin: '0 0 4px' }}>Phone: +62 274 123 4567</p>
               <p style={{ margin: 0 }}>Address: Jl. Malioboro No. 123, Yogyakarta, DIY 55271</p>
             </div>
