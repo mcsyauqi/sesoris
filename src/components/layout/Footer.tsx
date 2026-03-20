@@ -153,10 +153,10 @@ export function Footer() {
                 <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                   <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
                 </a>
-                <a href="https://instagram.com/sesoris.id" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                   <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
                 </a>
-                <a href="https://twitter.com/sesoris_id" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                <a href="https://twitter.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                   <Twitter style={{ width: '18px', height: '18px', opacity: 0.8 }} />
                 </a>
                 <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
