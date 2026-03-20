@@ -213,7 +213,7 @@ export default function PressPage() {
             borderRadius: '10px',
           }}>
             <Mail style={{ width: '18px', height: '18px', color: '#1B5E3B' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>press@sesoris.id</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>press@sesoris.com</span>
           </div>
         </div>
       </div>

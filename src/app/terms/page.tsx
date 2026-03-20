@@ -245,7 +245,7 @@ export default function TermsPage() {
             </p>
             <div style={{ opacity: 0.9, lineHeight: 1.8 }}>
               <p style={{ margin: '0 0 4px' }}><strong>Sesoris Customer Service</strong></p>
-              <p style={{ margin: '0 0 4px' }}>Email: halo@sesoris.id</p>
+              <p style={{ margin: '0 0 4px' }}>Email: halo@sesoris.com</p>
               <p style={{ margin: '0 0 4px' }}>Telepon: +62 274 123 4567</p>
               <p style={{ margin: '0 0 4px' }}>WhatsApp: +62 812 3456 7890</p>
               <p style={{ margin: 0 }}>Jam Operasional: Senin - Jumat, 09.00 - 18.00 WIB</p>

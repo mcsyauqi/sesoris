@@ -227,7 +227,7 @@ export default function CareersPage() {
           <p style={{ color: '#6C757D', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
             Kirimkan CV dan portfolio Anda. Kami selalu terbuka untuk talenta luar biasa!
           </p>
-          <a href="mailto:careers@sesoris.id" style={{
+          <a href="mailto:careers@sesoris.com" style={{
             display: 'inline-block',
             background: '#1B5E3B',
             color: 'white',
@@ -236,7 +236,7 @@ export default function CareersPage() {
             fontWeight: 600,
             fontSize: '15px',
           }}>
-            Kirim CV ke careers@sesoris.id
+            Kirim CV ke careers@sesoris.com
           </a>
         </div>
       </div>
