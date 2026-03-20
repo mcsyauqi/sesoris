@@ -27,6 +27,11 @@ const productSlugs = [
   'multi-tool-pocket-knife',
   'foldable-storage-bins',
   'electric-wine-opener',
+  'rak-piring-stainless-steel-2-tier',
+  'rak-sepatu-minimalis-5-tingkat',
+  'rak-dinding-floating-shelf-set',
+  'gantungan-kunci-dinding-magnetik',
+  'rak-buku-minimalis-industrial',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

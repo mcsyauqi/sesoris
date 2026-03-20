@@ -559,6 +559,212 @@ Set lengkap termasuk: electric opener, charging base/stand, foil cutter untuk me
     reviewCount: 0,
     inStock: true,
   },
+  {
+    id: '13',
+    name: 'Rak Piring Stainless Steel 2 Tier',
+    slug: 'rak-piring-stainless-steel-2-tier',
+    description: 'Rak piring stainless steel 2 tingkat dengan baki penampung air, cocok untuk dapur minimalis.',
+    fullDescription: `Rak Piring Stainless Steel 2 Tier dari Sesoris adalah solusi terbaik untuk mengeringkan dan menyimpan piring, gelas, dan peralatan dapur lainnya. Dibuat dari stainless steel 304 food-grade yang tahan karat dan mudah dibersihkan.
+
+Desain 2 tingkat memaksimalkan ruang vertikal sehingga cocok untuk dapur dengan countertop terbatas. Tingkat atas dirancang khusus untuk piring dan mangkuk dengan slot vertikal yang menjaga piring tetap tegak dan cepat kering. Tingkat bawah dilengkapi hooks untuk gelas dan kompartemen untuk sendok garpu.
+
+Baki penampung air di bagian bawah mengarahkan air ke satu sisi dengan drain spout, menjaga countertop tetap kering. Kaki anti-slip dari silikon food-grade memastikan rak tidak bergeser dan tidak menggores permukaan meja.
+
+Mudah dirakit tanpa alat, cukup pasang dalam 5 menit. Struktur kokoh mampu menahan beban hingga 15 kg. Finishing brushed steel memberikan tampilan modern yang cocok untuk berbagai gaya dapur.`,
+    features: [
+      'Stainless steel 304 food-grade anti karat',
+      '2 tingkat dengan kapasitas 20+ piring',
+      'Baki penampung air dengan drain spout',
+      'Hooks untuk 6 gelas dan kompartemen alat makan',
+      'Kaki anti-slip silikon food-grade',
+      'Perakitan mudah tanpa alat, 5 menit',
+    ],
+    specifications: [
+      { label: 'Material', value: 'Stainless Steel 304' },
+      { label: 'Dimensi', value: '42 x 25 x 38 cm' },
+      { label: 'Berat', value: '1.8 kg' },
+      { label: 'Kapasitas', value: '20+ piring, 6 gelas' },
+      { label: 'Beban Maks', value: '15 kg' },
+      { label: 'Garansi', value: '2 Tahun' },
+    ],
+    price: 289000,
+    compareAtPrice: 389000,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&h=600&fit=crop', alt: 'Rak piring stainless steel 2 tier tampak depan' },
+      { url: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=600&fit=crop', alt: 'Rak piring dengan piring dan gelas' },
+      { url: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=600&fit=crop', alt: 'Rak piring di dapur minimalis' },
+    ],
+    category: categories[1],
+    rating: 0,
+    reviewCount: 0,
+    inStock: true,
+    isFeatured: true,
+    isNew: true,
+  },
+  {
+    id: '14',
+    name: 'Rak Sepatu Minimalis 5 Tingkat',
+    slug: 'rak-sepatu-minimalis-5-tingkat',
+    description: 'Rak sepatu 5 tingkat berdesain minimalis, muat hingga 15 pasang sepatu dengan rangka baja kokoh.',
+    fullDescription: `Rak Sepatu Minimalis 5 Tingkat dari Sesoris dirancang untuk menjaga koleksi sepatu Anda tetap terorganisir dan mudah diakses. Dengan kapasitas hingga 15 pasang sepatu, rak ini adalah solusi sempurna untuk entryway, kamar tidur, atau closet.
+
+Rangka baja dengan finishing powder-coated anti karat menjamin ketahanan jangka panjang. Setiap tingkat terbuat dari non-woven fabric yang breathable, membantu sirkulasi udara agar sepatu tidak lembab dan bau.
+
+Desain modular memungkinkan Anda menyesuaikan jarak antar tingkat untuk mengakomodasi berbagai jenis sepatu, dari flat shoes hingga boots. Tingkat teratas bisa diatur lebih tinggi untuk sneakers atau heels.
+
+Dimensi slim (60 x 30 cm footprint) membuat rak ini ideal untuk ruang sempit seperti lorong, di balik pintu, atau sudut kamar. Berat hanya 2 kg namun mampu menahan beban total 25 kg. Tersedia dalam warna hitam, putih, dan abu-abu.`,
+    features: [
+      '5 tingkat muat hingga 15 pasang sepatu',
+      'Rangka baja powder-coated anti karat',
+      'Fabric breathable untuk sirkulasi udara',
+      'Jarak tingkat bisa diatur sesuai jenis sepatu',
+      'Desain slim, footprint hanya 60 x 30 cm',
+      'Assembly mudah tanpa alat khusus',
+    ],
+    specifications: [
+      { label: 'Material', value: 'Baja + Non-woven Fabric' },
+      { label: 'Dimensi', value: '60 x 30 x 90 cm' },
+      { label: 'Berat', value: '2 kg' },
+      { label: 'Kapasitas', value: '15 pasang sepatu' },
+      { label: 'Beban Maks', value: '25 kg' },
+      { label: 'Warna', value: 'Hitam' },
+    ],
+    price: 179000,
+    compareAtPrice: 249000,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=600&h=600&fit=crop', alt: 'Rak sepatu minimalis 5 tingkat' },
+      { url: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=600&fit=crop', alt: 'Rak sepatu dengan berbagai sepatu' },
+      { url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=600&fit=crop', alt: 'Rak sepatu di entryway rumah' },
+    ],
+    category: categories[0],
+    rating: 0,
+    reviewCount: 0,
+    inStock: true,
+    isFeatured: true,
+    isNew: true,
+  },
+  {
+    id: '15',
+    name: 'Rak Dinding Floating Shelf Set',
+    slug: 'rak-dinding-floating-shelf-set',
+    description: 'Set 3 rak dinding floating minimalis dari kayu solid, sempurna untuk dekorasi dan penyimpanan.',
+    fullDescription: `Rak Dinding Floating Shelf Set dari Sesoris terdiri dari 3 rak dengan ukuran berbeda yang bisa disusun sesuai kreativitas Anda. Dibuat dari kayu paulownia solid dengan finishing natural yang memperlihatkan keindahan serat kayu asli.
+
+Sistem pemasangan concealed bracket membuat rak terlihat melayang di dinding tanpa sekrup yang terlihat. Hardware mounting sudah termasuk dalam paket, lengkap dengan panduan pemasangan dan alat level mini.
+
+Setiap rak memiliki ketebalan 2 cm dengan permukaan yang diamplas halus dan tepi yang sedikit rounded untuk keamanan. Finishing water-resistant melindungi dari kelembapan dan memudahkan pembersihan.
+
+Cocok untuk memajang tanaman hias, buku favorit, foto keluarga, atau koleksi dekorasi. Kapasitas beban masing-masing rak hingga 5 kg memungkinkan Anda menaruh berbagai item dengan aman. Set ini tersedia dalam warna natural, walnut, dan putih.`,
+    features: [
+      'Set 3 rak ukuran berbeda (40/50/60 cm)',
+      'Kayu paulownia solid dengan serat natural',
+      'Concealed bracket - tampil melayang',
+      'Finishing water-resistant',
+      'Hardware mounting dan level mini included',
+      'Kapasitas 5 kg per rak',
+    ],
+    specifications: [
+      { label: 'Material', value: 'Kayu Paulownia Solid' },
+      { label: 'Ukuran', value: '40/50/60 x 15 x 2 cm' },
+      { label: 'Berat Set', value: '1.5 kg' },
+      { label: 'Beban Maks', value: '5 kg per rak' },
+      { label: 'Warna', value: 'Natural Wood' },
+      { label: 'Isi Paket', value: '3 rak + bracket + sekrup + level' },
+    ],
+    price: 249000,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=600&h=600&fit=crop', alt: 'Floating shelf set di dinding ruang tamu' },
+      { url: 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&h=600&fit=crop', alt: 'Floating shelf dengan dekorasi tanaman' },
+      { url: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&h=600&fit=crop', alt: 'Floating shelf detail kayu natural' },
+    ],
+    category: categories[0],
+    rating: 0,
+    reviewCount: 0,
+    inStock: true,
+    isNew: true,
+  },
+  {
+    id: '16',
+    name: 'Gantungan Kunci Dinding Magnetik',
+    slug: 'gantungan-kunci-dinding-magnetik',
+    description: 'Gantungan kunci dinding dengan magnet kuat, desain minimalis dari kayu walnut dan stainless steel.',
+    fullDescription: `Gantungan Kunci Dinding Magnetik dari Sesoris menggunakan teknologi magnet neodymium yang kuat untuk menahan kunci Anda dengan aman. Cukup tempelkan kunci ke permukaan rak, dan magnet akan menahan kunci secara otomatis.
+
+Bagian atas berfungsi sebagai shelf kecil untuk menaruh dompet, sunglasses, atau surat. Bagian bawah dilengkapi 5 hooks tambahan untuk kunci yang tidak memiliki ring metal, masker, atau tas kecil.
+
+Terbuat dari kombinasi kayu walnut pilihan dan stainless steel brushed, memberikan tampilan premium yang cocok untuk entryway, koridor, atau area dekat pintu. Desain wall-mounted dengan 2 titik sekrup yang tersembunyi.
+
+Magnet neodymium N52 grade tertinggi mampu menahan beban hingga 500 gram per titik, cukup untuk gantungan kunci terberat sekalipun. Permukaan kayu dilapisi clear coat untuk perlindungan jangka panjang.`,
+    features: [
+      'Magnet neodymium N52 - grade tertinggi',
+      'Shelf atas untuk dompet dan aksesori',
+      '5 hooks tambahan di bagian bawah',
+      'Kayu walnut + stainless steel brushed',
+      'Instalasi mudah, 2 titik sekrup tersembunyi',
+      'Tahan beban 500g per titik magnet',
+    ],
+    specifications: [
+      { label: 'Material', value: 'Kayu Walnut + Stainless Steel' },
+      { label: 'Dimensi', value: '30 x 8 x 5 cm' },
+      { label: 'Berat', value: '350 gram' },
+      { label: 'Magnet', value: 'Neodymium N52, 6 titik' },
+      { label: 'Hooks', value: '5 buah' },
+      { label: 'Garansi', value: '1 Tahun' },
+    ],
+    price: 159000,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=600&fit=crop', alt: 'Gantungan kunci dinding magnetik walnut' },
+      { url: 'https://images.unsplash.com/photo-1585412459212-4ab91ece49c3?w=600&h=600&fit=crop', alt: 'Gantungan kunci dengan kunci terpasang' },
+      { url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=600&fit=crop', alt: 'Gantungan kunci di entryway rumah' },
+    ],
+    category: categories[0],
+    rating: 0,
+    reviewCount: 0,
+    inStock: true,
+    isFeatured: true,
+    isNew: true,
+  },
+  {
+    id: '17',
+    name: 'Rak Buku Minimalis Industrial',
+    slug: 'rak-buku-minimalis-industrial',
+    description: 'Rak buku 4 tingkat bergaya industrial dengan rangka besi dan papan kayu pinus, cocok untuk ruang kerja dan ruang tamu.',
+    fullDescription: `Rak Buku Minimalis Industrial dari Sesoris menggabungkan gaya industrial yang timeless dengan fungsionalitas modern. Rangka besi hollow hitam matte dipadukan dengan papan kayu pinus solid memberikan kontras visual yang menarik.
+
+4 tingkat rak memberikan ruang luas untuk koleksi buku, tanaman hias, foto, dan dekorasi. Desain open-shelf membuat ruangan terasa lebih luas dibandingkan lemari tertutup, sekaligus memudahkan akses ke semua item.
+
+Rangka besi di-welding presisi dan dilapisi powder-coating anti karat untuk ketahanan maksimal. Papan kayu pinus dikeringkan kiln-dried untuk mencegah warping, lalu difinishing dengan stain dan clear coat tahan air.
+
+Kaki dilengkapi adjustable feet untuk menyesuaikan lantai yang tidak rata. Dimensi compact (80 x 30 cm footprint) membuatnya pas di sudut ruang kerja, ruang tamu, atau kamar tidur. Kapasitas beban total 40 kg terdistribusi merata di 4 tingkat.`,
+    features: [
+      '4 tingkat open-shelf luas untuk buku dan dekorasi',
+      'Rangka besi hollow hitam matte welded',
+      'Papan kayu pinus solid kiln-dried',
+      'Powder-coating anti karat',
+      'Adjustable feet untuk lantai tidak rata',
+      'Kapasitas total 40 kg',
+    ],
+    specifications: [
+      { label: 'Material', value: 'Besi Hollow + Kayu Pinus' },
+      { label: 'Dimensi', value: '80 x 30 x 120 cm' },
+      { label: 'Berat', value: '8 kg' },
+      { label: 'Tingkat', value: '4 level' },
+      { label: 'Beban Maks', value: '40 kg total' },
+      { label: 'Garansi', value: '2 Tahun' },
+    ],
+    price: 599000,
+    compareAtPrice: 799000,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&h=600&fit=crop', alt: 'Rak buku industrial tampak depan' },
+      { url: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=600&fit=crop', alt: 'Rak buku dengan koleksi buku' },
+      { url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=600&fit=crop', alt: 'Rak buku di ruang tamu' },
+    ],
+    category: categories[0],
+    rating: 0,
+    reviewCount: 0,
+    inStock: true,
+    isNew: true,
+  },
 ];
 
 export const testimonials: Testimonial[] = [
