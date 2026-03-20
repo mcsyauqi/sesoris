@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'id_ID',
     url: 'https://www.sesoris.com',
     siteName: 'Sesoris',
     title: 'Sesoris - Home & Living Accessories',
@@ -70,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="id" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <head>
         {/* JSON-LD Organization Schema */}
         <script
@@ -85,15 +85,13 @@ export default function RootLayout({
               description: 'Online store for quality home organizers and storage solutions in Indonesia',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Jl. Malioboro No. 123',
                 addressLocality: 'Yogyakarta',
                 addressRegion: 'DIY',
-                postalCode: '55271',
                 addressCountry: 'ID',
               },
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+62-274-123-4567',
+                telephone: '+62-813-2610-2061',
                 contactType: 'customer service',
                 availableLanguage: ['Indonesian', 'English'],
               },
