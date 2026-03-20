@@ -4,9 +4,26 @@ import { Home, ChevronRight } from 'lucide-react';
 import { ProductCard } from '@/components/product';
 import { getCategoryBySlug, getProductsByCategory, categories } from '@/data/products';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 export function generateStaticParams() {
   return categories.map((cat) => ({ slug: cat.slug }));
+}
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params;
+  const category = getCategoryBySlug(slug);
+  if (!category) return {};
+
+  return {
+    title: `${category.name} | Sesoris`,
+    description: category.description,
+    alternates: {
+      canonical: `/category/${slug}`,
+    },
+  };
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {

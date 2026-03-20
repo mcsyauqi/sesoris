@@ -17,6 +17,9 @@ export async function generateMetadata(
   return {
     title: product.name,
     description: product.description,
+    alternates: {
+      canonical: `/product/${slug}`,
+    },
     openGraph: {
       title: `${product.name} | Sesoris`,
       description: product.description,
@@ -38,5 +41,51 @@ export default async function ProductPage(
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
-  return <ProductPageClient product={product} />;
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.images[0]?.url,
+    brand: { '@type': 'Brand', name: 'Sesoris' },
+    offers: {
+      '@type': 'Offer',
+      price: product.price,
+      priceCurrency: 'IDR',
+      availability: product.inStock
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+      url: `https://www.sesoris.com/product/${product.slug}`,
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.sesoris.com' },
+      { '@type': 'ListItem', position: 2, name: 'Shop', item: 'https://www.sesoris.com/shop' },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: product.name,
+        item: `https://www.sesoris.com/product/${product.slug}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <ProductPageClient product={product} />
+    </>
+  );
 }
