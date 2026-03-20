@@ -67,10 +67,10 @@ export function Header() {
             {/* Logo */}
             <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Sesoris"
-                width={140}
-                height={45}
+                width={280}
+                height={90}
                 priority
                 style={{ height: '38px', width: 'auto' }}
               />
@@ -265,7 +265,7 @@ export function Header() {
           borderBottom: '1px solid #E9ECEF'
         }}>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-            <Image src="/logo.svg" alt="Sesoris" width={120} height={40} style={{ height: '32px', width: 'auto' }} />
+            <Image src="/logo.png" alt="Sesoris" width={280} height={90} style={{ height: '32px', width: 'auto' }} />
           </Link>
           <button
             onClick={() => setMobileMenuOpen(false)}

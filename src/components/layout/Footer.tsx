@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Leaf, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 
 const footerLinks = {
   shop: [
@@ -34,12 +35,15 @@ export function Footer() {
         <div className="grid-footer" style={{ paddingBottom: '40px' }}>
           {/* Brand */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-              <Leaf style={{ width: '28px', height: '28px' }} />
-              <div>
-                <div style={{ fontSize: '18px', fontWeight: 700 }}>Sesoris</div>
-                <div style={{ fontSize: '10px', opacity: 0.7 }}>Organize Your Life with Ease</div>
-              </div>
+            <div style={{ marginBottom: '16px' }}>
+              <Image
+                src="/logo.png"
+                alt="Sesoris"
+                width={280}
+                height={90}
+                style={{ height: '40px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+              />
+              <div style={{ fontSize: '11px', opacity: 0.7, marginTop: '4px' }}>Do It With Ease</div>
             </div>
             <p style={{ fontSize: '14px', opacity: 0.8, lineHeight: 1.6, marginBottom: '24px' }}>
               Sesoris is here to help you organize your life with high-quality products.
