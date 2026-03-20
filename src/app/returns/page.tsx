@@ -61,7 +61,7 @@ export default function ReturnsPage() {
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
               Syarat Pengembalian
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+            <div className="returns-conditions-grid" style={{ display: 'grid', gap: '24px' }}>
               <div style={{ padding: '24px', border: '2px solid #28A745', borderRadius: '12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                   <CheckCircle style={{ width: '20px', height: '20px', color: '#28A745' }} />
@@ -139,7 +139,7 @@ export default function ReturnsPage() {
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
               Opsi Pengembalian Dana
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div className="returns-refund-grid" style={{ display: 'grid', gap: '16px' }}>
               <div style={{ padding: '24px', background: '#F8F9FA', borderRadius: '12px' }}>
                 <div style={{ fontWeight: 600, color: '#212529', marginBottom: '8px' }}>Refund ke Saldo Sesoris</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '14px', color: '#1B5E3B', marginBottom: '8px' }}>

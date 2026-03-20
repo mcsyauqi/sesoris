@@ -43,7 +43,7 @@ export default function OnSalePage() {
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+        <div className="product-grid-4" style={{ display: 'grid', gap: '24px' }}>
           {saleProducts.map((product) => {
             const discount = calculateDiscount(product.price, product.compareAtPrice!);
             return (

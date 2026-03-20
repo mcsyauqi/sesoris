@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
   color: var(--gray-900);
   line-height: 1.6;
   background: #fff;
+  overflow-x: hidden;
 }
 
 a {
@@ -815,13 +817,15 @@ select:focus-visible {
   background: white;
   z-index: 100;
   transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
   overflow-y: auto;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-menu.active {
   transform: translateX(0);
+  visibility: visible;
 }
 
 /* Footer bottom bar responsive */
@@ -929,5 +933,194 @@ select:focus-visible {
   .shop-layout {
     grid-template-columns: 240px 1fr;
     gap: 48px;
+  }
+}
+
+/* ===== Page-specific responsive grids ===== */
+
+/* About page */
+.about-story-grid {
+  grid-template-columns: 1fr;
+}
+.about-values-grid {
+  grid-template-columns: 1fr;
+}
+.about-stats-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .about-story-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+  .about-values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .about-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Blog page */
+.blog-featured-grid {
+  grid-template-columns: 1fr;
+}
+.blog-posts-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .blog-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-featured-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-posts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Careers page */
+.careers-benefits-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .careers-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .careers-benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Contact page */
+.contact-grid {
+  grid-template-columns: 1fr;
+}
+.contact-form-row {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+  }
+  .contact-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Press page */
+.press-releases-grid {
+  grid-template-columns: 1fr;
+}
+.press-kit-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .press-releases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .press-kit-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .press-releases-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Returns page */
+.returns-conditions-grid {
+  grid-template-columns: 1fr;
+}
+.returns-refund-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .returns-conditions-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .returns-refund-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Account page */
+.account-layout {
+  grid-template-columns: 1fr;
+}
+.account-form-row {
+  grid-template-columns: 1fr;
+}
+.account-order-row {
+  grid-template-columns: 1fr;
+}
+.account-address-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .account-layout {
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+  }
+  .account-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .account-order-row {
+    grid-template-columns: 1fr auto auto auto;
+    gap: 24px;
+  }
+  .account-address-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Product grid (4 columns → 2 → 1) */
+.product-grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .product-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile button full-width */
+@media (max-width: 639px) {
+  .btn {
+    max-width: 100%;
+    word-break: break-word;
   }
 }

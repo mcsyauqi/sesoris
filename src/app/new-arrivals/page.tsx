@@ -44,7 +44,7 @@ export default function NewArrivalsPage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+        <div className="product-grid-4" style={{ display: 'grid', gap: '24px' }}>
           {newProducts.map((product) => (
             <div
               key={product.id}

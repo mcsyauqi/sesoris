@@ -67,11 +67,11 @@ export default function BlogPage() {
               boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
               transition: 'transform 0.2s, box-shadow 0.2s',
             }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+              <div className="blog-featured-grid" style={{ display: 'grid' }}>
                 <div style={{ aspectRatio: '4/3', position: 'relative' }}>
                   <Image src={featuredPost.image} alt={featuredPost.title} fill style={{ objectFit: 'cover' }} />
                 </div>
-                <div style={{ padding: '48px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ padding: 'clamp(20px, 4vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                     <span style={{
                       background: '#E8F5E9',
@@ -126,7 +126,7 @@ export default function BlogPage() {
         <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '32px' }}>
           Artikel Terbaru
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+        <div className="blog-posts-grid" style={{ display: 'grid', gap: '24px' }}>
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
               <article style={{
@@ -193,7 +193,7 @@ export default function BlogPage() {
         {/* Newsletter */}
         <div style={{
           marginTop: '64px',
-          padding: '48px',
+          padding: 'clamp(24px, 4vw, 48px)',
           background: 'linear-gradient(135deg, #1B5E3B 0%, #2E7D4A 100%)',
           borderRadius: '20px',
           color: 'white',

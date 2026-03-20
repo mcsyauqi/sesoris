@@ -103,7 +103,7 @@ export default function PressPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '32px' }}>
             Press Release Terbaru
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          <div className="press-releases-grid" style={{ display: 'grid', gap: '24px' }}>
             {pressReleases.map((release) => (
               <div key={release.id} style={{
                 background: 'white',
@@ -149,11 +149,11 @@ export default function PressPage() {
         <div style={{
           background: 'linear-gradient(135deg, #1B5E3B 0%, #2E7D4A 100%)',
           borderRadius: '16px',
-          padding: '48px',
+          padding: 'clamp(24px, 4vw, 48px)',
           color: 'white',
           marginBottom: '64px',
         }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+          <div className="press-kit-grid" style={{ display: 'grid', gap: '32px', alignItems: 'center' }}>
             <div>
               <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '16px' }}>
                 Press Kit

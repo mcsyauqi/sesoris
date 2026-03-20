@@ -36,7 +36,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '64px' }}>
+        <div className="contact-grid" style={{ display: 'grid', gap: '40px' }}>
           {/* Contact Info */}
           <div>
             <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Informasi Kontak</h2>
@@ -109,7 +109,7 @@ export default function ContactPage() {
           <div>
             <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Kirim Pesan</h2>
             <form onSubmit={handleSubmit}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+              <div className="contact-form-row" style={{ display: 'grid', gap: '20px', marginBottom: '20px' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Nama Lengkap</label>
                   <input

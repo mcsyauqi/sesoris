@@ -113,7 +113,7 @@ export default function CareersPage() {
           <p style={{ color: '#6C757D', textAlign: 'center', maxWidth: '600px', margin: '0 auto 40px' }}>
             Kami percaya bahwa karyawan yang bahagia akan menghasilkan karya terbaik
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+          <div className="careers-benefits-grid" style={{ display: 'grid', gap: '24px' }}>
             {benefits.map((benefit) => (
               <div key={benefit.title} style={{
                 padding: '24px',
@@ -215,7 +215,7 @@ export default function CareersPage() {
         {/* CTA */}
         <div style={{
           marginTop: '64px',
-          padding: '48px',
+          padding: 'clamp(24px, 4vw, 48px)',
           background: '#F8F9FA',
           borderRadius: '16px',
           textAlign: 'center',

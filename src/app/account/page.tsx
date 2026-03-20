@@ -38,7 +38,7 @@ export default function AccountPage() {
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: '48px' }}>
+        <div className="account-layout" style={{ display: 'grid', gap: '32px' }}>
           {/* Sidebar */}
           <div>
             <div style={{ marginBottom: '24px', padding: '20px', background: '#F8F9FA', borderRadius: '12px' }}>
@@ -136,7 +136,7 @@ export default function AccountPage() {
                 <h1 style={{ fontSize: '24px', fontWeight: 700, color: '#212529', marginBottom: '32px' }}>
                   Profile Settings
                 </h1>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                <div className="account-form-row" style={{ display: 'grid', gap: '20px', marginBottom: '20px' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>First Name</label>
                     <input type="text" defaultValue="John" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
@@ -167,10 +167,10 @@ export default function AccountPage() {
                   {orders.map((order) => (
                     <div
                       key={order.id}
+                      className="account-order-row"
                       style={{
                         display: 'grid',
-                        gridTemplateColumns: '1fr auto auto auto',
-                        gap: '24px',
+                        gap: '12px',
                         alignItems: 'center',
                         padding: '20px',
                         background: '#F8F9FA',
@@ -211,7 +211,7 @@ export default function AccountPage() {
                     Add New Address
                   </button>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                <div className="account-address-grid" style={{ display: 'grid', gap: '20px' }}>
                   <div style={{ padding: '20px', border: '2px solid #1B5E3B', borderRadius: '12px', position: 'relative' }}>
                     <span style={{
                       position: 'absolute',

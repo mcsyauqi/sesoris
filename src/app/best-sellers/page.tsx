@@ -47,7 +47,7 @@ export default function BestSellersPage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+        <div className="product-grid-4" style={{ display: 'grid', gap: '24px' }}>
           {bestSellers.map((product, index) => (
             <div
               key={product.id}

@@ -136,7 +136,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {product.name}
             </h1>
 
-            {/* Rating — hanya tampil jika ada review */}
+            {/* Rating - hanya tampil jika ada review */}
             {product.reviewCount > 0 ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', gap: '2px' }}>

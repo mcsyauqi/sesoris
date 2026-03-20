@@ -61,7 +61,7 @@ export default function AboutPage() {
       {/* Story */}
       <section style={{ padding: '64px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+          <div className="about-story-grid" style={{ display: 'grid', gap: '40px', alignItems: 'center' }}>
             <div style={{ position: 'relative' }}>
               <div style={{ aspectRatio: '4/3', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
                 <Image
@@ -74,7 +74,7 @@ export default function AboutPage() {
               <div style={{
                 position: 'absolute',
                 bottom: '-20px',
-                left: '-20px',
+                left: '0px',
                 background: 'white',
                 borderRadius: '12px',
                 padding: '16px 20px',
@@ -113,7 +113,7 @@ export default function AboutPage() {
             <p style={{ color: '#6C757D', marginBottom: '8px' }}>The principles that guide everything we do</p>
             <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529' }}>Our Values</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+          <div className="about-values-grid" style={{ display: 'grid', gap: '24px' }}>
             {values.map((value) => (
               <div key={value.title} style={{
                 background: 'white',
@@ -144,7 +144,7 @@ export default function AboutPage() {
       {/* Stats */}
       <section style={{ padding: '48px 0', background: '#1B5E3B' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px', textAlign: 'center' }}>
+          <div className="about-stats-grid" style={{ display: 'grid', gap: '24px', textAlign: 'center' }}>
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div style={{ fontSize: '40px', fontWeight: 700, color: 'white', marginBottom: '8px' }}>{stat.value}</div>
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <div style={{
             background: '#F8F9FA',
             borderRadius: '24px',
-            padding: '64px',
+            padding: 'clamp(24px, 5vw, 64px)',
             textAlign: 'center',
             position: 'relative'
           }}>
