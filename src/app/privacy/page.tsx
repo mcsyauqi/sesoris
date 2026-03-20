@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, Shield, Lock, Eye, Database, UserCheck, Mail } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Sesoris privacy policy. Learn how we collect, use, and protect your personal information.',
+  alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy | Sesoris',
+    description: 'Sesoris privacy policy. Learn how we collect, use, and protect your personal information.',
+  },
+};
 
 export default function PrivacyPage() {
   return (

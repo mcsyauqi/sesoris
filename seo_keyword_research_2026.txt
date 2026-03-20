@@ -1,0 +1,531 @@
+================================================================================
+SESORIS.COM - COMPREHENSIVE SEO KEYWORD RESEARCH REPORT
+Indonesian Home Organization & Lifestyle E-commerce
+Date: March 2026
+================================================================================
+
+TABLE OF CONTENTS
+1. Executive Summary
+2. High-Volume Head Keywords (by Category)
+3. Buyer-Intent Keywords (Transactional)
+4. Informational Keywords (Content Marketing)
+5. Long-Tail Keyword Opportunities
+6. Seasonal & Trending Keywords (2026)
+7. Competitor Keyword Gaps
+8. TikTok & Social Search Keywords
+9. Recommended Priority Actions
+
+Format: keyword | est. monthly searches | difficulty (0=low, 100=high)
+Note: Search volumes are estimates based on available data and web research.
+KD 0 = very low competition, ideal for new sites.
+
+================================================================================
+1. EXECUTIVE SUMMARY
+================================================================================
+
+Key findings:
+- Indonesia has 157M+ active TikTok users; Gen Z uses TikTok/YouTube for
+  product discovery. Video-first SEO is critical.
+- "Rumah minimalis" cluster has massive volume (90,500/mo) but is mostly
+  architecture-focused. Target the sub-niche: organization within minimalist homes.
+- Kitchen storage ("rak dapur", "rak piring", "kitchen set minimalis") is a
+  strong category with high search volume and low keyword difficulty.
+- Storage box/organizer keywords have moderate volume with VERY low competition
+  (KD 0 on most terms) -- huge opportunity.
+- Ramadan/Lebaran (Feb-Apr) and Harbolnas (11.11/12.12) are peak seasonal moments.
+- "Warm minimalism" and "sustainable storage" (bamboo, rattan) are 2026 trends.
+- Travel organizer demand peaks in summer (Jul-Aug) and holiday seasons.
+- The KonMari method has 94M TikTok views; decluttering content consistently trends.
+
+================================================================================
+2. HIGH-VOLUME HEAD KEYWORDS (by Category)
+================================================================================
+
+--- HOME LIVING / HOME ORGANIZER ---
+storage box                              | 6,600  | 0
+rak penyimpanan barang                   | 880    | 0
+rak penyimpanan                          | 590    | 0
+kotak penyimpanan                        | 720    | 0
+kotak penyimpanan barang                 | 720    | 0
+tempat penyimpanan barang                | 720    | 0
+tempat penyimpanan                       | 720    | 0
+box storage                              | 720    | 0
+storage box plastik                      | 480    | 0
+storage box lipat                        | 170    | 0
+rak penyimpanan serbaguna                | 140    | 0
+storage box organizer                    | 140    | 0
+collapsible storage box                  | 140    | 0
+kotak penyimpanan serbaguna              | 260    | 0
+kotak penyimpanan baju                   | 70     | 54
+keranjang penyimpanan                    | 70     | 17
+home organizer                           | ~500   | 0
+rak serbaguna                            | ~1,000 | 0
+rak minimalis                            | ~800   | 0
+lemari penyimpanan                       | ~600   | 0
+rak besi serbaguna                       | ~400   | 0
+container box                            | ~500   | 0
+organizer rumah                          | ~200   | 0
+
+--- KITCHEN & DINING ---
+kitchen set minimalis                    | 18,100 | 0
+rak dapur                                | 3,600  | 0
+rak bumbu dapur                          | 3,600  | 0
+wadah makanan                            | 2,400  | 0
+rak dapur minimalis                      | 2,400  | 0
+kitchen set minimalis dapur kecil        | 4,400  | 0
+rak piring                               | ~3,000 | 0
+rak gantung dapur                        | 880    | 0
+rak dinding dapur                        | 880    | 0
+rak piring lemari dapur                  | 720    | 0
+wadah makanan plastik                    | 1,600  | 0
+food container                           | ~1,000 | 0
+rak bumbu dapur dari kayu                | 1,300  | 0
+rak dapur serbaguna                      | 1,300  | 0
+rak aluminium dapur                      | 590    | 0
+rak dapur gantung                        | 590    | 0
+rak piring tempel tembok dapur           | 590    | 0
+wadah makanan stainless                  | 390    | 0
+wadah penyimpanan makanan                | 170    | 0
+kitchen organizer                        | 90     | 0
+kitchen cabinet organizer                | 40     | 0
+rak bumbu dapur minimalis                | 260    | 0
+rak kolong dapur                         | 390    | 0
+rak stainless dapur                      | 480    | 0
+rak piring minimalis                     | ~500   | 0
+tempat bumbu dapur                       | ~800   | 0
+tempat penyimpanan makanan               | 480    | 0
+organizer kolong sink                    | ~200   | 0
+
+--- BAGS & POUCHES ---
+travel bag organizer                     | 480    | 0
+tas organizer                            | 260    | 0
+travel organizer bag                     | 480    | 0
+bag organizer travel                     | 390    | 0
+packing cubes                            | ~300   | 0
+travel pouch organizer                   | ~200   | 0
+cable organizer bag                      | ~150   | 0
+toiletry bag travel                      | ~200   | 0
+tas travel lipat                         | ~300   | 0
+pouch serbaguna                          | ~150   | 0
+gadget organizer                         | ~200   | 0
+bag in bag organizer                     | ~200   | 0
+
+--- OFFICE & DESK ---
+desk organizer                           | 880    | 0
+makeup organizer                         | 140    | 0
+cable organizer for desk                 | 110    | 0
+desktop organizer                        | ~200   | 0
+rak meja kerja                           | ~300   | 0
+organizer meja kantor                    | ~150   | 0
+tempat alat tulis                        | ~300   | 0
+rak buku meja                            | ~200   | 0
+monitor stand organizer                  | ~100   | 0
+pen holder organizer                     | ~100   | 0
+stationery organizer                     | ~150   | 0
+drawer organizer                         | ~200   | 0
+
+--- OUTDOOR & TRAVEL ---
+travel gear                              | ~300   | 15
+outdoor gadget                           | ~200   | 10
+travel accessories                       | ~500   | 20
+perlengkapan traveling                   | ~400   | 0
+alat camping                             | ~1,000 | 0
+tas outdoor                              | ~500   | 0
+aksesoris travel                         | ~200   | 0
+dry bag                                  | ~300   | 5
+
+================================================================================
+3. BUYER-INTENT KEYWORDS (Transactional)
+================================================================================
+
+These keywords indicate someone ready to purchase. Priority targets.
+
+--- "JUAL" (Sell) Keywords ---
+jual storage box                         | ~200   | 0
+jual rak penyimpanan                     | ~150   | 0
+jual rak dapur                           | ~300   | 0
+jual rak piring                          | ~200   | 0
+jual organizer rumah                     | ~100   | 0
+jual travel organizer                    | ~100   | 0
+jual desk organizer                      | ~100   | 0
+jual wadah makanan                       | ~150   | 0
+jual kitchen organizer                   | ~80    | 0
+jual kotak penyimpanan                   | ~100   | 0
+
+--- "HARGA" (Price) Keywords ---
+harga storage box                        | 110    | 4
+harga rak penyimpanan                    | ~150   | 0
+harga rak dapur                          | ~300   | 0
+harga rak piring                         | ~200   | 0
+harga kitchen set minimalis              | 260    | 0
+harga kitchen set minimalis dapur kecil  | 720    | 0
+harga kitchen set aluminium minimalis    | 260    | 0
+harga wadah makanan                      | ~100   | 0
+harga desk organizer                     | ~80    | 0
+harga travel organizer bag               | ~50    | 0
+
+--- "BELI" (Buy) Keywords ---
+beli rak dapur online                    | ~100   | 0
+beli storage box murah                   | ~80    | 0
+beli rak penyimpanan                     | ~80    | 0
+beli organizer online                    | ~50    | 0
+beli wadah makanan                       | ~80    | 0
+
+--- "REKOMENDASI" (Recommendation) Keywords ---
+rekomendasi rak piring terbaik           | ~200   | 0
+rekomendasi rak dapur                    | ~150   | 0
+rekomendasi storage box                  | ~100   | 0
+rekomendasi wadah makanan                | ~100   | 0
+rekomendasi kitchen organizer            | ~80    | 0
+rekomendasi travel organizer             | ~80    | 0
+rekomendasi desk organizer               | ~50    | 0
+rekomendasi rak bumbu dapur              | ~100   | 0
+rekomendasi food container               | ~100   | 0
+
+--- "TERBAIK" (Best) Keywords ---
+rak piring terbaik                       | ~200   | 0
+storage box terbaik                      | ~100   | 0
+rak dapur terbaik                        | ~100   | 0
+kitchen organizer terbaik                | ~80    | 0
+wadah makanan terbaik                    | ~80    | 0
+desk organizer terbaik                   | ~50    | 0
+travel organizer terbaik                 | ~50    | 0
+food container terbaik                   | ~100   | 0
+
+--- "MURAH" (Cheap/Affordable) Keywords ---
+rak dapur murah                          | ~300   | 0
+rak piring murah                         | ~200   | 0
+storage box murah                        | ~150   | 0
+rak penyimpanan murah                    | ~100   | 0
+kitchen set minimalis murah              | 880    | 0
+wadah makanan murah                      | ~80    | 0
+organizer murah                          | ~100   | 0
+rak bumbu murah                          | ~100   | 0
+
+--- "REVIEW" Keywords ---
+review storage box                       | ~50    | 0
+review rak dapur                         | ~50    | 0
+review kitchen organizer                 | ~30    | 0
+review travel organizer bag              | ~30    | 0
+review food container                    | ~50    | 0
+
+================================================================================
+4. INFORMATIONAL KEYWORDS (Content Marketing / Blog SEO)
+================================================================================
+
+--- "CARA" (How to) Keywords ---
+cara menata rumah kecil agar rapi        | ~1,000 | 0
+cara menata dapur sempit                 | ~500   | 0
+cara merapikan rumah                     | ~800   | 0
+cara menata rak piring                   | ~200   | 0
+cara menyimpan makanan agar tahan lama   | ~300   | 0
+cara menata dapur minimalis              | ~400   | 0
+cara merapikan lemari baju               | ~300   | 0
+cara menata kamar kost                   | ~500   | 0
+cara decluttering rumah                  | ~200   | 0
+cara menggunakan packing cubes           | ~100   | 0
+cara menata meja kerja                   | ~300   | 0
+cara menata dapur agar rapi              | ~400   | 0
+cara menata ruang tamu sempit            | ~300   | 0
+cara menyimpan bumbu dapur               | ~200   | 0
+cara merapikan kabel                     | ~150   | 0
+cara packing koper rapi                  | ~200   | 0
+cara menata rumah minimalis              | ~500   | 0
+
+--- "TIPS" Keywords ---
+tips menata rumah minimalis              | ~400   | 0
+tips menata dapur kecil                  | ~300   | 0
+tips rumah rapi                          | ~300   | 0
+tips merapikan rumah sebelum lebaran     | ~200   | 0
+tips organisasi rumah                    | ~150   | 0
+tips menata kamar tidur sempit           | ~300   | 0
+tips packing traveling                   | ~200   | 0
+tips menata rak dapur                    | ~150   | 0
+tips menyimpan makanan di kulkas         | ~200   | 0
+tips home office rapi                    | ~100   | 0
+tips menata meja belajar                 | ~200   | 0
+tips dapur bersih dan rapi              | ~200   | 0
+
+--- "IDE / INSPIRASI" (Ideas / Inspiration) Keywords ---
+ide storage rumah                        | ~200   | 0
+inspirasi dapur minimalis                | ~400   | 0
+ide menata kamar kost                    | ~300   | 0
+inspirasi rak dinding                    | ~200   | 0
+ide penyimpanan barang di rumah kecil    | ~200   | 0
+inspirasi rumah rapi minimalis           | ~300   | 0
+ide desk setup minimalis                 | ~200   | 0
+inspirasi dekorasi dapur                 | ~300   | 0
+ide penataan dapur sempit                | ~200   | 0
+ide storage kamar tidur                  | ~150   | 0
+inspirasi rak bumbu dapur                | ~150   | 0
+ide menata rumah subsidi                 | ~200   | 0
+
+--- "PANDUAN / TUTORIAL" (Guide) Keywords ---
+panduan decluttering rumah               | ~100   | 0
+tutorial menata dapur                    | ~100   | 0
+panduan metode KonMari                   | ~150   | 0
+panduan bersih-bersih rumah              | ~100   | 0
+tutorial packing koper                   | ~100   | 0
+panduan memilih rak piring               | ~80    | 0
+panduan memilih storage box              | ~50    | 0
+
+--- COMPARISON / "VS" Keywords ---
+rak piring stainless vs plastik          | ~100   | 0
+storage box plastik vs kain              | ~50    | 0
+rak dapur kayu vs besi                   | ~80    | 0
+wadah makanan plastik vs kaca            | ~100   | 0
+rak gantung vs rak berdiri               | ~50    | 0
+
+================================================================================
+5. LONG-TAIL KEYWORD OPPORTUNITIES
+================================================================================
+
+These have lower volume but HIGH conversion potential and very low competition.
+
+--- Kitchen Long-Tail ---
+rak piring untuk dapur sempit            | ~200   | 0
+rak bumbu dapur 3 susun                  | 320    | 0
+rak dapur minimalis tempel dinding       | 720    | 0
+rak bumbu dapur susun plastik            | 720    | 0
+rak bumbu dapur serbaguna                | 720    | 0
+rak piring stainless anti karat          | ~100   | 0
+rak bumbu dapur tempel dinding           | 320    | 0
+rak dinding dapur minimalis dari kayu    | 320    | 0
+organizer kolong sink dapur              | ~150   | 0
+rak gantung dapur minimalis              | ~200   | 0
+wadah makanan untuk jualan               | 480    | 0
+wadah makanan ramah lingkungan           | 170    | 0
+wadah makanan estetik                    | 170    | 0
+wadah makanan stainless steel            | 140    | 0
+tempat penyimpanan makanan di kulkas     | ~200   | 0
+rak piring lipat hemat tempat            | ~100   | 0
+rak dapur sudut serbaguna                | ~100   | 0
+rak bumbu dapur aesthetic                | ~100   | 0
+food container untuk meal prep           | ~100   | 0
+food container anti tumpah               | ~100   | 0
+
+--- Home Living Long-Tail ---
+rak penyimpanan barang dapur             | 210    | 0
+rak penyimpanan barang di gudang         | 210    | 0
+rak penyimpanan barang tertutup          | 210    | 0
+storage box untuk pakaian                | 90     | 0
+storage box aesthetic                    | 70     | 0
+kotak penyimpanan makanan di kulkas      | 110    | 0
+kotak penyimpanan barang kecil           | 140    | 0
+rak penyimpanan barang dari kayu         | 50     | 15
+rak penyimpanan untuk kamar kost         | ~100   | 0
+storage box lipat untuk baju             | ~80    | 0
+kotak penyimpanan serbaguna transparan   | ~50    | 0
+rak penyimpanan bertingkat roda          | ~80    | 0
+organizer kamar mandi minimalis          | ~100   | 0
+rak sepatu minimalis hemat tempat        | ~200   | 0
+rak buku minimalis dinding               | ~200   | 0
+tempat penyimpanan alat kebersihan       | 90     | 0
+
+--- Bags & Travel Long-Tail ---
+travel organizer bag set 7 in 1          | ~100   | 0
+packing cubes compression                | ~80    | 0
+tas organizer koper                      | ~100   | 0
+cable organizer travel waterproof        | ~50    | 0
+pouch makeup travel kecil                | ~80    | 0
+toiletry bag pria                        | ~100   | 0
+tas gadget organizer multifungsi         | ~80    | 0
+travel pouch anti air                    | ~80    | 0
+bag organizer untuk tas ransel           | ~50    | 0
+tas organizer dokumen perjalanan         | ~50    | 0
+
+--- Office & Desk Long-Tail ---
+desk organizer kayu minimalis            | ~80    | 0
+cable organizer meja kerja               | ~80    | 0
+desktop organizer multifungsi            | ~80    | 0
+rak meja belajar anak                    | ~200   | 0
+organizer laci meja kantor               | ~80    | 0
+pen holder kayu aesthetic                | ~50    | 0
+monitor stand dengan laci                | ~50    | 0
+desk setup minimalis Indonesia           | ~100   | 0
+
+================================================================================
+6. SEASONAL & TRENDING KEYWORDS (2026)
+================================================================================
+
+--- RAMADAN / LEBARAN (Feb-Apr 2026) ---
+[PEAK SEASON - Indonesia's biggest shopping period]
+bersih-bersih rumah sebelum lebaran      | ~500   | 0
+dekorasi rumah lebaran                   | ~300   | 0
+persiapan rumah ramadan                  | ~200   | 0
+menata dapur sebelum lebaran             | ~150   | 0
+rak piring untuk lebaran                 | ~100   | 0
+wadah makanan lebaran                    | ~200   | 0
+tempat kue lebaran                       | ~500   | 0
+toples kue lebaran                       | ~800   | 0
+promo lebaran home organizer             | ~100   | 0
+storage box baju lebaran                 | ~50    | 0
+rak hidangan lebaran                     | ~100   | 0
+hampers lebaran organizer                | ~50    | 0
+
+--- HARBOLNAS / MEGA SALE (11.11, 12.12) ---
+promo 11.11 rak dapur                    | ~100   | 0
+diskon 12.12 storage box                 | ~80    | 0
+promo harbolnas home organizer           | ~80    | 0
+flash sale kitchen organizer             | ~50    | 0
+promo akhir tahun rak penyimpanan        | ~50    | 0
+
+--- BACK TO SCHOOL (Jul-Aug) ---
+desk organizer anak sekolah              | ~100   | 0
+rak buku anak minimalis                  | ~200   | 0
+tempat alat tulis anak                   | ~200   | 0
+organizer meja belajar                   | ~150   | 0
+
+--- HOLIDAY / TRAVEL SEASON (Jun-Aug, Dec) ---
+packing tips liburan                     | ~200   | 0
+travel organizer liburan                 | ~100   | 0
+tas organizer mudik                      | ~80    | 0
+perlengkapan traveling hemat             | ~100   | 0
+
+--- 2026 TRENDING TERMS ---
+warm minimalism Indonesia                | ~100   | 0
+invisible storage kitchen                | ~50    | 0
+sustainable storage bamboo rattan        | ~80    | 0
+multifunctional furniture storage        | ~100   | 0
+aesthetic room organization              | ~200   | 10
+japandi style storage                    | ~150   | 5
+metode KonMari 2026                      | ~200   | 0
+decluttering minimalis                   | ~150   | 0
+smart storage rumah kecil                | ~100   | 0
+eco friendly home organizer              | ~80    | 5
+rak bambu aesthetic                      | ~100   | 0
+storage rattan basket                    | ~80    | 5
+teal home decor 2026                     | ~50    | 0
+home organization trend 2026             | ~100   | 10
+
+================================================================================
+7. COMPETITOR KEYWORD GAPS & OPPORTUNITIES
+================================================================================
+
+Key competitors in Indonesia home organization space:
+- AZKO (azko.id) / Ruparupa -- 600+ stores, massive content strategy
+- Dekoruma (dekoruma.com) -- Japandi focused, custom interior
+- IKEA Indonesia (ikea.co.id) -- brand keyword dominance
+- Informa -- offline retail + online
+- Homedoki (homedoki.id) -- niche home organizer
+- OneSo (oneso.id) -- storage & organization niche
+
+GAPS TO EXPLOIT (competitors weak here):
+1. Indonesian-language "how-to" content for organization (cara menata...)
+2. Specific room-type organization guides (dapur sempit, kamar kost, rumah subsidi)
+3. Product comparison content (rak piring stainless vs plastik, etc.)
+4. Seasonal content (Lebaran prep, Ramadan organization)
+5. KonMari / decluttering content in Bahasa Indonesia
+6. Travel organization niche (packing cubes, cable organizers)
+7. "Aesthetic" organization content targeting Gen Z
+8. Video-first content (TikTok SEO, YouTube Shorts)
+
+BRAND KEYWORDS YOUR COMPETITORS OWN (do NOT target these):
+- storage box ikea (390/mo)
+- storage box mr diy (480/mo)
+- rak dapur ikea (210/mo)
+- storage box informa (90/mo)
+- kotak penyimpanan ikea (90/mo)
+
+================================================================================
+8. TIKTOK & SOCIAL SEARCH KEYWORDS
+================================================================================
+
+Indonesian users (especially Gen Z) increasingly search on TikTok and YouTube.
+These hashtags/search terms drive product discovery:
+
+#RumahRapi                               | trending
+#DapurMinimalis                          | trending
+#OrganisasiRumah                         | trending
+#StorageHack                             | trending
+#KonMari                                 | 94M views
+#AestheticRoom                           | trending
+#DeclutterWithMe                         | trending
+#KamarKost                               | trending
+#DapurBersih                             | trending
+#HomeOrganization                        | trending
+#RakDapur                                | trending
+#PackingHacks                            | trending
+#TravelOrganizer                         | trending
+#DeskSetup                               | trending
+#MinimalistHome                          | trending
+#SmallSpaceLiving                        | trending
+#DapurRapi                               | trending
+#BeresBeresRumah                         | trending
+#StorageIdeas                            | trending
+#RoomMakeover                            | trending
+#OrganizerMurah                          | trending
+#TipsRumahRapi                           | trending
+
+================================================================================
+9. RECOMMENDED PRIORITY ACTIONS
+================================================================================
+
+TIER 1 -- IMMEDIATE (High Volume, Low Competition, Direct Match to Products):
+----------------------------------------------------------------------
+1. Target "storage box" cluster (6,600/mo, KD 0)
+   - Create category page optimized for "storage box"
+   - Blog: "10 Rekomendasi Storage Box Terbaik 2026"
+
+2. Target "rak dapur" cluster (3,600/mo, KD 0)
+   - Optimize product pages for rak dapur, rak dapur minimalis
+   - Blog: "Cara Menata Rak Dapur Agar Rapi dan Estetik"
+
+3. Target "rak penyimpanan" cluster (880+/mo, KD 0)
+   - Create hub page for all storage rack products
+   - Blog: "Rekomendasi Rak Penyimpanan Serbaguna untuk Rumah Minimalis"
+
+4. Target "wadah makanan" cluster (2,400/mo, KD 0)
+   - Optimize food container product pages
+   - Blog: "Panduan Memilih Wadah Makanan Terbaik"
+
+TIER 2 -- SHORT TERM (Moderate Volume, Strong Intent):
+----------------------------------------------------------------------
+5. Target "kitchen organizer" terms
+   - Blog: "Ide Kitchen Organizer untuk Dapur Sempit"
+   - Product pages: rak bumbu, rak piring, organizer kolong sink
+
+6. Target "desk organizer" cluster (880/mo)
+   - Blog: "Desk Setup Minimalis: Rekomendasi Desk Organizer 2026"
+
+7. Target "travel organizer" cluster (480+/mo)
+   - Blog: "Travel Organizer Bag Terbaik untuk Liburan"
+   - Target: packing cubes, cable organizer
+
+8. Target buyer-intent keywords
+   - Create comparison pages: "X Terbaik dan Murah 2026"
+   - Optimize for "rekomendasi", "harga", "murah" variants
+
+TIER 3 -- CONTENT STRATEGY (Informational, Brand Building):
+----------------------------------------------------------------------
+9. Create Lebaran/Ramadan content cluster (seasonal peak NOW)
+   - "Tips Bersih-Bersih Rumah Sebelum Lebaran"
+   - "Menata Dapur untuk Persiapan Lebaran"
+   - "Rekomendasi Toples dan Wadah Kue Lebaran"
+
+10. Create "Cara Menata" content series
+    - cara menata rumah kecil agar rapi (~1,000/mo)
+    - cara menata dapur sempit (~500/mo)
+    - cara menata kamar kost (~500/mo)
+    - cara merapikan rumah (~800/mo)
+
+11. Create KonMari/decluttering content in Bahasa Indonesia
+    - "Panduan Lengkap Metode KonMari untuk Pemula"
+    - "Cara Decluttering Rumah: Langkah demi Langkah"
+
+12. Video content for TikTok/YouTube (Social SEO)
+    - Room/kitchen transformation videos
+    - "Dapur Rapi Dalam 30 Menit" content
+    - Packing hack videos for travel organizer products
+    - Before/after organization reveals
+
+TECHNICAL SEO NOTES:
+- All product pages should include hreflang for id-ID
+- Mobile-first is critical: Indonesia is 70%+ mobile commerce
+- Core Web Vitals optimization essential for 2026 rankings
+- Consider GEO (Generative Engine Optimization) for AI search visibility
+- Schema markup for products (price, availability, reviews)
+
+================================================================================
+END OF REPORT
+================================================================================

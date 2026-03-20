@@ -1,6 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Collections',
+  description: 'Explore curated Sesoris collections. Themed product bundles for every room and lifestyle need.',
+  alternates: { canonical: '/collections' },
+  openGraph: {
+    title: 'Collections | Sesoris',
+    description: 'Explore curated Sesoris collections. Themed product bundles for every room and lifestyle need.',
+  },
+};
 
 const collections = [
   {

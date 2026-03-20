@@ -1,8 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Star, Heart, ShoppingCart, TrendingUp } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: 'Best Sellers',
+  description: 'Shop Sesoris best-selling products. Top-rated home organizers and storage solutions loved by our customers.',
+  alternates: { canonical: '/best-sellers' },
+  openGraph: {
+    title: 'Best Sellers | Sesoris',
+    description: 'Shop Sesoris best-selling products. Top-rated home organizers and storage solutions loved by our customers.',
+  },
+};
 
 export default function BestSellersPage() {
   const bestSellers = products.filter(p => p.isFeatured);

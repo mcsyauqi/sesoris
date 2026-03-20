@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, FileText, ShoppingBag, Truck, RefreshCw, AlertTriangle, Scale, Mail } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions',
+  description: 'Sesoris terms and conditions of use. Read our policies on orders, payments, and service.',
+  alternates: { canonical: '/terms' },
+  openGraph: {
+    title: 'Terms & Conditions | Sesoris',
+    description: 'Sesoris terms and conditions of use. Read our policies on orders, payments, and service.',
+  },
+};
 
 export default function TermsPage() {
   return (

@@ -1,8 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Star, Heart, ShoppingCart, Percent } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice, calculateDiscount } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: 'Sale',
+  description: 'Shop Sesoris sale items. Great deals on quality home organizers, storage solutions, and accessories.',
+  alternates: { canonical: '/on-sale' },
+  openGraph: {
+    title: 'Sale | Sesoris',
+    description: 'Shop Sesoris sale items. Great deals on quality home organizers, storage solutions, and accessories.',
+  },
+};
 
 export default function OnSalePage() {
   const saleProducts = products.filter(p => p.compareAtPrice && p.compareAtPrice > p.price);

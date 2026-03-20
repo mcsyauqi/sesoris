@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, Truck, Clock, MapPin, Package, CheckCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Shipping Information',
+  description: 'Learn about Sesoris shipping options, delivery times, and policies. Fast and reliable delivery across Indonesia.',
+  alternates: { canonical: '/shipping' },
+  openGraph: {
+    title: 'Shipping Information | Sesoris',
+    description: 'Learn about Sesoris shipping options, delivery times, and policies. Fast and reliable delivery across Indonesia.',
+  },
+};
 
 export default function ShippingPage() {
   return (

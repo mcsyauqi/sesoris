@@ -1,0 +1,389 @@
+[
+  {
+    "keyword": "rak serbaguna",
+    "volume": "1000",
+    "kd": "0",
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "rak-serbaguna"
+  },
+  {
+    "keyword": "food container",
+    "volume": "1000",
+    "kd": "0",
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "food-container"
+  },
+  {
+    "keyword": "alat camping",
+    "volume": "1000",
+    "kd": "0",
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "alat-camping"
+  },
+  {
+    "keyword": "cara menata rumah kecil agar rapi",
+    "volume": "1000",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "cara-menata-rumah-kecil-agar-rapi"
+  },
+  {
+    "keyword": "rak minimalis",
+    "volume": "800",
+    "kd": "0",
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "rak-minimalis"
+  },
+  {
+    "keyword": "tempat penyimpanan barang",
+    "volume": "720",
+    "kd": "0",
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "tempat-penyimpanan-barang"
+  },
+  {
+    "keyword": "lemari penyimpanan",
+    "volume": "600",
+    "kd": "0",
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "lemari-penyimpanan"
+  },
+  {
+    "keyword": "home organizer",
+    "volume": "500",
+    "kd": "0",
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "home-organizer"
+  },
+  {
+    "keyword": "container box",
+    "volume": "500",
+    "kd": "0",
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "container-box"
+  },
+  {
+    "keyword": "tempat bumbu dapur",
+    "volume": "800",
+    "kd": "0",
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "tempat-bumbu-dapur"
+  },
+  {
+    "keyword": "rak piring lemari dapur",
+    "volume": "720",
+    "kd": "0",
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "rak-piring-lemari-dapur"
+  },
+  {
+    "keyword": "rak aluminium dapur",
+    "volume": "590",
+    "kd": "0",
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "rak-aluminium-dapur"
+  },
+  {
+    "keyword": "rak piring tempel tembok dapur",
+    "volume": "590",
+    "kd": "0",
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "rak-piring-tempel-tembok-dapur"
+  },
+  {
+    "keyword": "rak stainless dapur",
+    "volume": "480",
+    "kd": "0",
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "rak-stainless-dapur"
+  },
+  {
+    "keyword": "rak kolong dapur",
+    "volume": "390",
+    "kd": "0",
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "rak-kolong-dapur"
+  },
+  {
+    "keyword": "bag organizer travel",
+    "volume": "390",
+    "kd": "0",
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "bag-organizer-travel"
+  },
+  {
+    "keyword": "tas travel lipat",
+    "volume": "300",
+    "kd": "0",
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "tas-travel-lipat"
+  },
+  {
+    "keyword": "packing cubes",
+    "volume": "300",
+    "kd": "0",
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "packing-cubes"
+  },
+  {
+    "keyword": "rak meja kerja",
+    "volume": "300",
+    "kd": "0",
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "rak-meja-kerja"
+  },
+  {
+    "keyword": "tempat alat tulis",
+    "volume": "300",
+    "kd": "0",
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "tempat-alat-tulis"
+  },
+  {
+    "keyword": "travel accessories",
+    "volume": "500",
+    "kd": "20",
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "travel-accessories"
+  },
+  {
+    "keyword": "tas outdoor",
+    "volume": "500",
+    "kd": "0",
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "tas-outdoor"
+  },
+  {
+    "keyword": "perlengkapan traveling",
+    "volume": "400",
+    "kd": "0",
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "perlengkapan-traveling"
+  },
+  {
+    "keyword": "travel gear",
+    "volume": "300",
+    "kd": "15",
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "travel-gear"
+  },
+  {
+    "keyword": "dry bag",
+    "volume": "300",
+    "kd": "5",
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "dry-bag"
+  },
+  {
+    "keyword": "cara merapikan rumah",
+    "volume": "800",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-merapikan-rumah"
+  },
+  {
+    "keyword": "cara menata dapur sempit",
+    "volume": "500",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-menata-dapur-sempit"
+  },
+  {
+    "keyword": "cara menata kamar kost",
+    "volume": "500",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-menata-kamar-kost"
+  },
+  {
+    "keyword": "cara menata dapur minimalis",
+    "volume": "400",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-menata-dapur-minimalis"
+  },
+  {
+    "keyword": "cara menata dapur agar rapi",
+    "volume": "400",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-menata-dapur-agar-rapi"
+  },
+  {
+    "keyword": "inspirasi dapur minimalis",
+    "volume": "400",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "inspirasi-dapur-minimalis"
+  },
+  {
+    "keyword": "cara menyimpan makanan agar tahan lama",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-menyimpan-makanan-agar-tahan-lama"
+  },
+  {
+    "keyword": "cara merapikan lemari baju",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-merapikan-lemari-baju"
+  },
+  {
+    "keyword": "cara menata ruang tamu sempit",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "cara-menata-ruang-tamu-sempit"
+  },
+  {
+    "keyword": "tips menata dapur kecil",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "tips-menata-dapur-kecil"
+  },
+  {
+    "keyword": "tips rumah rapi",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "tips-rumah-rapi"
+  },
+  {
+    "keyword": "tips menata kamar tidur sempit",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "tips-menata-kamar-tidur-sempit"
+  },
+  {
+    "keyword": "ide menata kamar kost",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "ide-menata-kamar-kost"
+  },
+  {
+    "keyword": "inspirasi rumah rapi minimalis",
+    "volume": "300",
+    "kd": "0",
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "inspirasi-rumah-rapi-minimalis"
+  },
+  {
+    "keyword": "toples kue lebaran",
+    "volume": "800",
+    "kd": "0",
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "toples-kue-lebaran"
+  },
+  {
+    "keyword": "tempat kue lebaran",
+    "volume": "500",
+    "kd": "0",
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "tempat-kue-lebaran"
+  },
+  {
+    "keyword": "bersih-bersih rumah sebelum lebaran",
+    "volume": "500",
+    "kd": "0",
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "bersih-bersih-rumah-sebelum-lebaran"
+  },
+  {
+    "keyword": "dekorasi rumah lebaran",
+    "volume": "300",
+    "kd": "0",
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "dekorasi-rumah-lebaran"
+  }
+]

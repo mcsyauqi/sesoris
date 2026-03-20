@@ -33,8 +33,29 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
 
   const products = getProductsByCategory(slug);
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.sesoris.com' },
+      { '@type': 'ListItem', position: 2, name: 'Shop', item: 'https://www.sesoris.com/shop' },
+      { '@type': 'ListItem', position: 3, name: category.name, item: `https://www.sesoris.com/category/${slug}` },
+    ],
+  };
+
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: category.name,
+    description: category.description,
+    url: `https://www.sesoris.com/category/${slug}`,
+    isPartOf: { '@type': 'WebSite', name: 'Sesoris', url: 'https://www.sesoris.com' },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       {/* Breadcrumb */}
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">

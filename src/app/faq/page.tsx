@@ -1,4 +1,15 @@
+import type { Metadata } from 'next';
 import FAQPageClient from './FAQPageClient';
+
+export const metadata: Metadata = {
+  title: 'Frequently Asked Questions',
+  description: 'Find answers to common questions about Sesoris products, shipping, returns, and more.',
+  alternates: { canonical: '/faq' },
+  openGraph: {
+    title: 'Frequently Asked Questions | Sesoris',
+    description: 'Find answers to common questions about Sesoris products, shipping, returns, and more.',
+  },
+};
 
 const faqSchema = {
   '@context': 'https://schema.org',

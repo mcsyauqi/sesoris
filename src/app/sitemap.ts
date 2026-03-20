@@ -34,116 +34,120 @@ const productSlugs = [
   'rak-buku-minimalis-industrial',
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const currentDate = new Date().toISOString();
+// Use fixed dates for sitemap lastmod to avoid changing on every build.
+// Update these dates when actual content changes are deployed.
+const LAST_CONTENT_UPDATE = '2026-03-20T00:00:00.000Z';
+const LAST_BLOG_UPDATE = '2026-03-15T00:00:00.000Z';
+const LAST_INFO_UPDATE = '2026-01-15T00:00:00.000Z';
 
+export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: currentDate,
+      lastModified: LAST_CONTENT_UPDATE,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/shop`,
-      lastModified: currentDate,
+      lastModified: LAST_CONTENT_UPDATE,
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/collections`,
-      lastModified: currentDate,
+      lastModified: LAST_CONTENT_UPDATE,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/new-arrivals`,
-      lastModified: currentDate,
+      lastModified: LAST_CONTENT_UPDATE,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/best-sellers`,
-      lastModified: currentDate,
+      lastModified: LAST_CONTENT_UPDATE,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/on-sale`,
-      lastModified: currentDate,
+      lastModified: LAST_CONTENT_UPDATE,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: currentDate,
+      lastModified: LAST_BLOG_UPDATE,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/shipping`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/returns`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/size-guide`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/track-order`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/careers`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.4,
     },
     {
       url: `${baseUrl}/press`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',
       priority: 0.4,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: currentDate,
+      lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
@@ -152,7 +156,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Category pages
   const categoryPages: MetadataRoute.Sitemap = categorySlugs.map((slug) => ({
     url: `${baseUrl}/category/${slug}`,
-    lastModified: currentDate,
+    lastModified: LAST_CONTENT_UPDATE,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));
@@ -160,7 +164,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Product pages
   const productPages: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
     url: `${baseUrl}/product/${slug}`,
-    lastModified: currentDate,
+    lastModified: LAST_CONTENT_UPDATE,
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
@@ -168,7 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog article pages
   const blogPages: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
-    lastModified: currentDate,
+    lastModified: LAST_BLOG_UPDATE,
     changeFrequency: 'monthly',
     priority: 0.6,
   }));

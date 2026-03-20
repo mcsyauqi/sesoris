@@ -1,6 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Newspaper, Download, ExternalLink, Mail } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Press & Media',
+  description: 'Sesoris in the news. Read about our latest achievements, collaborations, and brand stories.',
+  alternates: { canonical: '/press' },
+  openGraph: {
+    title: 'Press & Media | Sesoris',
+    description: 'Sesoris in the news. Read about our latest achievements, collaborations, and brand stories.',
+  },
+};
 
 const pressReleases = [
   {

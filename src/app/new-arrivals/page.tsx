@@ -1,8 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Star, Heart, ShoppingCart } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: 'New Arrivals',
+  description: 'Discover the latest additions to Sesoris. New home organizers, storage solutions, and lifestyle accessories.',
+  alternates: { canonical: '/new-arrivals' },
+  openGraph: {
+    title: 'New Arrivals | Sesoris',
+    description: 'Discover the latest additions to Sesoris. New home organizers, storage solutions, and lifestyle accessories.',
+  },
+};
 
 export default function NewArrivalsPage() {
   const newProducts = products.filter(p => p.isNew);

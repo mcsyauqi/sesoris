@@ -1,6 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Heart, Globe, Users, Leaf, Award } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about Sesoris - your trusted source for quality home organizers and storage solutions. Curated products for modern living.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Us | Sesoris',
+    description: 'Learn about Sesoris - your trusted source for quality home organizers and storage solutions. Curated products for modern living.',
+  },
+};
 
 const values = [
   { icon: Heart, title: 'Quality First', desc: 'We source only the best products, ensuring every item meets our high standards.' },

@@ -81,7 +81,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'Sesoris',
               url: 'https://www.sesoris.com',
-              logo: 'https://www.sesoris.com/logo.svg',
+              logo: 'https://www.sesoris.com/logo.webp',
               description: 'Online store for quality home organizers and storage solutions in Indonesia',
               address: {
                 '@type': 'PostalAddress',
@@ -98,9 +98,10 @@ export default function RootLayout({
                 availableLanguage: ['Indonesian', 'English'],
               },
               sameAs: [
-                'https://www.instagram.com/sesoris',
+                'https://www.instagram.com/sesoris_com',
                 'https://www.facebook.com/sesoris',
                 'https://www.tiktok.com/@sesoris',
+                'https://x.com/sesoris_com',
               ],
             }),
           }}

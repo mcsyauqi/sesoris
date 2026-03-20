@@ -42,12 +42,13 @@ export default async function ProductPage(
   const product = getProductBySlug(slug);
   if (!product) notFound();
 
-  const productSchema = {
+  const productSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: product.description,
     image: product.images[0]?.url,
+    sku: `SES-${product.id.toString().padStart(4, '0')}`,
     brand: { '@type': 'Brand', name: 'Sesoris' },
     offers: {
       '@type': 'Offer',
@@ -57,8 +58,42 @@ export default async function ProductPage(
         ? 'https://schema.org/InStock'
         : 'https://schema.org/OutOfStock',
       url: `https://www.sesoris.com/product/${product.slug}`,
+      seller: { '@type': 'Organization', name: 'Sesoris' },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'ID',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 1,
+            maxValue: 2,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 2,
+            maxValue: 5,
+            unitCode: 'DAY',
+          },
+        },
+      },
     },
   };
+
+  // Add aggregateRating only if there are reviews
+  if (product.rating > 0 && product.reviewCount > 0) {
+    productSchema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: product.rating,
+      reviewCount: product.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    };
+  }
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',

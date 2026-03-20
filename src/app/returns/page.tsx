@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, RotateCcw, CheckCircle, XCircle, Clock, Package } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Returns & Exchanges',
+  description: 'Sesoris return and exchange policy. Easy 30-day returns for a hassle-free shopping experience.',
+  alternates: { canonical: '/returns' },
+  openGraph: {
+    title: 'Returns & Exchanges | Sesoris',
+    description: 'Sesoris return and exchange policy. Easy 30-day returns for a hassle-free shopping experience.',
+  },
+};
 
 export default function ReturnsPage() {
   return (
