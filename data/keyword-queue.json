@@ -1,0 +1,1031 @@
+[
+  {
+    "keyword": "storage box",
+    "volume": 6600,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "kitchen set minimalis dapur kecil",
+    "volume": 4400,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "rak bumbu dapur",
+    "volume": 3600,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "model kitchen set minimalis",
+    "volume": 2900,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "kitchen set modern minimalis",
+    "volume": 1600,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "wadah makanan plastik",
+    "volume": 1600,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "model kitchen set minimalis terbaru",
+    "volume": 1300,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "rak bumbu dapur dari kayu",
+    "volume": 1300,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "gambar kitchen set minimalis",
+    "volume": 1000,
+    "category": "Kitchen & Dining",
+    "intent": "Informational",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "rak penyimpanan barang",
+    "volume": 880,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "desain kitchen set minimalis",
+    "volume": 880,
+    "category": "Kitchen & Dining",
+    "intent": "Informational",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "contoh kitchen set minimalis",
+    "volume": 880,
+    "category": "Kitchen & Dining",
+    "intent": "Informational",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "sustainable living tips",
+    "volume": 880,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "box storage",
+    "volume": 720,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak bumbu dapur susun plastik",
+    "volume": 720,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak bumbu dapur serbaguna",
+    "volume": 720,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak dapur aluminium",
+    "volume": 590,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cara menata rumah minimalis",
+    "volume": 500,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage box plastik",
+    "volume": 480,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak bumbu dapur unik",
+    "volume": 480,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "tempat penyimpanan makanan",
+    "volume": 480,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "travel bag organizer",
+    "volume": 480,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organizer travel bag",
+    "volume": 480,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "travel organizer bag",
+    "volume": 480,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "living sustainable life",
+    "volume": 480,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wadah makanan stainless",
+    "volume": 390,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "sustainable living",
+    "volume": 390,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak bumbu dapur 3 susun",
+    "volume": 320,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak bumbu dapur tempel dinding",
+    "volume": 320,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak piring dapur",
+    "volume": 320,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rak bumbu dapur minimalis",
+    "volume": 260,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tas organizer",
+    "volume": 260,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak penyimpanan barang tertutup",
+    "volume": 210,
+    "category": "Home Living",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organizer rumah",
+    "volume": 200,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak sepatu minimalis hemat tempat",
+    "volume": 200,
+    "category": "Home Living",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak buku minimalis dinding",
+    "volume": 200,
+    "category": "Home Living",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organizer kolong sink",
+    "volume": 200,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "travel pouch organizer",
+    "volume": 200,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "gadget organizer",
+    "volume": 200,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "bag in bag organizer",
+    "volume": 200,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "toiletry bag travel",
+    "volume": 200,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "desktop organizer",
+    "volume": 200,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak buku meja",
+    "volume": 200,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "drawer organizer",
+    "volume": 200,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak meja belajar anak",
+    "volume": 200,
+    "category": "Office & Desk",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "outdoor gadget",
+    "volume": 200,
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "aksesoris travel",
+    "volume": 200,
+    "category": "Outdoor & Travel",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "jual storage box",
+    "volume": 200,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "jual rak piring",
+    "volume": 200,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak piring murah",
+    "volume": 200,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "harga rak piring",
+    "volume": 200,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cara menata rak piring",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cara menata meja kerja",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cara menyimpan bumbu dapur",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cara decluttering rumah",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cara packing koper rapi",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tips merapikan rumah sebelum lebaran",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tips packing traveling",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tips menyimpan makanan di kulkas",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tips menata meja belajar",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tips dapur bersih dan rapi",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ide storage rumah",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ide penyimpanan barang di rumah kecil",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ide desk setup minimalis",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ide penataan dapur sempit",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ide menata rumah subsidi",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "inspirasi rak dinding",
+    "volume": 200,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "persiapan rumah ramadan",
+    "volume": 200,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "packing tips liburan",
+    "volume": 200,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak buku anak minimalis",
+    "volume": 200,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tempat alat tulis anak",
+    "volume": 200,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "aesthetic room organization",
+    "volume": 200,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "metode KonMari 2026",
+    "volume": 200,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wadah penyimpanan makanan",
+    "volume": 170,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cable organizer bag",
+    "volume": 150,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pouch serbaguna",
+    "volume": 150,
+    "category": "Bags & Pouches",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organizer meja kantor",
+    "volume": 150,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "stationery organizer",
+    "volume": 150,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box murah",
+    "volume": 150,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "panduan metode KonMari",
+    "volume": 150,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tips organisasi rumah",
+    "volume": 150,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ide storage kamar tidur",
+    "volume": 150,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "inspirasi rak bumbu dapur",
+    "volume": 150,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "menata dapur sebelum lebaran",
+    "volume": 150,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "japandi style storage",
+    "volume": 150,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "decluttering minimalis",
+    "volume": 150,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak penyimpanan serbaguna",
+    "volume": 140,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box organizer",
+    "volume": 140,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "plastic storage box",
+    "volume": 140,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "container storage box",
+    "volume": 140,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "makeup organizer",
+    "volume": 140,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cable organizer for desk",
+    "volume": 110,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organizer kamar mandi minimalis",
+    "volume": 100,
+    "category": "Home Living",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak piring stainless anti karat",
+    "volume": 100,
+    "category": "Kitchen & Dining",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak bumbu dapur aesthetic",
+    "volume": 100,
+    "category": "Kitchen & Dining",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "food container untuk meal prep",
+    "volume": 100,
+    "category": "Kitchen & Dining",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "food container anti tumpah",
+    "volume": 100,
+    "category": "Kitchen & Dining",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "travel organizer bag set 7 in 1",
+    "volume": 100,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tas organizer koper",
+    "volume": 100,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "toiletry bag pria",
+    "volume": 100,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "monitor stand organizer",
+    "volume": 100,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pen holder organizer",
+    "volume": 100,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "desk setup minimalis Indonesia",
+    "volume": 100,
+    "category": "Office & Desk",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rekomendasi storage box",
+    "volume": 100,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "jual organizer rumah",
+    "volume": 100,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "jual travel organizer",
+    "volume": 100,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box terbaik",
+    "volume": 100,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organizer murah",
+    "volume": 100,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tips home office rapi",
+    "volume": 100,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "panduan decluttering rumah",
+    "volume": 100,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak piring stainless vs plastik",
+    "volume": 100,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak hidangan lebaran",
+    "volume": 100,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "promo lebaran home organizer",
+    "volume": 100,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "travel organizer liburan",
+    "volume": 100,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "warm minimalism Indonesia",
+    "volume": 100,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "multifunctional furniture storage",
+    "volume": 100,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "smart storage rumah kecil",
+    "volume": 100,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak bambu aesthetic",
+    "volume": 100,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home organization trend 2026",
+    "volume": 100,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box kecil",
+    "volume": 90,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box untuk pakaian",
+    "volume": 90,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tempat penyimpanan alat kebersihan",
+    "volume": 90,
+    "category": "Home Living",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen organizer",
+    "volume": 90,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box lipat untuk baju",
+    "volume": 80,
+    "category": "Home Living",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "packing cubes compression",
+    "volume": 80,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pouch makeup travel kecil",
+    "volume": 80,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tas gadget organizer multifungsi",
+    "volume": 80,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "travel pouch anti air",
+    "volume": 80,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cable organizer meja kerja",
+    "volume": 80,
+    "category": "Office & Desk",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "desktop organizer multifungsi",
+    "volume": 80,
+    "category": "Office & Desk",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organizer laci meja kantor",
+    "volume": 80,
+    "category": "Office & Desk",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rekomendasi kitchen organizer",
+    "volume": 80,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rekomendasi travel organizer",
+    "volume": 80,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "beli storage box murah",
+    "volume": 80,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "panduan memilih rak piring",
+    "volume": 80,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "diskon 12.12 storage box",
+    "volume": 80,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tas organizer mudik",
+    "volume": 80,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "sustainable storage bamboo rattan",
+    "volume": 80,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "eco friendly home organizer",
+    "volume": 80,
+    "category": "Trending 2026",
+    "intent": "Trending",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box aesthetic",
+    "volume": 70,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak penyimpanan barang kecil",
+    "volume": 50,
+    "category": "Home Living",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rak penyimpanan barang dapur tertutup",
+    "volume": 50,
+    "category": "Home Living",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cable organizer travel waterproof",
+    "volume": 50,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tas organizer dokumen perjalanan",
+    "volume": 50,
+    "category": "Bags & Pouches",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box plastik vs kain",
+    "volume": 50,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "panduan memilih storage box",
+    "volume": 50,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage box baju lebaran",
+    "volume": 50,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 3"
+  }
+]

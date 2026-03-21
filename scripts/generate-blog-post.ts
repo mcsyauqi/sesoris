@@ -10,6 +10,30 @@ const blogDir = path.join(process.cwd(), 'content', 'blog');
 
 const categories = ['Tips & Tricks', 'Tutorial', 'Inspiration', 'Lifestyle', 'Review'];
 
+const keywordQueuePath = path.join(process.cwd(), 'data', 'keyword-queue.json');
+
+interface QueuedKeyword {
+  keyword: string;
+  volume: number;
+  category: string;
+  intent: string;
+  priority: string;
+}
+
+function getNextKeyword(): QueuedKeyword | null {
+  if (!fs.existsSync(keywordQueuePath)) return null;
+  const queue: QueuedKeyword[] = JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'));
+  if (queue.length === 0) return null;
+
+  // Take the first keyword (highest volume)
+  const next = queue.shift()!;
+
+  // Save remaining queue
+  fs.writeFileSync(keywordQueuePath, JSON.stringify(queue, null, 2), 'utf-8');
+  console.log(`Keyword from queue: "${next.keyword}" (vol: ${next.volume}, ${queue.length} remaining)`);
+  return next;
+}
+
 const topicsByDay: Record<number, string> = {
   0: 'lifestyle',        // Sunday
   1: 'home-organization', // Monday
@@ -49,7 +73,31 @@ async function generatePost() {
   const existing = getExistingPosts();
   const leastUsedCategory = getLeastUsedCategory(existing);
 
-  const basePrompt = `Write a NEW blog article in English. The article should be:
+  // Try to get keyword from queue first
+  const queuedKeyword = getNextKeyword();
+
+  let basePrompt: string;
+  if (queuedKeyword) {
+    basePrompt = `Write a NEW blog article in English targeting the keyword: "${queuedKeyword.keyword}"
+
+The article should be:
+- SEO-optimized for the target keyword "${queuedKeyword.keyword}"
+- Include the keyword naturally in the title, first paragraph, headings, and throughout the content
+- Informative, practical, and comprehensive for an international audience
+- Relevant to home & living products
+
+KEYWORD DATA:
+- Target keyword: ${queuedKeyword.keyword}
+- Monthly search volume: ${queuedKeyword.volume}
+- Category: ${queuedKeyword.category}
+- Search intent: ${queuedKeyword.intent}
+- Priority: ${queuedKeyword.priority}
+
+TOPIC CONTEXT:
+- Least used category: ${leastUsedCategory} (use this if it fits the keyword)
+- Available categories: ${categories.join(', ')}`;
+  } else {
+    basePrompt = `Write a NEW blog article in English. The article should be:
 - Informative, practical, and comprehensive for an international audience
 - Relevant to home & living products
 
@@ -57,6 +105,7 @@ TOPIC CONTEXT:
 - Today is ${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dayOfWeek]}, topic bias: ${topicBias}
 - Least used category: ${leastUsedCategory} (prioritize this)
 - Available categories: ${categories.join(', ')}`;
+  }
 
   const prompt = buildRichContentPrompt(basePrompt);
 
