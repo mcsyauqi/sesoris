@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Us | Sesoris',
     description: 'Learn about Sesoris - your trusted source for quality home organizers and storage solutions. Curated products for modern living.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

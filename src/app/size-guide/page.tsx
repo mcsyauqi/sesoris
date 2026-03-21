@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Size Guide | Sesoris',
     description: 'Sesoris product size guide. Find the perfect fit for organizers, storage solutions, and home accessories.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

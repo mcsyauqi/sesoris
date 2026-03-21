@@ -23,6 +23,11 @@ export async function generateMetadata(
     alternates: {
       canonical: `/category/${slug}`,
     },
+    openGraph: {
+      title: `${category.name} | Sesoris`,
+      description: category.description,
+      images: [{ url: '/og-default.webp', width: 1200, height: 630, alt: category.name }],
+    },
   };
 }
 

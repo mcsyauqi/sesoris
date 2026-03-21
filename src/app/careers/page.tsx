@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Careers | Sesoris',
     description: 'Join the Sesoris team. Explore career opportunities in e-commerce, design, marketing, and more.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | Sesoris',
     description: 'Sesoris privacy policy. Learn how we collect, use, and protect your personal information.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

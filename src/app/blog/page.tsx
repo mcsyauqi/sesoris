@@ -1,7 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog';
+
+export const metadata: Metadata = {
+  title: 'Blog - Home Organization Tips & Ideas',
+  description: 'Read our latest articles about home organization, kitchen storage tips, interior design ideas, and product guides. Expert advice from Sesoris.',
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    title: 'Blog - Home Organization Tips & Ideas | Sesoris',
+    description: 'Read our latest articles about home organization, kitchen storage tips, interior design ideas, and product guides. Expert advice from Sesoris.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
+  },
+};
 
 const categories = ['All', 'Tips & Tricks', 'Tutorial', 'Inspiration', 'Lifestyle', 'Review'];
 

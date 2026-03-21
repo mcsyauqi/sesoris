@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Press & Media | Sesoris',
     description: 'Sesoris in the news. Read about our latest achievements, collaborations, and brand stories.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

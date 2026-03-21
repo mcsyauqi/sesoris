@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Frequently Asked Questions | Sesoris',
     description: 'Find answers to common questions about Sesoris products, shipping, returns, and more.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

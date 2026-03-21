@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Returns & Exchanges | Sesoris',
     description: 'Sesoris return and exchange policy. Easy 30-day returns for a hassle-free shopping experience.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

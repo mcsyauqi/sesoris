@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Collections | Sesoris',
     description: 'Explore curated Sesoris collections. Themed product bundles for every room and lifestyle need.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

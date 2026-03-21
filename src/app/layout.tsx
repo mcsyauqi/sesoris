@@ -45,11 +45,13 @@ export const metadata: Metadata = {
     siteName: 'Sesoris',
     title: 'Sesoris - Home & Living Accessories',
     description: 'Discover quality products for your home, kitchen, and lifestyle.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630, alt: 'Sesoris - Home & Living Accessories' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sesoris - Home & Living Accessories',
     description: 'Discover quality products for your home, kitchen, and lifestyle.',
+    images: ['/og-default.webp'],
   },
   robots: {
     index: true,

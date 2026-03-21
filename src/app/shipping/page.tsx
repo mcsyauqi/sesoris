@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Shipping Information | Sesoris',
     description: 'Learn about Sesoris shipping options, delivery times, and policies. Fast and reliable delivery across Indonesia.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

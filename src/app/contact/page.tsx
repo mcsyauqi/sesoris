@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Us | Sesoris',
     description: 'Get in touch with Sesoris. We\'re here to help with orders, product questions, and more. Email support@sesoris.com.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 

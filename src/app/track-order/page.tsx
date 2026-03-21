@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Track Your Order | Sesoris',
     description: 'Track your Sesoris order status. Enter your order number to check delivery progress.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 
