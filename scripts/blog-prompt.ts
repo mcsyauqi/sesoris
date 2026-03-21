@@ -65,6 +65,7 @@ ${basePrompt}
 
 CONTENT QUALITY GUIDELINES:
 - Articles should be 1500-2500 words, informative and comprehensive
+- CRITICAL: Write ENTIRELY in English. Do NOT use any Indonesian/Bahasa words anywhere — not in titles, headings, body text, or FAQ. This is an international English website
 - Write in natural, friendly, and conversational English
 - Use specific data/numbers (e.g., "reduces clutter by 40%", "starting at $9.99")
 - Include practical, actionable tips
