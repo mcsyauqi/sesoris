@@ -1,9 +1,11 @@
-name: Generate Daily Blog Post
+name: Generate Daily Blog Posts
 
 on:
   schedule:
-    # 01:00 UTC = 08:00 WIB
-    - cron: '0 1 * * *'
+    # 3 articles/day: 08:00, 13:00, 18:00 WIB
+    - cron: '0 1 * * *'   # 01:00 UTC = 08:00 WIB
+    - cron: '0 6 * * *'   # 06:00 UTC = 13:00 WIB
+    - cron: '0 11 * * *'  # 11:00 UTC = 18:00 WIB
   workflow_dispatch:
 
 permissions:
@@ -35,10 +37,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/blog/ public/images/blog/
+          git add content/blog/ public/images/blog/ data/keyword-queue.json
           if git diff --staged --quiet; then
             echo "No new blog post generated"
             exit 0
           fi
-          git commit -m "blog: auto-generate daily article $(date +%Y-%m-%d)"
+          git commit -m "blog: auto-generate article $(date +%Y-%m-%d-%H%M)"
           git push
