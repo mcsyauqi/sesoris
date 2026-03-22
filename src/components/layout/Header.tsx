@@ -13,6 +13,7 @@ const navLinks = [
   { name: 'Shop', href: '/shop', hasDropdown: true },
   { name: 'Collections', href: '/collections' },
   { name: 'Track Order', href: '/track-order' },
+  { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
