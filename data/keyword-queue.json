@@ -1,8 +1,470 @@
 [
   {
+    "keyword": "air tight food storage containers",
+    "volume": 33100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "airtight storage containers for food",
+    "volume": 33100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage containers food",
+    "volume": 33100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers airtight",
+    "volume": 33100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage containers for food",
+    "volume": 33100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food containers and storage",
+    "volume": 33100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage for food storage containers",
+    "volume": 33100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization closet ideas",
+    "volume": 22200,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for closet organization",
+    "volume": 22200,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas of closet organization",
+    "volume": 22200,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization ideas: closet",
+    "volume": 22200,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas on closet organization",
+    "volume": 22200,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass containers for food storage",
+    "volume": 22200,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass containers food storage",
+    "volume": 22200,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glasslock food storage containers",
+    "volume": 22200,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glassware food storage containers",
+    "volume": 22200,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "pyrex glass food storage containers",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass storage food containers with lids",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass storage containers for food with lids",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass food storage containers with glass lids",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass food storage containers with lid",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass food storage containers glass lids",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass food storage containers lids",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass lid food storage containers",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "glass containers with glass lids for food storage",
+    "volume": 14800,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization ideas for a small closet",
+    "volume": 12100,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "very small closet organization ideas",
+    "volume": 12100,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization small closet ideas",
+    "volume": 12100,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "pyrex food storage containers",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage containers dog food",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers with lids",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "containers for dog food storage",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "dog food containers & storage",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers lids",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "lidded food storage containers",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers with lid",
+    "volume": 12100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization pantry ideas",
+    "volume": 9900,
+    "category": "Pantry Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization ideas for pantry",
+    "volume": 9900,
+    "category": "Pantry Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "plastic storage containers food",
+    "volume": 9900,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "plastic storage containers for food",
+    "volume": 9900,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage containers for food bpa free",
+    "volume": 9900,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "bpa-free food storage containers",
+    "volume": 9900,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers bpa free",
+    "volume": 9900,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage solutions in garage",
+    "volume": 8100,
+    "category": "Garage Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage garage solutions",
+    "volume": 8100,
+    "category": "Garage Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage solutions for a garage",
+    "volume": 8100,
+    "category": "Garage Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage solutions for the garage",
+    "volume": 8100,
+    "category": "Garage Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage solutions for garage",
+    "volume": 8100,
+    "category": "Garage Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization laundry room",
+    "volume": 8100,
+    "category": "Laundry Room Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization for laundry room",
+    "volume": 8100,
+    "category": "Laundry Room Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for shoe storage",
+    "volume": 8100,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas shoe storage",
+    "volume": 8100,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "rubbermaid brilliance food storage containers",
+    "volume": 8100,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
     "keyword": "storage box",
     "volume": 6600,
     "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization ideas for small closet",
+    "volume": 6600,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "pet food storage containers",
+    "volume": 6600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "pretty food storage containers",
+    "volume": 6600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "best food storage containers glass",
+    "volume": 6600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage containers for pet food",
+    "volume": 6600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "best glass storage containers for food",
+    "volume": 6600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "top rated glass food storage containers",
+    "volume": 6600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "kitchen organizer ideas",
+    "volume": 5400,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organizer ideas for kitchen",
+    "volume": 5400,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "pantry food storage containers",
+    "volume": 5400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "stainless steel food storage containers",
+    "volume": 5400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "stainless food storage containers",
+    "volume": 5400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers for pantry",
+    "volume": 5400,
+    "category": "Food Storage Containers",
     "intent": "Head",
     "priority": "Tier 1"
   },
@@ -14,6 +476,48 @@
     "priority": "Tier 1"
   },
   {
+    "keyword": "kitchen food storage containers",
+    "volume": 4400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "airtight pet food storage containers",
+    "volume": 4400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers for rice",
+    "volume": 4400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "airtight storage containers for pet food",
+    "volume": 4400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "rice food storage containers",
+    "volume": 4400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "food storage containers for kitchen",
+    "volume": 4400,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
     "keyword": "rak bumbu dapur",
     "volume": 3600,
     "category": "Kitchen & Dining",
@@ -21,9 +525,100 @@
     "priority": "Tier 1"
   },
   {
+    "keyword": "bathroom storage solutions",
+    "volume": 3600,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage solutions for bathroom",
+    "volume": 3600,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "rubbermaid food storage containers",
+    "volume": 3600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "best storage food containers",
+    "volume": 3600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "freezable food storage containers",
+    "volume": 3600,
+    "category": "Food Storage Containers",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
     "keyword": "model kitchen set minimalis",
     "volume": 2900,
     "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage ideas for small space",
+    "volume": 2900,
+    "category": "Small Space Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage ideas small space",
+    "volume": 2900,
+    "category": "Small Space Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "kitchen cupboards organizer ideas",
+    "volume": 2400,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "kitchen cabinet organizer ideas",
+    "volume": 2400,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "kitchen cabinets organizer ideas",
+    "volume": 2400,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "laundry room organization ideas",
+    "volume": 1900,
+    "category": "Laundry Room Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "laundry room organization tips",
+    "volume": 1900,
+    "category": "Laundry Room Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for laundry room organization",
+    "volume": 1900,
+    "category": "Laundry Room Organization",
     "intent": "Head",
     "priority": "Tier 1"
   },
@@ -42,6 +637,62 @@
     "priority": "Tier 1"
   },
   {
+    "keyword": "closet organization ideas ikea",
+    "volume": 1600,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "best garage storage solutions",
+    "volume": 1600,
+    "category": "Garage Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "small pantry organization ideas",
+    "volume": 1600,
+    "category": "Pantry Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shelf on wall ideas",
+    "volume": 1600,
+    "category": "Wall Shelf Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shelf wall ideas",
+    "volume": 1600,
+    "category": "Wall Shelf Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shelf in wall ideas",
+    "volume": 1600,
+    "category": "Wall Shelf Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "wall to wall shelf ideas",
+    "volume": 1600,
+    "category": "Wall Shelf Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "craft storage room",
+    "volume": 1600,
+    "category": "Craft Room Storage",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
     "keyword": "model kitchen set minimalis terbaru",
     "volume": 1300,
     "category": "Kitchen & Dining",
@@ -56,10 +707,374 @@
     "priority": "Tier 1"
   },
   {
+    "keyword": "walk in closet organization ideas",
+    "volume": 1300,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for linen closet organization",
+    "volume": 1300,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "walk-in closet organization ideas",
+    "volume": 1300,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "linen closet organization ideas",
+    "volume": 1300,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "walkin closet organization ideas",
+    "volume": 1300,
+    "category": "Closet Organization Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas for small space",
+    "volume": 1300,
+    "category": "Small Space Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas small space",
+    "volume": 1300,
+    "category": "Small Space Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for shoe storage in small space",
+    "volume": 1300,
+    "category": "Small Space Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "small entryway shoe storage ideas",
+    "volume": 1300,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas for small entryway",
+    "volume": 1300,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas for small spaces",
+    "volume": 1300,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas for small entryways",
+    "volume": 1300,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "wall shelf storage ideas",
+    "volume": 1300,
+    "category": "Wall Shelf Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "cleaning supply organization",
+    "volume": 1300,
+    "category": "Cleaning Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "cleaning supplies organization",
+    "volume": 1300,
+    "category": "Cleaning Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "closet organization for nursery",
+    "volume": 1300,
+    "category": "Nursery Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "closet organization nursery",
+    "volume": 1300,
+    "category": "Nursery Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
     "keyword": "gambar kitchen set minimalis",
     "volume": 1000,
     "category": "Kitchen & Dining",
     "intent": "Informational",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "home and office organization",
+    "volume": 1000,
+    "category": "Home Office Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "home organization office",
+    "volume": 1000,
+    "category": "Home Office Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization for home office",
+    "volume": 1000,
+    "category": "Home Office Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization of home office",
+    "volume": 1000,
+    "category": "Home Office Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ikea garage storage solutions",
+    "volume": 1000,
+    "category": "Garage Storage Solutions",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "entryway wall organization",
+    "volume": 1000,
+    "category": "Entryway Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "living room toy storage ideas",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "toy storage ideas in living room",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for toy storage in living room",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage ideas for toys in living room",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "living room toys storage ideas",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage ideas in living room",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for living room storage",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "living room storage ideas",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "toy storage ideas for living room",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "living room storage ideas for toys",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for storage in living room",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "storage ideas for the living room",
+    "volume": 1000,
+    "category": "Living Room Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe entryway storage ideas",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "mudroom shoe storage ideas",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage diy ideas",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas garage",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for shoe storage in mudroom",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas for garage",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage ideas for entryway",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for shoe storage in garage",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "entrance shoe storage ideas",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "diy ideas for shoe storage",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "closet shoe storage ideas",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "shoe storage in garage ideas",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "ideas for shoe storage in entryway",
+    "volume": 1000,
+    "category": "Shoe Storage Ideas",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "cleaning organization",
+    "volume": 1000,
+    "category": "Cleaning Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization and cleaning services",
+    "volume": 1000,
+    "category": "Cleaning Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization and cleaning",
+    "volume": 1000,
+    "category": "Cleaning Organization",
+    "intent": "Head",
+    "priority": "Tier 1"
+  },
+  {
+    "keyword": "organization cleaning services",
+    "volume": 1000,
+    "category": "Cleaning Organization",
+    "intent": "Head",
     "priority": "Tier 1"
   },
   {
@@ -91,6 +1106,160 @@
     "priority": "Tier 2"
   },
   {
+    "keyword": "kitchen countertop organizer ideas",
+    "volume": 880,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen counter organizer ideas",
+    "volume": 880,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small kitchen organizer ideas",
+    "volume": 880,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas diy",
+    "volume": 880,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "do it yourself closet organization ideas",
+    "volume": 880,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "diy ideas for closet organization",
+    "volume": 880,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bathroom closet organization ideas",
+    "volume": 880,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "overhead garage storage solutions",
+    "volume": 880,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization shelves",
+    "volume": 880,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room shelf organization",
+    "volume": 880,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "walk in pantry organization ideas",
+    "volume": 880,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "walk-in pantry organization ideas",
+    "volume": 880,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ikea entryway organization",
+    "volume": 880,
+    "category": "Entryway Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage in closet ideas",
+    "volume": 880,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for closet",
+    "volume": 880,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ideas for shoe storage in closet",
+    "volume": 880,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for closets",
+    "volume": 880,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall book shelf ideas",
+    "volume": 880,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "book shelf on wall ideas",
+    "volume": 880,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery drawer organization",
+    "volume": 880,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage ideas",
+    "volume": 880,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "mudroom organization ikea",
+    "volume": 880,
+    "category": "Mudroom Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
     "keyword": "box storage",
     "volume": 720,
     "category": "Home Living",
@@ -112,10 +1281,241 @@
     "priority": "Tier 2"
   },
   {
+    "keyword": "small walk in closet organization ideas",
+    "volume": 720,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small walk-in closet organization ideas",
+    "volume": 720,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small walkin closet organization ideas",
+    "volume": 720,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization ideas small room",
+    "volume": 720,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization for small laundry room",
+    "volume": 720,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization ideas for small laundry room",
+    "volume": 720,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small laundry room organization",
+    "volume": 720,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small laundry room organization ideas",
+    "volume": 720,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "entryway closet organization",
+    "volume": 720,
+    "category": "Entryway Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ikea shoe storage ideas",
+    "volume": 720,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
     "keyword": "rak dapur aluminium",
     "volume": 590,
     "category": "Kitchen & Dining",
     "intent": "Head",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen drawer organizer ideas",
+    "volume": 590,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen pantry organizer ideas",
+    "volume": 590,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "coat closet organization ideas",
+    "volume": 590,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization ideas for kitchen pantry",
+    "volume": 590,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen pantry organization ideas",
+    "volume": 590,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small bedroom storage solutions",
+    "volume": 590,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions for a small bedroom",
+    "volume": 590,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bedroom storage solutions for small bedrooms",
+    "volume": 590,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "tiny bedroom storage solutions",
+    "volume": 590,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions for small bedroom",
+    "volume": 590,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "blanket storage ideas living room",
+    "volume": 590,
+    "category": "Living Room Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage ideas for blankets in living room",
+    "volume": 590,
+    "category": "Living Room Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ideas for blanket storage in living room",
+    "volume": 590,
+    "category": "Living Room Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "blanket storage ideas for living room",
+    "volume": 590,
+    "category": "Living Room Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall shelf ideas for living room",
+    "volume": 590,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall shelf ideas living room",
+    "volume": 590,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cleaning closet organization",
+    "volume": 590,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery organization dresser",
+    "volume": 590,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery dresser drawer organization",
+    "volume": 590,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery organization",
+    "volume": 590,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "dresser organization for nursery",
+    "volume": 590,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery room organization",
+    "volume": 590,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "mudroom organization",
+    "volume": 590,
+    "category": "Mudroom Organization",
+    "intent": "Body",
     "priority": "Tier 2"
   },
   {
@@ -175,6 +1575,167 @@
     "priority": "Tier 2"
   },
   {
+    "keyword": "under kitchen sink organizer ideas",
+    "volume": 480,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions small bathroom",
+    "volume": 480,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ideas home office organization",
+    "volume": 480,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization ideas for home office",
+    "volume": 480,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage storage solutions costco",
+    "volume": 480,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ikea pantry organization ideas",
+    "volume": 480,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space clothing storage ideas",
+    "volume": 480,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space clothes storage ideas",
+    "volume": 480,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space toy storage ideas",
+    "volume": 480,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "tips to decluttering your home",
+    "volume": 480,
+    "category": "Home Decluttering Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home decluttering tips",
+    "volume": 480,
+    "category": "Home Decluttering Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "tips on decluttering your home",
+    "volume": 480,
+    "category": "Home Decluttering Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "tips for decluttering home",
+    "volume": 480,
+    "category": "Home Decluttering Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "tips for decluttering your home",
+    "volume": 480,
+    "category": "Home Decluttering Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall shelf for kitchen ideas",
+    "volume": 480,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall shelf kitchen ideas",
+    "volume": 480,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home cleaning and organization",
+    "volume": 480,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "house cleaning organization",
+    "volume": 480,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "house cleaning and organization",
+    "volume": 480,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room cabinet storage",
+    "volume": 480,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage cabinets",
+    "volume": 480,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage cabinets for craft room",
+    "volume": 480,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage cabinet for craft room",
+    "volume": 480,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
     "keyword": "wadah makanan stainless",
     "volume": 390,
     "category": "Kitchen & Dining",
@@ -186,6 +1747,188 @@
     "volume": 390,
     "category": "Trending 2026",
     "intent": "Trending",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen sink organizer ideas",
+    "volume": 390,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions for a small bathroom",
+    "volume": 390,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "infant closet organization ideas",
+    "volume": 390,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization closet storage ideas",
+    "volume": 390,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet storage and organization ideas",
+    "volume": 390,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization ikea",
+    "volume": 390,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space storage ideas bathroom",
+    "volume": 390,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage space ideas for small bathroom",
+    "volume": 390,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage space ideas for small bedroom",
+    "volume": 390,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space bedroom storage ideas",
+    "volume": 390,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage space ideas for small bedrooms",
+    "volume": 390,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "entryway organization ideas",
+    "volume": 390,
+    "category": "Entryway Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ideas for entryway organization",
+    "volume": 390,
+    "category": "Entryway Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "entryway organization",
+    "volume": 390,
+    "category": "Entryway Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "towel rack ideas for kitchen",
+    "volume": 390,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall decor shelf ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "decorative wall shelf ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bedroom wall shelf ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall shelf ideas for bathroom",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "living room wall shelf decor ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage wall shelf ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bathroom wall shelf ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "decorating wall shelf ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "diy wall shelf ideas",
+    "volume": 390,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage furniture",
+    "volume": 390,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room furniture and storage",
+    "volume": 390,
+    "category": "Craft Room Storage",
+    "intent": "Body",
     "priority": "Tier 2"
   },
   {
@@ -210,6 +1953,307 @@
     "priority": "Tier 2"
   },
   {
+    "keyword": "hall closet organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "hallway closet organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery closet organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "pantry closet organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet shelf organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bedroom closet organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft closet organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization ideas for bedroom closet",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small coat closet organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas for nursery",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet shelves organization ideas",
+    "volume": 320,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization ideas for small home office",
+    "volume": 320,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small home office organization ideas",
+    "volume": 320,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "diy garage storage solutions",
+    "volume": 320,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage storage solutions near me",
+    "volume": 320,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization containers",
+    "volume": 320,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space kitchen storage ideas",
+    "volume": 320,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions for the bedroom",
+    "volume": 320,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bedroom storage solutions",
+    "volume": 320,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ideas for shoe storage in small closet",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for rvs",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cool shoe storage ideas",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for small closet",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small closet shoe storage ideas",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best ideas for shoe storage",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "good ideas for shoe storage",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas at front door",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "rv shoe storage ideas",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas front door",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "great shoe storage ideas",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas by front door",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for small closets",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "good shoe storage ideas",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best shoe storage ideas",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ideas for shoe storage at front door",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for rv",
+    "volume": 320,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "floating wall shelf ideas",
+    "volume": 320,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cat wall shelf ideas",
+    "volume": 320,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "floating shelf tv wall ideas",
+    "volume": 320,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery organization ideas",
+    "volume": 320,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organization ideas for nursery",
+    "volume": 320,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage solutions",
+    "volume": 320,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "mudroom organization ideas",
+    "volume": 320,
+    "category": "Mudroom Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
     "keyword": "rak bumbu dapur minimalis",
     "volume": 260,
     "category": "Kitchen & Dining",
@@ -224,11 +2268,361 @@
     "priority": "Tier 3"
   },
   {
+    "keyword": "closet organization ideas shoes",
+    "volume": 260,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe closet organization ideas",
+    "volume": 260,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas for small closets",
+    "volume": 260,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small bedroom closet organization ideas",
+    "volume": 260,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "office closet organization ideas",
+    "volume": 260,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas for shoes",
+    "volume": 260,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage bicycle storage solutions",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage bike storage solutions",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "modular garage storage solutions",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage storage solutions bikes",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage storage solutions for bikes",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bike storage solutions for garage",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bicycle storage solutions for garage",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage cycle storage solutions",
+    "volume": 260,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "diy small space storage ideas",
+    "volume": 260,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "entryway coat closet organization",
+    "volume": 260,
+    "category": "Entryway Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for outside",
+    "volume": 260,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "outdoor shoe storage ideas",
+    "volume": 260,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "childrens shoe storage ideas",
+    "volume": 260,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "creative shoe storage ideas",
+    "volume": 260,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "hidden shoe storage ideas",
+    "volume": 260,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "creative ideas for shoe storage",
+    "volume": 260,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "recessed wall shelf ideas",
+    "volume": 260,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "indoor plant wall shelf ideas",
+    "volume": 260,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
     "keyword": "rak penyimpanan barang tertutup",
     "volume": 210,
     "category": "Home Living",
     "intent": "Informational",
     "priority": "Tier 3"
+  },
+  {
+    "keyword": "entryway closet organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cool closet organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas pinterest",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best ideas for closet organization",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet purse organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas for purses",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best closet organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas small space",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cheap closet organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "utility closet organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas for small spaces",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "inexpensive closet organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small bathroom closet organization ideas",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cheap ideas for closet organization",
+    "volume": 210,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage storage solutions lowes",
+    "volume": 210,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "custom garage storage solutions",
+    "volume": 210,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization storage",
+    "volume": 210,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization and storage",
+    "volume": 210,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room cabinet organization",
+    "volume": 210,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization cabinets",
+    "volume": 210,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet laundry room organization",
+    "volume": 210,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space craft storage ideas",
+    "volume": 210,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "office wall shelf ideas",
+    "volume": 210,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ikea craft room storage",
+    "volume": 210,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ikea storage for craft room",
+    "volume": 210,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "mudroom closet organization",
+    "volume": 210,
+    "category": "Mudroom Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
   },
   {
     "keyword": "organizer rumah",
@@ -518,6 +2912,160 @@
     "priority": "Tier 3"
   },
   {
+    "keyword": "home office closet organization ideas",
+    "volume": 170,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "clothing closet organization ideas",
+    "volume": 170,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "broom closet organization ideas",
+    "volume": 170,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "clothes closet organization ideas",
+    "volume": 170,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall organization for home office",
+    "volume": 170,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home office desk organization",
+    "volume": 170,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home office organization wall",
+    "volume": 170,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small home office organization",
+    "volume": 170,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization ideas for small spaces",
+    "volume": 170,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "food pantry organization ideas",
+    "volume": 170,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "pantry cabinet organization ideas",
+    "volume": 170,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions for bedroom",
+    "volume": 170,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space childrens bedroom storage solutions",
+    "volume": 170,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small living room storage ideas",
+    "volume": 170,
+    "category": "Living Room Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage ideas for small living room",
+    "volume": 170,
+    "category": "Living Room Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas bedroom",
+    "volume": 170,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "modern entryway shoe storage ideas",
+    "volume": 170,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for bedroom",
+    "volume": 170,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cleaning product organization",
+    "volume": 170,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cleaning products organization",
+    "volume": 170,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "nursery storage organization",
+    "volume": 170,
+    "category": "Nursery Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room diy storage ideas",
+    "volume": 170,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
     "keyword": "cable organizer bag",
     "volume": 150,
     "category": "Bags & Pouches",
@@ -637,11 +3185,494 @@
     "priority": "Tier 3"
   },
   {
+    "keyword": "kitchen island organizer ideas",
+    "volume": 140,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen utensil organizer ideas",
+    "volume": 140,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best kitchen organizer ideas",
+    "volume": 140,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen utensils organizer ideas",
+    "volume": 140,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bathroom cabinet storage solutions",
+    "volume": 140,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bathroom vanity storage solutions",
+    "volume": 140,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions for bathroom vanity",
+    "volume": 140,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage solutions for bathroom cabinets",
+    "volume": 140,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas for apartments",
+    "volume": 140,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "reach-in closet organization ideas",
+    "volume": 140,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "reach in closet organization ideas",
+    "volume": 140,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "apartment closet organization ideas",
+    "volume": 140,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "diy closet organization ideas on a budget",
+    "volume": 140,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "sliding door closet organization ideas",
+    "volume": 140,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "baskets for laundry room organization",
+    "volume": 140,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room organization baskets",
+    "volume": 140,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "pantry shelf organization ideas",
+    "volume": 140,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage ideas for small closet space",
+    "volume": 140,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space closet storage ideas",
+    "volume": 140,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen wine rack ideas",
+    "volume": 140,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wine rack in kitchen ideas",
+    "volume": 140,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "under bed shoe storage ideas",
+    "volume": 140,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "underbed shoe storage ideas",
+    "volume": 140,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "under the bed shoe storage ideas",
+    "volume": 140,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage ideas for under bed",
+    "volume": 140,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "microwave wall shelf ideas",
+    "volume": 140,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall shelf ideas for bedroom",
+    "volume": 140,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "liquor wall shelf ideas",
+    "volume": 140,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cleaning supply closet organization",
+    "volume": 140,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home cleaning and organization services",
+    "volume": 140,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home organization cleaning services",
+    "volume": 140,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room wall storage",
+    "volume": 140,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
     "keyword": "cable organizer for desk",
     "volume": 110,
     "category": "Office & Desk",
     "intent": "Head",
     "priority": "Tier 3"
+  },
+  {
+    "keyword": "deep kitchen drawer organizer ideas",
+    "volume": 110,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "men's closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "mens closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet organization ideas home depot",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "closet drawer organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "deep closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small hallway closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wire closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small hall closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "tiny closet organization ideas",
+    "volume": 110,
+    "category": "Closet Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home office closet organization",
+    "volume": 110,
+    "category": "Home Office Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage storage solutions ideas",
+    "volume": 110,
+    "category": "Garage Storage Solutions",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room wall organization",
+    "volume": 110,
+    "category": "Laundry Room Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "pantry organization ideas dollar tree",
+    "volume": 110,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "corner pantry organization ideas",
+    "volume": 110,
+    "category": "Pantry Organization Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small space small kitchen storage ideas",
+    "volume": 110,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small office space storage ideas",
+    "volume": 110,
+    "category": "Small Space Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small entryway organization",
+    "volume": 110,
+    "category": "Entryway Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "kitchen towel rack ideas",
+    "volume": 110,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "shoe storage design ideas",
+    "volume": 110,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "small entryway shoe storage ideas for entryway",
+    "volume": 110,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "diy shoe storage ideas for small spaces",
+    "volume": 110,
+    "category": "Shoe Storage Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "plant wall shelf ideas",
+    "volume": 110,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "wall shelf decorating ideas living room",
+    "volume": 110,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "inside wall shelf ideas",
+    "volume": 110,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "ikea lack wall shelf ideas",
+    "volume": 110,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "corner wall shelf ideas",
+    "volume": 110,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "dining room wall shelf ideas",
+    "volume": 110,
+    "category": "Wall Shelf Ideas",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cleaning supply organization ideas",
+    "volume": 110,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cleaning supplies organization ideas",
+    "volume": 110,
+    "category": "Cleaning Organization",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "storage shelves for craft room",
+    "volume": 110,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage units",
+    "volume": 110,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage unit",
+    "volume": 110,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage shelf",
+    "volume": 110,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "cheap craft room storage",
+    "volume": 110,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room storage shelves",
+    "volume": 110,
+    "category": "Craft Room Storage",
+    "intent": "Body",
+    "priority": "Tier 2"
   },
   {
     "keyword": "organizer kamar mandi minimalis",
@@ -861,6 +3892,300 @@
     "priority": "Tier 3"
   },
   {
+    "keyword": "laundry room organization amazon",
+    "volume": 90,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization system",
+    "volume": 90,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization bins",
+    "volume": 90,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization systems",
+    "volume": 90,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small kitchen pantry organization ideas",
+    "volume": 90,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small living space storage ideas",
+    "volume": 90,
+    "category": "Small Space Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small entryway organization ideas",
+    "volume": 90,
+    "category": "Entryway Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room storage ideas ikea",
+    "volume": 90,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room storage ideas for small spaces",
+    "volume": 90,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ikea storage ideas for living room",
+    "volume": 90,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall shoe storage ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "walk in closet shoe storage ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "mens shoe storage ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "hall shoe storage ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "walk-in closet shoe storage ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage box ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage ideas hallway",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage ideas for walk in closet",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ideas for shoe storage in hallway",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "mud room shoe storage ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe boxes storage ideas",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage ideas for hallway",
+    "volume": 90,
+    "category": "Shoe Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "outdoor wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tv wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "built-in wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cube wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "full wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "unique wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall shelf design ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ikea wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room plant wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small bathroom wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "built in wall shelf ideas",
+    "volume": 90,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cleaning closet organization ideas",
+    "volume": 90,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organization and cleaning services near me",
+    "volume": 90,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organization home cleaning",
+    "volume": 90,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room tables and storage",
+    "volume": 90,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ideas for craft room storage",
+    "volume": 90,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room storage table",
+    "volume": 90,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ikea craft room storage furniture",
+    "volume": 90,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage for craft room",
+    "volume": 90,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room table with storage",
+    "volume": 90,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
     "keyword": "storage box lipat untuk baju",
     "volume": 80,
     "category": "Home Living",
@@ -980,6 +4305,314 @@
     "priority": "Tier 3"
   },
   {
+    "keyword": "kitchen closet organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen shelf organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen wall organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ikea kitchen organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen storage organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "diy kitchen organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen sink counter organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen corner cabinet organizer ideas",
+    "volume": 70,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ikea bathroom storage solutions",
+    "volume": 70,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office supply organization",
+    "volume": 70,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organization tips for home office",
+    "volume": 70,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office supplies organization",
+    "volume": 70,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office organization tips",
+    "volume": 70,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage tool storage solutions",
+    "volume": 70,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "dream garage storage solutions",
+    "volume": 70,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage ceiling storage solutions",
+    "volume": 70,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization for small spaces",
+    "volume": 70,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small space laundry room organization",
+    "volume": 70,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "best pantry organization ideas",
+    "volume": 70,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pantry organization ideas pinterest",
+    "volume": 70,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "deep pantry organization ideas",
+    "volume": 70,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "diy pantry organization ideas",
+    "volume": 70,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pantry storage organization ideas",
+    "volume": 70,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small entryway closet organization ideas",
+    "volume": 70,
+    "category": "Entryway Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "entryway shoe organization",
+    "volume": 70,
+    "category": "Entryway Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "toy storage ideas for living room ikea",
+    "volume": 70,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room cube storage ideas",
+    "volume": 70,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen cabinet wine rack ideas",
+    "volume": 70,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen bakers rack ideas",
+    "volume": 70,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "large wall shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall shelf lighting ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall mounted book shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "half wall shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall mount tv shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall mounted shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall shelf mounting ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall sconce shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shelf ideas for wall mounted tv",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "long wall shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall mounted tv shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tv wall mount with shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tv wall mount and shelf ideas",
+    "volume": 70,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organization cleaning tips",
+    "volume": 70,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organization and cleaning tips",
+    "volume": 70,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
     "keyword": "rak penyimpanan barang kecil",
     "volume": 50,
     "category": "Home Living",
@@ -1026,6 +4659,1133 @@
     "volume": 50,
     "category": "Seasonal",
     "intent": "Seasonal",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen spice organizer ideas",
+    "volume": 50,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small kitchen cabinet organizer ideas",
+    "volume": 50,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "under the kitchen sink organizer ideas",
+    "volume": 50,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage solutions for small bathroom",
+    "volume": 50,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "bathroom under sink storage solutions",
+    "volume": 50,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage solutions for under bathroom sink",
+    "volume": 50,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "under the bathroom sink storage solutions",
+    "volume": 50,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "bathroom storage solutions for small spaces",
+    "volume": 50,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tiny bathroom storage solutions",
+    "volume": 50,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office desk organization ideas",
+    "volume": 50,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall organization system for home office",
+    "volume": 50,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office organization furniture",
+    "volume": 50,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office wall organization systems",
+    "volume": 50,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage gym storage solutions",
+    "volume": 50,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage wall storage solutions",
+    "volume": 50,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "rudolph garage storage solutions",
+    "volume": 50,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small garage storage solutions",
+    "volume": 50,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "lowes laundry room organization",
+    "volume": 50,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pinterest laundry room organization",
+    "volume": 50,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization solutions",
+    "volume": 50,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "diy small laundry room organization ideas",
+    "volume": 50,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pantry can organization ideas",
+    "volume": 50,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "diy small pantry organization ideas",
+    "volume": 50,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small walk in pantry organization ideas",
+    "volume": 50,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small pantry organization ideas pinterest",
+    "volume": 50,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small walk-in pantry organization ideas",
+    "volume": 50,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pantry organization ideas for deep shelves",
+    "volume": 50,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small pantry closet organization ideas",
+    "volume": 50,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "best small space storage ideas",
+    "volume": 50,
+    "category": "Small Space Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "space saving small office storage ideas",
+    "volume": 50,
+    "category": "Small Space Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "bedroom storage solutions ikea",
+    "volume": 50,
+    "category": "Bedroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room hidden storage ideas",
+    "volume": 50,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room storage cabinet ideas",
+    "volume": 50,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "hidden toy storage ideas living room",
+    "volume": 50,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen pot rack ideas",
+    "volume": 50,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen spice rack ideas",
+    "volume": 50,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wine rack ideas for small kitchen",
+    "volume": 50,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "hexagon wall shelf ideas",
+    "volume": 50,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall display shelf ideas",
+    "volume": 50,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "lustigt wall shelf ideas",
+    "volume": 50,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall bar shelf ideas",
+    "volume": 50,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pallet wall shelf ideas",
+    "volume": 50,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall shelf hanging ideas",
+    "volume": 50,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cleaning tools organization",
+    "volume": 50,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "house cleaning organization schedule",
+    "volume": 50,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cleaning organization schedule",
+    "volume": 50,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small nursery organization ideas",
+    "volume": 50,
+    "category": "Nursery Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "newborn nursery organization",
+    "volume": 50,
+    "category": "Nursery Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room storage and organization",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room organizers and storage",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small craft room storage ideas",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage shed craft room",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room storage organization",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room storage containers",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "diy craft room storage",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room storage bins",
+    "volume": 50,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen table organizer ideas",
+    "volume": 40,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen pan organizer ideas",
+    "volume": 40,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen organizer ideas pinterest",
+    "volume": 40,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen utensil drawer organizer ideas",
+    "volume": 40,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "bathroom countertop storage solutions",
+    "volume": 40,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "bathroom closet storage solutions",
+    "volume": 40,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "bathroom counter storage solutions",
+    "volume": 40,
+    "category": "Bathroom Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home and office organization services",
+    "volume": 40,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office organization services",
+    "volume": 40,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "affordable garage storage solutions",
+    "volume": 40,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cheap storage solutions for garage",
+    "volume": 40,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "perfect garage storage solutions",
+    "volume": 40,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cheap garage storage solutions",
+    "volume": 40,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage workshop storage solutions",
+    "volume": 40,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage storage solutions of swfl",
+    "volume": 40,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room cabinet organization ideas",
+    "volume": 40,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room shelf organization ideas",
+    "volume": 40,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization diy",
+    "volume": 40,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pantry snack organization ideas",
+    "volume": 40,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "large pantry organization ideas",
+    "volume": 40,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wire shelf pantry organization ideas",
+    "volume": 40,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pantry door organization ideas",
+    "volume": 40,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen pantry organization ideas for wire shelving",
+    "volume": 40,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "indian pantry organization ideas",
+    "volume": 40,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "entryway organization furniture",
+    "volume": 40,
+    "category": "Entryway Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall storage ideas for living room",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage ideas for living room",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room shoe storage ideas",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room corner storage ideas",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room throw blanket storage ideas",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room wall storage ideas",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage bench living room ideas",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "dvd storage ideas living room",
+    "volume": 40,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "decluttering your home tips",
+    "volume": 40,
+    "category": "Home Decluttering Tips",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen bakers rack decorating ideas",
+    "volume": 40,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wine rack ideas for kitchen",
+    "volume": 40,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "floating wall shelf arrangement ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall shelf layout ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "gallery wall shelf ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "lego wall shelf ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "floating wall shelf design ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "wall shelf placement ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "picture shelf wall ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "floating wall shelf decorating ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "printer wall shelf ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "photo shelf wall ideas",
+    "volume": 40,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cleaning supply closet organization ideas",
+    "volume": 40,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small cleaning closet organization",
+    "volume": 40,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "nursery organization hacks",
+    "volume": 40,
+    "category": "Nursery Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "nursery storage and organization",
+    "volume": 40,
+    "category": "Nursery Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "nursery dresser organization ideas",
+    "volume": 40,
+    "category": "Nursery Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room storage ideas ikea",
+    "volume": 40,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small mudroom organization ideas",
+    "volume": 40,
+    "category": "Mudroom Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen counter top organizer ideas",
+    "volume": 30,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen desk organizer ideas",
+    "volume": 30,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen wrap organizer ideas",
+    "volume": 30,
+    "category": "Kitchen Organizer Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office paper organization",
+    "volume": 30,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office wall organization ideas",
+    "volume": 30,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office organization and storage",
+    "volume": 30,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office storage organization",
+    "volume": 30,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "home office organization ideas on a budget",
+    "volume": 30,
+    "category": "Home Office Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage attic storage solutions",
+    "volume": 30,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "ultimate garage storage solutions",
+    "volume": 30,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "garage storage solutions home depot",
+    "volume": 30,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage solutions for the garage",
+    "volume": 30,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage in garage solutions",
+    "volume": 30,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "shoe storage garage solutions",
+    "volume": 30,
+    "category": "Garage Storage Solutions",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization for small laundry rooms",
+    "volume": 30,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "tiny laundry room organization",
+    "volume": 30,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room closet organization ideas",
+    "volume": 30,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "best laundry room organization",
+    "volume": 30,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "laundry room organization jars",
+    "volume": 30,
+    "category": "Laundry Room Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "open pantry organization ideas",
+    "volume": 30,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "narrow pantry organization ideas",
+    "volume": 30,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pull out pantry organization ideas",
+    "volume": 30,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pantry drawer organization ideas",
+    "volume": 30,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "deep pantry cabinet organization ideas",
+    "volume": 30,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pull-out pantry organization ideas",
+    "volume": 30,
+    "category": "Pantry Organization Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small space storage ideas for clothes",
+    "volume": 30,
+    "category": "Small Space Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "storage space ideas for small homes",
+    "volume": 30,
+    "category": "Small Space Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small entryway closet organization",
+    "volume": 30,
+    "category": "Entryway Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "entryway closet coat closet organization",
+    "volume": 30,
+    "category": "Entryway Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "book storage ideas living room",
+    "volume": 30,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "living room furniture storage ideas",
+    "volume": 30,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small living room toy storage ideas",
+    "volume": 30,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cube storage ideas for living room",
+    "volume": 30,
+    "category": "Living Room Storage Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small kitchen pot rack ideas",
+    "volume": 30,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "spice rack ideas for kitchen",
+    "volume": 30,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen hanging rack ideas",
+    "volume": 30,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen rack ideas",
+    "volume": 30,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "kitchen drying rack ideas",
+    "volume": 30,
+    "category": "Kitchen Rack Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cool wall shelf ideas",
+    "volume": 30,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "gaming wall shelf ideas",
+    "volume": 30,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "pony wall shelf ideas",
+    "volume": 30,
+    "category": "Wall Shelf Ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "cleaning cabinet organization",
+    "volume": 30,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "organization for cleaning supplies",
+    "volume": 30,
+    "category": "Cleaning Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small nursery closet organization",
+    "volume": 30,
+    "category": "Nursery Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "small nursery closet organization ideas",
+    "volume": 30,
+    "category": "Nursery Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room wall storage ideas",
+    "volume": 30,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room storage drawers",
+    "volume": 30,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room desk and storage",
+    "volume": 30,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "craft room paper storage",
+    "volume": 30,
+    "category": "Craft Room Storage",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "mudroom organization systems",
+    "volume": 30,
+    "category": "Mudroom Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "mudroom organization system",
+    "volume": 30,
+    "category": "Mudroom Organization",
+    "intent": "Long-tail",
+    "priority": "Tier 3"
+  },
+  {
+    "keyword": "diy mudroom organization",
+    "volume": 30,
+    "category": "Mudroom Organization",
+    "intent": "Long-tail",
     "priority": "Tier 3"
   }
 ]
