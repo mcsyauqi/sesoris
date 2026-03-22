@@ -5787,5 +5787,208 @@
     "category": "Mudroom Organization",
     "intent": "Long-tail",
     "priority": "Tier 3"
+  },
+  {
+    "keyword": "best home organization hacks 2027",
+    "volume": 200,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "how to organize a small apartment",
+    "volume": 880,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "new year home organization checklist",
+    "volume": 170,
+    "category": "Seasonal",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "winter home maintenance checklist",
+    "volume": 390,
+    "category": "Seasonal",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best storage containers 2027",
+    "volume": 320,
+    "category": "Review",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "how to organize kitchen cabinets step by step",
+    "volume": 590,
+    "category": "Tutorial",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "minimalist bedroom organization ideas",
+    "volume": 480,
+    "category": "Inspiration",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "bathroom counter organization tips",
+    "volume": 260,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best shoe organizer for small closet",
+    "volume": 480,
+    "category": "Review",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "how to declutter your home in one weekend",
+    "volume": 320,
+    "category": "Tutorial",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organizing a home office on a budget",
+    "volume": 210,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "diy kitchen storage ideas",
+    "volume": 720,
+    "category": "DIY",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "garage organization ideas on a budget",
+    "volume": 590,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "how to organize toys in living room",
+    "volume": 320,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "best pantry organizer bins",
+    "volume": 480,
+    "category": "Review",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "laundry room storage ideas small spaces",
+    "volume": 390,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "how to organize a linen closet",
+    "volume": 720,
+    "category": "Tutorial",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "entryway organization ideas small space",
+    "volume": 320,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "under staircase storage ideas",
+    "volume": 480,
+    "category": "Inspiration",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "craft room organization on a budget",
+    "volume": 260,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "how to organize refrigerator shelves",
+    "volume": 390,
+    "category": "Tutorial",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "home organization trends 2027",
+    "volume": 170,
+    "category": "Trends",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "smart home storage solutions",
+    "volume": 260,
+    "category": "Review",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "japanese home organization method",
+    "volume": 480,
+    "category": "Lifestyle",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "capsule wardrobe organization guide",
+    "volume": 390,
+    "category": "Lifestyle",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "how to organize spice drawer",
+    "volume": 320,
+    "category": "Tutorial",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "pet supply organization ideas",
+    "volume": 170,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "holiday decoration storage hacks",
+    "volume": 320,
+    "category": "Seasonal",
+    "intent": "Body",
+    "priority": "Tier 2"
+  },
+  {
+    "keyword": "organized home tour 2027",
+    "volume": 140,
+    "category": "Inspiration",
+    "intent": "Body",
+    "priority": "Tier 2"
   }
 ]
