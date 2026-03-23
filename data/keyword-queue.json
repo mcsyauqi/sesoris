@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "air tight food storage containers",
-    "volume": 33100,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "airtight storage containers for food",
     "volume": 33100,
     "category": "Food Storage Containers",
