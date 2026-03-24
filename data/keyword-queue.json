@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "food containers and storage",
-    "volume": 33100,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "storage for food storage containers",
     "volume": 33100,
     "category": "Food Storage Containers",
