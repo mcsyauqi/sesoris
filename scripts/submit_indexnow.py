@@ -15,8 +15,14 @@ import xml.etree.ElementTree as ET
 INDEXNOW_KEY = "79b9964b914803633dc6634b50b80797"
 HOST = "www.sesoris.com"
 SITEMAP_URL = f"https://{HOST}/sitemap.xml"
-INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 KEY_LOCATION = f"https://{HOST}/{INDEXNOW_KEY}.txt"
+
+# Submit to multiple engines for maximum coverage
+ENDPOINTS = [
+    ("Bing", "https://www.bing.com/indexnow"),
+    ("Yandex", "https://yandex.com/indexnow"),
+    ("IndexNow", "https://api.indexnow.org/indexnow"),
+]
 
 
 def fetch_sitemap_urls() -> list[str]:
@@ -35,17 +41,12 @@ def fetch_sitemap_urls() -> list[str]:
         # Try without namespace (some sitemaps don't use it)
         urls = [loc.text for loc in root.findall(".//loc") if loc.text]
 
-    print(f"Found {len(urls)} URLs in sitemap")
+    print(f"Found {len(urls)} URLs in sitemap\n")
     return urls
 
 
-def submit_urls(urls: list[str]) -> None:
-    """Submit URLs to IndexNow API in batch."""
-    if not urls:
-        print("No URLs to submit.")
-        return
-
-    # IndexNow batch limit is 10,000 URLs per request
+def submit_to_endpoint(name: str, endpoint: str, urls: list[str]) -> None:
+    """Submit URLs to a single IndexNow endpoint."""
     batch_size = 10000
     for i in range(0, len(urls), batch_size):
         batch = urls[i : i + batch_size]
@@ -57,7 +58,7 @@ def submit_urls(urls: list[str]) -> None:
         }).encode("utf-8")
 
         req = urllib.request.Request(
-            INDEXNOW_ENDPOINT,
+            endpoint,
             data=payload,
             headers={
                 "Content-Type": "application/json; charset=utf-8",
@@ -66,29 +67,35 @@ def submit_urls(urls: list[str]) -> None:
             method="POST",
         )
 
-        batch_num = (i // batch_size) + 1
-        print(f"Submitting batch {batch_num} ({len(batch)} URLs) ...")
-
         try:
             with urllib.request.urlopen(req, timeout=30) as resp:
                 status = resp.status
-                body = resp.read().decode("utf-8", errors="replace")
         except urllib.error.HTTPError as e:
             status = e.code
-            body = e.read().decode("utf-8", errors="replace")
 
         if status in (200, 202):
-            print(f"  OK (HTTP {status}) - URLs accepted for indexing")
+            print(f"  {name}: OK (HTTP {status}) - {len(batch)} URLs accepted")
         else:
-            print(f"  Warning (HTTP {status}): {body}")
+            print(f"  {name}: Warning (HTTP {status})")
 
-    print(f"\nDone. Submitted {len(urls)} URLs total to IndexNow.")
+
+def submit_urls(urls: list[str]) -> None:
+    """Submit URLs to all IndexNow endpoints."""
+    if not urls:
+        print("No URLs to submit.")
+        return
+
+    print(f"Submitting {len(urls)} URLs to IndexNow engines...")
+    for name, endpoint in ENDPOINTS:
+        submit_to_endpoint(name, endpoint, urls)
+
+    print(f"\nDone. Submitted {len(urls)} URLs to {len(ENDPOINTS)} engines.")
 
 
 def main():
     if len(sys.argv) > 1:
         urls = sys.argv[1:]
-        print(f"Submitting {len(urls)} URL(s) from command line arguments")
+        print(f"Submitting {len(urls)} URL(s) from command line arguments\n")
     else:
         urls = fetch_sitemap_urls()
 
