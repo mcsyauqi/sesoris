@@ -17,6 +17,9 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://www.sesoris.com/sitemap.xml',
+    sitemap: [
+      'https://www.sesoris.com/sitemap.xml',
+      'https://www.sesoris.com/blog/sitemap.xml',
+    ],
   };
 }

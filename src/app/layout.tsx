@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.sesoris.com'),
   alternates: {
     canonical: '/',
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
   },
   icons: {
     icon: [
