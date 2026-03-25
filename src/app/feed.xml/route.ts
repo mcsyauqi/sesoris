@@ -23,7 +23,7 @@ export function GET() {
       <description>${escapeXml(post.excerpt)}</description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <category>${escapeXml(post.category)}</category>
-      ${post.image ? `<enclosure url="${baseUrl}${post.image}" type="image/webp" />` : ''}
+      ${post.image ? `<enclosure url="${baseUrl}${post.image}" type="image/webp" length="0" />` : ''}
     </item>`
     )
     .join('\n');
