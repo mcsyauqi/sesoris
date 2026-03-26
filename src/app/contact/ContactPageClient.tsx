@@ -46,7 +46,7 @@ export default function ContactPageClient() {
                 <Mail style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Email</div>
-                  <a href="mailto:support@sesoris.com" style={{ color: '#1B5E3B' }}>support@sesoris.com</a>
+                  <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B' }}>sesoris.store@gmail.com</a>
                 </div>
               </div>
 

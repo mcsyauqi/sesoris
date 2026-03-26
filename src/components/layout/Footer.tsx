@@ -131,7 +131,7 @@ export function Footer() {
             <div style={{ fontSize: '14px', opacity: 0.8 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <Mail style={{ width: '14px', height: '14px', flexShrink: 0 }} />
-                support@sesoris.com
+                sesoris.store@gmail.com
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <Phone style={{ width: '14px', height: '14px', flexShrink: 0 }} />
