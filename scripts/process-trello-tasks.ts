@@ -1,7 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 import path from 'path';
-import nodemailer from 'nodemailer';
 import { getBoardCards, moveCardToList, addComment, addAttachment, type TrelloCard } from './trello-client';
 import { authors } from './authors';
 import { buildRichContentPrompt } from './blog-prompt';
@@ -240,103 +239,6 @@ async function processGenericTask(card: TrelloCard): Promise<void> {
   console.log(`  [Generic] Output added, moved to Done`);
 }
 
-// --- Email Notification ---
-const NOTIFY_EMAIL = 'ahmadthariqsyauqi@gmail.com';
-
-async function sendEmailReport(results: { name: string; label: string; status: string; articleUrl?: string; articleTitle?: string; category?: string; readTime?: string }[], processed: number, errors: number) {
-  const clientId = process.env.GOOGLE_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-  const refreshToken = process.env.GOOGLE_REFRESH_TOKEN;
-
-  // Fallback to App Password if OAuth2 not configured
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailPass = process.env.GMAIL_APP_PASSWORD;
-
-  if (!clientId && !gmailUser) {
-    console.log('  [Email] No email credentials configured, skipping email');
-    return;
-  }
-
-  let transporter;
-  if (gmailUser && gmailPass) {
-    // Prefer App Password (simpler, more reliable)
-    transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: { user: gmailUser, pass: gmailPass },
-    });
-  } else if (clientId && clientSecret && refreshToken) {
-    transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        type: 'OAuth2',
-        user: NOTIFY_EMAIL,
-        clientId,
-        clientSecret,
-        refreshToken,
-      },
-    });
-  } else {
-    console.log('  [Email] Incomplete email credentials, skipping');
-    return;
-  }
-
-  const today = formatDate(new Date());
-  const taskRows = results
-    .map((r) => `<tr><td style="padding:8px;border:1px solid #e0e0e0">${r.status === 'OK' ? '&#9989;' : '&#10060;'}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.name}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.label}</td><td style="padding:8px;border:1px solid #e0e0e0">${r.status}</td></tr>`)
-    .join('\n');
-
-  // Build published articles section
-  const publishedArticles = results.filter((r) => r.articleUrl && r.status === 'OK');
-  const articlesHtml = publishedArticles.length > 0
-    ? `<div style="margin:16px 0;padding:16px;background:#e8f5e9;border-radius:8px;border-left:4px solid #1B5E3B">
-        <h3 style="margin:0 0 12px;color:#1B5E3B">📝 Articles Published Today</h3>
-        ${publishedArticles.map((r) => `
-          <div style="margin:8px 0;padding:12px;background:white;border-radius:6px">
-            <a href="${r.articleUrl}" style="color:#1B5E3B;font-weight:bold;font-size:16px;text-decoration:none">${r.articleTitle}</a>
-            <div style="margin-top:4px;color:#666;font-size:13px">
-              ${r.category ? `📂 ${r.category}` : ''} ${r.readTime ? `&nbsp;•&nbsp; ⏱️ ${r.readTime}` : ''}
-            </div>
-            <a href="${r.articleUrl}" style="display:inline-block;margin-top:8px;padding:6px 16px;background:#1B5E3B;color:white;border-radius:4px;text-decoration:none;font-size:13px">Read Article →</a>
-          </div>
-        `).join('')}
-      </div>`
-    : '';
-
-  const html = `
-    <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-      <div style="background:#1B5E3B;color:white;padding:20px;border-radius:8px 8px 0 0">
-        <h2 style="margin:0">Sesoris Task Report</h2>
-        <p style="margin:4px 0 0;opacity:0.8">${today}</p>
-      </div>
-      <div style="padding:20px;background:#f9f9f9;border-radius:0 0 8px 8px">
-        <p><strong>${processed}</strong> tasks completed, <strong>${errors}</strong> errors</p>
-        ${articlesHtml}
-        <table style="width:100%;border-collapse:collapse;margin:16px 0">
-          <thead>
-            <tr style="background:#1B5E3B;color:white">
-              <th style="padding:8px;text-align:left">Status</th>
-              <th style="padding:8px;text-align:left">Task</th>
-              <th style="padding:8px;text-align:left">Label</th>
-              <th style="padding:8px;text-align:left">Result</th>
-            </tr>
-          </thead>
-          <tbody>${taskRows}</tbody>
-        </table>
-        <p style="color:#666;font-size:13px">All tasks have been moved to the <strong>Done</strong> list on Trello.<br>
-        <a href="https://trello.com/b/EPQSmskz/sesoris">Buka Trello Board</a></p>
-      </div>
-    </div>`;
-
-  await transporter.sendMail({
-    from: `"Sesoris Bot" <${gmailUser}>`,
-    to: NOTIFY_EMAIL,
-    subject: `[Sesoris] ${processed} tasks completed - ${today}`,
-    html,
-  });
-
-  console.log(`  [Email] Report sent to ${NOTIFY_EMAIL}`);
-}
-
 // --- Main ---
 async function main() {
   console.log('=== Sesoris Trello Task Processor ===');
@@ -402,14 +304,6 @@ async function main() {
   console.log(`Errors: ${errors}`);
   console.log(`Total due: ${dueTasks.length}`);
 
-  // Send email report
-  if (results.length > 0) {
-    try {
-      await sendEmailReport(results, processed, errors);
-    } catch (err) {
-      console.error('Failed to send email report:', err);
-    }
-  }
 }
 
 main().catch((err) => {
