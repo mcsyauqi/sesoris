@@ -4,6 +4,7 @@ import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Link
 import { notFound, redirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug } from '@/lib/blog';
+import { NewsletterSidebar } from '@/components/layout';
 import React from 'react';
 
 export function generateStaticParams() {
@@ -616,6 +617,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Content */}
             <div style={{ padding: '40px 0 48px' }}>
               {renderContentBlocks(post.content)}
+            </div>
+
+            {/* Newsletter CTA */}
+            <div style={{ marginBottom: '40px' }}>
+              <NewsletterSidebar />
             </div>
 
             {/* Related Posts */}

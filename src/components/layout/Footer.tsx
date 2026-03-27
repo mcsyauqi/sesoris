@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { useState } from 'react';
 
 const footerLinks = {
   shop: [
@@ -29,6 +30,35 @@ const footerLinks = {
 };
 
 export function Footer() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  async function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'footer' }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setMessage(data.message || 'Subscribed!');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setMessage(data.error || 'Something went wrong.');
+      }
+    } catch {
+      setStatus('error');
+      setMessage('Network error. Please try again.');
+    }
+  }
+
   return (
     <footer style={{ background: '#1B5E3B', color: 'white', paddingTop: '48px' }}>
       <div className="container">
@@ -54,37 +84,62 @@ export function Footer() {
               <p style={{ fontSize: '13px', opacity: 0.7, marginBottom: '12px' }}>
                 Get the latest deals and product updates straight to your inbox.
               </p>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  style={{
-                    flex: 1,
-                    padding: '10px 14px',
-                    borderRadius: '8px',
-                    border: 'none',
-                    background: 'rgba(255,255,255,0.1)',
-                    color: 'white',
-                    fontSize: '14px',
-                    minWidth: 0
-                  }}
-                />
-                <button style={{
-                  padding: '10px 16px',
+              {status === 'success' ? (
+                <div style={{
+                  background: 'rgba(255,255,255,0.15)',
                   borderRadius: '8px',
-                  background: 'white',
-                  color: '#1B5E3B',
-                  border: 'none',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
+                  padding: '12px 14px',
+                  fontSize: '13px',
+                  color: 'white',
                 }}>
-                  <Mail style={{ width: '16px', height: '16px' }} />
-                </button>
-              </div>
+                  ✓ {message}
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '8px' }}>
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    disabled={status === 'loading'}
+                    style={{
+                      flex: 1,
+                      padding: '10px 14px',
+                      borderRadius: '8px',
+                      border: status === 'error' ? '1px solid #ff6b6b' : 'none',
+                      background: 'rgba(255,255,255,0.1)',
+                      color: 'white',
+                      fontSize: '14px',
+                      minWidth: 0,
+                      opacity: status === 'loading' ? 0.7 : 1,
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    style={{
+                      padding: '10px 16px',
+                      borderRadius: '8px',
+                      background: 'white',
+                      color: '#1B5E3B',
+                      border: 'none',
+                      fontWeight: 600,
+                      cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      opacity: status === 'loading' ? 0.7 : 1,
+                    }}
+                  >
+                    <Mail style={{ width: '16px', height: '16px' }} />
+                  </button>
+                </form>
+              )}
+              {status === 'error' && (
+                <p style={{ fontSize: '12px', color: '#ff6b6b', marginTop: '6px' }}>{message}</p>
+              )}
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import { Header, Footer, AnnouncementBar } from '@/components/layout';
+import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
 import { DM_Sans, DM_Serif_Display } from 'next/font/google';
 
 const dmSans = DM_Sans({
@@ -152,6 +152,7 @@ export default function RootLayout({
           <Header />
           <main style={{ flex: 1 }}>{children}</main>
           <Footer />
+          <NewsletterPopup />
         </div>
       </body>
     </html>
