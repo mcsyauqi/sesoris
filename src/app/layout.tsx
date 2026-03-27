@@ -83,11 +83,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Organization',
+              '@type': ['Organization', 'Store'],
               name: 'Sesoris',
               url: 'https://www.sesoris.com',
               logo: 'https://www.sesoris.com/logo.webp',
               description: 'Online store for quality home organizers and storage solutions in Indonesia',
+              priceRange: 'Rp 25.000 - Rp 500.000',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Yogyakarta',
@@ -99,6 +100,13 @@ export default function RootLayout({
                 telephone: '+62-813-2610-2061',
                 contactType: 'customer service',
                 availableLanguage: ['Indonesian', 'English'],
+              },
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.8',
+                reviewCount: '50000',
+                bestRating: '5',
+                worstRating: '1',
               },
               sameAs: [
                 'https://www.instagram.com/sesoris_com',

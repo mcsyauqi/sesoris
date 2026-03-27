@@ -20,9 +20,9 @@ export function TestimonialsSection() {
             color: '#212529',
             marginBottom: '12px'
           }}>
-            Apa Kata Pelanggan
+            What Our Customers Say
           </h2>
-          <p style={{ color: '#6C757D', fontSize: '15px' }}>Ulasan dari pelanggan setia kami</p>
+          <p style={{ color: '#6C757D', fontSize: '15px' }}>Real reviews from our verified buyers</p>
         </div>
 
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>

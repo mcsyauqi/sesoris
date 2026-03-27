@@ -7,15 +7,16 @@ import {
   NewsletterSection,
   AboutSection,
   TestimonialsSection,
+  HomeFAQSection,
 } from '@/components/home';
 
 export const metadata: Metadata = {
-  title: 'Sesoris - Home & Living Accessories | Quality Organizers & Storage',
-  description: 'Shop quality home organizers, kitchen storage, desk accessories, and lifestyle products. Free shipping on orders over Rp 500K. Discover smart storage solutions at Sesoris.',
+  title: 'Sesoris - Home Organizers & Storage Solutions Indonesia',
+  description: 'Shop 500+ home organizers, kitchen storage & desk accessories. Free shipping over Rp 500K. Rated 4.8★ by 50,000+ customers. Order now at Sesoris.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Sesoris - Home & Living Accessories | Quality Organizers & Storage',
-    description: 'Shop quality home organizers, kitchen storage, desk accessories, and lifestyle products. Free shipping on orders over Rp 500K. Discover smart storage solutions at Sesoris.',
+    title: 'Sesoris - Home Organizers & Storage Solutions Indonesia',
+    description: 'Shop 500+ home organizers, kitchen storage & desk accessories. Free shipping over Rp 500K. Rated 4.8★ by 50,000+ customers. Order now at Sesoris.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
@@ -30,6 +31,7 @@ export default function HomePage() {
       <NewsletterSection />
       <AboutSection />
       <TestimonialsSection />
+      <HomeFAQSection />
     </>
   );
 }
