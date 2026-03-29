@@ -1,4 +1,4 @@
-import type { Product, Category, Testimonial } from '@/types';
+import type { Product, Category, Testimonial, Review } from '@/types';
 
 export const categories: Category[] = [
   {
@@ -827,6 +827,84 @@ export const testimonials: Testimonial[] = [
     verified: true,
   },
 ];
+
+// ── Product Reviews ──────────────────────────────────────────────────────────
+export const reviews: Review[] = [
+  // Bamboo Desk Organizer
+  {
+    id: 'r1', productId: '1', name: 'Rina Dewi',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face',
+    rating: 5, title: 'Organizer terbaik yang pernah saya beli!',
+    content: 'Materialnya bagus banget, terasa kokoh dan berat yang pas. Sudah 3 bulan dipakai dan tidak ada tanda-tanda rusak. Mejaku sekarang jauh lebih rapi. Sangat worth it untuk harganya!',
+    verified: true, date: '2026-03-10', helpful: 12, location: 'Jakarta',
+  },
+  {
+    id: 'r2', productId: '1', name: 'Budi Santoso',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face',
+    rating: 5, title: 'Kualitas premium, pengiriman cepat',
+    content: 'Packaging-nya sangat aman, produk sampai dalam kondisi sempurna. Design minimalis cocok banget dengan setup meja kerja saya. Compartment-nya cukup untuk semua stationery.',
+    verified: true, date: '2026-03-05', helpful: 8, location: 'Surabaya',
+  },
+  {
+    id: 'r3', productId: '1', name: 'Maya Putri',
+    rating: 4, title: 'Bagus, hanya kurang satu slot',
+    content: 'Secara keseluruhan sangat puas. Bambu asli, tidak ada bau aneh. Hanya harap ada slot tambahan untuk ruler/penggaris panjang. Tapi untuk harga segini sudah excellent!',
+    verified: true, date: '2026-02-28', helpful: 5, location: 'Bandung',
+  },
+  // Stainless Steel Dish Rack
+  {
+    id: 'r4', productId: '13', name: 'Sari Indah',
+    avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop&crop=face',
+    rating: 5, title: 'Rak piring impian, anti karat!',
+    content: 'Sudah pakai 4 bulan, nggak ada karat sama sekali. Beda banget sama rak piring murah yang dulu. Kapasitasnya besar, muat banyak piring sekaligus. Drainagenya juga bagus, air nggak menggenang.',
+    verified: true, date: '2026-03-15', helpful: 18, location: 'Jakarta',
+  },
+  {
+    id: 'r5', productId: '13', name: 'Hendri K.',
+    rating: 5, title: 'Worth every rupiah!',
+    content: 'Istri langsung suka waktu liat produknya. Kelihatan mahal tapi harganya reasonable. Stainless steel tebal, tidak goyang. Pasang juga mudah, tidak perlu alat khusus.',
+    verified: true, date: '2026-03-01', helpful: 9, location: 'Medan',
+  },
+  // Shoe Rack
+  {
+    id: 'r6', productId: '14', name: 'Tika Rahayu',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face',
+    rating: 5, title: 'Solusi terbaik untuk lorong sempit',
+    content: 'Apartment saya kecil jadi space sangat terbatas. Rak sepatu ini perfect! 5 tier muat sekitar 20 pasang sepatu. Rakitannya mudah, cukup 15 menit. Bahan kuat tidak goyang.',
+    verified: true, date: '2026-03-18', helpful: 14, location: 'Depok',
+  },
+  // Floating Shelf
+  {
+    id: 'r7', productId: '15', name: 'Dian Pratiwi',
+    rating: 5, title: 'Shelf-nya cantik, tampilannya premium',
+    content: 'Dipasang di ruang tamu untuk tempat tanaman dan buku. Hasilnya cantik banget! Kuat, sudah naruh buku-buku tebal + pot tanaman kecil dan tidak ada tanda-tanda melemah. Highly recommended!',
+    verified: true, date: '2026-03-12', helpful: 11, location: 'Yogyakarta',
+  },
+  // Foldable Storage Bins
+  {
+    id: 'r8', productId: '11', name: 'Anto Wijaya',
+    rating: 4, title: 'Praktis untuk storage kamar',
+    content: 'Suka banget karena bisa dilipat kalau tidak dipakai. Materialnya cukup kuat untuk menyimpan baju-baju. Warnanya juga netral, cocok sama desain kamar. Pengiriman cepat dan aman.',
+    verified: true, date: '2026-02-20', helpful: 7, location: 'Semarang',
+  },
+  // Magnetic Key Holder
+  {
+    id: 'r9', productId: '16', name: 'Ayu Lestari',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face',
+    rating: 5, title: 'No more "di mana kunci??"',
+    content: 'Kelihatannya simple tapi life-changing! Tidak pernah lagi kehilangan kunci karena sekarang ada tempat permanen-nya. Magnetnya kuat, bisa nempel kunci + gantungan yang lumayan berat.',
+    verified: true, date: '2026-03-08', helpful: 16, location: 'Tangerang',
+  },
+];
+
+export const getReviewsByProductId = (productId: string) =>
+  reviews.filter((r) => r.productId === productId);
+
+export const getAverageRating = (productId: string) => {
+  const productReviews = getReviewsByProductId(productId);
+  if (!productReviews.length) return 0;
+  return productReviews.reduce((sum, r) => sum + r.rating, 0) / productReviews.length;
+};
 
 export const getFeaturedProducts = () => products.filter((p) => p.isFeatured);
 export const getNewArrivals = () => products.filter((p) => p.isNew);

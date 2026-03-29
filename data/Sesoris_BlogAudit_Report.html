@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'DM Sans', sans-serif; max-width: 900px; margin: 0 auto; padding: 30px; font-size: 11px; color: #333; }
+  h1 { font-size: 22px; border-bottom: 3px solid #1B5E3B; color: #0D3D23; padding-bottom: 8px; margin-bottom: 20px; }
+  h2 { font-size: 15px; color: #1B5E3B; border-left: 4px solid #1B5E3B; padding-left: 10px; margin-top: 28px; }
+  h3 { font-size: 12px; color: #0D3D23; margin-top: 16px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  table th { background: #0D3D23; color: #fff; padding: 8px; text-align: left; font-size: 10px; }
+  table td { padding: 6px 8px; border-bottom: 1px solid #eee; font-size: 10px; vertical-align: top; }
+  table tr:nth-child(even) { background: #f9f9f9; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; background: #f5f9f6; padding: 14px; border-radius: 8px; margin: 14px 0; border: 1px solid #d4e8dc; }
+  .meta-grid div { font-size: 10px; }
+  .meta-grid strong { color: #0D3D23; }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+  .stat-box { background: #f5f9f6; border: 1px solid #d4e8dc; border-radius: 8px; padding: 14px; text-align: center; }
+  .stat-box .num { font-size: 28px; font-weight: 700; color: #1B5E3B; }
+  .stat-box .label { font-size: 10px; color: #666; margin-top: 4px; }
+  .badge-green { background: #e8f5e9; color: #1B5E3B; padding: 2px 8px; border-radius: 12px; font-size: 9px; font-weight: 600; }
+  .badge-orange { background: #fff3e0; color: #e65100; padding: 2px 8px; border-radius: 12px; font-size: 9px; font-weight: 600; }
+  .page-break { page-break-before: always; }
+  .finding-box { background: #fff8e1; border-left: 4px solid #FFA000; padding: 10px 14px; margin: 10px 0; border-radius: 0 6px 6px 0; }
+  .finding-box.good { background: #e8f5e9; border-left-color: #1B5E3B; }
+</style>
+</head><body>
+
+<!-- Report Header: Sesoris -->
+<div style="
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 28px;
+  background:#1B5E3B;
+  color:#FFFFFF;
+  font-family:'DM Sans',sans-serif;
+  border-bottom:3px solid #FF6B35;
+  margin:-30px -30px 24px -30px;
+">
+  <div style="display:flex;align-items:center;">
+    <img src="data:image/webp;base64,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" alt="Sesoris" style="height:50px;width:auto;margin-right:14px;">
+    
+  </div>
+  <div style="text-align:right;font-size:11px;opacity:0.7;">
+    <div>sesoris.com</div>
+  </div>
+</div>
+
+<h1>Monthly Blog Content Audit Report</h1>
+<div style="font-size:12px; color:#666; margin-bottom:16px">Sesoris.com | Audit Period: Januari – Maret 2026 | Tanggal Audit: 27 Maret 2026</div>
+
+<div class="meta-grid">
+  <div><strong>Status:</strong> Selesai ✅</div>
+  <div><strong>Tanggal:</strong> 27 Maret 2026</div>
+  <div><strong>PIC:</strong> Ahmad Thariq Syauqi</div>
+  <div><strong>Commit:</strong> 81e844e</div>
+  <div><strong>Branch:</strong> claude/sesoris-ecommerce-build-yZdJu</div>
+  <div><strong>Tools:</strong> GSC API, Node.js, Git</div>
+  <div><strong>Articles Audited:</strong> 168 artikel</div>
+  <div><strong>Files Modified:</strong> 8 artikel</div>
+</div>
+
+<h2>Executive Summary</h2>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="num">168</div>
+    <div class="label">Total Artikel Blog</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">168</div>
+    <div class="label">Artikel Rich Content (>500 kata)</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">168</div>
+    <div class="label">Artikel dengan Internal Links</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">95</div>
+    <div class="label">Artikel Scheduled (Future)</div>
+  </div>
+</div>
+
+<h2>1. Performa di Search Console</h2>
+
+<div class="finding-box">
+  <strong>Temuan:</strong> Sesoris.com masih dalam fase indexing. Dari data GSC (Oktober 2025 – Maret 2026), homepage dan beberapa halaman utama sudah muncul dengan rata-rata posisi 5-7, namun <strong>0 klik</strong> dari semua halaman. Blog posts belum muncul di GSC sama sekali.
+</div>
+
+<table>
+  <tr><th>Halaman</th><th>Impressions</th><th>Avg Position</th><th>Klik</th><th>Status</th></tr>
+  <tr><td>sesoris.com/ (homepage)</td><td>149</td><td>5.4</td><td>0</td><td><span class="badge-orange">Perlu CTR Optimization</span></td></tr>
+  <tr><td>sesoris.com/about</td><td>12</td><td>5.1</td><td>0</td><td><span class="badge-orange">Monitor</span></td></tr>
+  <tr><td>sesoris.com/press</td><td>22</td><td>7.2</td><td>0</td><td><span class="badge-orange">Monitor</span></td></tr>
+  <tr><td>sesoris.com/blog (index)</td><td>2</td><td>5.0</td><td>0</td><td><span class="badge-orange">Baru Crawled</span></td></tr>
+  <tr><td>Blog posts (semua)</td><td>0</td><td>—</td><td>0</td><td><span class="badge-orange">Belum terindex</span></td></tr>
+</table>
+
+<p><strong>Rekomendasi:</strong></p>
+<ul>
+  <li>Submit sitemap ke GSC jika belum dilakukan</li>
+  <li>Tunggu 4-8 minggu — blog baru mulai diindex setelah sitemap ter-crawl</li>
+  <li>Prioritaskan internal linking dari homepage ke blog untuk mempercepat discovery</li>
+  <li>Pastikan robots.txt tidak memblokir /blog/ path</li>
+</ul>
+
+<h2>2. Status GitHub Actions Auto-Publishing</h2>
+
+<div class="finding-box good">
+  <strong>Status: BERJALAN BAIK ✅</strong> — Auto-publishing berjalan konsisten sesuai jadwal.
+</div>
+
+<table>
+  <tr><th>Workflow</th><th>Schedule</th><th>Status</th><th>Catatan</th></tr>
+  <tr><td>generate-blog.yml</td><td>3x/hari: 08:00, 13:00, 18:00 WIB</td><td>✅ Running</td><td>Commit terakhir: 27 Mar 2026</td></tr>
+  <tr><td>process-trello-tasks.yml</td><td>On-demand (Trello trigger)</td><td>✅ Running</td><td>Bisa publish dari Trello card</td></tr>
+  <tr><td>notify-publish.yml</td><td>After publish</td><td>✅ Running</td><td>Notifikasi setelah publish</td></tr>
+</table>
+
+<p>Git log menunjukkan artikel baru setiap hari tanpa gap. Pipeline sehat.</p>
+
+<p><strong>Keyword Queue Status:</strong></p>
+<ul>
+  <li>Total keywords di queue (keywords_to_write.json): 43 keywords</li>
+  <li>Status: <strong>Semua sudah dipublish</strong> — queue kosong (0 pending)</li>
+  <li>168 artikel sudah live, 95 dijadwal ke depan (hingga Juni 2026)</li>
+  <li><strong>Action item:</strong> Perlu menambah keyword baru ke queue untuk konten Juli 2026 ke depan</li>
+</ul>
+
+<h2>3. Keyword Cannibalization Analysis</h2>
+
+<div class="finding-box">
+  <strong>Temuan:</strong> Ditemukan beberapa kelompok keyword dengan banyak artikel serupa. Yang paling kritis adalah grup "Food Storage" dengan 9 artikel yang berpotensi saling bersaing.
+</div>
+
+<table>
+  <tr><th>Topik</th><th>Jumlah Artikel</th><th>Contoh Slug</th><th>Rekomendasi</th></tr>
+  <tr><td><strong>Food Storage</strong></td><td style="text-align:center">9</td><td style="font-size:9px">air-tight-food-storage-containers-guide-2026<br>airtight-storage-containers-for-food-complete-guide-2026<br>food-container</td><td>⚠️ High Priority</td></tr><tr><td><strong>Organizer (general)</strong></td><td style="text-align:center">13</td><td style="font-size:9px">bag-organizer-travel<br>desk-organizer<br>home-organizer</td><td>⚠️ High Priority</td></tr><tr><td><strong>Storage (general)</strong></td><td style="text-align:center">12</td><td style="font-size:9px">storage-containers-food...<br>complete-storage-box-guide-2026<br>under-bed-storage</td><td>⚠️ High Priority</td></tr><tr><td><strong>Dapur Kecil</strong></td><td style="text-align:center">8</td><td style="font-size:9px">cara-menata-dapur-sempit<br>mengorganisir-dapur-kecil-dengan-efektif<br>kitchen-set-minimalis-dapur-kecil-murah</td><td>⚠️ Monitor</td></tr><tr><td><strong>Kitchen Set Minimalis</strong></td><td style="text-align:center">4</td><td style="font-size:9px">kitchen-set-minimalis<br>kitchen-set-minimalis-dapur-kecil-murah<br>harga-kitchen-set-minimalis-dapur-kecil</td><td>✅ OK</td></tr>
+</table>
+
+<p><strong>Rekomendasi untuk Food Storage (Priority):</strong></p>
+<ul>
+  <li><strong>Pertahankan</strong>: wadah-makanan, cara-menyimpan-makanan-agar-tahan-lama (berbeda intent)</li>
+  <li><strong>Konsolidasi atau diferensiasi</strong>: air-tight-food-storage-containers-guide-2026 + airtight-storage-containers-for-food-complete-guide-2026 — hampir identik, pertimbangkan redirect salah satunya</li>
+  <li><strong>Diferensiasi</strong>: glass-containers-food-storage (material berbeda = OK), food-container (bahasa Indonesia = OK)</li>
+  <li>Monitor performa setelah indexing untuk memutuskan consolidation</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>4. Content Quality Optimization</h2>
+
+<h3>4a. Internal Links — Fixed</h3>
+
+<div class="finding-box good">
+  <strong>Fixed: 8 artikel tanpa internal links → semua sudah ditambahkan ✅</strong>
+</div>
+
+<table>
+  <tr><th>Artikel</th><th>Links Ditambahkan</th></tr>
+  <tr><td>rak-piring-stainless-steel-anti-karat-dan-tahan-lama</td><td>cara-merawat-peralatan-dapur-stainless-steel, cara-menata-dapur-agar-rapi</td></tr>
+  <tr><td>tutorial-membuat-home-office-ergonomis-produktif</td><td>cara-menciptakan-home-office-yang-produktif-panduan-lifestyle-2026, cable-management</td></tr>
+  <tr><td>tips-menata-rumah-minimalis-marie-kondo</td><td>cara-declutter-rumah, cara-merapikan-rumah</td></tr>
+  <tr><td>cara-merawat-peralatan-dapur-stainless-steel</td><td>cara-menata-dapur-agar-rapi, cara-menata-dapur-minimalis</td></tr>
+  <tr><td>inspirasi-dekorasi-kamar-tidur-2026</td><td>cara-merapikan-lemari-baju, under-bed-storage</td></tr>
+  <tr><td>sustainable-living-mulai-dari-rumah</td><td>cara-menyimpan-makanan-agar-tahan-lama, tren-home-organization-2026</td></tr>
+  <tr><td>mengorganisir-dapur-kecil-dengan-efektif</td><td>cara-menata-dapur-sempit, tutorial-membuat-spice-rack-diy-dapur-kecil</td></tr>
+  <tr><td>review-koleksi-kontainer-serbaguna-sesoris</td><td>wadah-makanan, container-box</td></tr>
+</table>
+
+<h3>4b. Content Expansion — Fixed</h3>
+
+<div class="finding-box good">
+  <strong>Fixed: 6 artikel &lt;500 kata → semua diperluas ke 550-780 kata ✅</strong>
+</div>
+
+<table>
+  <tr><th>Artikel</th><th>Sebelum (kata)</th><th>Sesudah (kata)</th><th>Status</th></tr>
+  <tr><td style="font-size:9px">cara-merawat-peralatan-dapur-stainless-steel</td><td style="text-align:center;color:#cc4400">281</td><td style="text-align:center;color:#1B5E3B;font-weight:600">561</td><td style="text-align:center">✅ Passed</td></tr><tr><td style="font-size:9px">inspirasi-dekorasi-kamar-tidur-2026</td><td style="text-align:center;color:#cc4400">285</td><td style="text-align:center;color:#1B5E3B;font-weight:600">584</td><td style="text-align:center">✅ Passed</td></tr><tr><td style="font-size:9px">mengorganisir-dapur-kecil-dengan-efektif</td><td style="text-align:center;color:#cc4400">305</td><td style="text-align:center;color:#1B5E3B;font-weight:600">627</td><td style="text-align:center">✅ Passed</td></tr><tr><td style="font-size:9px">review-koleksi-kontainer-serbaguna-sesoris</td><td style="text-align:center;color:#cc4400">330</td><td style="text-align:center;color:#1B5E3B;font-weight:600">589</td><td style="text-align:center">✅ Passed</td></tr><tr><td style="font-size:9px">sustainable-living-mulai-dari-rumah</td><td style="text-align:center;color:#cc4400">293</td><td style="text-align:center;color:#1B5E3B;font-weight:600">665</td><td style="text-align:center">✅ Passed</td></tr><tr><td style="font-size:9px">tips-menata-rumah-minimalis-marie-kondo</td><td style="text-align:center;color:#cc4400">360</td><td style="text-align:center;color:#1B5E3B;font-weight:600">779</td><td style="text-align:center">✅ Passed</td></tr>
+</table>
+
+<p><strong>Konten yang ditambahkan per artikel:</strong></p>
+<ul>
+  <li><strong>cara-merawat-peralatan-dapur-stainless-steel</strong>: section grades stainless steel, recommended products, FAQ (3 Q&A)</li>
+  <li><strong>mengorganisir-dapur-kecil-dengan-efektif</strong>: best products section, common mistakes, FAQ (3 Q&A)</li>
+  <li><strong>inspirasi-dekorasi-kamar-tidur-2026</strong>: furniture multifungsi 2026, tips pencahayaan, FAQ (3 Q&A)</li>
+  <li><strong>sustainable-living-mulai-dari-rumah</strong>: sustainable shopping, sustainable kitchen, home organization connection, FAQ</li>
+  <li><strong>review-koleksi-kontainer-serbaguna-sesoris</strong>: competitor comparison, real use cases, summary rating</li>
+  <li><strong>tips-menata-rumah-minimalis-marie-kondo</strong>: KonMari category order, Indonesia adaptations, product recommendations, FAQ</li>
+</ul>
+
+<h2>5. Content Pipeline Status</h2>
+
+<table>
+  <tr><th>Metrik</th><th>Nilai</th><th>Target</th><th>Status</th></tr>
+  <tr><td>Total artikel published</td><td>168</td><td>100+</td><td>✅ Exceeded</td></tr>
+  <tr><td>Artikel dijadwal (future)</td><td>95</td><td>30+</td><td>✅ 3+ bulan ke depan</td></tr>
+  <tr><td>Keyword queue</td><td>0 pending (43/43 published)</td><td>Any remaining</td><td>⚠️ Perlu batch baru</td></tr>
+  <tr><td>GitHub Actions uptime</td><td>100% (no gaps in commits)</td><td>100%</td><td>✅ Healthy</td></tr>
+  <tr><td>Artikel rich content (>500 kata)</td><td>168/168 (100%)</td><td>95%+</td><td>✅ Passed</td></tr>
+  <tr><td>Internal linking coverage</td><td>168/168 (100%)</td><td>100%</td><td>✅ Complete</td></tr>
+</table>
+
+<h2>6. Category Distribution</h2>
+
+<table>
+  <tr><th>Kategori</th><th>Jumlah Artikel</th><th>% Total</th></tr>
+  <tr><td>Tips & Tricks</td><td style="text-align:center">45</td><td style="text-align:center">27%</td></tr><tr><td>Panduan</td><td style="text-align:center">32</td><td style="text-align:center">19%</td></tr><tr><td>Inspiration</td><td style="text-align:center">25</td><td style="text-align:center">15%</td></tr><tr><td>Tutorial</td><td style="text-align:center">12</td><td style="text-align:center">7%</td></tr><tr><td>Lifestyle</td><td style="text-align:center">12</td><td style="text-align:center">7%</td></tr><tr><td>Review</td><td style="text-align:center">12</td><td style="text-align:center">7%</td></tr><tr><td>Home Living</td><td style="text-align:center">9</td><td style="text-align:center">5%</td></tr><tr><td>Kitchen & Dining</td><td style="text-align:center">7</td><td style="text-align:center">4%</td></tr><tr><td>Outdoor & Travel</td><td style="text-align:center">6</td><td style="text-align:center">4%</td></tr><tr><td>Bags & Pouches</td><td style="text-align:center">3</td><td style="text-align:center">2%</td></tr><tr><td>Kitchen & Cooking</td><td style="text-align:center">2</td><td style="text-align:center">1%</td></tr><tr><td>Office & Desk</td><td style="text-align:center">2</td><td style="text-align:center">1%</td></tr><tr><td>Seasonal</td><td style="text-align:center">1</td><td style="text-align:center">1%</td></tr>
+</table>
+
+<h2>7. Ringkasan Temuan & Action Items</h2>
+
+<table>
+  <tr><th>#</th><th>Temuan</th><th>Prioritas</th><th>Status</th></tr>
+  <tr><td>1</td><td>Blog posts belum terindex di GSC (site baru)</td><td>🔴 High</td><td>⏳ Monitor — submit sitemap</td></tr>
+  <tr><td>2</td><td>Keyword queue kosong — perlu batch baru untuk Juli+</td><td>🟠 Medium</td><td>⏳ Action needed</td></tr>
+  <tr><td>3</td><td>Food storage cannibalization (9 artikel)</td><td>🟠 Medium</td><td>⏳ Monitor post-indexing</td></tr>
+  <tr><td>4</td><td>8 artikel tanpa internal blog links</td><td>🟡 Low</td><td>✅ Fixed (81e844e)</td></tr>
+  <tr><td>5</td><td>6 artikel konten terlalu pendek (&lt;500 kata)</td><td>🟡 Low</td><td>✅ Fixed (81e844e)</td></tr>
+  <tr><td>6</td><td>GitHub Actions pipeline sehat</td><td>—</td><td>✅ No action needed</td></tr>
+  <tr><td>7</td><td>Meta titles/descriptions sudah di-generate dari excerpt</td><td>—</td><td>✅ Handled in page.tsx</td></tr>
+</table>
+
+<h2>8. Rekomendasi Bulan Depan (April 2026)</h2>
+
+<ol>
+  <li><strong>Submit/verify sitemap di GSC</strong> — pastikan semua 168 blog URLs masuk sitemap dan ter-submit</li>
+  <li><strong>Tambah keyword batch baru</strong> — queue habis, perlu 50-100 keyword baru untuk konten Juli-September 2026</li>
+  <li><strong>Monitor food storage articles</strong> — setelah indexing, lihat mana yang ranking dan pertimbangkan consolidation</li>
+  <li><strong>Homepage internal links ke blog</strong> — tambah featured blog section di homepage untuk mempercepat crawl blog posts</li>
+  <li><strong>Schema markup audit</strong> — pastikan Article schema ter-generate untuk semua blog posts</li>
+</ol>
+
+<!-- Report Footer: Sesoris — fixed to every page -->
+<div class="report-footer" style="
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 28px;
+  background:#1B5E3B;
+  color:#FFFFFF;
+  font-family:'DM Sans',sans-serif;
+  border-top:3px solid #FF6B35;
+  font-size:11px;
+  z-index:999;
+">
+  <div>
+    <span style="font-weight:700;">Sesoris</span>
+    <span style="opacity:0.7;margin-left:6px;">| Home & Living Accessories</span>
+  </div>
+  <div style="text-align:right;opacity:0.7;">
+    <div>sesoris.com</div>
+  </div>
+</div>
+
+</body></html>

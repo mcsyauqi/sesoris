@@ -39,3 +39,18 @@ export interface Testimonial {
   rating: number;
   verified: boolean;
 }
+
+export interface Review {
+  id: string;
+  productId: string;
+  name: string;
+  avatar?: string;
+  rating: number;
+  title: string;
+  content: string;
+  verified: boolean;
+  photoUrl?: string;
+  date: string;
+  helpful: number;
+  location?: string;
+}

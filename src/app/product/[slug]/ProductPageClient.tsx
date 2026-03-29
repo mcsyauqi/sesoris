@@ -8,10 +8,13 @@ import type { Product } from '@/types';
 import { formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
+import { ProductReviewSection } from '@/components/product/ProductReviewSection';
+import { getReviewsByProductId } from '@/data/products';
 
 export default function ProductPageClient({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState<'description' | 'specs'>('description');
+  const [activeTab, setActiveTab] = useState<'description' | 'specs' | 'reviews'>('description');
+  const productReviews = getReviewsByProductId(product.id);
   const [showFullDesc, setShowFullDesc] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const addToCart = useCartStore((s) => s.addItem);
@@ -371,6 +374,38 @@ export default function ProductPageClient({ product }: { product: Product }) {
             >
               Specifications
             </button>
+            <button
+              onClick={() => setActiveTab('reviews')}
+              style={{
+                padding: '16px 32px',
+                background: 'transparent',
+                border: 'none',
+                borderBottom: activeTab === 'reviews' ? '2px solid #1B5E3B' : '2px solid transparent',
+                marginBottom: '-2px',
+                fontSize: '15px',
+                fontWeight: 600,
+                color: activeTab === 'reviews' ? '#1B5E3B' : '#6C757D',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+              }}
+            >
+              Reviews
+              {productReviews.length > 0 && (
+                <span style={{
+                  background: '#1B5E3B',
+                  color: 'white',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  padding: '2px 7px',
+                  borderRadius: '10px',
+                }}>
+                  {productReviews.length}
+                </span>
+              )}
+            </button>
           </div>
 
           {activeTab === 'description' && (
@@ -481,6 +516,16 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+
+          {activeTab === 'reviews' && (
+            <div style={{ maxWidth: '800px' }}>
+              <ProductReviewSection
+                productId={product.id}
+                productName={product.name}
+                reviews={productReviews}
+              />
             </div>
           )}
         </div>
