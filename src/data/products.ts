@@ -79,8 +79,8 @@ This organizer is perfect for home offices, workplaces, or as a gift for colleag
       { label: 'Color', value: 'Natural Bamboo' },
       { label: 'Warranty', value: '1 Year' },
     ],
-    price: 299000,
-    compareAtPrice: 399000,
+    price: 18.99,
+    compareAtPrice: 24.99,
     images: [
       { url: '/images/products/bamboo-desk-organizer-hero.webp', alt: 'Bamboo Desk Organizer front view' },
       { url: '/images/products/bamboo-desk-organizer-closeup.webp', alt: 'Bamboo Desk Organizer on workspace' },
@@ -123,7 +123,7 @@ The ergonomic design with an anti-slip grip makes it easy to carry this bottle a
       { label: 'Weight', value: '350 grams' },
       { label: 'Connectivity', value: 'Bluetooth 5.0' },
     ],
-    price: 349000,
+    price: 21.99,
     images: [
       { url: '/images/products/smart-water-bottle-hero.webp', alt: 'Smart Water Bottle front view' },
       { url: '/images/products/smart-water-bottle-closeup.webp', alt: 'Smart Water Bottle during workout' },
@@ -169,7 +169,7 @@ The 360° flexible neck allows you to direct light to the exact position needed.
       { label: 'Dimensions', value: '40 x 15 x 12 cm' },
       { label: 'Input', value: 'DC 24V/1.5A' },
     ],
-    price: 499000,
+    price: 31.99,
     images: [
       { url: '/images/products/led-desk-lamp-hero.webp', alt: 'LED Desk Lamp front view' },
       { url: '/images/products/led-desk-lamp-closeup.webp', alt: 'LED Desk Lamp on workspace' },
@@ -212,8 +212,8 @@ Perfect for various occasions: birthdays, anniversaries, Mother's Day, or simply
       { label: 'Bath Bomb', value: '3 x 100g' },
       { label: 'Diffuser', value: 'USB powered, 100ml' },
     ],
-    price: 599000,
-    compareAtPrice: 799000,
+    price: 37.99,
+    compareAtPrice: 49.99,
     images: [
       { url: '/images/products/premium-gift-box-hero.webp', alt: 'Premium Gift Box Set top view' },
       { url: '/images/products/premium-gift-box-closeup.webp', alt: 'Premium Gift Box Set package contents' },
@@ -256,7 +256,7 @@ Hand-stitched with waxed thread for long-lasting durability. The leather will de
       { label: 'RFID Protection', value: '13.56 MHz' },
       { label: 'Warranty', value: '2 Years' },
     ],
-    price: 399000,
+    price: 24.99,
     images: [
       { url: '/images/products/minimalist-wallet-hero.webp', alt: 'Minimalist Wallet front view' },
       { url: '/images/products/minimalist-wallet-closeup.webp', alt: 'Minimalist Wallet leather material' },
@@ -302,8 +302,8 @@ Battery lasts up to 8 hours per charge with ANC on, or 10 hours with ANC off. Th
       { label: 'Water Resistance', value: 'IPX5' },
       { label: 'Weight per Earbud', value: '5.5 grams' },
     ],
-    price: 799000,
-    compareAtPrice: 999000,
+    price: 49.99,
+    compareAtPrice: 62.99,
     images: [
       { url: '/images/products/wireless-earbuds-hero.webp', alt: 'Wireless Earbuds Pro front view' },
       { url: '/images/products/wireless-earbuds-closeup.webp', alt: 'Wireless Earbuds Pro with case' },
@@ -349,8 +349,8 @@ The jar is made from BPA-free Tritan that is food-safe, impact-resistant, and do
       { label: 'Dimensions', value: '8 x 8 x 23 cm' },
       { label: 'Weight', value: '450 grams' },
     ],
-    price: 249000,
-    compareAtPrice: 349000,
+    price: 15.99,
+    compareAtPrice: 21.99,
     images: [
       { url: '/images/products/portable-blender-hero.webp', alt: 'Portable Blender front view' },
       { url: '/images/products/portable-blender-closeup.webp', alt: 'Portable Blender with smoothie ingredients' },
@@ -395,7 +395,7 @@ Auto shut-off when the water runs out protects the unit from damage and ensures 
       { label: 'Dimensions', value: '16 x 16 x 12 cm' },
       { label: 'Timer', value: '1/3/6 hours' },
     ],
-    price: 329000,
+    price: 20.99,
     images: [
       { url: '/images/products/aromatherapy-diffuser-hero.webp', alt: 'Aromatherapy Diffuser front view' },
       { url: '/images/products/aromatherapy-diffuser-closeup.webp', alt: 'Aromatherapy Diffuser relaxing ambiance' },
@@ -438,7 +438,7 @@ The high-temperature firing process produces strong and durable ceramic. The smo
       { label: 'Color', value: 'Matte White' },
       { label: 'Total Weight', value: '2.5 kg' },
     ],
-    price: 449000,
+    price: 27.99,
     images: [
       { url: '/images/products/ceramic-plant-pot-hero.webp', alt: 'Ceramic Plant Pot Set front view' },
       { url: '/images/products/ceramic-plant-pot-closeup.webp', alt: 'Ceramic Plant Pot Set with plants' },
@@ -482,7 +482,7 @@ The stainless steel body with G10 insets provides a secure grip even when wet. C
       { label: 'Weight', value: '140 grams' },
       { label: 'Blade Hardness', value: '57-59 HRC' },
     ],
-    price: 279000,
+    price: 17.99,
     images: [
       { url: '/images/products/multi-tool-knife-hero.webp', alt: 'Multi-Tool Pocket Knife front view' },
       { url: '/images/products/multi-tool-knife-closeup.webp', alt: 'Multi-Tool Pocket Knife all functions' },
@@ -527,7 +527,7 @@ A transparent label holder on the front allows you to identify contents easily w
       { label: 'Weight per Bin', value: '200 grams' },
       { label: 'Color', value: 'Gray' },
     ],
-    price: 229000,
+    price: 14.99,
     images: [
       { url: '/images/products/storage-bins-hero.webp', alt: 'Foldable Storage Bins front view' },
       { url: '/images/products/storage-bins-closeup.webp', alt: 'Foldable Storage Bins in cabinet' },
@@ -570,7 +570,7 @@ The complete set includes: electric opener, charging base/stand, foil cutter for
       { label: 'Dimensions', value: '5 x 5 x 23 cm' },
       { label: 'Weight', value: '280 grams' },
     ],
-    price: 369000,
+    price: 22.99,
     images: [
       { url: '/images/products/wine-opener-hero.webp', alt: 'Electric Wine Opener front view' },
       { url: '/images/products/wine-opener-closeup.webp', alt: 'Electric Wine Opener opening a bottle' },
@@ -611,8 +611,8 @@ Easy to assemble without tools, set up in just 5 minutes. The sturdy structure c
       { label: 'Max Load', value: '15 kg' },
       { label: 'Warranty', value: '2 Years' },
     ],
-    price: 289000,
-    compareAtPrice: 389000,
+    price: 18.99,
+    compareAtPrice: 24.99,
     images: [
       { url: '/images/products/dish-rack-hero.webp', alt: 'Stainless steel 2-tier dish rack front view' },
       { url: '/images/products/dish-rack-closeup.webp', alt: 'Dish rack with plates and glasses' },
@@ -655,8 +655,8 @@ The slim dimensions (60 x 30 cm footprint) make this rack ideal for tight spaces
       { label: 'Max Load', value: '25 kg' },
       { label: 'Color', value: 'Black' },
     ],
-    price: 179000,
-    compareAtPrice: 249000,
+    price: 10.99,
+    compareAtPrice: 15.99,
     images: [
       { url: '/images/products/shoe-rack-hero.webp', alt: 'Minimalist 5-tier shoe rack' },
       { url: '/images/products/shoe-rack-closeup.webp', alt: 'Shoe rack with various shoes' },
@@ -699,7 +699,7 @@ Perfect for displaying decorative plants, favorite books, family photos, or deco
       { label: 'Color', value: 'Natural Wood' },
       { label: 'Package Contents', value: '3 shelves + brackets + screws + level' },
     ],
-    price: 249000,
+    price: 15.99,
     images: [
       { url: '/images/products/floating-shelf-hero.webp', alt: 'Floating shelf set on living room wall' },
       { url: '/images/products/floating-shelf-closeup.webp', alt: 'Floating Shelf wood grain edge detail' },
@@ -741,7 +741,7 @@ N52-grade neodymium magnets — the highest grade — can hold up to 500 grams p
       { label: 'Hooks', value: '5 pieces' },
       { label: 'Warranty', value: '1 Year' },
     ],
-    price: 159000,
+    price: 9.99,
     images: [
       { url: '/images/products/key-holder-hero.webp', alt: 'Magnetic wall key holder in walnut' },
       { url: '/images/products/key-holder-with-keys.webp', alt: 'Key holder with keys attached' },
@@ -784,8 +784,8 @@ The feet feature adjustable levelers for uneven floors. The compact dimensions (
       { label: 'Max Load', value: '40 kg total' },
       { label: 'Warranty', value: '2 Years' },
     ],
-    price: 599000,
-    compareAtPrice: 799000,
+    price: 37.99,
+    compareAtPrice: 49.99,
     images: [
       { url: '/images/products/bookshelf-hero.webp', alt: 'Industrial Minimalist Bookshelf - product shot' },
       { url: '/images/products/bookshelf-closeup.webp', alt: 'Bookshelf with book collection' },

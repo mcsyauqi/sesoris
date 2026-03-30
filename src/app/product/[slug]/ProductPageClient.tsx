@@ -314,7 +314,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 <Truck style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Free Shipping</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>Min. Rp 500K</div>
+                  <div style={{ fontSize: '11px', color: '#6C757D' }}>Min. $50</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>

@@ -298,7 +298,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
               {/* Trust signals */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #F0F0F0' }}>
                 {[
-                  { icon: Truck, text: 'Free shipping over Rp 500,000' },
+                  { icon: Truck, text: 'Free shipping over $50' },
                   { icon: Shield, text: '1-year warranty on all items' },
                   { icon: RefreshCw, text: '30-day easy returns' },
                   { icon: Package, text: 'Secure bundled packaging' },

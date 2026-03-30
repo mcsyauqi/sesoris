@@ -5,7 +5,7 @@ import { X, Gift, Truck, Sparkles } from 'lucide-react';
 
 const messages = [
   { icon: Gift, text: 'Quality Products, Free Shipping & Easy Returns!' },
-  { icon: Truck, text: 'Free Shipping on Orders Over Rp 200,000' },
+  { icon: Truck, text: 'Free Shipping on Orders Over $25' },
   { icon: Sparkles, text: 'New Products Every Week - Shop Now!' },
 ];
 

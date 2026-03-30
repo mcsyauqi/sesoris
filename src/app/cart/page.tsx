@@ -3,7 +3,7 @@ import CartPageClient from './CartPageClient';
 
 export const metadata: Metadata = {
   title: 'Shopping Cart',
-  description: 'Review your shopping cart items. Secure checkout with free shipping on orders over Rp 500K at Sesoris.',
+  description: 'Review your shopping cart items. Secure checkout with free shipping on orders over $50 at Sesoris.',
   alternates: { canonical: '/cart' },
   openGraph: {
     title: 'Shopping Cart | Sesoris',

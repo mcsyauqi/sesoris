@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: 'Does Sesoris offer free shipping?',
-    answer: 'Yes! We offer free shipping on all orders over Rp 500,000. For orders below that threshold, a flat shipping fee applies based on your location. Most orders are processed within 1 business day and delivered in 2–5 days.',
+    answer: 'Yes! We offer free shipping on all orders over $50. For orders below that threshold, a flat shipping fee applies based on your location. Most orders are processed within 1 business day and delivered in 2–5 days.',
   },
   {
     question: 'Are Sesoris products good quality?',

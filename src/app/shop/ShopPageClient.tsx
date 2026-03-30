@@ -7,10 +7,10 @@ import { ProductCard } from '@/components/product';
 import { products, categories } from '@/data/products';
 
 const priceRanges = [
-  { label: 'Under Rp 200K', min: 0, max: 200000 },
-  { label: 'Rp 200K - Rp 500K', min: 200000, max: 500000 },
-  { label: 'Rp 500K - Rp 1M', min: 500000, max: 1000000 },
-  { label: 'Over Rp 1M', min: 1000000, max: Infinity },
+  { label: 'Under $15', min: 0, max: 15 },
+  { label: '$15 - $30', min: 15, max: 30 },
+  { label: '$30 - $50', min: 30, max: 50 },
+  { label: 'Over $50', min: 50, max: Infinity },
 ];
 
 export default function ShopPageClient() {
