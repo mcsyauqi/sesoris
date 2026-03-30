@@ -10,7 +10,7 @@ export const bundles: Bundle[] = [
     originalPrice: 887000,
     bundlePrice: 754000,
     discountPercent: 15,
-    image: '/images/products/rak-piring-stainless-steel-2-tier-hero.webp',
+    image: '/images/products/dish-rack-hero.webp',
     badge: 'Best Value',
     highlights: [
       'Complete kitchen organization solution',
@@ -46,7 +46,7 @@ export const bundles: Bundle[] = [
     originalPrice: 637000,
     bundlePrice: 522000,
     discountPercent: 18,
-    image: '/images/products/foldable-storage-bins-hero.webp',
+    image: '/images/products/storage-bins-hero.webp',
     badge: 'Most Saved',
     highlights: [
       'Maximize every inch of your space',
@@ -64,7 +64,7 @@ export const bundles: Bundle[] = [
     originalPrice: 687000,
     bundlePrice: 570000,
     discountPercent: 17,
-    image: '/images/products/foldable-storage-bins-hero.webp',
+    image: '/images/products/storage-bins-hero.webp',
     badge: 'New Home',
     highlights: [
       'Everything for moving day',
