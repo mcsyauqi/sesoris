@@ -141,7 +141,8 @@ TOPIC CONTEXT:
 
   const filePath = path.join(blogDir, `${generated.slug}.json`);
   if (fs.existsSync(filePath)) {
-    throw new Error(`Post already exists: ${generated.slug}`);
+    console.log(`Post already exists: ${generated.slug} — skipping gracefully`);
+    process.exit(0);
   }
 
   // Pick random author
