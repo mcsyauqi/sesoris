@@ -5,7 +5,7 @@ import { products } from '@/data/products';
 import BundlePageClient from './BundlePageClient';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -13,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const bundle = getBundleBySlug(params.slug);
+  const { slug } = await params;
+  const bundle = getBundleBySlug(slug);
   if (!bundle) return {};
   return {
     title: `${bundle.name} — Save ${bundle.discountPercent}% | Sesoris`,
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BundlePage({ params }: Props) {
-  const bundle = getBundleBySlug(params.slug);
+export default async function BundlePage({ params }: Props) {
+  const { slug } = await params;
+  const bundle = getBundleBySlug(slug);
   if (!bundle) notFound();
 
   const bundleProducts = bundle.productIds
