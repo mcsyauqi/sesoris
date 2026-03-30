@@ -20,7 +20,7 @@ interface QueuedKeyword {
   priority: string;
 }
 
-function getNextKeyword(): QueuedKeyword | null {
+function getNextKeyword(): { keyword: QueuedKeyword; putback: () => void } | null {
   if (!fs.existsSync(keywordQueuePath)) return null;
   const queue: QueuedKeyword[] = JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'));
   if (queue.length === 0) return null;
@@ -28,10 +28,21 @@ function getNextKeyword(): QueuedKeyword | null {
   // Take the first keyword (highest volume)
   const next = queue.shift()!;
 
-  // Save remaining queue
+  // Save remaining queue immediately
   fs.writeFileSync(keywordQueuePath, JSON.stringify(queue, null, 2), 'utf-8');
   console.log(`Keyword from queue: "${next.keyword}" (vol: ${next.volume}, ${queue.length} remaining)`);
-  return next;
+
+  // Provide a putback function to restore keyword if generation fails
+  const putback = () => {
+    const current: QueuedKeyword[] = fs.existsSync(keywordQueuePath)
+      ? JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'))
+      : [];
+    current.unshift(next);
+    fs.writeFileSync(keywordQueuePath, JSON.stringify(current, null, 2), 'utf-8');
+    console.log(`Keyword returned to queue: "${next.keyword}"`);
+  };
+
+  return { keyword: next, putback };
 }
 
 const topicsByDay: Record<number, string> = {
@@ -74,7 +85,9 @@ async function generatePost() {
   const leastUsedCategory = getLeastUsedCategory(existing);
 
   // Try to get keyword from queue first
-  const queuedKeyword = getNextKeyword();
+  const nextKeyword = getNextKeyword();
+  const queuedKeyword = nextKeyword?.keyword ?? null;
+  const putbackKeyword = nextKeyword?.putback ?? null;
 
   let basePrompt: string;
   if (queuedKeyword) {
@@ -119,7 +132,9 @@ TOPIC CONTEXT:
 
   const textBlock = message.content.find((b) => b.type === 'text');
   if (!textBlock || textBlock.type !== 'text') {
-    throw new Error('No text response from Claude');
+    putbackKeyword?.();
+    console.log('No text response from Claude — skipping gracefully');
+    process.exit(0);
   }
 
   let responseText = textBlock.text.trim();
@@ -128,19 +143,34 @@ TOPIC CONTEXT:
     responseText = responseText.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
   }
 
-  const generated = JSON.parse(responseText);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let generated: any;
+  try {
+    generated = JSON.parse(responseText);
+  } catch {
+    putbackKeyword?.();
+    console.log('Failed to parse Claude response as JSON — skipping gracefully');
+    process.exit(0);
+  }
 
   // Validate required fields
   const required = ['slug', 'title', 'excerpt', 'category', 'content'] as const;
   for (const field of required) {
-    if (!generated[field]) throw new Error(`Missing required field: ${field}`);
+    if (!generated[field]) {
+      putbackKeyword?.();
+      console.log(`Missing required field: ${field} — skipping gracefully`);
+      process.exit(0);
+    }
   }
   if (!Array.isArray(generated.content) || generated.content.length < 5) {
-    throw new Error('Content must be an array with at least 5 paragraphs');
+    putbackKeyword?.();
+    console.log('Content must be an array with at least 5 paragraphs — skipping gracefully');
+    process.exit(0);
   }
 
   const filePath = path.join(blogDir, `${generated.slug}.json`);
   if (fs.existsSync(filePath)) {
+    // Slug duplicate — keyword already consumed, don't putback (try different keyword next run)
     console.log(`Post already exists: ${generated.slug} — skipping gracefully`);
     process.exit(0);
   }
