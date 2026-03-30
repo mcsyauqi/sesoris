@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "glass containers food storage",
-    "volume": 22200,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "glasslock food storage containers",
     "volume": 22200,
     "category": "Food Storage Containers",
