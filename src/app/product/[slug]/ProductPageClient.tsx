@@ -9,12 +9,15 @@ import { formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
 import { ProductReviewSection } from '@/components/product/ProductReviewSection';
-import { getReviewsByProductId } from '@/data/products';
+import { FrequentlyBoughtTogether } from '@/components/product/FrequentlyBoughtTogether';
+import { getReviewsByProductId, products as allProducts } from '@/data/products';
+import { getBundlesForProduct } from '@/data/bundles';
 
 export default function ProductPageClient({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<'description' | 'specs' | 'reviews'>('description');
   const productReviews = getReviewsByProductId(product.id);
+  const productBundles = getBundlesForProduct(product.id);
   const [showFullDesc, setShowFullDesc] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const addToCart = useCartStore((s) => s.addItem);
@@ -529,6 +532,13 @@ export default function ProductPageClient({ product }: { product: Product }) {
             </div>
           )}
         </div>
+
+        {/* Frequently Bought Together */}
+        <FrequentlyBoughtTogether
+          currentProductId={product.id}
+          allProducts={allProducts}
+          bundles={productBundles}
+        />
 
         {/* Package Info */}
         <div style={{

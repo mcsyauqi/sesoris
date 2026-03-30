@@ -23,6 +23,7 @@ const shopLinks = [
   { name: 'New Arrivals', href: '/new-arrivals' },
   { name: 'Best Sellers', href: '/best-sellers' },
   { name: 'On Sale', href: '/on-sale' },
+  { name: '🎁 Bundle Deals', href: '/bundles' },
 ];
 
 export function Header() {

@@ -6,6 +6,9 @@ import Image from 'next/image';
 import { Home, ChevronRight, Minus, Plus, Trash2, ShoppingBag, ArrowRight, Tag } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
 import { formatPrice } from '@/lib/utils';
+import { CartUpsell } from '@/components/cart/CartUpsell';
+import { bundles } from '@/data/bundles';
+import { products } from '@/data/products';
 
 export default function CartPageClient() {
   const { items, removeItem, updateQuantity, getSubtotal, getItemCount } = useCartStore();
@@ -166,6 +169,14 @@ export default function CartPageClient() {
                 </div>
               </div>
             ))}
+            {/* Bundle Upsell */}
+            <div style={{ marginTop: '24px' }}>
+              <CartUpsell
+                cartProductIds={items.map((i) => i.product.id)}
+                allBundles={bundles}
+                allProducts={products}
+              />
+            </div>
           </div>
 
           {/* Order Summary */}

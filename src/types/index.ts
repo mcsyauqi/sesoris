@@ -54,3 +54,17 @@ export interface Review {
   helpful: number;
   location?: string;
 }
+
+export interface Bundle {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  productIds: string[];
+  bundlePrice: number;
+  originalPrice: number;
+  discountPercent: number;
+  image: string;
+  badge?: string;
+  highlights?: string[];
+}
