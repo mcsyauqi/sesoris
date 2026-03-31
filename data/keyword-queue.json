@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "pyrex glass food storage containers",
-    "volume": 14800,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "glass storage food containers with lids",
     "volume": 14800,
     "category": "Food Storage Containers",
