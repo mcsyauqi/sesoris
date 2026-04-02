@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "glass containers with glass lids for food storage",
-    "volume": 14800,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "organization ideas for a small closet",
     "volume": 12100,
     "category": "Closet Organization Ideas",
