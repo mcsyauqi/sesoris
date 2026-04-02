@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "glass lid food storage containers",
-    "volume": 14800,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "glass containers with glass lids for food storage",
     "volume": 14800,
     "category": "Food Storage Containers",
