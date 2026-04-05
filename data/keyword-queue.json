@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "containers for dog food storage",
-    "volume": 12100,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "dog food containers & storage",
     "volume": 12100,
     "category": "Food Storage Containers",
