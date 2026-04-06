@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "food storage containers with lid",
-    "volume": 12100,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "organization pantry ideas",
     "volume": 9900,
     "category": "Pantry Organization Ideas",
