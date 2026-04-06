@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "lidded food storage containers",
-    "volume": 12100,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "food storage containers with lid",
     "volume": 12100,
     "category": "Food Storage Containers",
