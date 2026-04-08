@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "bpa-free food storage containers",
-    "volume": 9900,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "food storage containers bpa free",
     "volume": 9900,
     "category": "Food Storage Containers",
