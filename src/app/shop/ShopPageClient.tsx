@@ -123,7 +123,7 @@ export default function ShopPageClient() {
               color: '#212529',
               marginBottom: '4px'
             }}>
-              All Products
+              Shop All Products
             </h1>
             <p style={{ color: '#6C757D', fontSize: '14px' }}>
               Showing {filteredProducts.length} products
@@ -191,6 +191,101 @@ export default function ShopPageClient() {
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Category Descriptions — SEO section */}
+      <div style={{ background: '#F8F9FA', padding: '48px 0', marginTop: '24px' }}>
+        <div className="container">
+          <h2 style={{
+            fontFamily: 'var(--font-heading), Georgia, serif',
+            fontSize: 'clamp(20px, 3vw, 24px)',
+            fontWeight: 400,
+            color: '#212529',
+            marginBottom: '8px',
+          }}>
+            Browse by Category
+          </h2>
+          <p style={{ color: '#6C757D', fontSize: '15px', marginBottom: '32px', maxWidth: '640px' }}>
+            Explore our curated collection of home organizers, kitchen essentials, lifestyle tools, and more — designed to bring order and beauty to your everyday life.
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '24px',
+          }}>
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
+                Home &amp; Decor
+              </h3>
+              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
+                Transform any room with our Home &amp; Decor collection — from floating shelves and wall organizers to decorative baskets and storage solutions. With 124 products, you&apos;ll find the perfect pieces to keep your home tidy and stylish.
+              </p>
+              <Link href="/category/home-living" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Home &amp; Decor →
+              </Link>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
+                Kitchen &amp; Dining
+              </h3>
+              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
+                Upgrade your kitchen with our practical Kitchen &amp; Dining essentials — dish racks, storage containers, cutting boards, and more. Browse 86 products that make meal prep and dining a joy.
+              </p>
+              <Link href="/category/kitchen-dining" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Kitchen &amp; Dining →
+              </Link>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
+                Tools &amp; Gadgets
+              </h3>
+              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
+                Discover innovative tools and everyday gadgets that solve real problems. From multi-tools to smart kitchen gadgets, our 67 Tools &amp; Gadgets products are built for performance and convenience.
+              </p>
+              <Link href="/category/tools-gadgets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Tools &amp; Gadgets →
+              </Link>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
+                Gift Sets
+              </h3>
+              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
+                Find the perfect gift for any occasion. Our curated Gift Sets — 93 options — are thoughtfully packaged and ready to give. Ideal for birthdays, holidays, housewarmings, and celebrations.
+              </p>
+              <Link href="/category/gift-sets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Gift Sets →
+              </Link>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
+                Personal Care
+              </h3>
+              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
+                Elevate your self-care routine with our Personal Care collection — aromatherapy diffusers, organizers, skincare tools, and wellness accessories. Choose from 78 quality products.
+              </p>
+              <Link href="/category/personal-care" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Personal Care →
+              </Link>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
+                Tech Accessories
+              </h3>
+              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
+                Stay connected and organized with our Tech Accessories — wireless earbuds, charging stations, cable organizers, and smart home gadgets. Browse 54 products for the tech-savvy lifestyle.
+              </p>
+              <Link href="/category/tech-accessories" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Tech Accessories →
+              </Link>
+            </div>
+          </div>
+          <div style={{ marginTop: '32px', padding: '20px', background: '#fff', borderRadius: '12px', border: '1px solid #E9ECEF' }}>
+            <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.7', margin: 0 }}>
+              <strong style={{ color: '#212529' }}>About Sesoris Shop:</strong> At Sesoris, we curate quality lifestyle products that help you create a more organized, beautiful, and comfortable home. Every product is hand-selected for its functionality, durability, and design. Whether you&apos;re upgrading your home organization, gifting a loved one, or treating yourself — you&apos;ll find something worth loving at Sesoris. Enjoy free shipping on orders over $50.
+            </p>
           </div>
         </div>
       </div>
