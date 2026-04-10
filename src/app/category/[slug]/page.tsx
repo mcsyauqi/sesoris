@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Home, ChevronRight } from 'lucide-react';
 import { ProductCard } from '@/components/product';
 import { getCategoryBySlug, getProductsByCategory, categories } from '@/data/products';
+import { categoryContent } from '@/data/categoryContent';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
@@ -17,15 +18,20 @@ export async function generateMetadata(
   const category = getCategoryBySlug(slug);
   if (!category) return {};
 
+  const seo = categoryContent[slug];
+  const title = seo?.seoTitle ?? `${category.name} Products | Shop – Sesoris`;
+  const description = seo?.seoDescription ?? category.description;
+
   return {
-    title: `${category.name} | Sesoris`,
-    description: category.description,
+    title,
+    description,
     alternates: {
       canonical: `/category/${slug}`,
     },
     openGraph: {
-      title: `${category.name} | Sesoris`,
-      description: category.description,
+      title,
+      description,
+      type: 'website',
       images: [{ url: '/og-default.webp', width: 1200, height: 630, alt: category.name }],
     },
   };
@@ -37,6 +43,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   if (!category) notFound();
 
   const products = getProductsByCategory(slug);
+  const seo = categoryContent[slug];
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -51,8 +58,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: category.name,
-    description: category.description,
+    name: seo?.seoTitle ?? category.name,
+    description: seo?.seoDescription ?? category.description,
     url: `https://www.sesoris.com/category/${slug}`,
     isPartOf: { '@type': 'WebSite', name: 'Sesoris', url: 'https://www.sesoris.com' },
   };
@@ -61,6 +68,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+
       {/* Breadcrumb */}
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
@@ -85,9 +93,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       }}>
         <Image
           src={category.image}
-          alt={category.name}
+          alt={`${category.name} products at Sesoris`}
           fill
           style={{ objectFit: 'cover', opacity: 0.4 }}
+          priority
         />
         <div className="container" style={{
           position: 'relative',
@@ -99,8 +108,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
           <h1 style={{ fontSize: '40px', fontWeight: 700, color: 'white', marginBottom: '8px' }}>
             {category.name}
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px' }}>
-            {category.description}
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', maxWidth: '560px' }}>
+            {seo?.intro?.substring(0, 120) ?? category.description}
           </p>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', marginTop: '8px' }}>
             {products.length} products
@@ -126,6 +135,74 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
           </div>
         )}
       </div>
+
+      {/* SEO Content Section */}
+      {seo && (
+        <div style={{ background: '#F8F9FA', padding: '48px 0', marginTop: '8px' }}>
+          <div className="container">
+            <h2 style={{
+              fontFamily: 'var(--font-heading), Georgia, serif',
+              fontSize: 'clamp(20px, 3vw, 24px)',
+              fontWeight: 400,
+              color: '#212529',
+              marginBottom: '12px',
+            }}>
+              About {category.name}
+            </h2>
+            <p style={{ color: '#495057', fontSize: '15px', lineHeight: '1.7', marginBottom: '32px', maxWidth: '720px' }}>
+              {seo.intro}
+            </p>
+
+            {seo.sections.map((section, i) => (
+              <div key={i} style={{ marginBottom: '28px' }}>
+                <h3 style={{
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  color: '#1B5E3B',
+                  marginBottom: '8px',
+                }}>
+                  {section.heading}
+                </h3>
+                <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.7', maxWidth: '720px' }}>
+                  {section.text}
+                </p>
+              </div>
+            ))}
+
+            {/* Related Categories */}
+            {seo.relatedCategories.length > 0 && (
+              <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid #E9ECEF' }}>
+                <p style={{ fontSize: '14px', color: '#6C757D', marginBottom: '12px' }}>
+                  Also explore:
+                </p>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                  {seo.relatedCategories.map((relSlug) => {
+                    const relCat = categories.find((c) => c.slug === relSlug);
+                    if (!relCat) return null;
+                    return (
+                      <Link
+                        key={relSlug}
+                        href={`/category/${relSlug}`}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: '20px',
+                          border: '1px solid #1B5E3B',
+                          color: '#1B5E3B',
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        {relCat.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }
