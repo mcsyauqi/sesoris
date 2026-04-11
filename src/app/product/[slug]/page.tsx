@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getProductBySlug, products } from '@/data/products';
+import { getProductBySlug, products, getReviewsByProductId } from '@/data/products';
 import ProductPageClient from './ProductPageClient';
 
 export function generateStaticParams() {
@@ -59,8 +59,21 @@ export default async function ProductPage(
         : 'https://schema.org/OutOfStock',
       url: `https://www.sesoris.com/product/${product.slug}`,
       seller: { '@type': 'Organization', name: 'Sesoris' },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 30,
+        returnMethod: 'https://schema.org/ReturnByMail',
+        returnFees: 'https://schema.org/FreeReturn',
+      },
       shippingDetails: {
         '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: 'USD',
+        },
         shippingDestination: {
           '@type': 'DefinedRegion',
           addressCountry: 'ID',
@@ -84,7 +97,7 @@ export default async function ProductPage(
     },
   };
 
-  // Add aggregateRating only if there are reviews
+  // Add aggregateRating and review if there are reviews
   if (product.rating > 0 && product.reviewCount > 0) {
     productSchema.aggregateRating = {
       '@type': 'AggregateRating',
@@ -93,6 +106,22 @@ export default async function ProductPage(
       bestRating: 5,
       worstRating: 1,
     };
+  }
+
+  const productReviews = getReviewsByProductId(product.id);
+  if (productReviews.length > 0) {
+    productSchema.review = productReviews.slice(0, 2).map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.name },
+      datePublished: r.date,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: r.content,
+    }));
   }
 
   const breadcrumbSchema = {
