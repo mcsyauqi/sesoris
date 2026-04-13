@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
+export const revalidate = 3600;
+
 const baseUrl = 'https://www.sesoris.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {

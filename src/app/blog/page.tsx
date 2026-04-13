@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog';
 
+// Revalidate every hour so scheduled articles appear on time
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: 'Blog - Home Organization Tips & Ideas',
   description: 'Read our latest articles about home organization, kitchen storage tips, interior design ideas, and product guides. Expert advice from Sesoris.',

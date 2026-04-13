@@ -7,6 +7,10 @@ import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug } from '@/lib/
 import { NewsletterSidebar } from '@/components/layout';
 import React from 'react';
 
+// Revalidate every hour so scheduled articles appear on time
+export const revalidate = 3600;
+export const dynamicParams = true;
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
