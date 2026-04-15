@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Share2, BookOpen } from 'lucide-react';
-import { notFound, redirect } from 'next/navigation';
+import { notFound, redirect, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
-import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug } from '@/lib/blog';
+import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug, getBlogSeoTitle } from '@/lib/blog';
 import { NewsletterSidebar } from '@/components/layout';
 import React from 'react';
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Blog Sesoris`,
+    title: getBlogSeoTitle(post),
     description: post.excerpt,
     alternates: {
       canonical: `/blog/${slug}`,
@@ -134,9 +134,13 @@ function renderContentBlocks(content: string[]): React.ReactNode[] {
       if (imgMatch) {
         elements.push(
           <figure key={i} style={{ margin: '32px 0', borderRadius: '12px', overflow: 'hidden' }}>
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-              <Image src={imgMatch[2]} alt={imgMatch[1]} fill style={{ objectFit: 'cover', borderRadius: '12px' }} />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgMatch[2]}
+              alt={imgMatch[1]}
+              loading="lazy"
+              style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: '12px', display: 'block' }}
+            />
             {imgMatch[1] && (
               <figcaption style={{
                 fontSize: '13px',
@@ -387,7 +391,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) {
     const closest = findClosestSlug(slug);
     if (closest) {
-      redirect(`/blog/${closest}`);
+      permanentRedirect(`/blog/${closest}`);
     }
     notFound();
   }

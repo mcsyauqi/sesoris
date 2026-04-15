@@ -154,6 +154,35 @@ export default function OnSalePage() {
           </div>
         )}
       </div>
+
+      {/* SEO Content Section */}
+      <div style={{ background: '#F8F9FA', padding: '48px 0' }}>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            Smart Shopping: Sesoris Sale Guide
+          </h2>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            Our sale section features carefully selected discounts on quality home organization products. Every product on sale maintains the same quality standards as our full-price items — you save money without compromising on performance or durability.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            Sale items at Sesoris include home organizers, kitchen storage solutions, desk accessories, personal care products, and more. Discounts range from 10% to 50% off, making it the perfect time to stock up on household essentials or try products you have been eyeing.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '24px' }}>
+            All sale purchases come with our standard 30-day return policy and free shipping on orders over $50. Sale items are available while stocks last, so shop early to secure your favorites.
+          </p>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link href="/best-sellers" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Best Sellers
+            </Link>
+            <Link href="/new-arrivals" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              New Arrivals
+            </Link>
+            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Shop All
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

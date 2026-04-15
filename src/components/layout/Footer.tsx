@@ -27,6 +27,16 @@ const footerLinks = {
     { name: 'Careers', href: '/careers' },
     { name: 'Press', href: '/press' },
   ],
+  popularArticles: [
+    { name: 'Cara Menata Kamar Kost', href: '/blog/cara-menata-kamar-kost' },
+    { name: 'Inspirasi Dapur Minimalis', href: '/blog/inspirasi-dapur-minimalis' },
+    { name: 'Kotak Penyimpanan Terbaik', href: '/blog/kotak-penyimpanan' },
+    { name: 'Perlengkapan Rumah Minimalis', href: '/blog/perlengkapan-rumah-minimalis' },
+    { name: 'Rak Gantung Dapur', href: '/blog/rak-gantung-dapur' },
+    { name: 'Storage Box Lipat', href: '/blog/storage-box-lipat' },
+    { name: 'Tempat Penyimpanan ASI', href: '/blog/tempat-penyimpanan-asi' },
+    { name: 'Teras Rumah Minimalis', href: '/blog/teras-rumah-minimalis' },
+  ],
 };
 
 export function Footer() {
@@ -200,6 +210,18 @@ export function Footer() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Popular Articles */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '24px 0' }}>
+          <h3 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Popular Articles</h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
+            {footerLinks.popularArticles.map((link) => (
+              <Link key={link.name} href={link.href} style={{ fontSize: '13px', opacity: 0.7 }}>
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
 

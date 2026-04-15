@@ -1,0 +1,49 @@
+# Sesoris
+
+> Sesoris is an online store specializing in home organization products, storage solutions, and lifestyle accessories for Indonesian homes.
+
+## About
+
+Sesoris offers 500+ products across categories including home decor, kitchen & dining, tools & gadgets, gift sets, personal care, and tech accessories. We serve customers across Indonesia with free shipping on orders over $50.
+
+## Products
+
+- Home & Decor: Floating shelves, organizers, desk accessories
+- Kitchen & Dining: Dish racks, food containers, kitchen storage
+- Tools & Gadgets: Multi-tools, smart accessories
+- Gift Sets: Premium gift boxes, curated sets
+- Personal Care: Aromatherapy, wellness products
+- Tech Accessories: Wireless earbuds, charging accessories
+
+## Shop
+
+- /shop - Browse all products
+- /category/home-living - Home & Decor
+- /category/kitchen-dining - Kitchen & Dining
+- /category/tools-gadgets - Tools & Gadgets
+- /category/gift-sets - Gift Sets
+- /category/personal-care - Personal Care
+- /category/tech-accessories - Tech Accessories
+- /best-sellers - Best Sellers
+- /new-arrivals - New Arrivals
+- /on-sale - Sale Items
+- /bundles - Product Bundles
+
+## Blog
+
+Sesoris Blog covers home organization tips, storage solutions, interior design inspiration, and lifestyle guides at /blog
+
+## Contact
+
+- Website: https://www.sesoris.com
+- Contact: /contact
+- FAQ: /faq
+- Shipping: /shipping
+- Returns: /returns
+
+## Policies
+
+- Privacy Policy: /privacy
+- Terms of Service: /terms
+- Shipping Policy: /shipping
+- Returns Policy: /returns

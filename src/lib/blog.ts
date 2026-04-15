@@ -4,6 +4,7 @@ import path from 'path';
 export interface BlogPost {
   slug: string;
   title: string;
+  seoTitle?: string;
   excerpt: string;
   image: string;
   category: string;
@@ -16,6 +17,20 @@ export interface BlogPost {
     role: string;
   };
   content: string[];
+}
+
+/**
+ * Returns the best SEO title for a blog post (≤ 70 chars including " | Sesoris" suffix).
+ * Priority: post.seoTitle → truncated post.title
+ */
+export function getBlogSeoTitle(post: BlogPost): string {
+  // " | Sesoris" is appended by layout template, costs 10 chars
+  const MAX_TITLE_LEN = 60;
+  if (post.seoTitle) return post.seoTitle;
+  if (post.title.length <= MAX_TITLE_LEN) return post.title;
+  // Truncate at last word boundary before limit
+  const truncated = post.title.substring(0, MAX_TITLE_LEN).replace(/\s\S*$/, '');
+  return truncated;
 }
 
 const blogDir = path.join(process.cwd(), 'content', 'blog');

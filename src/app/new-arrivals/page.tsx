@@ -147,6 +147,35 @@ export default function NewArrivalsPage() {
           </div>
         )}
       </div>
+
+      {/* SEO Content Section */}
+      <div style={{ background: '#F8F9FA', padding: '48px 0' }}>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            Fresh Arrivals at Sesoris
+          </h2>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            We regularly update our collection with the latest home organization products, storage solutions, and lifestyle accessories. Our new arrivals feature innovative designs selected to meet the evolving needs of modern Indonesian homes.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            Whether you are looking for space-saving furniture, smart kitchen organizers, or stylish desk accessories, our newest products bring fresh solutions to everyday challenges. Each new arrival is carefully vetted for quality, durability, and design before joining the Sesoris collection.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '24px' }}>
+            Be the first to discover the latest home living products. New items are added weekly, so bookmark this page and check back regularly to find the freshest additions to our catalog.
+          </p>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link href="/best-sellers" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Best Sellers
+            </Link>
+            <Link href="/on-sale" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              On Sale
+            </Link>
+            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Shop All
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

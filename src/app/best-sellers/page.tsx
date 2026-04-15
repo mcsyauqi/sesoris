@@ -151,6 +151,38 @@ export default function BestSellersPage() {
           </div>
         )}
       </div>
+
+      {/* SEO Content Section */}
+      <div style={{ background: '#F8F9FA', padding: '48px 0' }}>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            Why Shop Our Best Sellers?
+          </h2>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            Our best-selling products are chosen by thousands of customers who value quality, functionality, and design. Each product on this list has earned its place through consistently high ratings, repeat purchases, and positive reviews from real customers across Indonesia.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            At Sesoris, we curate our best sellers from categories including home organization, kitchen storage, desk accessories, and lifestyle products. Whether you are looking to declutter your home, organize your kitchen, or find the perfect gift, our top-rated products deliver exceptional value.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '24px' }}>
+            All best-selling products come with our quality guarantee, free shipping on orders over $50, and a 30-day return policy. Shop with confidence knowing that what others love, you will love too.
+          </p>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Shop All Products
+            </Link>
+            <Link href="/new-arrivals" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              New Arrivals
+            </Link>
+            <Link href="/on-sale" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              On Sale
+            </Link>
+            <Link href="/category/home-living" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Home & Decor
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

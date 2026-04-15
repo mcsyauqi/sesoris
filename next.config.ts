@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
         destination: '/blog/desain-rumah-minimalis',
         permanent: true,
       },
+      // Redirect broken /blog/best-sellers to the actual best-sellers page
+      {
+        source: '/blog/best-sellers',
+        destination: '/best-sellers',
+        permanent: true,
+      },
     ];
   },
   async headers() {

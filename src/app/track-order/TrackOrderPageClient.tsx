@@ -185,6 +185,26 @@ export default function TrackOrderPageClient() {
               Contact Support
             </Link>
           </div>
+
+          {/* SEO Content */}
+          <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #E9ECEF' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+              How Order Tracking Works at Sesoris
+            </h2>
+            <p style={{ color: '#6C757D', lineHeight: '1.7', marginBottom: '12px', fontSize: '14px' }}>
+              After placing your order at Sesoris, you will receive a confirmation email with your order number. Once your order is shipped, we will send a tracking number that you can use to monitor your delivery in real time.
+            </p>
+            <p style={{ color: '#6C757D', lineHeight: '1.7', marginBottom: '16px', fontSize: '14px' }}>
+              Standard delivery to major cities in Indonesia takes 2-5 business days. For remote areas, delivery may take 5-10 business days. All shipments are fully insured and trackable from our warehouse to your doorstep.
+            </p>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <Link href="/shipping" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>Shipping Policy</Link>
+              <span style={{ color: '#6C757D' }}>·</span>
+              <Link href="/returns" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>Returns Policy</Link>
+              <span style={{ color: '#6C757D' }}>·</span>
+              <Link href="/faq" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>FAQ</Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

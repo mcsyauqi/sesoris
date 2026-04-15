@@ -140,6 +140,35 @@ export default function CollectionsPage() {
           ))}
         </div>
       </div>
+
+      {/* SEO Content Section */}
+      <div style={{ background: '#F8F9FA', padding: '48px 0' }}>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            About Our Collections
+          </h2>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            Sesoris collections are carefully curated groups of products designed to work beautifully together. Each collection is built around a specific lifestyle theme, room, or function — making it easy to find coordinated products that complement each other and your home.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+            From minimalist home office setups to complete kitchen organization systems, our collections take the guesswork out of home styling. Every product within a collection is selected for its design compatibility, quality, and practical value.
+          </p>
+          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '24px' }}>
+            Whether you are furnishing a new home, renovating a specific room, or looking for coordinated gift sets, our collections provide a cohesive starting point. Browse by theme or function and discover products that work together seamlessly.
+          </p>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Shop All Products
+            </Link>
+            <Link href="/best-sellers" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Best Sellers
+            </Link>
+            <Link href="/bundles" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+              Bundle Deals
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
