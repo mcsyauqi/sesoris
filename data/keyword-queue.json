@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "storage solutions for garage",
-    "volume": 8100,
-    "category": "Garage Storage Solutions",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "organization laundry room",
     "volume": 8100,
     "category": "Laundry Room Organization",
