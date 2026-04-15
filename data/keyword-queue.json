@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "organization for laundry room",
-    "volume": 8100,
-    "category": "Laundry Room Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "ideas for shoe storage",
     "volume": 8100,
     "category": "Shoe Storage Ideas",
