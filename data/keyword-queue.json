@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "organization laundry room",
-    "volume": 8100,
-    "category": "Laundry Room Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "organization for laundry room",
     "volume": 8100,
     "category": "Laundry Room Organization",
