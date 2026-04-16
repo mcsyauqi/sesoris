@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "rubbermaid brilliance food storage containers",
-    "volume": 8100,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "storage box",
     "volume": 6600,
     "category": "Home Living",
