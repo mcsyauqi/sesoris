@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "pet food storage containers",
-    "volume": 6600,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "pretty food storage containers",
     "volume": 6600,
     "category": "Food Storage Containers",
