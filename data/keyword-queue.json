@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "storage containers for pet food",
-    "volume": 6600,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "best glass storage containers for food",
     "volume": 6600,
     "category": "Food Storage Containers",
