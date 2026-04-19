@@ -12,7 +12,7 @@ const slides = [
     title: 'Tidy Home,',
     titleAccent: 'Peaceful Life.',
     description: 'Discover smart storage solutions that keep your home organized and beautiful.',
-    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1200&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&h=533&fit=crop&q=75',
     buttonText: 'Explore Collection',
     buttonLink: '/shop',
     stat: { value: '500+', label: 'Products' },
@@ -23,7 +23,7 @@ const slides = [
     title: 'Clean Kitchen,',
     titleAccent: 'Cooking Made Fun.',
     description: 'Kitchen racks, organizers, and premium food containers. The complete solution for your dream kitchen.',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=533&fit=crop&q=75',
     buttonText: 'View Best Sellers',
     buttonLink: '/best-sellers',
     stat: { value: '4.8', label: 'Rating' },
@@ -34,7 +34,7 @@ const slides = [
     title: 'Save Up To',
     titleAccent: '50% Off.',
     description: 'Limited-time deals on select items. Upgrade your home without breaking the bank.',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=533&fit=crop&q=75',
     buttonText: 'Shop Now',
     buttonLink: '/on-sale',
     stat: { value: '50K+', label: 'Customers' },
@@ -76,6 +76,7 @@ export function HeroSlider() {
               fill
               style={{ objectFit: 'cover' }}
               priority={i === 0}
+              sizes="100vw"
             />
           </div>
         ))}

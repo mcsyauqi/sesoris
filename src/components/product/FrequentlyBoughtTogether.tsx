@@ -108,6 +108,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                           src={product.images[0].url}
                           alt={product.name}
                           fill
+                          sizes="40px"
                           style={{ objectFit: 'cover', borderRadius: '6px' }}
                         />
                       </div>

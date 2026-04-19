@@ -76,6 +76,7 @@ export default function BundlesPage() {
                       src={bundle.image}
                       alt={bundle.name}
                       fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ objectFit: 'cover' }}
                     />
                     <div style={{
@@ -131,6 +132,7 @@ export default function BundlesPage() {
                             src={product.images[0].url}
                             alt={product.name}
                             fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                             style={{ objectFit: 'cover' }}
                           />
                         </div>

@@ -16,9 +16,11 @@ export function AboutSection() {
               position: 'relative'
             }}>
               <Image
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=450&fit=crop&q=75"
                 alt="About Sesoris"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
                 style={{ objectFit: 'cover' }}
               />
             </div>

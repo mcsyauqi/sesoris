@@ -138,6 +138,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                         src={product.images[0].url}
                         alt={product.name}
                         fill
+                        sizes="80px"
                         style={{ objectFit: 'cover', borderRadius: '8px' }}
                       />
                     </div>

@@ -124,7 +124,7 @@ export default function PressPage() {
                 boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
               }}>
                 <div style={{ aspectRatio: '16/10', position: 'relative' }}>
-                  <Image src={release.image} alt={release.title} fill style={{ objectFit: 'cover' }} />
+                  <Image src={release.image} alt={release.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '20px' }}>
                   <div style={{ fontSize: '13px', color: '#6C757D', marginBottom: '8px' }}>

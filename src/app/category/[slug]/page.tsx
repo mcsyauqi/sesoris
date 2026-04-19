@@ -95,6 +95,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
           src={category.image}
           alt={`${category.name} products at Sesoris`}
           fill
+          sizes="100vw"
           style={{ objectFit: 'cover', opacity: 0.4 }}
           priority
         />

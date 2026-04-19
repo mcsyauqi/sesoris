@@ -84,6 +84,7 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
                 src={product.images[0].url}
                 alt={product.name}
                 fill
+                sizes="36px"
                 style={{ objectFit: 'cover', borderRadius: '6px' }}
               />
             </div>

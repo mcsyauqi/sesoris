@@ -59,6 +59,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 src={product.images[selectedImage]?.url || product.images[0]?.url || ''}
                 alt={product.images[selectedImage]?.alt || product.name}
                 fill
+                priority={selectedImage === 0}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
               />
               {onSale && (

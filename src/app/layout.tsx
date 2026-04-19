@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
+import dynamic from 'next/dynamic';
+import { Header, Footer, AnnouncementBar } from '@/components/layout';
+
+const NewsletterPopup = dynamic(() => import('@/components/layout/NewsletterPopup').then(m => ({ default: m.NewsletterPopup })), { ssr: false });
 import { DM_Sans, DM_Serif_Display } from 'next/font/google';
 
 const dmSans = DM_Sans({
@@ -86,6 +89,9 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <head>
+        {/* Preconnect to external image hosts for faster LCP */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* JSON-LD Organization Schema */}
         <script
           type="application/ld+json"
@@ -151,9 +157,9 @@ export default function RootLayout({
         {/* Google Analytics 4 */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

@@ -84,7 +84,7 @@ export default function BlogPage() {
             }}>
               <div className="blog-featured-grid" style={{ display: 'grid' }}>
                 <div style={{ aspectRatio: '4/3', position: 'relative' }}>
-                  <Image src={featuredPost.image} alt={featuredPost.title} fill style={{ objectFit: 'cover' }} />
+                  <Image src={featuredPost.image} alt={featuredPost.title} fill priority sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: 'clamp(20px, 4vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
@@ -153,7 +153,7 @@ export default function BlogPage() {
                 height: '100%',
               }}>
                 <div style={{ aspectRatio: '16/10', position: 'relative' }}>
-                  <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} />
+                  <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '20px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>

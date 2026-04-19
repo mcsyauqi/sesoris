@@ -495,7 +495,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <article>
         {/* Hero */}
         <div style={{ position: 'relative', minHeight: '450px', display: 'flex', alignItems: 'flex-end' }}>
-          <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} />
+          <Image src={post.image} alt={post.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
           <div style={{
             position: 'absolute',
             inset: 0,
@@ -647,7 +647,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <Link key={related.slug} href={`/blog/${related.slug}`} style={{ textDecoration: 'none' }}>
                       <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #E9ECEF' }}>
                         <div style={{ position: 'relative', aspectRatio: '16/9' }}>
-                          <Image src={related.image} alt={related.title} fill style={{ objectFit: 'cover' }} />
+                          <Image src={related.image} alt={related.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                         </div>
                         <div style={{ padding: '14px' }}>
                           <span style={{ fontSize: '11px', color: '#1B5E3B', fontWeight: 600, textTransform: 'uppercase' }}>

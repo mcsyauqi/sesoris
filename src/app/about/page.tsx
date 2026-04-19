@@ -77,9 +77,11 @@ export default function AboutPage() {
             <div style={{ position: 'relative' }}>
               <div style={{ aspectRatio: '4/3', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop&q=75"
                   alt="Our Team"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
