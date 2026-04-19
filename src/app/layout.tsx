@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import dynamic from 'next/dynamic';
-import { Header, Footer, AnnouncementBar } from '@/components/layout';
-
-const NewsletterPopup = dynamic(() => import('@/components/layout/NewsletterPopup').then(m => ({ default: m.NewsletterPopup })), { ssr: false });
+import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
 import { DM_Sans, DM_Serif_Display } from 'next/font/google';
 
 const dmSans = DM_Sans({
