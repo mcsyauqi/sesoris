@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "stainless steel food storage containers",
-    "volume": 5400,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "stainless food storage containers",
     "volume": 5400,
     "category": "Food Storage Containers",
