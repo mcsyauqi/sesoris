@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "kitchen food storage containers",
-    "volume": 4400,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "airtight pet food storage containers",
     "volume": 4400,
     "category": "Food Storage Containers",
