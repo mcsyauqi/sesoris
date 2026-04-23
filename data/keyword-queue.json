@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "airtight storage containers for pet food",
-    "volume": 4400,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "rice food storage containers",
     "volume": 4400,
     "category": "Food Storage Containers",
