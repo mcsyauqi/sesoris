@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "rak bumbu dapur",
-    "volume": 3600,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "bathroom storage solutions",
     "volume": 3600,
     "category": "Bathroom Storage Solutions",
