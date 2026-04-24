@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "rice food storage containers",
-    "volume": 4400,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "food storage containers for kitchen",
     "volume": 4400,
     "category": "Food Storage Containers",
