@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "storage solutions for bathroom",
-    "volume": 3600,
-    "category": "Bathroom Storage Solutions",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "rubbermaid food storage containers",
     "volume": 3600,
     "category": "Food Storage Containers",
