@@ -135,4 +135,28 @@ export const categoryContent: Record<string, CategorySEOContent> = {
     ],
     relatedCategories: ['tools-gadgets', 'home-living', 'personal-care'],
   },
+  'bags-pouches': {
+    seoTitle: 'Bags & Pouches | Storage Bags & Organizers – Sesoris',
+    seoDescription: 'Shop premium bags, pouches & carrying organizers at Sesoris — travel bags, storage pouches, tote bags & more. Keep everything organized wherever you go.',
+    intro: 'Stay organized wherever life takes you with Sesoris Bags & Pouches collection — a curated selection of practical, stylish carrying solutions for home storage, travel, work, and everyday adventures. From compact mesh pouches and multi-pocket travel organizers to spacious canvas totes and hanging toiletry bags, every piece is designed to make organization effortless.',
+    sections: [
+      {
+        heading: 'Travel Organization Bags',
+        text: 'Travel smarter with our range of dedicated travel organization bags. Our travel toiletry bags feature waterproof liners, hanging hooks, and multiple compartments to keep your grooming essentials organized and accessible. Packing cubes help you maximize suitcase space while keeping outfits separated. Cable and tech organizers ensure your chargers, earbuds, and accessories are always tangle-free and easy to find — even in a hurry.',
+      },
+      {
+        heading: 'Storage Pouches & Organizers',
+        text: 'Our multi-purpose storage pouches are the ultimate organizational tools for drawers, shelves, and bags. Available in mesh, canvas, and PVC materials, they come in sets with varying sizes to accommodate everything from stationery and cosmetics to cables and craft supplies. The transparent or semi-transparent designs let you identify contents at a glance — no more rummaging through cluttered drawers.',
+      },
+      {
+        heading: 'Canvas Totes & Everyday Bags',
+        text: 'Eco-conscious and incredibly practical, our canvas tote collection combines sustainability with everyday functionality. Reinforced handles, internal zip pockets, and extra-wide gussets make our totes suitable for groceries, gym gear, work essentials, and weekend trips. Available in natural canvas, cotton, and recycled fabric options, these bags are machine-washable and built to last for years of daily use.',
+      },
+      {
+        heading: 'Why Sesoris Bags & Pouches',
+        text: 'Every bag and pouch in the Sesoris collection is chosen for its build quality, functional design, and value for money. We prioritize durable zippers, reinforced stitching, and materials that age gracefully. Whether you need a compact pouch for your nightstand or a spacious tote for weekend errands, our collection has you covered. With free shipping on orders over $50, upgrading your organizational system has never been more accessible.',
+      },
+    ],
+    relatedCategories: ['home-living', 'personal-care', 'tools-gadgets'],
+  },
 };

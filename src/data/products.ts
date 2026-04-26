@@ -49,6 +49,14 @@ export const categories: Category[] = [
     image: '/images/products/wireless-earbuds-hero.webp',
     productCount: 54,
   },
+  {
+    id: '7',
+    name: 'Bags & Pouches',
+    slug: 'bags-pouches',
+    description: 'Stylish bags, pouches, and carrying solutions for home organization, travel, and everyday use.',
+    image: '/images/products/multi-tool-knife-hero.webp',
+    productCount: 6,
+  },
 ];
 
 export const products: Product[] = [
@@ -796,6 +804,251 @@ The feet feature adjustable levelers for uneven floors. The compact dimensions (
     category: categories[0],
     rating: 4.6,
     reviewCount: 14,
+    inStock: true,
+    isNew: true,
+  },
+  {
+    id: '18',
+    name: 'Multi-Purpose Storage Pouch',
+    slug: 'multi-purpose-storage-pouch',
+    description: 'Versatile zippered storage pouch for travel essentials, cables, cosmetics, and everyday organization.',
+    fullDescription: `The Multi-Purpose Storage Pouch from Sesoris is the ultimate organizational companion for home, work, and travel. Its durable water-resistant exterior keeps your belongings safe while the roomy interior holds everything from cables and chargers to cosmetics and stationery.
+
+The smooth YKK-style zipper glides effortlessly open and close, even when the pouch is packed full. Inside, an elastic mesh pocket keeps smaller items visible and separated, while the wide main compartment accommodates larger essentials without bulk.
+
+Available in a sleek charcoal grey, this pouch fits neatly into backpacks, tote bags, suitcases, or desk drawers. The slim profile means it never takes up too much space, yet its capacity surprises anyone who opens it.
+
+Whether you're a frequent flyer, a student, or simply someone who values order at home, this storage pouch delivers reliable organization day after day.`,
+    features: [
+      'Water-resistant nylon exterior',
+      'Smooth full-length zipper for easy access',
+      'Interior elastic mesh pocket for small items',
+      'Wide main compartment fits chargers, cosmetics, stationery',
+      'Slim, lightweight design — only 65 grams',
+      'Fits in bags, drawers, and suitcase pockets',
+    ],
+    specifications: [
+      { label: 'Material', value: 'Water-Resistant Nylon' },
+      { label: 'Dimensions', value: '22 x 14 x 4 cm' },
+      { label: 'Weight', value: '65 grams' },
+      { label: 'Closure', value: 'Full-Length Zipper' },
+      { label: 'Color', value: 'Charcoal Grey' },
+      { label: 'Pockets', value: '1 Main + 1 Mesh' },
+    ],
+    price: 13.99,
+    compareAtPrice: 16.99,
+    images: [
+      { url: '/images/products/bamboo-desk-organizer-hero.webp', alt: 'Multi-Purpose Storage Pouch front view' },
+      { url: '/images/products/bamboo-desk-organizer-closeup.webp', alt: 'Storage Pouch interior detail' },
+      { url: '/images/products/bamboo-desk-organizer-workspace.webp', alt: 'Storage Pouch in use' },
+    ],
+    category: categories[6],
+    rating: 4.6,
+    reviewCount: 12,
+    inStock: true,
+    isNew: true,
+  },
+  {
+    id: '19',
+    name: 'Canvas Tote Organizer Bag',
+    slug: 'canvas-tote-organizer-bag',
+    description: 'Spacious eco-friendly canvas tote with multiple interior pockets, perfect for groceries, gym, and everyday use.',
+    fullDescription: `The Canvas Tote Organizer Bag from Sesoris combines eco-conscious materials with smart organizational design. Made from 100% natural cotton canvas, this tote is machine-washable, durable, and kinder to the planet than single-use bags.
+
+Inside, you'll find a dedicated interior zip pocket for valuables, two slip pockets for phones or water bottles, and the wide main compartment that easily fits a laptop, groceries, or gym gear. The reinforced base keeps the bag upright even when loaded.
+
+The long parallel handles allow comfortable shoulder carrying, while the extra-wide gusset gives the bag enough depth to hold bulky items without stress on the seams. Corner reinforcements add years of life to heavy-use areas.
+
+Use it as your everyday bag, a reusable grocery tote, a gym bag, or a weekend carry-all. It folds flat when empty for easy storage in a drawer or locker.`,
+    features: [
+      '100% natural cotton canvas — machine washable',
+      'Interior zip pocket + 2 slip pockets',
+      'Reinforced base and corner stitching',
+      'Extra-wide gusset for bulky loads',
+      'Long shoulder handles with comfortable grip',
+      'Folds flat for compact storage',
+    ],
+    specifications: [
+      { label: 'Material', value: '100% Cotton Canvas' },
+      { label: 'Dimensions', value: '40 x 35 x 15 cm' },
+      { label: 'Weight', value: '280 grams' },
+      { label: 'Handle Length', value: '60 cm' },
+      { label: 'Color', value: 'Natural Canvas' },
+      { label: 'Care', value: 'Machine Washable 30°C' },
+    ],
+    price: 17.99,
+    compareAtPrice: 21.99,
+    images: [
+      { url: '/images/products/bamboo-desk-organizer-hero.webp', alt: 'Canvas Tote Organizer Bag front view' },
+      { url: '/images/products/bamboo-desk-organizer-detail.webp', alt: 'Canvas Tote interior pockets' },
+      { url: '/images/products/bamboo-desk-organizer-closeup.webp', alt: 'Canvas Tote in daily use' },
+    ],
+    category: categories[6],
+    rating: 4.7,
+    reviewCount: 19,
+    inStock: true,
+    isNew: true,
+  },
+  {
+    id: '20',
+    name: 'Travel Toiletry Bag',
+    slug: 'travel-toiletry-bag',
+    description: 'Hanging travel toiletry organizer with waterproof lining, multiple compartments, and hook for easy access.',
+    fullDescription: `The Travel Toiletry Bag from Sesoris is engineered for travellers who refuse to compromise on organisation. The full-length hanging hook lets you instantly create a organised grooming station in any bathroom — simply hook it over a door, towel bar, or shower rail.
+
+Inside, a waterproof EVA-lined main compartment protects your toiletries from leaks, while clear PVC panels on the inner door panels keep products visible and accessible. Elastic loops hold bottles of varying sizes securely, preventing tipping during transit.
+
+The exterior features a quick-access front pocket ideal for items you reach for most — toothbrush, razor, hand cream. When not in use, the bag rolls up and clicks closed with two snap buttons, taking up minimal space in your luggage.
+
+TSA-compliant sizing means it's approved for carry-on use. Premium materials throughout — nylon oxford exterior, brass-tone zipper pulls, reinforced stitching — make this bag a travel companion that lasts for years.`,
+    features: [
+      'Hanging hook for hotel door or towel bar',
+      'Waterproof EVA-lined main compartment',
+      'Clear PVC inner panels for visibility',
+      'Elastic loops for bottles and tubes',
+      'Front quick-access pocket',
+      'Rolls up and snaps closed for packing',
+    ],
+    specifications: [
+      { label: 'Material', value: 'Nylon Oxford + EVA Lining' },
+      { label: 'Dimensions (open)', value: '28 x 20 x 10 cm' },
+      { label: 'Dimensions (rolled)', value: '20 x 11 x 6 cm' },
+      { label: 'Weight', value: '180 grams' },
+      { label: 'Compartments', value: '3 main + 1 front pocket' },
+      { label: 'Hook', value: 'Stainless Steel, max 3 kg' },
+    ],
+    price: 16.99,
+    compareAtPrice: 20.99,
+    images: [
+      { url: '/images/products/aromatherapy-diffuser-hero.webp', alt: 'Travel Toiletry Bag hanging open' },
+      { url: '/images/products/aromatherapy-diffuser-closeup.webp', alt: 'Travel Toiletry Bag compartments detail' },
+      { url: '/images/products/aromatherapy-diffuser-front-view.webp', alt: 'Travel Toiletry Bag rolled up' },
+    ],
+    category: categories[6],
+    rating: 4.8,
+    reviewCount: 27,
+    inStock: true,
+    isFeatured: true,
+  },
+  {
+    id: '21',
+    name: 'Mesh Zipper Pouches Set',
+    slug: 'mesh-zipper-pouches-set',
+    description: 'Set of 6 mesh zipper pouches in assorted sizes for cables, stationery, cosmetics, and travel accessories.',
+    fullDescription: `The Mesh Zipper Pouches Set from Sesoris gives you six versatile organisers in one convenient bundle — the essential toolkit for anyone who values a clutter-free bag, drawer, or suitcase.
+
+The set includes two large pouches (20 x 14 cm), two medium pouches (16 x 11 cm), and two small pouches (12 x 8 cm). Each features a transparent mesh front that lets you instantly identify contents without opening, and a solid back panel that adds structure and privacy.
+
+Smooth nylon zippers run the full length of each pouch, opening wide for easy access. The mesh material is lightweight yet tear-resistant, and the reinforced zipper ends and seams ensure these pouches survive years of daily use.
+
+Use them to organise cables and adapters, sort makeup and skincare, pack snacks for travel, store craft supplies, or separate documents. Each pouch features a small loop at the zipper pull for easy retrieval from deep bags.`,
+    features: [
+      'Set of 6: 2 large + 2 medium + 2 small',
+      'Transparent mesh front for instant contents visibility',
+      'Smooth full-length nylon zipper',
+      'Reinforced seams and zipper ends',
+      'Lightweight at only 20–40 grams per pouch',
+      'Loop at zipper pull for easy retrieval',
+    ],
+    specifications: [
+      { label: 'Set Contents', value: '6 pouches (2L + 2M + 2S)' },
+      { label: 'Large Pouch', value: '20 x 14 cm' },
+      { label: 'Medium Pouch', value: '16 x 11 cm' },
+      { label: 'Small Pouch', value: '12 x 8 cm' },
+      { label: 'Material', value: 'Mesh Nylon + Solid Nylon Back' },
+      { label: 'Colors', value: 'Navy Blue Set' },
+    ],
+    price: 12.99,
+    compareAtPrice: 15.99,
+    images: [
+      { url: '/images/products/bamboo-desk-organizer-hero.webp', alt: 'Mesh Zipper Pouches Set all 6 pouches' },
+      { url: '/images/products/bamboo-desk-organizer-workspace.webp', alt: 'Mesh Pouches in use for cables' },
+      { url: '/images/products/bamboo-desk-organizer-front-view.webp', alt: 'Mesh Pouch size comparison' },
+    ],
+    category: categories[6],
+    rating: 4.5,
+    reviewCount: 34,
+    inStock: true,
+  },
+  {
+    id: '22',
+    name: 'Hanging Travel Organizer',
+    slug: 'hanging-travel-organizer',
+    description: 'Multi-pocket hanging travel organizer for clothes, documents, and accessories — perfect for hotels and home closets.',
+    fullDescription: `The Hanging Travel Organizer from Sesoris transforms the way you pack and unpack during travel. With 12 compartments across three panels, it provides dedicated spaces for shirts, socks, underwear, documents, chargers, and more — all accessible in seconds by simply hanging it from a closet rod, door hook, or wardrobe rail.
+
+The organizer folds into a compact 35 x 25 cm rectangle secured with two snap buttons, fitting easily into any size suitcase or carry-on. When you arrive at your hotel, unfold it, hang it up, and your entire wardrobe is instantly visible and accessible.
+
+Made from durable 600D polyester with a laminated lining for wipe-clean maintenance, each compartment panel is reinforced at stress points. The top hanger is made from chromed steel rated to hold up to 5 kg fully loaded.
+
+Beyond travel, use it in your bedroom closet to organise seasonal items, scarves, belts, and accessories. The clear-panel compartments let you find what you need without rifling through piles.`,
+    features: [
+      '12 compartments across 3 hanging panels',
+      'Chromed steel hanger rated for 5 kg',
+      'Folds to 35 x 25 cm for easy packing',
+      'Wipe-clean laminated lining',
+      'Reinforced stress points and stitching',
+      'Works in hotel closets, door hooks, and home wardrobes',
+    ],
+    specifications: [
+      { label: 'Material', value: '600D Polyester + Laminated Lining' },
+      { label: 'Unfolded Size', value: '35 x 120 cm (3 panels)' },
+      { label: 'Folded Size', value: '35 x 25 x 4 cm' },
+      { label: 'Weight', value: '420 grams' },
+      { label: 'Compartments', value: '12 total' },
+      { label: 'Hanger', value: 'Chromed Steel, max 5 kg' },
+    ],
+    price: 22.99,
+    compareAtPrice: 27.99,
+    images: [
+      { url: '/images/products/key-holder-hero.webp', alt: 'Hanging Travel Organizer fully unfolded' },
+      { url: '/images/products/key-holder-with-keys.webp', alt: 'Hanging Organizer compartments filled' },
+      { url: '/images/products/key-holder-closeup.webp', alt: 'Hanging Organizer folded for packing' },
+    ],
+    category: categories[6],
+    rating: 4.6,
+    reviewCount: 21,
+    inStock: true,
+    isFeatured: true,
+  },
+  {
+    id: '23',
+    name: 'Gym Drawstring Bag',
+    slug: 'gym-drawstring-bag',
+    description: 'Lightweight drawstring gym bag with reinforced base and interior pocket — ideal for sports, school, and casual use.',
+    fullDescription: `The Gym Drawstring Bag from Sesoris is the no-fuss carrying solution for those who prefer lightweight practicality. Made from 210D ripstop nylon, it's strong enough for daily gym sessions, school runs, and casual outings, while packing down to almost nothing when empty.
+
+The wide opening with dual-cord drawstring closure makes packing fast and retrieval effortless. The reinforced base is made from tarpaulin material — the same used in outdoor gear — ensuring it stands up to whatever you throw at it, literally and figuratively.
+
+An interior slip pocket provides a safe place for keys, a phone, or small valuables, keeping them separated from sweaty gym clothes or heavy books. Padded corners on the base prevent premature wear on hard floors.
+
+Available in bold cobalt blue, this bag is as much a style statement as it is a utility item. A reflective strip across the back panel adds visibility for early morning and late evening training sessions.`,
+    features: [
+      '210D ripstop nylon — lightweight and tear-resistant',
+      'Tarpaulin-reinforced base for durability',
+      'Interior slip pocket for phone and valuables',
+      'Dual-cord drawstring closure',
+      'Reflective strip for low-light visibility',
+      'Packs flat when empty',
+    ],
+    specifications: [
+      { label: 'Material', value: '210D Ripstop Nylon + Tarpaulin Base' },
+      { label: 'Dimensions', value: '45 x 35 cm (approximate)' },
+      { label: 'Capacity', value: '15 litres' },
+      { label: 'Weight', value: '110 grams' },
+      { label: 'Closure', value: 'Dual Drawstring Cord' },
+      { label: 'Color', value: 'Cobalt Blue' },
+    ],
+    price: 14.99,
+    compareAtPrice: 18.99,
+    images: [
+      { url: '/images/products/multi-tool-knife-hero.webp', alt: 'Gym Drawstring Bag front view' },
+      { url: '/images/products/multi-tool-knife-closeup.webp', alt: 'Gym Bag interior pocket' },
+      { url: '/images/products/multi-tool-knife-open.webp', alt: 'Gym Bag in use at the gym' },
+    ],
+    category: categories[6],
+    rating: 4.4,
+    reviewCount: 16,
     inStock: true,
     isNew: true,
   },
