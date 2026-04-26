@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "model kitchen set minimalis",
-    "volume": 2900,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "storage ideas for small space",
     "volume": 2900,
     "category": "Small Space Storage Ideas",
