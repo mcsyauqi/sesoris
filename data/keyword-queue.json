@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "freezable food storage containers",
-    "volume": 3600,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "model kitchen set minimalis",
     "volume": 2900,
     "category": "Kitchen & Dining",
