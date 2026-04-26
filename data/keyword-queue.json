@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "best storage food containers",
-    "volume": 3600,
-    "category": "Food Storage Containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "freezable food storage containers",
     "volume": 3600,
     "category": "Food Storage Containers",
