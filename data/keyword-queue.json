@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "wadah makanan plastik",
-    "volume": 1600,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "closet organization ideas ikea",
     "volume": 1600,
     "category": "Closet Organization Ideas",
