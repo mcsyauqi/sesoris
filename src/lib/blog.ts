@@ -21,15 +21,37 @@ export interface BlogPost {
 
 /**
  * Returns the best SEO title for a blog post (≤ 70 chars including " | Sesoris" suffix).
- * Priority: post.seoTitle → truncated post.title
+ * Priority: post.seoTitle → smart-truncated post.title
+ *
+ * Smart truncation rules:
+ * - Cut at last word boundary before MAX_TITLE_LEN
+ * - Strip trailing connector/preposition words (for, to, of, with, and, in, on, the, a, an, by, at)
+ *   so output never ends mid-thought (e.g. "Efficient Layout for" -> "Efficient Layout")
+ * - Strip trailing punctuation
  */
 export function getBlogSeoTitle(post: BlogPost): string {
   // " | Sesoris" is appended by layout template, costs 10 chars
   const MAX_TITLE_LEN = 60;
   if (post.seoTitle) return post.seoTitle;
   if (post.title.length <= MAX_TITLE_LEN) return post.title;
-  // Truncate at last word boundary before limit
-  const truncated = post.title.substring(0, MAX_TITLE_LEN).replace(/\s\S*$/, '');
+
+  let truncated = post.title.substring(0, MAX_TITLE_LEN).replace(/\s\S*$/, '');
+
+  const STOP_TAILS = new Set([
+    'for', 'to', 'of', 'with', 'and', 'in', 'on', 'the',
+    'a', 'an', 'by', 'at', 'or', 'but', 'as', 'into', 'from',
+  ]);
+  // strip up to 3 trailing connector words
+  for (let i = 0; i < 3; i++) {
+    const lastWord = truncated.split(/\s+/).pop()?.toLowerCase().replace(/[^a-z]/g, '') ?? '';
+    if (STOP_TAILS.has(lastWord)) {
+      truncated = truncated.replace(/\s+\S+$/, '');
+    } else {
+      break;
+    }
+  }
+  // strip trailing punctuation
+  truncated = truncated.replace(/[\s,;:\-–—]+$/, '');
   return truncated;
 }
 
