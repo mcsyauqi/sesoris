@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "craft storage room",
-    "volume": 1600,
-    "category": "Craft Room Storage",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "model kitchen set minimalis terbaru",
     "volume": 1300,
     "category": "Kitchen & Dining",
