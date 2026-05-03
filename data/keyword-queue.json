@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "rak bumbu dapur dari kayu",
-    "volume": 1300,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "walk in closet organization ideas",
     "volume": 1300,
     "category": "Closet Organization Ideas",
