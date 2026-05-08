@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "cleaning supplies organization",
-    "volume": 1300,
-    "category": "Cleaning Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "closet organization for nursery",
     "volume": 1300,
     "category": "Nursery Organization",
