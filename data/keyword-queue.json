@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "closet organization for nursery",
-    "volume": 1300,
-    "category": "Nursery Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "closet organization nursery",
     "volume": 1300,
     "category": "Nursery Organization",
