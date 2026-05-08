@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "cleaning supply organization",
-    "volume": 1300,
-    "category": "Cleaning Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "cleaning supplies organization",
     "volume": 1300,
     "category": "Cleaning Organization",
