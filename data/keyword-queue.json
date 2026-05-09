@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "gambar kitchen set minimalis",
-    "volume": 1000,
-    "category": "Kitchen & Dining",
-    "intent": "Informational",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "home and office organization",
     "volume": 1000,
     "category": "Home Office Organization",
