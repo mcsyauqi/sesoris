@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "organization of home office",
-    "volume": 1000,
-    "category": "Home Office Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "ikea garage storage solutions",
     "volume": 1000,
     "category": "Garage Storage Solutions",
