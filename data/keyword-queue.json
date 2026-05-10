@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "home organization office",
-    "volume": 1000,
-    "category": "Home Office Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "organization for home office",
     "volume": 1000,
     "category": "Home Office Organization",
