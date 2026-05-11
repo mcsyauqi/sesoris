@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "ikea garage storage solutions",
-    "volume": 1000,
-    "category": "Garage Storage Solutions",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "entryway wall organization",
     "volume": 1000,
     "category": "Entryway Organization",
