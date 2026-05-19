@@ -76,6 +76,7 @@ export function HeroSlider() {
               fill
               style={{ objectFit: 'cover' }}
               priority={i === 0}
+              fetchPriority={i === 0 ? 'high' : 'auto'}
               sizes="100vw"
             />
           </div>

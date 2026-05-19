@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Home, ChevronRight, Star, Heart, ShoppingCart, TrendingUp } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export const metadata: Metadata = {
   title: 'Best Sellers',
@@ -72,7 +73,7 @@ export default function BestSellersPage() {
               }}
             >
               <div style={{ aspectRatio: '1', position: 'relative', background: '#F8F9FA' }}>
-                <Image src={product.images[0]?.url || '/placeholder.jpg'} alt={product.name} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" style={{ objectFit: 'cover' }} />
+                <Image src={product.images[0]?.url || '/placeholder.jpg'} alt={getProductImageAlt(product)} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" style={{ objectFit: 'cover' }} />
                 <span style={{
                   position: 'absolute',
                   top: '12px',

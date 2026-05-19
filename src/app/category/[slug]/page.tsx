@@ -7,6 +7,9 @@ import { categoryContent } from '@/data/categoryContent';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
+const stripSesorisBrandSuffix = (title: string) =>
+  title.replace(/\s*(?:-|–|—|â€“)\s*Sesoris$/u, '');
+
 export function generateStaticParams() {
   return categories.map((cat) => ({ slug: cat.slug }));
 }
@@ -19,7 +22,7 @@ export async function generateMetadata(
   if (!category) return {};
 
   const seo = categoryContent[slug];
-  const title = seo?.seoTitle ?? `${category.name} Products | Shop – Sesoris`;
+  const title = seo?.seoTitle ? stripSesorisBrandSuffix(seo.seoTitle) : `${category.name} Products | Shop`;
   const description = seo?.seoDescription ?? category.description;
 
   return {

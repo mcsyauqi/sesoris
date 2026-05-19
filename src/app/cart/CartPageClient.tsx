@@ -1,14 +1,20 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Minus, Plus, Trash2, ShoppingBag, ArrowRight, Tag } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
 import { formatPrice } from '@/lib/utils';
-import { CartUpsell } from '@/components/cart/CartUpsell';
 import { bundles } from '@/data/bundles';
 import { products } from '@/data/products';
+import { getProductImageAlt } from '@/lib/product-image-alt';
+
+const CartUpsell = dynamic(
+  () => import('@/components/cart/CartUpsell').then((mod) => mod.CartUpsell),
+  { ssr: false }
+);
 
 export default function CartPageClient() {
   const { items, removeItem, updateQuantity, getSubtotal, getItemCount } = useCartStore();
@@ -96,7 +102,7 @@ export default function CartPageClient() {
                 }}
               >
                 <div style={{ width: '100px', height: '100px', borderRadius: '12px', overflow: 'hidden', position: 'relative', background: '#F8F9FA' }}>
-                  <Image src={item.product.images[0]?.url || '/placeholder.jpg'} alt={item.product.name} fill style={{ objectFit: 'cover' }} />
+                  <Image src={item.product.images[0]?.url || '/placeholder.jpg'} alt={getProductImageAlt(item.product)} fill style={{ objectFit: 'cover' }} />
                 </div>
 
                 <div>

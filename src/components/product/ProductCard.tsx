@@ -5,11 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Heart, ShoppingCart, Star } from 'lucide-react';
 import { formatPrice, calculateDiscount } from '@/lib/utils';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
 import type { Product } from '@/types';
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product, priority = false }: { product: Product; priority?: boolean }) {
   const [hovered, setHovered] = useState(false);
   const addToCart = useCartStore((s) => s.addItem);
   const { toggleItem, isInWishlist } = useWishlistStore();
@@ -36,8 +37,9 @@ export function ProductCard({ product }: { product: Product }) {
         }}>
           <Image
             src={product.images[0]?.url || ''}
-            alt={product.name}
+            alt={getProductImageAlt(product)}
             fill
+            priority={priority}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             style={{
               objectFit: 'cover',

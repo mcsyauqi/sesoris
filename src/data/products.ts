@@ -55,7 +55,23 @@ export const categories: Category[] = [
     slug: 'bags-pouches',
     description: 'Stylish bags, pouches, and carrying solutions for home organization, travel, and everyday use.',
     image: '/images/products/multi-tool-knife-hero.webp',
-    productCount: 6,
+    productCount: 2,
+  },
+  {
+    id: '8',
+    name: 'Office Desk',
+    slug: 'office-desk',
+    description: 'Desk organizers, lamps, cable tools, and work-from-home accessories for a cleaner workspace.',
+    image: '/images/blog/cara-menciptakan-home-office-yang-produktif-panduan-lifestyle-2026-organized-desk.webp',
+    productCount: 4,
+  },
+  {
+    id: '9',
+    name: 'Outdoor Travel',
+    slug: 'outdoor-travel',
+    description: 'Travel organizers, outdoor bags, and compact packing gear for cleaner trips and everyday mobility.',
+    image: '/images/blog/travel-gear-hero.webp',
+    productCount: 4,
   },
 ];
 
@@ -838,9 +854,9 @@ Whether you're a frequent flyer, a student, or simply someone who values order a
     price: 13.99,
     compareAtPrice: 16.99,
     images: [
-      { url: '/images/products/bamboo-desk-organizer-hero.webp', alt: 'Multi-Purpose Storage Pouch front view' },
-      { url: '/images/products/bamboo-desk-organizer-closeup.webp', alt: 'Storage Pouch interior detail' },
-      { url: '/images/products/bamboo-desk-organizer-workspace.webp', alt: 'Storage Pouch in use' },
+      { url: '/images/blog/bag-organizer-travel-hero.webp', alt: 'Multi-Purpose Storage Pouch front view' },
+      { url: '/images/blog/bag-organizer-travel-section1.webp', alt: 'Storage Pouch interior detail' },
+      { url: '/images/blog/bag-organizer-travel-section2.webp', alt: 'Storage Pouch in use' },
     ],
     category: categories[6],
     rating: 4.6,
@@ -879,9 +895,9 @@ Use it as your everyday bag, a reusable grocery tote, a gym bag, or a weekend ca
     price: 17.99,
     compareAtPrice: 21.99,
     images: [
-      { url: '/images/products/bamboo-desk-organizer-hero.webp', alt: 'Canvas Tote Organizer Bag front view' },
-      { url: '/images/products/bamboo-desk-organizer-detail.webp', alt: 'Canvas Tote interior pockets' },
-      { url: '/images/products/bamboo-desk-organizer-closeup.webp', alt: 'Canvas Tote in daily use' },
+      { url: '/images/blog/tas-travel-lipat-hero.webp', alt: 'Canvas Tote Organizer Bag front view' },
+      { url: '/images/blog/tas-travel-lipat-section1.webp', alt: 'Canvas Tote interior pockets' },
+      { url: '/images/blog/tas-travel-lipat-section2.webp', alt: 'Canvas Tote in daily use' },
     ],
     category: categories[6],
     rating: 4.7,
@@ -920,11 +936,11 @@ TSA-compliant sizing means it's approved for carry-on use. Premium materials thr
     price: 16.99,
     compareAtPrice: 20.99,
     images: [
-      { url: '/images/products/aromatherapy-diffuser-hero.webp', alt: 'Travel Toiletry Bag hanging open' },
-      { url: '/images/products/aromatherapy-diffuser-closeup.webp', alt: 'Travel Toiletry Bag compartments detail' },
-      { url: '/images/products/aromatherapy-diffuser-front-view.webp', alt: 'Travel Toiletry Bag rolled up' },
+      { url: '/images/blog/travel-accessories-hero.webp', alt: 'Travel Toiletry Bag hanging open' },
+      { url: '/images/blog/travel-accessories-section1.webp', alt: 'Travel Toiletry Bag compartments detail' },
+      { url: '/images/blog/travel-accessories-section2.webp', alt: 'Travel Toiletry Bag rolled up' },
     ],
-    category: categories[6],
+    category: categories[8],
     rating: 4.8,
     reviewCount: 27,
     inStock: true,
@@ -961,11 +977,11 @@ Use them to organise cables and adapters, sort makeup and skincare, pack snacks 
     price: 12.99,
     compareAtPrice: 15.99,
     images: [
-      { url: '/images/products/bamboo-desk-organizer-hero.webp', alt: 'Mesh Zipper Pouches Set all 6 pouches' },
-      { url: '/images/products/bamboo-desk-organizer-workspace.webp', alt: 'Mesh Pouches in use for cables' },
-      { url: '/images/products/bamboo-desk-organizer-front-view.webp', alt: 'Mesh Pouch size comparison' },
+      { url: '/images/blog/packing-cubes-hero.webp', alt: 'Mesh Zipper Pouches Set all 6 pouches' },
+      { url: '/images/blog/packing-cubes-section1.webp', alt: 'Mesh Pouches in use for cables' },
+      { url: '/images/blog/packing-cubes-section2.webp', alt: 'Mesh Pouch size comparison' },
     ],
-    category: categories[6],
+    category: categories[8],
     rating: 4.5,
     reviewCount: 34,
     inStock: true,
@@ -1001,11 +1017,11 @@ Beyond travel, use it in your bedroom closet to organise seasonal items, scarves
     price: 22.99,
     compareAtPrice: 27.99,
     images: [
-      { url: '/images/products/key-holder-hero.webp', alt: 'Hanging Travel Organizer fully unfolded' },
-      { url: '/images/products/key-holder-with-keys.webp', alt: 'Hanging Organizer compartments filled' },
-      { url: '/images/products/key-holder-closeup.webp', alt: 'Hanging Organizer folded for packing' },
+      { url: '/images/blog/perlengkapan-traveling-hero.webp', alt: 'Hanging Travel Organizer fully unfolded' },
+      { url: '/images/blog/perlengkapan-traveling-section1.webp', alt: 'Hanging Organizer compartments filled' },
+      { url: '/images/blog/perlengkapan-traveling-section2.webp', alt: 'Hanging Organizer folded for packing' },
     ],
-    category: categories[6],
+    category: categories[8],
     rating: 4.6,
     reviewCount: 21,
     inStock: true,
@@ -1042,11 +1058,11 @@ Available in bold cobalt blue, this bag is as much a style statement as it is a 
     price: 14.99,
     compareAtPrice: 18.99,
     images: [
-      { url: '/images/products/multi-tool-knife-hero.webp', alt: 'Gym Drawstring Bag front view' },
-      { url: '/images/products/multi-tool-knife-closeup.webp', alt: 'Gym Bag interior pocket' },
-      { url: '/images/products/multi-tool-knife-open.webp', alt: 'Gym Bag in use at the gym' },
+      { url: '/images/blog/tas-outdoor-hero.webp', alt: 'Gym Drawstring Bag front view' },
+      { url: '/images/blog/tas-outdoor-section1.webp', alt: 'Gym Bag interior pocket' },
+      { url: '/images/blog/tas-outdoor-section2.webp', alt: 'Gym Bag in use at the gym' },
     ],
-    category: categories[6],
+    category: categories[8],
     rating: 4.4,
     reviewCount: 16,
     inStock: true,
@@ -1178,5 +1194,7 @@ export const getFeaturedProducts = () => products.filter((p) => p.isFeatured);
 export const getNewArrivals = () => products.filter((p) => p.isNew);
 export const getProductBySlug = (slug: string) => products.find((p) => p.slug === slug);
 export const getProductsByCategory = (categorySlug: string) =>
-  products.filter((p) => p.category.slug === categorySlug);
+  categorySlug === 'office-desk'
+    ? products.filter((p) => ['1', '3', '6', '16'].includes(p.id))
+    : products.filter((p) => p.category.slug === categorySlug);
 export const getCategoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);

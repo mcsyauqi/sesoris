@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ShoppingCart, Plus, Tag, Check } from 'lucide-react';
 import type { Bundle, Product } from '@/types';
 import { formatPrice } from '@/lib/utils';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 import { useCartStore } from '@/stores/cart-store';
 
 interface FrequentlyBoughtTogetherProps {
@@ -106,7 +107,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                       <div style={{ width: '40px', height: '40px', position: 'relative', flexShrink: 0 }}>
                         <Image
                           src={product.images[0].url}
-                          alt={product.name}
+                          alt={getProductImageAlt(product)}
                           fill
                           sizes="40px"
                           style={{ objectFit: 'cover', borderRadius: '6px' }}

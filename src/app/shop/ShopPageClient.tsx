@@ -187,8 +187,8 @@ export default function ShopPageClient() {
           {/* Products */}
           <div>
             <div className="grid-products">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {filteredProducts.map((product, index) => (
+                <ProductCard key={product.id} product={product} priority={index < 2} />
               ))}
             </div>
           </div>

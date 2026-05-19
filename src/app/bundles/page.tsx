@@ -5,6 +5,7 @@ import { Tag, ArrowRight } from 'lucide-react';
 import { bundles } from '@/data/bundles';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export const metadata: Metadata = {
   title: 'Bundle Deals — Save Up to 18% | Sesoris',
@@ -130,7 +131,7 @@ export default function BundlesPage() {
                         >
                           <Image
                             src={product.images[0].url}
-                            alt={product.name}
+                            alt={getProductImageAlt(product)}
                             fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                             style={{ objectFit: 'cover' }}

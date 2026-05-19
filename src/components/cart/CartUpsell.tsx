@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ShoppingCart, Check, Tag, ArrowRight } from 'lucide-react';
 import type { Bundle, Product } from '@/types';
 import { formatPrice } from '@/lib/utils';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 import { useCartStore } from '@/stores/cart-store';
 
 interface CartUpsellProps {
@@ -82,7 +83,7 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
             <div style={{ width: '36px', height: '36px', position: 'relative', flexShrink: 0 }}>
               <Image
                 src={product.images[0].url}
-                alt={product.name}
+                alt={getProductImageAlt(product)}
                 fill
                 sizes="36px"
                 style={{ objectFit: 'cover', borderRadius: '6px' }}

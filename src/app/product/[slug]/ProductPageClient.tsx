@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Star, Heart, Minus, Plus, ShoppingCart, Truck, RefreshCw, Shield, Check, Package, ChevronDown, ChevronUp } from 'lucide-react';
@@ -9,9 +10,14 @@ import { formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
 import { ProductReviewSection } from '@/components/product/ProductReviewSection';
-import { FrequentlyBoughtTogether } from '@/components/product/FrequentlyBoughtTogether';
 import { getReviewsByProductId, products as allProducts } from '@/data/products';
 import { getBundlesForProduct } from '@/data/bundles';
+import { getProductImageAlt } from '@/lib/product-image-alt';
+
+const FrequentlyBoughtTogether = dynamic(
+  () => import('@/components/product/FrequentlyBoughtTogether').then((mod) => mod.FrequentlyBoughtTogether),
+  { ssr: false }
+);
 
 export default function ProductPageClient({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
@@ -57,7 +63,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
             }} className="img-hover-zoom">
               <Image
                 src={product.images[selectedImage]?.url || product.images[0]?.url || ''}
-                alt={product.images[selectedImage]?.alt || product.name}
+                alt={getProductImageAlt(product, selectedImage)}
                 fill
                 priority={selectedImage === 0}
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -116,7 +122,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   >
                     <Image
                       src={img.url}
-                      alt={img.alt}
+                      alt={getProductImageAlt(product, idx)}
                       fill
                       style={{ objectFit: 'cover' }}
                     />

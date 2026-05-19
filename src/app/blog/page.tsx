@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
+import { Home, ChevronRight, Calendar, Clock, ArrowRight, Tag, Search } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog';
 
 // Revalidate every hour so scheduled articles appear on time
@@ -18,12 +18,48 @@ export const metadata: Metadata = {
   },
 };
 
-const categories = ['All', 'Tips & Tricks', 'Tutorial', 'Inspiration', 'Lifestyle', 'Review'];
+const POSTS_PER_PAGE = 24;
 
-export default function BlogPage() {
+interface BlogPageProps {
+  searchParams?: Promise<{
+    category?: string;
+    q?: string;
+    page?: string;
+  }>;
+}
+
+function buildBlogHref(params: { category?: string; q?: string; page?: number }) {
+  const query = new URLSearchParams();
+  if (params.category && params.category !== 'All') query.set('category', params.category);
+  if (params.q) query.set('q', params.q);
+  if (params.page && params.page > 1) query.set('page', String(params.page));
+  const value = query.toString();
+  return value ? `/blog?${value}` : '/blog';
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const params = searchParams ? await searchParams : {};
   const allPosts = getAllPosts();
-  const featuredPost = allPosts[0];
-  const posts = allPosts.slice(1);
+  const selectedCategory = params.category || 'All';
+  const searchQuery = (params.q || '').trim();
+  const currentPage = Math.max(1, Number(params.page) || 1);
+  const categoryCounts = allPosts.reduce<Record<string, number>>((acc, post) => {
+    acc[post.category] = (acc[post.category] || 0) + 1;
+    return acc;
+  }, {});
+  const categories = ['All', ...Object.keys(categoryCounts).sort()];
+  const filteredPosts = allPosts.filter((post) => {
+    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+    const text = `${post.title} ${post.excerpt} ${post.category}`.toLowerCase();
+    const matchesSearch = !searchQuery || text.includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+  const showFeatured = selectedCategory === 'All' && !searchQuery && currentPage === 1;
+  const featuredPost = showFeatured ? filteredPosts[0] : null;
+  const listSource = showFeatured ? filteredPosts.slice(1) : filteredPosts;
+  const totalPages = Math.max(1, Math.ceil(listSource.length / POSTS_PER_PAGE));
+  const page = Math.min(currentPage, totalPages);
+  const posts = listSource.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   return (
     <>
@@ -45,29 +81,73 @@ export default function BlogPage() {
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
             Blog Sesoris
           </h1>
-          <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
-            Tips, inspiration, and guides to make your home more organized and comfortable
+          <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '680px', margin: '0 auto' }}>
+            Tips organisasi rumah, inspirasi storage, panduan dapur, dan ide gaya hidup rapi dari Sesoris.
           </p>
         </div>
 
+        <form
+          action="/blog"
+          style={{
+            maxWidth: '640px',
+            margin: '0 auto 28px',
+            display: 'flex',
+            gap: '10px',
+            alignItems: 'center',
+          }}
+        >
+          {selectedCategory !== 'All' && <input type="hidden" name="category" value={selectedCategory} />}
+          <div style={{ position: 'relative', flex: 1 }}>
+            <Search style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '18px', height: '18px', color: '#6C757D' }} />
+            <input
+              type="search"
+              name="q"
+              defaultValue={searchQuery}
+              placeholder="Cari tips rumah rapi, storage, dapur..."
+              style={{
+                width: '100%',
+                padding: '14px 16px 14px 44px',
+                borderRadius: '12px',
+                border: '1px solid #E9ECEF',
+                fontSize: '15px',
+              }}
+            />
+          </div>
+          <button
+            type="submit"
+            style={{
+              padding: '14px 22px',
+              borderRadius: '12px',
+              border: 'none',
+              background: '#1B5E3B',
+              color: 'white',
+              fontWeight: 600,
+              cursor: 'pointer',
+            }}
+          >
+            Cari
+          </button>
+        </form>
+
         {/* Categories */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '48px', flexWrap: 'wrap' }}>
-          {categories.map((cat, i) => (
-            <button
+          {categories.map((cat) => (
+            <Link
               key={cat}
+              href={buildBlogHref({ category: cat, q: searchQuery })}
               style={{
+                display: 'inline-flex',
                 padding: '10px 20px',
                 borderRadius: '50px',
-                border: 'none',
-                background: i === 0 ? '#1B5E3B' : '#F8F9FA',
-                color: i === 0 ? 'white' : '#6C757D',
-                cursor: 'pointer',
+                background: selectedCategory === cat ? '#1B5E3B' : '#F8F9FA',
+                color: selectedCategory === cat ? 'white' : '#6C757D',
                 fontWeight: 500,
                 fontSize: '14px',
+                textDecoration: 'none',
               }}
             >
-              {cat}
-            </button>
+              {cat}{cat !== 'All' ? ` (${categoryCounts[cat]})` : ''}
+            </Link>
           ))}
         </div>
 
@@ -138,9 +218,13 @@ export default function BlogPage() {
         )}
 
         {/* Posts Grid */}
-        <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '32px' }}>
-          Latest Articles
+        <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+          {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
         </h2>
+        <p style={{ color: '#6C757D', marginBottom: '32px', fontSize: '14px' }}>
+          Showing {filteredPosts.length} article{filteredPosts.length === 1 ? '' : 's'}
+          {searchQuery ? ` for "${searchQuery}"` : ''}
+        </p>
         <div className="blog-posts-grid" style={{ display: 'grid', gap: '24px' }}>
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
@@ -189,21 +273,50 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Load More */}
-        <div style={{ textAlign: 'center', marginTop: '48px' }}>
-          <button style={{
-            padding: '14px 32px',
-            borderRadius: '10px',
-            border: '1px solid #E9ECEF',
-            background: 'white',
-            cursor: 'pointer',
-            fontWeight: 500,
-            fontSize: '15px',
-            color: '#212529',
-          }}>
-            Load More
-          </button>
-        </div>
+        {posts.length === 0 && (
+          <div style={{ textAlign: 'center', padding: '48px 16px', background: '#F8F9FA', borderRadius: '16px' }}>
+            <h3 style={{ color: '#212529', marginBottom: '8px' }}>No articles found</h3>
+            <p style={{ color: '#6C757D', marginBottom: '20px' }}>Try another keyword or browse all Sesoris articles.</p>
+            <Link href="/blog" style={{ color: '#1B5E3B', fontWeight: 600, textDecoration: 'none' }}>
+              Back to all articles
+            </Link>
+          </div>
+        )}
+
+        {totalPages > 1 && (
+          <nav aria-label="Blog pagination" style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '48px', flexWrap: 'wrap' }}>
+            {page > 1 && (
+              <Link href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: page - 1 })} style={{ padding: '12px 18px', borderRadius: '10px', border: '1px solid #E9ECEF', color: '#212529', textDecoration: 'none', fontWeight: 500 }}>
+                Previous
+              </Link>
+            )}
+            {Array.from({ length: totalPages }, (_, index) => index + 1).slice(Math.max(0, page - 3), Math.min(totalPages, page + 2)).map((pageNumber) => (
+              <Link
+                key={pageNumber}
+                href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: pageNumber })}
+                aria-current={pageNumber === page ? 'page' : undefined}
+                style={{
+                  minWidth: '44px',
+                  textAlign: 'center',
+                  padding: '12px 14px',
+                  borderRadius: '10px',
+                  border: '1px solid #E9ECEF',
+                  background: pageNumber === page ? '#1B5E3B' : 'white',
+                  color: pageNumber === page ? 'white' : '#212529',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                }}
+              >
+                {pageNumber}
+              </Link>
+            ))}
+            {page < totalPages && (
+              <Link href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: page + 1 })} style={{ padding: '12px 18px', borderRadius: '10px', border: '1px solid #E9ECEF', color: '#212529', textDecoration: 'none', fontWeight: 500 }}>
+                Next
+              </Link>
+            )}
+          </nav>
+        )}
 
         {/* Newsletter */}
         <div style={{

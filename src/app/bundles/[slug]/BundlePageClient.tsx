@@ -7,6 +7,7 @@ import { Home, ChevronRight, ShoppingCart, Check, Tag, Star, Package, Truck, Shi
 import type { Bundle, Product } from '@/types';
 import { formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 
 interface BundlePageClientProps {
   bundle: Bundle;
@@ -136,7 +137,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                     <div style={{ width: '80px', height: '80px', position: 'relative', flexShrink: 0 }}>
                       <Image
                         src={product.images[0].url}
-                        alt={product.name}
+                        alt={getProductImageAlt(product)}
                         fill
                         sizes="80px"
                         style={{ objectFit: 'cover', borderRadius: '8px' }}

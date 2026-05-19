@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Home, ChevronRight, Lock, CreditCard, Truck, ShieldCheck } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
 import { formatPrice } from '@/lib/utils';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export default function CheckoutPageClient() {
   const { items, getSubtotal, getItemCount } = useCartStore();
@@ -230,7 +231,7 @@ export default function CheckoutPageClient() {
                 {items.map((item) => (
                   <div key={item.product.id} style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
                     <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', position: 'relative', background: 'white' }}>
-                      <Image src={item.product.images[0]?.url || '/placeholder.jpg'} alt={item.product.name} fill style={{ objectFit: 'cover' }} />
+                      <Image src={item.product.images[0]?.url || '/placeholder.jpg'} alt={getProductImageAlt(item.product)} fill style={{ objectFit: 'cover' }} />
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontSize: '14px', fontWeight: 500, marginBottom: '4px' }}>{item.product.name}</div>

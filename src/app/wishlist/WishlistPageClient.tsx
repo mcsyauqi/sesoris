@@ -6,6 +6,7 @@ import { Home, ChevronRight, Heart, Trash2, ShoppingCart } from 'lucide-react';
 import { useWishlistStore } from '@/stores/wishlist-store';
 import { useCartStore } from '@/stores/cart-store';
 import { formatPrice } from '@/lib/utils';
+import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export default function WishlistPageClient() {
   const { items, removeItem, clearWishlist } = useWishlistStore();
@@ -106,7 +107,7 @@ export default function WishlistPageClient() {
               }}
             >
               <div style={{ aspectRatio: '1', position: 'relative', background: '#F8F9FA' }}>
-                <Image src={item.images[0]?.url || '/placeholder.jpg'} alt={item.name} fill style={{ objectFit: 'cover' }} />
+                <Image src={item.images[0]?.url || '/placeholder.jpg'} alt={getProductImageAlt(item)} fill style={{ objectFit: 'cover' }} />
                 <button
                   onClick={() => removeItem(item.id)}
                   style={{

@@ -159,4 +159,56 @@ export const categoryContent: Record<string, CategorySEOContent> = {
     ],
     relatedCategories: ['home-living', 'personal-care', 'tools-gadgets'],
   },
+  'office-desk': {
+    seoTitle: 'Office Desk Accessories | Desk Organizers',
+    seoDescription: 'Shop office desk accessories at Sesoris - bamboo desk organizers, LED desk lamps, cable-friendly tools, and productivity essentials for a tidy workspace.',
+    intro: 'Create a calmer, more productive workspace with the Sesoris Office Desk collection. This category brings together desk organizers, work lamps, wireless audio, and practical desk accessories selected for home offices, study corners, and compact workstations. Each product helps reduce visual clutter, keep essentials within reach, and make long work sessions feel easier.',
+    sections: [
+      {
+        heading: 'Desk Organizers for Daily Workflow',
+        text: 'A good desk setup starts with clear zones for stationery, devices, notes, and everyday carry items. Our desk organizers help separate small items so the surface stays clean and searchable, especially for remote workers, students, and creators who use one desk for many tasks.',
+      },
+      {
+        heading: 'Lighting and Focus Accessories',
+        text: 'Focused work needs comfortable lighting and fewer distractions. The office desk collection includes LED desk lamps, wireless charging accessories, and audio tools that support reading, writing, calls, and content work without adding more cable clutter to the table.',
+      },
+      {
+        heading: 'Small Space Office Setup',
+        text: 'You do not need a large room to build a functional home office. Compact desk accessories, cable-friendly tools, and multi-use organizers make small apartments, bedrooms, and shared workspaces easier to maintain without sacrificing style.',
+      },
+      {
+        heading: 'Why Choose Sesoris Office Desk Products',
+        text: 'Sesoris curates office desk accessories around practical organization, durable materials, and clean design. The goal is simple: help your desk look better, work better, and stay organized with products that fit naturally into everyday routines.',
+      },
+    ],
+    relatedCategories: ['home-living', 'tech-accessories', 'tools-gadgets'],
+  },
+  'outdoor-travel': {
+    seoTitle: 'Outdoor Travel Gear | Travel Organizers and Bags',
+    seoDescription: 'Shop outdoor travel gear at Sesoris: toiletry bags, mesh pouches, hanging organizers, and lightweight bags for tidy trips.',
+    intro: 'The Sesoris Outdoor Travel collection is built for people who want every trip to feel lighter, cleaner, and easier to manage. This category brings together compact travel organizers, hanging toiletry bags, mesh zipper pouches, gym drawstring bags, and foldable packing tools that keep small essentials visible and protected. Whether you are preparing for a weekend staycation, a business trip, a gym session, or a longer holiday, the right travel storage system helps you pack faster, avoid messy luggage, and find what you need without unpacking everything.',
+    sections: [
+      {
+        heading: 'Travel Organizers for Cleaner Packing',
+        text: 'A good travel organizer turns one crowded bag into clear zones for toiletries, cables, documents, clothes, and daily carry items. Sesoris travel pouches are selected for lightweight materials, practical compartments, smooth zippers, and compact shapes that fit backpacks, cabin luggage, tote bags, and gym bags. Use small mesh pouches for chargers and medicine, medium pouches for skincare or documents, and larger hanging organizers for clothing or bathroom essentials.',
+      },
+      {
+        heading: 'Outdoor Bags for Everyday Mobility',
+        text: 'Outdoor travel does not always mean a long hike. Many customers need simple bags for commuting, gym routines, day trips, school runs, and casual weekend plans. The Outdoor Travel category includes lightweight drawstring bags, durable travel toiletry bags, and multi-pocket organizers that can move from suitcase to closet to bathroom hook. Reinforced seams, water-resistant linings, and quick-access pockets make the products useful in real daily situations.',
+      },
+      {
+        heading: 'How to Choose the Right Travel Gear',
+        text: 'Start with the items that usually create clutter. If toiletries leak or disappear in your suitcase, choose a hanging toiletry bag with waterproof lining. If cables, adapters, and small accessories mix together, choose mesh zipper pouches so you can see the contents quickly. If you often unpack at hotels or guest houses, a hanging travel organizer saves time because it can be opened and used immediately. For gym or casual outdoor use, a lightweight drawstring bag gives enough capacity without adding bulk.',
+      },
+      {
+        heading: 'Internal Links and Related Shopping Paths',
+        text: 'Outdoor travel products work well with Bags & Pouches for daily carry, Tech Accessories for cable management, Personal Care for toiletry essentials, and Tools & Gadgets for compact practical items. Customers who are building a complete travel setup can combine a toiletry bag, mesh pouch set, compact bag, and cable organizer so every category of item has its own place.',
+      },
+      {
+        heading: 'Why Choose Sesoris Outdoor Travel Products',
+        text: 'Sesoris curates travel gear around simple organization, durable materials, and practical design. The goal is not to add more items to your bag, but to make every item easier to find and easier to protect. Each product is chosen for repeated use across home, work, gym, and travel routines, so your packing system stays useful after the trip is over.',
+      },
+    ],
+    relatedCategories: ['bags-pouches', 'tech-accessories', 'personal-care', 'tools-gadgets'],
+  },
 };
