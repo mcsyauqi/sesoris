@@ -46,3 +46,5 @@ token_gmail.json
 token.json
 client_secret.json
 .claude/
+.env*.local
+content/blog.bak/
