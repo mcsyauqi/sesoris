@@ -1,5 +1,21 @@
 #!/usr/bin/env python3
-"""Generate all 42 SEO blog articles for Sesoris as JSON files with images."""
+"""Generate all 42 SEO blog articles for Sesoris as JSON files with images.
+
+# US citations removed 2026-05-19 per audit
+# Author personas consolidated to 'Tim Sesoris' (editorial team byline)
+# USD pricing removed -- Sesoris is an Indonesian e-commerce site (IDR)
+#
+# Anti-pattern lessons (for SKILL.md):
+# - DO NOT inject US blog citations (The Spruce, Good Housekeeping, Real Simple,
+#   Better Homes, Architectural Digest) into Indonesian/non-US content templates.
+#   These are fabricated authority signals that fail fact-checks.
+# - DO NOT use rotating fake author personas (Ayu Lestari, Hendra Kusuma, etc.)
+#   without real bios; use a single editorial byline like 'Tim Sesoris' instead.
+# - DO NOT use USD pricing on IDR-target sites. Convert to local currency or
+#   omit prices and direct users to marketplace listings.
+# - DO NOT make verbatim savings claims like '$1,500 annually' without verifiable
+#   local data sources (BPS, Kemenkeu, KemPPN/Bappenas).
+"""
 import json, os, sys, urllib.request, shutil
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -160,16 +176,15 @@ date_labels = {
     "2026-04-01": "1 April 2026", "2026-04-02": "2 April 2026",
 }
 
+# Author personas consolidated 2026-05-19 per audit.
+# Previously rotated 5 fake personas; consolidated to single editorial byline.
 authors = [
-    {"name": "Ayu Lestari", "avatar": "AL", "role": "Home Organization Expert"},
-    {"name": "Rizki Pratama", "avatar": "RP", "role": "Interior Design Enthusiast"},
-    {"name": "Sari Dewi", "avatar": "SD", "role": "Kitchen & Cooking Expert"},
-    {"name": "Budi Santoso", "avatar": "BS", "role": "Travel & Outdoor Expert"},
-    {"name": "Dina Maharani", "avatar": "DM", "role": "Lifestyle & Home Blogger"},
+    {"name": "Tim Sesoris", "avatar": "TS", "role": "Editorial Team"},
 ]
 
 def get_author(idx):
-    return authors[idx % len(authors)]
+    # Single editorial byline for all articles (no rotating fake personas)
+    return authors[0]
 
 # ============================================================================
 # ARTICLE 1: rak-serbaguna
