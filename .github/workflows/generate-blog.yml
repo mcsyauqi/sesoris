@@ -33,11 +33,20 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npm run generate:blog
 
+      - name: Verify generation produced files (cycle #9 audit)
+        run: |
+          echo "=== Untracked .json in content/blog ==="
+          git ls-files --others --exclude-standard content/blog/ | head -5
+          echo "=== Git status (porcelain) ==="
+          git status --porcelain | head -20
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add content/blog/ public/images/blog/ data/keyword-queue.json
+          echo "=== Staged paths ==="
+          git diff --staged --name-only
           if git diff --staged --quiet; then
             echo "No new blog post generated"
             exit 0
