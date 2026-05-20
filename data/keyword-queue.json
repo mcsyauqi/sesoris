@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "cleaning organization",
-    "volume": 1000,
-    "category": "Cleaning Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "organization and cleaning services",
     "volume": 1000,
     "category": "Cleaning Organization",
