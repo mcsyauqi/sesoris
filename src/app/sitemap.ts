@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllSlugs } from '@/lib/blog';
+import { getAllPosts } from '@/lib/blog';
 import { products, categories } from '@/data/products';
 
 const baseUrl = 'https://www.sesoris.com';
@@ -136,9 +136,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Blog article pages
-  const blogPages: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
+  // Blog article pages (date-filtered: only published, no future-dated)
+  // Fixed 2026-05-21: switched from getAllSlugs() to getAllPosts() to prevent
+  // GSC warnings on future-dated blog URLs (was causing 84 warnings).
+  const blogPages: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
     lastModified: LAST_BLOG_UPDATE,
     changeFrequency: 'monthly',
     priority: 0.6,
