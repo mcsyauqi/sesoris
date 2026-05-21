@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "organization cleaning services",
-    "volume": 1000,
-    "category": "Cleaning Organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "rak penyimpanan barang",
     "volume": 880,
     "category": "Home Living",
