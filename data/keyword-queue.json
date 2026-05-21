@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "rak penyimpanan barang",
-    "volume": 880,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "desain kitchen set minimalis",
     "volume": 880,
     "category": "Kitchen & Dining",
