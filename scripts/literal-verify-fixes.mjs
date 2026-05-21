@@ -31,8 +31,8 @@ function convertUsdRangeToIdr(str) {
 }
 
 function fixEmDash(str) {
-  // Replace — (em-dash) with comma+space or appropriate punctuation
-  return str.replace(/\s*—\s*/g, ', ');
+  // Replace, (em-dash) with comma+space or appropriate punctuation
+  return str.replace(/\s*, \s*/g, ', ');
 }
 
 function fixReadAlsoBlock(contentArr) {
@@ -129,7 +129,7 @@ function applyFixes() {
         const before = entry;
         const after = fixEmDash(entry);
         if (before !== after) {
-          dashHits += (before.match(/—/g) || []).length;
+          dashHits += (before.match(/, /g) || []).length;
           return after;
         }
         return entry;

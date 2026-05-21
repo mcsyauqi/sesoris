@@ -75,13 +75,13 @@ function buildChecks(htmlText, jsonData) {
   // 14. "Tim Sesoris" byline present
   checks.c14_tim_sesoris = /Tim Sesoris/.test(html) ? 1 : 0;
 
-  // 15. Em-dash absent (no — character in user-facing text)
+  // 15. Em-dash absent (no, character in user-facing text)
   // We check the rendered visible HTML between body tags
   const bodyMatch = html.match(/<body[^>]*>([\s\S]+)<\/body>/i);
   const bodyHtml = bodyMatch ? bodyMatch[1] : html;
   // Strip script/style
   const visible = bodyHtml.replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '');
-  const emDashHits = (visible.match(/—/g) || []).length;
+  const emDashHits = (visible.match(/, /g) || []).length;
   checks.c15_no_em_dash = emDashHits === 0 ? 1 : 0;
 
   const score = Object.values(checks).reduce((a, b) => a + b, 0);

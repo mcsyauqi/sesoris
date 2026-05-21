@@ -133,7 +133,7 @@ TOPIC CONTEXT:
   const textBlock = message.content.find((b) => b.type === 'text');
   if (!textBlock || textBlock.type !== 'text') {
     putbackKeyword?.();
-    console.log('No text response from Claude — skipping gracefully');
+    console.log('No text response from Claude, skipping gracefully');
     process.exit(0);
   }
 
@@ -149,7 +149,7 @@ TOPIC CONTEXT:
     generated = JSON.parse(responseText);
   } catch {
     putbackKeyword?.();
-    console.log('Failed to parse Claude response as JSON — skipping gracefully');
+    console.log('Failed to parse Claude response as JSON, skipping gracefully');
     process.exit(0);
   }
 
@@ -158,20 +158,20 @@ TOPIC CONTEXT:
   for (const field of required) {
     if (!generated[field]) {
       putbackKeyword?.();
-      console.log(`Missing required field: ${field} — skipping gracefully`);
+      console.log(`Missing required field: ${field}, skipping gracefully`);
       process.exit(0);
     }
   }
   if (!Array.isArray(generated.content) || generated.content.length < 5) {
     putbackKeyword?.();
-    console.log('Content must be an array with at least 5 paragraphs — skipping gracefully');
+    console.log('Content must be an array with at least 5 paragraphs, skipping gracefully');
     process.exit(0);
   }
 
   const filePath = path.join(blogDir, `${generated.slug}.json`);
   if (fs.existsSync(filePath)) {
-    // Slug duplicate — keyword already consumed, don't putback (try different keyword next run)
-    console.log(`Post already exists: ${generated.slug} — skipping gracefully`);
+    // Slug duplicate, keyword already consumed, don't putback (try different keyword next run)
+    console.log(`Post already exists: ${generated.slug}, skipping gracefully`);
     process.exit(0);
   }
 

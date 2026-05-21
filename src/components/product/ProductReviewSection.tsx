@@ -239,7 +239,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                 Your Review <span style={{ color: '#DC3545' }}>*</span>
               </label>
               <textarea
-                placeholder="Share your honest experience — quality, durability, what you liked or disliked..."
+                placeholder="Share your honest experience, quality, durability, what you liked or disliked..."
                 value={form.content}
                 onChange={(e) => setForm((f) => ({ ...f, content: e.target.value }))}
                 rows={4}
@@ -281,7 +281,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                 <input type="file" accept="image/*" style={{ display: 'none' }} />
               </label>
               <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#6C757D' }}>
-                Show your {productName} in use — photo reviews get 3x more helpful votes!
+                Show your {productName} in use, photo reviews get 3x more helpful votes!
               </p>
             </div>
 

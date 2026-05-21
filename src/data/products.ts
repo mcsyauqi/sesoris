@@ -129,7 +129,7 @@ The built-in LED screen displays real-time water temperature and the amount of w
 
 Made from food-grade 304 stainless steel with dual vacuum insulation technology, this bottle can keep drinks cold for up to 24 hours or hot for up to 12 hours. The anti-bacterial inner lining ensures your water stays fresh and hygienic.
 
-The ergonomic design with an anti-slip grip makes it easy to carry this bottle anywhere — the gym, office, or outdoors. The secure one-touch lid prevents spills and can be easily opened with one hand.`,
+The ergonomic design with an anti-slip grip makes it easy to carry this bottle anywhere, the gym, office, or outdoors. The secure one-touch lid prevents spills and can be easily opened with one hand.`,
     features: [
       'Smart sensor with Bluetooth connectivity',
       'LED display for temperature and volume',
@@ -218,7 +218,7 @@ This set includes: an aromatherapy scented candle with a soothing lavender-vanil
 
 All products are packaged in a premium box with matte finishing and satin ribbon. A personalizable greeting card is included for a personal touch. The box uses eco-friendly materials that are recyclable.
 
-Perfect for various occasions: birthdays, anniversaries, Mother's Day, or simply to show appreciation to loved ones. The beautiful packaging means you don't need to wrap it again — it's ready to give.`,
+Perfect for various occasions: birthdays, anniversaries, Mother's Day, or simply to show appreciation to loved ones. The beautiful packaging means you don't need to wrap it again, it's ready to give.`,
     features: [
       'Aromatherapy scented candle 200g (40-hour burn time)',
       'Organic bath bomb set 3 pcs',
@@ -353,7 +353,7 @@ The powerful 150W motor with 6 stainless steel blades can blend frozen fruit, ve
 
 The rechargeable 2000mAh lithium battery via USB-C can be used for 15-20 blending cycles per charge. The LED indicator shows battery status and operation. The safety lock ensures the motor won't spin if the lid is not properly secured.
 
-The jar is made from BPA-free Tritan that is food-safe, impact-resistant, and doesn't retain odors. Easy to clean — just fill with water and soap, then run the blender. The leak-proof design allows you to drink directly from the jar or carry it in your bag.`,
+The jar is made from BPA-free Tritan that is food-safe, impact-resistant, and doesn't retain odors. Easy to clean, just fill with water and soap, then run the blender. The leak-proof design allows you to drink directly from the jar or carry it in your bag.`,
     features: [
       '150W motor with 6 stainless steel blades',
       '400ml personal size capacity',
@@ -748,7 +748,7 @@ The top section functions as a small shelf for placing wallets, sunglasses, or m
 
 Made from a combination of select walnut wood and brushed stainless steel, delivering a premium look perfect for entryways, hallways, or areas near the door. Wall-mounted design with 2 concealed screw points.
 
-N52-grade neodymium magnets — the highest grade — can hold up to 500 grams per point, strong enough for even the heaviest keychains. The wood surface is coated with clear coat for long-lasting protection.`,
+N52-grade neodymium magnets, the highest grade, can hold up to 500 grams per point, strong enough for even the heaviest keychains. The wood surface is coated with clear coat for long-lasting protection.`,
     features: [
       'N52 neodymium magnets - highest grade',
       'Top shelf for wallet and accessories',
@@ -840,7 +840,7 @@ Whether you're a frequent flyer, a student, or simply someone who values order a
       'Smooth full-length zipper for easy access',
       'Interior elastic mesh pocket for small items',
       'Wide main compartment fits chargers, cosmetics, stationery',
-      'Slim, lightweight design — only 65 grams',
+      'Slim, lightweight design, only 65 grams',
       'Fits in bags, drawers, and suitcase pockets',
     ],
     specifications: [
@@ -877,7 +877,7 @@ The long parallel handles allow comfortable shoulder carrying, while the extra-w
 
 Use it as your everyday bag, a reusable grocery tote, a gym bag, or a weekend carry-all. It folds flat when empty for easy storage in a drawer or locker.`,
     features: [
-      '100% natural cotton canvas — machine washable',
+      '100% natural cotton canvas, machine washable',
       'Interior zip pocket + 2 slip pockets',
       'Reinforced base and corner stitching',
       'Extra-wide gusset for bulky loads',
@@ -910,13 +910,13 @@ Use it as your everyday bag, a reusable grocery tote, a gym bag, or a weekend ca
     name: 'Travel Toiletry Bag',
     slug: 'travel-toiletry-bag',
     description: 'Hanging travel toiletry organizer with waterproof lining, multiple compartments, and hook for easy access.',
-    fullDescription: `The Travel Toiletry Bag from Sesoris is engineered for travellers who refuse to compromise on organisation. The full-length hanging hook lets you instantly create a organised grooming station in any bathroom — simply hook it over a door, towel bar, or shower rail.
+    fullDescription: `The Travel Toiletry Bag from Sesoris is engineered for travellers who refuse to compromise on organisation. The full-length hanging hook lets you instantly create a organised grooming station in any bathroom, simply hook it over a door, towel bar, or shower rail.
 
 Inside, a waterproof EVA-lined main compartment protects your toiletries from leaks, while clear PVC panels on the inner door panels keep products visible and accessible. Elastic loops hold bottles of varying sizes securely, preventing tipping during transit.
 
-The exterior features a quick-access front pocket ideal for items you reach for most — toothbrush, razor, hand cream. When not in use, the bag rolls up and clicks closed with two snap buttons, taking up minimal space in your luggage.
+The exterior features a quick-access front pocket ideal for items you reach for most, toothbrush, razor, hand cream. When not in use, the bag rolls up and clicks closed with two snap buttons, taking up minimal space in your luggage.
 
-TSA-compliant sizing means it's approved for carry-on use. Premium materials throughout — nylon oxford exterior, brass-tone zipper pulls, reinforced stitching — make this bag a travel companion that lasts for years.`,
+TSA-compliant sizing means it's approved for carry-on use. Premium materials throughout, nylon oxford exterior, brass-tone zipper pulls, reinforced stitching, make this bag a travel companion that lasts for years.`,
     features: [
       'Hanging hook for hotel door or towel bar',
       'Waterproof EVA-lined main compartment',
@@ -951,7 +951,7 @@ TSA-compliant sizing means it's approved for carry-on use. Premium materials thr
     name: 'Mesh Zipper Pouches Set',
     slug: 'mesh-zipper-pouches-set',
     description: 'Set of 6 mesh zipper pouches in assorted sizes for cables, stationery, cosmetics, and travel accessories.',
-    fullDescription: `The Mesh Zipper Pouches Set from Sesoris gives you six versatile organisers in one convenient bundle — the essential toolkit for anyone who values a clutter-free bag, drawer, or suitcase.
+    fullDescription: `The Mesh Zipper Pouches Set from Sesoris gives you six versatile organisers in one convenient bundle, the essential toolkit for anyone who values a clutter-free bag, drawer, or suitcase.
 
 The set includes two large pouches (20 x 14 cm), two medium pouches (16 x 11 cm), and two small pouches (12 x 8 cm). Each features a transparent mesh front that lets you instantly identify contents without opening, and a solid back panel that adds structure and privacy.
 
@@ -990,8 +990,8 @@ Use them to organise cables and adapters, sort makeup and skincare, pack snacks 
     id: '22',
     name: 'Hanging Travel Organizer',
     slug: 'hanging-travel-organizer',
-    description: 'Multi-pocket hanging travel organizer for clothes, documents, and accessories — perfect for hotels and home closets.',
-    fullDescription: `The Hanging Travel Organizer from Sesoris transforms the way you pack and unpack during travel. With 12 compartments across three panels, it provides dedicated spaces for shirts, socks, underwear, documents, chargers, and more — all accessible in seconds by simply hanging it from a closet rod, door hook, or wardrobe rail.
+    description: 'Multi-pocket hanging travel organizer for clothes, documents, and accessories, perfect for hotels and home closets.',
+    fullDescription: `The Hanging Travel Organizer from Sesoris transforms the way you pack and unpack during travel. With 12 compartments across three panels, it provides dedicated spaces for shirts, socks, underwear, documents, chargers, and more, all accessible in seconds by simply hanging it from a closet rod, door hook, or wardrobe rail.
 
 The organizer folds into a compact 35 x 25 cm rectangle secured with two snap buttons, fitting easily into any size suitcase or carry-on. When you arrive at your hotel, unfold it, hang it up, and your entire wardrobe is instantly visible and accessible.
 
@@ -1031,16 +1031,16 @@ Beyond travel, use it in your bedroom closet to organise seasonal items, scarves
     id: '23',
     name: 'Gym Drawstring Bag',
     slug: 'gym-drawstring-bag',
-    description: 'Lightweight drawstring gym bag with reinforced base and interior pocket — ideal for sports, school, and casual use.',
+    description: 'Lightweight drawstring gym bag with reinforced base and interior pocket, ideal for sports, school, and casual use.',
     fullDescription: `The Gym Drawstring Bag from Sesoris is the no-fuss carrying solution for those who prefer lightweight practicality. Made from 210D ripstop nylon, it's strong enough for daily gym sessions, school runs, and casual outings, while packing down to almost nothing when empty.
 
-The wide opening with dual-cord drawstring closure makes packing fast and retrieval effortless. The reinforced base is made from tarpaulin material — the same used in outdoor gear — ensuring it stands up to whatever you throw at it, literally and figuratively.
+The wide opening with dual-cord drawstring closure makes packing fast and retrieval effortless. The reinforced base is made from tarpaulin material, the same used in outdoor gear, ensuring it stands up to whatever you throw at it, literally and figuratively.
 
 An interior slip pocket provides a safe place for keys, a phone, or small valuables, keeping them separated from sweaty gym clothes or heavy books. Padded corners on the base prevent premature wear on hard floors.
 
 Available in bold cobalt blue, this bag is as much a style statement as it is a utility item. A reflective strip across the back panel adds visibility for early morning and late evening training sessions.`,
     features: [
-      '210D ripstop nylon — lightweight and tear-resistant',
+      '210D ripstop nylon, lightweight and tear-resistant',
       'Tarpaulin-reinforced base for durability',
       'Interior slip pocket for phone and valuables',
       'Dual-cord drawstring closure',

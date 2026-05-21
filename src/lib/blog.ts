@@ -51,7 +51,7 @@ export function getBlogSeoTitle(post: BlogPost): string {
     }
   }
   // strip trailing punctuation
-  truncated = truncated.replace(/[\s,;:\-–—]+$/, '');
+  truncated = truncated.replace(/[\s,;:\-–, ]+$/, '');
   return truncated;
 }
 

@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 const stripSesorisBrandSuffix = (title: string) =>
-  title.replace(/\s*(?:-|–|—|â€“)\s*Sesoris$/u, '');
+  title.replace(/\s*(?:-|–|, |â€“)\s*Sesoris$/u, '');
 
 export function generateStaticParams() {
   return categories.map((cat) => ({ slug: cat.slug }));

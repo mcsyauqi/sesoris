@@ -163,7 +163,7 @@ export default function OnSalePage() {
             Smart Shopping: Sesoris Sale Guide
           </h2>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
-            Our sale section features carefully selected discounts on quality home organization products. Every product on sale maintains the same quality standards as our full-price items — you save money without compromising on performance or durability.
+            Our sale section features carefully selected discounts on quality home organization products. Every product on sale maintains the same quality standards as our full-price items, you save money without compromising on performance or durability.
           </p>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
             Sale items at Sesoris include home organizers, kitchen storage solutions, desk accessories, personal care products, and more. Discounts range from 10% to 50% off, making it the perfect time to stock up on household essentials or try products you have been eyeing.

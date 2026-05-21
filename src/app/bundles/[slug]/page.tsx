@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const bundle = getBundleBySlug(slug);
   if (!bundle) return {};
   return {
-    title: `${bundle.name} — Save ${bundle.discountPercent}% | Sesoris`,
+    title: `${bundle.name}, Save ${bundle.discountPercent}% | Sesoris`,
     description: bundle.description,
     alternates: { canonical: `/bundles/${bundle.slug}` },
     openGraph: {

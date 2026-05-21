@@ -8,11 +8,11 @@ import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export const metadata: Metadata = {
-  title: 'Bundle Deals — Save Up to 18% | Sesoris',
+  title: 'Bundle Deals, Save Up to 18% | Sesoris',
   description: 'Shop curated product bundles at Sesoris and save up to 18%. Kitchen Starter Kit, Home Office Bundle, Organizer Essential, and more.',
   alternates: { canonical: '/bundles' },
   openGraph: {
-    title: 'Bundle Deals — Save Up to 18% | Sesoris',
+    title: 'Bundle Deals, Save Up to 18% | Sesoris',
     description: 'Shop curated product bundles and save up to 18% vs buying separately.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
@@ -40,7 +40,7 @@ export default function BundlesPage() {
             Save More, Buy Together
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', maxWidth: '500px', margin: '0 auto' }}>
-            Curated product sets designed to work perfectly together — at up to 18% off.
+            Curated product sets designed to work perfectly together, at up to 18% off.
           </p>
         </div>
       </div>

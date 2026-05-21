@@ -149,7 +149,7 @@ export default function CollectionsPage() {
             About Our Collections
           </h2>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
-            Sesoris collections are carefully curated groups of products designed to work beautifully together. Each collection is built around a specific lifestyle theme, room, or function — making it easy to find coordinated products that complement each other and your home.
+            Sesoris collections are carefully curated groups of products designed to work beautifully together. Each collection is built around a specific lifestyle theme, room, or function, making it easy to find coordinated products that complement each other and your home.
           </p>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
             From minimalist home office setups to complete kitchen organization systems, our collections take the guesswork out of home styling. Every product within a collection is selected for its design compatibility, quality, and practical value.

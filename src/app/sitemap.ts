@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.9,
     },
-    // /collections removed from sitemap 2026-05-14 — page returned 404,
+    // /collections removed from sitemap 2026-05-14, page returned 404,
     // now 301-redirected to /shop via next.config.ts. Keep out of sitemap
     // until a dedicated /collections index is restored.
     {

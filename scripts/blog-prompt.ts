@@ -65,7 +65,7 @@ ${basePrompt}
 
 CONTENT QUALITY GUIDELINES:
 - Articles should be 1500-2500 words, informative and comprehensive
-- CRITICAL: Write ENTIRELY in English. Do NOT use any Indonesian/Bahasa words anywhere — not in titles, headings, body text, or FAQ. This is an international English website
+- CRITICAL: Write ENTIRELY in English. Do NOT use any Indonesian/Bahasa words anywhere, not in titles, headings, body text, or FAQ. This is an international English website
 - Write in natural, friendly, and conversational English
 - Use specific data/numbers (e.g., "reduces clutter by 40%", "starting at $9.99")
 - Include practical, actionable tips
@@ -74,14 +74,14 @@ CONTENT QUALITY GUIDELINES:
 - Prices in USD ($), relevant to an international audience
 
 CONTENT FORMAT (array of strings):
-- "## Heading H2" — main headings (5-8 per article)
-- "### Heading H3" — sub-headings
+- "## Heading H2", main headings (5-8 per article)
+- "### Heading H3", sub-headings
 - "Regular paragraph with **bold text** and [link text](url)..."
-- "• Bullet point item" — for list items (no nesting)
-- "1. Numbered item" — for ordered lists
-- "> Quote text" — for blockquotes/highlights
-- "![Descriptive SEO alt text in English](PLACEHOLDER_IMAGE)" — image placeholder (will be auto-generated)
-- ":::read-also" followed by links, closed with ":::" — for "Related Articles" box
+- "• Bullet point item", for list items (no nesting)
+- "1. Numbered item", for ordered lists
+- "> Quote text", for blockquotes/highlights
+- "![Descriptive SEO alt text in English](PLACEHOLDER_IMAGE)", image placeholder (will be auto-generated)
+- ":::read-also" followed by links, closed with ":::", for "Related Articles" box
 
 SEO GUIDELINES (IMPORTANT):
 - Image alt text MUST be descriptive and contain keywords in English
@@ -90,7 +90,7 @@ SEO GUIDELINES (IMPORTANT):
 - H2 headings should contain keyword variations (LSI keywords)
 - Write a meta description (excerpt) containing the keyword and a CTA, max 155 characters
 
-EXTERNAL LINKING (REQUIRED — at least 2 external links):
+EXTERNAL LINKING (REQUIRED, at least 2 external links):
 Naturally insert links to credible/authoritative sources within the content:
 - Home & lifestyle media: houzz.com, thespruce.com, goodhousekeeping.com
 - Inspiration: pinterest.com, architecturaldigest.com
@@ -98,7 +98,7 @@ Naturally insert links to credible/authoritative sources within the content:
 - Include data/statistics from verifiable sources
 Format: [natural anchor text](https://full-url)
 
-INTERNAL LINKING (REQUIRED — at least 5 internal links):
+INTERNAL LINKING (REQUIRED, at least 5 internal links):
 Insert internal links naturally within paragraphs using [text](url) format.
 Also add 1-2 "Related Articles" boxes between sections.
 
