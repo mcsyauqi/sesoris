@@ -100,7 +100,7 @@ export default function RootLayout({
               url: 'https://www.sesoris.com',
               logo: 'https://www.sesoris.com/logo.webp',
               description: 'Online store for quality home organizers and storage solutions in Indonesia',
-              priceRange: '$9.99 - $49.99',
+              priceRange: 'Rp 50.000 - Rp 500.000',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Yogyakarta',
