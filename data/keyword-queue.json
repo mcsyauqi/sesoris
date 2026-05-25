@@ -1,12 +1,5 @@
 [
   {
-    "keyword": "laundry room organization shelves",
-    "volume": 880,
-    "category": "Laundry Room Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "laundry room shelf organization",
     "volume": 880,
     "category": "Laundry Room Organization",
