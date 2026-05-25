@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { X, Gift, Truck, Sparkles } from 'lucide-react';
 
 const messages = [
-  { icon: Gift, text: 'Quality Products, Free Shipping & Easy Returns!' },
-  { icon: Truck, text: 'Free Shipping on Orders Over $25' },
-  { icon: Sparkles, text: 'New Products Every Week - Shop Now!' },
+  { icon: Gift, text: 'Produk Berkualitas, Gratis Ongkir & Retur Mudah!' },
+  { icon: Truck, text: 'Gratis Ongkir untuk Pesanan di Atas Rp 400.000' },
+  { icon: Sparkles, text: 'Produk Baru Setiap Minggu - Belanja Sekarang!' },
 ];
 
 export function AnnouncementBar() {

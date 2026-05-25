@@ -44,7 +44,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
         gap: '10px',
       }}>
         <Tag style={{ width: '22px', height: '22px', color: '#1B5E3B' }} />
-        Frequently Bought Together
+        Sering Dibeli Bersama
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -148,7 +148,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                     </span>
                   </div>
                   <div style={{ fontSize: '13px', color: '#28A745', fontWeight: 600, marginTop: '2px' }}>
-                    You save {formatPrice(bundle.originalPrice - bundle.bundlePrice)}!
+                    Anda hemat {formatPrice(bundle.originalPrice - bundle.bundlePrice)}!
                   </div>
                 </div>
 
@@ -173,12 +173,12 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                   {isAdded ? (
                     <>
                       <Check style={{ width: '16px', height: '16px' }} />
-                      Added to Cart!
+                      Masuk Keranjang!
                     </>
                   ) : (
                     <>
                       <ShoppingCart style={{ width: '16px', height: '16px' }} />
-                      Add Bundle to Cart
+                      Tambah Paket ke Keranjang
                     </>
                   )}
                 </button>

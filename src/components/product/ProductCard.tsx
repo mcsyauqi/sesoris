@@ -106,7 +106,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             }} />
           </button>
 
-          {/* Add to Cart */}
+          {/* Tambah ke Keranjang */}
           <div style={{
             position: 'absolute',
             bottom: '10px',
@@ -135,7 +135,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
               }}
             >
               <ShoppingCart style={{ width: '15px', height: '15px' }} />
-              Add to Cart
+              Tambah ke Keranjang
             </button>
           </div>
         </div>

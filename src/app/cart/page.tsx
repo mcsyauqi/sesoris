@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import CartPageClient from './CartPageClient';
 
 export const metadata: Metadata = {
-  title: 'Shopping Cart',
-  description: 'Review your shopping cart items. Secure checkout with free shipping on orders over $50 at Sesoris.',
+  title: 'Keranjang Belanja',
+  description: 'Tinjau produk di keranjang Sesoris. Checkout aman dengan gratis ongkir untuk pesanan di atas Rp 800.000.',
   alternates: { canonical: '/cart' },
   openGraph: {
-    title: 'Shopping Cart | Sesoris',
-    description: 'Review your shopping cart items.',
+    title: 'Keranjang Belanja | Sesoris',
+    description: 'Tinjau produk di keranjang Sesoris.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
   robots: { index: false, follow: true },

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getProductBySlug, products, getReviewsByProductId } from '@/data/products';
 import ProductPageClient from './ProductPageClient';
+import { toIdrPrice } from '@/lib/utils';
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -52,8 +53,8 @@ export default async function ProductPage(
     brand: { '@type': 'Brand', name: 'Sesoris' },
     offers: {
       '@type': 'Offer',
-      price: product.price,
-      priceCurrency: 'USD',
+      price: toIdrPrice(product.price),
+      priceCurrency: 'IDR',
       availability: product.inStock
         ? 'https://schema.org/InStock'
         : 'https://schema.org/OutOfStock',
@@ -72,7 +73,7 @@ export default async function ProductPage(
         shippingRate: {
           '@type': 'MonetaryAmount',
           value: '0',
-          currency: 'USD',
+          currency: 'IDR',
         },
         shippingDestination: {
           '@type': 'DefinedRegion',

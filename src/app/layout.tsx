@@ -20,10 +20,10 @@ const GA_MEASUREMENT_ID = 'G-V2Y9KVBKFP';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sesoris - Home & Living Accessories',
+    default: 'Sesoris - Organizer Rumah dan Storage Indonesia',
     template: '%s | Sesoris',
   },
-  description: 'Discover quality products for your home, kitchen, and lifestyle. Shop smart with Sesoris.',
+  description: 'Temukan organizer rumah, rak dapur, storage box, dan perlengkapan hidup rapi berkualitas untuk keluarga Indonesia.',
   keywords: ['organizer', 'home organization', 'kitchen storage', 'containers', 'storage solutions', 'home accessories', 'Yogyakarta'],
   authors: [{ name: 'Sesoris' }],
   creator: 'Sesoris',
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     locale: 'id_ID',
     url: 'https://www.sesoris.com',
     siteName: 'Sesoris',
-    title: 'Sesoris - Home & Living Accessories',
-    description: 'Discover quality products for your home, kitchen, and lifestyle.',
-    images: [{ url: '/og-default.webp', width: 1200, height: 630, alt: 'Sesoris - Home & Living Accessories' }],
+    title: 'Sesoris - Organizer Rumah dan Storage Indonesia',
+    description: 'Temukan organizer rumah, rak dapur, storage box, dan perlengkapan hidup rapi berkualitas untuk keluarga Indonesia.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630, alt: 'Sesoris - Organizer Rumah dan Storage Indonesia' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sesoris - Home & Living Accessories',
-    description: 'Discover quality products for your home, kitchen, and lifestyle.',
+    title: 'Sesoris - Organizer Rumah dan Storage Indonesia',
+    description: 'Temukan organizer rumah, rak dapur, storage box, dan perlengkapan hidup rapi berkualitas untuk keluarga Indonesia.',
     images: ['/og-default.webp'],
   },
   robots: {

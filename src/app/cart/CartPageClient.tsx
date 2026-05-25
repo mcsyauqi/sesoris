@@ -35,7 +35,7 @@ export default function CartPageClient() {
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
               <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-              <span style={{ color: '#212529', fontWeight: 500 }}>Cart</span>
+              <span style={{ color: '#212529', fontWeight: 500 }}>Keranjang</span>
             </div>
           </div>
         </div>
@@ -54,13 +54,13 @@ export default function CartPageClient() {
             <ShoppingBag style={{ width: '32px', height: '32px', color: '#6C757D' }} />
           </div>
           <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
-            Your cart is empty
+            Keranjang Anda kosong
           </h1>
           <p style={{ color: '#6C757D', marginBottom: '24px' }}>
-            Looks like you haven&apos;t added any items to your cart yet.
+            Anda belum menambahkan produk ke keranjang.
           </p>
           <Link href="/shop" className="btn btn-primary">
-            Start Shopping
+            Mulai Belanja
           </Link>
         </div>
       </>
@@ -77,14 +77,14 @@ export default function CartPageClient() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Cart ({getItemCount()} items)</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Keranjang ({getItemCount()} produk)</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '32px' }}>
-          Shopping Cart
+          Keranjang Belanja
         </h1>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '48px' }}>
@@ -165,7 +165,7 @@ export default function CartPageClient() {
                       }}
                     >
                       <Trash2 style={{ width: '14px', height: '14px' }} />
-                      Remove
+                      Hapus
                     </button>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function CartPageClient() {
             </div>
           </div>
 
-          {/* Order Summary */}
+          {/* Ringkasan Pesanan */}
           <div>
             <div style={{
               background: '#F8F9FA',
@@ -193,20 +193,20 @@ export default function CartPageClient() {
               padding: '24px',
             }}>
               <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-                Order Summary
+                Ringkasan Pesanan
               </h2>
 
               <div style={{ marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                   <Tag style={{ width: '16px', height: '16px', color: '#6C757D' }} />
-                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Promo Code</span>
+                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Kode Promo</span>
                 </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   <input
                     type="text"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    placeholder="Enter code"
+                    placeholder="Masukkan kode"
                     style={{
                       flex: 1,
                       padding: '10px 14px',
@@ -227,7 +227,7 @@ export default function CartPageClient() {
                       fontWeight: 500,
                     }}
                   >
-                    Apply
+                    Pakai
                   </button>
                 </div>
               </div>
@@ -238,9 +238,9 @@ export default function CartPageClient() {
                   <span style={{ fontWeight: 500, color: '#212529' }}>{formatPrice(subtotal)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#6C757D' }}>Shipping</span>
+                  <span style={{ color: '#6C757D' }}>Pengiriman</span>
                   <span style={{ fontWeight: 500, color: shipping === 0 ? '#28A745' : '#212529' }}>
-                    {shipping === 0 ? 'Free' : formatPrice(shipping)}
+                    {shipping === 0 ? 'Gratis' : formatPrice(shipping)}
                   </span>
                 </div>
                 {subtotal < 50 && (
@@ -252,7 +252,7 @@ export default function CartPageClient() {
                     borderRadius: '8px',
                     marginBottom: '12px',
                   }}>
-                    Add {formatPrice(50 - subtotal)} more for free shipping!
+                    Tambah {formatPrice(50 - subtotal)} lagi untuk gratis ongkir!
                   </div>
                 )}
                 <div style={{
@@ -292,7 +292,7 @@ export default function CartPageClient() {
                   marginTop: '16px',
                 }}
               >
-                Continue Shopping
+                Lanjut Belanja
               </Link>
             </div>
           </div>

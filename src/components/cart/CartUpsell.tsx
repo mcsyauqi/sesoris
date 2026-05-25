@@ -57,12 +57,12 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
         <Tag style={{ width: '16px', height: '16px', color: '#FF6B35' }} />
         <span style={{ fontSize: '14px', fontWeight: 700, color: '#FF6B35' }}>
-          Complete the {bundle.name} and save {bundle.discountPercent}%!
+          Lengkapi {bundle.name} dan hemat {bundle.discountPercent}%!
         </span>
       </div>
 
       <p style={{ fontSize: '13px', color: '#6C757D', marginBottom: '12px', lineHeight: '1.5' }}>
-        You already have items from this bundle. Add the missing pieces to unlock the full bundle discount.
+        Anda sudah punya item dari paket ini. Tambahkan produk yang kurang untuk membuka diskon paket penuh.
       </p>
 
       {/* Missing products */}
@@ -109,7 +109,7 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
             href={`/bundles/${bundle.slug}`}
             style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}
           >
-            View bundle <ArrowRight style={{ width: '12px', height: '12px' }} />
+            Lihat paket <ArrowRight style={{ width: '12px', height: '12px' }} />
           </Link>
           <button
             onClick={handleAddMissing}
@@ -129,9 +129,9 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
             }}
           >
             {isAdded ? (
-              <><Check style={{ width: '14px', height: '14px' }} /> Added!</>
+              <><Check style={{ width: '14px', height: '14px' }} /> Ditambahkan!</>
             ) : (
-              <><ShoppingCart style={{ width: '14px', height: '14px' }} /> Add Missing Items</>
+              <><ShoppingCart style={{ width: '14px', height: '14px' }} /> Tambah Produk Kurang</>
             )}
           </button>
         </div>

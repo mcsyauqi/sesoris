@@ -43,7 +43,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/shop" style={{ color: '#6C757D' }}>Shop</Link>
+            <Link href="/shop" style={{ color: '#6C757D' }}>Belanja</Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>{product.name}</span>
           </div>
@@ -150,7 +150,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {product.name}
             </h1>
 
-            {/* Rating - only show if there are reviews */}
+            {/* Rating - only show if there are ulasan */}
             {product.reviewCount > 0 ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', gap: '2px' }}>
@@ -166,12 +166,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: '14px', color: '#6C757D' }}>({product.reviewCount} reviews)</span>
+                <span style={{ fontSize: '14px', color: '#6C757D' }}>({product.reviewCount} ulasan)</span>
               </div>
             ) : (
               <div style={{ marginBottom: '20px' }}>
                 <span style={{ fontSize: '13px', color: '#6C757D', fontStyle: 'italic' }}>
-                  Be the first to review this product!
+                  Jadilah yang pertama memberi ulasan produk ini!
                 </span>
               </div>
             )}
@@ -188,7 +188,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               )}
             </div>
 
-            {/* Short Description */}
+            {/* Short Deskripsi */}
             <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '24px', fontSize: '15px' }}>
               {product.description}
             </p>
@@ -211,10 +211,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
               </div>
             )}
 
-            {/* Quantity */}
+            {/* Jumlah */}
             <div style={{ marginBottom: '24px' }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: '8px', color: '#212529' }}>
-                Quantity
+                Jumlah
               </label>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{
@@ -256,7 +256,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   </button>
                 </div>
                 <span style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 500 }}>
-                  ✓ In stock
+                  ✓ Stok tersedia
                 </span>
               </div>
             </div>
@@ -283,7 +283,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 }}
               >
                 <ShoppingCart style={{ width: '20px', height: '20px' }} />
-                Add to Cart
+                Tambah ke Keranjang
               </button>
               <button
                 onClick={() => toggleItem(product)}
@@ -321,22 +321,22 @@ export default function ProductPageClient({ product }: { product: Product }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Truck style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Free Shipping</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>Min. $50</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Gratis Ongkir</div>
+                  <div style={{ fontSize: '11px', color: '#6C757D' }}>Min. Rp 800.000</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <RefreshCw style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Easy Returns</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>30 Days</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Retur Mudah</div>
+                  <div style={{ fontSize: '11px', color: '#6C757D' }}>30 Hari</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Shield style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Official Warranty</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>1 Year</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Garansi Resmi</div>
+                  <div style={{ fontSize: '11px', color: '#6C757D' }}>1 Tahun</div>
                 </div>
               </div>
             </div>
@@ -366,7 +366,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 transition: 'all 0.2s'
               }}
             >
-              Description
+              Deskripsi
             </button>
             <button
               onClick={() => setActiveTab('specs')}
@@ -383,7 +383,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 transition: 'all 0.2s'
               }}
             >
-              Specifications
+              Spesifikasi
             </button>
             <button
               onClick={() => setActiveTab('reviews')}
@@ -403,7 +403,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 gap: '6px',
               }}
             >
-              Reviews
+              Ulasan
               {productReviews.length > 0 && (
                 <span style={{
                   background: '#1B5E3B',
@@ -450,9 +450,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
                       }}
                     >
                       {showFullDesc ? (
-                        <>Show Less <ChevronUp style={{ width: '16px', height: '16px' }} /></>
+                        <>Tampilkan Lebih Sedikit <ChevronUp style={{ width: '16px', height: '16px' }} /></>
                       ) : (
-                        <>Read More <ChevronDown style={{ width: '16px', height: '16px' }} /></>
+                        <>Baca Selengkapnya <ChevronDown style={{ width: '16px', height: '16px' }} /></>
                       )}
                     </button>
                   )}
@@ -464,7 +464,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {product.features && product.features.length > 0 && (
                 <div style={{ marginTop: '32px' }}>
                   <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
-                    Key Features
+                    Fitur Utama
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     {product.features.map((feature, index) => (
@@ -560,9 +560,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
         }}>
           <Package style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
           <div>
-            <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Package Contents</div>
+            <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Isi Paket</div>
             <div style={{ fontSize: '14px', color: '#6C757D' }}>
-              1x {product.name}, Warranty Card, User Guide
+              1x {product.name}, Kartu Garansi, Panduan Pengguna
             </div>
           </div>
         </div>

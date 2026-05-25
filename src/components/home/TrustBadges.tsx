@@ -1,10 +1,10 @@
 import { Truck, RefreshCw, Shield, Headphones } from 'lucide-react';
 
 const badges = [
-  { icon: Truck, title: 'Free Shipping', desc: 'On orders over $20' },
-  { icon: RefreshCw, title: 'Easy Returns', desc: '30 Days' },
-  { icon: Shield, title: 'Secure Payment', desc: '100% Protected' },
-  { icon: Headphones, title: '24/7 Support', desc: 'Always Here to Help' },
+  { icon: Truck, title: 'Gratis Ongkir', desc: 'Untuk pesanan di atas Rp 320.000' },
+  { icon: RefreshCw, title: 'Retur Mudah', desc: '30 Hari' },
+  { icon: Shield, title: 'Pembayaran Aman', desc: '100% Terlindungi' },
+  { icon: Headphones, title: 'Bantuan 24/7', desc: 'Selalu Siap Membantu' },
 ];
 
 export function TrustBadges() {

@@ -11,12 +11,12 @@ import {
 } from '@/components/home';
 
 export const metadata: Metadata = {
-  title: 'Sesoris - Home Organizers & Storage Solutions Indonesia',
-  description: 'Shop 500+ home organizers, kitchen storage & desk accessories. Free shipping over $50. Rated 4.8★ by 50,000+ customers. Order now at Sesoris.',
+  title: 'Sesoris - Organizer Rumah & Storage Indonesia',
+  description: 'Belanja 500+ organizer rumah, storage dapur, dan aksesori meja kerja. Gratis ongkir di atas Rp 800.000. Rating 4.8 dari 50.000+ pelanggan.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Sesoris - Home Organizers & Storage Solutions Indonesia',
-    description: 'Shop 500+ home organizers, kitchen storage & desk accessories. Free shipping over $50. Rated 4.8★ by 50,000+ customers. Order now at Sesoris.',
+    title: 'Sesoris - Organizer Rumah & Storage Indonesia',
+    description: 'Belanja 500+ organizer rumah, storage dapur, dan aksesori meja kerja. Gratis ongkir di atas Rp 800.000. Rating 4.8 dari 50.000+ pelanggan.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

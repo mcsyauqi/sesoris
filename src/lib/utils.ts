@@ -1,10 +1,15 @@
 export function formatPrice(price: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('id-ID', {
     style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(price);
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(toIdrPrice(price));
+}
+
+export function toIdrPrice(price: number): number {
+  if (price >= 1000) return Math.round(price);
+  return Math.round((price * 16000) / 1000) * 1000;
 }
 
 export function cn(...classes: (string | boolean | undefined | null)[]): string {

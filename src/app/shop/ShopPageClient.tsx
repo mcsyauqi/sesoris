@@ -7,10 +7,10 @@ import { ProductCard } from '@/components/product';
 import { products, categories } from '@/data/products';
 
 const priceRanges = [
-  { label: 'Under $15', min: 0, max: 15 },
-  { label: '$15 - $30', min: 15, max: 30 },
-  { label: '$30 - $50', min: 30, max: 50 },
-  { label: 'Over $50', min: 50, max: Infinity },
+  { label: 'Di bawah Rp 240.000', min: 0, max: 15 },
+  { label: 'Rp 240.000 - Rp 480.000', min: 15, max: 30 },
+  { label: 'Rp 480.000 - Rp 800.000', min: 30, max: 50 },
+  { label: 'Di atas Rp 800.000', min: 50, max: Infinity },
 ];
 
 export default function ShopPageClient() {
@@ -28,7 +28,7 @@ export default function ShopPageClient() {
     return true;
   });
 
-  const toggleCategory = (slug: string) => {
+  const toggleKategori = (slug: string) => {
     setSelectedCategories((prev) =>
       prev.includes(slug) ? prev.filter((c) => c !== slug) : [...prev, slug]
     );
@@ -38,14 +38,14 @@ export default function ShopPageClient() {
     <>
       {/* Categories */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Category</h3>
+        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Kategori</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {categories.map((cat) => (
             <label key={cat.id} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
               <input
                 type="checkbox"
                 checked={selectedCategories.includes(cat.slug)}
-                onChange={() => toggleCategory(cat.slug)}
+                onChange={() => toggleKategori(cat.slug)}
                 style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }}
               />
               <span style={{ fontSize: '14px', color: '#343A40' }}>{cat.name}</span>
@@ -55,9 +55,9 @@ export default function ShopPageClient() {
         </div>
       </div>
 
-      {/* Price Range */}
+      {/* Rentang Harga */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Price Range</h3>
+        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Rentang Harga</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {priceRanges.map((range, i) => (
             <label key={range.label} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
@@ -74,17 +74,17 @@ export default function ShopPageClient() {
         </div>
       </div>
 
-      {/* Availability */}
+      {/* Ketersediaan */}
       <div>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Availability</h3>
+        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Ketersediaan</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
             <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
-            <span style={{ fontSize: '14px', color: '#343A40' }}>In Stock</span>
+            <span style={{ fontSize: '14px', color: '#343A40' }}>Stok Tersedia</span>
           </label>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
             <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
-            <span style={{ fontSize: '14px', color: '#343A40' }}>On Sale</span>
+            <span style={{ fontSize: '14px', color: '#343A40' }}>Sedang Promo</span>
           </label>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function ShopPageClient() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Shop</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Belanja</span>
           </div>
         </div>
       </div>
@@ -123,10 +123,10 @@ export default function ShopPageClient() {
               color: '#212529',
               marginBottom: '4px'
             }}>
-              Shop All Products
+              Semua Produk Sesoris
             </h1>
             <p style={{ color: '#6C757D', fontSize: '14px' }}>
-              Showing {filteredProducts.length} products
+              Menampilkan {filteredProducts.length} produk
             </p>
           </div>
 
@@ -161,10 +161,10 @@ export default function ShopPageClient() {
                 background: 'white'
               }}
             >
-              <option value="featured">Featured</option>
-              <option value="newest">Newest</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
+              <option value="featured">Rekomendasi</option>
+              <option value="newest">Terbaru</option>
+              <option value="price-asc">Harga: Rendah ke Tinggi</option>
+              <option value="price-desc">Harga: Tinggi ke Rendah</option>
             </select>
 
             <div className="hide-mobile" style={{ border: '1px solid #E9ECEF', borderRadius: '8px', overflow: 'hidden' }}>
@@ -195,7 +195,7 @@ export default function ShopPageClient() {
         </div>
       </div>
 
-      {/* Category Descriptions, SEO section */}
+      {/* Kategori Descriptions, SEO section */}
       <div style={{ background: '#F8F9FA', padding: '48px 0', marginTop: '24px' }}>
         <div className="container">
           <h2 style={{
@@ -205,10 +205,10 @@ export default function ShopPageClient() {
             color: '#212529',
             marginBottom: '8px',
           }}>
-            Browse by Category
+            Belanja Berdasarkan Kategori
           </h2>
           <p style={{ color: '#6C757D', fontSize: '15px', marginBottom: '32px', maxWidth: '640px' }}>
-            Explore our curated collection of home organizers, kitchen essentials, lifestyle tools, and more, designed to bring order and beauty to your everyday life.
+            Jelajahi koleksi organizer rumah, perlengkapan dapur, alat praktis, dan produk gaya hidup yang dipilih untuk membuat rumah lebih rapi dan nyaman.
           </p>
           <div style={{
             display: 'grid',
@@ -217,74 +217,74 @@ export default function ShopPageClient() {
           }}>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Home &amp; Decor
+                Rumah &amp; Dekorasi
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Transform any room with our Home &amp; Decor collection, from floating shelves and wall organizers to decorative baskets and storage solutions. With 124 products, you&apos;ll find the perfect pieces to keep your home tidy and stylish.
+                Transform any room with our Rumah &amp; Dekorasi collection, from floating shelves and wall organizers to decorative baskets and storage solutions. With 124 products, you&apos;ll find the perfect pieces to keep your home tidy and stylish.
               </p>
               <Link href="/category/home-living" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Home &amp; Decor →
+                Shop Rumah &amp; Dekorasi →
               </Link>
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Kitchen &amp; Dining
+                Dapur &amp; Makan
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Upgrade your kitchen with our practical Kitchen &amp; Dining essentials, dish racks, storage containers, cutting boards, and more. Browse 86 products that make meal prep and dining a joy.
+                Lengkapi dapur dengan rak piring, kontainer penyimpanan, talenan, dan perlengkapan makan pilihan untuk aktivitas masak yang lebih praktis.
               </p>
               <Link href="/category/kitchen-dining" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Kitchen &amp; Dining →
+                Belanja Dapur &amp; Makan →
               </Link>
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Tools &amp; Gadgets
+                Alat &amp; Gadget
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Discover innovative tools and everyday gadgets that solve real problems. From multi-tools to smart kitchen gadgets, our 67 Tools &amp; Gadgets products are built for performance and convenience.
+                Discover innovative tools and everyday gadgets that solve real problems. From multi-tools to smart kitchen gadgets, our 67 Alat &amp; Gadget products are built for performance and convenience.
               </p>
               <Link href="/category/tools-gadgets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Tools &amp; Gadgets →
+                Shop Alat &amp; Gadget →
               </Link>
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Gift Sets
+                Paket Hadiah
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Find the perfect gift for any occasion. Our curated Gift Sets, 93 options, are thoughtfully packaged and ready to give. Ideal for birthdays, holidays, housewarmings, and celebrations.
+                Find the perfect gift for any occasion. Our curated Paket Hadiah, 93 options, are thoughtfully packaged and ready to give. Ideal for birthdays, holidays, housewarmings, and celebrations.
               </p>
               <Link href="/category/gift-sets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Gift Sets →
+                Shop Paket Hadiah →
               </Link>
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Personal Care
+                Perawatan Diri
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Elevate your self-care routine with our Personal Care collection, aromatherapy diffusers, organizers, skincare tools, and wellness accessories. Choose from 78 quality products.
+                Elevate your self-care routine with our Perawatan Diri collection, aromatherapy diffusers, organizers, skincare tools, and wellness accessories. Choose from 78 quality products.
               </p>
               <Link href="/category/personal-care" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Personal Care →
+                Shop Perawatan Diri →
               </Link>
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Tech Accessories
+                Aksesori Teknologi
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Stay connected and organized with our Tech Accessories, wireless earbuds, charging stations, cable organizers, and smart home gadgets. Browse 54 products for the tech-savvy lifestyle.
+                Stay connected and organized with our Aksesori Teknologi, wireless earbuds, charging stations, cable organizers, and smart home gadgets. Browse 54 products for the tech-savvy lifestyle.
               </p>
               <Link href="/category/tech-accessories" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Tech Accessories →
+                Shop Aksesori Teknologi →
               </Link>
             </div>
           </div>
           <div style={{ marginTop: '32px', padding: '20px', background: '#fff', borderRadius: '12px', border: '1px solid #E9ECEF' }}>
             <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.7', margin: 0 }}>
-              <strong style={{ color: '#212529' }}>About Sesoris Shop:</strong> At Sesoris, we curate quality lifestyle products that help you create a more organized, beautiful, and comfortable home. Every product is hand-selected for its functionality, durability, and design. Whether you&apos;re upgrading your home organization, gifting a loved one, or treating yourself, you&apos;ll find something worth loving at Sesoris. Enjoy free shipping on orders over $50.
+              <strong style={{ color: '#212529' }}>Tentang Sesoris Shop:</strong> Sesoris mengkurasi produk organizer dan lifestyle berkualitas untuk membantu rumah terasa lebih rapi, indah, dan nyaman. Setiap produk dipilih berdasarkan fungsi, daya tahan, dan desain. Nikmati gratis ongkir untuk pesanan di atas Rp 800.000.
             </p>
           </div>
         </div>
