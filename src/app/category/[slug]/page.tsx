@@ -157,6 +157,20 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               {seo.intro}
             </p>
 
+            {(slug === 'home-living' || slug === 'kitchen-dining') && (
+              <div style={{ marginBottom: '32px', padding: '18px 20px', background: 'white', border: '1px solid #E9ECEF', borderRadius: '12px', maxWidth: '760px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
+                  Butuh rak untuk banyak fungsi?
+                </h3>
+                <p style={{ fontSize: '14px', color: '#495057', lineHeight: 1.7, marginBottom: '10px' }}>
+                  Lihat panduan lengkap memilih rak penyimpanan multifungsi untuk dapur, kamar, entryway, ruang tamu, dan meja kerja.
+                </p>
+                <Link href="/rak-serbaguna-multifungsi" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 700 }}>
+                  Baca panduan rak serbaguna multifungsi
+                </Link>
+              </div>
+            )}
+
             {seo.sections.map((section, i) => (
               <div key={i} style={{ marginBottom: '28px' }}>
                 <h3 style={{

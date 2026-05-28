@@ -73,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/rak-serbaguna-multifungsi`,
+      lastModified: LAST_CONTENT_UPDATE,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',

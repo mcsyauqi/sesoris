@@ -284,7 +284,7 @@ export default function ShopPageClient() {
           </div>
           <div style={{ marginTop: '32px', padding: '20px', background: '#fff', borderRadius: '12px', border: '1px solid #E9ECEF' }}>
             <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.7', margin: 0 }}>
-              <strong style={{ color: '#212529' }}>Tentang Sesoris Shop:</strong> Sesoris mengkurasi produk organizer dan lifestyle berkualitas untuk membantu rumah terasa lebih rapi, indah, dan nyaman. Setiap produk dipilih berdasarkan fungsi, daya tahan, dan desain. Nikmati gratis ongkir untuk pesanan di atas Rp 800.000.
+              <strong style={{ color: '#212529' }}>Tentang Sesoris Shop:</strong> Sesoris mengkurasi produk organizer dan lifestyle berkualitas untuk membantu rumah terasa lebih rapi, indah, dan nyaman. Jika Anda sedang membandingkan rak untuk dapur, kamar, atau ruang tamu, baca juga panduan <Link href="/rak-serbaguna-multifungsi" style={{ color: '#1B5E3B', fontWeight: 600 }}>rak penyimpanan multifungsi</Link>. Nikmati gratis ongkir untuk pesanan di atas Rp 800.000.
             </p>
           </div>
         </div>
