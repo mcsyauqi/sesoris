@@ -81,7 +81,28 @@ function renderInline(text: string): React.ReactNode[] {
   return parts.length > 0 ? parts : [text];
 }
 
-function renderContentBlocks(content: string[]): React.ReactNode[] {
+// Flatten content array: split entries on `\n\n` so each markdown block is processed independently.
+// Fixes generator bug where some entries pack multiple blocks (H2 + paragraphs) into one string,
+// causing renderer to treat them as a single H2 heading or paragraph and surface raw markdown.
+function flattenContentBlocks(content: string[]): string[] {
+  const out: string[] = [];
+  for (const entry of content) {
+    if (typeof entry !== 'string') continue;
+    if (entry.includes('\n\n') || (entry.startsWith('## ') && entry.includes('\n'))) {
+      // Split on blank-line separator and discard empties
+      const parts = entry.split(/\n{2,}/).map(s => s.trim()).filter(Boolean);
+      // Within a single block (no blank line) we still keep the original newlines
+      // so multi-line tables / lists stay intact.
+      for (const p of parts) out.push(p);
+    } else {
+      out.push(entry);
+    }
+  }
+  return out;
+}
+
+function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
+  const content = flattenContentBlocks(rawContent);
   const elements: React.ReactNode[] = [];
   let i = 0;
 
@@ -90,7 +111,8 @@ function renderContentBlocks(content: string[]): React.ReactNode[] {
 
     // H2 heading
     if (line.startsWith('## ')) {
-      const headingText = line.replace('## ', '');
+      // Only treat the FIRST line as the heading; never absorb body text into heading.
+      const headingText = line.split('\n')[0].replace('## ', '');
       const headingId = headingText.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
       elements.push(
         <h2 key={i} id={headingId} style={{
@@ -121,7 +143,7 @@ function renderContentBlocks(content: string[]): React.ReactNode[] {
           marginBottom: '12px',
           lineHeight: 1.4,
         }}>
-          {line.replace('### ', '')}
+          {line.split('\n')[0].replace('### ', '')}
         </h3>
       );
       i++;
@@ -374,11 +396,13 @@ function renderContentBlocks(content: string[]): React.ReactNode[] {
 // --- Table of Contents ---
 
 function generateTOC(content: string[]): { text: string; id: string; level: number }[] {
-  return content
+  return flattenContentBlocks(content)
     .filter((line) => line.startsWith('## ') || line.startsWith('### '))
     .map((line) => {
       const level = line.startsWith('### ') ? 3 : 2;
-      const text = line.replace(/^#{2,3}\s/, '');
+      // Take only the first line of the heading (in case any single-block ## still has trailing text)
+      const headingLine = line.split('\n')[0];
+      const text = headingLine.replace(/^#{2,3}\s/, '');
       const id = text.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
       return { text, id, level };
     });
@@ -447,13 +471,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     ],
   };
 
-  // Extract FAQ from content if present
+  // Extract FAQ from (flattened) content if present
+  const flatForFaq = flattenContentBlocks(post.content);
   const faqItems: { question: string; answer: string }[] = [];
-  for (let i = 0; i < post.content.length; i++) {
-    const line = post.content[i];
+  for (let i = 0; i < flatForFaq.length; i++) {
+    const line = flatForFaq[i];
     if (line.startsWith('**Q:') || line.startsWith('**Q :')) {
       const question = line.replace(/^\*\*Q\s*:\s*/, '').replace(/\*\*$/, '').trim();
-      const answer = (i + 1 < post.content.length) ? post.content[i + 1].replace(/\*\*/g, '').trim() : '';
+      const answer = (i + 1 < flatForFaq.length) ? flatForFaq[i + 1].replace(/\*\*/g, '').trim() : '';
       if (question && answer && !answer.startsWith('##') && !answer.startsWith('**Q')) {
         faqItems.push({ question, answer });
       }
