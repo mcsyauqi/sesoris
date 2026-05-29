@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "mudroom organization ikea",
-    "volume": 880,
-    "category": "Mudroom Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "box storage",
-    "volume": 720,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "rak bumbu dapur susun plastik",
-    "volume": 720,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "rak bumbu dapur serbaguna",
     "volume": 720,
     "category": "Kitchen & Dining",
