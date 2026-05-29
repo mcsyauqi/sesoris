@@ -2,10 +2,9 @@ name: Generate Daily Blog Posts
 
 on:
   schedule:
-    # 3 articles/day: 08:00, 13:00, 18:00 WIB
+    # 3 articles/day batched into ONE run = ONE build (was 3 separate crons).
+    # Consolidated 2026-05-29 to cut Vercel Build CPU Minutes (~3 builds/day -> 1).
     - cron: '0 1 * * *'   # 01:00 UTC = 08:00 WIB
-    - cron: '0 6 * * *'   # 06:00 UTC = 13:00 WIB
-    - cron: '0 11 * * *'  # 11:00 UTC = 18:00 WIB
   workflow_dispatch:
 
 permissions:
@@ -27,11 +26,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate blog post
+      - name: Generate 3 blog posts (batched into one build)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: npm run generate:blog
+        run: |
+          # Run sequentially; each pulls the next keyword from the queue.
+          # Non-fatal so one failed generation does not block the others
+          # (the generator returns a failed keyword back to the queue).
+          npm run generate:blog || echo "::warning::generate run 1 failed, continuing"
+          npm run generate:blog || echo "::warning::generate run 2 failed, continuing"
+          npm run generate:blog || echo "::warning::generate run 3 failed, continuing"
 
       - name: Verify generation produced files (cycle #9 audit)
         run: |
@@ -51,5 +56,5 @@ jobs:
             echo "No new blog post generated"
             exit 0
           fi
-          git commit -m "blog: auto-generate article $(date +%Y-%m-%d-%H%M)"
+          git commit -m "blog: auto-generate articles $(date +%Y-%m-%d-%H%M)"
           git push
