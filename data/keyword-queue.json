@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "entryway closet organization",
-    "volume": 720,
-    "category": "Entryway Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "ikea shoe storage ideas",
-    "volume": 720,
-    "category": "Shoe Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "rak dapur aluminium",
-    "volume": 590,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "kitchen drawer organizer ideas",
     "volume": 590,
     "category": "Kitchen Organizer Ideas",
