@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Share2, BookOpen } from 'lucide-react';
 import { notFound, redirect, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
-import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug, getBlogSeoTitle } from '@/lib/blog';
+import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelatedPosts, getArchiveDeepLinks } from '@/lib/blog';
 import { NewsletterSidebar } from '@/components/layout';
 import React from 'react';
 
@@ -421,15 +421,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const toc = generateTOC(post.content);
-  const allPosts = getAllPosts();
-  const relatedPosts = allPosts
-    .filter((p) => p.slug !== slug)
-    .filter((p) => p.category === post.category)
-    .slice(0, 3);
-  if (relatedPosts.length < 3) {
-    const more = allPosts.filter((p) => p.slug !== slug && !relatedPosts.some((r) => r.slug === p.slug)).slice(0, 3 - relatedPosts.length);
-    relatedPosts.push(...more);
-  }
+  // Related posts: slug-seeded rotation across the whole archive so internal
+  // links are distributed evenly (fixes 89% orphaned posts -> 0%, which was
+  // causing GSC "Discovered - currently not indexed"). 2026-06-04.
+  const relatedPosts = getRelatedPosts(post, 3);
+  // Extra deep-link block targeting a different archive slice, multiplying
+  // inbound internal links to older/deep posts.
+  const archiveDeepLinks = getArchiveDeepLinks(post, 8);
 
   // JSON-LD Structured Data
   const jsonLd = {
@@ -686,6 +684,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </Link>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {/* Explore More (archive deep links — spreads internal link equity) */}
+            {archiveDeepLinks.length > 0 && (
+              <div style={{
+                borderTop: '1px solid #E9ECEF',
+                paddingTop: '32px',
+                paddingBottom: '8px',
+              }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#212529', marginBottom: '20px' }}>
+                  Explore More Articles
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '10px 24px' }}>
+                  {archiveDeepLinks.map((link) => (
+                    <li key={link.slug} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                      <ChevronRight style={{ width: '16px', height: '16px', color: '#1B5E3B', flexShrink: 0, marginTop: '3px' }} />
+                      <Link href={`/blog/${link.slug}`} style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none', lineHeight: 1.4 }}>
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
