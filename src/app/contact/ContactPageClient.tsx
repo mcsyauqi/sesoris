@@ -23,23 +23,23 @@ export default function ContactPageClient() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Kontak</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Contact</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>Hubungi Sesoris Yogyakarta</h1>
+          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>Contact Sesoris</h1>
           <p style={{ color: '#6C757D', fontSize: '16px' }}>
-            Butuh bantuan memilih organizer rumah, dapur, meja kerja, atau travel gear? Tim Sesoris siap membantu pertanyaan produk, pesanan, dan kerja sama grosir.
+            Need help choosing the right organizer for your home, kitchen, desk, or travel gear? The Sesoris team is ready to help with product questions, orders, and wholesale inquiries.
           </p>
         </div>
 
         <div className="contact-grid" style={{ display: 'grid', gap: '40px' }}>
           {/* Contact Info */}
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Informasi Kontak</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Contact Information</h2>
 
             <div style={{ marginBottom: '24px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
@@ -53,7 +53,7 @@ export default function ContactPageClient() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
                 <Phone style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Telepon</div>
+                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Phone</div>
                   <a href="tel:+62274123456" style={{ color: '#6C757D' }}>+62 274 123 4567</a>
                   <div style={{ fontSize: '13px', color: '#6C757D', marginTop: '4px' }}>
                     WhatsApp: +62 812 3456 7890
@@ -64,11 +64,10 @@ export default function ContactPageClient() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
                 <MapPin style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Alamat</div>
+                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Address</div>
                   <div style={{ color: '#6C757D', lineHeight: 1.5 }}>
-                    Jl. Malioboro No. 123<br />
-                    Gedongtengen, Yogyakarta<br />
-                    DIY 55271, Indonesia
+                    Online store<br />
+                    Worldwide shipping
                   </div>
                 </div>
               </div>
@@ -76,18 +75,18 @@ export default function ContactPageClient() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                 <Clock style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Jam Operasional</div>
+                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Operating Hours</div>
                   <div style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.6 }}>
-                    Senin - Jumat: 09:00 - 18:00 WIB<br />
-                    Sabtu: 10:00 - 16:00 WIB<br />
-                    Minggu & Hari Libur: Tutup
+                    Monday - Friday: 9:00 AM - 6:00 PM<br />
+                    Saturday: 10:00 AM - 4:00 PM<br />
+                    Sunday &amp; Holidays: Closed
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <div style={{ fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Ikuti Kami</div>
+              <div style={{ fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Follow Us</div>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Facebook style={{ width: '18px', height: '18px', color: '#343A40' }} />
@@ -107,17 +106,17 @@ export default function ContactPageClient() {
 
           {/* Contact Form */}
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Kirim Pesan</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Send a Message</h2>
             <form onSubmit={handleSubmit}>
               <div className="contact-form-row" style={{ display: 'grid', gap: '20px', marginBottom: '20px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Nama Lengkap</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Full Name</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Masukkan nama"
+                    placeholder="Enter your name"
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -128,7 +127,7 @@ export default function ContactPageClient() {
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Alamat Email</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Email Address</label>
                   <input
                     type="email"
                     required
@@ -147,7 +146,7 @@ export default function ContactPageClient() {
               </div>
 
               <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Subjek</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Subject</label>
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -160,22 +159,22 @@ export default function ContactPageClient() {
                     background: 'white'
                   }}
                 >
-                  <option value="general">Pertanyaan Umum</option>
-                  <option value="order">Pertanyaan Pesanan</option>
-                  <option value="return">Retur & Refund</option>
-                  <option value="feedback">Masukan</option>
-                  <option value="business">Kerja Sama / Grosir</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="order">Order Question</option>
+                  <option value="return">Return &amp; Refund</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="business">Partnership / Wholesale</option>
                 </select>
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Pesan</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Message</label>
                 <textarea
                   required
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tulis pesan Anda di sini..."
+                  placeholder="Write your message here..."
                   style={{
                     width: '100%',
                     padding: '12px 16px',
@@ -193,7 +192,7 @@ export default function ContactPageClient() {
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <Send style={{ width: '16px', height: '16px' }} />
-                Kirim Pesan
+                Send Message
               </button>
             </form>
           </div>
@@ -212,28 +211,28 @@ export default function ContactPageClient() {
         }}>
           <div style={{ textAlign: 'center' }}>
             <MapPin style={{ width: '32px', height: '32px', marginBottom: '12px', color: '#1B5E3B' }} />
-            <div style={{ fontWeight: 600, color: '#212529' }}>Sesoris Store Yogyakarta</div>
-            <div style={{ fontSize: '14px' }}>Jl. Malioboro No. 123, Yogyakarta</div>
+            <div style={{ fontWeight: 600, color: '#212529' }}>Sesoris Online Store</div>
+            <div style={{ fontSize: '14px' }}>Worldwide shipping</div>
           </div>
         </div>
 
         <section style={{ marginTop: '56px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Bantuan Belanja Organizer</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Organizer Shopping Help</h2>
             <p style={{ color: '#495057', lineHeight: 1.7, fontSize: '15px' }}>
-              Konsultasikan kebutuhan storage rumah, rak dapur, organizer meja kerja, atau perlengkapan travel. Kami membantu merekomendasikan ukuran, material, dan produk yang paling sesuai untuk ruang Anda.
+              Talk to our team about home storage, kitchen racks, desk organizers, or travel gear. We help recommend the right size, material, and product for your space.
             </p>
           </div>
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Pesanan dan Pengiriman</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Orders and Shipping</h2>
             <p style={{ color: '#495057', lineHeight: 1.7, fontSize: '15px' }}>
-              Hubungi kami untuk cek status pesanan, estimasi pengiriman, retur, atau permintaan invoice. Tim Sesoris melayani pelanggan dari Yogyakarta dan pengiriman ke seluruh Indonesia.
+              Reach out to check order status, shipping estimates, returns, or invoice requests. The Sesoris team supports customers worldwide.
             </p>
           </div>
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Kerja Sama Grosir</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Wholesale Partnerships</h2>
             <p style={{ color: '#495057', lineHeight: 1.7, fontSize: '15px' }}>
-              Untuk kebutuhan kantor, hampers, reseller, atau pembelian jumlah besar, kirim detail kebutuhan melalui formulir. Kami akan menyiapkan rekomendasi produk dan penawaran khusus.
+              For office, hampers, reseller, or bulk orders, send your requirements via the form. We will prepare product recommendations and special offers.
             </p>
           </div>
         </section>

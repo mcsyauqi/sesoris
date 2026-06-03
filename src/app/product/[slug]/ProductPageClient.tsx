@@ -43,7 +43,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/shop" style={{ color: '#6C757D' }}>Belanja</Link>
+            <Link href="/shop" style={{ color: '#6C757D' }}>Shop</Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>{product.name}</span>
           </div>
@@ -283,7 +283,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 }}
               >
                 <ShoppingCart style={{ width: '20px', height: '20px' }} />
-                Tambah ke Keranjang
+                Add to Cart
               </button>
               <button
                 onClick={() => toggleItem(product)}
@@ -321,22 +321,22 @@ export default function ProductPageClient({ product }: { product: Product }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Truck style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Gratis Ongkir</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>Min. Rp 800.000</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Free Shipping</div>
+                  <div style={{ fontSize: '11px', color: '#6C757D' }}>Min. $50</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <RefreshCw style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Retur Mudah</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>30 Hari</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Easy Returns</div>
+                  <div style={{ fontSize: '11px', color: '#6C757D' }}>30 Days</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Shield style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Garansi Resmi</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>1 Tahun</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Warranty</div>
+                  <div style={{ fontSize: '11px', color: '#6C757D' }}>1 Year</div>
                 </div>
               </div>
             </div>
@@ -560,9 +560,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
         }}>
           <Package style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
           <div>
-            <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Isi Paket</div>
+            <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>What&apos;s in the Box</div>
             <div style={{ fontSize: '14px', color: '#6C757D' }}>
-              1x {product.name}, Kartu Garansi, Panduan Pengguna
+              1x {product.name}, Warranty Card, User Guide
             </div>
           </div>
         </div>

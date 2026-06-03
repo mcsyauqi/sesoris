@@ -1,0 +1,44 @@
+{
+  "board": "seo-sesoris_com",
+  "date": "2026-05-06",
+  "initialActiveDueCount": 4,
+  "processed": [
+    {
+      "shortLink": "HE9Z7upt",
+      "name": "UPD #9: Category: Outdoor Travel",
+      "status": "Review",
+      "report": "D:\\Projects\\Sesoris\\sesoris\\data\\catchup-EPQSmskz-2026-05-06\\card-reports\\HE9Z7upt.pdf",
+      "attachmentUrl": "https://trello.com/1/cards/69ac326418850e3adcc29c0c/attachments/69facd9143cb1adc6fa7d777/download/HE9Z7upt.pdf",
+      "extraAttachmentUrl": null
+    },
+    {
+      "shortLink": "5jrMAASk",
+      "name": "CWV Fase 2: Enable Text Compression untuk 3 halaman LCP",
+      "status": "Done",
+      "report": "D:\\Projects\\Sesoris\\sesoris\\data\\catchup-EPQSmskz-2026-05-06\\card-reports\\5jrMAASk.pdf",
+      "attachmentUrl": "https://trello.com/1/cards/69ed87d70f44b3ab50f676ab/attachments/69facd93589f37b7f499978f/download/5jrMAASk.pdf",
+      "extraAttachmentUrl": null
+    },
+    {
+      "shortLink": "zd74LYsO",
+      "name": "CWV Fase 2: Remove Unused JavaScript (Bundle Analysis)",
+      "status": "Review",
+      "report": "D:\\Projects\\Sesoris\\sesoris\\data\\catchup-EPQSmskz-2026-05-06\\card-reports\\zd74LYsO.pdf",
+      "attachmentUrl": "https://trello.com/1/cards/69ed87d996ecce16069f1733/attachments/69facd965b782886912e73d8/download/zd74LYsO.pdf",
+      "extraAttachmentUrl": null
+    },
+    {
+      "shortLink": "bBqk704L",
+      "name": "Keyword Research Mendalam - Map 50 Keyword ke URL",
+      "status": "Done",
+      "report": "D:\\Projects\\Sesoris\\sesoris\\data\\catchup-EPQSmskz-2026-05-06\\card-reports\\bBqk704L.pdf",
+      "attachmentUrl": "https://trello.com/1/cards/69ec3d0462c5aabcb6fe8799/attachments/69facd99127b91fade54f85d/download/bBqk704L.pdf",
+      "extraAttachmentUrl": "https://trello.com/1/cards/69ec3d0462c5aabcb6fe8799/attachments/69facd9a77472aefac69669d/download/keyword-mapping-50-url-2026-05-06.csv"
+    }
+  ],
+  "doneCount": 2,
+  "reviewCount": 2,
+  "activeDueRemaining": 0,
+  "activeDueOutsideReview": 0,
+  "finalDue": []
+}

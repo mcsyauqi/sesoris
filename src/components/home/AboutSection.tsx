@@ -69,13 +69,13 @@ export function AboutSection() {
               Why Choose Sesoris?
             </h2>
             <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
-              Sesoris is an Indonesian home organizer brand dedicated to helping you create a tidier, more functional living space. From kitchen storage racks and food containers to desk organizers and travel pouches, every product is chosen for quality, durability, and everyday practicality.
+              Sesoris is a home organizer brand dedicated to helping you create a tidier, more functional living space. From kitchen storage racks and food containers to desk organizers and travel pouches, every product is chosen for quality, durability, and everyday practicality.
             </p>
             <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
               We partner with trusted manufacturers to bring you rust-resistant stainless steel, food-grade plastics, and premium materials at accessible prices. Whether you live in a small apartment or a spacious home, our storage solutions scale with your needs.
             </p>
             <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px' }}>
-              Based in Yogyakarta and shipping nationwide across Indonesia, Sesoris has helped over 50,000 households organize smarter, one shelf, container, and cabinet at a time.
+              Sesoris has helped over 50,000 households organize smarter, one shelf, container, and cabinet at a time.
             </p>
 
             {/* Stats */}

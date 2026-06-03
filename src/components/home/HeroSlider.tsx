@@ -8,36 +8,36 @@ import { ArrowRight, Star, Truck, ShieldCheck } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    tagline: 'Koleksi Baru 2026',
-    title: 'Rumah Rapi,',
-    titleAccent: 'Hidup Lebih Tenang.',
-    description: 'Temukan solusi penyimpanan pintar untuk rumah yang lebih rapi dan nyaman.',
+    tagline: 'New Collection 2026',
+    title: 'Tidy Home,',
+    titleAccent: 'Calmer Living.',
+    description: 'Smart storage solutions for a tidier, more comfortable home.',
     image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&h=533&fit=crop&q=75',
-    buttonText: 'Lihat Koleksi',
+    buttonText: 'Shop the Collection',
     buttonLink: '/shop',
-    stat: { value: '500+', label: 'Produk' },
+    stat: { value: '500+', label: 'Products' },
   },
   {
     id: 2,
-    tagline: 'Terlaris',
-    title: 'Dapur Rapi,',
-    titleAccent: 'Masak Jadi Menyenangkan.',
-    description: 'Rak dapur, organizer, dan kontainer makanan premium untuk dapur impian yang lebih tertata.',
+    tagline: 'Best Sellers',
+    title: 'Organized Kitchen,',
+    titleAccent: 'Cooking Made Easy.',
+    description: 'Premium kitchen racks, organizers, and food containers for a dream kitchen.',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=533&fit=crop&q=75',
-    buttonText: 'Lihat Terlaris',
+    buttonText: 'Shop Best Sellers',
     buttonLink: '/best-sellers',
     stat: { value: '4.8', label: 'Rating' },
   },
   {
     id: 3,
-    tagline: 'Promo Spesial',
-    title: 'Hemat Hingga',
+    tagline: 'Special Offers',
+    title: 'Save Up To',
     titleAccent: '50%.',
-    description: 'Promo terbatas untuk produk pilihan. Upgrade rumah tanpa bikin boros.',
+    description: 'Limited-time deals on selected items. Upgrade your home without breaking the bank.',
     image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=533&fit=crop&q=75',
-    buttonText: 'Belanja Sekarang',
+    buttonText: 'Shop Now',
     buttonLink: '/on-sale',
-    stat: { value: '50K+', label: 'Pelanggan' },
+    stat: { value: '50K+', label: 'Customers' },
   },
 ];
 
@@ -118,7 +118,7 @@ export function HeroSlider() {
                     <Star key={i} style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
                   ))}
                 </div>
-                <span style={{ fontSize: '13px', opacity: 0.9 }}>50.000+ pelanggan puas</span>
+                <span style={{ fontSize: '13px', opacity: 0.9 }}>50,000+ happy customers</span>
               </div>
             </div>
           </div>
@@ -148,11 +148,11 @@ export function HeroSlider() {
           <div className="hero-mini-badges">
             <div className="hero-mini-badge">
               <Truck style={{ width: '16px', height: '16px' }} />
-              <span>Gratis Ongkir</span>
+              <span>Free Shipping</span>
             </div>
             <div className="hero-mini-badge">
               <ShieldCheck style={{ width: '16px', height: '16px' }} />
-              <span>Garansi 30 Hari</span>
+              <span>30-Day Guarantee</span>
             </div>
           </div>
         </div>

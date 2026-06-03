@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import ContactPageClient from './ContactPageClient';
 
 export const metadata: Metadata = {
-  title: 'Contact Sesoris Yogyakarta | Home Organizer Store',
-  description: 'Hubungi Sesoris Yogyakarta untuk pertanyaan produk organizer rumah, dapur, travel, pesanan, grosir, dan bantuan pelanggan.',
+  title: 'Contact Sesoris | Home Organizer Store',
+  description: 'Contact Sesoris for questions about home organizers, kitchen storage, travel products, orders, wholesale, and customer support.',
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact Sesoris Yogyakarta | Home Organizer Store',
-    description: 'Hubungi Sesoris Yogyakarta untuk pertanyaan produk organizer rumah, dapur, travel, pesanan, grosir, dan bantuan pelanggan.',
+    title: 'Contact Sesoris | Home Organizer Store',
+    description: 'Contact Sesoris for questions about home organizers, kitchen storage, travel products, orders, wholesale, and customer support.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
@@ -19,22 +19,14 @@ const localBusinessSchema = {
   name: 'Sesoris',
   url: 'https://www.sesoris.com',
   image: 'https://www.sesoris.com/og-default.webp',
-  description: 'Sesoris is a Yogyakarta-based online store for home organizers, kitchen storage, office desk products, and travel storage accessories.',
+  description: 'Sesoris is an online store for home organizers, kitchen storage, office desk products, and travel storage accessories.',
   email: 'sesoris.store@gmail.com',
   telephone: '+62-274-123-4567',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Jl. Malioboro No. 123',
-    addressLocality: 'Yogyakarta',
-    addressRegion: 'Daerah Istimewa Yogyakarta',
-    postalCode: '55271',
-    addressCountry: 'ID',
+    addressCountry: 'US',
   },
-  areaServed: [
-    { '@type': 'City', name: 'Yogyakarta' },
-    { '@type': 'Country', name: 'Indonesia' },
-  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -54,8 +46,7 @@ const localBusinessSchema = {
     contactType: 'customer service',
     email: 'sesoris.store@gmail.com',
     telephone: '+62-274-123-4567',
-    areaServed: 'ID',
-    availableLanguage: ['id', 'en'],
+    availableLanguage: ['en'],
   },
   sameAs: [
     'https://facebook.com/sesoris',

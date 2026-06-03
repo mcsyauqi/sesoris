@@ -1,0 +1,452 @@
+[
+  {
+    "Priority": "1",
+    "URL": "https://www.sesoris.com/",
+    "Page type": "Home",
+    "Primary keyword": "home organizer",
+    "Secondary keywords": "rak serbaguna; storage box; organizer rumah",
+    "Intent": "Commercial",
+    "Content gap / action": "Strengthen homepage copy around Sesoris as home organizer store and link to 6 core categories."
+  },
+  {
+    "Priority": "2",
+    "URL": "https://www.sesoris.com/category/home-living",
+    "Page type": "Category",
+    "Primary keyword": "storage box",
+    "Secondary keywords": "rak serbaguna; kotak penyimpanan; tempat penyimpanan barang",
+    "Intent": "Commercial",
+    "Content gap / action": "Use category intro to target broad home storage terms and link to storage-box/rak-serbaguna articles."
+  },
+  {
+    "Priority": "3",
+    "URL": "https://www.sesoris.com/category/kitchen-dining",
+    "Page type": "Category",
+    "Primary keyword": "kitchen storage",
+    "Secondary keywords": "rak penyimpanan dapur; dish rack; food container",
+    "Intent": "Commercial",
+    "Content gap / action": "Expand category copy for kitchen storage, dish racks, containers, and pantry organization."
+  },
+  {
+    "Priority": "4",
+    "URL": "https://www.sesoris.com/category/tools-gadgets",
+    "Page type": "Category",
+    "Primary keyword": "tools rumah tangga",
+    "Secondary keywords": "alat dapur multifungsi; multi tool; gadget rumah",
+    "Intent": "Commercial",
+    "Content gap / action": "Clarify subcategory sections for everyday carry, kitchen gadgets, and DIY home tools."
+  },
+  {
+    "Priority": "5",
+    "URL": "https://www.sesoris.com/category/gift-sets",
+    "Page type": "Category",
+    "Primary keyword": "gift set rumah",
+    "Secondary keywords": "hadiah housewarming; kado pernikahan; hampers rumah",
+    "Intent": "Commercial",
+    "Content gap / action": "Add buying guide block for housewarming and wedding gift use cases."
+  },
+  {
+    "Priority": "6",
+    "URL": "https://www.sesoris.com/category/personal-care",
+    "Page type": "Category",
+    "Primary keyword": "personal care organizer",
+    "Secondary keywords": "bathroom organizer; skincare organizer; aromatherapy diffuser",
+    "Intent": "Commercial",
+    "Content gap / action": "Bridge personal care products with bathroom storage and self-care intent."
+  },
+  {
+    "Priority": "7",
+    "URL": "https://www.sesoris.com/category/tech-accessories",
+    "Page type": "Category",
+    "Primary keyword": "cable organizer",
+    "Secondary keywords": "charging station; cable management; aksesoris meja kerja",
+    "Intent": "Commercial",
+    "Content gap / action": "Target tech clutter and desk cable organization."
+  },
+  {
+    "Priority": "8",
+    "URL": "https://www.sesoris.com/category/bags-pouches",
+    "Page type": "Category",
+    "Primary keyword": "travel pouch organizer",
+    "Secondary keywords": "tas organizer; pouch serbaguna; storage pouch",
+    "Intent": "Commercial",
+    "Content gap / action": "Keep daily carry pouch terms here after splitting outdoor travel."
+  },
+  {
+    "Priority": "9",
+    "URL": "https://www.sesoris.com/category/office-desk",
+    "Page type": "Category",
+    "Primary keyword": "desk organizer",
+    "Secondary keywords": "office desk accessories; cable organizer meja; home office organizer",
+    "Intent": "Commercial",
+    "Content gap / action": "Use for desk accessories and productivity setup."
+  },
+  {
+    "Priority": "10",
+    "URL": "https://www.sesoris.com/category/outdoor-travel",
+    "Page type": "Category",
+    "Primary keyword": "travel organizer",
+    "Secondary keywords": "travel toiletry bag; packing pouch; tas outdoor",
+    "Intent": "Commercial",
+    "Content gap / action": "New category needs deploy, indexing, and internal links from Bags & Pouches plus travel blog posts."
+  },
+  {
+    "Priority": "11",
+    "URL": "https://www.sesoris.com/product/bamboo-desk-organizer",
+    "Page type": "Product",
+    "Primary keyword": "bamboo desk organizer",
+    "Secondary keywords": "desk organizer kayu; organizer meja kerja; tempat alat tulis",
+    "Intent": "Transactional",
+    "Content gap / action": "Add comparison copy vs plastic desk organizers and link from office desk page."
+  },
+  {
+    "Priority": "12",
+    "URL": "https://www.sesoris.com/product/smart-water-bottle",
+    "Page type": "Product",
+    "Primary keyword": "smart water bottle",
+    "Secondary keywords": "botol minum pintar; botol stainless; hydration reminder",
+    "Intent": "Transactional",
+    "Content gap / action": "Clarify smart features and health routine benefits."
+  },
+  {
+    "Priority": "13",
+    "URL": "https://www.sesoris.com/product/led-desk-lamp-wireless-charger",
+    "Page type": "Product",
+    "Primary keyword": "lampu meja wireless charger",
+    "Secondary keywords": "led desk lamp; lampu belajar led; wireless charging lamp",
+    "Intent": "Transactional",
+    "Content gap / action": "Add office desk internal links and FAQ about compatibility."
+  },
+  {
+    "Priority": "14",
+    "URL": "https://www.sesoris.com/product/premium-gift-box-set",
+    "Page type": "Product",
+    "Primary keyword": "premium gift box",
+    "Secondary keywords": "gift set premium; hampers rumah; kado ulang tahun",
+    "Intent": "Transactional",
+    "Content gap / action": "Build gift use-case copy and link from gift category."
+  },
+  {
+    "Priority": "15",
+    "URL": "https://www.sesoris.com/product/minimalist-wallet",
+    "Page type": "Product",
+    "Primary keyword": "minimalist wallet",
+    "Secondary keywords": "dompet slim; rfid wallet; dompet kulit minimalis",
+    "Intent": "Transactional",
+    "Content gap / action": "Target EDC intent and compare with bulky wallets."
+  },
+  {
+    "Priority": "16",
+    "URL": "https://www.sesoris.com/product/wireless-earbuds-pro",
+    "Page type": "Product",
+    "Primary keyword": "wireless earbuds pro",
+    "Secondary keywords": "earbuds anc; tws murah; bluetooth earbuds",
+    "Intent": "Transactional",
+    "Content gap / action": "Add tech accessories internal links and feature FAQ."
+  },
+  {
+    "Priority": "17",
+    "URL": "https://www.sesoris.com/product/portable-blender",
+    "Page type": "Product",
+    "Primary keyword": "portable blender",
+    "Secondary keywords": "blender portable; blender mini; blender jus portable",
+    "Intent": "Transactional",
+    "Content gap / action": "Map to kitchen gadget and healthy lifestyle articles."
+  },
+  {
+    "Priority": "18",
+    "URL": "https://www.sesoris.com/product/aromatherapy-diffuser",
+    "Page type": "Product",
+    "Primary keyword": "aromatherapy diffuser",
+    "Secondary keywords": "diffuser aromaterapi; humidifier aroma; diffuser kamar",
+    "Intent": "Transactional",
+    "Content gap / action": "Add personal care and bedroom organization links."
+  },
+  {
+    "Priority": "19",
+    "URL": "https://www.sesoris.com/product/ceramic-plant-pot-set",
+    "Page type": "Product",
+    "Primary keyword": "ceramic plant pot set",
+    "Secondary keywords": "pot tanaman keramik; pot minimalis; dekorasi rumah tanaman",
+    "Intent": "Transactional",
+    "Content gap / action": "Tie to home decor and plant display article."
+  },
+  {
+    "Priority": "20",
+    "URL": "https://www.sesoris.com/product/multi-tool-pocket-knife",
+    "Page type": "Product",
+    "Primary keyword": "multi tool pocket knife",
+    "Secondary keywords": "pisau lipat multi tool; alat camping; edc tool",
+    "Intent": "Transactional",
+    "Content gap / action": "Connect to outdoor/travel and tools category."
+  },
+  {
+    "Priority": "21",
+    "URL": "https://www.sesoris.com/product/storage-box-set",
+    "Page type": "Product",
+    "Primary keyword": "storage box set",
+    "Secondary keywords": "kotak penyimpanan set; storage box plastik; box organizer",
+    "Intent": "Transactional",
+    "Content gap / action": "Map to storage box cluster and add size guide."
+  },
+  {
+    "Priority": "22",
+    "URL": "https://www.sesoris.com/product/food-storage-container-set",
+    "Page type": "Product",
+    "Primary keyword": "food storage container",
+    "Secondary keywords": "food container; wadah makanan; kotak makan kedap udara",
+    "Intent": "Transactional",
+    "Content gap / action": "Link to airtight container and pantry blog cluster."
+  },
+  {
+    "Priority": "23",
+    "URL": "https://www.sesoris.com/product/cable-management-box",
+    "Page type": "Product",
+    "Primary keyword": "cable management box",
+    "Secondary keywords": "kotak kabel; cable organizer; rapikan kabel meja",
+    "Intent": "Transactional",
+    "Content gap / action": "Link from tech accessories and home office content."
+  },
+  {
+    "Priority": "24",
+    "URL": "https://www.sesoris.com/product/makeup-organizer",
+    "Page type": "Product",
+    "Primary keyword": "makeup organizer",
+    "Secondary keywords": "skincare organizer; tempat makeup; organizer kosmetik",
+    "Intent": "Transactional",
+    "Content gap / action": "Pair with personal care category copy."
+  },
+  {
+    "Priority": "25",
+    "URL": "https://www.sesoris.com/product/floating-wall-shelf-set",
+    "Page type": "Product",
+    "Primary keyword": "floating wall shelf",
+    "Secondary keywords": "rak dinding minimalis; floating shelf; rak dekorasi",
+    "Intent": "Transactional",
+    "Content gap / action": "Link to home decor category and wall storage blog."
+  },
+  {
+    "Priority": "26",
+    "URL": "https://www.sesoris.com/product/gantungan-kunci-dinding-magnetik",
+    "Page type": "Product",
+    "Primary keyword": "gantungan kunci dinding",
+    "Secondary keywords": "key holder dinding; rak kunci; organizer pintu masuk",
+    "Intent": "Transactional",
+    "Content gap / action": "Target entryway organization intent."
+  },
+  {
+    "Priority": "27",
+    "URL": "https://www.sesoris.com/product/rak-buku-minimalis-industrial",
+    "Page type": "Product",
+    "Primary keyword": "rak buku minimalis",
+    "Secondary keywords": "bookshelf industrial; rak buku besi kayu; rak ruang tamu",
+    "Intent": "Transactional",
+    "Content gap / action": "Link to home living and small room organization."
+  },
+  {
+    "Priority": "28",
+    "URL": "https://www.sesoris.com/product/travel-toiletry-bag",
+    "Page type": "Product",
+    "Primary keyword": "travel toiletry bag",
+    "Secondary keywords": "toiletry bag gantung; tas perlengkapan mandi; organizer travel",
+    "Intent": "Transactional",
+    "Content gap / action": "Map to new Outdoor Travel category."
+  },
+  {
+    "Priority": "29",
+    "URL": "https://www.sesoris.com/product/mesh-zipper-pouches-set",
+    "Page type": "Product",
+    "Primary keyword": "mesh zipper pouch",
+    "Secondary keywords": "pouch jaring; packing pouch; travel pouch set",
+    "Intent": "Transactional",
+    "Content gap / action": "Map to travel organizer and bags cluster."
+  },
+  {
+    "Priority": "30",
+    "URL": "https://www.sesoris.com/product/hanging-travel-organizer",
+    "Page type": "Product",
+    "Primary keyword": "hanging travel organizer",
+    "Secondary keywords": "organizer koper; packing organizer; travel wardrobe",
+    "Intent": "Transactional",
+    "Content gap / action": "Add hotel/travel use cases and link from travel category."
+  },
+  {
+    "Priority": "31",
+    "URL": "https://www.sesoris.com/blog/storage-box",
+    "Page type": "Blog",
+    "Primary keyword": "storage box",
+    "Secondary keywords": "box storage; kotak penyimpanan; storage box plastik",
+    "Intent": "Informational",
+    "Content gap / action": "Pillar article should link to home category and storage products."
+  },
+  {
+    "Priority": "32",
+    "URL": "https://www.sesoris.com/blog/rak-serbaguna",
+    "Page type": "Blog",
+    "Primary keyword": "rak serbaguna",
+    "Secondary keywords": "rak penyimpanan; rak multifungsi; rak minimalis",
+    "Intent": "Informational",
+    "Content gap / action": "High-priority head term; add product CTAs to shelves and storage products."
+  },
+  {
+    "Priority": "33",
+    "URL": "https://www.sesoris.com/blog/rekomendasi-rak-piring-terbaik",
+    "Page type": "Blog",
+    "Primary keyword": "rekomendasi rak piring terbaik",
+    "Secondary keywords": "rak piring; dish rack; rak piring minimalis",
+    "Intent": "Commercial investigation",
+    "Content gap / action": "Low-hanging GSC article; strengthen product comparison table."
+  },
+  {
+    "Priority": "34",
+    "URL": "https://www.sesoris.com/blog/home-organizer",
+    "Page type": "Blog",
+    "Primary keyword": "home organizer",
+    "Secondary keywords": "organizer rumah; cara merapikan rumah; storage solution",
+    "Intent": "Informational",
+    "Content gap / action": "Use as hub to categories and product clusters."
+  },
+  {
+    "Priority": "35",
+    "URL": "https://www.sesoris.com/blog/container-box",
+    "Page type": "Blog",
+    "Primary keyword": "container box",
+    "Secondary keywords": "box container; storage box; kotak container",
+    "Intent": "Informational",
+    "Content gap / action": "Consolidate duplicates with storage-box cluster via internal links."
+  },
+  {
+    "Priority": "36",
+    "URL": "https://www.sesoris.com/blog/cara-menata-dapur-sempit",
+    "Page type": "Blog",
+    "Primary keyword": "cara menata dapur sempit",
+    "Secondary keywords": "dapur kecil rapi; kitchen storage; rak dapur",
+    "Intent": "Informational",
+    "Content gap / action": "Link to kitchen-dining and dish rack products."
+  },
+  {
+    "Priority": "37",
+    "URL": "https://www.sesoris.com/blog/cara-merapikan-lemari-baju",
+    "Page type": "Blog",
+    "Primary keyword": "cara merapikan lemari baju",
+    "Secondary keywords": "lemari rapi; storage baju; organizer pakaian",
+    "Intent": "Informational",
+    "Content gap / action": "Add storage box and hanging organizer CTAs."
+  },
+  {
+    "Priority": "38",
+    "URL": "https://www.sesoris.com/blog/cara-menciptakan-home-office-yang-produktif-panduan-lifestyle-2026",
+    "Page type": "Blog",
+    "Primary keyword": "home office produktif",
+    "Secondary keywords": "desk organizer; office desk accessories; cable management",
+    "Intent": "Informational",
+    "Content gap / action": "Link to office desk category and desk lamp product."
+  },
+  {
+    "Priority": "39",
+    "URL": "https://www.sesoris.com/blog/cable-management",
+    "Page type": "Blog",
+    "Primary keyword": "cable management",
+    "Secondary keywords": "cable organizer; rapikan kabel; kotak kabel",
+    "Intent": "Informational",
+    "Content gap / action": "Support tech accessories and cable box product."
+  },
+  {
+    "Priority": "40",
+    "URL": "https://www.sesoris.com/blog/travel-accessories",
+    "Page type": "Blog",
+    "Primary keyword": "travel accessories",
+    "Secondary keywords": "perlengkapan traveling; travel organizer; travel pouch",
+    "Intent": "Commercial investigation",
+    "Content gap / action": "Link to new Outdoor Travel category and travel products."
+  },
+  {
+    "Priority": "41",
+    "URL": "https://www.sesoris.com/blog/bag-organizer-travel",
+    "Page type": "Blog",
+    "Primary keyword": "bag organizer travel",
+    "Secondary keywords": "tas organizer travel; packing pouch; pouch serbaguna",
+    "Intent": "Commercial investigation",
+    "Content gap / action": "Support Bags & Pouches and Outdoor Travel split."
+  },
+  {
+    "Priority": "42",
+    "URL": "https://www.sesoris.com/blog/tas-outdoor",
+    "Page type": "Blog",
+    "Primary keyword": "tas outdoor",
+    "Secondary keywords": "gym drawstring bag; tas travel ringan; tas olahraga",
+    "Intent": "Commercial investigation",
+    "Content gap / action": "Link to gym drawstring bag and outdoor category."
+  },
+  {
+    "Priority": "43",
+    "URL": "https://www.sesoris.com/blog/perlengkapan-traveling",
+    "Page type": "Blog",
+    "Primary keyword": "perlengkapan traveling",
+    "Secondary keywords": "travel gear; organizer koper; checklist traveling",
+    "Intent": "Informational",
+    "Content gap / action": "Add product CTAs for toiletry bag and hanging organizer."
+  },
+  {
+    "Priority": "44",
+    "URL": "https://www.sesoris.com/blog/dry-bag",
+    "Page type": "Blog",
+    "Primary keyword": "dry bag",
+    "Secondary keywords": "tas anti air; waterproof bag; perlengkapan outdoor",
+    "Intent": "Commercial investigation",
+    "Content gap / action": "Outdoor support article; link to outdoor category."
+  },
+  {
+    "Priority": "45",
+    "URL": "https://www.sesoris.com/blog/alat-dapur-multifungsi-yang-wajib-dimiliki",
+    "Page type": "Blog",
+    "Primary keyword": "alat dapur multifungsi",
+    "Secondary keywords": "kitchen gadgets; alat masak praktis; portable blender",
+    "Intent": "Informational",
+    "Content gap / action": "Link to portable blender and tools category."
+  },
+  {
+    "Priority": "46",
+    "URL": "https://www.sesoris.com/blog/food-container",
+    "Page type": "Blog",
+    "Primary keyword": "food container",
+    "Secondary keywords": "wadah makanan; food storage; container makanan",
+    "Intent": "Informational",
+    "Content gap / action": "Support product category and food container set."
+  },
+  {
+    "Priority": "47",
+    "URL": "https://www.sesoris.com/blog/rak-penyimpanan",
+    "Page type": "Blog",
+    "Primary keyword": "rak penyimpanan",
+    "Secondary keywords": "rak penyimpanan barang; rak minimalis; rak serbaguna",
+    "Intent": "Informational",
+    "Content gap / action": "Cluster with rak-serbaguna, avoid cannibalization via clear primary terms."
+  },
+  {
+    "Priority": "48",
+    "URL": "https://www.sesoris.com/blog/tempat-penyimpanan-baju",
+    "Page type": "Blog",
+    "Primary keyword": "tempat penyimpanan baju",
+    "Secondary keywords": "storage baju; kotak baju; organizer lemari",
+    "Intent": "Informational",
+    "Content gap / action": "Add links to storage box and hanging organizer."
+  },
+  {
+    "Priority": "49",
+    "URL": "https://www.sesoris.com/blog/dekorasi-ruang-tamu-minimalis-yang-elegan",
+    "Page type": "Blog",
+    "Primary keyword": "dekorasi ruang tamu minimalis",
+    "Secondary keywords": "rak dinding; pot keramik; dekorasi rumah",
+    "Intent": "Informational",
+    "Content gap / action": "Link to floating shelf and ceramic plant pot products."
+  },
+  {
+    "Priority": "50",
+    "URL": "https://www.sesoris.com/blog/checklist-pindah-rumah",
+    "Page type": "Blog",
+    "Primary keyword": "checklist pindah rumah",
+    "Secondary keywords": "moving organizer; storage box; packing checklist",
+    "Intent": "Informational",
+    "Content gap / action": "Add storage box set and moving day bundle CTAs."
+  }
+]

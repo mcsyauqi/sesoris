@@ -71,7 +71,7 @@ export function FeaturedProducts() {
             className="btn btn-outline"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
           >
-            Lihat Semua Produk
+            View All Products
             <ArrowRight style={{ width: '16px', height: '16px' }} />
           </Link>
         </div>

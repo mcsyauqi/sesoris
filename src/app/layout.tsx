@@ -20,11 +20,11 @@ const GA_MEASUREMENT_ID = 'G-V2Y9KVBKFP';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sesoris - Organizer Rumah dan Storage Indonesia',
+    default: 'Sesoris - Home Organizers & Storage Solutions',
     template: '%s | Sesoris',
   },
-  description: 'Temukan organizer rumah, rak dapur, storage box, dan perlengkapan hidup rapi berkualitas untuk keluarga Indonesia.',
-  keywords: ['organizer', 'home organization', 'kitchen storage', 'containers', 'storage solutions', 'home accessories', 'Yogyakarta'],
+  description: 'Shop home organizers, kitchen racks, storage boxes, and tidy-living essentials for modern households.',
+  keywords: ['organizer', 'home organization', 'kitchen storage', 'containers', 'storage solutions', 'home accessories'],
   authors: [{ name: 'Sesoris' }],
   creator: 'Sesoris',
   publisher: 'Sesoris',
@@ -43,17 +43,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'id_ID',
+    locale: 'en_US',
     url: 'https://www.sesoris.com',
     siteName: 'Sesoris',
-    title: 'Sesoris - Organizer Rumah dan Storage Indonesia',
-    description: 'Temukan organizer rumah, rak dapur, storage box, dan perlengkapan hidup rapi berkualitas untuk keluarga Indonesia.',
-    images: [{ url: '/og-default.webp', width: 1200, height: 630, alt: 'Sesoris - Organizer Rumah dan Storage Indonesia' }],
+    title: 'Sesoris - Home Organizers & Storage Solutions',
+    description: 'Shop home organizers, kitchen racks, storage boxes, and tidy-living essentials for modern households.',
+    images: [{ url: '/og-default.webp', width: 1200, height: 630, alt: 'Sesoris - Home Organizers & Storage Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sesoris - Organizer Rumah dan Storage Indonesia',
-    description: 'Temukan organizer rumah, rak dapur, storage box, dan perlengkapan hidup rapi berkualitas untuk keluarga Indonesia.',
+    title: 'Sesoris - Home Organizers & Storage Solutions',
+    description: 'Shop home organizers, kitchen racks, storage boxes, and tidy-living essentials for modern households.',
     images: ['/og-default.webp'],
   },
   robots: {
@@ -84,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <head>
         {/* Preconnect to external image hosts for faster LCP */}
         <link rel="preconnect" href="https://images.unsplash.com" />
@@ -99,19 +99,17 @@ export default function RootLayout({
               name: 'Sesoris',
               url: 'https://www.sesoris.com',
               logo: 'https://www.sesoris.com/logo.webp',
-              description: 'Online store for quality home organizers and storage solutions in Indonesia',
-              priceRange: 'Rp 50.000 - Rp 500.000',
+              description: 'Online store for quality home organizers and storage solutions.',
+              priceRange: '$5 - $50',
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Yogyakarta',
-                addressRegion: 'DIY',
-                addressCountry: 'ID',
+                addressCountry: 'US',
               },
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+62-813-2610-2061',
                 contactType: 'customer service',
-                availableLanguage: ['Indonesian', 'English'],
+                availableLanguage: ['English'],
               },
               aggregateRating: {
                 '@type': 'AggregateRating',

@@ -173,12 +173,12 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                   {isAdded ? (
                     <>
                       <Check style={{ width: '16px', height: '16px' }} />
-                      Masuk Keranjang!
+                      Added to Cart!
                     </>
                   ) : (
                     <>
                       <ShoppingCart style={{ width: '16px', height: '16px' }} />
-                      Tambah Paket ke Keranjang
+                      Add Bundle to Cart
                     </>
                   )}
                 </button>

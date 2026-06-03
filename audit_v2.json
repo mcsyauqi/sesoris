@@ -1,0 +1,5220 @@
+{
+  "stats": {
+    "total": 361,
+    "faqSection": 312,
+    "faqQQuestions": 259,
+    "qQuestionsAvg": [],
+    "faqUnder5": 109,
+    "noFaqSection": 49,
+    "goodAuthor": 341,
+    "hasUSD": 6,
+    "hasIDR": 347,
+    "internalLinksUnder5": 269,
+    "imagesUnder3": 71,
+    "wordsUnder1500": 67,
+    "goodArticles": 0
+  },
+  "upliftQueue": [
+    {
+      "file": "air-tight-food-storage-containers-guide-2026.json",
+      "slug": "air-tight-food-storage-containers-guide-2026",
+      "words": 2269,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "airtight-pet-food-storage-containers-ultimate-guide-fresh-pet-food-2026.json",
+      "slug": "airtight-pet-food-storage-containers-ultimate-guide-fresh-pet-food-2026",
+      "words": 1834,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "airtight-storage-containers-for-food-complete-guide-2026.json",
+      "slug": "airtight-storage-containers-for-food-complete-guide-2026",
+      "words": 2286,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "alat-camping.json",
+      "slug": "alat-camping",
+      "words": 1654,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il4"
+      ]
+    },
+    {
+      "file": "alat-dapur-multifungsi-yang-wajib-dimiliki.json",
+      "slug": "alat-dapur-multifungsi-yang-wajib-dimiliki",
+      "words": 1920,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": []
+    },
+    {
+      "file": "aluminum-stove-tables-lightweight-rust-resistant-kitchen-solutions-2026.json",
+      "slug": "aluminum-stove-tables-lightweight-rust-resistant-kitchen-solutions-2026",
+      "words": 1748,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "bag-organizer-travel.json",
+      "slug": "bag-organizer-travel",
+      "words": 1663,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il3"
+      ]
+    },
+    {
+      "file": "belanja-hemat-perlengkapan-rumah.json",
+      "slug": "belanja-hemat-perlengkapan-rumah",
+      "words": 1544,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "bersih-bersih-rumah-sebelum-lebaran.json",
+      "slug": "bersih-bersih-rumah-sebelum-lebaran",
+      "words": 2265,
+      "h2": 14,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "best-airtight-storage-containers-pet-food-keep-fresh-2026.json",
+      "slug": "best-airtight-storage-containers-pet-food-keep-fresh-2026",
+      "words": 1789,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "best-food-storage-containers-glass-ultimate-guide-premium-kitchen-organization-2026.json",
+      "slug": "best-food-storage-containers-glass-ultimate-guide-premium-kitchen-organization-2026",
+      "words": 2732,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "best-garage-storage-solutions-transform-space-organized-haven-2026.json",
+      "slug": "best-garage-storage-solutions-transform-space-organized-haven-2026",
+      "words": 2719,
+      "h2": 13,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "best-glass-storage-containers-for-food-ultimate-guide-safe-kitchen-storage-2026.json",
+      "slug": "best-glass-storage-containers-for-food-ultimate-guide-safe-kitchen-storage-2026",
+      "words": 2461,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 4,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "best-storage-food-containers-ultimate-2026-guide-fresh-food-organization.json",
+      "slug": "best-storage-food-containers-ultimate-2026-guide-fresh-food-organization",
+      "words": 2613,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "box-penyimpanan-barang-panduan-memilih-dan-menata.json",
+      "slug": "box-penyimpanan-barang-panduan-memilih-dan-menata",
+      "words": 1272,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1272",
+        "il4"
+      ]
+    },
+    {
+      "file": "box-storage.json",
+      "slug": "box-storage",
+      "words": 1902,
+      "h2": 8,
+      "qQuestions": 7,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "bpa-free-food-storage-containers-complete-guide-safe-food-storage-2026.json",
+      "slug": "bpa-free-food-storage-containers-complete-guide-safe-food-storage-2026",
+      "words": 1672,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 10,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "cable-management.json",
+      "slug": "cable-management",
+      "words": 1801,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "cara-declutter-rumah.json",
+      "slug": "cara-declutter-rumah",
+      "words": 1504,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "cara-membuat-mini-bar-dapur-di-rumah-minimalis.json",
+      "slug": "cara-membuat-mini-bar-dapur-di-rumah-minimalis",
+      "words": 1669,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "cara-menata-dapur-agar-rapi.json",
+      "slug": "cara-menata-dapur-agar-rapi",
+      "words": 1438,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 12,
+      "images": 3,
+      "issues": [
+        "w1438",
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-menata-dapur-minimalis.json",
+      "slug": "cara-menata-dapur-minimalis",
+      "words": 1471,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 12,
+      "images": 3,
+      "issues": [
+        "w1471",
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-menata-dapur-sempit.json",
+      "slug": "cara-menata-dapur-sempit",
+      "words": 1516,
+      "h2": 15,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": true,
+      "internalLinks": 13,
+      "images": 3,
+      "issues": [
+        "q0",
+        "usd"
+      ]
+    },
+    {
+      "file": "cara-menata-kamar-kost.json",
+      "slug": "cara-menata-kamar-kost",
+      "words": 1787,
+      "h2": 19,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 15,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-menata-ruang-tamu-sempit.json",
+      "slug": "cara-menata-ruang-tamu-sempit",
+      "words": 1543,
+      "h2": 12,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-menata-rumah-kecil-agar-rapi.json",
+      "slug": "cara-menata-rumah-kecil-agar-rapi",
+      "words": 1799,
+      "h2": 14,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 18,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-menciptakan-home-office-yang-produktif-panduan-lifestyle-2026.json",
+      "slug": "cara-menciptakan-home-office-yang-produktif-panduan-lifestyle-2026",
+      "words": 2379,
+      "h2": 11,
+      "qQuestions": 4,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": [
+        "q4"
+      ]
+    },
+    {
+      "file": "cara-menyimpan-makanan-agar-tahan-lama.json",
+      "slug": "cara-menyimpan-makanan-agar-tahan-lama",
+      "words": 2293,
+      "h2": 12,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-merapikan-lemari-baju.json",
+      "slug": "cara-merapikan-lemari-baju",
+      "words": 1814,
+      "h2": 12,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-merapikan-rumah.json",
+      "slug": "cara-merapikan-rumah",
+      "words": 1549,
+      "h2": 13,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 16,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "cara-merawat-peralatan-dapur-stainless-steel.json",
+      "slug": "cara-merawat-peralatan-dapur-stainless-steel",
+      "words": 700,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 0,
+      "issues": [
+        "w700",
+        "il2",
+        "img0"
+      ]
+    },
+    {
+      "file": "checklist-perlengkapan-dapur-lengkap-untuk-pengantin-baru.json",
+      "slug": "checklist-perlengkapan-dapur-lengkap-untuk-pengantin-baru",
+      "words": 1734,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "checklist-pindah-rumah.json",
+      "slug": "checklist-pindah-rumah",
+      "words": 2132,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "cleaning-supply-organization-ultimate-guide-transform-home-storage-2026.json",
+      "slug": "cleaning-supply-organization-ultimate-guide-transform-home-storage-2026",
+      "words": 1654,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "closet-organization-for-nursery-ultimate-guide-perfect-baby-storage-2026.json",
+      "slug": "closet-organization-for-nursery-ultimate-guide-perfect-baby-storage-2026",
+      "words": 1967,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "closet-organization-ideas-ikea.json",
+      "slug": "closet-organization-ideas-ikea",
+      "words": 1628,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "closet-organization-nursery-ultimate-guide-creating-perfect-baby-storage-2026.json",
+      "slug": "closet-organization-nursery-ultimate-guide-creating-perfect-baby-storage-2026",
+      "words": 1812,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "closet-shoe-storage-ideas.json",
+      "slug": "closet-shoe-storage-ideas",
+      "words": 1808,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "complete-guide-minimalist-kitchen-sets-small-kitchens-smart-design-ideas-2026.json",
+      "slug": "complete-guide-minimalist-kitchen-sets-small-kitchens-smart-design-ideas-2026",
+      "words": 1310,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1310",
+        "il4"
+      ]
+    },
+    {
+      "file": "complete-storage-box-guide-2026.json",
+      "slug": "complete-storage-box-guide-2026",
+      "words": 1714,
+      "h2": 7,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "container-box.json",
+      "slug": "container-box",
+      "words": 1628,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "containers-for-dog-food-storage-keep-pet-food-fresh-2026.json",
+      "slug": "containers-for-dog-food-storage-keep-pet-food-fresh-2026",
+      "words": 1552,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "covered-dish-racks-anti-dust-kitchen-storage-complete-guide-2026.json",
+      "slug": "covered-dish-racks-anti-dust-kitchen-storage-complete-guide-2026",
+      "words": 1651,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 4,
+      "issues": [
+        "il3"
+      ]
+    },
+    {
+      "file": "craft-storage-room-ideas-transform-creative-space-smart-organization-2026.json",
+      "slug": "craft-storage-room-ideas-transform-creative-space-smart-organization-2026",
+      "words": 1751,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "creative-ideas-of-closet-organization-transform-wardrobe-storage-2026.json",
+      "slug": "creative-ideas-of-closet-organization-transform-wardrobe-storage-2026",
+      "words": 2154,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "dekorasi-dapur.json",
+      "slug": "dekorasi-dapur",
+      "words": 1605,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "dekorasi-kamar-tidur-minimalis-yang-nyaman.json",
+      "slug": "dekorasi-kamar-tidur-minimalis-yang-nyaman",
+      "words": 2158,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "dekorasi-ruang-keluarga.json",
+      "slug": "dekorasi-ruang-keluarga",
+      "words": 1915,
+      "h2": 11,
+      "qQuestions": 1,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q1",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "dekorasi-ruang-tamu-minimalis-yang-elegan.json",
+      "slug": "dekorasi-ruang-tamu-minimalis-yang-elegan",
+      "words": 2345,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "dekorasi-rumah-lebaran.json",
+      "slug": "dekorasi-rumah-lebaran",
+      "words": 2210,
+      "h2": 12,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "denah-rumah-minimalis.json",
+      "slug": "denah-rumah-minimalis",
+      "words": 1670,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "desain-dapur-minimalis.json",
+      "slug": "desain-dapur-minimalis",
+      "words": 1804,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "desain-rak-piring-minimalis-untuk-dapur-modern.json",
+      "slug": "desain-rak-piring-minimalis-untuk-dapur-modern",
+      "words": 1838,
+      "h2": 8,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "desain-rumah-minimalis-2-lantai.json",
+      "slug": "desain-rumah-minimalis-2-lantai",
+      "words": 1649,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "desain-rumah-minimalis-3-kamar.json",
+      "slug": "desain-rumah-minimalis-3-kamar",
+      "words": 1560,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": true,
+      "internalLinks": 7,
+      "images": 1,
+      "issues": [
+        "q0",
+        "usd",
+        "img1"
+      ]
+    },
+    {
+      "file": "desain-rumah-minimalis.json",
+      "slug": "desain-rumah-minimalis",
+      "words": 1640,
+      "h2": 8,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": true,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "usd",
+        "il4"
+      ]
+    },
+    {
+      "file": "desk-organizer.json",
+      "slug": "desk-organizer",
+      "words": 1760,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "dish-drying-racks-complete-guide-choose-organize-kitchen-space.json",
+      "slug": "dish-drying-racks-complete-guide-choose-organize-kitchen-space",
+      "words": 2059,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "dish-rack-prices-complete-guide-choosing-best-kitchen-storage-2026.json",
+      "slug": "dish-rack-prices-complete-guide-choosing-best-kitchen-storage-2026",
+      "words": 1742,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "diy-ideas-for-shoe-storage.json",
+      "slug": "diy-ideas-for-shoe-storage",
+      "words": 1757,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "diy-storage-box.json",
+      "slug": "diy-storage-box",
+      "words": 1657,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 2,
+      "issues": [
+        "q0",
+        "il3",
+        "img2"
+      ]
+    },
+    {
+      "file": "diy-wooden-spice-rack-kitchen-organization-tutorial.json",
+      "slug": "diy-wooden-spice-rack-kitchen-organization-tutorial",
+      "words": 1730,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "dog-food-containers-storage-solutions-2026.json",
+      "slug": "dog-food-containers-storage-solutions-2026",
+      "words": 1700,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "dry-bag.json",
+      "slug": "dry-bag",
+      "words": 1746,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "enclosed-dish-racks-dust-free-pest-free-kitchen-storage.json",
+      "slug": "enclosed-dish-racks-dust-free-pest-free-kitchen-storage",
+      "words": 1854,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "enclosed-minimalist-dish-racks-clean-modern-kitchen-storage-2026.json",
+      "slug": "enclosed-minimalist-dish-racks-clean-modern-kitchen-storage-2026",
+      "words": 1485,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "w1485",
+        "il4"
+      ]
+    },
+    {
+      "file": "entrance-shoe-storage-ideas-transform-home-first-impression-2026.json",
+      "slug": "entrance-shoe-storage-ideas-transform-home-first-impression-2026",
+      "words": 2140,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "entryway-wall-organization-smart-ideas-transform-home-first-impression-2026.json",
+      "slug": "entryway-wall-organization-smart-ideas-transform-home-first-impression-2026",
+      "words": 1844,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "essential-cleaning-supplies-organization-transform-home-storage-system-2026.json",
+      "slug": "essential-cleaning-supplies-organization-transform-home-storage-system-2026",
+      "words": 1452,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1452",
+        "il4"
+      ]
+    },
+    {
+      "file": "food-container.json",
+      "slug": "food-container",
+      "words": 1714,
+      "h2": 12,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "food-containers-and-storage-complete-guide-2026.json",
+      "slug": "food-containers-and-storage-complete-guide-2026",
+      "words": 2022,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "food-storage-containers-airtight-complete-guide-fresh-food-storage-2026.json",
+      "slug": "food-storage-containers-airtight-complete-guide-fresh-food-storage-2026",
+      "words": 1513,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "food-storage-containers-bpa-free-ultimate-guide-safe-food-storage-2026.json",
+      "slug": "food-storage-containers-bpa-free-ultimate-guide-safe-food-storage-2026",
+      "words": 2038,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "food-storage-containers-for-kitchen-ultimate-2026-guide-fresh-food-organization.json",
+      "slug": "food-storage-containers-for-kitchen-ultimate-2026-guide-fresh-food-organization",
+      "words": 1919,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "food-storage-containers-for-pantry-complete-guide-organization-2026.json",
+      "slug": "food-storage-containers-for-pantry-complete-guide-organization-2026",
+      "words": 2455,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "food-storage-containers-for-rice-ultimate-guide-fresh-rice-storage-2026.json",
+      "slug": "food-storage-containers-for-rice-ultimate-guide-fresh-rice-storage-2026",
+      "words": 1785,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "food-storage-containers-lids-complete-guide-replacement-repair-organizing-2026.json",
+      "slug": "food-storage-containers-lids-complete-guide-replacement-repair-organizing-2026",
+      "words": 1925,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "food-storage-containers-with-lid-complete-guide-2026.json",
+      "slug": "food-storage-containers-with-lid-complete-guide-2026",
+      "words": 1909,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "food-storage-containers-with-lids-complete-guide-2026.json",
+      "slug": "food-storage-containers-with-lids-complete-guide-2026",
+      "words": 2032,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "freezable-food-storage-containers-ultimate-guide-safe-freezer-organization-2026.json",
+      "slug": "freezable-food-storage-containers-ultimate-guide-safe-freezer-organization-2026",
+      "words": 2096,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "gambar-kitchen-set-minimalis-design-ideas-modern-homes-2026.json",
+      "slug": "gambar-kitchen-set-minimalis-design-ideas-modern-homes-2026",
+      "words": 2195,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "gantungan-handuk-kamar-mandi-modern-dan-estetik.json",
+      "slug": "gantungan-handuk-kamar-mandi-modern-dan-estetik",
+      "words": 1578,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 4,
+      "issues": [
+        "il3"
+      ]
+    },
+    {
+      "file": "gaya-hidup-minimalis-transformasi-rumah-storage-solutions-2026.json",
+      "slug": "gaya-hidup-minimalis-transformasi-rumah-storage-solutions-2026",
+      "words": 1195,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "w1195",
+        "il4"
+      ]
+    },
+    {
+      "file": "glass-containers-food-storage-complete-guide-2026.json",
+      "slug": "glass-containers-food-storage-complete-guide-2026",
+      "words": 1755,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "glass-containers-glass-lids-food-storage-tutorial-guide-2026.json",
+      "slug": "glass-containers-glass-lids-food-storage-tutorial-guide-2026",
+      "words": 1995,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "glass-food-storage-containers-glass-lids-ultimate-guide-2026.json",
+      "slug": "glass-food-storage-containers-glass-lids-ultimate-guide-2026",
+      "words": 2100,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "glass-food-storage-containers-lids-complete-guide-replacement-repair-2026.json",
+      "slug": "glass-food-storage-containers-lids-complete-guide-replacement-repair-2026",
+      "words": 1813,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "glass-food-storage-containers-with-glass-lids-ultimate-guide-2026.json",
+      "slug": "glass-food-storage-containers-with-glass-lids-ultimate-guide-2026",
+      "words": 1534,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "glass-food-storage-containers-with-lid-ultimate-guide-2026.json",
+      "slug": "glass-food-storage-containers-with-lid-ultimate-guide-2026",
+      "words": 2082,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "glass-lid-food-storage-containers-ultimate-guide-2026.json",
+      "slug": "glass-lid-food-storage-containers-ultimate-guide-2026",
+      "words": 1535,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 2,
+      "issues": [
+        "a:Maya Dewi",
+        "il4",
+        "img2"
+      ]
+    },
+    {
+      "file": "glass-storage-containers-for-food-with-lids-ultimate-guide-2026.json",
+      "slug": "glass-storage-containers-for-food-with-lids-ultimate-guide-2026",
+      "words": 2073,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "glass-storage-food-containers-with-lids-ultimate-guide-2026.json",
+      "slug": "glass-storage-food-containers-with-lids-ultimate-guide-2026",
+      "words": 2065,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "glasslock-food-storage-containers-complete-guide-2026.json",
+      "slug": "glasslock-food-storage-containers-complete-guide-2026",
+      "words": 1777,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "glassware-food-storage-containers-ultimate-guide-2026.json",
+      "slug": "glassware-food-storage-containers-ultimate-guide-2026",
+      "words": 2021,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "hanging-dish-racks-perfect-solution-kitchens-without-cabinet-storage.json",
+      "slug": "hanging-dish-racks-perfect-solution-kitchens-without-cabinet-storage",
+      "words": 1618,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 3,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "harga-kitchen-set-minimalis-dapur-kecil.json",
+      "slug": "harga-kitchen-set-minimalis-dapur-kecil",
+      "words": 1464,
+      "h2": 8,
+      "qQuestions": 6,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "w1464",
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "harga-rak-piring-aluminium-terbaru.json",
+      "slug": "harga-rak-piring-aluminium-terbaru",
+      "words": 1752,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "harga-storage-box.json",
+      "slug": "harga-storage-box",
+      "words": 1498,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "w1498"
+      ]
+    },
+    {
+      "file": "hidup-berkualitas-lifestyle-storage-menciptakan-rumah-mendukung-kesejahteraan.json",
+      "slug": "hidup-berkualitas-lifestyle-storage-menciptakan-rumah-mendukung-kesejahteraan",
+      "words": 1792,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": true,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "usd",
+        "il4"
+      ]
+    },
+    {
+      "file": "home-and-office-organization-complete-guide-transform-workspace-2026.json",
+      "slug": "home-and-office-organization-complete-guide-transform-workspace-2026",
+      "words": 1682,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "home-organization-office-transform-workspace-smart-storage-solutions-2026.json",
+      "slug": "home-organization-office-transform-workspace-smart-storage-solutions-2026",
+      "words": 1534,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "home-organizer.json",
+      "slug": "home-organizer",
+      "words": 1618,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 11,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "how-to-organize-your-home-expert-guide-tidy-living-space.json",
+      "slug": "how-to-organize-your-home-expert-guide-tidy-living-space",
+      "words": 1696,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ide-menata-kamar-kost.json",
+      "slug": "ide-menata-kamar-kost",
+      "words": 1473,
+      "h2": 7,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "w1473",
+        "q0"
+      ]
+    },
+    {
+      "file": "ideas-for-closet-organization-transform-storage-space-2026.json",
+      "slug": "ideas-for-closet-organization-transform-storage-space-2026",
+      "words": 1560,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ideas-for-laundry-room-organization-transform-space-2026.json",
+      "slug": "ideas-for-laundry-room-organization-transform-space-2026",
+      "words": 1967,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ideas-for-linen-closet-organization-transform-storage-space-2026.json",
+      "slug": "ideas-for-linen-closet-organization-transform-storage-space-2026",
+      "words": 1969,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ideas-for-living-room-storage-transform-space-smart-solutions-2026.json",
+      "slug": "ideas-for-living-room-storage-transform-space-smart-solutions-2026",
+      "words": 2208,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "ideas-for-shoe-storage-in-garage.json",
+      "slug": "ideas-for-shoe-storage-in-garage",
+      "words": 1802,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ideas-for-shoe-storage-in-mudroom.json",
+      "slug": "ideas-for-shoe-storage-in-mudroom",
+      "words": 1603,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 4,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "ideas-for-shoe-storage-in-small-space-transform-home-2026.json",
+      "slug": "ideas-for-shoe-storage-in-small-space-transform-home-2026",
+      "words": 1637,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "ideas-for-shoe-storage-transform-home-organization-2026.json",
+      "slug": "ideas-for-shoe-storage-transform-home-organization-2026",
+      "words": 2011,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ideas-for-storage-in-living-room-transform-space-2026.json",
+      "slug": "ideas-for-storage-in-living-room-transform-space-2026",
+      "words": 1768,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ideas-for-toy-storage-in-living-room.json",
+      "slug": "ideas-for-toy-storage-in-living-room",
+      "words": 1599,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "ideas-on-closet-organization-transform-wardrobe-space-2026.json",
+      "slug": "ideas-on-closet-organization-transform-wardrobe-space-2026",
+      "words": 1688,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ideas-shoe-storage-transform-home-organization-2026.json",
+      "slug": "ideas-shoe-storage-transform-home-organization-2026",
+      "words": 2627,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "ikea-garage-storage-solutions-complete-guide-organizing-garage-2026.json",
+      "slug": "ikea-garage-storage-solutions-complete-guide-organizing-garage-2026",
+      "words": 1543,
+      "h2": 7,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "inspirasi-dapur-minimalis.json",
+      "slug": "inspirasi-dapur-minimalis",
+      "words": 1704,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "inspirasi-dekorasi-kamar-tidur-2026.json",
+      "slug": "inspirasi-dekorasi-kamar-tidur-2026",
+      "words": 720,
+      "h2": 13,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 0,
+      "issues": [
+        "w720",
+        "a:Maya Dewi",
+        "il2",
+        "img0"
+      ]
+    },
+    {
+      "file": "inspirasi-kamar-tidur-minimalis-sederhana-yang-bikin-betah-2026.json",
+      "slug": "inspirasi-kamar-tidur-minimalis-sederhana-yang-bikin-betah-2026",
+      "words": 1848,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "inspirasi-kitchen-set-minimalis-modern.json",
+      "slug": "inspirasi-kitchen-set-minimalis-modern",
+      "words": 2004,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "inspirasi-meja-bar-dapur-untuk-rumah-modern.json",
+      "slug": "inspirasi-meja-bar-dapur-untuk-rumah-modern",
+      "words": 1693,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "inspirasi-ruang-tamu-minimalis-modern-2026.json",
+      "slug": "inspirasi-ruang-tamu-minimalis-modern-2026",
+      "words": 2027,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "inspirasi-rumah-rapi-minimalis.json",
+      "slug": "inspirasi-rumah-rapi-minimalis",
+      "words": 1415,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 3,
+      "issues": [
+        "w1415",
+        "q0"
+      ]
+    },
+    {
+      "file": "interior-rumah-minimalis.json",
+      "slug": "interior-rumah-minimalis",
+      "words": 1721,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "interior-rumah.json",
+      "slug": "interior-rumah",
+      "words": 2083,
+      "h2": 12,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "jenis-jenis-tempat-piring-dan-cara-memilih.json",
+      "slug": "jenis-jenis-tempat-piring-dan-cara-memilih",
+      "words": 1823,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Ayu Lestari",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Ayu Lestari",
+        "il4"
+      ]
+    },
+    {
+      "file": "keranjang-laundry.json",
+      "slug": "keranjang-laundry",
+      "words": 1342,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1342",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "keranjang-penyimpanan.json",
+      "slug": "keranjang-penyimpanan",
+      "words": 1311,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1311",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "kitchen-cabinet-organizer-ideas-transform-cooking-space-2026.json",
+      "slug": "kitchen-cabinet-organizer-ideas-transform-cooking-space-2026",
+      "words": 2113,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-cabinets-organizer-ideas.json",
+      "slug": "kitchen-cabinets-organizer-ideas",
+      "words": 1662,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-cupboards-organizer-ideas-transform-storage-space-2026.json",
+      "slug": "kitchen-cupboards-organizer-ideas-transform-storage-space-2026",
+      "words": 1569,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "kitchen-dish-rack-complete-storage-solutions-guide-2026.json",
+      "slug": "kitchen-dish-rack-complete-storage-solutions-guide-2026",
+      "words": 1466,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1466",
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-food-storage-containers-ultimate-guide-fresh-food-organization-2026.json",
+      "slug": "kitchen-food-storage-containers-ultimate-guide-fresh-food-organization-2026",
+      "words": 1713,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-organizer-ideas-transform-cooking-space-2026.json",
+      "slug": "kitchen-organizer-ideas-transform-cooking-space-2026",
+      "words": 2090,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-set-design-for-small-kitchens-type-36-houses-2026.json",
+      "slug": "kitchen-set-design-for-small-kitchens-type-36-houses-2026",
+      "words": 1680,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-set-minimalis-dapur-kecil-murah.json",
+      "slug": "kitchen-set-minimalis-dapur-kecil-murah",
+      "words": 1785,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "kitchen-set-minimalis.json",
+      "slug": "kitchen-set-minimalis",
+      "words": 1611,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-set-modern-minimalis.json",
+      "slug": "kitchen-set-modern-minimalis",
+      "words": 2103,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "kitchen-set-sederhana-yang-tetap-stylish.json",
+      "slug": "kitchen-set-sederhana-yang-tetap-stylish",
+      "words": 1392,
+      "h2": 7,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1392",
+        "il4"
+      ]
+    },
+    {
+      "file": "kitchen-spice-rack-guide-best-organization-solutions-2026.json",
+      "slug": "kitchen-spice-rack-guide-best-organization-solutions-2026",
+      "words": 2002,
+      "h2": 10,
+      "qQuestions": 7,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "kotak-penyimpanan.json",
+      "slug": "kotak-penyimpanan",
+      "words": 1400,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 1,
+      "issues": [
+        "w1400",
+        "q0",
+        "il4",
+        "img1"
+      ]
+    },
+    {
+      "file": "label-organizer.json",
+      "slug": "label-organizer",
+      "words": 1549,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "latest-minimalist-kitchen-set-models-top-2026-trends-modern-homes.json",
+      "slug": "latest-minimalist-kitchen-set-models-top-2026-trends-modern-homes",
+      "words": 1739,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "laundry-room-organization-ideas-transform-space-2026.json",
+      "slug": "laundry-room-organization-ideas-transform-space-2026",
+      "words": 2044,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "laundry-room-organization-tips-transform-space-2026.json",
+      "slug": "laundry-room-organization-tips-transform-space-2026",
+      "words": 1861,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "lemari-dapur-aluminium-tahan-lama-dan-anti-rayap.json",
+      "slug": "lemari-dapur-aluminium-tahan-lama-dan-anti-rayap",
+      "words": 1604,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "lemari-gantung-dapur-hemat-ruang-maksimal-fungsi.json",
+      "slug": "lemari-gantung-dapur-hemat-ruang-maksimal-fungsi",
+      "words": 1876,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "lemari-makan-fungsi-dan-desain-untuk-ruang-makan.json",
+      "slug": "lemari-makan-fungsi-dan-desain-untuk-ruang-makan",
+      "words": 1550,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "lemari-pakaian-minimalis.json",
+      "slug": "lemari-pakaian-minimalis",
+      "words": 1487,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1487",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "lemari-penyimpanan.json",
+      "slug": "lemari-penyimpanan",
+      "words": 1545,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "lemari-piring-aluminium-modern-dan-anti-rayap.json",
+      "slug": "lemari-piring-aluminium-modern-dan-anti-rayap",
+      "words": 1940,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "lemari-piring-kaca-pajang-koleksi-dengan-elegan.json",
+      "slug": "lemari-piring-kaca-pajang-koleksi-dengan-elegan",
+      "words": 2112,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "lemari-piring-modern-pilihan-material-dan-desain.json",
+      "slug": "lemari-piring-modern-pilihan-material-dan-desain",
+      "words": 1499,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "w1499",
+        "il4"
+      ]
+    },
+    {
+      "file": "lemari-rak-piring-solusi-all-in-one-penyimpanan-dapur.json",
+      "slug": "lemari-rak-piring-solusi-all-in-one-penyimpanan-dapur",
+      "words": 2025,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "lidded-food-storage-containers-ultimate-guide-fresh-food-organization-2026.json",
+      "slug": "lidded-food-storage-containers-ultimate-guide-fresh-food-organization-2026",
+      "words": 1977,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "linen-closet-organization-ideas-smart-ways-transform-storage-space-2026.json",
+      "slug": "linen-closet-organization-ideas-smart-ways-transform-storage-space-2026",
+      "words": 2090,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "living-room-storage-ideas-for-toys.json",
+      "slug": "living-room-storage-ideas-for-toys",
+      "words": 1729,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "living-room-storage-ideas-transform-space-2026.json",
+      "slug": "living-room-storage-ideas-transform-space-2026",
+      "words": 2100,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "living-room-toy-storage-ideas.json",
+      "slug": "living-room-toy-storage-ideas",
+      "words": 1311,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "w1311",
+        "il4"
+      ]
+    },
+    {
+      "file": "living-room-toys-storage-ideas-transform-family-space-2026.json",
+      "slug": "living-room-toys-storage-ideas-transform-family-space-2026",
+      "words": 1259,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "w1259",
+        "il4"
+      ]
+    },
+    {
+      "file": "makeup-organizer-ultimate-guide-beauty-storage-solutions-2026.json",
+      "slug": "makeup-organizer-ultimate-guide-beauty-storage-solutions-2026",
+      "words": 2159,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "meja-bar-dapur-minimalis-untuk-ruang-kecil.json",
+      "slug": "meja-bar-dapur-minimalis-untuk-ruang-kecil",
+      "words": 1231,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "w1231",
+        "il2"
+      ]
+    },
+    {
+      "file": "meja-belajar-anak.json",
+      "slug": "meja-belajar-anak",
+      "words": 2056,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "meja-tv-minimalis.json",
+      "slug": "meja-tv-minimalis",
+      "words": 1870,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "memilih-meja-kompor-yang-tepat-untuk-dapur.json",
+      "slug": "memilih-meja-kompor-yang-tepat-untuk-dapur",
+      "words": 1907,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "menciptakan-zona-relaksasi-di-rumah-panduan-lifestyle-2026.json",
+      "slug": "menciptakan-zona-relaksasi-di-rumah-panduan-lifestyle-2026",
+      "words": 2042,
+      "h2": 12,
+      "qQuestions": 4,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "q4",
+        "il4"
+      ]
+    },
+    {
+      "file": "mengorganisir-dapur-kecil-dengan-efektif.json",
+      "slug": "mengorganisir-dapur-kecil-dengan-efektif",
+      "words": 725,
+      "h2": 15,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 0,
+      "issues": [
+        "w725",
+        "il2",
+        "img0"
+      ]
+    },
+    {
+      "file": "mini-aluminum-dish-racks-perfect-space-saving-solutions-2026.json",
+      "slug": "mini-aluminum-dish-racks-perfect-space-saving-solutions-2026",
+      "words": 1971,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "mini-bar-for-small-kitchens-creative-ideas-maximize-space.json",
+      "slug": "mini-bar-for-small-kitchens-creative-ideas-maximize-space",
+      "words": 2370,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "minimalist-house-guide-design-organization-storage-2026.json",
+      "slug": "minimalist-house-guide-design-organization-storage-2026",
+      "words": 1883,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "minimalist-house-paint-colors-modern-homes-2026.json",
+      "slug": "minimalist-house-paint-colors-modern-homes-2026",
+      "words": 1721,
+      "h2": 11,
+      "qQuestions": 7,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "model-kitchen-set-minimalis-complete-design-guide-modern-homes-2026.json",
+      "slug": "model-kitchen-set-minimalis-complete-design-guide-modern-homes-2026",
+      "words": 1621,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "model-rumah-minimalis-terbaru.json",
+      "slug": "model-rumah-minimalis-terbaru",
+      "words": 1422,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": true,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1422",
+        "usd",
+        "il4"
+      ]
+    },
+    {
+      "file": "modern-minimalist-kitchen-set-complete-design-guide-2026.json",
+      "slug": "modern-minimalist-kitchen-set-complete-design-guide-2026",
+      "words": 2074,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "mudroom-shoe-storage-ideas-transform-entryway-2026.json",
+      "slug": "mudroom-shoe-storage-ideas-transform-entryway-2026",
+      "words": 1447,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "w1447",
+        "il2"
+      ]
+    },
+    {
+      "file": "organization-closet-ideas-transform-storage-space-2026.json",
+      "slug": "organization-closet-ideas-transform-storage-space-2026",
+      "words": 1794,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "organization-for-home-office-complete-guide-maximum-productivity-2026.json",
+      "slug": "organization-for-home-office-complete-guide-maximum-productivity-2026",
+      "words": 1865,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "organization-for-laundry-room-complete-guide-transform-space-2026.json",
+      "slug": "organization-for-laundry-room-complete-guide-transform-space-2026",
+      "words": 1439,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1439",
+        "il4"
+      ]
+    },
+    {
+      "file": "organization-ideas-closet-makeover-transform-storage-space-2026.json",
+      "slug": "organization-ideas-closet-makeover-transform-storage-space-2026",
+      "words": 1727,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "organization-ideas-for-a-small-closet-transform-limited-space-2026.json",
+      "slug": "organization-ideas-for-a-small-closet-transform-limited-space-2026",
+      "words": 1927,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "organization-ideas-for-pantry-transform-kitchen-storage-2026.json",
+      "slug": "organization-ideas-for-pantry-transform-kitchen-storage-2026",
+      "words": 2461,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "organization-ideas-for-small-closet-transform-tiny-space-2026.json",
+      "slug": "organization-ideas-for-small-closet-transform-tiny-space-2026",
+      "words": 2325,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "organization-laundry-room-ultimate-guide-transform-space-2026.json",
+      "slug": "organization-laundry-room-ultimate-guide-transform-space-2026",
+      "words": 1454,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "w1454"
+      ]
+    },
+    {
+      "file": "organization-of-home-office-complete-guide-transform-workspace-2026.json",
+      "slug": "organization-of-home-office-complete-guide-transform-workspace-2026",
+      "words": 1624,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "organization-pantry-ideas-transform-kitchen-storage-2026.json",
+      "slug": "organization-pantry-ideas-transform-kitchen-storage-2026",
+      "words": 1430,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": [
+        "w1430"
+      ]
+    },
+    {
+      "file": "organization-small-closet-ideas-smart-solutions-transform-tiny-wardrobe-2026.json",
+      "slug": "organization-small-closet-ideas-smart-solutions-transform-tiny-wardrobe-2026",
+      "words": 2553,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "organizer-ideas-for-kitchen-transform-cooking-space-2026.json",
+      "slug": "organizer-ideas-for-kitchen-transform-cooking-space-2026",
+      "words": 1807,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "organizer-kamar-mandi.json",
+      "slug": "organizer-kamar-mandi",
+      "words": 1194,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1194",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "organizer-kulkas.json",
+      "slug": "organizer-kulkas",
+      "words": 1460,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "w1460",
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "organizer-makeup.json",
+      "slug": "organizer-makeup",
+      "words": 1633,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "organizer-perlengkapan-bayi.json",
+      "slug": "organizer-perlengkapan-bayi",
+      "words": 1614,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "organizer-pisau-dapur.json",
+      "slug": "organizer-pisau-dapur",
+      "words": 1609,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "organizer-travel-bag.json",
+      "slug": "organizer-travel-bag",
+      "words": 1243,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 3,
+      "issues": [
+        "w1243",
+        "il2"
+      ]
+    },
+    {
+      "file": "packing-cubes.json",
+      "slug": "packing-cubes",
+      "words": 1780,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il3"
+      ]
+    },
+    {
+      "file": "panduan-dekorasi-rumah-minimalis-lengkap.json",
+      "slug": "panduan-dekorasi-rumah-minimalis-lengkap",
+      "words": 1634,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "panduan-lengkap-memilih-alat-masak-berkualitas.json",
+      "slug": "panduan-lengkap-memilih-alat-masak-berkualitas",
+      "words": 2084,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "pantry-food-storage-containers-complete-organization-guide-2026.json",
+      "slug": "pantry-food-storage-containers-complete-organization-guide-2026",
+      "words": 2086,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "peralatan-berkebun.json",
+      "slug": "peralatan-berkebun",
+      "words": 1646,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il2",
+        "img1"
+      ]
+    },
+    {
+      "file": "peralatan-dapur-wajib-untuk-rumah-tangga-baru.json",
+      "slug": "peralatan-dapur-wajib-untuk-rumah-tangga-baru",
+      "words": 1732,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "perlengkapan-rumah-minimalis.json",
+      "slug": "perlengkapan-rumah-minimalis",
+      "words": 1405,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "w1405",
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "perlengkapan-traveling.json",
+      "slug": "perlengkapan-traveling",
+      "words": 1669,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "pet-food-storage-containers-complete-guide-2026.json",
+      "slug": "pet-food-storage-containers-complete-guide-2026",
+      "words": 1540,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "plastic-dish-racks-affordable-lightweight-kitchen-solutions.json",
+      "slug": "plastic-dish-racks-affordable-lightweight-kitchen-solutions",
+      "words": 2511,
+      "h2": 12,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "plastic-storage-containers-food-complete-guide-2026.json",
+      "slug": "plastic-storage-containers-food-complete-guide-2026",
+      "words": 2602,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "plastic-storage-containers-for-food-complete-guide-safe-food-storage-2026.json",
+      "slug": "plastic-storage-containers-for-food-complete-guide-safe-food-storage-2026",
+      "words": 2194,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "plate-rack-kitchen-set-lower-cabinet-maximizing-storage-space.json",
+      "slug": "plate-rack-kitchen-set-lower-cabinet-maximizing-storage-space",
+      "words": 1964,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "pretty-food-storage-containers-stylish-kitchen-organization-2026.json",
+      "slug": "pretty-food-storage-containers-stylish-kitchen-organization-2026",
+      "words": 2071,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi"
+      ]
+    },
+    {
+      "file": "pyrex-food-storage-containers-complete-review-buying-guide-2026.json",
+      "slug": "pyrex-food-storage-containers-complete-review-buying-guide-2026",
+      "words": 2261,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "pyrex-glass-food-storage-containers-complete-guide-2026.json",
+      "slug": "pyrex-glass-food-storage-containers-complete-guide-2026",
+      "words": 2042,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "rak-aluminium-dapur.json",
+      "slug": "rak-aluminium-dapur",
+      "words": 1734,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "rak-buku-minimalis.json",
+      "slug": "rak-buku-minimalis",
+      "words": 1309,
+      "h2": 7,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1309",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-bumbu-dapur-organisasi-bumbu-jadi-mudah.json",
+      "slug": "rak-bumbu-dapur-organisasi-bumbu-jadi-mudah",
+      "words": 1944,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "rak-dan-tempat-sepatu-organisasi-koleksi-sepatu.json",
+      "slug": "rak-dan-tempat-sepatu-organisasi-koleksi-sepatu",
+      "words": 2356,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "rak-dapur-besi.json",
+      "slug": "rak-dapur-besi",
+      "words": 1992,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-dapur.json",
+      "slug": "rak-dapur",
+      "words": 1611,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-di-atas-wastafel-organisasi-area-cuci-piring.json",
+      "slug": "rak-di-atas-wastafel-organisasi-area-cuci-piring",
+      "words": 2007,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "rak-dinding-dapur.json",
+      "slug": "rak-dinding-dapur",
+      "words": 1259,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "w1259",
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-gantung-dapur.json",
+      "slug": "rak-gantung-dapur",
+      "words": 1732,
+      "h2": 11,
+      "qQuestions": 2,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 2,
+      "issues": [
+        "q2",
+        "il4",
+        "img2"
+      ]
+    },
+    {
+      "file": "rak-kamar-mandi.json",
+      "slug": "rak-kamar-mandi",
+      "words": 1355,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1355",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-kolong-dapur.json",
+      "slug": "rak-kolong-dapur",
+      "words": 1579,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "rak-kompor-organisasi-area-memasak-lebih-rapi.json",
+      "slug": "rak-kompor-organisasi-area-memasak-lebih-rapi",
+      "words": 1629,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 4,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "rak-mainan-anak.json",
+      "slug": "rak-mainan-anak",
+      "words": 1852,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-meja-kerja.json",
+      "slug": "rak-meja-kerja",
+      "words": 1740,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il4"
+      ]
+    },
+    {
+      "file": "rak-mesin-cuci.json",
+      "slug": "rak-mesin-cuci",
+      "words": 1287,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1287",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-microwave.json",
+      "slug": "rak-microwave",
+      "words": 1675,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-minimalis.json",
+      "slug": "rak-minimalis",
+      "words": 1534,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "rak-monitor-meja-kerja.json",
+      "slug": "rak-monitor-meja-kerja",
+      "words": 1727,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-panci-dapur.json",
+      "slug": "rak-panci-dapur",
+      "words": 1739,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-penyimpanan-gudang.json",
+      "slug": "rak-penyimpanan-gudang",
+      "words": 1374,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 1,
+      "issues": [
+        "w1374",
+        "q0",
+        "il4",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-penyimpanan-makanan.json",
+      "slug": "rak-penyimpanan-makanan",
+      "words": 1646,
+      "h2": 10,
+      "qQuestions": 2,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 2,
+      "issues": [
+        "q2",
+        "il4",
+        "img2"
+      ]
+    },
+    {
+      "file": "rak-penyimpanan.json",
+      "slug": "rak-penyimpanan",
+      "words": 1394,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 1,
+      "issues": [
+        "w1394",
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-piring-aluminium-kelebihan-dan-cara-memilih.json",
+      "slug": "rak-piring-aluminium-kelebihan-dan-cara-memilih",
+      "words": 1678,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "rak-piring-aluminium-model-terbaru.json",
+      "slug": "rak-piring-aluminium-model-terbaru",
+      "words": 1484,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1484",
+        "il4"
+      ]
+    },
+    {
+      "file": "rak-piring-built-in-kitchen-set-panduan-lengkap.json",
+      "slug": "rak-piring-built-in-kitchen-set-panduan-lengkap",
+      "words": 1721,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 4,
+      "issues": [
+        "il3"
+      ]
+    },
+    {
+      "file": "rak-piring-di-atas-wastafel-solusi-dapur-sempit.json",
+      "slug": "rak-piring-di-atas-wastafel-solusi-dapur-sempit",
+      "words": 1560,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 5,
+      "issues": [
+        "a:Maya Dewi"
+      ]
+    },
+    {
+      "file": "rak-piring-lemari-dapur.json",
+      "slug": "rak-piring-lemari-dapur",
+      "words": 1674,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "rak-piring-stainless-steel-anti-karat-dan-tahan-lama.json",
+      "slug": "rak-piring-stainless-steel-anti-karat-dan-tahan-lama",
+      "words": 1398,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "w1398"
+      ]
+    },
+    {
+      "file": "rak-piring-tempel-tembok-dapur.json",
+      "slug": "rak-piring-tempel-tembok-dapur",
+      "words": 2017,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "rak-sabun-kamar-mandi-stainless-anti-karat.json",
+      "slug": "rak-sabun-kamar-mandi-stainless-anti-karat",
+      "words": 1702,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "rak-sepeda-rumah.json",
+      "slug": "rak-sepeda-rumah",
+      "words": 1879,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "rak-serbaguna.json",
+      "slug": "rak-serbaguna",
+      "words": 1708,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "rak-stainless-dapur.json",
+      "slug": "rak-stainless-dapur",
+      "words": 1783,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "rak-tanaman-minimalis.json",
+      "slug": "rak-tanaman-minimalis",
+      "words": 1661,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "rekomendasi-rak-piring-terbaik.json",
+      "slug": "rekomendasi-rak-piring-terbaik",
+      "words": 1913,
+      "h2": 8,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "review-koleksi-kontainer-serbaguna-sesoris.json",
+      "slug": "review-koleksi-kontainer-serbaguna-sesoris",
+      "words": 604,
+      "h2": 13,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 0,
+      "issues": [
+        "w604",
+        "q0",
+        "il2",
+        "img0"
+      ]
+    },
+    {
+      "file": "review-rak-piring-master-worth-it-atau-tidak.json",
+      "slug": "review-rak-piring-master-worth-it-atau-tidak",
+      "words": 1819,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Dina Rahayu",
+      "hasUSD": false,
+      "internalLinks": 9,
+      "images": 1,
+      "issues": [
+        "a:Dina Rahayu",
+        "img1"
+      ]
+    },
+    {
+      "file": "rice-food-storage-containers-ultimate-guide-fresh-rice-storage-2026.json",
+      "slug": "rice-food-storage-containers-ultimate-guide-fresh-rice-storage-2026",
+      "words": 1809,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ruang-tamu-aesthetic-tips-dekorasi-kekinian.json",
+      "slug": "ruang-tamu-aesthetic-tips-dekorasi-kekinian",
+      "words": 1866,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "rubbermaid-brilliance-food-storage-containers-ultimate-guide-2026.json",
+      "slug": "rubbermaid-brilliance-food-storage-containers-ultimate-guide-2026",
+      "words": 1606,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "rubbermaid-food-storage-containers-complete-guide-premium-kitchen-organization-2026.json",
+      "slug": "rubbermaid-food-storage-containers-complete-guide-premium-kitchen-organization-2026",
+      "words": 1615,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "shelf-in-wall-ideas-transform-living-space-2026.json",
+      "slug": "shelf-in-wall-ideas-transform-living-space-2026",
+      "words": 1895,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "shelf-on-wall-ideas-transform-space-2026.json",
+      "slug": "shelf-on-wall-ideas-transform-space-2026",
+      "words": 1647,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "shelf-wall-ideas-transform-living-space-2026.json",
+      "slug": "shelf-wall-ideas-transform-living-space-2026",
+      "words": 2211,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "shoe-entryway-storage-ideas.json",
+      "slug": "shoe-entryway-storage-ideas",
+      "words": 2269,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "shoe-storage-diy-ideas-transform-home-organization-2026.json",
+      "slug": "shoe-storage-diy-ideas-transform-home-organization-2026",
+      "words": 1471,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "w1471",
+        "il2"
+      ]
+    },
+    {
+      "file": "shoe-storage-ideas-for-entryway.json",
+      "slug": "shoe-storage-ideas-for-entryway",
+      "words": 1709,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "shoe-storage-ideas-for-garage.json",
+      "slug": "shoe-storage-ideas-for-garage",
+      "words": 1403,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "w1403",
+        "il2"
+      ]
+    },
+    {
+      "file": "shoe-storage-ideas-for-small-entryway.json",
+      "slug": "shoe-storage-ideas-for-small-entryway",
+      "words": 1563,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "shoe-storage-ideas-for-small-entryways-transform-tiny-space-2026.json",
+      "slug": "shoe-storage-ideas-for-small-entryways-transform-tiny-space-2026",
+      "words": 1449,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 4,
+      "issues": [
+        "w1449",
+        "il3"
+      ]
+    },
+    {
+      "file": "shoe-storage-ideas-for-small-space.json",
+      "slug": "shoe-storage-ideas-for-small-space",
+      "words": 2048,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "shoe-storage-ideas-for-small-spaces.json",
+      "slug": "shoe-storage-ideas-for-small-spaces",
+      "words": 1685,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "shoe-storage-ideas-garage.json",
+      "slug": "shoe-storage-ideas-garage",
+      "words": 1281,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 4,
+      "issues": [
+        "w1281",
+        "a:Maya Dewi",
+        "il2"
+      ]
+    },
+    {
+      "file": "shoe-storage-ideas-small-space-transform-entryway-2026.json",
+      "slug": "shoe-storage-ideas-small-space-transform-entryway-2026",
+      "words": 1305,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1305",
+        "il4"
+      ]
+    },
+    {
+      "file": "shoe-storage-in-garage-ideas-transform-space-2026.json",
+      "slug": "shoe-storage-in-garage-ideas-transform-space-2026",
+      "words": 1531,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Hendra Kusuma",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Hendra Kusuma",
+        "il4"
+      ]
+    },
+    {
+      "file": "simple-but-attractive-living-room-decor-affordable-ideas-2026.json",
+      "slug": "simple-but-attractive-living-room-decor-affordable-ideas-2026",
+      "words": 1971,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 4,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "simple-minimalist-home-design-transform-space-tips.json",
+      "slug": "simple-minimalist-home-design-transform-space-tips",
+      "words": 1795,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "small-dish-racks-perfect-solutions-compact-kitchens-2026.json",
+      "slug": "small-dish-racks-perfect-solutions-compact-kitchens-2026",
+      "words": 1721,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 4,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "small-entryway-shoe-storage-ideas-smart-solutions-tiny-spaces-2026.json",
+      "slug": "small-entryway-shoe-storage-ideas-smart-solutions-tiny-spaces-2026",
+      "words": 1885,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "small-front-yard-minimalist-design-compact-spaces.json",
+      "slug": "small-front-yard-minimalist-design-compact-spaces",
+      "words": 1980,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "small-pantry-organization-ideas-transform-kitchen-storage-2026.json",
+      "slug": "small-pantry-organization-ideas-transform-kitchen-storage-2026",
+      "words": 1966,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "smart-bathroom-storage-solutions-transform-space-2026.json",
+      "slug": "smart-bathroom-storage-solutions-transform-space-2026",
+      "words": 1652,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 5,
+      "issues": [
+        "a:Maya Dewi"
+      ]
+    },
+    {
+      "file": "spice-rack-types-proper-organization-guide-2026.json",
+      "slug": "spice-rack-types-proper-organization-guide-2026",
+      "words": 1830,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "spice-racks-for-kitchen-complete-guide-transform-cooking-space-2026.json",
+      "slug": "spice-racks-for-kitchen-complete-guide-transform-cooking-space-2026",
+      "words": 1616,
+      "h2": 7,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "stainless-food-storage-containers-ultimate-guide-durable-kitchen-organization-2026.json",
+      "slug": "stainless-food-storage-containers-ultimate-guide-durable-kitchen-organization-2026",
+      "words": 2371,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "stainless-steel-food-storage-containers-ultimate-guide-durable-food-storage-2026.json",
+      "slug": "stainless-steel-food-storage-containers-ultimate-guide-durable-food-storage-2026",
+      "words": 2233,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "stainless-steel-racks-long-term-investment-home-organization.json",
+      "slug": "stainless-steel-racks-long-term-investment-home-organization",
+      "words": 2078,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "steel-wire-dish-racks-strong-economical-kitchen-storage.json",
+      "slug": "steel-wire-dish-racks-strong-economical-kitchen-storage",
+      "words": 1795,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-box-baju.json",
+      "slug": "storage-box-baju",
+      "words": 1847,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "storage-box-lipat.json",
+      "slug": "storage-box-lipat",
+      "words": 1462,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 1,
+      "issues": [
+        "w1462",
+        "q0",
+        "il4",
+        "img1"
+      ]
+    },
+    {
+      "file": "storage-box-mini.json",
+      "slug": "storage-box-mini",
+      "words": 1337,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 1,
+      "issues": [
+        "w1337",
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "storage-box-plastik.json",
+      "slug": "storage-box-plastik",
+      "words": 1918,
+      "h2": 10,
+      "qQuestions": 7,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-box-terbaik-2026-panduan-lengkap-memilih-kotak-penyimpanan.json",
+      "slug": "storage-box-terbaik-2026-panduan-lengkap-memilih-kotak-penyimpanan",
+      "words": 1901,
+      "h2": 12,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "storage-box-terbaik-untuk-organisasi-rumah.json",
+      "slug": "storage-box-terbaik-untuk-organisasi-rumah",
+      "words": 1503,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-containers-dog-food-complete-tutorial-guide-fresh-pet-food-storage-2026.json",
+      "slug": "storage-containers-dog-food-complete-tutorial-guide-fresh-pet-food-storage-2026",
+      "words": 1685,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "storage-containers-food-ultimate-guide-fresh-food-storage-2026.json",
+      "slug": "storage-containers-food-ultimate-guide-fresh-food-storage-2026",
+      "words": 1767,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-containers-for-food-bpa-free-complete-tutorial-guide-2026.json",
+      "slug": "storage-containers-for-food-bpa-free-complete-tutorial-guide-2026",
+      "words": 2217,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-containers-for-food-complete-guide-2026.json",
+      "slug": "storage-containers-for-food-complete-guide-2026",
+      "words": 1912,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "storage-containers-for-pet-food-ultimate-guide-keeping-fresh-2026.json",
+      "slug": "storage-containers-for-pet-food-ultimate-guide-keeping-fresh-2026",
+      "words": 1719,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-for-food-storage-containers-organization-guide-2026.json",
+      "slug": "storage-for-food-storage-containers-organization-guide-2026",
+      "words": 1817,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-garage-solutions-transform-organized-space-2026.json",
+      "slug": "storage-garage-solutions-transform-organized-space-2026",
+      "words": 1746,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-ideas-for-small-space-transform-tiny-home-2026.json",
+      "slug": "storage-ideas-for-small-space-transform-tiny-home-2026",
+      "words": 1943,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-ideas-for-the-living-room.json",
+      "slug": "storage-ideas-for-the-living-room",
+      "words": 2041,
+      "h2": 12,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-ideas-for-toys-in-living-room-transform-family-space-2026.json",
+      "slug": "storage-ideas-for-toys-in-living-room-transform-family-space-2026",
+      "words": 2276,
+      "h2": 13,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-ideas-in-living-room-transform-space-2026.json",
+      "slug": "storage-ideas-in-living-room-transform-space-2026",
+      "words": 2055,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "storage-ideas-small-space-transform-tiny-home-2026.json",
+      "slug": "storage-ideas-small-space-transform-tiny-home-2026",
+      "words": 1923,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-solutions-for-a-garage-transform-your-space-2026.json",
+      "slug": "storage-solutions-for-a-garage-transform-your-space-2026",
+      "words": 1695,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-solutions-for-bathroom-transform-space-smart-organization-2026.json",
+      "slug": "storage-solutions-for-bathroom-transform-space-smart-organization-2026",
+      "words": 2279,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-solutions-for-garage-organization-transform-space-2026.json",
+      "slug": "storage-solutions-for-garage-organization-transform-space-2026",
+      "words": 1593,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "storage-solutions-in-garage-transform-space-organized-haven-2026.json",
+      "slug": "storage-solutions-in-garage-transform-space-organized-haven-2026",
+      "words": 2098,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "sustainable-living-mulai-dari-rumah.json",
+      "slug": "sustainable-living-mulai-dari-rumah",
+      "words": 795,
+      "h2": 15,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 0,
+      "issues": [
+        "w795",
+        "il2",
+        "img0"
+      ]
+    },
+    {
+      "file": "tas-outdoor.json",
+      "slug": "tas-outdoor",
+      "words": 1697,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il4"
+      ]
+    },
+    {
+      "file": "tas-travel-lipat.json",
+      "slug": "tas-travel-lipat",
+      "words": 1769,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il4"
+      ]
+    },
+    {
+      "file": "tempat-alat-tulis.json",
+      "slug": "tempat-alat-tulis",
+      "words": 1699,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "tempat-bumbu-cantik-untuk-dapur-instagramable.json",
+      "slug": "tempat-bumbu-cantik-untuk-dapur-instagramable",
+      "words": 1796,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "tempat-bumbu-dapur.json",
+      "slug": "tempat-bumbu-dapur",
+      "words": 1931,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "tempat-dokumen-rumah.json",
+      "slug": "tempat-dokumen-rumah",
+      "words": 1787,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il4",
+        "img1"
+      ]
+    },
+    {
+      "file": "tempat-kue-lebaran.json",
+      "slug": "tempat-kue-lebaran",
+      "words": 1849,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "tempat-penyimpanan-asi.json",
+      "slug": "tempat-penyimpanan-asi",
+      "words": 1809,
+      "h2": 11,
+      "qQuestions": 1,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 1,
+      "issues": [
+        "q1",
+        "il2",
+        "img1"
+      ]
+    },
+    {
+      "file": "tempat-penyimpanan-baju.json",
+      "slug": "tempat-penyimpanan-baju",
+      "words": 1448,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 1,
+      "issues": [
+        "w1448",
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "tempat-penyimpanan-barang.json",
+      "slug": "tempat-penyimpanan-barang",
+      "words": 1471,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "w1471",
+        "q0"
+      ]
+    },
+    {
+      "file": "tempat-penyimpanan-mainan.json",
+      "slug": "tempat-penyimpanan-mainan",
+      "words": 1654,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "tempat-penyimpanan-makanan.json",
+      "slug": "tempat-penyimpanan-makanan",
+      "words": 1422,
+      "h2": 8,
+      "qQuestions": 6,
+      "author": "Budi Santoso",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 4,
+      "issues": [
+        "w1422",
+        "a:Budi Santoso",
+        "il2"
+      ]
+    },
+    {
+      "file": "tempat-penyimpanan-obat.json",
+      "slug": "tempat-penyimpanan-obat",
+      "words": 1352,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1352",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "tempat-penyimpanan-sepatu.json",
+      "slug": "tempat-penyimpanan-sepatu",
+      "words": 1621,
+      "h2": 10,
+      "qQuestions": 2,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 2,
+      "issues": [
+        "q2",
+        "il2",
+        "img2"
+      ]
+    },
+    {
+      "file": "tempat-sabun-kamar-mandi-pilihan-desain-terbaik.json",
+      "slug": "tempat-sabun-kamar-mandi-pilihan-desain-terbaik",
+      "words": 1424,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "w1424",
+        "il4"
+      ]
+    },
+    {
+      "file": "tempat-sabun-kamar-mandi.json",
+      "slug": "tempat-sabun-kamar-mandi",
+      "words": 1318,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "w1318",
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "tempat-sampah-dapur.json",
+      "slug": "tempat-sampah-dapur",
+      "words": 1672,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "tempat-tidur-dengan-storage.json",
+      "slug": "tempat-tidur-dengan-storage",
+      "words": 1654,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "teras-rumah-minimalis.json",
+      "slug": "teras-rumah-minimalis",
+      "words": 1518,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "tips-membuat-dapur-cantik-dan-fungsional.json",
+      "slug": "tips-membuat-dapur-cantik-dan-fungsional",
+      "words": 1981,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "tips-menata-dapur-kecil.json",
+      "slug": "tips-menata-dapur-kecil",
+      "words": 1494,
+      "h2": 14,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "w1494",
+        "q0"
+      ]
+    },
+    {
+      "file": "tips-menata-kamar-tidur-sempit.json",
+      "slug": "tips-menata-kamar-tidur-sempit",
+      "words": 1514,
+      "h2": 14,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 7,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "tips-menata-rumah-minimalis-marie-kondo.json",
+      "slug": "tips-menata-rumah-minimalis-marie-kondo",
+      "words": 865,
+      "h2": 15,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 0,
+      "issues": [
+        "w865",
+        "il2",
+        "img0"
+      ]
+    },
+    {
+      "file": "tips-produktif-kerja-dari-rumah.json",
+      "slug": "tips-produktif-kerja-dari-rumah",
+      "words": 2026,
+      "h2": 11,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 10,
+      "images": 1,
+      "issues": [
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "tips-rumah-rapi.json",
+      "slug": "tips-rumah-rapi",
+      "words": 1506,
+      "h2": 7,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 8,
+      "images": 3,
+      "issues": [
+        "q0"
+      ]
+    },
+    {
+      "file": "top-rated-glass-food-storage-containers-ultimate-guide-premium-food-organization-2026.json",
+      "slug": "top-rated-glass-food-storage-containers-ultimate-guide-premium-food-organization-2026",
+      "words": 1859,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "toples-kue-lebaran.json",
+      "slug": "toples-kue-lebaran",
+      "words": 1335,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "w1335",
+        "q0",
+        "il4"
+      ]
+    },
+    {
+      "file": "toy-storage-ideas-for-living-room-transform-family-space-2026.json",
+      "slug": "toy-storage-ideas-for-living-room-transform-family-space-2026",
+      "words": 2406,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "toy-storage-ideas-in-living-room.json",
+      "slug": "toy-storage-ideas-in-living-room",
+      "words": 1389,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "w1389",
+        "il4"
+      ]
+    },
+    {
+      "file": "travel-accessories.json",
+      "slug": "travel-accessories",
+      "words": 1614,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il4"
+      ]
+    },
+    {
+      "file": "travel-bag-organizer.json",
+      "slug": "travel-bag-organizer",
+      "words": 1465,
+      "h2": 8,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1465",
+        "il4"
+      ]
+    },
+    {
+      "file": "travel-gear.json",
+      "slug": "travel-gear",
+      "words": 1720,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "q0",
+        "il4"
+      ]
+    },
+    {
+      "file": "travel-organizer-bag-ultimate-guide-smart-packing-solutions-2026.json",
+      "slug": "travel-organizer-bag-ultimate-guide-smart-packing-solutions-2026",
+      "words": 1810,
+      "h2": 10,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "tren-dapur-modern-indonesia-desain-dan-teknologi.json",
+      "slug": "tren-dapur-modern-indonesia-desain-dan-teknologi",
+      "words": 1410,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1410",
+        "il4"
+      ]
+    },
+    {
+      "file": "tren-home-organization-2026.json",
+      "slug": "tren-home-organization-2026",
+      "words": 1503,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "tutorial-membuat-daftar-inventaris-rumah-tangga.json",
+      "slug": "tutorial-membuat-daftar-inventaris-rumah-tangga",
+      "words": 1718,
+      "h2": 11,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "tutorial-membuat-home-office-ergonomis-produktif.json",
+      "slug": "tutorial-membuat-home-office-ergonomis-produktif",
+      "words": 1696,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 5,
+      "issues": [
+        "il3"
+      ]
+    },
+    {
+      "file": "tutorial-membuat-kitchen-island-mini-dapur-kecil.json",
+      "slug": "tutorial-membuat-kitchen-island-mini-dapur-kecil",
+      "words": 1812,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 11,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "tutorial-membuat-organizer-laci-kamar-tidur-diy.json",
+      "slug": "tutorial-membuat-organizer-laci-kamar-tidur-diy",
+      "words": 2617,
+      "h2": 13,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 7,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "tutorial-membuat-spice-rack-diy-dapur-kecil.json",
+      "slug": "tutorial-membuat-spice-rack-diy-dapur-kecil",
+      "words": 1699,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": true,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": [
+        "usd"
+      ]
+    },
+    {
+      "file": "tutorial-membuat-taman-mini-indoor-panduan-lengkap-2026.json",
+      "slug": "tutorial-membuat-taman-mini-indoor-panduan-lengkap-2026",
+      "words": 1720,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 6,
+      "images": 4,
+      "issues": []
+    },
+    {
+      "file": "tutorial-plant-care-station-diy-organized-system.json",
+      "slug": "tutorial-plant-care-station-diy-organized-system",
+      "words": 1810,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 5,
+      "issues": []
+    },
+    {
+      "file": "ultimate-storage-box-guide-2026-best-solutions-home-organization.json",
+      "slug": "ultimate-storage-box-guide-2026-best-solutions-home-organization",
+      "words": 1851,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "ultimate-storage-solutions-for-the-garage-transform-space-2026.json",
+      "slug": "ultimate-storage-solutions-for-the-garage-transform-space-2026",
+      "words": 1277,
+      "h2": 7,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1277",
+        "il4"
+      ]
+    },
+    {
+      "file": "under-bed-storage.json",
+      "slug": "under-bed-storage",
+      "words": 1440,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "w1440",
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "vacuum-storage-bag.json",
+      "slug": "vacuum-storage-bag",
+      "words": 1420,
+      "h2": 9,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 3,
+      "images": 1,
+      "issues": [
+        "w1420",
+        "q0",
+        "il3",
+        "img1"
+      ]
+    },
+    {
+      "file": "vertical-garden-rumah.json",
+      "slug": "vertical-garden-rumah",
+      "words": 1837,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "very-small-closet-organization-ideas-transform-tiny-storage-space-2026.json",
+      "slug": "very-small-closet-organization-ideas-transform-tiny-storage-space-2026",
+      "words": 1687,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "wadah-makanan-plastik-ultimate-guide-safe-storage-solutions-modern-kitchens-2026.json",
+      "slug": "wadah-makanan-plastik-ultimate-guide-safe-storage-solutions-modern-kitchens-2026",
+      "words": 1792,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Maya Dewi",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "a:Maya Dewi",
+        "il4"
+      ]
+    },
+    {
+      "file": "wadah-makanan-untuk-jualan.json",
+      "slug": "wadah-makanan-untuk-jualan",
+      "words": 1584,
+      "h2": 9,
+      "qQuestions": 6,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 3,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "wadah-makanan.json",
+      "slug": "wadah-makanan",
+      "words": 1785,
+      "h2": 10,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 1,
+      "images": 1,
+      "issues": [
+        "q0",
+        "il1",
+        "img1"
+      ]
+    },
+    {
+      "file": "walk-in-closet-organization-ideas-transform-dream-wardrobe-2026.json",
+      "slug": "walk-in-closet-organization-ideas-transform-dream-wardrobe-2026",
+      "words": 1721,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "walk-in-closet-organization-ideas-transform-dream-wardrobe-space-2026.json",
+      "slug": "walk-in-closet-organization-ideas-transform-dream-wardrobe-space-2026",
+      "words": 2104,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "walkin-closet-organization-ideas-transform-dream-storage-space-2026.json",
+      "slug": "walkin-closet-organization-ideas-transform-dream-storage-space-2026",
+      "words": 1678,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "wall-shelf-storage-ideas-transform-home-organization-2026.json",
+      "slug": "wall-shelf-storage-ideas-transform-home-organization-2026",
+      "words": 2437,
+      "h2": 13,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 5,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "wall-to-wall-shelf-ideas-transform-home-storage-2026.json",
+      "slug": "wall-to-wall-shelf-ideas-transform-home-storage-2026",
+      "words": 2016,
+      "h2": 11,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "warna-cat-rumah-minimalis.json",
+      "slug": "warna-cat-rumah-minimalis",
+      "words": 1483,
+      "h2": 8,
+      "qQuestions": 0,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 5,
+      "images": 1,
+      "issues": [
+        "w1483",
+        "q0",
+        "img1"
+      ]
+    },
+    {
+      "file": "wooden-dish-racks-natural-aesthetic-beauty-kitchen.json",
+      "slug": "wooden-dish-racks-natural-aesthetic-beauty-kitchen",
+      "words": 1781,
+      "h2": 8,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 2,
+      "images": 5,
+      "issues": [
+        "il2"
+      ]
+    },
+    {
+      "file": "wooden-spice-racks-kitchen-ultimate-guide-natural-storage-solutions-2026.json",
+      "slug": "wooden-spice-racks-kitchen-ultimate-guide-natural-storage-solutions-2026",
+      "words": 1566,
+      "h2": 9,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "il4"
+      ]
+    },
+    {
+      "file": "work-life-balance-di-rumah-strategi-gaya-hidup-seimbang.json",
+      "slug": "work-life-balance-di-rumah-strategi-gaya-hidup-seimbang",
+      "words": 1468,
+      "h2": 10,
+      "qQuestions": 5,
+      "author": "Tim Sesoris",
+      "hasUSD": false,
+      "internalLinks": 4,
+      "images": 4,
+      "issues": [
+        "w1468",
+        "il4"
+      ]
+    }
+  ]
+}

@@ -9,21 +9,21 @@ import { useCartStore } from '@/stores/cart-store';
 import { useWishlistStore } from '@/stores/wishlist-store';
 
 const navLinks = [
-  { name: 'Beranda', href: '/' },
-  { name: 'Belanja', href: '/shop', hasDropdown: true },
-  { name: 'Koleksi', href: '/collections' },
-  { name: 'Lacak Pesanan', href: '/track-order' },
+  { name: 'Home', href: '/' },
+  { name: 'Shop', href: '/shop', hasDropdown: true },
+  { name: 'Collections', href: '/collections' },
+  { name: 'Track Order', href: '/track-order' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Tentang', href: '/about' },
-  { name: 'Kontak', href: '/contact' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const shopLinks = [
-  { name: 'Semua Produk', href: '/shop' },
-  { name: 'Produk Baru', href: '/new-arrivals' },
-  { name: 'Terlaris', href: '/best-sellers' },
-  { name: 'Promo', href: '/on-sale' },
-  { name: 'Paket Hemat', href: '/bundles' },
+  { name: 'All Products', href: '/shop' },
+  { name: 'New Arrivals', href: '/new-arrivals' },
+  { name: 'Best Sellers', href: '/best-sellers' },
+  { name: 'On Sale', href: '/on-sale' },
+  { name: 'Bundles', href: '/bundles' },
 ];
 
 export function Header() {

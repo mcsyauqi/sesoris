@@ -14,10 +14,10 @@ export function CategorySection() {
             color: '#212529',
             marginBottom: '12px'
           }}>
-            Belanja Berdasarkan Kategori
+            Shop by Category
           </h2>
           <p style={{ color: '#6C757D', fontSize: '15px' }}>
-            Temukan produk yang tepat untuk setiap kebutuhan
+            Find the right product for every need
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export function CategorySection() {
                   color: 'white'
                 }}>
                   <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '2px' }}>{cat.name}</div>
-                  <div style={{ fontSize: '12px', opacity: 0.8 }}>{cat.productCount} produk</div>
+                  <div style={{ fontSize: '12px', opacity: 0.8 }}>{cat.productCount} products</div>
                 </div>
               </div>
             </Link>

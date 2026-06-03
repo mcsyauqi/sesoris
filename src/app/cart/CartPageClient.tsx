@@ -35,7 +35,7 @@ export default function CartPageClient() {
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
               <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-              <span style={{ color: '#212529', fontWeight: 500 }}>Keranjang</span>
+              <span style={{ color: '#212529', fontWeight: 500 }}>Cart</span>
             </div>
           </div>
         </div>
@@ -54,13 +54,13 @@ export default function CartPageClient() {
             <ShoppingBag style={{ width: '32px', height: '32px', color: '#6C757D' }} />
           </div>
           <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
-            Keranjang Anda kosong
+            Your cart is empty
           </h1>
           <p style={{ color: '#6C757D', marginBottom: '24px' }}>
-            Anda belum menambahkan produk ke keranjang.
+            You have not added any products yet.
           </p>
           <Link href="/shop" className="btn btn-primary">
-            Mulai Belanja
+            Start Shopping
           </Link>
         </div>
       </>
@@ -77,14 +77,14 @@ export default function CartPageClient() {
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Keranjang ({getItemCount()} produk)</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Cart ({getItemCount()} items)</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '32px' }}>
-          Keranjang Belanja
+          Shopping Cart
         </h1>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '48px' }}>
@@ -165,7 +165,7 @@ export default function CartPageClient() {
                       }}
                     >
                       <Trash2 style={{ width: '14px', height: '14px' }} />
-                      Hapus
+                      Remove
                     </button>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ export default function CartPageClient() {
                     borderRadius: '8px',
                     marginBottom: '12px',
                   }}>
-                    Tambah {formatPrice(50 - subtotal)} lagi untuk gratis ongkir!
+                    Add {formatPrice(50 - subtotal)} more for free shipping!
                   </div>
                 )}
                 <div style={{
@@ -292,7 +292,7 @@ export default function CartPageClient() {
                   marginTop: '16px',
                 }}
               >
-                Lanjut Belanja
+                Continue Shopping
               </Link>
             </div>
           </div>
