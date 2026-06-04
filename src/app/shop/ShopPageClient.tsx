@@ -284,7 +284,7 @@ export default function ShopPageClient() {
           </div>
           <div style={{ marginTop: '32px', padding: '20px', background: '#fff', borderRadius: '12px', border: '1px solid #E9ECEF' }}>
             <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.7', margin: 0 }}>
-              <strong style={{ color: '#212529' }}>About Sesoris Shop:</strong> Sesoris curates quality organizer and lifestyle products to help any home feel tidier, brighter, and more comfortable. If you are comparing shelves for the kitchen, bedroom, or living room, also see our guide on <Link href="/rak-serbaguna-multifungsi" style={{ color: '#1B5E3B', fontWeight: 600 }}>multifunctional storage racks</Link>. Enjoy free shipping on orders over $50.
+              <strong style={{ color: '#212529' }}>About Sesoris Shop:</strong> Sesoris curates quality organizer and lifestyle products to help any home feel tidier, brighter, and more comfortable. If you are comparing shelves for the kitchen, bedroom, or living room, browse our full catalog by category above. Enjoy free shipping on orders over $50.
             </p>
           </div>
         </div>

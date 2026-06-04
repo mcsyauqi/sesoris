@@ -610,7 +610,7 @@ The complete set includes: electric opener, charging base/stand, foil cutter for
   {
     id: '13',
     name: 'Stainless Steel 2-Tier Dish Rack',
-    slug: 'rak-piring-stainless-steel-2-tier',
+    slug: 'stainless-steel-2-tier-dish-rack',
     description: 'Stainless steel 2-tier dish rack with drip tray, perfect for minimalist kitchens.',
     fullDescription: `The Stainless Steel 2-Tier Dish Rack from Sesoris is the best solution for drying and storing plates, glasses, and other kitchen utensils. Made from food-grade 304 stainless steel that is rust-resistant and easy to clean.
 
