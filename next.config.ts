@@ -150,6 +150,9 @@ const nextConfig: NextConfig = {
       { source: '/blog/:path(.*storage-box-lipat.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*storage-box-mini.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*kerja-dari-rumah.*)', destination: '/blog', permanent: true },
+      { source: '/blog/:path(.*harga-storage-box.*)', destination: '/blog', permanent: true },
+      { source: '/blog/:path(.*peralatan-berkebun.*)', destination: '/blog', permanent: true },
+      { source: '/blog/:path(.*review-koleksi-kontainer.*)', destination: '/blog', permanent: true },
       // Legacy product slug renamed Indonesian → English
       {
         source: '/product/rak-piring-stainless-steel-2-tier',
