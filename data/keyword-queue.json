@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "storage solutions for small bedroom",
-    "volume": 590,
-    "category": "Bedroom Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "blanket storage ideas living room",
-    "volume": 590,
-    "category": "Living Room Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "storage ideas for blankets in living room",
-    "volume": 590,
-    "category": "Living Room Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "ideas for blanket storage in living room",
     "volume": 590,
     "category": "Living Room Storage Ideas",
