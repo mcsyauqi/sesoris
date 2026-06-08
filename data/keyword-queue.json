@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "wall shelf ideas living room",
-    "volume": 590,
-    "category": "Wall Shelf Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "cleaning closet organization",
-    "volume": 590,
-    "category": "Cleaning Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "nursery organization dresser",
-    "volume": 590,
-    "category": "Nursery Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "nursery dresser drawer organization",
     "volume": 590,
     "category": "Nursery Organization",
