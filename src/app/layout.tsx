@@ -111,13 +111,6 @@ export default function RootLayout({
                 contactType: 'customer service',
                 availableLanguage: ['English'],
               },
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.8',
-                reviewCount: '50000',
-                bestRating: '5',
-                worstRating: '1',
-              },
               sameAs: [
                 'https://www.instagram.com/sesoris_com',
                 'https://www.facebook.com/sesoris',

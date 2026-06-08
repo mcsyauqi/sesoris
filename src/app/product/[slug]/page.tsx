@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getProductBySlug, products, getReviewsByProductId } from '@/data/products';
+import { getProductBySlug, products } from '@/data/products';
 import ProductPageClient from './ProductPageClient';
 import { toUsdPrice } from '@/lib/utils';
 
@@ -98,32 +98,10 @@ export default async function ProductPage(
     },
   };
 
-  // Add aggregateRating and review if there are reviews
-  if (product.rating > 0 && product.reviewCount > 0) {
-    productSchema.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: product.rating,
-      reviewCount: product.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    };
-  }
-
-  const productReviews = getReviewsByProductId(product.id);
-  if (productReviews.length > 0) {
-    productSchema.review = productReviews.slice(0, 2).map((r) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: r.name },
-      datePublished: r.date,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: r.rating,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      reviewBody: r.content,
-    }));
-  }
+  // Cycle #23 schema-safety: removed fab aggregateRating + reviews per cycle #5 anti-pattern.
+  // Per-product rating/reviewCount/reviews in src/data/products.ts are AI-generated placeholders,
+  // not real customer reviews. Re-enable only when sourced from a verified reviews system
+  // (Google Reviews / Trustpilot / native customer-submitted reviews with moderation).
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
