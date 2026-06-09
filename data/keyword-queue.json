@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "nursery dresser drawer organization",
-    "volume": 590,
-    "category": "Nursery Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "nursery organization",
-    "volume": 590,
-    "category": "Nursery Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "dresser organization for nursery",
-    "volume": 590,
-    "category": "Nursery Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "nursery room organization",
     "volume": 590,
     "category": "Nursery Organization",
