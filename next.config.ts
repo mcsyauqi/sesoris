@@ -159,33 +159,10 @@ const nextConfig: NextConfig = {
         destination: '/product/stainless-steel-2-tier-dish-rack',
         permanent: true,
       },
-      // Removed Indonesian /tools/* pages (5 calculators/quizzes shipped
-      // before the i18n conversion). All redirected to the homepage.
-      {
-        source: '/tools/kalkulator-decluttering-tata-ruang-sempit-kamar-kostdapur-minimalis',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/tools/kalkulator-kapasitas-kebutuhan-storage-box',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/tools/konverter-satuan-online',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/tools/penggaris-alat-ukur-online',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/tools/quiz-tipe-organisasi-rumahmu-rekomendasi-produk',
-        destination: '/',
-        permanent: true,
-      },
+      // NOTE (2026-06-10): the 5 Indonesian /tools/* pages were restored
+      // per user strategy decision (Indonesian-keyword tools stay live on
+      // the EN site). Their old homepage redirects were removed so the
+      // routes can serve again. Do NOT re-add /tools/* redirects here.
       // Redirect broken /blog/best-sellers to the actual best-sellers page
       {
         source: '/blog/best-sellers',

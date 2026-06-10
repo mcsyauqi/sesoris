@@ -114,6 +114,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+    // Free /tools/* utility pages (restored 2026-06-10; Indonesian-keyword
+    // tools kept live per user strategy decision)
+    {
+      url: `${baseUrl}/tools/penggaris-alat-ukur-online`,
+      lastModified: LAST_INFO_UPDATE,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/tools/konverter-satuan-online`,
+      lastModified: LAST_INFO_UPDATE,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/tools/kalkulator-kapasitas-kebutuhan-storage-box`,
+      lastModified: LAST_INFO_UPDATE,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/tools/quiz-tipe-organisasi-rumahmu-rekomendasi-produk`,
+      lastModified: LAST_INFO_UPDATE,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/tools/kalkulator-decluttering-tata-ruang-sempit-kamar-kostdapur-minimalis`,
+      lastModified: LAST_INFO_UPDATE,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
     {
       url: `${baseUrl}/careers`,
       lastModified: LAST_INFO_UPDATE,
