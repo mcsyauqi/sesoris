@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "nursery room organization",
-    "volume": 590,
-    "category": "Nursery Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "mudroom organization",
-    "volume": 590,
-    "category": "Mudroom Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "cara menata rumah minimalis",
-    "volume": 500,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "storage box plastik",
     "volume": 480,
     "category": "Home Living",
