@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "storage box plastik",
-    "volume": 480,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "rak bumbu dapur unik",
-    "volume": 480,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "tempat penyimpanan makanan",
-    "volume": 480,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "travel bag organizer",
     "volume": 480,
     "category": "Bags & Pouches",
