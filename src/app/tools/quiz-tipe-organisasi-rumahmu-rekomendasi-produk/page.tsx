@@ -1,5 +1,13 @@
 import { Metadata } from 'next';
 import ToolWidget from './ToolWidget';
+import {
+  ToolPageShell,
+  ToolSection,
+  FaqCards,
+  RelatedLinks,
+  orderedListStyle,
+  unorderedListStyle,
+} from '../tool-ui';
 
 const TOOL_NAME = 'Home Organization Style Quiz + Product Recommendations';
 const TOOL_URL = 'https://www.sesoris.com/tools/quiz-tipe-organisasi-rumahmu-rekomendasi-produk';
@@ -53,52 +61,38 @@ const internalLinks = [
 
 export default function Page() {
   return (
-    <article className="max-w-3xl mx-auto px-6 py-8">
-      <h1 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">Home Organization Style Quiz + Product Recommendations</h1>
-      <p className="text-lg text-gray-700 mb-6">Answer 3 short questions to discover your home organization style and get storage product recommendations that fit you best.</p>
-
+    <ToolPageShell
+      crumb="Home Organization Style Quiz"
+      title="Home Organization Style Quiz + Product Recommendations"
+      subtitle="Answer 3 short questions to discover your home organization style and get storage product recommendations that fit you best."
+    >
       <ToolWidget />
 
-      <section className="my-8">
-        <h2 className="text-xl font-bold mb-4">How to Use</h2>
-        <ol className="list-decimal pl-6 space-y-2 text-gray-700">
+      <ToolSection title="How to Use">
+        <ol style={orderedListStyle}>
           <li>Pick the main room you want to organize: bedroom, kitchen, bathroom, or living room.</li>
           <li>Choose the room size, from small (under 100 sq ft) to large (over 160 sq ft).</li>
           <li>Select the budget you have set aside for organizer products.</li>
           <li>Click the "Generate" button and see your recommendation instantly.</li>
         </ol>
-      </section>
+      </ToolSection>
 
-      <section className="my-8">
-        <h2 className="text-xl font-bold mb-4">Tips Before Shopping for Organizers</h2>
-        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+      <ToolSection title="Tips Before Shopping for Organizers">
+        <ul style={unorderedListStyle}>
           <li>Answer based on how your room actually is right now, not the ideal version in your head; the recommendation gets much more accurate.</li>
           <li>Start with one room. Tidying the whole house at once quickly gets overwhelming, and most people quit halfway.</li>
           <li>Measure the empty area first (width, height, depth) before buying a new organizer so you do not end up with the wrong size.</li>
           <li>Declutter first, then buy containers. Many people buy storage boxes for items they should really let go of.</li>
         </ul>
-      </section>
+      </ToolSection>
 
-      <section className="my-8">
-        <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          {faqs.map((f, i) => (
-            <div key={i} className="p-4 border rounded-lg">
-              <h3 className="font-semibold mb-2">{f.q}</h3>
-              <p className="text-gray-700">{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ToolSection title="Frequently Asked Questions">
+        <FaqCards faqs={faqs} />
+      </ToolSection>
 
-      <section className="my-8">
-        <h2 className="text-xl font-bold mb-4">Related Pages</h2>
-        <ul className="space-y-2">
-          {internalLinks.map((l, i) => (
-            <li key={i}><a href={l.url} className="text-blue-600 hover:underline">{l.title}</a></li>
-          ))}
-        </ul>
-      </section>
+      <ToolSection title="Related Pages">
+        <RelatedLinks links={internalLinks} />
+      </ToolSection>
 
       <script
         type="application/ld+json"
@@ -129,6 +123,6 @@ export default function Page() {
           }),
         }}
       />
-    </article>
+    </ToolPageShell>
   );
 }
