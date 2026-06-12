@@ -98,10 +98,26 @@ export default async function ProductPage(
     },
   };
 
-  // Cycle #23 schema-safety: removed fab aggregateRating + reviews per cycle #5 anti-pattern.
-  // Per-product rating/reviewCount/reviews in src/data/products.ts are AI-generated placeholders,
-  // not real customer reviews. Re-enable only when sourced from a verified reviews system
-  // (Google Reviews / Trustpilot / native customer-submitted reviews with moderation).
+  // SCHEMA SAFETY GUARD - DO NOT add aggregateRating or review to productSchema.
+  //
+  // GSC reports 2 non-critical Product snippets suggestions (WNC-10030322, 2026-06-12):
+  //   - Missing field "review"
+  //   - Missing field "aggregateRating"
+  // These are OPTIONAL recommended fields, not errors. Google's own message: "Non-critical
+  // issues are suggestions for improvement, but don't prevent the page or feature from
+  // appearing on Google."
+  //
+  // We intentionally leave them out. The rating, reviewCount, and reviews in
+  // src/data/products.ts are AI-generated placeholders (invented names, stock avatars,
+  // fabricated content), not real verified customer reviews. Emitting them in structured
+  // data would violate Google's self-serving / fake review policy
+  // (https://developers.google.com/search/docs/appearance/structured-data/review-snippet),
+  // which risks a manual action - far worse than a non-critical suggestion.
+  //
+  // Re-enable ONLY when ratings are sourced from a verified, moderated reviews system
+  // (Google Reviews, Trustpilot, or native customer-submitted reviews with verification).
+  // This guard also blocks the recurring AI-pipeline schema regression seen on sibling
+  // sites (akunn, cuztoom, mcsyauqi, jalanjalantiaphari).
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
