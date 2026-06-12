@@ -1,19 +1,5 @@
 [
   {
-    "keyword": "travel bag organizer",
-    "volume": 480,
-    "category": "Bags & Pouches",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "organizer travel bag",
-    "volume": 480,
-    "category": "Bags & Pouches",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "travel organizer bag",
     "volume": 480,
     "category": "Bags & Pouches",
