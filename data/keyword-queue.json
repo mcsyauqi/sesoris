@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "travel organizer bag",
-    "volume": 480,
-    "category": "Bags & Pouches",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "living sustainable life",
-    "volume": 480,
-    "category": "Trending 2026",
-    "intent": "Trending",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "under kitchen sink organizer ideas",
-    "volume": 480,
-    "category": "Kitchen Organizer Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "storage solutions small bathroom",
     "volume": 480,
     "category": "Bathroom Storage Solutions",
