@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "storage solutions small bathroom",
-    "volume": 480,
-    "category": "Bathroom Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "ideas home office organization",
-    "volume": 480,
-    "category": "Home Office Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "organization ideas for home office",
-    "volume": 480,
-    "category": "Home Office Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "garage storage solutions costco",
     "volume": 480,
     "category": "Garage Storage Solutions",
