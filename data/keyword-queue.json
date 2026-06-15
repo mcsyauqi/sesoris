@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "garage storage solutions costco",
-    "volume": 480,
-    "category": "Garage Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "ikea pantry organization ideas",
-    "volume": 480,
-    "category": "Pantry Organization Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "small space clothing storage ideas",
-    "volume": 480,
-    "category": "Small Space Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "small space clothes storage ideas",
     "volume": 480,
     "category": "Small Space Storage Ideas",
