@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "small space clothes storage ideas",
-    "volume": 480,
-    "category": "Small Space Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "small space toy storage ideas",
-    "volume": 480,
-    "category": "Small Space Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "tips to decluttering your home",
-    "volume": 480,
-    "category": "Home Decluttering Tips",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "home decluttering tips",
     "volume": 480,
     "category": "Home Decluttering Tips",
