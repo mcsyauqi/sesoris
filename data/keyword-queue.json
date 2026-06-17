@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "wall shelf for kitchen ideas",
-    "volume": 480,
-    "category": "Wall Shelf Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "wall shelf kitchen ideas",
-    "volume": 480,
-    "category": "Wall Shelf Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "home cleaning and organization",
-    "volume": 480,
-    "category": "Cleaning Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "house cleaning organization",
     "volume": 480,
     "category": "Cleaning Organization",
