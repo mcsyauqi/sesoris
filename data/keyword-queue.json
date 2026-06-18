@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "house cleaning organization",
-    "volume": 480,
-    "category": "Cleaning Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "house cleaning and organization",
-    "volume": 480,
-    "category": "Cleaning Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "craft room cabinet storage",
-    "volume": 480,
-    "category": "Craft Room Storage",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "craft room storage cabinets",
     "volume": 480,
     "category": "Craft Room Storage",
