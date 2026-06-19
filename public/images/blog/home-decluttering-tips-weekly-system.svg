@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wall-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F3EFE6" />
+      <stop offset="100%" stop-color="#EBE5D8" />
+    </linearGradient>
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#696050" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#wall-bg)" />
+
+  <!-- Left Side: Organized Modular Shelving Unit -->
+  <g transform="translate(100, 100)" filter="url(#drop-shadow)">
+    <!-- Main Wooden Frame -->
+    <rect width="650" height="700" fill="none" stroke="#A89682" stroke-width="8" rx="8" />
+    
+    <!-- Shelves Dimensions: Internal lines -->
+    <line x1="0" y1="220" x2="650" y2="220" stroke="#A89682" stroke-width="8" />
+    <line x1="0" y1="460" x2="650" y2="460" stroke="#A89682" stroke-width="8" />
+    <line x1="325" y1="220" x2="325" y2="700" stroke="#A89682" stroke-width="8" />
+
+    <!-- Top Shelf Contents: Neat Decorative Display -->
+    <!-- Minimalist Vases -->
+    <path d="M 120 220 Q 105 150 125 120 L 145 120 Q 165 150 150 220 Z" fill="#D3C5B5" />
+    <ellipse cx="280" cy="160" rx="35" ry="60" fill="#BAC7BE" />
+    <rect x="265" y="85" width="30" height="20" fill="#BAC7BE" rx="2" />
+    <!-- Stack of Tidy Boxes -->
+    <rect x="420" y="160" width="140" height="60" fill="#E6DFC7" rx="4" />
+    <rect x="440" y="115" width="100" height="45" fill="#CD7F67" opacity="0.8" rx="4" />
+
+    <!-- Middle Left Shelf: Woven Baskets -->
+    <rect x="35" y="270" width="250" height="150" fill="#D9C3B0" rx="8" />
+    <path d="M 35 320 L 285 320 M 35 370 L 285 370" stroke="#BDAB9A" stroke-width="3" />
+    <path d="M 85 270 L 85 420 M 135 270 L 135 420 M 185 270 L 185 420 M 235 270 L 235 420" stroke="#BDAB9A" stroke-width="2" />
+    <rect x="135" y="330" width="50" height="20" fill="#FFFFFF" rx="4" /> <!-- Basket Handle/Label Area -->
+
+    <!-- Middle Right Shelf: Uniform Folded Linens / Organizers -->
+    <rect x="360" y="260" width="250" height="50" fill="#E3ECE6" rx="6" />
+    <rect x="360" y="325" width="250" height="50" fill="#DFDCD3" rx="6" />
+    <rect x="360" y="390" width="250" height="50" fill="#EADCC9" rx="6" />
+
+    <!-- Bottom Left Shelf: Storage Bins -->
+    <rect x="35" y="510" width="250" height="150" fill="#BAC7BE" rx="6" />
+    <circle cx="160" cy="545" r="14" fill="#FFFFFF" opacity="0.7" />
+
+    <!-- Bottom Right Shelf: Magazine / Document Holders -->
+    <path d="M 370 660 L 370 510 L 415 510 L 440 570 L 440 660 Z" fill="#DFD7C7" />
+    <path d="M 450 660 L 450 510 L 495 510 L 520 570 L 520 660 Z" fill="#D5CBB5" />
+    <path d="M 530 660 L 530 510 L 575 510 L 600 570 L 600 660 Z" fill="#C2B7A0" />
+  </g>
+
+  <!-- Hanging Wall Hooks Element below shelf concept -->
+  <g transform="translate(100, 830)">
+    <line x1="50" y1="0" x2="600" y2="0" stroke="#A89682" stroke-width="6" stroke-linecap="round" />
+    <!-- Hook 1 with Hanging Tote Bag -->
+    <circle cx="150" cy="0" r="8" fill="#5E4E3C" />
+    <path d="M 150 0 Q 130 40 140 70 L 170 70 Q 180 40 150 0" fill="none" stroke="#C4B5A5" stroke-width="4" />
+    <rect x="125" y="70" width="55" height="40" fill="#D1C2B0" rx="2" />
+    
+    <!-- Hook 2 with Hanging Umbrella -->
+    <circle cx="350" cy="0" r="8" fill="#5E4E3C" />
+    <path d="M 350 0 L 350 80 Q 350 100 335 100" fill="none" stroke="#8FA3B5" stroke-width="5" stroke-linecap="round" />
+    <path d="M 340 25 L 360 25" stroke="#6D7F91" stroke-width="4" />
+  </g>
+
+  <!-- Right Side: The Weekly Maintenance Plan Checklist (The Editorial Concept) -->
+  <g transform="translate(850, 100)" filter="url(#drop-shadow)">
+    <!-- Clipboard / Planner Base -->
+    <rect width="650" height="700" fill="#FFFFFF" rx="16" />
+    
+    <!-- Planner Header Elements -->
+    <rect x="50" y="50" width="220" height="28" fill="#8FA3B5" rx="6" />
+    <rect x="50" y="95" width="400" height="12" fill="#EAE5DA" rx="4" />
+    <line x1="50" y1="140" x2="600" y2="140" stroke="#EAE5DA" stroke-width="2" />
+
+    <!-- Checklist Row 1: Day 1 -->
+    <g transform="translate(50, 180)">
+      <!-- Checkbox (Checked) -->
+      <rect width="40" height="40" fill="#F4F9F5" stroke="#768A6B" stroke-width="3" rx="8" />
+      <path d="M 10 20 L 18 28 L 32 10" fill="none" stroke="#768A6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Content Bars -->
+      <rect x="70" y="8" width="320" height="14" fill="#6B5E4E" rx="4" />
+      <rect x="70" y="28" width="180" height="10" fill="#C2B7A5" rx="3" />
+      <!-- Minimalist Day Indicator Badge -->
+      <rect x="500" y="8" width="50" height="24" fill="#EDE9DF" rx="12" />
+    </g>
+
+    <!-- Checklist Row 2: Day 2 -->
+    <g transform="translate(50, 280)">
+      <!-- Checkbox (Checked) -->
+      <rect width="40" height="40" fill="#F4F9F5" stroke="#768A6B" stroke-width="3" rx="8" />
+      <path d="M 10 20 L 18 28 L 32 10" fill="none" stroke="#768A6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Content Bars -->
+      <rect x="70" y="8" width="280" height="14" fill="#6B5E4E" rx="4" />
+      <rect x="70" y="28" width="210" height="10" fill="#C2B7A5" rx="3" />
+      <rect x="500" y="8" width="50" height="24" fill="#EDE9DF" rx="12" />
+    </g>
+
+    <!-- Checklist Row 3: Day 3 -->
+    <g transform="translate(50, 380)">
+      <!-- Checkbox (Unchecked) -->
+      <rect width="40" height="40" fill="#FFFFFF" stroke="#C2B7A5" stroke-width="3" rx="8" />
+      <!-- Content Bars -->
+      <rect x="70" y="8" width="340" height="14" fill="#6B5E4E" rx="4" />
+      <rect x="70" y="28" width="130" height="10" fill="#C2B7A5" rx="3" />
+      <rect x="500" y="8" width="50" height="24" fill="#EDE9DF" rx="12" />
+    </g>
+
+    <!-- Checklist Row 4: Day 4 -->
+    <g transform="translate(50, 480)">
+      <!-- Checkbox (Unchecked) -->
+      <rect width="40" height="40" fill="#FFFFFF" stroke="#C2B7A5" stroke-width="3" rx="8" />
+      <!-- Content Bars -->
+      <rect x="70" y="8" width="300" height="14" fill="#6B5E4E" rx="4" />
+      <rect x="70" y="28" width="160" height="10" fill="#C2B7A5" rx="3" />
+      <rect x="500" y="8" width="50" height="24" fill="#EDE9DF" rx="12" />
+    </g>
+
+    <!-- Checklist Row 5: Day 5 -->
+    <g transform="translate(50, 580)">
+      <!-- Checkbox (Unchecked) -->
+      <rect width="40" height="40" fill="#FFFFFF" stroke="#C2B7A5" stroke-width="3" rx="8" />
+      <!-- Content Bars -->
+      <rect x="70" y="8" width="260" height="14" fill="#6B5E4E" rx="4" />
+      <rect x="70" y="28" width="190" height="10" fill="#C2B7A5" rx="3" />
+      <rect x="500" y="8" width="50" height="24" fill="#EDE9DF" rx="12" />
+    </g>
+  </g>
+</svg>

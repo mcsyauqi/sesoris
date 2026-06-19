@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6F3EC" />
+      <stop offset="100%" stop-color="#EDE6DA" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#4A4338" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bg)" />
+
+  <!-- Flow Connectors (Subtle background paths linking zones) -->
+  <path d="M 450 450 Q 800 450 1150 450" fill="none" stroke="#D1C7B7" stroke-width="4" stroke-dasharray="8,8" />
+
+  <!-- ZONE 1: KITCHEN -->
+  <g transform="translate(120, 180)" filter="url(#shadow)">
+    <!-- Zone Card Base -->
+    <rect width="400" height="540" fill="#FFFFFF" rx="16" />
+    <rect width="400" height="12" fill="#C4A484" rx="6" />
+    
+    <!-- Abstract Kitchen Graphics -->
+    <g transform="translate(60, 80)">
+      <!-- Shelf -->
+      <rect x="20" y="140" width="240" height="8" fill="#A69480" rx="4" />
+      <!-- Jars & Canisters -->
+      <rect x="50" y="70" width="35" height="70" fill="#D9C3B0" rx="4" />
+      <rect x="55" y="62" width="25" height="8" fill="#8C7355" rx="2" />
+      <circle cx="67" cy="105" r="4" fill="#FFFFFF" opacity="0.6"/>
+
+      <rect x="100" y="50" width="45" height="90" fill="#BAC7BE" rx="6" />
+      <rect x="107" y="42" width="31" height="8" fill="#7D8C83" rx="2" />
+      
+      <rect x="160" y="85" width="40" height="55" fill="#E5DEC9" rx="4" />
+      <rect x="165" y="77" width="30" height="8" fill="#A39B84" rx="2" />
+
+      <!-- Hanging Utensils -->
+      <line x1="60" y1="180" x2="220" y2="180" stroke="#C2B2A2" stroke-width="4" stroke-linecap="round" />
+      <path d="M 90 180 L 90 220 M 85 220 L 95 220" stroke="#948575" stroke-width="3" />
+      <path d="M 140 180 L 140 230 C 135 240 155 240 150 230 Z" fill="#948575" />
+      <path d="M 190 180 L 190 215 C 180 215 180 230 190 230 C 200 230 200 215 190 215" fill="#948575" />
+    </g>
+
+    <!-- Sorting Status Lines -->
+    <g transform="translate(60, 380)">
+      <circle cx="20" cy="20" r="10" fill="#7D8C83" />
+      <rect x="50" y="12" width="180" height="14" fill="#EAE5DA" rx="4" />
+      <rect x="50" y="34" width="110" height="10" fill="#F4F0E6" rx="3" />
+
+      <circle cx="20" cy="70" r="10" fill="#C4A484" />
+      <rect x="50" y="62" width="210" height="14" fill="#EAE5DA" rx="4" />
+      <rect x="50" y="84" width="140" height="10" fill="#F4F0E6" rx="3" />
+    </g>
+  </g>
+
+  <!-- ZONE 2: LIVING ROOM -->
+  <g transform="translate(600, 180)" filter="url(#shadow)">
+    <!-- Zone Card Base -->
+    <rect width="400" height="540" fill="#FFFFFF" rx="16" />
+    <rect width="400" height="12" fill="#8FA3B5" rx="6" />
+
+    <!-- Abstract Living Room Graphics -->
+    <g transform="translate(60, 80)">
+      <!-- Storage Cabinet / Credenza -->
+      <rect x="20" y="110" width="240" height="60" fill="#D1C4B2" rx="6" />
+      <line x1="140" y1="110" x2="140" y2="170" stroke="#FFFFFF" stroke-width="2" />
+      <circle cx="120" cy="140" r="4" fill="#FFFFFF" />
+      <circle cx="160" cy="140" r="4" fill="#FFFFFF" />
+      <rect x="40" y="170" width="12" height="15" fill="#A89A87" />
+      <rect x="228" y="170" width="12" height="15" fill="#A89A87" />
+
+      <!-- Plant on Cabinet -->
+      <path d="M 60 110 Q 40 80 50 60 Q 65 80 65 110" fill="#768A6B" />
+      <path d="M 75 110 Q 95 75 80 55 Q 70 80 75 110" fill="#627359" />
+      <path d="M 65 110 C 65 95 80 95 80 110" fill="#A68B6D" />
+
+      <!-- Stacked Books -->
+      <rect x="150" y="92" width="70" height="18" fill="#B3A394" rx="2" />
+      <rect x="155" y="77" width="60" height="15" fill="#9BB0C1" rx="2" />
+    </g>
+
+    <!-- Sorting Status Lines -->
+    <g transform="translate(60, 380)">
+      <circle cx="20" cy="20" r="10" fill="#9BB0C1" />
+      <rect x="50" y="12" width="200" height="14" fill="#EAE5DA" rx="4" />
+      <rect x="50" y="34" width="150" height="10" fill="#F4F0E6" rx="3" />
+
+      <circle cx="20" cy="70" r="10" fill="#A69480" />
+      <rect x="50" y="62" width="170" height="14" fill="#EAE5DA" rx="4" />
+      <rect x="50" y="84" width="90" height="10" fill="#F4F0E6" rx="3" />
+    </g>
+  </g>
+
+  <!-- ZONE 3: BEDROOM / CLOSET -->
+  <g transform="translate(1080, 180)" filter="url(#shadow)">
+    <!-- Zone Card Base -->
+    <rect width="400" height="540" fill="#FFFFFF" rx="16" />
+    <rect width="400" height="12" fill="#B0A090" rx="6" />
+
+    <!-- Abstract Wardrobe Graphics -->
+    <g transform="translate(60, 80)">
+      <!-- Clothes Rack -->
+      <line x1="30" y1="40" x2="250" y2="40" stroke="#BDADB0" stroke-width="4" stroke-linecap="round" />
+      <line x1="40" y1="40" x2="40" y2="180" stroke="#BDADB0" stroke-width="4" />
+      <line x1="240" y1="40" x2="240" y2="180" stroke="#BDADB0" stroke-width="4" />
+
+      <!-- Hangers and Clothes -->
+      <!-- Item 1 -->
+      <path d="M 75 40 L 75 55 M 60 55 L 90 55 L 85 140 L 65 140 Z" fill="#D6C5C7" />
+      <!-- Item 2 -->
+      <path d="M 125 40 L 125 55 M 105 55 L 145 55 L 140 160 L 110 160 Z" fill="#A1A8B8" />
+      <!-- Item 3 -->
+      <path d="M 175 40 L 175 55 M 160 55 L 190 55 L 185 120 L 165 120 Z" fill="#D9CEB8" />
+
+      <!-- Storage Basket Below -->
+      <rect x="70" y="145" width="140" height="40" fill="#DECBB7" rx="4" />
+      <line x1="70" y1="165" x2="210" y2="165" stroke="#C7B4A1" stroke-width="2" />
+    </g>
+
+    <!-- Sorting Status Lines -->
+    <g transform="translate(60, 380)">
+      <circle cx="20" cy="20" r="10" fill="#C4AEAD" />
+      <rect x="50" y="12" width="160" height="14" fill="#EAE5DA" rx="4" />
+      <rect x="50" y="34" width="120" height="10" fill="#F4F0E6" rx="3" />
+
+      <circle cx="20" cy="70" r="10" fill="#B5A999" />
+      <rect x="50" y="62" width="220" height="14" fill="#EAE5DA" rx="4" />
+      <rect x="50" y="84" width="160" height="10" fill="#F4F0E6" rx="3" />
+    </g>
+  </g>
+</svg>
