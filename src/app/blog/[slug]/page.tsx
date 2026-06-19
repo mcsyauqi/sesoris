@@ -160,7 +160,7 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
             <img
               src={imgMatch[2]}
               alt={imgMatch[1]}
-              loading="lazy"
+              loading="eager"
               style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: '12px', display: 'block' }}
             />
             {imgMatch[1] && (
