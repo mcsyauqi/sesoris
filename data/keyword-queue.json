@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "craft room storage cabinets",
-    "volume": 480,
-    "category": "Craft Room Storage",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "storage cabinets for craft room",
-    "volume": 480,
-    "category": "Craft Room Storage",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "storage cabinet for craft room",
-    "volume": 480,
-    "category": "Craft Room Storage",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "wadah makanan stainless",
     "volume": 390,
     "category": "Kitchen & Dining",
