@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "wadah makanan stainless",
-    "volume": 390,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "sustainable living",
-    "volume": 390,
-    "category": "Trending 2026",
-    "intent": "Trending",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "kitchen sink organizer ideas",
-    "volume": 390,
-    "category": "Kitchen Organizer Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "storage solutions for a small bathroom",
     "volume": 390,
     "category": "Bathroom Storage Solutions",
