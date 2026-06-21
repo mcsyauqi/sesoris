@@ -125,7 +125,7 @@ TOPIC CONTEXT:
   console.log('Generating blog post with Claude Sonnet...');
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-6',
     max_tokens: 8192,
     messages: [{ role: 'user', content: prompt }],
   });
