@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "storage solutions for a small bathroom",
-    "volume": 390,
-    "category": "Bathroom Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "infant closet organization ideas",
-    "volume": 390,
-    "category": "Closet Organization Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "organization closet storage ideas",
-    "volume": 390,
-    "category": "Closet Organization Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "closet storage and organization ideas",
     "volume": 390,
     "category": "Closet Organization Ideas",
