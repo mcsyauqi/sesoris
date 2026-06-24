@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "entryway organization",
-    "volume": 390,
-    "category": "Entryway Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "towel rack ideas for kitchen",
-    "volume": 390,
-    "category": "Kitchen Rack Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "wall decor shelf ideas",
-    "volume": 390,
-    "category": "Wall Shelf Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "decorative wall shelf ideas",
     "volume": 390,
     "category": "Wall Shelf Ideas",
