@@ -50,7 +50,7 @@ const nextConfig: NextConfig = {
       { source: '/blog/:path(.*ruang-tamu.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*ruang-keluarga.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*ruang-makan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*ruang-kecil.*)', destination: '/blog', permanent: true },
+      // Disabled 2026-06-26: legacy redirect for 'ruang-kecil' conflicts with active slug tips-hemat-ruang-untuk-rumah-kecil.
       { source: '/blog/:path(.*dapur-minimalis.*)', destination: '/blog', permanent: true },
       // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!cara-menata-dapur-kecil-apartemen$).*dapur-kecil.*)', destination: '/blog', permanent: true },
       // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!desain-dapur-letter-l-layout-paling-efisien$).*desain-dapur.*)', destination: '/blog', permanent: true },
@@ -103,8 +103,8 @@ const nextConfig: NextConfig = {
       { source: '/blog/:path(.*cara-menciptakan.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*cara-declutter.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*tips-membuat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tips-menata.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tips-rumah.*)', destination: '/blog', permanent: true },
+      // Disabled 2026-06-26: legacy redirect for 'tips-menata' conflicts with active slug tips-menata-meja-makan-untuk-lebaran.
+      // Disabled 2026-06-26: legacy redirect for 'tips-rumah' conflicts with active slug tips-hemat-ruang-untuk-rumah-kecil.
       { source: '/blog/:path(.*panduan-memilih.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*panduan-lengkap.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*panduan-dekorasi.*)', destination: '/blog', permanent: true },
