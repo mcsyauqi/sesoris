@@ -94,7 +94,7 @@ const nextConfig: NextConfig = {
       { source: '/blog/:path(.*meja-rias.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*meja-belajar.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*meja-tv-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-membuat.*)', destination: '/blog', permanent: true },
+      // Disabled 2026-06-26: legacy redirect for 'cara-membuat' conflicts with active pantry article.
       { source: '/blog/:path(.*cara-memilih.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*cara-merawat.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*cara-merapikan.*)', destination: '/blog', permanent: true },
