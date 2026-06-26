@@ -141,7 +141,7 @@ const nextConfig: NextConfig = {
       { source: '/blog/:path(.*menciptakan-rumah.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*transformasi-rumah.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*sustainable-living-mulai.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*home-office-yang-produktif.*)', destination: '/blog', permanent: true },
+      // Disabled 2026-06-26 by MinTiv for active setup WFH article slug: { source: '/blog/:path(.*home-office-yang-produktif.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*warna-cat-rumah.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*teras-rumah.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*interior-rumah.*)', destination: '/blog', permanent: true },
