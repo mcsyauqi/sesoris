@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
       { source: '/blog/:path(.*kamar-kost.*)', destination: '/blog', permanent: true },
       // Disabled 2026-06-26 by MinTiv for active setup WFH article slug: { source: '/blog/:path(.*rumah-minimalis.*)', destination: '/blog', permanent: true },
       // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!ide-hampers-lebaran-dengan-produk-rumah-tangga$).*rumah-tangga.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rumah-kecil.*)', destination: '/blog', permanent: true },
+      // Disabled 2026-06-26: legacy redirect for 'rumah-kecil' conflicts with active Sesoris blog slugs.
       { source: '/blog/:path(.*rumah-estetik.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rumah-rapi.*)', destination: '/blog', permanent: true },
       // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!setup-wfh-produktif-di-rumah-minimalis$).*di-rumah.*)', destination: '/blog', permanent: true },
