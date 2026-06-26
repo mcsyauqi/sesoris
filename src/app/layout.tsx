@@ -103,13 +103,21 @@ export default function RootLayout({
               priceRange: '$5 - $50',
               address: {
                 '@type': 'PostalAddress',
-                addressCountry: 'US',
+                addressLocality: 'Yogyakarta',
+                addressRegion: 'Daerah Istimewa Yogyakarta',
+                addressCountry: 'ID',
               },
+              foundingLocation: {
+                '@type': 'Place',
+                name: 'Yogyakarta, Indonesia',
+              },
+              areaServed: ['Indonesia', 'Worldwide'],
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+62-813-2610-2061',
                 contactType: 'customer service',
-                availableLanguage: ['English'],
+                areaServed: ['ID', 'Worldwide'],
+                availableLanguage: ['English', 'Indonesian'],
               },
               sameAs: [
                 'https://www.instagram.com/sesoris_com',

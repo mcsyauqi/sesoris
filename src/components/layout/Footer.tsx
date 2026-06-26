@@ -205,8 +205,8 @@ export function Footer() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <MapPin style={{ width: '14px', height: '14px', marginTop: '2px', flexShrink: 0 }} />
                 <span>
-                  Online store<br />
-                  Worldwide shipping
+                  Yogyakarta, Indonesia<br />
+                  Online store with worldwide shipping
                 </span>
               </div>
             </div>
