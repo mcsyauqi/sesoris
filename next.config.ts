@@ -41,7 +41,7 @@ const nextConfig: NextConfig = {
       // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!rak-sudut-kamar-mandi-maksimalkan-ruang-mati$).*kamar-mandi.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*kamar-tidur.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*kamar-kost.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rumah-minimalis.*)', destination: '/blog', permanent: true },
+      // Disabled 2026-06-26 by MinTiv for active setup WFH article slug: { source: '/blog/:path(.*rumah-minimalis.*)', destination: '/blog', permanent: true },
       // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!ide-hampers-lebaran-dengan-produk-rumah-tangga$).*rumah-tangga.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rumah-kecil.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rumah-estetik.*)', destination: '/blog', permanent: true },
