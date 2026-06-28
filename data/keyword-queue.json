@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "craft room furniture and storage",
-    "volume": 390,
-    "category": "Craft Room Storage",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "rak bumbu dapur 3 susun",
-    "volume": 320,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "rak bumbu dapur tempel dinding",
-    "volume": 320,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "rak piring dapur",
     "volume": 320,
     "category": "Kitchen & Dining",
