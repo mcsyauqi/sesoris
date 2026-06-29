@@ -46,7 +46,8 @@ const nextConfig: NextConfig = {
       // Disabled 2026-06-26: legacy redirect for 'rumah-kecil' conflicts with active Sesoris blog slugs.
       { source: '/blog/:path(.*rumah-estetik.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rumah-rapi.*)', destination: '/blog', permanent: true },
-      // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!setup-wfh-produktif-di-rumah-minimalis$).*di-rumah.*)', destination: '/blog', permanent: true },
+      // Disabled 2026-06-29 by MinTiv for active Sesoris article slugs, including setup-wfh-produktif-di-rumah-minimalis and organisasi-laundry-room-di-rumah-indonesia.
+      // { source: '/blog/:path(.*di-rumah.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*ruang-tamu.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*ruang-keluarga.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*ruang-makan.*)', destination: '/blog', permanent: true },
