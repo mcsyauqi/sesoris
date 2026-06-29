@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "rak piring dapur",
-    "volume": 320,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "hall closet organization ideas",
-    "volume": 320,
-    "category": "Closet Organization Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "hallway closet organization ideas",
-    "volume": 320,
-    "category": "Closet Organization Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "nursery closet organization ideas",
     "volume": 320,
     "category": "Closet Organization Ideas",
