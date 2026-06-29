@@ -200,13 +200,13 @@ export function Footer() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <Phone style={{ width: '14px', height: '14px', flexShrink: 0 }} />
-                +62 274 123 4567
+                +62 813 2610 2061
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <MapPin style={{ width: '14px', height: '14px', marginTop: '2px', flexShrink: 0 }} />
                 <span>
                   Yogyakarta, Indonesia<br />
-                  Online store with worldwide shipping
+                  Online store with nationwide shipping
                 </span>
               </div>
             </div>

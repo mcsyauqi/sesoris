@@ -258,8 +258,8 @@ export default function TermsPage() {
             <div style={{ opacity: 0.9, lineHeight: 1.8 }}>
               <p style={{ margin: '0 0 4px' }}><strong>Sesoris Customer Service</strong></p>
               <p style={{ margin: '0 0 4px' }}>Email: sesoris.store@gmail.com</p>
-              <p style={{ margin: '0 0 4px' }}>Phone: +62 274 123 4567</p>
-              <p style={{ margin: '0 0 4px' }}>WhatsApp: +62 812 3456 7890</p>
+              <p style={{ margin: '0 0 4px' }}>Phone: +62 813 2610 2061</p>
+              <p style={{ margin: '0 0 4px' }}>WhatsApp: +62 813 2610 2061</p>
               <p style={{ margin: 0 }}>Business Hours: Monday - Friday, 09:00 - 18:00 WIB</p>
             </div>
           </section>

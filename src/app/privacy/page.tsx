@@ -235,8 +235,8 @@ export default function PrivacyPage() {
             <div style={{ opacity: 0.9, lineHeight: 1.8 }}>
               <p style={{ margin: '0 0 4px' }}><strong>Sesoris - Privacy Team</strong></p>
               <p style={{ margin: '0 0 4px' }}>Email: sesoris.store@gmail.com</p>
-              <p style={{ margin: '0 0 4px' }}>Phone: +62 274 123 4567</p>
-              <p style={{ margin: 0 }}>Address: Jl. Malioboro No. 123, Yogyakarta, DIY 55271</p>
+              <p style={{ margin: '0 0 4px' }}>Phone: +62 813 2610 2061</p>
+              <p style={{ margin: 0 }}>Location: Yogyakarta, Indonesia</p>
             </div>
           </section>
         </div>

@@ -54,9 +54,9 @@ export default function ContactPageClient() {
                 <Phone style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Phone</div>
-                  <a href="tel:+62274123456" style={{ color: '#6C757D' }}>+62 274 123 4567</a>
+                  <a href="tel:+6281326102061" style={{ color: '#6C757D' }}>+62 813 2610 2061</a>
                   <div style={{ fontSize: '13px', color: '#6C757D', marginTop: '4px' }}>
-                    WhatsApp: +62 812 3456 7890
+                    WhatsApp: +62 813 2610 2061
                   </div>
                 </div>
               </div>
@@ -66,8 +66,8 @@ export default function ContactPageClient() {
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Address</div>
                   <div style={{ color: '#6C757D', lineHeight: 1.5 }}>
-                    Online store<br />
-                    Worldwide shipping
+                    Yogyakarta, Indonesia<br />
+                    Online store with nationwide shipping
                   </div>
                 </div>
               </div>

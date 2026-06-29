@@ -62,7 +62,7 @@ export default async function ProductPage(
       seller: { '@type': 'Organization', name: 'Sesoris' },
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'US',
+        applicableCountry: 'ID',
         returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
         merchantReturnDays: 30,
         returnMethod: 'https://schema.org/ReturnByMail',
@@ -77,7 +77,7 @@ export default async function ProductPage(
         },
         shippingDestination: {
           '@type': 'DefinedRegion',
-          addressCountry: 'US',
+          addressCountry: 'ID',
         },
         deliveryTime: {
           '@type': 'ShippingDeliveryTime',
