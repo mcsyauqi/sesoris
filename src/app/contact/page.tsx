@@ -14,15 +14,16 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Store',
+  '@type': ['LocalBusiness', 'Store'],
   '@id': 'https://www.sesoris.com/contact#localbusiness',
   name: 'Sesoris',
   url: 'https://www.sesoris.com',
   image: 'https://www.sesoris.com/og-default.webp',
-  description: 'Sesoris is an online store for home organizers, kitchen storage, office desk products, and travel storage accessories.',
+  description: 'Sesoris is a Yogyakarta-based online store for home organizers, kitchen storage, office desk products, and travel storage accessories with nationwide shipping across Indonesia.',
   email: 'sesoris.store@gmail.com',
   telephone: '+62-813-2610-2061',
   priceRange: '$$',
+  areaServed: ['Yogyakarta', 'Daerah Istimewa Yogyakarta', 'Indonesia'],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Yogyakarta',

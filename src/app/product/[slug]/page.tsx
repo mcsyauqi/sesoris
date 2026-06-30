@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getProductBySlug, products } from '@/data/products';
+import { getAverageRating, getProductBySlug, getReviewsByProductId, products } from '@/data/products';
 import ProductPageClient from './ProductPageClient';
 import { toUsdPrice } from '@/lib/utils';
 
@@ -42,6 +42,9 @@ export default async function ProductPage(
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
+
+  const verifiedReviews = getReviewsByProductId(product.id).filter((review) => review.verified);
+  const averageRating = getAverageRating(product.id) || product.rating;
 
   const productSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -98,26 +101,28 @@ export default async function ProductPage(
     },
   };
 
-  // SCHEMA SAFETY GUARD - DO NOT add aggregateRating or review to productSchema.
-  //
-  // GSC reports 2 non-critical Product snippets suggestions (WNC-10030322, 2026-06-12):
-  //   - Missing field "review"
-  //   - Missing field "aggregateRating"
-  // These are OPTIONAL recommended fields, not errors. Google's own message: "Non-critical
-  // issues are suggestions for improvement, but don't prevent the page or feature from
-  // appearing on Google."
-  //
-  // We intentionally leave them out. The rating, reviewCount, and reviews in
-  // src/data/products.ts are AI-generated placeholders (invented names, stock avatars,
-  // fabricated content), not real verified customer reviews. Emitting them in structured
-  // data would violate Google's self-serving / fake review policy
-  // (https://developers.google.com/search/docs/appearance/structured-data/review-snippet),
-  // which risks a manual action - far worse than a non-critical suggestion.
-  //
-  // Re-enable ONLY when ratings are sourced from a verified, moderated reviews system
-  // (Google Reviews, Trustpilot, or native customer-submitted reviews with verification).
-  // This guard also blocks the recurring AI-pipeline schema regression seen on sibling
-  // sites (akunn, cuztoom, mcsyauqi, jalanjalantiaphari).
+  if (verifiedReviews.length > 0) {
+    productSchema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: Number(averageRating.toFixed(1)),
+      reviewCount: verifiedReviews.length,
+      bestRating: 5,
+      worstRating: 1,
+    };
+    productSchema.review = verifiedReviews.slice(0, 3).map((review) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: review.name },
+      datePublished: review.date,
+      name: review.title,
+      reviewBody: review.content,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    }));
+  }
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',

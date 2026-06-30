@@ -4,27 +4,27 @@ import Image from 'next/image';
 import { Home, ChevronRight, Heart, Globe, Users, Leaf, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about Sesoris - your trusted source for quality home organizers and storage solutions. Curated products for modern living.',
+  title: 'About Sesoris | Home Organizer Store from Yogyakarta',
+  description: 'Learn about Sesoris, a Yogyakarta-based online store for home organizers, kitchen storage, desk accessories, and practical storage solutions.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Us | Sesoris',
-    description: 'Learn about Sesoris - your trusted source for quality home organizers and storage solutions. Curated products for modern living.',
+    title: 'About Sesoris | Home Organizer Store from Yogyakarta',
+    description: 'Learn about Sesoris, a Yogyakarta-based online store for home organizers, kitchen storage, desk accessories, and practical storage solutions.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 
 const values = [
-  { icon: Heart, title: 'Quality First', desc: 'We source only the best products, ensuring every item meets our high standards.' },
-  { icon: Globe, title: 'Sustainability', desc: 'Eco-friendly practices and sustainable materials are at the heart of what we do.' },
-  { icon: Users, title: 'Customer Care', desc: "Your satisfaction is our priority. We're here to help every step of the way." },
+  { icon: Heart, title: 'Quality First', desc: 'We curate organizers and storage products with practical materials, tidy dimensions, and everyday usability in mind.' },
+  { icon: Globe, title: 'Yogyakarta Roots', desc: 'Our Yogyakarta base shapes a calm, practical, and craft-conscious approach to home organization.' },
+  { icon: Users, title: 'Customer Care', desc: "We help customers choose storage, kitchen, desk, and travel products that fit their real space and routine." },
 ];
 
 const stats = [
-  { value: '50,000+', label: 'Happy Customers' },
-  { value: '500+', label: 'Products' },
-  { value: '98%', label: 'Satisfied Customers' },
-  { value: '4.8', label: 'Average Rating' },
+  { value: 'DIY', label: 'Yogyakarta-based brand' },
+  { value: 'ID', label: 'Ships across Indonesia' },
+  { value: '4', label: 'Main organizer categories' },
+  { value: 'WA', label: 'Direct customer support' },
 ];
 
 export default function AboutPage() {
@@ -59,13 +59,13 @@ export default function AboutPage() {
             marginBottom: '20px'
           }}>
             <Leaf style={{ width: '14px', height: '14px' }} />
-            Our Story
+            Our Yogyakarta Story
           </span>
           <h1 style={{ fontSize: '40px', fontWeight: 700, color: '#212529', marginBottom: '20px', maxWidth: '600px', margin: '0 auto 20px' }}>
-            Making Life Easier, One Product at a Time
+            Practical Home Organization from Yogyakarta
           </h1>
           <p style={{ color: '#6C757D', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            Sesoris was founded with a simple mission: to bring high-quality, innovative products that make everyday life easier and more enjoyable.
+            Sesoris is a Yogyakarta-based home organizer store helping Indonesian households choose practical storage, kitchen, desk, and travel products for calmer daily routines.
           </p>
         </div>
       </section>
@@ -99,21 +99,21 @@ export default function AboutPage() {
               }}>
                 <Award style={{ width: '28px', height: '28px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontWeight: 700, color: '#212529' }}>Since 2020</div>
-                  <div style={{ fontSize: '12px', color: '#6C757D' }}>Serving customers worldwide</div>
+                  <div style={{ fontWeight: 700, color: '#212529' }}>Yogyakarta, Indonesia</div>
+                  <div style={{ fontSize: '12px', color: '#6C757D' }}>Online store with nationwide shipping</div>
                 </div>
               </div>
             </div>
             <div>
               <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '20px' }}>Who We Are</h2>
               <p style={{ color: '#6C757D', lineHeight: 1.8, marginBottom: '16px' }}>
-                At Sesoris, we believe that the right products can transform your daily routine. What started as a small online store has grown into a trusted destination for thousands of customers seeking quality home essentials, unique gifts, and innovative gadgets.
+                At Sesoris, we believe a tidy home starts with products that are easy to use, easy to clean, and easy to match with real Indonesian living spaces. Our team works from Yogyakarta and curates items for kitchens, desks, rooms, wardrobes, and travel needs.
               </p>
               <p style={{ color: '#6C757D', lineHeight: 1.8, marginBottom: '16px' }}>
-                Our team carefully curates each product, ensuring it meets our standards for quality, functionality, and design. We partner with trusted suppliers and constantly seek out new and exciting items to bring to our customers.
+                The Yogyakarta angle matters for local SEO and customer trust: customers looking for a toko organizer Yogyakarta, rak penyimpanan Jogja, or home organizer store in Indonesia can see where the brand is based while still ordering for nationwide delivery.
               </p>
               <p style={{ color: '#6C757D', lineHeight: 1.8 }}>
-                &ldquo;Do It With Ease&rdquo; isn&apos;t just our tagline – it&apos;s our promise. We&apos;re committed to making your shopping experience as simple and enjoyable as the products we sell.
+                &ldquo;Do It With Ease&rdquo; is our promise: simple product choices, clear support, and practical storage ideas for people who want their home to feel more organized without making the process complicated.
               </p>
             </div>
           </div>

@@ -95,11 +95,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': ['Organization', 'Store'],
+              '@type': ['Organization', 'LocalBusiness', 'Store'],
               name: 'Sesoris',
               url: 'https://www.sesoris.com',
               logo: 'https://www.sesoris.com/logo.webp',
-              description: 'Online store for quality home organizers and storage solutions.',
+              description: 'Yogyakarta-based online store for quality home organizers, kitchen storage, desk accessories, and storage solutions with nationwide shipping across Indonesia.',
               priceRange: '$5 - $50',
               address: {
                 '@type': 'PostalAddress',
@@ -111,7 +111,7 @@ export default function RootLayout({
                 '@type': 'Place',
                 name: 'Yogyakarta, Indonesia',
               },
-              areaServed: ['Indonesia', 'Worldwide'],
+              areaServed: ['Yogyakarta', 'Daerah Istimewa Yogyakarta', 'Indonesia'],
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+62-813-2610-2061',

@@ -32,7 +32,7 @@ export default function ContactPageClient() {
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>Contact Sesoris</h1>
           <p style={{ color: '#6C757D', fontSize: '16px' }}>
-            Need help choosing the right organizer for your home, kitchen, desk, or travel gear? The Sesoris team is ready to help with product questions, orders, and wholesale inquiries.
+            Need help choosing the right organizer for your home, kitchen, desk, or travel gear? The Sesoris team is based in Yogyakarta and supports customers across Indonesia with product questions, orders, and wholesale inquiries.
           </p>
         </div>
 
@@ -66,8 +66,8 @@ export default function ContactPageClient() {
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Address</div>
                   <div style={{ color: '#6C757D', lineHeight: 1.5 }}>
-                    Yogyakarta, Indonesia<br />
-                    Online store with nationwide shipping
+                    Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia<br />
+                    Online store with nationwide shipping across Indonesia
                   </div>
                 </div>
               </div>
@@ -211,8 +211,8 @@ export default function ContactPageClient() {
         }}>
           <div style={{ textAlign: 'center' }}>
             <MapPin style={{ width: '32px', height: '32px', marginBottom: '12px', color: '#1B5E3B' }} />
-            <div style={{ fontWeight: 600, color: '#212529' }}>Sesoris Online Store</div>
-            <div style={{ fontSize: '14px' }}>Worldwide shipping</div>
+            <div style={{ fontWeight: 600, color: '#212529' }}>Sesoris Online Store — Yogyakarta</div>
+            <div style={{ fontSize: '14px' }}>Nationwide shipping across Indonesia</div>
           </div>
         </div>
 

@@ -86,8 +86,8 @@ export function Footer() {
               <div style={{ fontSize: '11px', opacity: 0.7, marginTop: '4px' }}>Do It With Ease</div>
             </div>
             <p style={{ fontSize: '14px', opacity: 0.8, lineHeight: 1.6, marginBottom: '24px' }}>
-              Sesoris is here to help you organize your life with high-quality products.
-              Discover the best storage solutions and home essentials for modern living.
+              Sesoris is a Yogyakarta-based online store for home organizers, kitchen storage,
+              desk accessories, and practical storage solutions with nationwide shipping.
             </p>
             <div style={{ marginBottom: '16px' }}>
               <p style={{ fontWeight: 600, marginBottom: '12px', fontSize: '14px' }}>Subscribe to Newsletter</p>
@@ -205,8 +205,8 @@ export function Footer() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <MapPin style={{ width: '14px', height: '14px', marginTop: '2px', flexShrink: 0 }} />
                 <span>
-                  Yogyakarta, Indonesia<br />
-                  Online store with nationwide shipping
+                  Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia<br />
+                  Online store with nationwide shipping across Indonesia
                 </span>
               </div>
             </div>
