@@ -51,7 +51,7 @@ export function CategorySection() {
                   color: 'white'
                 }}>
                   <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '2px' }}>{cat.name}</div>
-                  <div style={{ fontSize: '12px', opacity: 0.8 }}>{cat.productCount} products</div>
+                  <div style={{ fontSize: '12px', opacity: 0.8 }}>{cat.productCount} {cat.productCount === 1 ? 'product' : 'products'}</div>
                 </div>
               </div>
             </Link>
