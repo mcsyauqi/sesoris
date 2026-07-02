@@ -67,13 +67,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // TODO: Replace BING_VERIFICATION_CODE with actual code from bing.com/webmasters
-  // Steps: 1) Go to bing.com/webmasters → Add site → sesoris.com
-  //        2) Choose "Meta tag" verification method
-  //        3) Copy the content value and replace below
   verification: {
     other: {
-      'msvalidate.01': ['BING_VERIFICATION_CODE'],
+      'msvalidate.01': ['996F171B0B725BB7D72F1A8C5E9D83A0'],
     },
   },
 };
