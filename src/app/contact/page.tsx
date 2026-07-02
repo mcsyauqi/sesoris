@@ -55,7 +55,7 @@ const localBusinessSchema = {
   sameAs: [
     'https://facebook.com/sesoris',
     'https://instagram.com/sesoris_com',
-    'https://twitter.com/sesoris_com',
+    'https://x.com/sesoris_com',
     'https://youtube.com/@sesoris',
   ],
 };

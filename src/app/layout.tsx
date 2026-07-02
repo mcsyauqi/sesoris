@@ -82,6 +82,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <head>
+        <meta property="og:url" content="https://www.sesoris.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sesoris" />
         {/* Preconnect to external image hosts for faster LCP */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
