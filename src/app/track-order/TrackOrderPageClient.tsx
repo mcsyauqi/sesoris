@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Home, ChevronRight, Search, Package, Truck, CheckCircle, Clock } from 'lucide-react';
+import { Home, ChevronRight, Search, Package, SearchX } from 'lucide-react';
 
 export default function TrackOrderPageClient() {
   const [orderNumber, setOrderNumber] = useState('');
@@ -106,68 +106,20 @@ export default function TrackOrderPageClient() {
               background: 'white',
               borderRadius: '16px',
               border: '1px solid #E9ECEF',
-              overflow: 'hidden',
+              padding: '32px 24px',
+              textAlign: 'center',
             }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid #E9ECEF' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Order Number</span>
-                  <span style={{ fontWeight: 600, color: '#212529' }}>{orderNumber || 'SES-123456'}</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Estimated Delivery</span>
-                  <span style={{ fontWeight: 600, color: '#1B5E3B' }}>Jan 15, 2026</span>
-                </div>
+              <SearchX style={{ width: '40px', height: '40px', color: '#6C757D', margin: '0 auto 16px' }} />
+              <div style={{ fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
+                We couldn&apos;t find order {orderNumber}
               </div>
-
-              <div style={{ padding: '24px' }}>
-                <div style={{ position: 'relative' }}>
-                  {/* Progress Line */}
-                  <div style={{
-                    position: 'absolute',
-                    left: '15px',
-                    top: '30px',
-                    bottom: '30px',
-                    width: '2px',
-                    background: '#E9ECEF',
-                  }} />
-                  <div style={{
-                    position: 'absolute',
-                    left: '15px',
-                    top: '30px',
-                    height: '50%',
-                    width: '2px',
-                    background: '#1B5E3B',
-                  }} />
-
-                  {/* Steps */}
-                  {[
-                    { icon: CheckCircle, title: 'Order Confirmed', date: 'Jan 9, 2026 - 10:30 AM', done: true },
-                    { icon: Package, title: 'Processing', date: 'Jan 9, 2026 - 2:15 PM', done: true },
-                    { icon: Truck, title: 'Shipped', date: 'Jan 10, 2026 - 9:00 AM', done: true },
-                    { icon: Clock, title: 'Out for Delivery', date: 'Expected Jan 15, 2026', done: false },
-                  ].map((step, index) => (
-                    <div key={index} style={{ display: 'flex', gap: '16px', marginBottom: index < 3 ? '32px' : '0' }}>
-                      <div style={{
-                        width: '32px',
-                        height: '32px',
-                        borderRadius: '50%',
-                        background: step.done ? '#1B5E3B' : '#E9ECEF',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        position: 'relative',
-                        zIndex: 1,
-                      }}>
-                        <step.icon style={{ width: '16px', height: '16px', color: step.done ? 'white' : '#6C757D' }} />
-                      </div>
-                      <div>
-                        <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>{step.title}</div>
-                        <div style={{ fontSize: '13px', color: '#6C757D' }}>{step.date}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <p style={{ fontSize: '14px', color: '#6C757D', lineHeight: '1.7', margin: 0 }}>
+                Double-check the order number and email against your confirmation email.
+                If the details are correct and you still can&apos;t find your order, our team
+                can look it up for you via{' '}
+                <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>Contact Support</Link>{' '}
+                or email <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>sesoris.store@gmail.com</a>.
+              </p>
             </div>
           )}
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Home, ChevronRight, Grid, List, SlidersHorizontal, X } from 'lucide-react';
+import { Home, ChevronRight, SlidersHorizontal, X } from 'lucide-react';
 import { ProductCard } from '@/components/product';
 import { products, categories } from '@/data/products';
 
@@ -17,6 +17,8 @@ export default function ShopPageClient() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
   const [sortBy, setSortBy] = useState('featured');
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [onSaleOnly, setOnSaleOnly] = useState(false);
   const [filterOpen, setFilterOpen] = useState(false);
 
   const filteredProducts = products.filter((p) => {
@@ -25,7 +27,22 @@ export default function ShopPageClient() {
       const range = priceRanges[selectedPrice];
       if (p.price < range.min || p.price >= range.max) return false;
     }
+    if (inStockOnly && !p.inStock) return false;
+    if (onSaleOnly && !(p.compareAtPrice && p.compareAtPrice > p.price)) return false;
     return true;
+  });
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    switch (sortBy) {
+      case 'newest':
+        return Number(b.isNew ?? false) - Number(a.isNew ?? false);
+      case 'price-asc':
+        return a.price - b.price;
+      case 'price-desc':
+        return b.price - a.price;
+      default:
+        return Number(b.isFeatured ?? false) - Number(a.isFeatured ?? false);
+    }
   });
 
   const toggleKategori = (slug: string) => {
@@ -79,11 +96,21 @@ export default function ShopPageClient() {
         <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Availability</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
-            <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
+            <input
+              type="checkbox"
+              checked={inStockOnly}
+              onChange={() => setInStockOnly((v) => !v)}
+              style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }}
+            />
             <span style={{ fontSize: '14px', color: '#343A40' }}>In Stock</span>
           </label>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
-            <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
+            <input
+              type="checkbox"
+              checked={onSaleOnly}
+              onChange={() => setOnSaleOnly((v) => !v)}
+              style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }}
+            />
             <span style={{ fontSize: '14px', color: '#343A40' }}>On Sale</span>
           </label>
         </div>
@@ -167,14 +194,6 @@ export default function ShopPageClient() {
               <option value="price-desc">Price: High to Low</option>
             </select>
 
-            <div className="hide-mobile" style={{ border: '1px solid #E9ECEF', borderRadius: '8px', overflow: 'hidden' }}>
-              <button style={{ padding: '8px', background: '#1B5E3B', color: 'white', border: 'none', cursor: 'pointer' }}>
-                <Grid style={{ width: '18px', height: '18px' }} />
-              </button>
-              <button style={{ padding: '8px', background: 'white', border: 'none', cursor: 'pointer' }}>
-                <List style={{ width: '18px', height: '18px', color: '#6C757D' }} />
-              </button>
-            </div>
           </div>
         </div>
 
@@ -187,7 +206,7 @@ export default function ShopPageClient() {
           {/* Products */}
           <div>
             <div className="grid-products">
-              {filteredProducts.map((product, index) => (
+              {sortedProducts.map((product, index) => (
                 <ProductCard key={product.id} product={product} priority={index < 2} />
               ))}
             </div>
@@ -220,7 +239,7 @@ export default function ShopPageClient() {
                 Home &amp; Decor
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Transform any room with our Home &amp; Decor collection, from floating shelves and wall organizers to decorative baskets and storage solutions. With 124 products, you&apos;ll find the perfect pieces to keep your home tidy and stylish.
+                Transform any room with our Home &amp; Decor collection, from floating shelves and wall organizers to decorative baskets and storage solutions. You&apos;ll find the perfect pieces to keep your home tidy and stylish.
               </p>
               <Link href="/category/home-living" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
                 Shop Home &amp; Decor →
@@ -242,7 +261,7 @@ export default function ShopPageClient() {
                 Tools &amp; Gadgets
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Discover innovative tools and everyday gadgets that solve real problems. From multi-tools to smart kitchen gadgets, our 67 Tools &amp; Gadgets products are built for performance and convenience.
+                Discover innovative tools and everyday gadgets that solve real problems. From multi-tools to smart kitchen gadgets, our Tools &amp; Gadgets picks are built for performance and convenience.
               </p>
               <Link href="/category/tools-gadgets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
                 Shop Tools &amp; Gadgets →
@@ -253,7 +272,7 @@ export default function ShopPageClient() {
                 Gift Sets
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Find the perfect gift for any occasion. Our curated Gift Sets, 93 options, are thoughtfully packaged and ready to give. Ideal for birthdays, holidays, housewarmings, and celebrations.
+                Find the perfect gift for any occasion. Our curated Gift Sets are thoughtfully packaged and ready to give. Ideal for birthdays, holidays, housewarmings, and celebrations.
               </p>
               <Link href="/category/gift-sets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
                 Shop Gift Sets →
@@ -264,7 +283,7 @@ export default function ShopPageClient() {
                 Self Care
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Elevate your self-care routine with our Self Care collection, aromatherapy diffusers, organizers, skincare tools, and wellness accessories. Choose from 78 quality products.
+                Elevate your self-care routine with our Self Care collection, aromatherapy diffusers, organizers, skincare tools, and wellness accessories. Every pick is chosen for quality.
               </p>
               <Link href="/category/personal-care" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
                 Shop Self Care →
@@ -275,7 +294,7 @@ export default function ShopPageClient() {
                 Tech Accessories
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Stay connected and organized with our Tech Accessories, wireless earbuds, charging stations, cable organizers, and smart home gadgets. Browse 54 products for the tech-savvy lifestyle.
+                Stay connected and organized with our Tech Accessories, wireless earbuds, charging stations, cable organizers, and smart home gadgets. Built for the tech-savvy lifestyle.
               </p>
               <Link href="/category/tech-accessories" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
                 Shop Tech Accessories →

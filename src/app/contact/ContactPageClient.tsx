@@ -6,11 +6,15 @@ import { Home, ChevronRight, Mail, Phone, MapPin, Clock, Send, Facebook, Instagr
 
 export default function ContactPageClient() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'general', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sent'>('idle');
 
+  // ponytail: no email backend exists; hand the message to WhatsApp (real, instant delivery).
+  // Swap to an /api/contact route once a transactional email key (e.g. Brevo) is configured.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Message sent! We will get back to you shortly.');
-    setFormData({ name: '', email: '', subject: 'general', message: '' });
+    const text = `Hi Sesoris! I'm ${formData.name} (${formData.email}).\nTopic: ${formData.subject}\n\n${formData.message}`;
+    window.open(`https://wa.me/6281326102061?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    setStatus('sent');
   };
 
   return (
@@ -192,8 +196,17 @@ export default function ContactPageClient() {
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <Send style={{ width: '16px', height: '16px' }} />
-                Send Message
+                Send via WhatsApp
               </button>
+              <p style={{ marginTop: '12px', fontSize: '13px', color: '#6C757D' }}>
+                Your message opens in WhatsApp ready to send. Prefer email? Write to{' '}
+                <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>sesoris.store@gmail.com</a>.
+              </p>
+              {status === 'sent' && (
+                <p style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: '#E8F5E9', color: '#1B5E3B', fontSize: '14px' }}>
+                  Your message is ready in WhatsApp. Hit send there and we will get back to you within 1-2 business days.
+                </p>
+              )}
             </form>
           </div>
         </div>

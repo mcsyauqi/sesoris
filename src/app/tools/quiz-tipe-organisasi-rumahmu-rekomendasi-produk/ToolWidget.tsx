@@ -1,65 +1,126 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
 import { widgetCardStyle, widgetTitleStyle, widgetButtonRowStyle, widgetResultStyle } from '../tool-ui';
+import { getProductBySlug } from '@/data/products';
 
-const FORM_HTML = "\n    <div style=\"margin-bottom: 16px; padding: 12px; background: #fff; border: 1px solid #E9ECEF; border-radius: 8px;\">\n      <p style=\"font-weight: 600; margin: 0 0 8px 0;\">1. Which room do you want to organize first?</p>\n      <label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q0\" value=\"0\" data-score='{\"bedroom\":1}' /> Bedroom</label><label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q0\" value=\"1\" data-score='{\"kitchen\":1}' /> Kitchen</label><label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q0\" value=\"2\" data-score='{\"bath\":1}' /> Bathroom</label><label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q0\" value=\"3\" data-score='{\"living\":1}' /> Living room</label>\n    </div>\n    <div style=\"margin-bottom: 16px; padding: 12px; background: #fff; border: 1px solid #E9ECEF; border-radius: 8px;\">\n      <p style=\"font-weight: 600; margin: 0 0 8px 0;\">2. How big is the room?</p>\n      <label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q1\" value=\"0\" data-score='{\"small\":1}' /> Small (under 100 sq ft)</label><label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q1\" value=\"1\" data-score='{\"medium\":1}' /> Medium (100-160 sq ft)</label><label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q1\" value=\"2\" data-score='{\"large\":1}' /> Large (over 160 sq ft)</label>\n    </div>\n    <div style=\"margin-bottom: 16px; padding: 12px; background: #fff; border: 1px solid #E9ECEF; border-radius: 8px;\">\n      <p style=\"font-weight: 600; margin: 0 0 8px 0;\">3. What is your budget?</p>\n      <label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q2\" value=\"0\" data-score='{\"budget_low\":1}' /> Under $20</label><label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q2\" value=\"1\" data-score='{\"budget_mid\":1}' /> $20 - $60</label><label style=\"display: block; padding: 6px 0;\"><input type=\"radio\" name=\"q2\" value=\"2\" data-score='{\"budget_high\":1}' /> Over $60</label>\n    </div>";
-const FORMULA_JS = "\n    var TIERS = [{\"id\":\"r\",\"label\":\"Product Recommendations\",\"description\":\"Browse the Sesoris catalog and pick organizers that match your room, size, and budget.\",\"matchSrc\":\"() => true\"}];\n    var CUSTOM = '';\n    function calc() {\n      var scoreMap = {};\n      var radios = document.querySelectorAll('input[type=radio]:checked');\n      radios.forEach(function(r) {\n        try {\n          var data = JSON.parse(r.dataset.score);\n          Object.keys(data).forEach(function(k) {\n            scoreMap[k] = (scoreMap[k] || 0) + data[k];\n          });\n        } catch(e) {}\n      });\n      var tier = null;\n      // Evaluate match functions (inlined as strings from build time)\n      for (var i = 0; i < TIERS.length; i++) {\n        var t = TIERS[i];\n        if (t.matchSrc) {\n          try {\n            var matchFn = new Function('s', 'return (' + t.matchSrc + ')(s);');\n            if (matchFn(scoreMap)) { tier = t; break; }\n          } catch(e) {}\n        } else if (i === TIERS.length - 1) {\n          tier = t;\n        }\n      }\n      if (!tier && TIERS.length) tier = TIERS[TIERS.length - 1];\n      // MBTI custom resolver: pick top of each pair\n      var customResult = '';\n      if (CUSTOM === 'mbti') {\n        var EI = (scoreMap.E || 0) >= (scoreMap.I || 0) ? 'E' : 'I';\n        var SN = (scoreMap.S || 0) >= (scoreMap.N || 0) ? 'S' : 'N';\n        var TF = (scoreMap.T || 0) >= (scoreMap.F || 0) ? 'T' : 'F';\n        var JP = (scoreMap.J || 0) >= (scoreMap.P || 0) ? 'J' : 'P';\n        customResult = EI + SN + TF + JP;\n      }\n      return { tier: tier, scoreMap: scoreMap, customResult: customResult };\n    }";
-const RESULT_RENDER = "\n    var r = calc();\n    var label = (r.customResult || r.tier?.label || 'Result');\n    var desc = r.tier?.description || '';\n    result.innerHTML = '<div style=\"text-align:center;\"><div style=\"font-size:32px;font-weight:bold;color:#1B5E3B;\">' + label + '</div><div style=\"margin-top:8px;color:#444;\">' + desc + '</div></div>';";
+const ROOMS = [
+  { id: 'bedroom', label: 'Bedroom' },
+  { id: 'kitchen', label: 'Kitchen' },
+  { id: 'bath', label: 'Bathroom' },
+  { id: 'living', label: 'Living room' },
+] as const;
+
+const SIZES = [
+  { id: 'small', label: 'Small (under 100 sq ft)' },
+  { id: 'medium', label: 'Medium (100-160 sq ft)' },
+  { id: 'large', label: 'Large (over 160 sq ft)' },
+] as const;
+
+const BUDGETS = [
+  { id: 'low', label: 'Under $20', max: 20 },
+  { id: 'mid', label: '$20 - $60', max: 60 },
+  { id: 'high', label: 'Over $60', max: Infinity },
+] as const;
+
+// Real catalog picks per room, ordered space-saving first (small rooms get the top of the list)
+const ROOM_PICKS: Record<string, string[]> = {
+  bedroom: ['foldable-storage-bins', 'multi-purpose-storage-pouch', 'rak-dinding-floating-shelf-set', 'rak-sepatu-minimalis-5-tingkat'],
+  kitchen: ['stainless-steel-2-tier-dish-rack', 'portable-blender', 'smart-water-bottle', 'electric-wine-opener'],
+  bath: ['mesh-zipper-pouches-set', 'hanging-travel-organizer', 'travel-toiletry-bag', 'aromatherapy-diffuser'],
+  living: ['gantungan-kunci-dinding-magnetik', 'rak-dinding-floating-shelf-set', 'ceramic-plant-pot-set', 'rak-buku-minimalis-industrial'],
+};
+
+const ROOM_TIPS: Record<string, string> = {
+  small: 'For a small room, prioritize wall-mounted and foldable storage so the floor stays clear.',
+  medium: 'A medium room fits a mix of wall storage and one or two freestanding organizers.',
+  large: 'A large room can handle bigger freestanding pieces like shelving units and multi-tier racks.',
+};
 
 export default function ToolWidget() {
-  const formRef = useRef<HTMLDivElement>(null);
-  const resultRef = useRef<HTMLDivElement>(null);
-  const [resultVisible, setResultVisible] = useState(false);
+  const [room, setRoom] = useState('');
+  const [size, setSize] = useState('');
+  const [budget, setBudget] = useState('');
+  const [result, setResult] = useState<{ picks: { name: string; slug: string; price: number }[]; tip: string } | null>(null);
+  const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (!formRef.current || !resultRef.current) return;
-    const result = resultRef.current;
-    const fn = new Function('result', FORMULA_JS + '\n; return function() {' + RESULT_RENDER + '};');
-    const handler = fn(result);
-
-    const btn = document.getElementById('calcBtn');
-    const resetBtn = document.getElementById('resetBtn');
-
-    function onCalc() {
-      setResultVisible(true);
-      handler();
+  const generate = () => {
+    if (!room || !size || !budget) {
+      setError('Answer all 3 questions first.');
+      setResult(null);
+      return;
     }
-    function onReset() {
-      const root = formRef.current;
-      if (root) {
-        const inputs = root.querySelectorAll('input, select, textarea');
-        inputs.forEach((el: Element) => {
-          const node = el as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-          if (node instanceof HTMLInputElement && (node.type === 'radio' || node.type === 'checkbox')) {
-            node.checked = node.defaultChecked;
-          } else if (node instanceof HTMLSelectElement) {
-            node.selectedIndex = 0;
-          } else {
-            node.value = '';
-          }
-        });
-      }
-      result.innerHTML = '';
-      setResultVisible(false);
-    }
+    setError('');
+    const maxPrice = BUDGETS.find((b) => b.id === budget)!.max;
+    const all = ROOM_PICKS[room].map((slug) => getProductBySlug(slug)).filter((p): p is NonNullable<typeof p> => Boolean(p));
+    let picks = all.filter((p) => p.price <= maxPrice);
+    if (picks.length === 0) picks = all; // ponytail: no catalog item over $60, show best matches instead of nothing
+    setResult({
+      picks: picks.slice(0, 3).map((p) => ({ name: p.name, slug: p.slug, price: p.price })),
+      tip: ROOM_TIPS[size],
+    });
+  };
 
-    btn && btn.addEventListener('click', onCalc);
-    resetBtn && resetBtn.addEventListener('click', onReset);
-    return () => {
-      btn && btn.removeEventListener('click', onCalc);
-      resetBtn && resetBtn.removeEventListener('click', onReset);
-    };
-  }, []);
+  const reset = () => {
+    setRoom(''); setSize(''); setBudget(''); setResult(null); setError('');
+  };
+
+  const questionBox: React.CSSProperties = { marginBottom: '16px', padding: '12px', background: '#fff', border: '1px solid #E9ECEF', borderRadius: '8px' };
+  const qTitle: React.CSSProperties = { fontWeight: 600, margin: '0 0 8px 0' };
+  const optLabel: React.CSSProperties = { display: 'block', padding: '6px 0', cursor: 'pointer' };
 
   return (
     <section style={widgetCardStyle}>
       <h2 style={widgetTitleStyle}>Quiz</h2>
-      <div ref={formRef} dangerouslySetInnerHTML={{ __html: FORM_HTML }} />
-      <div style={widgetButtonRowStyle}>
-        <button id="calcBtn" type="button" className="btn btn-primary">Generate</button>
-        <button id="resetBtn" type="button" className="btn btn-outline">Reset</button>
+      <div style={questionBox}>
+        <p style={qTitle}>1. Which room do you want to organize first?</p>
+        {ROOMS.map((r) => (
+          <label key={r.id} style={optLabel}>
+            <input type="radio" name="room" checked={room === r.id} onChange={() => setRoom(r.id)} /> {r.label}
+          </label>
+        ))}
       </div>
-      <div ref={resultRef} style={{ ...widgetResultStyle, display: resultVisible ? 'block' : 'none' }} />
+      <div style={questionBox}>
+        <p style={qTitle}>2. How big is the room?</p>
+        {SIZES.map((s) => (
+          <label key={s.id} style={optLabel}>
+            <input type="radio" name="size" checked={size === s.id} onChange={() => setSize(s.id)} /> {s.label}
+          </label>
+        ))}
+      </div>
+      <div style={questionBox}>
+        <p style={qTitle}>3. What is your budget?</p>
+        {BUDGETS.map((b) => (
+          <label key={b.id} style={optLabel}>
+            <input type="radio" name="budget" checked={budget === b.id} onChange={() => setBudget(b.id)} /> {b.label}
+          </label>
+        ))}
+      </div>
+      <div style={widgetButtonRowStyle}>
+        <button type="button" className="btn btn-primary" onClick={generate}>Generate</button>
+        <button type="button" className="btn btn-outline" onClick={reset}>Reset</button>
+      </div>
+      {(result || error) && (
+        <div style={widgetResultStyle}>
+          {error && <p style={{ color: '#B02A37', textAlign: 'center', margin: 0 }}>{error}</p>}
+          {result && (
+            <div>
+              <p style={{ fontSize: '20px', fontWeight: 'bold', color: '#1B5E3B', textAlign: 'center', margin: '0 0 4px 0' }}>
+                Recommended for you
+              </p>
+              <p style={{ color: '#444', textAlign: 'center', margin: '0 0 12px 0' }}>{result.tip}</p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {result.picks.map((p) => (
+                  <li key={p.slug} style={{ padding: '8px 0', borderTop: '1px solid #E9ECEF', display: 'flex', justifyContent: 'space-between', gap: '12px' }}>
+                    <Link href={`/product/${p.slug}`} style={{ color: '#1B5E3B', fontWeight: 500 }}>{p.name}</Link>
+                    <span style={{ color: '#444' }}>${p.price.toFixed(2)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 }

@@ -7,7 +7,7 @@ export const categories: Category[] = [
     slug: 'home-living',
     description: 'Quality products for a tidier home',
     image: '/images/products/floating-shelf-hero.webp',
-    productCount: 124,
+    productCount: 7,
   },
   {
     id: '2',
@@ -15,7 +15,7 @@ export const categories: Category[] = [
     slug: 'kitchen-dining',
     description: 'Curated kitchen essentials',
     image: '/images/products/dish-rack-hero.webp',
-    productCount: 86,
+    productCount: 4,
   },
   {
     id: '3',
@@ -23,7 +23,7 @@ export const categories: Category[] = [
     slug: 'tools-gadgets',
     description: 'Handy tools for everyday needs',
     image: '/images/products/multi-tool-knife-hero.webp',
-    productCount: 67,
+    productCount: 1,
   },
   {
     id: '4',
@@ -31,7 +31,7 @@ export const categories: Category[] = [
     slug: 'gift-sets',
     description: 'Ready-to-give gifts for every occasion',
     image: '/images/products/premium-gift-box-hero.webp',
-    productCount: 93,
+    productCount: 1,
   },
   {
     id: '5',
@@ -39,7 +39,7 @@ export const categories: Category[] = [
     slug: 'personal-care',
     description: 'Curated self-care essentials',
     image: '/images/products/aromatherapy-diffuser-hero.webp',
-    productCount: 78,
+    productCount: 2,
   },
   {
     id: '6',
@@ -47,7 +47,7 @@ export const categories: Category[] = [
     slug: 'tech-accessories',
     description: 'Practical tech solutions',
     image: '/images/products/wireless-earbuds-hero.webp',
-    productCount: 54,
+    productCount: 2,
   },
   {
     id: '7',
