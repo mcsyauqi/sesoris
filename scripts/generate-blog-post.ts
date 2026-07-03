@@ -168,6 +168,19 @@ TOPIC CONTEXT:
     process.exit(0);
   }
 
+  // Dash lint: strip em/en dashes from all user-facing strings (writing rule: no em dash).
+  // Em dash -> " - ", en dash in ranges (8-10, 0-3M) -> "-", leftover en dash -> " - ".
+  const lintDashes = (s: string): string =>
+    s
+      .replace(/\s*—\s*/g, ' - ')
+      .replace(/([0-9A-Za-z])\s*–\s*([0-9A-Za-z])/g, '$1-$2')
+      .replace(/\s*–\s*/g, ' - ')
+      .replace(/&(mdash|#8212);/g, ' - ')
+      .replace(/&(ndash|#8211);/g, '-');
+  generated.title = lintDashes(generated.title);
+  generated.excerpt = lintDashes(generated.excerpt);
+  generated.content = generated.content.map((line: string) => lintDashes(line));
+
   const filePath = path.join(blogDir, `${generated.slug}.json`);
   if (fs.existsSync(filePath)) {
     // Slug duplicate, keyword already consumed, don't putback (try different keyword next run)
