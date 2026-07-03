@@ -78,7 +78,7 @@ const nextConfig: NextConfig = {
       { source: '/blog/:path(.*rak-dapur.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rak-dinding.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rak-buku.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!(rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026|wall-mounted-spice-rack-rak-bumbu-dapur-tempel-dinding-review-buying-guide-2026)$).*rak-bumbu.*)', destination: '/blog', permanent: true },
+      { source: '/blog/:path((?!rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026$)(?!wall-mounted-spice-rack-rak-bumbu-dapur-tempel-dinding-review-buying-guide-2026$).*rak-bumbu.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rak-mainan.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rak-penyimpanan.*)', destination: '/blog', permanent: true },
       { source: '/blog/:path(.*rak-serbaguna.*)', destination: '/blog', permanent: true },
