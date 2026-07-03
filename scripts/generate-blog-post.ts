@@ -20,6 +20,16 @@ interface QueuedKeyword {
   priority: string;
 }
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-{2,}/g, '-');
+}
+
 function getNextKeyword(): { keyword: QueuedKeyword; putback: () => void } | null {
   if (!fs.existsSync(keywordQueuePath)) return null;
   const queue: QueuedKeyword[] = JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'));
@@ -181,9 +191,18 @@ TOPIC CONTEXT:
   generated.excerpt = lintDashes(generated.excerpt);
   generated.content = generated.content.map((line: string) => lintDashes(line));
 
+  if (queuedKeyword) {
+    const targetSlug = slugify(queuedKeyword.keyword);
+    const modelSlug = generated.slug;
+    generated.slug = targetSlug;
+    if (modelSlug !== targetSlug) {
+      console.log(`Using keyword-derived slug: ${targetSlug} (model proposed: ${modelSlug})`);
+    }
+  }
+
   const filePath = path.join(blogDir, `${generated.slug}.json`);
   if (fs.existsSync(filePath)) {
-    // Slug duplicate, keyword already consumed, don't putback (try different keyword next run)
+    putbackKeyword?.();
     console.log(`Post already exists: ${generated.slug}, skipping gracefully`);
     process.exit(0);
   }
