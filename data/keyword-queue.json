@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "small home office organization ideas",
-    "volume": 320,
-    "category": "Home Office Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "diy garage storage solutions",
-    "volume": 320,
-    "category": "Garage Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "garage storage solutions near me",
-    "volume": 320,
-    "category": "Garage Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "laundry room organization containers",
     "volume": 320,
     "category": "Laundry Room Organization",
