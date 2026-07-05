@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "laundry room organization containers",
-    "volume": 320,
-    "category": "Laundry Room Organization",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "small space kitchen storage ideas",
-    "volume": 320,
-    "category": "Small Space Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "storage solutions for the bedroom",
-    "volume": 320,
-    "category": "Bedroom Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "bedroom storage solutions",
     "volume": 320,
     "category": "Bedroom Storage Solutions",
