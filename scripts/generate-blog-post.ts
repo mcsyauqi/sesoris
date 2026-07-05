@@ -11,6 +11,7 @@ const blogDir = path.join(process.cwd(), 'content', 'blog');
 const categories = ['Tips & Tricks', 'Tutorial', 'Inspiration', 'Lifestyle', 'Review'];
 
 const keywordQueuePath = path.join(process.cwd(), 'data', 'keyword-queue.json');
+const keywordConsumedPath = path.join(process.cwd(), 'data', 'keyword-consumed.json');
 
 interface QueuedKeyword {
   keyword: string;
@@ -18,6 +19,42 @@ interface QueuedKeyword {
   category: string;
   intent: string;
   priority: string;
+}
+
+interface KeywordConsumptionLedgerEntry extends QueuedKeyword {
+  slug: string;
+  date: string;
+  status: 'consumed' | 'published' | 'putback' | 'duplicate';
+  note?: string;
+}
+
+function readKeywordLedger(): KeywordConsumptionLedgerEntry[] {
+  if (!fs.existsSync(keywordConsumedPath)) return [];
+  return JSON.parse(fs.readFileSync(keywordConsumedPath, 'utf-8'));
+}
+
+function appendKeywordLedger(entry: KeywordConsumptionLedgerEntry): void {
+  const ledger = readKeywordLedger();
+  ledger.push(entry);
+  fs.writeFileSync(keywordConsumedPath, JSON.stringify(ledger, null, 2), 'utf-8');
+}
+
+function updateLatestKeywordLedgerStatus(
+  keyword: QueuedKeyword,
+  slug: string,
+  status: KeywordConsumptionLedgerEntry['status'],
+  note?: string,
+): void {
+  const ledger = readKeywordLedger();
+  for (let i = ledger.length - 1; i >= 0; i -= 1) {
+    const entry = ledger[i];
+    if (entry.keyword === keyword.keyword && entry.slug === slug) {
+      ledger[i] = { ...entry, status, note };
+      fs.writeFileSync(keywordConsumedPath, JSON.stringify(ledger, null, 2), 'utf-8');
+      return;
+    }
+  }
+  appendKeywordLedger({ ...keyword, slug, date: toISODate(new Date()), status, note });
 }
 
 function slugify(text: string): string {
@@ -30,7 +67,7 @@ function slugify(text: string): string {
     .replace(/-{2,}/g, '-');
 }
 
-function getNextKeyword(): { keyword: QueuedKeyword; putback: () => void } | null {
+function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (status?: 'putback' | 'duplicate', note?: string) => void } | null {
   if (!fs.existsSync(keywordQueuePath)) return null;
   const queue: QueuedKeyword[] = JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'));
   if (queue.length === 0) return null;
@@ -38,21 +75,28 @@ function getNextKeyword(): { keyword: QueuedKeyword; putback: () => void } | nul
   // Take the first keyword (highest volume)
   const next = queue.shift()!;
 
-  // Save remaining queue immediately
+  const slug = slugify(next.keyword);
+
+  // Save remaining queue immediately, then record the consumed keyword in an append-only ledger.
   fs.writeFileSync(keywordQueuePath, JSON.stringify(queue, null, 2), 'utf-8');
+  appendKeywordLedger({ ...next, slug, date: toISODate(new Date()), status: 'consumed' });
   console.log(`Keyword from queue: "${next.keyword}" (vol: ${next.volume}, ${queue.length} remaining)`);
 
-  // Provide a putback function to restore keyword if generation fails
-  const putback = () => {
+  // Provide a putback function to restore keyword if generation fails or duplicates an existing slug.
+  const putback = (status: 'putback' | 'duplicate' = 'putback', note?: string) => {
     const current: QueuedKeyword[] = fs.existsSync(keywordQueuePath)
       ? JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'))
       : [];
     current.unshift(next);
+    if (!current.some((item) => item.keyword === next.keyword)) {
+      current.unshift(next);
+    }
     fs.writeFileSync(keywordQueuePath, JSON.stringify(current, null, 2), 'utf-8');
-    console.log(`Keyword returned to queue: "${next.keyword}"`);
+    updateLatestKeywordLedgerStatus(next, slug, status, note);
+    console.log(`Keyword returned to queue: "${next.keyword}" (${status})`);
   };
 
-  return { keyword: next, putback };
+  return { keyword: next, slug, putback };
 }
 
 const topicsByDay: Record<number, string> = {
@@ -97,6 +141,7 @@ async function generatePost() {
   // Try to get keyword from queue first
   const nextKeyword = getNextKeyword();
   const queuedKeyword = nextKeyword?.keyword ?? null;
+  const queuedSlug = nextKeyword?.slug ?? null;
   const putbackKeyword = nextKeyword?.putback ?? null;
 
   let basePrompt: string;
@@ -192,7 +237,7 @@ TOPIC CONTEXT:
   generated.content = generated.content.map((line: string) => lintDashes(line));
 
   if (queuedKeyword) {
-    const targetSlug = slugify(queuedKeyword.keyword);
+    const targetSlug = queuedSlug ?? slugify(queuedKeyword.keyword);
     const modelSlug = generated.slug;
     generated.slug = targetSlug;
     if (modelSlug !== targetSlug) {
@@ -202,8 +247,8 @@ TOPIC CONTEXT:
 
   const filePath = path.join(blogDir, `${generated.slug}.json`);
   if (fs.existsSync(filePath)) {
-    putbackKeyword?.();
-    console.log(`Post already exists: ${generated.slug}, skipping gracefully`);
+    putbackKeyword?.('duplicate', `Existing file found for slug: ${generated.slug}`);
+    console.log(`Post already exists: ${generated.slug}, keyword returned to queue and marked duplicate in ledger, skipping gracefully`);
     process.exit(0);
   }
 
@@ -260,6 +305,9 @@ TOPIC CONTEXT:
   };
 
   fs.writeFileSync(filePath, JSON.stringify(post, null, 2), 'utf-8');
+  if (queuedKeyword) {
+    updateLatestKeywordLedgerStatus(queuedKeyword, generated.slug, 'published', `Created ${path.relative(process.cwd(), filePath)}`);
+  }
   console.log(`Blog post created: ${filePath}`);
   console.log(`Title: ${post.title}`);
   console.log(`Category: ${post.category}`);
