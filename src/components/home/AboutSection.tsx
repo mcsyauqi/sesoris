@@ -75,22 +75,22 @@ export function AboutSection() {
               We partner with trusted manufacturers to bring you rust-resistant stainless steel, food-grade plastics, and premium materials at accessible prices. Whether you live in a small apartment or a spacious home, our storage solutions scale with your needs.
             </p>
             <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px' }}>
-              Sesoris has helped over 50,000 households organize smarter, one shelf, container, and cabinet at a time.
+              Sesoris curates practical organizers for kitchens, desks, closets, travel, and small-space living, one shelf, container, and cabinet at a time.
             </p>
 
             {/* Stats */}
             <div className="grid-stats" style={{ marginBottom: '28px' }}>
               <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>50K+</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Happy Customers</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>500+</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>23</div>
                 <div style={{ fontSize: '13px', color: '#6C757D' }}>Products</div>
               </div>
               <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>4.8</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Average Rating</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>9</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Categories</div>
+              </div>
+              <div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>4.7</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Review Avg.</div>
               </div>
             </div>
 

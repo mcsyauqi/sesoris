@@ -3,7 +3,7 @@ import ShopPageClient from './ShopPageClient';
 
 export const metadata: Metadata = {
   title: 'Sesoris Shop | Home Organizers, Kitchen & Lifestyle',
-  description: 'Shop 500+ home organizers, kitchen essentials, handy tools, gift sets, and lifestyle picks at Sesoris. Free shipping over $50.',
+  description: 'Shop a curated catalog of 23 home organizers, kitchen essentials, handy tools, gift sets, and lifestyle picks at Sesoris. Free shipping over $50.',
   alternates: { canonical: '/shop' },
   openGraph: {
     title: 'Sesoris Shop | Home Organizers, Kitchen & Lifestyle',
@@ -17,7 +17,7 @@ const shopSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Sesoris Shop - All Products',
-  description: 'Browse 500+ home organizers, kitchen essentials, handy tools, gift sets, and lifestyle picks at Sesoris.',
+  description: 'Browse 23 curated home organizers, kitchen essentials, handy tools, gift sets, and lifestyle picks at Sesoris.',
   url: 'https://www.sesoris.com/shop',
   breadcrumb: {
     '@type': 'BreadcrumbList',

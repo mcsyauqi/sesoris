@@ -7,7 +7,7 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: 'What types of home organizers does Sesoris sell?',
-    answer: 'Sesoris offers 500+ products across 6 categories: Home Living organizers, Kitchen & Dining storage, Bags & Pouches, Tools & Gadgets, Office Desk Organizers, and Outdoor & Travel Gear. From kitchen racks and food containers to desk organizers and travel bags, all in one place.',
+    answer: 'Sesoris offers 23 curated products across 9 categories, including Home Living, Kitchen & Dining, Bags & Pouches, Tools & Gadgets, Office Desk Organizers, and Outdoor & Travel Gear. From kitchen racks and food containers to desk organizers and travel bags, all in one place.',
   },
   {
     question: 'Does Sesoris offer free shipping?',
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'Are Sesoris products good quality?',
-    answer: 'Sesoris products are carefully curated for durability and functionality. Our stainless steel kitchen racks are rust-resistant, our food containers are food-grade certified, and our storage boxes are tested for load capacity. We maintain a 4.8-star average rating from over 50,000 verified customers.',
+    answer: 'Sesoris products are carefully curated for durability and functionality. Our stainless steel kitchen racks, food storage containers, desk organizers, and storage boxes are selected for everyday use. Current product review data in the site catalog averages about 4.7 stars.',
   },
   {
     question: 'How do I choose the right storage solution for my kitchen?',

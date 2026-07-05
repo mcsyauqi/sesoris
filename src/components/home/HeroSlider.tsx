@@ -15,7 +15,7 @@ const slides = [
     image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&h=533&fit=crop&q=75',
     buttonText: 'Shop the Collection',
     buttonLink: '/shop',
-    stat: { value: '500+', label: 'Products' },
+    stat: { value: '23', label: 'Products' },
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const slides = [
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=533&fit=crop&q=75',
     buttonText: 'Shop Best Sellers',
     buttonLink: '/best-sellers',
-    stat: { value: '4.8', label: 'Rating' },
+    stat: { value: '4.7', label: 'Review Avg.' },
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const slides = [
     image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=533&fit=crop&q=75',
     buttonText: 'Shop Now',
     buttonLink: '/on-sale',
-    stat: { value: '50K+', label: 'Customers' },
+    stat: { value: '9', label: 'Categories' },
   },
 ];
 
@@ -118,7 +118,7 @@ export function HeroSlider() {
                     <Star key={i} style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
                   ))}
                 </div>
-                <span style={{ fontSize: '13px', opacity: 0.9 }}>50,000+ happy customers</span>
+                <span style={{ fontSize: '13px', opacity: 0.9 }}>Curated for organized living</span>
               </div>
             </div>
           </div>
