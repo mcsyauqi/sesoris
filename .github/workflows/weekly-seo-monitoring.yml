@@ -1,0 +1,39 @@
+name: Weekly SEO Monitoring
+
+on:
+  schedule:
+    - cron: '17 2 * * 1'
+  workflow_dispatch:
+
+jobs:
+  seo-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live SEO endpoints
+        run: |
+          set -euo pipefail
+          mkdir -p reports
+          {
+            echo "# Sesoris SEO Monitoring"
+            echo "Generated: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo
+            for url in \
+              "https://www.sesoris.com/" \
+              "https://www.sesoris.com/blog" \
+              "https://www.sesoris.com/robots.txt" \
+              "https://www.sesoris.com/sitemap.xml"
+            do
+              code=$(curl -L -s -o /tmp/seo-check-body -w '%{http_code}' --max-time 30 "$url")
+              bytes=$(wc -c < /tmp/seo-check-body | tr -d ' ')
+              echo "- $url | HTTP $code | ${bytes} bytes"
+              test "$code" = "200"
+            done
+            echo
+            echo "## Sitemap URL count"
+            curl -L -s --max-time 30 "https://www.sesoris.com/sitemap.xml" | grep -c '<url>'
+          } | tee reports/seo-monitoring.md
+      - name: Upload monitoring artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sesoris-seo-monitoring
+          path: reports/seo-monitoring.md
