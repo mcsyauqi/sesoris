@@ -1,26 +1,5 @@
 [
   {
-    "keyword": "bedroom storage solutions",
-    "volume": 320,
-    "category": "Bedroom Storage Solutions",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "ideas for shoe storage in small closet",
-    "volume": 320,
-    "category": "Shoe Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
-    "keyword": "shoe storage ideas for rvs",
-    "volume": 320,
-    "category": "Shoe Storage Ideas",
-    "intent": "Body",
-    "priority": "Tier 2"
-  },
-  {
     "keyword": "cool shoe storage ideas",
     "volume": 320,
     "category": "Shoe Storage Ideas",
