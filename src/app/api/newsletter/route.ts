@@ -10,10 +10,17 @@ export async function POST(request: NextRequest) {
 
     const apiKey = process.env.BREVO_API_KEY;
 
-    if (!apiKey) {
-      // If no API key, just log and return success (graceful degradation)
-      console.log(`[Newsletter] New subscriber (no API key): ${email} via ${source || 'unknown'}`);
-      return NextResponse.json({ success: true, message: 'Subscribed successfully!' });
+    if (!apiKey || apiKey.trim() === '') {
+      // Misconfiguration must be loud: a silent success here means every
+      // subscriber is discarded without anyone noticing. Never return 200.
+      console.error(
+        `[Newsletter] BREVO_API_KEY is missing or empty. Subscriber LOST: ${email} via ${source || 'unknown'}. ` +
+        'Set BREVO_API_KEY in the environment (local .env and Vercel project env) and redeploy.'
+      );
+      return NextResponse.json(
+        { success: false, error: 'Newsletter service is not configured. Please try again later.' },
+        { status: 500 }
+      );
     }
 
     // Add contact to Brevo
