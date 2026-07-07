@@ -1,4 +1,23 @@
 import type { NextConfig } from "next";
+import { readFileSync } from "fs";
+import path from "path";
+
+// ---------------------------------------------------------------
+// Legacy Indonesian blog slugs removed on 2026-06-05 (cycle #22).
+// The exact list is derived from git history (deleted files under
+// content/blog/) and stored in data/legacy-blog-redirects.json.
+//
+// IMPORTANT (2026-07-07): the previous implementation used ~100 broad
+// token matchers like `/blog/:path(.*rak-dapur.*)`. Those patterns
+// repeatedly caught NEW live English articles that happened to contain
+// an Indonesian token, 301-ing live content to /blog (3 incidents).
+// Broad matchers are banned here: every redirect must be an exact,
+// one-to-one source path. scripts/check-scheduled-publishing.mjs
+// verifies no redirect source collides with a live article slug.
+// ---------------------------------------------------------------
+const legacyBlogSlugs: string[] = JSON.parse(
+  readFileSync(path.join(process.cwd(), "data", "legacy-blog-redirects.json"), "utf-8")
+);
 
 const nextConfig: NextConfig = {
   compress: true,
@@ -14,14 +33,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // ---------------------------------------------------------------
-      // Site targets US/English audience.
-      // 169 Indonesian-slug blog articles + 1 Indonesian-slug landing
-      // page (/rak-serbaguna-multifungsi) were removed on 2026-06-05.
-      // The patterns below 301-redirect every legacy Indonesian URL to
-      // /blog/ (or /shop/) so external links and SERP hits preserve
-      // equity without serving Indonesian content.
-      // ---------------------------------------------------------------
       // Removed standalone landing page → /shop
       {
         source: '/rak-serbaguna-multifungsi',
@@ -35,125 +46,13 @@ const nextConfig: NextConfig = {
         destination: '/blog',
         permanent: true,
       },
-      // Indonesian-keyword catch-all patterns → /blog
-      // Named regex group ensures only slugs containing the Indonesian
-      // token match; English slugs continue to serve normally.
-      // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!rak-sudut-kamar-mandi-maksimalkan-ruang-mati$).*kamar-mandi.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*kamar-tidur.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*kamar-kost.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!setup-wfh-produktif-di-rumah-minimalis$).*rumah-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!ide-hampers-lebaran-dengan-produk-rumah-tangga$).*rumah-tangga.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rumah-kecil.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rumah-estetik.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rumah-rapi.*)', destination: '/blog', permanent: true },
-      // Disabled 2026-06-29 by MinTiv for active Sesoris article slugs, including setup-wfh-produktif-di-rumah-minimalis and organisasi-laundry-room-di-rumah-indonesia.
-      { source: '/blog/:path((?!organisasi-laundry-room-di-rumah-indonesia$)(?!setup-wfh-produktif-di-rumah-minimalis$).*di-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*ruang-tamu.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*ruang-keluarga.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*ruang-makan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*ruang-kecil.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*dapur-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!cara-menata-dapur-kecil-apartemen$).*dapur-kecil.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!desain-dapur-letter-l-layout-paling-efisien$).*desain-dapur.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*alat-dapur.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*alat-camping.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tren-dapur.*)', destination: '/blog', permanent: true },
-      // Disabled 2026-06-26 by MinTiv for active Sesoris article slugs: { source: '/blog/:path((?!wardrobe-organizer-cara-menata-lemari-pakaian$).*lemari-pakaian.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*lemari-baju.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*lemari-dapur.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*lemari-piring.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*lemari-penyimpanan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*lemari-makan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-sabun.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-piring.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-sampah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-penyimpanan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-bumbu.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-tidur-dengan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-kue.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-alat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-dokumen.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tempat-sepatu.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!rak-piring-dapur-dish-rack-guide-best-kitchen-plate-storage-solutions-2026$).*rak-piring.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-dapur.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-dinding.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-buku.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026$)(?!wall-mounted-spice-rack-rak-bumbu-dapur-tempel-dinding-review-buying-guide-2026$).*rak-bumbu.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-mainan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-penyimpanan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-serbaguna.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-stainless.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-tanaman.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-mesin.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-microwave.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-monitor.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-panci.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-sepeda.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-gantung.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*rak-kolong.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*meja-rias.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*meja-belajar.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*meja-tv-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-membuat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-memilih.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-merawat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-merapikan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!cara-menata-dapur-kecil-apartemen$)(?!wardrobe-organizer-cara-menata-lemari-pakaian$).*cara-menata.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-menyimpan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-menciptakan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*cara-declutter.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tips-membuat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tips-menata.*)', destination: '/blog', permanent: true },
-      // Disabled 2026-06-26: legacy redirect for 'tips-rumah' conflicts with active slug tips-hemat-ruang-untuk-rumah-kecil.
-      { source: '/blog/:path(.*panduan-memilih.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*panduan-lengkap.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*panduan-dekorasi.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tutorial-membuat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*jenis-jenis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*dekorasi-dapur.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*dekorasi-kamar.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*dekorasi-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*dekorasi-ruang.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*denah-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*inspirasi-dapur.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*inspirasi-dekorasi.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*belanja-hemat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*checklist-pindah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*checklist-perlengkapan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*perlengkapan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!checklist-persiapan-lebaran-bersih-bersih-rumah$)(?!ide-hampers-lebaran-dengan-produk-rumah-tangga$)(?!lebaran-table-setting$).*lebaran.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path((?!checklist-persiapan-lebaran-bersih-bersih-rumah$)(?!tips-bersih-bersih-rumah-cepat-30-menit$).*bersih-bersih.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*organizer-kamar.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*organizer-perlengkapan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*organizer-pisau.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*tas-organizer.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*bag-organizer-travel.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*kotak-penyimpanan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*kotak-kayu-penyimpanan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*box-penyimpanan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*keranjang.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*wadah-makanan.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*minimalis-modern.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*modern-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*kitchen-set-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*gaya-hidup-minimalis.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*hidup-berkualitas.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*menciptakan-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*transformasi-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*sustainable-living-mulai.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*home-office-yang-produktif.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*warna-cat-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*teras-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*interior-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*vertical-garden-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*storage-box-baju.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*storage-box-lipat.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*storage-box-mini.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*kerja-dari-rumah.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*harga-storage-box.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*peralatan-berkebun.*)', destination: '/blog', permanent: true },
-      { source: '/blog/:path(.*review-koleksi-kontainer.*)', destination: '/blog', permanent: true },
+      // Exact redirects for every removed legacy Indonesian article.
+      // One rule per removed slug; live English slugs can never match.
+      ...legacyBlogSlugs.map((slug) => ({
+        source: `/blog/${slug}`,
+        destination: '/blog',
+        permanent: true,
+      })),
       // Legacy product slug renamed Indonesian → English
       {
         source: '/product/rak-piring-stainless-steel-2-tier',
