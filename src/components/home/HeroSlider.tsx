@@ -26,7 +26,7 @@ const slides = [
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=533&fit=crop&q=75',
     buttonText: 'Shop Best Sellers',
     buttonLink: '/best-sellers',
-    stat: { value: '4.7', label: 'Review Avg.' },
+    stat: { value: '30-Day', label: 'Easy Returns' },
   },
   {
     id: 3,

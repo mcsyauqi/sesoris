@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'Are Sesoris products good quality?',
-    answer: 'Sesoris products are carefully curated for durability and functionality. Our stainless steel kitchen racks, food storage containers, desk organizers, and storage boxes are selected for everyday use. Current product review data in the site catalog averages about 4.7 stars.',
+    answer: 'Sesoris products are carefully curated for durability and functionality. Our stainless steel kitchen racks, food storage containers, desk organizers, and storage boxes are selected for everyday use, with a focus on rust-resistant stainless steel, food-grade plastics, and sturdy construction.',
   },
   {
     question: 'How do I choose the right storage solution for my kitchen?',

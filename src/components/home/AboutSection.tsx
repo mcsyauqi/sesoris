@@ -89,8 +89,8 @@ export function AboutSection() {
                 <div style={{ fontSize: '13px', color: '#6C757D' }}>Categories</div>
               </div>
               <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>4.7</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Review Avg.</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>30-Day</div>
+                <div style={{ fontSize: '13px', color: '#6C757D' }}>Returns</div>
               </div>
             </div>
 
