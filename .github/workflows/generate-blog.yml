@@ -45,11 +45,17 @@ jobs:
           echo "=== Git status (porcelain) ==="
           git status --porcelain | head -20
 
+      - name: Pre-publish guard (dates, redirect/slug conflicts)
+        # Fails the run BEFORE anything is pushed if a generated article's
+        # date format is wrong or its slug collides with a redirect source
+        # (a collision would 301 the new article into /blog on deploy).
+        run: node scripts/check-scheduled-publishing.mjs
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/blog/ public/images/blog/ data/keyword-queue.json
+          git add content/blog/ public/images/blog/ data/keyword-queue.json data/keyword-consumed.json
           echo "=== Staged paths ==="
           git diff --staged --name-only
           if git diff --staged --quiet; then
