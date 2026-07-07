@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getAverageRating, getProductBySlug, getReviewsByProductId, products } from '@/data/products';
+import { getProductBySlug, products } from '@/data/products';
 import ProductPageClient from './ProductPageClient';
 import { toUsdPrice } from '@/lib/utils';
 
@@ -42,9 +42,6 @@ export default async function ProductPage(
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
-
-  const verifiedReviews = getReviewsByProductId(product.id).filter((review) => review.verified);
-  const averageRating = getAverageRating(product.id) || product.rating;
 
   const productSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -101,28 +98,11 @@ export default async function ProductPage(
     },
   };
 
-  if (verifiedReviews.length > 0) {
-    productSchema.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: Number(averageRating.toFixed(1)),
-      reviewCount: verifiedReviews.length,
-      bestRating: 5,
-      worstRating: 1,
-    };
-    productSchema.review = verifiedReviews.slice(0, 3).map((review) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: review.name },
-      datePublished: review.date,
-      name: review.title,
-      reviewBody: review.content,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating,
-        bestRating: 5,
-        worstRating: 1,
-      },
-    }));
-  }
+  // NOTE: No AggregateRating/Review structured data is emitted on purpose.
+  // The review entries in src/data/products.ts are seeded placeholder data,
+  // not real customer reviews. Publishing rating markup based on them risks
+  // a Google product-review-spam penalty. When a real review system exists,
+  // rating markup may be reintroduced from genuine, verifiable reviews only.
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
