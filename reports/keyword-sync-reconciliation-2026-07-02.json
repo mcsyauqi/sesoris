@@ -1,0 +1,42 @@
+{
+  "sources": {
+    "blogFiles": 348,
+    "queue": 569,
+    "kdbKeywords": 1031,
+    "artikelRows": 293
+  },
+  "kdbStatus": {
+    "Scheduled": 336,
+    "Published": 15,
+    "Planned": 680
+  },
+  "kdbPriority": {
+    "Tier 1": 166,
+    "Tier 2": 374,
+    "Tier 3": 418,
+    "(blank)": 73
+  },
+  "artikelStatus": {
+    "Published": 146,
+    "Scheduled": 147
+  },
+  "queuePriority": {
+    "Tier 2": 205,
+    "Tier 3": 364
+  },
+  "findings": {
+    "artikelOverlapWithSite": 23,
+    "artikelUntracked": 325,
+    "artikelPhantomPublished": 128,
+    "artikelStaleScheduled": 142,
+    "kdbSaysPublished": 15,
+    "tier1Total": 166,
+    "tier1ConsumedNoArticle": 145,
+    "droppedPlanned": 401,
+    "queueNotInKdb": 29,
+    "queueInternalDupes": 0,
+    "queueAlreadyPublished": 0,
+    "artikelDupeSlugs": 0,
+    "backlogMonths": 19
+  }
+}

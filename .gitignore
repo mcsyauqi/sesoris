@@ -48,3 +48,4 @@ client_secret.json
 .claude/
 .env*.local
 content/blog.bak/
+tmp/
