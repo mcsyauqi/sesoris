@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "keyword": "air tight food storage containers",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "air-tight-food-storage-containers",
+    "date": "2026-07-07",
+    "status": "published",
+    "note": "Created content/blog/air-tight-food-storage-containers.json"
+  },
+  {
+    "keyword": "airtight storage containers for food",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "airtight-storage-containers-for-food",
+    "date": "2026-07-07",
+    "status": "published",
+    "note": "Created content/blog/airtight-storage-containers-for-food.json"
+  },
+  {
+    "keyword": "food containers and storage",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "food-containers-and-storage",
+    "date": "2026-07-07",
+    "status": "published",
+    "note": "Created content/blog/food-containers-and-storage.json"
+  }
+]
