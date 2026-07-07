@@ -11,12 +11,12 @@ import {
 } from '@/components/home';
 
 export const metadata: Metadata = {
-  title: 'Sesoris - Home Organizers & Storage Solutions',
-  description: 'Shop a curated catalog of 23 home organizers across 9 categories. Free shipping over $50. Built for tidier kitchens, desks, closets, and everyday living.',
+  title: 'Sesoris | Home Organizer untuk Rumah Lebih Teratur',
+  description: 'Temukan organizer rumah, rak penyimpanan, dan perlengkapan home living pilihan Sesoris untuk membuat rumah lebih rapi dan nyaman.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Sesoris - Home Organizers & Storage Solutions',
-    description: 'Shop a curated catalog of 23 home organizers across 9 categories. Free shipping over $50. Built for tidier kitchens, desks, closets, and everyday living.',
+    title: 'Sesoris | Home Organizer untuk Rumah Lebih Teratur | Sesoris',
+    description: 'Temukan organizer rumah, rak penyimpanan, dan perlengkapan home living pilihan Sesoris untuk membuat rumah lebih rapi dan nyaman.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

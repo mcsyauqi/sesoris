@@ -7,12 +7,12 @@ import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export const metadata: Metadata = {
-  title: 'Best Sellers',
-  description: 'Shop Sesoris best-selling products. Top-rated home organizers and storage solutions loved by our customers.',
+  title: 'Best Seller Sesoris | Organizer Rumah Favorit',
+  description: 'Belanja produk best seller Sesoris, dari rak penyimpanan sampai organizer dapur yang paling sering dipilih pelanggan.',
   alternates: { canonical: '/best-sellers' },
   openGraph: {
-    title: 'Best Sellers | Sesoris',
-    description: 'Shop Sesoris best-selling products. Top-rated home organizers and storage solutions loved by our customers.',
+    title: 'Best Seller Sesoris | Organizer Rumah Favorit | Sesoris',
+    description: 'Belanja produk best seller Sesoris, dari rak penyimpanan sampai organizer dapur yang paling sering dipilih pelanggan.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

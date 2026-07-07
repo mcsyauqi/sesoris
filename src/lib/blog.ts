@@ -17,6 +17,8 @@ export interface BlogPost {
     role: string;
   };
   content: string[];
+  retired?: boolean;
+  redirectTo?: string;
 }
 
 /**
@@ -65,7 +67,7 @@ export function getAllPosts(): BlogPost[] {
   });
   // Only show articles with date <= today (scheduled publishing)
   const today = new Date().toISOString().split('T')[0];
-  const published = posts.filter((p) => p.date <= today);
+  const published = posts.filter((p) => p.date <= today && !p.retired);
   // Sort by date descending (newest first)
   published.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return published;
@@ -77,8 +79,9 @@ export function getAllPostsIncludingScheduled(): BlogPost[] {
     const raw = fs.readFileSync(path.join(blogDir, file), 'utf-8');
     return JSON.parse(raw) as BlogPost;
   });
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  return posts;
+  const activePosts = posts.filter((p) => !p.retired);
+  activePosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return activePosts;
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {

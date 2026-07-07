@@ -4,12 +4,12 @@ import Image from 'next/image';
 import { Home, ChevronRight, Heart, Globe, Users, Leaf, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Sesoris | Home Organizer Store from Yogyakarta',
-  description: 'Learn about Sesoris, a Yogyakarta-based online store for home organizers, kitchen storage, desk accessories, and practical storage solutions.',
+  title: 'Tentang Sesoris | Hidup Lebih Teratur',
+  description: 'Kenali Sesoris, toko home organization yang membantu keluarga Indonesia memilih organizer praktis untuk rumah lebih teratur.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Sesoris | Home Organizer Store from Yogyakarta',
-    description: 'Learn about Sesoris, a Yogyakarta-based online store for home organizers, kitchen storage, desk accessories, and practical storage solutions.',
+    title: 'Tentang Sesoris | Hidup Lebih Teratur | Sesoris',
+    description: 'Kenali Sesoris, toko home organization yang membantu keluarga Indonesia memilih organizer praktis untuk rumah lebih teratur.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

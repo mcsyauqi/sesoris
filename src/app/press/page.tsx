@@ -4,12 +4,12 @@ import Image from 'next/image';
 import { Home, ChevronRight, Newspaper, Download, ExternalLink, Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Press & Media',
-  description: 'Sesoris in the news. Read about our latest achievements, collaborations, and brand stories.',
+  title: 'Press Sesoris | Profil Brand Home Organization',
+  description: 'Informasi press Sesoris untuk media, kolaborasi, dan profil brand home organization dengan tagline Hidup Lebih Teratur.',
   alternates: { canonical: '/press' },
   openGraph: {
-    title: 'Press & Media | Sesoris',
-    description: 'Sesoris in the news. Read about our latest achievements, collaborations, and brand stories.',
+    title: 'Press Sesoris | Profil Brand Home Organization | Sesoris',
+    description: 'Informasi press Sesoris untuk media, kolaborasi, dan profil brand home organization dengan tagline Hidup Lebih Teratur.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

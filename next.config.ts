@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { readFileSync } from "fs";
+import { readFileSync, readdirSync } from "fs";
 import path from "path";
 
 // ---------------------------------------------------------------
@@ -18,6 +18,21 @@ import path from "path";
 const legacyBlogSlugs: string[] = JSON.parse(
   readFileSync(path.join(process.cwd(), "data", "legacy-blog-redirects.json"), "utf-8")
 );
+
+const retiredBlogRedirects = readdirSync(path.join(process.cwd(), "content", "blog"))
+  .filter((file) => file.endsWith(".json"))
+  .flatMap((file) => {
+    const post = JSON.parse(
+      readFileSync(path.join(process.cwd(), "content", "blog", file), "utf-8")
+    ) as { slug?: string; retired?: boolean; redirectTo?: string };
+
+    if (!post.retired || !post.slug || !post.redirectTo) return [];
+    return [{
+      source: `/blog/${post.slug}`,
+      destination: `/blog/${post.redirectTo}`,
+      permanent: true,
+    }];
+  });
 
 const nextConfig: NextConfig = {
   compress: true,
@@ -46,6 +61,10 @@ const nextConfig: NextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      // Exact redirects for retired cannibalizing blog posts.
+      // Source files remain in git as content archive, but are excluded from
+      // blog lists/sitemaps via src/lib/blog.ts and redirected here.
+      ...retiredBlogRedirects,
       // Exact redirects for every removed legacy Indonesian article.
       // One rule per removed slug; live English slugs can never match.
       ...legacyBlogSlugs.map((slug) => ({

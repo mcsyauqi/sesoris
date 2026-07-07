@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import FAQPageClient from './FAQPageClient';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
-  description: 'Find answers to common questions about Sesoris products, shipping, returns, and more.',
+  title: 'FAQ Sesoris | Pertanyaan Belanja Organizer',
+  description: 'Temukan jawaban tentang produk, pengiriman, pembayaran, retur, dan cara memilih organizer rumah di Sesoris.',
   alternates: { canonical: '/faq' },
   openGraph: {
-    title: 'Frequently Asked Questions | Sesoris',
-    description: 'Find answers to common questions about Sesoris products, shipping, returns, and more.',
+    title: 'FAQ Sesoris | Pertanyaan Belanja Organizer | Sesoris',
+    description: 'Temukan jawaban tentang produk, pengiriman, pembayaran, retur, dan cara memilih organizer rumah di Sesoris.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

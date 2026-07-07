@@ -7,12 +7,12 @@ import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export const metadata: Metadata = {
-  title: 'New Arrivals',
-  description: 'Discover the latest additions to Sesoris. New home organizers, storage solutions, and lifestyle accessories.',
+  title: 'Produk Terbaru Sesoris | Organizer Rumah 2026',
+  description: 'Lihat koleksi terbaru Sesoris: organizer rumah, penyimpanan dapur, dan aksesori home living yang praktis untuk 2026.',
   alternates: { canonical: '/new-arrivals' },
   openGraph: {
-    title: 'New Arrivals | Sesoris',
-    description: 'Discover the latest additions to Sesoris. New home organizers, storage solutions, and lifestyle accessories.',
+    title: 'Produk Terbaru Sesoris | Organizer Rumah 2026 | Sesoris',
+    description: 'Lihat koleksi terbaru Sesoris: organizer rumah, penyimpanan dapur, dan aksesori home living yang praktis untuk 2026.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
