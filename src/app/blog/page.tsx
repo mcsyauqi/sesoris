@@ -193,7 +193,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
                       <Clock style={{ width: '14px', height: '14px' }} />
-                      {featuredPost.readTime} read
+                      {featuredPost.readTime}
                     </div>
                   </div>
                   <span style={{

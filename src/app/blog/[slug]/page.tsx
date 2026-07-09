@@ -556,7 +556,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Clock style={{ width: '16px', height: '16px' }} />
-                  <span style={{ fontSize: '14px' }}>{post.readTime} read</span>
+                  <span style={{ fontSize: '14px' }}>{post.readTime}</span>
                 </div>
               </div>
             </div>
