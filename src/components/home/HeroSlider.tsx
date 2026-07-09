@@ -44,6 +44,9 @@ const slides = [
 export function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  // ponytail: fade-in from opacity 0 delayed LCP ~0.8s; disable transition until hydrated
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const goToSlide = useCallback((index: number) => {
     if (isTransitioning) return;
@@ -68,7 +71,7 @@ export function HeroSlider() {
         {slides.map((s, i) => (
           <div
             key={s.id}
-            className={`hero-bg-slide ${i === current ? 'active' : ''}`}
+            className={`hero-bg-slide ${i === current ? 'active' : ''}${mounted ? '' : ' no-fade'}`}
           >
             <Image
               src={s.image}

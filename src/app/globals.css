@@ -788,6 +788,10 @@ select:focus-visible {
   opacity: 1;
 }
 
+.hero-bg-slide.no-fade {
+  transition: none;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
