@@ -34,5 +34,76 @@
     "date": "2026-07-07",
     "status": "published",
     "note": "Created content/blog/food-containers-and-storage.json"
+  },
+  {
+    "keyword": "food storage containers airtight",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "food-storage-containers-airtight",
+    "date": "2026-07-08",
+    "status": "published",
+    "note": "Created content/blog/food-storage-containers-airtight.json"
+  },
+  {
+    "keyword": "storage containers food",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "storage-containers-food",
+    "date": "2026-07-08",
+    "status": "putback"
+  },
+  {
+    "keyword": "storage containers food",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "storage-containers-food",
+    "date": "2026-07-08",
+    "status": "published",
+    "note": "Created content/blog/storage-containers-food.json"
+  },
+  {
+    "keyword": "storage containers for food",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "storage-containers-for-food",
+    "date": "2026-07-09",
+    "status": "published",
+    "note": "Created content/blog/storage-containers-for-food.json"
+  },
+  {
+    "keyword": "storage for food storage containers",
+    "volume": 33100,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "storage-for-food-storage-containers",
+    "date": "2026-07-09",
+    "status": "published",
+    "note": "Created content/blog/storage-for-food-storage-containers.json"
+  },
+  {
+    "keyword": "glass containers food storage",
+    "volume": 22200,
+    "kd": 70,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "glass-containers-food-storage",
+    "date": "2026-07-09",
+    "status": "published",
+    "note": "Created content/blog/glass-containers-food-storage.json"
   }
 ]

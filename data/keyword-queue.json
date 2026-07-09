@@ -1,50 +1,5 @@
 [
   {
-    "keyword": "food storage containers airtight",
-    "volume": 33100,
-    "kd": 70,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "food-storage-containers-airtight"
-  },
-  {
-    "keyword": "storage containers food",
-    "volume": 33100,
-    "kd": 70,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "storage-containers-food"
-  },
-  {
-    "keyword": "storage containers for food",
-    "volume": 33100,
-    "kd": 70,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "storage-containers-for-food"
-  },
-  {
-    "keyword": "storage for food storage containers",
-    "volume": 33100,
-    "kd": 70,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "storage-for-food-storage-containers"
-  },
-  {
-    "keyword": "glass containers food storage",
-    "volume": 22200,
-    "kd": 70,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "glass-containers-food-storage"
-  },
-  {
     "keyword": "glass containers for food storage",
     "volume": 22200,
     "kd": 70,

@@ -9,8 +9,8 @@ export interface CategorySEOContent {
 export const categoryContent: Record<string, CategorySEOContent> = {
   'home-living': {
     seoTitle: 'Produk Rumah & Dekorasi | Organizer Rumah - Sesoris',
-    seoDescription: 'Belanja produk rumah dan dekorasi pilihan di Sesoris, dari rak dinding, organizer, keranjang dekoratif, hingga solusi storage. Gratis ongkir di atas Rp 800.000.',
-    intro: 'Rapikan setiap sudut rumah dengan koleksi Rumah & Dekorasi Sesoris. Produk pilihan untuk membantu ruang terasa lebih tertata, indah, dan fungsional, mulai dari rak dinding, organizer tempel, keranjang dekoratif, sampai rak display.',
+    seoDescription: 'Belanja produk rumah dan dekorasi terkurasi di Sesoris, dari rak dinding, organizer, keranjang dekoratif, hingga solusi storage. Gratis ongkir di atas Rp 800.000.',
+    intro: 'Rapikan setiap sudut rumah dengan koleksi Rumah & Dekorasi Sesoris. Temukan produk pilihan untuk membantu ruang terasa lebih tertata, indah, dan fungsional, mulai dari rak dinding, organizer tempel, keranjang dekoratif, sampai rak display.',
     sections: [
       {
         heading: 'Solusi Organizer Rumah',
@@ -33,8 +33,8 @@ export const categoryContent: Record<string, CategorySEOContent> = {
   },
   'kitchen-dining': {
     seoTitle: 'Produk Dapur & Makan | Storage Dapur - Sesoris',
-    seoDescription: 'Temukan perlengkapan dapur dan makan pilihan di Sesoris, dari rak piring, kontainer makanan, talenan, organizer bumbu, hingga alat saji pilihan.',
-    intro: 'Buat dapur lebih rapi dan aktivitas masak lebih nyaman dengan koleksi Dapur & Makan Sesoris. Produk praktis untuk persiapan masak, penyimpanan bahan, pengeringan alat makan, dan kebutuhan meja makan harian.',
+    seoDescription: 'Temukan perlengkapan dapur dan makan terkurasi di Sesoris, dari rak piring, kontainer makanan, talenan, organizer bumbu, hingga alat saji pilihan.',
+    intro: 'Buat dapur lebih rapi dan aktivitas masak lebih nyaman dengan koleksi Dapur & Makan Sesoris. Pilih produk praktis untuk persiapan masak, penyimpanan bahan, pengeringan alat makan, dan kebutuhan meja makan harian.',
     sections: [
       {
         heading: 'Organizer Dapur Harian',
@@ -57,8 +57,8 @@ export const categoryContent: Record<string, CategorySEOContent> = {
   },
   'tools-gadgets': {
     seoTitle: 'Alat & Gadget | Peralatan Praktis Harian - Sesoris',
-    seoDescription: 'Belanja 67+ alat praktis dan gadget harian di Sesoris, termasuk multi-tool, gadget dapur, aksesori rumah pintar, dan perlengkapan outdoor.',
-    intro: 'Koleksi Alat & Gadget Sesoris berisi 67 produk pilihan yang membantu menyelesaikan masalah harian dengan cara lebih mudah. Temukan multi-tool, gadget dapur, alat perawatan rumah, sampai aksesori outdoor yang ringkas dan berguna.',
+    seoDescription: 'Belanja alat praktis dan gadget harian pilihan di Sesoris, termasuk multi-tool, gadget dapur, aksesori rumah pintar, dan perlengkapan outdoor.',
+    intro: 'Koleksi Alat & Gadget Sesoris berisi produk pilihan yang membantu menyelesaikan masalah harian dengan cara lebih mudah. Temukan multi-tool, gadget dapur, alat perawatan rumah, sampai aksesori outdoor yang ringkas dan berguna.',
     sections: [
       {
         heading: 'Multi-Tool & Everyday Carry',
@@ -97,7 +97,7 @@ export const categoryContent: Record<string, CategorySEOContent> = {
   },
   'personal-care': {
     seoTitle: 'Produk Perawatan Diri | Wellness & Beauty - Sesoris',
-    seoDescription: 'Temukan produk perawatan diri pilihan di Sesoris, termasuk diffuser aromaterapi, skincare tools, organizer kamar mandi, dan aksesori wellness.',
+    seoDescription: 'Temukan produk perawatan diri terkurasi di Sesoris, termasuk diffuser aromaterapi, skincare tools, organizer kamar mandi, dan aksesori wellness.',
     intro: 'Koleksi Perawatan Diri Sesoris berisi produk pilihan untuk rutinitas self-care yang lebih nyaman. Temukan diffuser aromaterapi, skincare tools, organizer kamar mandi, dan aksesori wellness harian.',
     sections: [
       {

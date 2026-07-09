@@ -99,6 +99,33 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
   return { keyword: next, slug, putback };
 }
 
+
+const productLinkSuggestions = [
+  { match: /(desk|office|workspace|meja|lamp|charging|wireless)/i, links: ['[LED Desk Lamp with Wireless Charger](/product/led-desk-lamp-wireless-charger)', '[Bamboo Desk Organizer](/product/bamboo-desk-organizer)', '[Desk & Workspace collection](/category/office-desk)'] },
+  { match: /(dish|rack|kitchen|dapur|pantry|container|food|meal|cook)/i, links: ['[Stainless Steel 2-Tier Dish Rack](/product/stainless-steel-2-tier-dish-rack)', '[Portable Blender](/product/portable-blender)', '[Kitchen & Dining collection](/category/kitchen-dining)'] },
+  { match: /(storage|box|organizer|declutter|home|shelf|rak|closet|room)/i, links: ['[Foldable Storage Bins](/product/foldable-storage-bins)', '[Floating Wall Shelf Set](/product/rak-dinding-floating-shelf-set)', '[Home & Decor collection](/category/home-living)'] },
+  { match: /(travel|pouch|bag|packing|outdoor|trip)/i, links: ['[Travel Toiletry Bag](/product/travel-toiletry-bag)', '[Mesh Zipper Pouches Set](/product/mesh-zipper-pouches-set)', '[Travel & Outdoor collection](/category/outdoor-travel)'] },
+  { match: /(self care|wellness|aroma|bath|beauty|skincare|diffuser)/i, links: ['[Aromatherapy Diffuser](/product/aromatherapy-diffuser)', '[Minimalist Wallet](/product/minimalist-wallet)', '[Self Care collection](/category/personal-care)'] },
+];
+
+function buildRelatedProductBlock(slug: string, title: string, category: string): string[] {
+  const haystack = `${slug} ${title} ${category}`;
+  const picked = productLinkSuggestions.find((item) => item.match.test(haystack)) ?? productLinkSuggestions[2];
+  return [
+    '## Related Products from Sesoris',
+    `If you want to turn this guide into a real setup, start with ${picked.links[0]} and ${picked.links[1]}. For broader options, browse the ${picked.links[2]} so the article journey does not stop at reading only.`,
+    `Our practical rule: choose one product that solves the main clutter problem first, then add supporting organizers only when the daily workflow is already clear. This keeps the shopping path useful, not pushy.`,
+  ];
+}
+
+function injectRelatedProductLinks(content: string[], slug: string, title: string, category: string): string[] {
+  if (content.some((line) => line.includes('/product/'))) return content;
+  const insertAt = content.findIndex((line) => line.startsWith('## Frequently Asked Questions') || line.startsWith('## FAQ'));
+  const block = buildRelatedProductBlock(slug, title, category);
+  if (insertAt >= 0) return [...content.slice(0, insertAt), ...block, ...content.slice(insertAt)];
+  return [...content, ...block];
+}
+
 const topicsByDay: Record<number, string> = {
   0: 'lifestyle',        // Sunday
   1: 'home-organization', // Monday
@@ -290,6 +317,7 @@ TOPIC CONTEXT:
 
   // Remove any remaining unresolved PLACEHOLDER_IMAGE lines (if image gen failed)
   contentArray = contentArray.filter((line) => !line.includes('PLACEHOLDER_IMAGE'));
+  contentArray = injectRelatedProductLinks(contentArray, generated.slug, generated.title, generated.category);
 
   const post = {
     slug: generated.slug,
