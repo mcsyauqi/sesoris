@@ -28,14 +28,14 @@ const footerLinks = {
     { name: 'Press', href: '/press' },
   ],
   popularArticles: [
-    { name: 'Cara Menata Kamar Kost', href: '/blog/cara-menata-kamar-kost' },
-    { name: 'Inspirasi Dapur Minimalis', href: '/blog/inspirasi-dapur-minimalis' },
-    { name: 'Kotak Penyimpanan Terbaik', href: '/blog/kotak-penyimpanan' },
-    { name: 'Perlengkapan Rumah Minimalis', href: '/blog/perlengkapan-rumah-minimalis' },
-    { name: 'Rak Gantung Dapur', href: '/blog/rak-gantung-dapur' },
-    { name: 'Storage Box Lipat', href: '/blog/storage-box-lipat' },
-    { name: 'Tempat Penyimpanan ASI', href: '/blog/tempat-penyimpanan-asi' },
-    { name: 'Teras Rumah Minimalis', href: '/blog/teras-rumah-minimalis' },
+    { name: 'Cara Menata Dapur Kecil Apartemen', href: '/blog/cara-menata-dapur-kecil-apartemen' },
+    { name: 'Desain Dapur Letter L', href: '/blog/desain-dapur-letter-l-layout-paling-efisien' },
+    { name: 'Ide Penyimpanan Kamar Mandi', href: '/blog/ide-penyimpanan-kamar-mandi-agar-rapi' },
+    { name: 'Panduan Decluttering Rumah', href: '/blog/panduan-decluttering-rumah-untuk-pemula' },
+    { name: 'Panduan Meal Prep Container', href: '/blog/panduan-meal-prep-container-untuk-pemula' },
+    { name: 'Tips Bersih-bersih Rumah 30 Menit', href: '/blog/tips-bersih-bersih-rumah-cepat-30-menit' },
+    { name: 'Tips Menjaga Kamar Anak Tetap Rapi', href: '/blog/tips-menjaga-kamar-anak-tetap-rapi' },
+    { name: 'Tips Organizing Rumah ala Indonesia', href: '/blog/tips-organizing-rumah-ala-indonesia' },
   ],
 };
 
