@@ -4,6 +4,7 @@ import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Link
 import { notFound, redirect, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelatedPosts, getArchiveDeepLinks } from '@/lib/blog';
+import { getShopLinksForPost } from '@/lib/shopLinks';
 import { NewsletterSidebar } from '@/components/layout';
 import React from 'react';
 
@@ -428,6 +429,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   // Extra deep-link block targeting a different archive slice, multiplying
   // inbound internal links to older/deep posts.
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
+  const shopLinks = getShopLinksForPost(post, 2);
 
   // JSON-LD Structured Data
   const jsonLd = {
@@ -648,6 +650,50 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Content */}
             <div style={{ padding: '40px 0 48px' }}>
               {renderContentBlocks(post.content)}
+            </div>
+
+            {/* Shop the Solution — links this article to real product/category pages */}
+            <div style={{
+              background: '#F8FAF9',
+              border: '1px solid rgba(27,94,59,0.12)',
+              borderRadius: '12px',
+              padding: '28px',
+              marginBottom: '40px',
+            }}>
+              <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1B5E3B', marginBottom: '16px' }}>
+                Shop the Solution
+              </h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '16px', marginBottom: '16px' }}>
+                {shopLinks.products.map((product) => (
+                  <Link key={product.slug} href={`/product/${product.slug}`} style={{ textDecoration: 'none' }}>
+                    <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid #E9ECEF', background: '#fff' }}>
+                      <div style={{ position: 'relative', aspectRatio: '1/1' }}>
+                        <Image src={product.images[0]?.url} alt={product.images[0]?.alt ?? product.name} fill sizes="180px" style={{ objectFit: 'cover' }} />
+                      </div>
+                      <div style={{ padding: '10px 12px' }}>
+                        <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                          {product.name}
+                        </div>
+                        <div style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 700, marginTop: '4px' }}>
+                          ${product.price.toFixed(2)}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <Link href={`/category/${shopLinks.categorySlug}`} style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                color: '#1B5E3B',
+                fontWeight: 600,
+                fontSize: '14px',
+                textDecoration: 'none',
+              }}>
+                Browse all {shopLinks.categoryName}
+                <ChevronRight style={{ width: '14px', height: '14px' }} />
+              </Link>
             </div>
 
             {/* Newsletter CTA */}

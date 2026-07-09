@@ -9,8 +9,8 @@ export interface CategorySEOContent {
 export const categoryContent: Record<string, CategorySEOContent> = {
   'home-living': {
     seoTitle: 'Produk Rumah & Dekorasi | Organizer Rumah - Sesoris',
-    seoDescription: 'Belanja 124+ produk rumah dan dekorasi di Sesoris, dari rak dinding, organizer, keranjang dekoratif, hingga solusi storage. Gratis ongkir di atas Rp 800.000.',
-    intro: 'Rapikan setiap sudut rumah dengan koleksi Rumah & Dekorasi Sesoris. Ada 124 produk pilihan untuk membantu ruang terasa lebih tertata, indah, dan fungsional, mulai dari rak dinding, organizer tempel, keranjang dekoratif, sampai rak display.',
+    seoDescription: 'Belanja produk rumah dan dekorasi pilihan di Sesoris, dari rak dinding, organizer, keranjang dekoratif, hingga solusi storage. Gratis ongkir di atas Rp 800.000.',
+    intro: 'Rapikan setiap sudut rumah dengan koleksi Rumah & Dekorasi Sesoris. Produk pilihan untuk membantu ruang terasa lebih tertata, indah, dan fungsional, mulai dari rak dinding, organizer tempel, keranjang dekoratif, sampai rak display.',
     sections: [
       {
         heading: 'Solusi Organizer Rumah',
@@ -33,8 +33,8 @@ export const categoryContent: Record<string, CategorySEOContent> = {
   },
   'kitchen-dining': {
     seoTitle: 'Produk Dapur & Makan | Storage Dapur - Sesoris',
-    seoDescription: 'Temukan 86+ perlengkapan dapur dan makan di Sesoris, dari rak piring, kontainer makanan, talenan, organizer bumbu, hingga alat saji pilihan.',
-    intro: 'Buat dapur lebih rapi dan aktivitas masak lebih nyaman dengan koleksi Dapur & Makan Sesoris. Ada 86 produk praktis untuk persiapan masak, penyimpanan bahan, pengeringan alat makan, dan kebutuhan meja makan harian.',
+    seoDescription: 'Temukan perlengkapan dapur dan makan pilihan di Sesoris, dari rak piring, kontainer makanan, talenan, organizer bumbu, hingga alat saji pilihan.',
+    intro: 'Buat dapur lebih rapi dan aktivitas masak lebih nyaman dengan koleksi Dapur & Makan Sesoris. Produk praktis untuk persiapan masak, penyimpanan bahan, pengeringan alat makan, dan kebutuhan meja makan harian.',
     sections: [
       {
         heading: 'Organizer Dapur Harian',
@@ -77,8 +77,8 @@ export const categoryContent: Record<string, CategorySEOContent> = {
   },
   'gift-sets': {
     seoTitle: 'Paket Hadiah | Kado Pilihan untuk Berbagai Momen - Sesoris',
-    seoDescription: 'Belanja 93+ paket hadiah Sesoris untuk ulang tahun, housewarming, hari raya, wedding gift, dan corporate gifting. Siap diberikan dengan kemasan rapi.',
-    intro: 'Mencari hadiah jadi lebih mudah dengan koleksi Paket Hadiah Sesoris. Ada 93 pilihan kado terkurasi untuk ulang tahun, rumah baru, hari raya, pernikahan, dan kebutuhan corporate gifting.',
+    seoDescription: 'Belanja paket hadiah Sesoris untuk ulang tahun, housewarming, hari raya, wedding gift, dan corporate gifting. Siap diberikan dengan kemasan rapi.',
+    intro: 'Mencari hadiah jadi lebih mudah dengan koleksi Paket Hadiah Sesoris. Pilihan kado terkurasi untuk ulang tahun, rumah baru, hari raya, pernikahan, dan kebutuhan corporate gifting.',
     sections: [
       {
         heading: 'Paket Hadiah Rumah Baru',
@@ -97,8 +97,8 @@ export const categoryContent: Record<string, CategorySEOContent> = {
   },
   'personal-care': {
     seoTitle: 'Produk Perawatan Diri | Wellness & Beauty - Sesoris',
-    seoDescription: 'Temukan 78+ produk perawatan diri di Sesoris, termasuk diffuser aromaterapi, skincare tools, organizer kamar mandi, dan aksesori wellness.',
-    intro: 'Koleksi Perawatan Diri Sesoris berisi 78 produk pilihan untuk rutinitas self-care yang lebih nyaman. Temukan diffuser aromaterapi, skincare tools, organizer kamar mandi, dan aksesori wellness harian.',
+    seoDescription: 'Temukan produk perawatan diri pilihan di Sesoris, termasuk diffuser aromaterapi, skincare tools, organizer kamar mandi, dan aksesori wellness.',
+    intro: 'Koleksi Perawatan Diri Sesoris berisi produk pilihan untuk rutinitas self-care yang lebih nyaman. Temukan diffuser aromaterapi, skincare tools, organizer kamar mandi, dan aksesori wellness harian.',
     sections: [
       {
         heading: 'Aromaterapi & Wellness',
@@ -117,8 +117,8 @@ export const categoryContent: Record<string, CategorySEOContent> = {
   },
   'tech-accessories': {
     seoTitle: 'Aksesori Teknologi | Gadget & Organizer Kabel - Sesoris',
-    seoDescription: 'Belanja 54+ aksesori teknologi di Sesoris, dari earbuds, charging station, organizer kabel, hingga gadget rumah pintar.',
-    intro: 'Tetap produktif dan rapi dengan koleksi Aksesori Teknologi Sesoris. Ada 54 produk untuk gaya hidup modern, mulai dari wireless earbuds, charging station, organizer kabel, hingga gadget rumah pintar.',
+    seoDescription: 'Belanja aksesori teknologi pilihan di Sesoris, dari earbuds, charging station, organizer kabel, hingga gadget rumah pintar.',
+    intro: 'Tetap produktif dan rapi dengan koleksi Aksesori Teknologi Sesoris. Produk pilihan untuk gaya hidup modern, mulai dari wireless earbuds, charging station, organizer kabel, hingga gadget rumah pintar.',
     sections: [
       {
         heading: 'Audio Wireless & Earbuds',
