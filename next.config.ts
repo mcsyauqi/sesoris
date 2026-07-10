@@ -19,6 +19,19 @@ const legacyBlogSlugs: string[] = JSON.parse(
   readFileSync(path.join(process.cwd(), "data", "legacy-blog-redirects.json"), "utf-8")
 );
 
+// High-impression legacy URLs should not fall back to /blog when a relevant
+// live replacement exists. These overrides are exact-source only, so they do
+// not reintroduce the broad false-match redirect bug.
+const legacyBlogRedirectOverrides: Record<string, string> = {
+  "rak-piring-aluminium-kelebihan-dan-cara-memilih":
+    "/blog/rak-piring-dapur-dish-rack-guide-best-kitchen-plate-storage-solutions-2026",
+  "rekomendasi-rak-piring-terbaik":
+    "/blog/rak-piring-dapur-dish-rack-guide-best-kitchen-plate-storage-solutions-2026",
+  "rak-penyimpanan-makanan": "/blog/glass-containers-food-storage",
+  "tutorial-membuat-kitchen-island-mini-dapur-kecil":
+    "/blog/kitchen-island-minimalis-untuk-dapur-modern",
+};
+
 const retiredBlogRedirects = readdirSync(path.join(process.cwd(), "content", "blog"))
   .filter((file) => file.endsWith(".json"))
   .flatMap((file) => {
@@ -69,7 +82,7 @@ const nextConfig: NextConfig = {
       // One rule per removed slug; live English slugs can never match.
       ...legacyBlogSlugs.map((slug) => ({
         source: `/blog/${slug}`,
-        destination: '/blog',
+        destination: legacyBlogRedirectOverrides[slug] ?? '/blog',
         permanent: true,
       })),
       // Legacy product slug renamed Indonesian → English
