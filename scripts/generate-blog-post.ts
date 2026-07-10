@@ -21,9 +21,6 @@ interface QueuedKeyword {
   priority: string;
 }
 
-const ACTIVE_PRIORITIES = new Set(['Tier 1', 'Tier 2']);
-const PRIORITY_ORDER: Record<string, number> = { 'Tier 1': 0, 'Tier 2': 1 };
-
 interface KeywordConsumptionLedgerEntry extends QueuedKeyword {
   slug: string;
   date: string;
@@ -75,19 +72,9 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
   const queue: QueuedKeyword[] = JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'));
   if (queue.length === 0) return null;
 
-  // Decision 2026-07-10: park Tier 3 and exhaust the validated Indonesian
-  // Tier 1-2 backlog first. Sorting here enforces the policy even if future
-  // queue updates append keywords out of order.
-  const eligible = queue
-    .map((keyword, index) => ({ keyword, index }))
-    .filter(({ keyword }) => ACTIVE_PRIORITIES.has(keyword.priority))
-    .sort((a, b) =>
-      (PRIORITY_ORDER[a.keyword.priority] - PRIORITY_ORDER[b.keyword.priority]) ||
-      (b.keyword.volume - a.keyword.volume) ||
-      a.index - b.index
-    );
-  if (eligible.length === 0) return null;
-  const [next] = queue.splice(eligible[0].index, 1);
+  // Consume in the queue's reviewed order. Strategy changes such as parking a
+  // priority tier require an explicit business decision before they are encoded.
+  const next = queue.shift()!;
 
   const slug = slugify(next.keyword);
 
