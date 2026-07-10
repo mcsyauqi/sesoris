@@ -6,15 +6,28 @@ import { Home, ChevronRight, Mail, Phone, MapPin, Clock, Send, Facebook, Instagr
 
 export default function ContactPageClient() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'general', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sent'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'fallback'>('idle');
 
-  // ponytail: no email backend exists; hand the message to WhatsApp (real, instant delivery).
-  // Swap to an /api/contact route once a transactional email key (e.g. Brevo) is configured.
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const whatsappUrl = () => {
     const text = `Hi Sesoris! I'm ${formData.name} (${formData.email}).\nTopic: ${formData.subject}\n\n${formData.message}`;
-    window.open(`https://wa.me/6281326102061?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-    setStatus('sent');
+    return `https://wa.me/6281326102061?text=${encodeURIComponent(text)}`;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) throw new Error('Contact email unavailable');
+      setStatus('sent');
+      setFormData({ name: '', email: '', subject: 'general', message: '' });
+    } catch {
+      setStatus('fallback');
+    }
   };
 
   return (
@@ -193,18 +206,25 @@ export default function ContactPageClient() {
               <button
                 type="submit"
                 className="btn btn-primary"
+                disabled={status === 'loading'}
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <Send style={{ width: '16px', height: '16px' }} />
-                Send via WhatsApp
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
               <p style={{ marginTop: '12px', fontSize: '13px', color: '#6C757D' }}>
-                Your message opens in WhatsApp ready to send. Prefer email? Write to{' '}
-                <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>sesoris.store@gmail.com</a>.
+                Prefer WhatsApp?{' '}
+                <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500 }}>Message us directly</a>
+                {' '}or email <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>sesoris.store@gmail.com</a>.
               </p>
               {status === 'sent' && (
                 <p style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: '#E8F5E9', color: '#1B5E3B', fontSize: '14px' }}>
-                  Your message is ready in WhatsApp. Hit send there and we will get back to you within 1-2 business days.
+                  Your message has been sent. We will get back to you within 1-2 business days.
+                </p>
+              )}
+              {status === 'fallback' && (
+                <p style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: '#FFF3E0', color: '#8A4B08', fontSize: '14px' }}>
+                  Email is temporarily unavailable. <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 600 }}>Continue via WhatsApp</a> so your message is not lost.
                 </p>
               )}
             </form>

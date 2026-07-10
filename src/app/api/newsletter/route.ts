@@ -8,23 +8,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: 'Invalid email address' }, { status: 400 });
     }
 
-    const apiKey = process.env.BREVO_API_KEY;
+    const apiKey = process.env.BREVO_API_KEY?.trim();
+    const listId = Number(process.env.BREVO_NEWSLETTER_LIST_ID);
 
-    if (!apiKey || apiKey.trim() === '') {
+    if (!apiKey || !Number.isInteger(listId) || listId <= 0) {
       // Misconfiguration must be loud: a silent success here means every
       // subscriber is discarded without anyone noticing. Never return 200.
       console.error(
-        `[Newsletter] BREVO_API_KEY is missing or empty. Subscriber LOST: ${email} via ${source || 'unknown'}. ` +
-        'Set BREVO_API_KEY in the environment (local .env and Vercel project env) and redeploy.'
+        '[Newsletter] BREVO_API_KEY or BREVO_NEWSLETTER_LIST_ID is not configured. ' +
+        'Set both values in the Vercel project environment and redeploy.'
       );
       return NextResponse.json(
         { success: false, error: 'Newsletter service is not configured. Please try again later.' },
-        { status: 500 }
+        { status: 503 }
       );
     }
 
     // Add contact to Brevo
-    const response = await fetch('https://api.brevo.com/v3/contacts', {
+    const apiBaseUrl = process.env.BREVO_API_BASE_URL?.trim() || 'https://api.brevo.com/v3';
+    const response = await fetch(`${apiBaseUrl}/contacts`, {
       method: 'POST',
       headers: {
         'accept': 'application/json',
@@ -33,7 +35,7 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         email,
-        listIds: [2], // Default list ID 2 (adjust after Brevo setup)
+        listIds: [listId],
         updateEnabled: true,
         attributes: {
           SOURCE: source || 'website',
@@ -51,7 +53,7 @@ export async function POST(request: NextRequest) {
       throw new Error(error.message || 'Brevo API error');
     }
 
-    console.log(`[Newsletter] New subscriber: ${email} via ${source || 'unknown'}`);
+    console.log(`[Newsletter] Subscriber accepted via ${source || 'unknown'}`);
     return NextResponse.json({ success: true, message: 'Subscribed successfully! Check your email for a welcome message.' });
 
   } catch (err) {

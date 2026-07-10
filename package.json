@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "generate:blog": "tsx scripts/generate-blog-post.ts",
-    "process:trello": "tsx scripts/process-trello-tasks.ts"
+    "process:trello": "tsx scripts/process-trello-tasks.ts",
+    "check:publishing": "node scripts/check-scheduled-publishing.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
