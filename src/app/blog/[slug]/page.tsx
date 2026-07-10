@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Share2, BookOpen } from 'lucide-react';
 import { notFound, redirect, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
-import { getPostBySlug, getAllSlugs, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelatedPosts, getArchiveDeepLinks } from '@/lib/blog';
+import { getPostBySlug, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelatedPosts, getArchiveDeepLinks } from '@/lib/blog';
 import { getShopLinksForPost } from '@/lib/shopLinks';
 import { NewsletterSidebar } from '@/components/layout';
 import React from 'react';
@@ -13,13 +13,17 @@ export const revalidate = 3600;
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  return getAllPosts().map((post) => ({ slug: post.slug }));
+}
+
+function isPostPublished(date: string): boolean {
+  return date <= new Date().toISOString().split('T')[0];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return {};
+  if (!post || post.retired || !isPostPublished(post.date)) return {};
   return {
     title: getBlogSeoTitle(post),
     description: post.excerpt,
@@ -418,6 +422,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     if (closest) {
       permanentRedirect(`/blog/${closest}`);
     }
+    notFound();
+  }
+
+  if (post.retired || !isPostPublished(post.date)) {
     notFound();
   }
 

@@ -53,9 +53,9 @@ export function buildRichContentPrompt(basePrompt: string): string {
     .join('\n');
 
   const currentYear = new Date().getFullYear();
-  const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const currentDate = new Date().toLocaleDateString('id-ID', { month: 'long', day: 'numeric', year: 'numeric' });
 
-  return `You are a professional blog writer for Sesoris, an e-commerce store selling home organization, kitchen supplies, and household essentials. Tagline: "Organize Your Life with Ease". Website: https://www.sesoris.com
+  return `Anda adalah penulis blog profesional untuk Sesoris, toko e-commerce perlengkapan organisasi rumah, dapur, dan kebutuhan rumah tangga. Tagline: "Hidup Lebih Teratur". Website: https://www.sesoris.com
 
 TODAY'S DATE: ${currentDate}
 CURRENT YEAR: ${currentYear}
@@ -65,13 +65,15 @@ ${basePrompt}
 
 CONTENT QUALITY GUIDELINES:
 - Articles should be 1500-2500 words, informative and comprehensive
-- CRITICAL: Write ENTIRELY in English. Do NOT use any Indonesian/Bahasa words anywhere, not in titles, headings, body text, or FAQ. This is an international English website
-- Write in natural, friendly, and conversational English
-- Use specific data/numbers (e.g., "reduces clutter by 40%", "starting at $9.99")
+- CRITICAL: Write ENTIRELY in natural Indonesian. Do not mix English sentences except unavoidable product names or technical terms, and explain technical terms on first use
+- Use "saya" consistently when an author perspective is needed
+- Use natural, friendly, and conversational Indonesian for Indonesian households
+- Use only verifiable specific data. Do not invent percentages, prices, case studies, or test results
 - Include practical, actionable tips
 - Target keyword must appear in the first paragraph, at least 2 H2 headings, and the conclusion
 - ALWAYS write the year ${currentYear}, NEVER write 2024 or 2025
-- Prices in USD ($), relevant to an international audience
+- Prices must use Rupiah (Rp) and be relevant to Indonesia
+- Never use an em dash in public content
 
 CONTENT FORMAT (array of strings):
 - "## Heading H2", main headings (5-8 per article)
@@ -80,11 +82,11 @@ CONTENT FORMAT (array of strings):
 - "• Bullet point item", for list items (no nesting)
 - "1. Numbered item", for ordered lists
 - "> Quote text", for blockquotes/highlights
-- "![Descriptive SEO alt text in English](PLACEHOLDER_IMAGE)", image placeholder (will be auto-generated)
-- ":::read-also" followed by links, closed with ":::", for "Related Articles" box
+- "![Alt text SEO deskriptif dalam Bahasa Indonesia](PLACEHOLDER_IMAGE)", image placeholder (will be auto-generated)
+- ":::read-also" followed by links, closed with ":::", for "Baca Juga" box
 
 SEO GUIDELINES (IMPORTANT):
-- Image alt text MUST be descriptive and contain keywords in English
+- Image alt text MUST be descriptive and contain keywords naturally in Indonesian
 - Primary keyword MUST appear in: title, first paragraph, at least 2 H2 headings, and conclusion
 - Every image must have alt text that specifically describes the image
 - H2 headings should contain keyword variations (LSI keywords)

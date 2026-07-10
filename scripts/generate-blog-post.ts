@@ -173,13 +173,14 @@ async function generatePost() {
 
   let basePrompt: string;
   if (queuedKeyword) {
-    basePrompt = `Write a NEW blog article in English targeting the keyword: "${queuedKeyword.keyword}"
+    basePrompt = `Tulis artikel blog BARU dalam Bahasa Indonesia dengan target keyword: "${queuedKeyword.keyword}"
 
-The article should be:
-- SEO-optimized for the target keyword "${queuedKeyword.keyword}"
-- Include the keyword naturally in the title, first paragraph, headings, and throughout the content
-- Informative, practical, and comprehensive for an international audience
-- Relevant to home & living products
+Artikel harus:
+- Dioptimalkan untuk keyword target "${queuedKeyword.keyword}"
+- Menyertakan keyword secara alami pada judul, paragraf pertama, heading, dan isi
+- Informatif, praktis, dan lengkap untuk pembaca Indonesia
+- Relevan dengan produk home & living
+- Tidak mengarang data, harga, atau studi kasus
 
 KEYWORD DATA:
 - Target keyword: ${queuedKeyword.keyword}
