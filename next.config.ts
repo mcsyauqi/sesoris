@@ -30,6 +30,11 @@ const legacyBlogRedirectOverrides: Record<string, string> = {
   "rak-penyimpanan-makanan": "/blog/glass-containers-food-storage",
   "tutorial-membuat-kitchen-island-mini-dapur-kecil":
     "/blog/kitchen-island-minimalis-untuk-dapur-modern",
+  "alat-camping": "/blog/tas-outdoor",
+  "desain-rumah-minimalis-3-kamar":
+    "/blog/simple-minimalist-home-design-transform-space-tips",
+  "rak-sabun-kamar-mandi-stainless-anti-karat":
+    "/blog/wall-shelf-ideas-for-bathroom-transform-space-style-2026",
 };
 
 const retiredBlogRedirects = readdirSync(path.join(process.cwd(), "content", "blog"))
