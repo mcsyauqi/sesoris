@@ -141,5 +141,41 @@
     "date": "2026-07-12",
     "status": "published",
     "note": "cycle36 backfill: queue was Indonesian legacy keywords colliding with legacy-blog-redirects; replaced with English equivalents and backfilled the 3-day gap"
+  },
+  {
+    "keyword": "kitchen storage rack",
+    "volume": 3600,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "kitchen-storage-rack",
+    "date": "2026-07-13",
+    "status": "published",
+    "note": "Created content/blog/kitchen-storage-rack.json"
+  },
+  {
+    "keyword": "multipurpose kitchen rack",
+    "volume": 1300,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "multipurpose-kitchen-rack",
+    "date": "2026-07-13",
+    "status": "published",
+    "note": "Created content/blog/multipurpose-kitchen-rack.json"
+  },
+  {
+    "keyword": "how to organize a small house",
+    "volume": 1000,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "how-to-organize-a-small-house",
+    "date": "2026-07-13",
+    "status": "published",
+    "note": "Created content/blog/how-to-organize-a-small-house.json"
   }
 ]
