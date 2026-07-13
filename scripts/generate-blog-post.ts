@@ -24,7 +24,7 @@ interface QueuedKeyword {
 interface KeywordConsumptionLedgerEntry extends QueuedKeyword {
   slug: string;
   date: string;
-  status: 'consumed' | 'published' | 'putback' | 'duplicate';
+  status: 'consumed' | 'published' | 'putback' | 'duplicate' | 'skipped-redirect-collision';
   note?: string;
 }
 
@@ -72,32 +72,61 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
   const queue: QueuedKeyword[] = JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'));
   if (queue.length === 0) return null;
 
+  // Redirect sources may never become article slugs: the pre-publish guard
+  // (check-scheduled-publishing.mjs) fails the whole run on a collision, which
+  // killed publishing for 3 days straight (2026-07-10..12) when legacy
+  // Indonesian keywords collided with data/legacy-blog-redirects.json.
+  const legacyRedirectsPath = path.join(process.cwd(), 'data', 'legacy-blog-redirects.json');
+  const legacyRedirects: Set<string> = fs.existsSync(legacyRedirectsPath)
+    ? new Set(JSON.parse(fs.readFileSync(legacyRedirectsPath, 'utf-8')))
+    : new Set();
+
   // Consume in the queue's reviewed order. Strategy changes such as parking a
   // priority tier require an explicit business decision before they are encoded.
-  const next = queue.shift()!;
-
-  const slug = slugify(next.keyword);
-
-  // Save remaining queue immediately, then record the consumed keyword in an append-only ledger.
+  // Keywords whose slug collides with a redirect source are dropped (never
+  // publishable), logged to the ledger, and the next keyword is tried.
+  let next: QueuedKeyword | undefined;
+  let slug = '';
+  while (queue.length > 0) {
+    const candidate = queue.shift()!;
+    const candidateSlug = slugify(candidate.keyword);
+    if (legacyRedirects.has(candidateSlug)) {
+      appendKeywordLedger({
+        ...candidate,
+        slug: candidateSlug,
+        date: toISODate(new Date()),
+        status: 'skipped-redirect-collision',
+        note: 'slug is a legacy redirect source; article would trip the pre-publish guard',
+      });
+      console.log(`Skipping "${candidate.keyword}": slug "${candidateSlug}" is a redirect source.`);
+      continue;
+    }
+    next = candidate;
+    slug = candidateSlug;
+    break;
+  }
   fs.writeFileSync(keywordQueuePath, JSON.stringify(queue, null, 2), 'utf-8');
-  appendKeywordLedger({ ...next, slug, date: toISODate(new Date()), status: 'consumed' });
-  console.log(`Keyword from queue: "${next.keyword}" (vol: ${next.volume}, ${queue.length} remaining)`);
+  if (!next) return null;
+
+  // Record the consumed keyword in an append-only ledger.
+  const consumed = next;
+  appendKeywordLedger({ ...consumed, slug, date: toISODate(new Date()), status: 'consumed' });
+  console.log(`Keyword from queue: "${consumed.keyword}" (vol: ${consumed.volume}, ${queue.length} remaining)`);
 
   // Provide a putback function to restore keyword if generation fails or duplicates an existing slug.
   const putback = (status: 'putback' | 'duplicate' = 'putback', note?: string) => {
     const current: QueuedKeyword[] = fs.existsSync(keywordQueuePath)
       ? JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'))
       : [];
-    current.unshift(next);
-    if (!current.some((item) => item.keyword === next.keyword)) {
-      current.unshift(next);
+    if (!current.some((item) => item.keyword === consumed.keyword)) {
+      current.unshift(consumed);
     }
     fs.writeFileSync(keywordQueuePath, JSON.stringify(current, null, 2), 'utf-8');
-    updateLatestKeywordLedgerStatus(next, slug, status, note);
-    console.log(`Keyword returned to queue: "${next.keyword}" (${status})`);
+    updateLatestKeywordLedgerStatus(consumed, slug, status, note);
+    console.log(`Keyword returned to queue: "${consumed.keyword}" (${status})`);
   };
 
-  return { keyword: next, slug, putback };
+  return { keyword: consumed, slug, putback };
 }
 
 

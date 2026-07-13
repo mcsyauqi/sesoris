@@ -1,632 +1,605 @@
 [
   {
-    "keyword": "desain dapur minimalis",
-    "volume": 8100,
-    "kd": 0.0,
-    "category": "Kitchen & Dining",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "desain-dapur-minimalis"
-  },
-  {
-    "keyword": "kitchen set minimalis dapur kecil",
-    "volume": 4400,
-    "kd": 0.0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "kitchen-set-minimalis-dapur-kecil"
-  },
-  {
-    "keyword": "rak bumbu dapur",
+    "keyword": "kitchen storage rack",
     "volume": 3600,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 1",
-    "slug": "rak-bumbu-dapur"
+    "slug": "kitchen-storage-rack"
   },
   {
-    "keyword": "rak dapur",
-    "volume": 3600,
-    "kd": 0.0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "rak-dapur"
-  },
-  {
-    "keyword": "rak dapur serbaguna",
+    "keyword": "multipurpose kitchen rack",
     "volume": 1300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 1",
-    "slug": "rak-dapur-serbaguna"
+    "slug": "multipurpose-kitchen-rack"
   },
   {
-    "keyword": "cara menata rumah kecil agar rapi",
+    "keyword": "how to organize a small house",
     "volume": 1000,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 1",
-    "slug": "cara-menata-rumah-kecil-agar-rapi"
+    "slug": "how-to-organize-a-small-house"
   },
   {
-    "keyword": "rak serbaguna",
+    "keyword": "multipurpose storage rack",
     "volume": 1000,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 1",
-    "slug": "rak-serbaguna"
+    "slug": "multipurpose-storage-rack"
   },
   {
-    "keyword": "dekorasi dapur minimalis",
+    "keyword": "minimalist kitchen decor ideas",
     "volume": 880,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "dekorasi-dapur-minimalis"
+    "slug": "minimalist-kitchen-decor-ideas"
   },
   {
-    "keyword": "rak dinding dapur",
+    "keyword": "kitchen wall shelf ideas",
     "volume": 880,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-dinding-dapur"
+    "slug": "kitchen-wall-shelf-ideas"
   },
   {
-    "keyword": "rak gantung dapur",
+    "keyword": "hanging kitchen shelf",
     "volume": 880,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-gantung-dapur"
+    "slug": "hanging-kitchen-shelf"
   },
   {
-    "keyword": "rak penyimpanan barang",
+    "keyword": "household storage rack",
     "volume": 880,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-penyimpanan-barang"
+    "slug": "household-storage-rack"
   },
   {
-    "keyword": "cara merapikan rumah",
+    "keyword": "how to declutter your home",
     "volume": 800,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-merapikan-rumah"
+    "slug": "how-to-declutter-your-home"
   },
   {
-    "keyword": "rak minimalis",
+    "keyword": "minimalist shelf ideas",
     "volume": 800,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-minimalis"
+    "slug": "minimalist-shelf-ideas"
   },
   {
-    "keyword": "tempat bumbu dapur",
+    "keyword": "spice storage containers",
     "volume": 800,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "tempat-bumbu-dapur"
+    "slug": "spice-storage-containers"
   },
   {
-    "keyword": "kotak penyimpanan",
+    "keyword": "storage boxes for home",
     "volume": 720,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "kotak-penyimpanan"
+    "slug": "storage-boxes-for-home"
   },
   {
-    "keyword": "kotak penyimpanan barang",
+    "keyword": "storage bins with lids",
     "volume": 720,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "kotak-penyimpanan-barang"
+    "slug": "storage-bins-with-lids"
   },
   {
-    "keyword": "rak bumbu dapur susun plastik",
+    "keyword": "stackable plastic spice rack",
     "volume": 720,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-bumbu-dapur-susun-plastik"
+    "slug": "stackable-plastic-spice-rack"
   },
   {
-    "keyword": "rak piring lemari dapur",
+    "keyword": "dish rack for kitchen cabinet",
     "volume": 720,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-piring-lemari-dapur"
+    "slug": "dish-rack-for-kitchen-cabinet"
   },
   {
-    "keyword": "tempat penyimpanan",
+    "keyword": "home storage solutions",
     "volume": 720,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "tempat-penyimpanan"
+    "slug": "home-storage-solutions"
   },
   {
-    "keyword": "tempat penyimpanan barang",
+    "keyword": "storage organizer ideas",
     "volume": 720,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "tempat-penyimpanan-barang"
+    "slug": "storage-organizer-ideas"
   },
   {
-    "keyword": "rak aluminium dapur",
+    "keyword": "aluminum kitchen rack",
     "volume": 590,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-aluminium-dapur"
+    "slug": "aluminum-kitchen-rack"
   },
   {
-    "keyword": "rak penyimpanan",
+    "keyword": "storage shelving ideas",
     "volume": 590,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-penyimpanan"
+    "slug": "storage-shelving-ideas"
   },
   {
-    "keyword": "rak piring tempel tembok dapur",
+    "keyword": "wall mounted dish rack",
     "volume": 590,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-piring-tempel-tembok-dapur"
+    "slug": "wall-mounted-dish-rack"
   },
   {
-    "keyword": "bersih-bersih rumah sebelum lebaran",
+    "keyword": "spring cleaning checklist",
     "volume": 500,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Seasonal",
     "intent": "Seasonal",
     "priority": "Tier 2",
-    "slug": "bersih-bersih-rumah-sebelum-lebaran"
+    "slug": "spring-cleaning-checklist"
   },
   {
-    "keyword": "cara menata dapur sempit",
+    "keyword": "how to organize a tiny kitchen",
     "volume": 500,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-dapur-sempit"
+    "slug": "how-to-organize-a-tiny-kitchen"
   },
   {
-    "keyword": "cara menata kamar kost",
+    "keyword": "how to organize a studio apartment",
     "volume": 500,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-kamar-kost"
+    "slug": "how-to-organize-a-studio-apartment"
   },
   {
-    "keyword": "cara menata rumah minimalis",
+    "keyword": "minimalist home organization tips",
     "volume": 500,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-rumah-minimalis"
+    "slug": "minimalist-home-organization-tips"
   },
   {
-    "keyword": "tempat kue lebaran",
+    "keyword": "holiday cookie storage containers",
     "volume": 500,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Seasonal",
     "intent": "Seasonal",
     "priority": "Tier 2",
-    "slug": "tempat-kue-lebaran"
+    "slug": "holiday-cookie-storage-containers"
   },
   {
-    "keyword": "rak stainless dapur",
+    "keyword": "stainless steel kitchen rack",
     "volume": 480,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-stainless-dapur"
+    "slug": "stainless-steel-kitchen-rack"
   },
   {
-    "keyword": "tempat penyimpanan baju",
+    "keyword": "clothes storage organizer",
     "volume": 480,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "tempat-penyimpanan-baju"
+    "slug": "clothes-storage-organizer"
   },
   {
-    "keyword": "tempat penyimpanan makanan",
+    "keyword": "kitchen food storage ideas",
     "volume": 480,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "tempat-penyimpanan-makanan"
+    "slug": "kitchen-food-storage-ideas"
   },
   {
-    "keyword": "cara menata dapur agar rapi",
+    "keyword": "how to keep your kitchen organized",
     "volume": 400,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-dapur-agar-rapi"
+    "slug": "how-to-keep-your-kitchen-organized"
   },
   {
-    "keyword": "cara menata dapur minimalis",
+    "keyword": "minimalist kitchen organization",
     "volume": 400,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-dapur-minimalis"
+    "slug": "minimalist-kitchen-organization"
   },
   {
-    "keyword": "inspirasi dapur minimalis",
+    "keyword": "minimalist kitchen inspiration",
     "volume": 400,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "inspirasi-dapur-minimalis"
+    "slug": "minimalist-kitchen-inspiration"
   },
   {
-    "keyword": "rak kolong dapur",
+    "keyword": "under sink organizer ideas",
     "volume": 390,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-kolong-dapur"
+    "slug": "under-sink-organizer-ideas"
   },
   {
-    "keyword": "rak penyimpanan makanan",
+    "keyword": "pantry storage rack",
     "volume": 390,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-penyimpanan-makanan"
+    "slug": "pantry-storage-rack"
   },
   {
-    "keyword": "dekorasi dapur sederhana",
+    "keyword": "simple kitchen decor ideas",
     "volume": 320,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "dekorasi-dapur-sederhana"
+    "slug": "simple-kitchen-decor-ideas"
   },
   {
-    "keyword": "rak bumbu dapur 3 susun",
+    "keyword": "3 tier spice rack",
     "volume": 320,
-    "kd": 0.0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "rak-bumbu-dapur-3-susun"
-  },
-  {
-    "keyword": "rak bumbu dapur tempel dinding",
-    "volume": 320,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Kitchen & Dining",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-bumbu-dapur-tempel-dinding"
+    "slug": "3-tier-spice-rack"
   },
   {
-    "keyword": "cara menata ruang tamu sempit",
+    "keyword": "wall mounted spice rack",
+    "volume": 320,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "wall-mounted-spice-rack"
+  },
+  {
+    "keyword": "small living room organization ideas",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-ruang-tamu-sempit"
+    "slug": "small-living-room-organization-ideas"
   },
   {
-    "keyword": "cara menyimpan makanan agar tahan lama",
+    "keyword": "how to store food to last longer",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menyimpan-makanan-agar-tahan-lama"
+    "slug": "how-to-store-food-to-last-longer"
   },
   {
-    "keyword": "cara merapikan lemari baju",
+    "keyword": "how to organize your closet",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-merapikan-lemari-baju"
+    "slug": "how-to-organize-your-closet"
   },
   {
-    "keyword": "dekorasi rumah lebaran",
+    "keyword": "holiday home decor ideas",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Seasonal",
     "intent": "Seasonal",
     "priority": "Tier 2",
-    "slug": "dekorasi-rumah-lebaran"
+    "slug": "holiday-home-decor-ideas"
   },
   {
-    "keyword": "harga rak dapur",
+    "keyword": "best budget kitchen racks",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Buyer Intent",
     "intent": "Transactional",
     "priority": "Tier 2",
-    "slug": "harga-rak-dapur"
+    "slug": "best-budget-kitchen-racks"
   },
   {
-    "keyword": "inspirasi dekorasi dapur",
+    "keyword": "kitchen decor inspiration",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "inspirasi-dekorasi-dapur"
+    "slug": "kitchen-decor-inspiration"
   },
   {
-    "keyword": "inspirasi rumah rapi minimalis",
+    "keyword": "tidy minimalist home inspiration",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "inspirasi-rumah-rapi-minimalis"
+    "slug": "tidy-minimalist-home-inspiration"
   },
   {
-    "keyword": "jual rak dapur",
+    "keyword": "where to buy kitchen racks",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Buyer Intent",
     "intent": "Transactional",
     "priority": "Tier 2",
-    "slug": "jual-rak-dapur"
+    "slug": "where-to-buy-kitchen-racks"
   },
   {
-    "keyword": "rak dapur murah",
+    "keyword": "cheap kitchen storage racks",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Buyer Intent",
     "intent": "Transactional",
     "priority": "Tier 2",
-    "slug": "rak-dapur-murah"
+    "slug": "cheap-kitchen-storage-racks"
   },
   {
-    "keyword": "rak meja kerja",
+    "keyword": "desk organizer rack",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Office & Desk",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "rak-meja-kerja"
+    "slug": "desk-organizer-rack"
   },
   {
-    "keyword": "tempat alat tulis",
+    "keyword": "stationery organizer ideas",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Office & Desk",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "tempat-alat-tulis"
+    "slug": "stationery-organizer-ideas"
   },
   {
-    "keyword": "tempat penyimpanan sepatu",
+    "keyword": "shoe storage cabinet ideas",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "tempat-penyimpanan-sepatu"
+    "slug": "shoe-storage-cabinet-ideas"
   },
   {
-    "keyword": "tips menata dapur kecil",
+    "keyword": "small kitchen organization tips",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "tips-menata-dapur-kecil"
+    "slug": "small-kitchen-organization-tips"
   },
   {
-    "keyword": "tips menata kamar tidur sempit",
+    "keyword": "small bedroom organization tips",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "tips-menata-kamar-tidur-sempit"
+    "slug": "small-bedroom-organization-tips"
   },
   {
-    "keyword": "tips rumah rapi",
+    "keyword": "tips for a tidy home",
     "volume": 300,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "tips-rumah-rapi"
+    "slug": "tips-for-a-tidy-home"
   },
   {
-    "keyword": "kotak penyimpanan serbaguna",
+    "keyword": "multipurpose storage boxes",
     "volume": 260,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "kotak-penyimpanan-serbaguna"
+    "slug": "multipurpose-storage-boxes"
   },
   {
-    "keyword": "cara decluttering rumah",
+    "keyword": "home decluttering guide",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-decluttering-rumah"
+    "slug": "home-decluttering-guide"
   },
   {
-    "keyword": "cara menata meja kerja",
+    "keyword": "how to organize your desk",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-meja-kerja"
+    "slug": "how-to-organize-your-desk"
   },
   {
-    "keyword": "cara menata rak piring",
+    "keyword": "how to organize a dish rack",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menata-rak-piring"
+    "slug": "how-to-organize-a-dish-rack"
   },
   {
-    "keyword": "cara menyimpan bumbu dapur",
+    "keyword": "how to store spices properly",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-menyimpan-bumbu-dapur"
+    "slug": "how-to-store-spices-properly"
   },
   {
-    "keyword": "cara packing koper rapi",
+    "keyword": "how to pack a suitcase efficiently",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "cara-packing-koper-rapi"
+    "slug": "how-to-pack-a-suitcase-efficiently"
   },
   {
-    "keyword": "harga rak piring",
+    "keyword": "best affordable dish racks",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Buyer Intent",
     "intent": "Transactional",
     "priority": "Tier 2",
-    "slug": "harga-rak-piring"
+    "slug": "best-affordable-dish-racks"
   },
   {
-    "keyword": "ide menata rumah subsidi",
+    "keyword": "starter home organization ideas",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "ide-menata-rumah-subsidi"
+    "slug": "starter-home-organization-ideas"
   },
   {
-    "keyword": "ide penataan dapur sempit",
+    "keyword": "tiny kitchen layout ideas",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "ide-penataan-dapur-sempit"
+    "slug": "tiny-kitchen-layout-ideas"
   },
   {
-    "keyword": "ide penyimpanan barang di rumah kecil",
+    "keyword": "storage ideas for small homes",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "ide-penyimpanan-barang-di-rumah-kecil"
+    "slug": "storage-ideas-for-small-homes"
   },
   {
-    "keyword": "ide storage rumah",
+    "keyword": "home storage ideas",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "ide-storage-rumah"
+    "slug": "home-storage-ideas"
   },
   {
-    "keyword": "inspirasi rak dinding",
+    "keyword": "wall shelf inspiration",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Informational",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "inspirasi-rak-dinding"
+    "slug": "wall-shelf-inspiration"
   },
   {
-    "keyword": "jual rak piring",
+    "keyword": "where to buy dish racks",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Buyer Intent",
     "intent": "Transactional",
     "priority": "Tier 2",
-    "slug": "jual-rak-piring"
+    "slug": "where-to-buy-dish-racks"
   },
   {
-    "keyword": "organizer rumah",
+    "keyword": "home organizer essentials",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Home Living",
     "intent": "Head",
     "priority": "Tier 2",
-    "slug": "organizer-rumah"
+    "slug": "home-organizer-essentials"
   },
   {
-    "keyword": "persiapan rumah ramadan",
+    "keyword": "holiday hosting preparation checklist",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Seasonal",
     "intent": "Seasonal",
     "priority": "Tier 2",
-    "slug": "persiapan-rumah-ramadan"
+    "slug": "holiday-hosting-preparation-checklist"
   },
   {
-    "keyword": "rak buku anak minimalis",
+    "keyword": "minimalist kids bookshelf",
     "volume": 200,
-    "kd": 0.0,
+    "kd": 0,
     "category": "Seasonal",
     "intent": "Seasonal",
     "priority": "Tier 2",
-    "slug": "rak-buku-anak-minimalis"
+    "slug": "minimalist-kids-bookshelf"
   }
 ]
