@@ -82,7 +82,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             Blog Sesoris
           </h1>
           <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '680px', margin: '0 auto' }}>
-            Tips organisasi rumah, inspirasi storage, panduan dapur, dan ide gaya hidup rapi dari Sesoris.
+            Home organization tips, storage inspiration, kitchen guides, and tidy living ideas from Sesoris.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               type="search"
               name="q"
               defaultValue={searchQuery}
-              placeholder="Cari tips rumah rapi, storage, dapur..."
+              placeholder="Search organization tips, storage, kitchen..."
               style={{
                 width: '100%',
                 padding: '14px 16px 14px 44px',
@@ -125,7 +125,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               cursor: 'pointer',
             }}
           >
-            Cari
+            Search
           </button>
         </form>
 
