@@ -177,5 +177,40 @@
     "date": "2026-07-13",
     "status": "published",
     "note": "Created content/blog/how-to-organize-a-small-house.json"
+  },
+  {
+    "keyword": "multipurpose storage rack",
+    "volume": 1000,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "multipurpose-storage-rack",
+    "date": "2026-07-14",
+    "status": "putback"
+  },
+  {
+    "keyword": "multipurpose storage rack",
+    "volume": 1000,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "multipurpose-storage-rack",
+    "date": "2026-07-14",
+    "status": "published",
+    "note": "Created content/blog/multipurpose-storage-rack.json"
+  },
+  {
+    "keyword": "minimalist kitchen decor ideas",
+    "volume": 880,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "minimalist-kitchen-decor-ideas",
+    "date": "2026-07-14",
+    "status": "published",
+    "note": "Created content/blog/minimalist-kitchen-decor-ideas.json"
   }
 ]

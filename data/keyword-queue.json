@@ -1,23 +1,5 @@
 [
   {
-    "keyword": "multipurpose storage rack",
-    "volume": 1000,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "slug": "multipurpose-storage-rack"
-  },
-  {
-    "keyword": "minimalist kitchen decor ideas",
-    "volume": 880,
-    "kd": 0,
-    "category": "Kitchen & Dining",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "minimalist-kitchen-decor-ideas"
-  },
-  {
     "keyword": "kitchen wall shelf ideas",
     "volume": 880,
     "kd": 0,
