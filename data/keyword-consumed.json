@@ -212,5 +212,38 @@
     "date": "2026-07-14",
     "status": "published",
     "note": "Created content/blog/minimalist-kitchen-decor-ideas.json"
+  },
+  {
+    "keyword": "kitchen wall shelf ideas",
+    "volume": 880,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "kitchen-wall-shelf-ideas",
+    "date": "2026-07-15",
+    "status": "putback"
+  },
+  {
+    "keyword": "kitchen wall shelf ideas",
+    "volume": 880,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "kitchen-wall-shelf-ideas",
+    "date": "2026-07-15",
+    "status": "putback"
+  },
+  {
+    "keyword": "kitchen wall shelf ideas",
+    "volume": 880,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "kitchen-wall-shelf-ideas",
+    "date": "2026-07-15",
+    "status": "putback"
   }
 ]
