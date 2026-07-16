@@ -245,5 +245,40 @@
     "slug": "kitchen-wall-shelf-ideas",
     "date": "2026-07-15",
     "status": "putback"
+  },
+  {
+    "keyword": "kitchen wall shelf ideas",
+    "volume": 880,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "kitchen-wall-shelf-ideas",
+    "date": "2026-07-16",
+    "status": "published",
+    "note": "Created content/blog/kitchen-wall-shelf-ideas.json"
+  },
+  {
+    "keyword": "hanging kitchen shelf",
+    "volume": 880,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "hanging-kitchen-shelf",
+    "date": "2026-07-16",
+    "status": "published",
+    "note": "Created content/blog/hanging-kitchen-shelf.json"
+  },
+  {
+    "keyword": "household storage rack",
+    "volume": 880,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "household-storage-rack",
+    "date": "2026-07-16",
+    "status": "putback"
   }
 ]
