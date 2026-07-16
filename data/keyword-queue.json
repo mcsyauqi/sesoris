@@ -1,14 +1,5 @@
 [
   {
-    "keyword": "household storage rack",
-    "volume": 880,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "household-storage-rack"
-  },
-  {
     "keyword": "how to declutter your home",
     "volume": 800,
     "kd": 0,

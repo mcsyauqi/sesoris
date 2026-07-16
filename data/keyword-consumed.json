@@ -280,5 +280,17 @@
     "slug": "household-storage-rack",
     "date": "2026-07-16",
     "status": "putback"
+  },
+  {
+    "keyword": "household storage rack",
+    "volume": 880,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "household-storage-rack",
+    "date": "2026-07-15",
+    "status": "published",
+    "note": "Backfill 2026-07-15 gap (generator JSON-parse no-op). Created content/blog/household-storage-rack.json"
   }
 ]

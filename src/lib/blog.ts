@@ -42,6 +42,9 @@ export function getBlogSeoTitle(post: BlogPost): string {
   const STOP_TAILS = new Set([
     'for', 'to', 'of', 'with', 'and', 'in', 'on', 'the',
     'a', 'an', 'by', 'at', 'or', 'but', 'as', 'into', 'from',
+    // Indonesian connectors (fix: dangling "yang" in truncated titles)
+    'yang', 'untuk', 'dengan', 'dari', 'di', 'ke', 'dan', 'atau',
+    'pada', 'agar', 'serta', 'saat', 'para', 'bagi',
   ]);
   // strip up to 3 trailing connector words
   for (let i = 0; i < 3; i++) {

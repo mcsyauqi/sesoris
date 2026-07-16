@@ -239,7 +239,7 @@ TOPIC CONTEXT:
 
   const message = await client.messages.create({
     model: 'claude-sonnet-4-6',
-    max_tokens: 8192,
+    max_tokens: 20000,
     messages: [{ role: 'user', content: prompt }],
   });
 
@@ -247,6 +247,14 @@ TOPIC CONTEXT:
   if (!textBlock || textBlock.type !== 'text') {
     putbackKeyword?.();
     console.log('No text response from Claude, skipping gracefully');
+    process.exit(0);
+  }
+
+  // Root-cause guard (2026-07-15 silent no-op): a truncated response is not valid JSON.
+  // Surface truncation explicitly instead of a generic parse failure.
+  if (message.stop_reason === 'max_tokens') {
+    putbackKeyword?.();
+    console.log('Claude response truncated (stop_reason=max_tokens), keyword returned to queue');
     process.exit(0);
   }
 
@@ -260,9 +268,12 @@ TOPIC CONTEXT:
   let generated: any;
   try {
     generated = JSON.parse(responseText);
-  } catch {
+  } catch (err) {
     putbackKeyword?.();
     console.log('Failed to parse Claude response as JSON, skipping gracefully');
+    console.log(`Parse error: ${err instanceof Error ? err.message : String(err)}`);
+    console.log(`Response head: ${responseText.slice(0, 200)}`);
+    console.log(`Response tail: ${responseText.slice(-200)}`);
     process.exit(0);
   }
 
