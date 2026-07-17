@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
 import { useState } from 'react';
 
 const footerLinks = {
@@ -236,9 +236,6 @@ export function Footer() {
                 </a>
                 <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                   <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-                </a>
-                <a href="https://x.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                  <Twitter style={{ width: '18px', height: '18px', opacity: 0.8 }} />
                 </a>
                 <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                   <Youtube style={{ width: '18px', height: '18px', opacity: 0.8 }} />
