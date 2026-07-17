@@ -292,5 +292,41 @@
     "date": "2026-07-15",
     "status": "published",
     "note": "Backfill 2026-07-15 gap (generator JSON-parse no-op). Created content/blog/household-storage-rack.json"
+  },
+  {
+    "keyword": "how to declutter your home",
+    "volume": 800,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-declutter-your-home",
+    "date": "2026-07-17",
+    "status": "published",
+    "note": "Created content/blog/how-to-declutter-your-home.json"
+  },
+  {
+    "keyword": "minimalist shelf ideas",
+    "volume": 800,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "minimalist-shelf-ideas",
+    "date": "2026-07-17",
+    "status": "published",
+    "note": "Created content/blog/minimalist-shelf-ideas.json"
+  },
+  {
+    "keyword": "spice storage containers",
+    "volume": 800,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "spice-storage-containers",
+    "date": "2026-07-17",
+    "status": "published",
+    "note": "Created content/blog/spice-storage-containers.json"
   }
 ]
