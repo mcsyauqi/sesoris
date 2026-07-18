@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "storage boxes for home",
-    "volume": 720,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "storage-boxes-for-home"
-  },
-  {
-    "keyword": "storage bins with lids",
-    "volume": 720,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "storage-bins-with-lids"
-  },
-  {
-    "keyword": "stackable plastic spice rack",
-    "volume": 720,
-    "kd": 0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "stackable-plastic-spice-rack"
-  },
-  {
     "keyword": "dish rack for kitchen cabinet",
     "volume": 720,
     "kd": 0,

@@ -328,5 +328,41 @@
     "date": "2026-07-17",
     "status": "published",
     "note": "Created content/blog/spice-storage-containers.json"
+  },
+  {
+    "keyword": "storage boxes for home",
+    "volume": 720,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "storage-boxes-for-home",
+    "date": "2026-07-18",
+    "status": "published",
+    "note": "Created content/blog/storage-boxes-for-home.json"
+  },
+  {
+    "keyword": "storage bins with lids",
+    "volume": 720,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "storage-bins-with-lids",
+    "date": "2026-07-18",
+    "status": "published",
+    "note": "Created content/blog/storage-bins-with-lids.json"
+  },
+  {
+    "keyword": "stackable plastic spice rack",
+    "volume": 720,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "stackable-plastic-spice-rack",
+    "date": "2026-07-18",
+    "status": "published",
+    "note": "Created content/blog/stackable-plastic-spice-rack.json"
   }
 ]
