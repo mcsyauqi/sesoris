@@ -38,11 +38,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!category) return {};
   return {
     title: `${category} Articles - Sesoris Blog`,
-    description: `Kumpulan artikel ${category} dari Sesoris untuk membantu rumah lebih teratur, fungsional, dan nyaman setiap hari.`,
+    description: `Browse every ${category} article from Sesoris to keep your home more organized, functional, and comfortable every day.`,
     alternates: { canonical: `/blog/category/${slug}` },
     openGraph: {
       title: `${category} Articles | Sesoris`,
-      description: `Baca semua panduan ${category} dari Sesoris dalam satu halaman hub yang mudah dijelajahi.`,
+      description: `Read every ${category} guide from Sesoris on one easy-to-browse hub page.`,
       images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
     },
   };
@@ -61,7 +61,7 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ s
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${category} Articles - Sesoris Blog`,
-    description: `Hub artikel ${category} dari Sesoris.`,
+    description: `${category} article hub from Sesoris.`,
     url: `https://www.sesoris.com/blog/category/${slug}`,
     mainEntity: posts.map((post, index) => ({
       '@type': 'ListItem',
@@ -91,7 +91,7 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ s
           <p style={{ color: '#1B5E3B', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', fontSize: '13px', marginBottom: '12px' }}>Blog Hub</p>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 800, color: '#212529', marginBottom: '16px', lineHeight: 1.15 }}>{category} Articles</h1>
           <p style={{ color: '#6C757D', fontSize: '17px', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto' }}>
-            Jelajahi semua artikel {category} dari Sesoris. Halaman hub ini mengumpulkan panduan, checklist, dan inspirasi agar Anda bisa menemukan topik yang paling relevan dengan kebutuhan rumah.
+            Explore every {category} article from Sesoris. This hub page gathers guides, checklists, and inspiration so you can find the topics most relevant to your home.
           </p>
         </section>
 

@@ -28,14 +28,14 @@ const footerLinks = {
     { name: 'Press', href: '/press' },
   ],
   popularArticles: [
-    { name: 'Cara Menata Dapur Kecil Apartemen', href: '/blog/cara-menata-dapur-kecil-apartemen' },
-    { name: 'Desain Dapur Letter L', href: '/blog/desain-dapur-letter-l-layout-paling-efisien' },
-    { name: 'Ide Penyimpanan Kamar Mandi', href: '/blog/ide-penyimpanan-kamar-mandi-agar-rapi' },
-    { name: 'Panduan Decluttering Rumah', href: '/blog/panduan-decluttering-rumah-untuk-pemula' },
-    { name: 'Panduan Meal Prep Container', href: '/blog/panduan-meal-prep-container-untuk-pemula' },
-    { name: 'Tips Bersih-bersih Rumah 30 Menit', href: '/blog/tips-bersih-bersih-rumah-cepat-30-menit' },
-    { name: 'Tips Menjaga Kamar Anak Tetap Rapi', href: '/blog/tips-menjaga-kamar-anak-tetap-rapi' },
-    { name: 'Tips Organizing Rumah ala Indonesia', href: '/blog/tips-organizing-rumah-ala-indonesia' },
+    { name: 'Small Apartment Kitchen Organization', href: '/blog/cara-menata-dapur-kecil-apartemen' },
+    { name: 'L-Shaped Kitchen Design', href: '/blog/desain-dapur-letter-l-layout-paling-efisien' },
+    { name: 'Bathroom Storage Ideas', href: '/blog/ide-penyimpanan-kamar-mandi-agar-rapi' },
+    { name: 'Decluttering Guide for Beginners', href: '/blog/panduan-decluttering-rumah-untuk-pemula' },
+    { name: 'Meal Prep Container Guide', href: '/blog/panduan-meal-prep-container-untuk-pemula' },
+    { name: '30-Minute Speed Cleaning Tips', href: '/blog/tips-bersih-bersih-rumah-cepat-30-menit' },
+    { name: 'Keeping Kids Rooms Tidy', href: '/blog/tips-menjaga-kamar-anak-tetap-rapi' },
+    { name: 'Practical Home Organizing Tips', href: '/blog/tips-organizing-rumah-ala-indonesia' },
   ],
 };
 
