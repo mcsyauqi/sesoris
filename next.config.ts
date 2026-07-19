@@ -33,6 +33,8 @@ const legacyBlogRedirectOverrides: Record<string, string> = {
   "alat-camping": "/blog/tas-outdoor",
   "desain-rumah-minimalis-3-kamar":
     "/blog/simple-minimalist-home-design-transform-space-tips",
+  "how-to-organize-a-studio-apartment":
+    "/blog/storage-organizer-ideas",
   "rak-sabun-kamar-mandi-stainless-anti-karat":
     "/blog/bathroom-wall-shelf-ideas-transform-space-2026",
 };
