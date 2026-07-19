@@ -364,5 +364,41 @@
     "date": "2026-07-18",
     "status": "published",
     "note": "Created content/blog/stackable-plastic-spice-rack.json"
+  },
+  {
+    "keyword": "dish rack for kitchen cabinet",
+    "volume": 720,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "dish-rack-for-kitchen-cabinet",
+    "date": "2026-07-19",
+    "status": "published",
+    "note": "Created content/blog/dish-rack-for-kitchen-cabinet.json"
+  },
+  {
+    "keyword": "home storage solutions",
+    "volume": 720,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "home-storage-solutions",
+    "date": "2026-07-19",
+    "status": "published",
+    "note": "Created content/blog/home-storage-solutions.json"
+  },
+  {
+    "keyword": "storage organizer ideas",
+    "volume": 720,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "storage-organizer-ideas",
+    "date": "2026-07-19",
+    "status": "published",
+    "note": "Created content/blog/storage-organizer-ideas.json"
   }
 ]

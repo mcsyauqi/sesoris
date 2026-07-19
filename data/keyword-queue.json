@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "dish rack for kitchen cabinet",
-    "volume": 720,
-    "kd": 0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "dish-rack-for-kitchen-cabinet"
-  },
-  {
-    "keyword": "home storage solutions",
-    "volume": 720,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "home-storage-solutions"
-  },
-  {
-    "keyword": "storage organizer ideas",
-    "volume": 720,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "storage-organizer-ideas"
-  },
-  {
     "keyword": "aluminum kitchen rack",
     "volume": 590,
     "kd": 0,
