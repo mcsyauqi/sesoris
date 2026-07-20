@@ -400,5 +400,41 @@
     "date": "2026-07-19",
     "status": "published",
     "note": "Created content/blog/storage-organizer-ideas.json"
+  },
+  {
+    "keyword": "aluminum kitchen rack",
+    "volume": 590,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "aluminum-kitchen-rack",
+    "date": "2026-07-20",
+    "status": "published",
+    "note": "Created content/blog/aluminum-kitchen-rack.json"
+  },
+  {
+    "keyword": "storage shelving ideas",
+    "volume": 590,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "storage-shelving-ideas",
+    "date": "2026-07-20",
+    "status": "published",
+    "note": "Created content/blog/storage-shelving-ideas.json"
+  },
+  {
+    "keyword": "wall mounted dish rack",
+    "volume": 590,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "wall-mounted-dish-rack",
+    "date": "2026-07-20",
+    "status": "published",
+    "note": "Created content/blog/wall-mounted-dish-rack.json"
   }
 ]
