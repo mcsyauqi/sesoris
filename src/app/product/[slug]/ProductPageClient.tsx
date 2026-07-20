@@ -150,7 +150,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {product.name}
             </h1>
 
-            {/* Rating - only show if there are ulasan */}
+            {/* Rating - only show if there are reviews */}
             {product.reviewCount > 0 ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', gap: '2px' }}>
@@ -166,12 +166,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: '14px', color: '#6C757D' }}>({product.reviewCount} ulasan)</span>
+                <span style={{ fontSize: '14px', color: '#6C757D' }}>({product.reviewCount} reviews)</span>
               </div>
             ) : (
               <div style={{ marginBottom: '20px' }}>
                 <span style={{ fontSize: '13px', color: '#6C757D', fontStyle: 'italic' }}>
-                  Jadilah yang pertama memberi ulasan produk ini!
+                  Be the first to review this product!
                 </span>
               </div>
             )}
@@ -256,7 +256,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   </button>
                 </div>
                 <span style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 500 }}>
-                  ✓ Stok tersedia
+                  ✓ In stock
                 </span>
               </div>
             </div>
@@ -403,7 +403,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 gap: '6px',
               }}
             >
-              Ulasan
+              Reviews
               {productReviews.length > 0 && (
                 <span style={{
                   background: '#1B5E3B',

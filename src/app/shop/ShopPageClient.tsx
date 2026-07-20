@@ -214,7 +214,7 @@ export default function ShopPageClient() {
         </div>
       </div>
 
-      {/* Kategori Descriptions, SEO section */}
+      {/* Category Descriptions, SEO section */}
       <div style={{ background: '#F8F9FA', padding: '48px 0', marginTop: '24px' }}>
         <div className="container">
           <h2 style={{

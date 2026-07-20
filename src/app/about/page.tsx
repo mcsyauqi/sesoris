@@ -4,12 +4,12 @@ import Image from 'next/image';
 import { Home, ChevronRight, Heart, Globe, Users, Leaf, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tentang Sesoris | Hidup Lebih Teratur',
-  description: 'Kenali Sesoris, toko home organization yang membantu keluarga Indonesia memilih organizer praktis untuk rumah lebih teratur.',
+  title: 'About Sesoris | Live More Organized',
+  description: 'Get to know Sesoris, a home organization store that helps households choose practical organizers for a more organized home.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'Tentang Sesoris | Hidup Lebih Teratur | Sesoris',
-    description: 'Kenali Sesoris, toko home organization yang membantu keluarga Indonesia memilih organizer praktis untuk rumah lebih teratur.',
+    title: 'About Sesoris | Live More Organized | Sesoris',
+    description: 'Get to know Sesoris, a home organization store that helps households choose practical organizers for a more organized home.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
@@ -22,7 +22,7 @@ const values = [
 
 const stats = [
   { value: 'DIY', label: 'Yogyakarta-based brand' },
-  { value: 'ID', label: 'Ships across Indonesia' },
+  { value: '30', label: 'Day return window' },
   { value: '4', label: 'Main organizer categories' },
   { value: 'WA', label: 'Direct customer support' },
 ];
@@ -65,7 +65,7 @@ export default function AboutPage() {
             Practical Home Organization from Yogyakarta
           </h1>
           <p style={{ color: '#6C757D', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            Sesoris is a Yogyakarta-based home organizer store helping Indonesian households choose practical storage, kitchen, desk, and travel products for calmer daily routines.
+            Sesoris is a Yogyakarta-founded home organizer brand helping households choose practical storage, kitchen, desk, and travel products for calmer daily routines.
           </p>
         </div>
       </section>
@@ -100,17 +100,17 @@ export default function AboutPage() {
                 <Award style={{ width: '28px', height: '28px', color: '#1B5E3B' }} />
                 <div>
                   <div style={{ fontWeight: 700, color: '#212529' }}>Yogyakarta, Indonesia</div>
-                  <div style={{ fontSize: '12px', color: '#6C757D' }}>Online store with nationwide shipping</div>
+                  <div style={{ fontSize: '12px', color: '#6C757D' }}>Online home organizer store</div>
                 </div>
               </div>
             </div>
             <div>
               <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '20px' }}>Who We Are</h2>
               <p style={{ color: '#6C757D', lineHeight: 1.8, marginBottom: '16px' }}>
-                At Sesoris, we believe a tidy home starts with products that are easy to use, easy to clean, and easy to match with real Indonesian living spaces. Our team works from Yogyakarta and curates items for kitchens, desks, rooms, wardrobes, and travel needs.
+                At Sesoris, we believe a tidy home starts with products that are easy to use, easy to clean, and easy to fit into real living spaces. Our team works from Yogyakarta and curates items for kitchens, desks, rooms, wardrobes, and travel needs.
               </p>
               <p style={{ color: '#6C757D', lineHeight: 1.8, marginBottom: '16px' }}>
-                The Yogyakarta angle matters for local SEO and customer trust: customers looking for a toko organizer Yogyakarta, rak penyimpanan Jogja, or home organizer store in Indonesia can see where the brand is based while still ordering for nationwide delivery.
+                The Yogyakarta roots matter to us: it is where the idea for Sesoris started, shaping a calm, practical approach to home organization that we bring to every product we curate.
               </p>
               <p style={{ color: '#6C757D', lineHeight: 1.8 }}>
                 &ldquo;Do It With Ease&rdquo; is our promise: simple product choices, clear support, and practical storage ideas for people who want their home to feel more organized without making the process complicated.

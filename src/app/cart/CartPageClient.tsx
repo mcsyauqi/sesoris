@@ -185,7 +185,7 @@ export default function CartPageClient() {
             </div>
           </div>
 
-          {/* Ringkasan Pesanan */}
+          {/* Order Summary */}
           <div>
             <div style={{
               background: '#F8F9FA',
@@ -193,20 +193,20 @@ export default function CartPageClient() {
               padding: '24px',
             }}>
               <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-                Ringkasan Pesanan
+                Order Summary
               </h2>
 
               <div style={{ marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                   <Tag style={{ width: '16px', height: '16px', color: '#6C757D' }} />
-                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Kode Promo</span>
+                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Promo Code</span>
                 </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   <input
                     type="text"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    placeholder="Masukkan kode"
+                    placeholder="Enter code"
                     style={{
                       flex: 1,
                       padding: '10px 14px',
@@ -227,7 +227,7 @@ export default function CartPageClient() {
                       fontWeight: 500,
                     }}
                   >
-                    Pakai
+                    Apply
                   </button>
                 </div>
               </div>
@@ -238,9 +238,9 @@ export default function CartPageClient() {
                   <span style={{ fontWeight: 500, color: '#212529' }}>{formatPrice(subtotal)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#6C757D' }}>Pengiriman</span>
+                  <span style={{ color: '#6C757D' }}>Shipping</span>
                   <span style={{ fontWeight: 500, color: shipping === 0 ? '#28A745' : '#212529' }}>
-                    {shipping === 0 ? 'Gratis' : formatPrice(shipping)}
+                    {shipping === 0 ? 'Free' : formatPrice(shipping)}
                   </span>
                 </div>
                 {subtotal < 50 && (

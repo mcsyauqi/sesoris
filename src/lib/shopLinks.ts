@@ -7,15 +7,15 @@ import type { Product } from '@/types';
 // linking every post to the same category (fixes 0 internal links from
 // blog -> money pages, see [[sesoris-seo-audit-2026-07-05]] root cause #3).
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
-  'home-living': ['rak dinding', 'floating shelf', 'organizer rumah', 'dekorasi', 'wall shelf', 'living room', 'ruang tamu', 'storage bin', 'keranjang', 'rak display', 'bedroom', 'kamar tidur', 'home organization', 'declutter', 'closet'],
-  'kitchen-dining': ['dapur', 'kitchen', 'rak piring', 'dish rack', 'food storage', 'food container', 'pantry', 'talenan', 'cutting board', 'bumbu', 'spice', 'meja makan', 'dining', 'glass container'],
-  'tools-gadgets': ['multi-tool', 'gadget dapur', 'alat praktis', 'diy', 'perbaikan rumah', 'cable management', 'obeng', 'screwdriver'],
-  'gift-sets': ['hadiah', 'gift', 'kado', 'wedding gift', 'housewarming', 'corporate gift', 'gift set', 'parcel'],
-  'personal-care': ['self-care', 'self care', 'skincare', 'aromatherapy', 'aromaterapi', 'diffuser', 'wellness', 'kamar mandi organizer', 'facial roller', 'gua sha'],
-  'tech-accessories': ['earbuds', 'wireless charging', 'charging station', 'organizer kabel', 'smart home', 'power bank', 'headphone'],
-  'bags-pouches': ['tas', 'pouch', 'toiletry bag', 'tote bag', 'packing cube', 'koper', 'mesh pouch'],
-  'office-desk': ['meja kerja', 'desk organizer', 'workspace', 'home office', 'lampu meja', 'desk lamp', 'wfh'],
-  'outdoor-travel': ['travel organizer', 'outdoor', 'liburan', 'perjalanan', 'hiking', 'camping', 'day trip', 'travel gear'],
+  'home-living': ['floating shelf', 'wall shelf', 'home organizer', 'decor', 'living room', 'storage bin', 'basket', 'display shelf', 'bedroom', 'home organization', 'declutter', 'closet'],
+  'kitchen-dining': ['kitchen', 'dish rack', 'food storage', 'food container', 'pantry', 'cutting board', 'spice', 'dining table', 'dining', 'glass container'],
+  'tools-gadgets': ['multi-tool', 'kitchen gadget', 'practical tools', 'diy', 'home repair', 'cable management', 'screwdriver'],
+  'gift-sets': ['gift', 'gift set', 'wedding gift', 'housewarming', 'corporate gift', 'parcel'],
+  'personal-care': ['self-care', 'self care', 'skincare', 'aromatherapy', 'diffuser', 'wellness', 'bathroom organizer', 'facial roller', 'gua sha'],
+  'tech-accessories': ['earbuds', 'wireless charging', 'charging station', 'cable organizer', 'smart home', 'power bank', 'headphone'],
+  'bags-pouches': ['bag', 'pouch', 'toiletry bag', 'tote bag', 'packing cube', 'suitcase', 'mesh pouch'],
+  'office-desk': ['desk', 'desk organizer', 'workspace', 'home office', 'desk lamp', 'wfh'],
+  'outdoor-travel': ['travel organizer', 'outdoor', 'vacation', 'trip', 'hiking', 'camping', 'day trip', 'travel gear'],
 };
 
 /** Deterministic hash so posts that match no keyword still get a rotated (not fixed) category, spreading link equity. */

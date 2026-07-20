@@ -7,12 +7,12 @@ import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
 
 export const metadata: Metadata = {
-  title: 'Best Seller Sesoris | Organizer Rumah Favorit',
-  description: 'Belanja produk best seller Sesoris, dari rak penyimpanan sampai organizer dapur yang paling sering dipilih pelanggan.',
+  title: 'Sesoris Best Sellers | Top-Rated Home Organizers',
+  description: 'Shop Sesoris best sellers, from storage racks to kitchen organizers our customers choose most often.',
   alternates: { canonical: '/best-sellers' },
   openGraph: {
-    title: 'Best Seller Sesoris | Organizer Rumah Favorit | Sesoris',
-    description: 'Belanja produk best seller Sesoris, dari rak penyimpanan sampai organizer dapur yang paling sering dipilih pelanggan.',
+    title: 'Sesoris Best Sellers | Top-Rated Home Organizers | Sesoris',
+    description: 'Shop Sesoris best sellers, from storage racks to kitchen organizers our customers choose most often.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
@@ -160,7 +160,7 @@ export default function BestSellersPage() {
             Why Shop Our Best Sellers?
           </h2>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
-            Our best-selling products are chosen by thousands of customers who value quality, functionality, and design. Each product on this list has earned its place through consistently high ratings, repeat purchases, and positive reviews from real customers across Indonesia.
+            Our best-selling products are chosen by thousands of customers who value quality, functionality, and design. Each product on this list has earned its place through consistently high ratings, repeat purchases, and positive reviews from real customers.
           </p>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
             At Sesoris, we curate our best sellers from categories including home organization, kitchen storage, desk accessories, and lifestyle products. Whether you are looking to declutter your home, organize your kitchen, or find the perfect gift, our top-rated products deliver exceptional value.

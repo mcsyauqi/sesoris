@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { Home, ChevronRight, Truck, Clock, MapPin, Package, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Info Pengiriman Sesoris | Estimasi & Biaya',
-  description: 'Cek informasi pengiriman Sesoris, estimasi waktu sampai, opsi kurir, dan kebijakan ongkir untuk belanja organizer rumah.',
+  title: 'Sesoris Shipping Info | Delivery Times & Costs',
+  description: 'Check Sesoris shipping information, estimated delivery times, carrier options, and shipping policy for home organizer orders.',
   alternates: { canonical: '/shipping' },
   openGraph: {
-    title: 'Info Pengiriman Sesoris | Estimasi & Biaya | Sesoris',
-    description: 'Cek informasi pengiriman Sesoris, estimasi waktu sampai, opsi kurir, dan kebijakan ongkir untuk belanja organizer rumah.',
+    title: 'Sesoris Shipping Info | Delivery Times & Costs | Sesoris',
+    description: 'Check Sesoris shipping information, estimated delivery times, carrier options, and shipping policy for home organizer orders.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

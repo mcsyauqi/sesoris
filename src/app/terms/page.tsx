@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { Home, ChevronRight, FileText, ShoppingBag, Truck, RefreshCw, AlertTriangle, Scale, Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Syarat Ketentuan Sesoris | Belanja Aman',
-  description: 'Baca syarat dan ketentuan Sesoris untuk belanja organizer rumah, pembayaran, pengiriman, retur, dan penggunaan website.',
+  title: 'Sesoris Terms of Service | Safe Shopping',
+  description: 'Read the Sesoris terms of service for home organizer shopping, payment, shipping, returns, and website use.',
   alternates: { canonical: '/terms' },
   openGraph: {
-    title: 'Syarat Ketentuan Sesoris | Belanja Aman | Sesoris',
-    description: 'Baca syarat dan ketentuan Sesoris untuk belanja organizer rumah, pembayaran, pengiriman, retur, dan penggunaan website.',
+    title: 'Sesoris Terms of Service | Safe Shopping | Sesoris',
+    description: 'Read the Sesoris terms of service for home organizer shopping, payment, shipping, returns, and website use.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

@@ -19,15 +19,15 @@ const localBusinessSchema = {
   name: 'Sesoris',
   url: 'https://www.sesoris.com',
   image: 'https://www.sesoris.com/og-default.webp',
-  description: 'Sesoris is a Yogyakarta-based online store for home organizers, kitchen storage, office desk products, and travel storage accessories with nationwide shipping across Indonesia.',
+  description: 'Sesoris is a Yogyakarta-based online store for home organizers, kitchen storage, office desk products, and travel storage accessories, shipping worldwide.',
   email: 'sesoris.store@gmail.com',
   telephone: '+62-813-2610-2061',
   priceRange: '$$',
-  areaServed: ['Yogyakarta', 'Daerah Istimewa Yogyakarta', 'Indonesia'],
+  areaServed: ['Worldwide'],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Yogyakarta',
-    addressRegion: 'Daerah Istimewa Yogyakarta',
+    addressRegion: 'Special Region of Yogyakarta',
     addressCountry: 'ID',
   },
   openingHoursSpecification: [

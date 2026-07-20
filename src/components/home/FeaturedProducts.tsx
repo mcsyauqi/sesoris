@@ -7,9 +7,9 @@ import { ProductCard } from '@/components/product/ProductCard';
 import { getFeaturedProducts, getNewArrivals, products } from '@/data/products';
 
 const tabs = [
-  { id: 'popular', label: 'Populer', getData: getFeaturedProducts },
-  { id: 'new', label: 'Produk Baru', getData: getNewArrivals },
-  { id: 'best', label: 'Terlaris', getData: () => products.slice(0, 6) },
+  { id: 'popular', label: 'Popular', getData: getFeaturedProducts },
+  { id: 'new', label: 'New Arrivals', getData: getNewArrivals },
+  { id: 'best', label: 'Best Sellers', getData: () => products.slice(0, 6) },
 ];
 
 export function FeaturedProducts() {
@@ -29,9 +29,9 @@ export function FeaturedProducts() {
               color: '#212529',
               marginBottom: '8px'
             }}>
-              Populer Minggu Ini
+              Popular This Week
             </h2>
-            <p style={{ color: '#6C757D', fontSize: '15px' }}>Temukan produk favorit pelanggan</p>
+            <p style={{ color: '#6C757D', fontSize: '15px' }}>Discover our customers' favorite products</p>
           </div>
 
           <div className="tab-pills">

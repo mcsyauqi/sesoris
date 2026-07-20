@@ -147,7 +147,7 @@ export default function TrackOrderPageClient() {
               After placing your order at Sesoris, you will receive a confirmation email with your order number. Once your order is shipped, we will send a tracking number that you can use to monitor your delivery in real time.
             </p>
             <p style={{ color: '#6C757D', lineHeight: '1.7', marginBottom: '16px', fontSize: '14px' }}>
-              Standard delivery to major cities in Indonesia takes 2-5 business days. For remote areas, delivery may take 5-10 business days. All shipments are fully insured and trackable from our warehouse to your doorstep.
+              Standard delivery takes 5-7 business days, with express options available in 2-3 business days. All shipments are fully insured and trackable from our warehouse to your doorstep.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Link href="/shipping" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>Shipping Policy</Link>

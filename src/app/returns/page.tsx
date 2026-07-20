@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { Home, ChevronRight, RotateCcw, CheckCircle, XCircle, Clock, Package } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Retur Sesoris | Cara Tukar dan Refund',
-  description: 'Pelajari cara retur, tukar barang, dan refund di Sesoris agar belanja organizer rumah tetap aman dan nyaman.',
+  title: 'Sesoris Returns | How to Exchange & Refund',
+  description: 'Learn how returns, exchanges, and refunds work at Sesoris so shopping for home organizers stays safe and easy.',
   alternates: { canonical: '/returns' },
   openGraph: {
-    title: 'Retur Sesoris | Cara Tukar dan Refund | Sesoris',
-    description: 'Pelajari cara retur, tukar barang, dan refund di Sesoris agar belanja organizer rumah tetap aman dan nyaman.',
+    title: 'Sesoris Returns | How to Exchange & Refund | Sesoris',
+    description: 'Learn how returns, exchanges, and refunds work at Sesoris so shopping for home organizers stays safe and easy.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

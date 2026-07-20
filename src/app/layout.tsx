@@ -98,19 +98,19 @@ export default function RootLayout({
               name: 'Sesoris',
               url: 'https://www.sesoris.com',
               logo: 'https://www.sesoris.com/logo.webp',
-              description: 'Yogyakarta-based online store for quality home organizers, kitchen storage, desk accessories, and storage solutions with nationwide shipping across Indonesia.',
+              description: 'Yogyakarta-based online store for quality home organizers, kitchen storage, desk accessories, and storage solutions, shipping worldwide.',
               priceRange: '$5 - $50',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Yogyakarta',
-                addressRegion: 'Daerah Istimewa Yogyakarta',
+                addressRegion: 'Special Region of Yogyakarta',
                 addressCountry: 'ID',
               },
               foundingLocation: {
                 '@type': 'Place',
                 name: 'Yogyakarta, Indonesia',
               },
-              areaServed: ['Yogyakarta', 'Daerah Istimewa Yogyakarta', 'Indonesia'],
+              areaServed: ['Worldwide'],
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+62-813-2610-2061',

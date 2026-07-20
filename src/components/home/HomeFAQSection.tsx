@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: 'Where is Sesoris based?',
-    answer: 'Sesoris is based in Yogyakarta, Indonesia. We ship nationwide across all provinces. For bulk or wholesale inquiries, please contact us directly.',
+    answer: 'Sesoris is based in Yogyakarta, Indonesia. We ship worldwide. For bulk or wholesale inquiries, please contact us directly.',
   },
 ];
 

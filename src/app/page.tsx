@@ -11,12 +11,12 @@ import {
 } from '@/components/home';
 
 export const metadata: Metadata = {
-  title: 'Sesoris | Home Organizer untuk Rumah Lebih Teratur',
-  description: 'Temukan organizer rumah, rak penyimpanan, dan perlengkapan home living pilihan Sesoris untuk membuat rumah lebih rapi dan nyaman.',
+  title: 'Sesoris | Home Organizers for a More Organized Home',
+  description: 'Discover home organizers, storage shelves, and curated home living essentials from Sesoris to make your home tidier and more comfortable.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Sesoris | Home Organizer untuk Rumah Lebih Teratur | Sesoris',
-    description: 'Temukan organizer rumah, rak penyimpanan, dan perlengkapan home living pilihan Sesoris untuk membuat rumah lebih rapi dan nyaman.',
+    title: 'Sesoris | Home Organizers for a More Organized Home | Sesoris',
+    description: 'Discover home organizers, storage shelves, and curated home living essentials from Sesoris to make your home tidier and more comfortable.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };

@@ -24,8 +24,21 @@ interface QueuedKeyword {
 interface KeywordConsumptionLedgerEntry extends QueuedKeyword {
   slug: string;
   date: string;
-  status: 'consumed' | 'published' | 'putback' | 'duplicate' | 'skipped-redirect-collision';
+  status: 'consumed' | 'published' | 'putback' | 'duplicate' | 'skipped-redirect-collision' | 'skipped-non-english';
   note?: string;
+}
+
+// Sesoris targets a US/English-speaking audience (site copy, pricing, and blog
+// content are all English as of cycle #39, 2026-07-20). Historically the keyword
+// queue occasionally received Indonesian-language keywords (leftover from the
+// site's original ID-market targeting), which produced bilingual or fully
+// Indonesian articles that then had to be manually retargeted after publish.
+// This filter rejects those keywords before generation ever starts.
+const INDONESIAN_KEYWORD_PATTERN =
+  /\b(yang|untuk|dengan|dari|dan|atau|adalah|tidak|bisa|akan|juga|rumah|dapur|kamar|ruang tamu|lemari|rak|keranjang|penyimpanan|murah|terbaik|minimalis|tempel dinding|susun|piring|bumbu|sempit|ala indonesia|jogja|yogyakarta)\b/i;
+
+function isNonEnglishKeyword(keyword: string): boolean {
+  return INDONESIAN_KEYWORD_PATTERN.test(keyword);
 }
 
 function readKeywordLedger(): KeywordConsumptionLedgerEntry[] {
@@ -90,6 +103,17 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
   while (queue.length > 0) {
     const candidate = queue.shift()!;
     const candidateSlug = slugify(candidate.keyword);
+    if (isNonEnglishKeyword(candidate.keyword)) {
+      appendKeywordLedger({
+        ...candidate,
+        slug: candidateSlug,
+        date: toISODate(new Date()),
+        status: 'skipped-non-english',
+        note: 'keyword contains Indonesian-language terms; Sesoris now targets an English-speaking (US) audience',
+      });
+      console.log(`Skipping "${candidate.keyword}": looks like an Indonesian-language keyword, site targets English/US.`);
+      continue;
+    }
     if (legacyRedirects.has(candidateSlug)) {
       appendKeywordLedger({
         ...candidate,
