@@ -1,41 +1,5 @@
 [
   {
-    "keyword": "spring cleaning checklist",
-    "volume": 500,
-    "kd": 0,
-    "category": "Seasonal",
-    "intent": "Seasonal",
-    "priority": "Tier 2",
-    "slug": "spring-cleaning-checklist"
-  },
-  {
-    "keyword": "how to organize a tiny kitchen",
-    "volume": 500,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "how-to-organize-a-tiny-kitchen"
-  },
-  {
-    "keyword": "how to organize a studio apartment",
-    "volume": 500,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "how-to-organize-a-studio-apartment"
-  },
-  {
-    "keyword": "minimalist home organization tips",
-    "volume": 500,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "minimalist-home-organization-tips"
-  },
-  {
     "keyword": "holiday cookie storage containers",
     "volume": 500,
     "kd": 0,

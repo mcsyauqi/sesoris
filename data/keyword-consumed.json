@@ -436,5 +436,53 @@
     "date": "2026-07-20",
     "status": "published",
     "note": "Created content/blog/wall-mounted-dish-rack.json"
+  },
+  {
+    "keyword": "spring cleaning checklist",
+    "volume": 500,
+    "kd": 0,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "spring-cleaning-checklist",
+    "date": "2026-07-21",
+    "status": "published",
+    "note": "Created content/blog/spring-cleaning-checklist.json"
+  },
+  {
+    "keyword": "how to organize a tiny kitchen",
+    "volume": 500,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-organize-a-tiny-kitchen",
+    "date": "2026-07-21",
+    "status": "published",
+    "note": "Created content/blog/how-to-organize-a-tiny-kitchen.json"
+  },
+  {
+    "keyword": "how to organize a studio apartment",
+    "volume": 500,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-organize-a-studio-apartment",
+    "date": "2026-07-21",
+    "status": "skipped-redirect-collision",
+    "note": "slug is a legacy redirect source; article would trip the pre-publish guard"
+  },
+  {
+    "keyword": "minimalist home organization tips",
+    "volume": 500,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "minimalist-home-organization-tips",
+    "date": "2026-07-21",
+    "status": "published",
+    "note": "Created content/blog/minimalist-home-organization-tips.json"
   }
 ]
