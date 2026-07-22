@@ -484,5 +484,41 @@
     "date": "2026-07-21",
     "status": "published",
     "note": "Created content/blog/minimalist-home-organization-tips.json"
+  },
+  {
+    "keyword": "holiday cookie storage containers",
+    "volume": 500,
+    "kd": 0,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "holiday-cookie-storage-containers",
+    "date": "2026-07-22",
+    "status": "published",
+    "note": "Created content/blog/holiday-cookie-storage-containers.json"
+  },
+  {
+    "keyword": "stainless steel kitchen rack",
+    "volume": 480,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "stainless-steel-kitchen-rack",
+    "date": "2026-07-22",
+    "status": "published",
+    "note": "Created content/blog/stainless-steel-kitchen-rack.json"
+  },
+  {
+    "keyword": "clothes storage organizer",
+    "volume": 480,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "clothes-storage-organizer",
+    "date": "2026-07-22",
+    "status": "published",
+    "note": "Created content/blog/clothes-storage-organizer.json"
   }
 ]
