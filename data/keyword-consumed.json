@@ -520,5 +520,41 @@
     "date": "2026-07-22",
     "status": "published",
     "note": "Created content/blog/clothes-storage-organizer.json"
+  },
+  {
+    "keyword": "kitchen food storage ideas",
+    "volume": 480,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "kitchen-food-storage-ideas",
+    "date": "2026-07-23",
+    "status": "published",
+    "note": "Created content/blog/kitchen-food-storage-ideas.json"
+  },
+  {
+    "keyword": "how to keep your kitchen organized",
+    "volume": 400,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-keep-your-kitchen-organized",
+    "date": "2026-07-23",
+    "status": "published",
+    "note": "Created content/blog/how-to-keep-your-kitchen-organized.json"
+  },
+  {
+    "keyword": "minimalist kitchen organization",
+    "volume": 400,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "minimalist-kitchen-organization",
+    "date": "2026-07-23",
+    "status": "published",
+    "note": "Created content/blog/minimalist-kitchen-organization.json"
   }
 ]

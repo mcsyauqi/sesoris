@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "kitchen food storage ideas",
-    "volume": 480,
-    "kd": 0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "kitchen-food-storage-ideas"
-  },
-  {
-    "keyword": "how to keep your kitchen organized",
-    "volume": 400,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "how-to-keep-your-kitchen-organized"
-  },
-  {
-    "keyword": "minimalist kitchen organization",
-    "volume": 400,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "minimalist-kitchen-organization"
-  },
-  {
     "keyword": "minimalist kitchen inspiration",
     "volume": 400,
     "kd": 0,
