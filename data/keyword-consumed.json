@@ -556,5 +556,41 @@
     "date": "2026-07-23",
     "status": "published",
     "note": "Created content/blog/minimalist-kitchen-organization.json"
+  },
+  {
+    "keyword": "minimalist kitchen inspiration",
+    "volume": 400,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "minimalist-kitchen-inspiration",
+    "date": "2026-07-24",
+    "status": "published",
+    "note": "Created content/blog/minimalist-kitchen-inspiration.json"
+  },
+  {
+    "keyword": "under sink organizer ideas",
+    "volume": 390,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "under-sink-organizer-ideas",
+    "date": "2026-07-24",
+    "status": "published",
+    "note": "Created content/blog/under-sink-organizer-ideas.json"
+  },
+  {
+    "keyword": "pantry storage rack",
+    "volume": 390,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "pantry-storage-rack",
+    "date": "2026-07-24",
+    "status": "published",
+    "note": "Created content/blog/pantry-storage-rack.json"
   }
 ]
