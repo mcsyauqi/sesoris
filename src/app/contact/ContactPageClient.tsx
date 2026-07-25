@@ -63,7 +63,7 @@ export default function ContactPageClient() {
                 <Mail style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Email</div>
-                  <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B' }}>sesoris.store@gmail.com</a>
+                  <a href="mailto:admin@sesoris.com" style={{ color: '#1B5E3B' }}>admin@sesoris.com</a>
                 </div>
               </div>
 
@@ -215,7 +215,7 @@ export default function ContactPageClient() {
               <p style={{ marginTop: '12px', fontSize: '13px', color: '#6C757D' }}>
                 Prefer WhatsApp?{' '}
                 <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500 }}>Message us directly</a>
-                {' '}or email <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>sesoris.store@gmail.com</a>.
+                {' '}or email <a href="mailto:admin@sesoris.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>admin@sesoris.com</a>.
               </p>
               {status === 'sent' && (
                 <p style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: '#E8F5E9', color: '#1B5E3B', fontSize: '14px' }}>

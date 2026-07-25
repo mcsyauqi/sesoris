@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     const apiKey = process.env.BREVO_API_KEY?.trim();
     const senderEmail = process.env.BREVO_SENDER_EMAIL?.trim();
-    const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL?.trim() || 'sesoris.store@gmail.com';
+    const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL?.trim() || 'admin@sesoris.com';
 
     if (!apiKey || !senderEmail) {
       console.error('[Contact] BREVO_API_KEY or BREVO_SENDER_EMAIL is not configured.');

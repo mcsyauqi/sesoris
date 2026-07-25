@@ -239,7 +239,7 @@ export default function CareersPage() {
           <p style={{ color: '#6C757D', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
             Send us your resume and portfolio. We are always open to exceptional talent!
           </p>
-          <a href="mailto:sesoris.store@gmail.com" style={{
+          <a href="mailto:admin@sesoris.com" style={{
             display: 'inline-block',
             background: '#1B5E3B',
             color: 'white',
@@ -248,7 +248,7 @@ export default function CareersPage() {
             fontWeight: 600,
             fontSize: '15px',
           }}>
-            Send Resume to sesoris.store@gmail.com
+            Send Resume to admin@sesoris.com
           </a>
         </div>
       </div>

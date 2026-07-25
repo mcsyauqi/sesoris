@@ -118,7 +118,7 @@ export default function TrackOrderPageClient() {
                 If the details are correct and you still can&apos;t find your order, our team
                 can look it up for you via{' '}
                 <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>Contact Support</Link>{' '}
-                or email <a href="mailto:sesoris.store@gmail.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>sesoris.store@gmail.com</a>.
+                or email <a href="mailto:admin@sesoris.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>admin@sesoris.com</a>.
               </p>
             </div>
           )}
