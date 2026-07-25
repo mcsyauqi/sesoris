@@ -592,5 +592,41 @@
     "date": "2026-07-24",
     "status": "published",
     "note": "Created content/blog/pantry-storage-rack.json"
+  },
+  {
+    "keyword": "simple kitchen decor ideas",
+    "volume": 320,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "simple-kitchen-decor-ideas",
+    "date": "2026-07-25",
+    "status": "published",
+    "note": "Created content/blog/simple-kitchen-decor-ideas.json"
+  },
+  {
+    "keyword": "3 tier spice rack",
+    "volume": 320,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "3-tier-spice-rack",
+    "date": "2026-07-25",
+    "status": "published",
+    "note": "Created content/blog/3-tier-spice-rack.json"
+  },
+  {
+    "keyword": "wall mounted spice rack",
+    "volume": 320,
+    "kd": 0,
+    "category": "Kitchen & Dining",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "wall-mounted-spice-rack",
+    "date": "2026-07-25",
+    "status": "published",
+    "note": "Created content/blog/wall-mounted-spice-rack.json"
   }
 ]

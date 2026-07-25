@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "simple kitchen decor ideas",
-    "volume": 320,
-    "kd": 0,
-    "category": "Kitchen & Dining",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "simple-kitchen-decor-ideas"
-  },
-  {
-    "keyword": "3 tier spice rack",
-    "volume": 320,
-    "kd": 0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "3-tier-spice-rack"
-  },
-  {
-    "keyword": "wall mounted spice rack",
-    "volume": 320,
-    "kd": 0,
-    "category": "Kitchen & Dining",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "wall-mounted-spice-rack"
-  },
-  {
     "keyword": "small living room organization ideas",
     "volume": 300,
     "kd": 0,
