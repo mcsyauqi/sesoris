@@ -628,5 +628,41 @@
     "date": "2026-07-25",
     "status": "published",
     "note": "Created content/blog/wall-mounted-spice-rack.json"
+  },
+  {
+    "keyword": "small living room organization ideas",
+    "volume": 300,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "small-living-room-organization-ideas",
+    "date": "2026-07-26",
+    "status": "published",
+    "note": "Created content/blog/small-living-room-organization-ideas.json"
+  },
+  {
+    "keyword": "how to store food to last longer",
+    "volume": 300,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-store-food-to-last-longer",
+    "date": "2026-07-26",
+    "status": "published",
+    "note": "Created content/blog/how-to-store-food-to-last-longer.json"
+  },
+  {
+    "keyword": "how to organize your closet",
+    "volume": 300,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-organize-your-closet",
+    "date": "2026-07-26",
+    "status": "published",
+    "note": "Created content/blog/how-to-organize-your-closet.json"
   }
 ]
