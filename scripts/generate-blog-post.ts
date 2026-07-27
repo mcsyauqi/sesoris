@@ -227,14 +227,20 @@ async function generatePost() {
 
   let basePrompt: string;
   if (queuedKeyword) {
-    basePrompt = `Tulis artikel blog BARU dalam Bahasa Indonesia dengan target keyword: "${queuedKeyword.keyword}"
+    // This branch fires on every scheduled run (the queue is virtually never empty),
+    // so its language instruction IS the site's effective language. It previously said
+    // "dalam Bahasa Indonesia", which is why every cycle since #25 shipped fully
+    // Indonesian articles under English slugs no matter how many times the published
+    // articles were hand-translated after the fact. Root cause, not the keyword queue.
+    basePrompt = `Write a NEW blog article in US ENGLISH targeting the keyword: "${queuedKeyword.keyword}"
 
-Artikel harus:
-- Dioptimalkan untuk keyword target "${queuedKeyword.keyword}"
-- Menyertakan keyword secara alami pada judul, paragraf pertama, heading, dan isi
-- Informatif, praktis, dan lengkap untuk pembaca Indonesia
-- Relevan dengan produk home & living
-- Tidak mengarang data, harga, atau studi kasus
+The article must:
+- Be optimized for the target keyword "${queuedKeyword.keyword}"
+- Include the keyword naturally in the title, first paragraph, headings, and body
+- Be informative, practical, and comprehensive for a US audience
+- Be relevant to home & living products
+- Never invent data, prices, or case studies
+- Be written 100% in US English. Do NOT write any Bahasa Indonesia, and do NOT localize to Indonesia
 
 KEYWORD DATA:
 - Target keyword: ${queuedKeyword.keyword}
@@ -328,6 +334,36 @@ TOPIC CONTEXT:
   generated.title = lintDashes(generated.title);
   generated.excerpt = lintDashes(generated.excerpt);
   generated.content = generated.content.map((line: string) => lintDashes(line));
+
+  // Language gate (hard fail, not a prompt hint). Sesoris targets the US, but the model
+  // has drifted back to Bahasa Indonesia in every cycle since #25 whenever a prompt
+  // instruction was the only safeguard. A prose rule that is not enforced by an
+  // exit-code gate WILL be violated, so the output is measured, not trusted.
+  // Threshold: Indonesian function words are near-absent in real English prose; even a
+  // single "yang"/"dengan"/"adalah" per 1000 words means the article drifted.
+  const ID_FUNCTION_WORDS =
+    /\b(yang|untuk|dengan|dan|adalah|tidak|bisa|dari|pada|akan|atau|juga|karena|sudah|lebih|dalam|kamu|anda|ini|itu|agar|saja|bahwa|oleh|kita|banyak|sangat)\b/gi;
+  const bodyForLangCheck = [generated.title, generated.excerpt, ...generated.content].join(' ');
+  const idHits = (bodyForLangCheck.match(ID_FUNCTION_WORDS) || []).length;
+  const wordCount = bodyForLangCheck.split(/\s+/).filter(Boolean).length;
+  const idPerThousand = wordCount > 0 ? (idHits / wordCount) * 1000 : 0;
+  if (idPerThousand > 1) {
+    putbackKeyword?.('putback', `generated article was not English (${idHits} Indonesian function words / ${wordCount} words)`);
+    console.error(
+      `LANGUAGE GATE FAILED: article is not US English. ` +
+        `${idHits} Indonesian function words in ${wordCount} words (${idPerThousand.toFixed(1)}/1000, limit 1). ` +
+        `Keyword returned to queue; nothing was written.`,
+    );
+    process.exit(1);
+  }
+
+  // Currency/unit gate: US audience must never see Rupiah or metric units.
+  const currencyViolations = bodyForLangCheck.match(/\bRp\s?[\d.]|\brupiah\b/gi) || [];
+  if (currencyViolations.length > 0) {
+    putbackKeyword?.('putback', `generated article used Rupiah (${currencyViolations.length} hits)`);
+    console.error(`CURRENCY GATE FAILED: found Rupiah in a US-market article (${currencyViolations.length} hits). Nothing was written.`);
+    process.exit(1);
+  }
 
   if (queuedKeyword) {
     const targetSlug = queuedSlug ?? slugify(queuedKeyword.keyword);
