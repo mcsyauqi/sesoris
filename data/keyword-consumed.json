@@ -664,5 +664,41 @@
     "date": "2026-07-26",
     "status": "published",
     "note": "Created content/blog/how-to-organize-your-closet.json"
+  },
+  {
+    "keyword": "holiday home decor ideas",
+    "volume": 300,
+    "kd": 0,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "holiday-home-decor-ideas",
+    "date": "2026-07-27",
+    "status": "duplicate",
+    "note": "Existing file found for slug: holiday-home-decor-ideas"
+  },
+  {
+    "keyword": "holiday home decor ideas",
+    "volume": 300,
+    "kd": 0,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "holiday-home-decor-ideas",
+    "date": "2026-07-27",
+    "status": "duplicate",
+    "note": "Existing file found for slug: holiday-home-decor-ideas"
+  },
+  {
+    "keyword": "holiday home decor ideas",
+    "volume": 300,
+    "kd": 0,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "holiday-home-decor-ideas",
+    "date": "2026-07-27",
+    "status": "duplicate",
+    "note": "Existing file found for slug: holiday-home-decor-ideas"
   }
 ]
