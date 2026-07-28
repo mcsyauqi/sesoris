@@ -99,7 +99,7 @@ export function AboutSection() {
               className="btn btn-primary"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
             >
-              Learn More
+              About Sesoris
               <ArrowRight style={{ width: '16px', height: '16px' }} />
             </Link>
           </div>

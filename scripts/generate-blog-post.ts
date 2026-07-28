@@ -125,6 +125,18 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
       console.log(`Skipping "${candidate.keyword}": slug "${candidateSlug}" is a redirect source.`);
       continue;
     }
+    const existingArticlePath = path.join(blogDir, `${candidateSlug}.json`);
+    if (fs.existsSync(existingArticlePath)) {
+      appendKeywordLedger({
+        ...candidate,
+        slug: candidateSlug,
+        date: toISODate(new Date()),
+        status: 'duplicate',
+        note: `Existing file found for slug: ${candidateSlug}; removed from queue before generation`,
+      });
+      console.log(`Skipping "${candidate.keyword}": article slug "${candidateSlug}" already exists.`);
+      continue;
+    }
     next = candidate;
     slug = candidateSlug;
     break;
@@ -376,8 +388,15 @@ TOPIC CONTEXT:
 
   const filePath = path.join(blogDir, `${generated.slug}.json`);
   if (fs.existsSync(filePath)) {
-    putbackKeyword?.('duplicate', `Existing file found for slug: ${generated.slug}`);
-    console.log(`Post already exists: ${generated.slug}, keyword returned to queue and marked duplicate in ledger, skipping gracefully`);
+    if (queuedKeyword) {
+      updateLatestKeywordLedgerStatus(
+        queuedKeyword,
+        generated.slug,
+        'duplicate',
+        `Existing file found for slug: ${generated.slug}; not returned to queue`,
+      );
+    }
+    console.log(`Post already exists: ${generated.slug}, keyword marked duplicate and discarded to avoid blocking the queue`);
     process.exit(0);
   }
 
