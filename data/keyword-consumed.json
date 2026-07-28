@@ -736,5 +736,53 @@
     "date": "2026-07-28",
     "status": "duplicate",
     "note": "Existing file found for slug: holiday-home-decor-ideas"
+  },
+  {
+    "keyword": "holiday home decor ideas",
+    "volume": 300,
+    "kd": 0,
+    "category": "Seasonal",
+    "intent": "Seasonal",
+    "priority": "Tier 2",
+    "slug": "holiday-home-decor-ideas",
+    "date": "2026-07-28",
+    "status": "duplicate",
+    "note": "Existing file found for slug: holiday-home-decor-ideas; removed from queue before generation"
+  },
+  {
+    "keyword": "best budget kitchen racks",
+    "volume": 300,
+    "kd": 0,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 2",
+    "slug": "best-budget-kitchen-racks",
+    "date": "2026-07-28",
+    "status": "published",
+    "note": "Created content/blog/best-budget-kitchen-racks.json"
+  },
+  {
+    "keyword": "kitchen decor inspiration",
+    "volume": 300,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "kitchen-decor-inspiration",
+    "date": "2026-07-28",
+    "status": "published",
+    "note": "Created content/blog/kitchen-decor-inspiration.json"
+  },
+  {
+    "keyword": "tidy minimalist home inspiration",
+    "volume": 300,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "tidy-minimalist-home-inspiration",
+    "date": "2026-07-28",
+    "status": "published",
+    "note": "Created content/blog/tidy-minimalist-home-inspiration.json"
   }
 ]

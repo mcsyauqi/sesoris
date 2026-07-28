@@ -1,41 +1,5 @@
 [
   {
-    "keyword": "holiday home decor ideas",
-    "volume": 300,
-    "kd": 0,
-    "category": "Seasonal",
-    "intent": "Seasonal",
-    "priority": "Tier 2",
-    "slug": "holiday-home-decor-ideas"
-  },
-  {
-    "keyword": "best budget kitchen racks",
-    "volume": 300,
-    "kd": 0,
-    "category": "Buyer Intent",
-    "intent": "Transactional",
-    "priority": "Tier 2",
-    "slug": "best-budget-kitchen-racks"
-  },
-  {
-    "keyword": "kitchen decor inspiration",
-    "volume": 300,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "kitchen-decor-inspiration"
-  },
-  {
-    "keyword": "tidy minimalist home inspiration",
-    "volume": 300,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "tidy-minimalist-home-inspiration"
-  },
-  {
     "keyword": "where to buy kitchen racks",
     "volume": 300,
     "kd": 0,
