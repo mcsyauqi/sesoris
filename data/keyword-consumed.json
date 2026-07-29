@@ -784,5 +784,41 @@
     "date": "2026-07-28",
     "status": "published",
     "note": "Created content/blog/tidy-minimalist-home-inspiration.json"
+  },
+  {
+    "keyword": "where to buy kitchen racks",
+    "volume": 300,
+    "kd": 0,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 2",
+    "slug": "where-to-buy-kitchen-racks",
+    "date": "2026-07-29",
+    "status": "published",
+    "note": "Created content/blog/where-to-buy-kitchen-racks.json"
+  },
+  {
+    "keyword": "cheap kitchen storage racks",
+    "volume": 300,
+    "kd": 0,
+    "category": "Buyer Intent",
+    "intent": "Transactional",
+    "priority": "Tier 2",
+    "slug": "cheap-kitchen-storage-racks",
+    "date": "2026-07-29",
+    "status": "published",
+    "note": "Created content/blog/cheap-kitchen-storage-racks.json"
+  },
+  {
+    "keyword": "desk organizer rack",
+    "volume": 300,
+    "kd": 0,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "desk-organizer-rack",
+    "date": "2026-07-29",
+    "status": "published",
+    "note": "Created content/blog/desk-organizer-rack.json"
   }
 ]

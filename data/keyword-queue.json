@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "where to buy kitchen racks",
-    "volume": 300,
-    "kd": 0,
-    "category": "Buyer Intent",
-    "intent": "Transactional",
-    "priority": "Tier 2",
-    "slug": "where-to-buy-kitchen-racks"
-  },
-  {
-    "keyword": "cheap kitchen storage racks",
-    "volume": 300,
-    "kd": 0,
-    "category": "Buyer Intent",
-    "intent": "Transactional",
-    "priority": "Tier 2",
-    "slug": "cheap-kitchen-storage-racks"
-  },
-  {
-    "keyword": "desk organizer rack",
-    "volume": 300,
-    "kd": 0,
-    "category": "Office & Desk",
-    "intent": "Head",
-    "priority": "Tier 2",
-    "slug": "desk-organizer-rack"
-  },
-  {
     "keyword": "stationery organizer ideas",
     "volume": 300,
     "kd": 0,
