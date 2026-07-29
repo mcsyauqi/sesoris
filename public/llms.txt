@@ -4,7 +4,7 @@
 
 ## About
 
-Sesoris offers 500+ products across categories including home decor, kitchen & dining, tools & gadgets, gift sets, personal care, and tech accessories. We serve customers across Indonesia with free shipping on orders over $50.
+Sesoris curates home organization products across categories including home decor, kitchen and dining, desk accessories, travel organizers, personal care, and practical household tools.
 
 ## Products
 
@@ -14,6 +14,9 @@ Sesoris offers 500+ products across categories including home decor, kitchen & d
 - Gift Sets: Premium gift boxes, curated sets
 - Personal Care: Aromatherapy, wellness products
 - Tech Accessories: Wireless earbuds, charging accessories
+- Bags & Pouches: Travel pouches, storage pouches, and everyday carry organizers
+- Office & Desk: Desk organizers, task lighting, and cable-management accessories
+- Outdoor & Travel: Toiletry bags, hanging organizers, and lightweight travel bags
 
 ## Shop
 
@@ -24,6 +27,9 @@ Sesoris offers 500+ products across categories including home decor, kitchen & d
 - /category/gift-sets - Gift Sets
 - /category/personal-care - Personal Care
 - /category/tech-accessories - Tech Accessories
+- /category/bags-pouches - Bags & Pouches
+- /category/office-desk - Office & Desk
+- /category/outdoor-travel - Outdoor & Travel
 - /best-sellers - Best Sellers
 - /new-arrivals - New Arrivals
 - /on-sale - Sale Items
@@ -32,6 +38,13 @@ Sesoris offers 500+ products across categories including home decor, kitchen & d
 ## Blog
 
 Sesoris Blog covers home organization tips, storage solutions, interior design inspiration, and lifestyle guides at /blog
+
+## AI and Search Access
+
+- Public pages may be crawled for search, answer generation, and citation.
+- Private account, cart, checkout, login, registration, wishlist, and API routes are excluded in /robots.txt.
+- Preferred canonical host: https://www.sesoris.com
+- XML sitemaps: /sitemap.xml and /blog/sitemap.xml
 
 ## Contact
 

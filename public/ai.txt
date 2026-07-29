@@ -1,0 +1,10 @@
+# Sesoris AI Access
+
+Public pages on https://www.sesoris.com may be crawled for search, answer generation, and citation.
+
+Preferred canonical host: https://www.sesoris.com
+Main sitemap: https://www.sesoris.com/sitemap.xml
+Blog sitemap: https://www.sesoris.com/blog/sitemap.xml
+LLM content guide: https://www.sesoris.com/llms.txt
+
+Do not crawl private or transactional routes listed in robots.txt, including account, cart, checkout, login, registration, wishlist, and API paths.

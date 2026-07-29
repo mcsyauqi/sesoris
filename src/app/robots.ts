@@ -16,6 +16,28 @@ export default function robots(): MetadataRoute.Robots {
           '/wishlist/',
         ],
       },
+      {
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'OAI-SearchBot',
+          'ClaudeBot',
+          'Claude-SearchBot',
+          'PerplexityBot',
+          'Google-Extended',
+          'Applebot-Extended',
+        ],
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/account/',
+          '/cart/',
+          '/checkout/',
+          '/login/',
+          '/register/',
+          '/wishlist/',
+        ],
+      },
     ],
     sitemap: [
       'https://www.sesoris.com/sitemap.xml',
