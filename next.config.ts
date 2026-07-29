@@ -74,6 +74,37 @@ const nextConfig: NextConfig = {
         destination: '/shop',
         permanent: true,
       },
+      // Legacy URLs currently reported as crawl issues by Bing.
+      {
+        source: '/2016/07/14/nillkin-nature-tpu-case-xiaomi-mi5',
+        destination: '/shop',
+        permanent: true,
+      },
+      {
+        source: '/2016/07/15/nillkin-shield-show-case-iphone-6-plus-6s-plus',
+        destination: '/shop',
+        permanent: true,
+      },
+      {
+        source: '/brand/apple/ipodtouch4',
+        destination: '/shop',
+        permanent: true,
+      },
+      {
+        source: '/brand/apple/ipodtouch5',
+        destination: '/shop',
+        permanent: true,
+      },
+      {
+        source: '/tag/aksesorishandphone-acchp-nillkin-aksesorishandphonebandung-caseoneplusx-oneplusx',
+        destination: '/shop',
+        permanent: true,
+      },
+      {
+        source: '/collections/all/products/universal-travel-socket',
+        destination: '/shop',
+        permanent: true,
+      },
       // Pre-existing redirect now pointed to /blog (old destination was
       // also Indonesian and has been removed)
       {
