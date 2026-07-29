@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   publisher: 'Sesoris',
   metadataBase: new URL('https://www.sesoris.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.sesoris.com/',
     types: {
       'application/rss+xml': '/feed.xml',
     },
