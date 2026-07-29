@@ -1,0 +1,231 @@
+{
+  "generated": "2026-07-29",
+  "site": "https://www.sesoris.com/",
+  "window": {
+    "start": "2026-06-29",
+    "end": "2026-07-28"
+  },
+  "summary": {
+    "clicks": 14,
+    "impressions": 3497
+  },
+  "rows": [
+    {
+      "date": "2026-06-29",
+      "clicks": 0,
+      "impressions": 6
+    },
+    {
+      "date": "2026-06-30",
+      "clicks": 0,
+      "impressions": 17
+    },
+    {
+      "date": "2026-07-01",
+      "clicks": 1,
+      "impressions": 27
+    },
+    {
+      "date": "2026-07-02",
+      "clicks": 1,
+      "impressions": 16
+    },
+    {
+      "date": "2026-07-03",
+      "clicks": 0,
+      "impressions": 31
+    },
+    {
+      "date": "2026-07-04",
+      "clicks": 0,
+      "impressions": 26
+    },
+    {
+      "date": "2026-07-05",
+      "clicks": 0,
+      "impressions": 99
+    },
+    {
+      "date": "2026-07-06",
+      "clicks": 0,
+      "impressions": 72
+    },
+    {
+      "date": "2026-07-07",
+      "clicks": 0,
+      "impressions": 82
+    },
+    {
+      "date": "2026-07-08",
+      "clicks": 0,
+      "impressions": 126
+    },
+    {
+      "date": "2026-07-09",
+      "clicks": 1,
+      "impressions": 223
+    },
+    {
+      "date": "2026-07-10",
+      "clicks": 0,
+      "impressions": 136
+    },
+    {
+      "date": "2026-07-11",
+      "clicks": 2,
+      "impressions": 113
+    },
+    {
+      "date": "2026-07-12",
+      "clicks": 0,
+      "impressions": 135
+    },
+    {
+      "date": "2026-07-13",
+      "clicks": 0,
+      "impressions": 190
+    },
+    {
+      "date": "2026-07-14",
+      "clicks": 0,
+      "impressions": 151
+    },
+    {
+      "date": "2026-07-15",
+      "clicks": 1,
+      "impressions": 164
+    },
+    {
+      "date": "2026-07-16",
+      "clicks": 0,
+      "impressions": 139
+    },
+    {
+      "date": "2026-07-17",
+      "clicks": 0,
+      "impressions": 118
+    },
+    {
+      "date": "2026-07-18",
+      "clicks": 1,
+      "impressions": 209
+    },
+    {
+      "date": "2026-07-19",
+      "clicks": 1,
+      "impressions": 182
+    },
+    {
+      "date": "2026-07-20",
+      "clicks": 1,
+      "impressions": 189
+    },
+    {
+      "date": "2026-07-21",
+      "clicks": 0,
+      "impressions": 188
+    },
+    {
+      "date": "2026-07-22",
+      "clicks": 1,
+      "impressions": 200
+    },
+    {
+      "date": "2026-07-23",
+      "clicks": 2,
+      "impressions": 135
+    },
+    {
+      "date": "2026-07-24",
+      "clicks": 0,
+      "impressions": 121
+    },
+    {
+      "date": "2026-07-25",
+      "clicks": 2,
+      "impressions": 112
+    },
+    {
+      "date": "2026-07-26",
+      "clicks": 0,
+      "impressions": 136
+    },
+    {
+      "date": "2026-07-27",
+      "clicks": 0,
+      "impressions": 154
+    }
+  ],
+  "allLatest": [
+    {
+      "date": "2026-07-14",
+      "clicks": 0,
+      "impressions": 151
+    },
+    {
+      "date": "2026-07-15",
+      "clicks": 1,
+      "impressions": 164
+    },
+    {
+      "date": "2026-07-16",
+      "clicks": 0,
+      "impressions": 139
+    },
+    {
+      "date": "2026-07-17",
+      "clicks": 0,
+      "impressions": 118
+    },
+    {
+      "date": "2026-07-18",
+      "clicks": 1,
+      "impressions": 209
+    },
+    {
+      "date": "2026-07-19",
+      "clicks": 1,
+      "impressions": 182
+    },
+    {
+      "date": "2026-07-20",
+      "clicks": 1,
+      "impressions": 189
+    },
+    {
+      "date": "2026-07-21",
+      "clicks": 0,
+      "impressions": 188
+    },
+    {
+      "date": "2026-07-22",
+      "clicks": 1,
+      "impressions": 200
+    },
+    {
+      "date": "2026-07-23",
+      "clicks": 2,
+      "impressions": 135
+    },
+    {
+      "date": "2026-07-24",
+      "clicks": 0,
+      "impressions": 121
+    },
+    {
+      "date": "2026-07-25",
+      "clicks": 2,
+      "impressions": 112
+    },
+    {
+      "date": "2026-07-26",
+      "clicks": 0,
+      "impressions": 136
+    },
+    {
+      "date": "2026-07-27",
+      "clicks": 0,
+      "impressions": 154
+    }
+  ]
+}
