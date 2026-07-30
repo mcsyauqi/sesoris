@@ -820,5 +820,41 @@
     "date": "2026-07-29",
     "status": "published",
     "note": "Created content/blog/desk-organizer-rack.json"
+  },
+  {
+    "keyword": "stationery organizer ideas",
+    "volume": 300,
+    "kd": 0,
+    "category": "Office & Desk",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "stationery-organizer-ideas",
+    "date": "2026-07-30",
+    "status": "published",
+    "note": "Created content/blog/stationery-organizer-ideas.json"
+  },
+  {
+    "keyword": "shoe storage cabinet ideas",
+    "volume": 300,
+    "kd": 0,
+    "category": "Home Living",
+    "intent": "Head",
+    "priority": "Tier 2",
+    "slug": "shoe-storage-cabinet-ideas",
+    "date": "2026-07-30",
+    "status": "published",
+    "note": "Created content/blog/shoe-storage-cabinet-ideas.json"
+  },
+  {
+    "keyword": "small kitchen organization tips",
+    "volume": 300,
+    "kd": 0,
+    "category": "Informational",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "small-kitchen-organization-tips",
+    "date": "2026-07-30",
+    "status": "published",
+    "note": "Created content/blog/small-kitchen-organization-tips.json"
   }
 ]
