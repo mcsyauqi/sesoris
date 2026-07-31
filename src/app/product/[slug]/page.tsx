@@ -103,6 +103,20 @@ export default async function ProductPage(
   // not real customer reviews. Publishing rating markup based on them risks
   // a Google product-review-spam penalty. When a real review system exists,
   // rating markup may be reintroduced from genuine, verifiable reviews only.
+  //
+  // Re-audited 2026-07-31 (Trello FB94dFWR asked for this markup to be added back).
+  // The data does not support it, so it stays out. Measured against src/data/products.ts:
+  //   - 23 products in the catalog, 11 review objects in total
+  //   - those 23 products claim 413 reviews between them
+  //   - 16 of 23 products have ZERO stored review objects
+  //   - 17 of 23 have a reviewCount that does not match their stored reviews
+  //   - e.g. `minimalist-wallet` claims rating 4.5 / reviewCount 42 with 0 stored reviews
+  // The 11 review objects that do exist are seed data (Unsplash stock avatars, ids r1..r11),
+  // and ProductReviewSection's submit handler only calls setSubmitted(true) - there is no
+  // persistence, no API, no backend. There is no review system, only a review UI.
+  //
+  // Do not re-add aggregateRating until genuine, verifiable reviews exist, and then emit it
+  // only for products that actually have them, computed from the data rather than hand-written.
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
