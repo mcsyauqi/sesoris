@@ -5,6 +5,7 @@ import { notFound, redirect, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { getPostBySlug, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelatedPosts, getArchiveDeepLinks } from '@/lib/blog';
 import { getShopLinksForPost } from '@/lib/shopLinks';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 import { NewsletterSidebar } from '@/components/layout';
 import React from 'react';
 
@@ -27,9 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: getBlogSeoTitle(post),
     description: post.excerpt,
-    alternates: {
-      canonical: `/blog/${slug}`,
-    },
+    alternates: selfReferencingAlternates(`/blog/${slug}`),
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -702,6 +701,38 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 Browse all {shopLinks.categoryName}
                 <ChevronRight style={{ width: '14px', height: '14px' }} />
               </Link>
+
+              {/* Secondary category links. Category pages were the most
+                  link-starved money pages in the 2026-07-31 indexation review,
+                  and inbound internal link count, not content length, was what
+                  separated indexed URLs from uncrawled ones. Each article now
+                  points at three category pages instead of one. */}
+              {shopLinks.secondaryCategories.length > 0 && (
+                <div style={{ marginTop: '18px', paddingTop: '16px', borderTop: '1px solid rgba(27,94,59,0.12)' }}>
+                  <div style={{ fontSize: '13px', color: '#6C757D', marginBottom: '10px' }}>
+                    Related collections
+                  </div>
+                  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                    {shopLinks.secondaryCategories.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        href={`/category/${cat.slug}`}
+                        style={{
+                          padding: '7px 14px',
+                          borderRadius: '20px',
+                          border: '1px solid rgba(27,94,59,0.35)',
+                          color: '#1B5E3B',
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        {cat.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Newsletter CTA */}

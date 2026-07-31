@@ -5,6 +5,7 @@ import { ProductCard } from '@/components/product';
 import { getCategoryBySlug, getProductsByCategory, categories } from '@/data/products';
 import { categoryContent } from '@/data/categoryContent';
 import { notFound } from 'next/navigation';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 import type { Metadata } from 'next';
 
 const stripSesorisBrandSuffix = (title: string) =>
@@ -28,9 +29,7 @@ export async function generateMetadata(
   return {
     title,
     description,
-    alternates: {
-      canonical: `/category/${slug}`,
-    },
+    alternates: selfReferencingAlternates(`/category/${slug}`),
     openGraph: {
       title,
       description,
@@ -157,21 +156,53 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               {seo.intro}
             </p>
 
+            {/* Section headings are h2, not h3. Answer engines and search
+                crawlers use heading level to decide what a passage is about,
+                and these sections are top-level topics on the page rather than
+                sub-points of the intro. */}
             {seo.sections.map((section, i) => (
               <div key={i} style={{ marginBottom: '28px' }}>
-                <h3 style={{
-                  fontSize: '16px',
-                  fontWeight: 600,
+                <h2 style={{
+                  fontFamily: 'var(--font-heading), Georgia, serif',
+                  fontSize: '19px',
+                  fontWeight: 400,
                   color: '#1B5E3B',
                   marginBottom: '8px',
                 }}>
                   {section.heading}
-                </h3>
-                <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.7', maxWidth: '720px' }}>
+                </h2>
+                <p style={{ fontSize: '15px', color: '#495057', lineHeight: '1.75', maxWidth: '720px' }}>
                   {section.text}
                 </p>
               </div>
             ))}
+
+            {/* FAQ: visible content only. No FAQPage structured data is
+                emitted here on purpose, matching the deliberate decision on
+                product pages to keep unverifiable markup off this site. */}
+            {seo.faqs.length > 0 && (
+              <div style={{ marginTop: '40px', paddingTop: '28px', borderTop: '1px solid #E9ECEF' }}>
+                <h2 style={{
+                  fontFamily: 'var(--font-heading), Georgia, serif',
+                  fontSize: 'clamp(19px, 3vw, 22px)',
+                  fontWeight: 400,
+                  color: '#212529',
+                  marginBottom: '20px',
+                }}>
+                  {category.name} questions, answered
+                </h2>
+                {seo.faqs.map((faq, i) => (
+                  <div key={i} style={{ marginBottom: '22px', maxWidth: '720px' }}>
+                    <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#212529', marginBottom: '6px' }}>
+                      {faq.question}
+                    </h3>
+                    <p style={{ fontSize: '15px', color: '#495057', lineHeight: '1.75' }}>
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Related Categories */}
             {seo.relatedCategories.length > 0 && (

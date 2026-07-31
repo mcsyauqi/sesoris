@@ -28,26 +28,63 @@ function slugSeed(slug: string): number {
   return h >>> 0;
 }
 
-export function getShopLinksForPost(post: BlogPost, productCount = 2): { categorySlug: string; categoryName: string; products: Product[] } {
+export function getShopLinksForPost(
+  post: BlogPost,
+  productCount = 2,
+  secondaryCount = 2,
+): {
+  categorySlug: string;
+  categoryName: string;
+  products: Product[];
+  secondaryCategories: { slug: string; name: string }[];
+} {
   const haystack = `${post.title} ${post.excerpt} ${post.content.join(' ')}`.toLowerCase();
+
+  const allSlugs = Object.keys(CATEGORY_KEYWORDS);
+  const scored = allSlugs.map((slug) => ({
+    slug,
+    score: CATEGORY_KEYWORDS[slug].reduce((acc, kw) => acc + (haystack.includes(kw) ? 1 : 0), 0),
+  }));
 
   let bestSlug = '';
   let bestScore = 0;
-  for (const slug of Object.keys(CATEGORY_KEYWORDS)) {
-    const score = CATEGORY_KEYWORDS[slug].reduce((acc, kw) => acc + (haystack.includes(kw) ? 1 : 0), 0);
-    if (score > bestScore) {
-      bestScore = score;
-      bestSlug = slug;
+  for (const entry of scored) {
+    if (entry.score > bestScore) {
+      bestScore = entry.score;
+      bestSlug = entry.slug;
     }
   }
 
   if (!bestSlug) {
-    const slugs = Object.keys(CATEGORY_KEYWORDS);
-    bestSlug = slugs[slugSeed(post.slug) % slugs.length];
+    bestSlug = allSlugs[slugSeed(post.slug) % allSlugs.length];
   }
+
+  // Every article links to more than one money page.
+  //
+  // The 2026-07-31 indexation review found inbound internal links, not word
+  // count, tracking with whether a URL was indexed at all: 29.0 average
+  // inbound links for URLs Google had not indexed versus 57.9 for indexed
+  // ones. Linking only the single best-matching category left category pages
+  // starved. Secondary links are the next-best scoring categories, falling
+  // back to a slug-seeded rotation so posts that match nothing still spread
+  // link equity instead of all pointing at the same page.
+  const seed = slugSeed(post.slug);
+  const secondaryPool = scored
+    .filter((entry) => entry.slug !== bestSlug)
+    .sort((a, b) => (b.score - a.score) || ((slugSeed(a.slug) + seed) % 97) - ((slugSeed(b.slug) + seed) % 97));
+
+  const secondaryCategories = secondaryPool.slice(0, Math.max(0, secondaryCount)).map((entry) => {
+    const cat = categories.find((c) => c.slug === entry.slug);
+    return { slug: entry.slug, name: cat?.name ?? entry.slug };
+  });
 
   const category = categories.find((c) => c.slug === bestSlug);
   const products = getProductsByCategory(bestSlug).slice(0, productCount);
 
-  return { categorySlug: bestSlug, categoryName: category?.name ?? bestSlug, products };
+  return {
+    categorySlug: bestSlug,
+    categoryName: category?.name ?? bestSlug,
+    products,
+    secondaryCategories,
+  };
 }
