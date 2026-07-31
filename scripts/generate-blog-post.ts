@@ -224,8 +224,28 @@ function toISODate(date: Date): string {
   return date.toISOString().split('T')[0];
 }
 
+// Scheduled-publishing override. `PUBLISH_DATE=YYYY-MM-DD npm run generate:blog`
+// dates the article in the future, so getAllPosts() (which gates on `date <= today`)
+// holds it back until that day arrives. Without it every run publishes same-day,
+// which is why the blog had a zero-article forward buffer on 2026-07-31 despite the
+// cron running successfully every morning. The date also drives the per-day topic
+// bias below, so a run scheduled for a Saturday gets the Saturday topic.
+// Noon UTC keeps toISODate() and the local-time formatDate() on the same calendar day.
+function resolvePublishDate(): Date {
+  const raw = process.env.PUBLISH_DATE?.trim();
+  if (!raw) return new Date();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    throw new Error(`PUBLISH_DATE must be YYYY-MM-DD, received: ${raw}`);
+  }
+  const parsed = new Date(`${raw}T12:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) {
+    throw new Error(`PUBLISH_DATE is not a real date: ${raw}`);
+  }
+  return parsed;
+}
+
 async function generatePost() {
-  const today = new Date();
+  const today = resolvePublishDate();
   const dayOfWeek = today.getDay();
   const topicBias = topicsByDay[dayOfWeek] || 'home-organization';
   const existing = getExistingPosts();

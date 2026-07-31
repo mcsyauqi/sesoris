@@ -1,164 +1,668 @@
 [
   {
-    "keyword": "small bedroom organization tips",
-    "volume": 300,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "small-bedroom-organization-tips"
-  },
-  {
-    "keyword": "tips for a tidy home",
-    "volume": 300,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "tips-for-a-tidy-home"
-  },
-  {
-    "keyword": "multipurpose storage boxes",
-    "volume": 260,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "multipurpose-storage-boxes"
-  },
-  {
-    "keyword": "home decluttering guide",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "home-decluttering-guide"
-  },
-  {
-    "keyword": "how to organize your desk",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "how-to-organize-your-desk"
-  },
-  {
-    "keyword": "how to organize a dish rack",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "how-to-organize-a-dish-rack"
-  },
-  {
-    "keyword": "how to store spices properly",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "how-to-store-spices-properly"
+    "keyword": "compression packing cubes",
+    "volume": 10000,
+    "kd": 12,
+    "category": "Travel",
+    "intent": "Commercial",
+    "priority": "Tier 1",
+    "slug": "compression-packing-cubes"
   },
   {
     "keyword": "how to pack a suitcase efficiently",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
+    "volume": 6700,
+    "kd": 4,
+    "category": "Travel",
     "intent": "Informational",
-    "priority": "Tier 2",
+    "priority": "Tier 1",
     "slug": "how-to-pack-a-suitcase-efficiently"
   },
   {
-    "keyword": "best affordable dish racks",
-    "volume": 200,
-    "kd": 0,
-    "category": "Buyer Intent",
-    "intent": "Transactional",
-    "priority": "Tier 2",
-    "slug": "best-affordable-dish-racks"
+    "keyword": "bathroom storage ideas",
+    "volume": 3900,
+    "kd": 6,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "bathroom-storage-ideas"
   },
   {
-    "keyword": "starter home organization ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
+    "keyword": "small bathroom storage ideas",
+    "volume": 3100,
+    "kd": 14,
+    "category": "Bathroom",
     "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "starter-home-organization-ideas"
+    "priority": "Tier 1",
+    "slug": "small-bathroom-storage-ideas"
   },
   {
-    "keyword": "tiny kitchen layout ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
+    "keyword": "toy storage ideas",
+    "volume": 2900,
+    "kd": 10,
+    "category": "Kids & Toys",
     "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "tiny-kitchen-layout-ideas"
+    "priority": "Tier 1",
+    "slug": "toy-storage-ideas"
   },
   {
-    "keyword": "storage ideas for small homes",
-    "volume": 200,
+    "keyword": "hat storage ideas",
+    "volume": 2500,
     "kd": 0,
-    "category": "Informational",
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "hat-storage-ideas"
+  },
+  {
+    "keyword": "bedroom storage ideas",
+    "volume": 2000,
+    "kd": 4,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "bedroom-storage-ideas"
+  },
+  {
+    "keyword": "book storage ideas",
+    "volume": 1500,
+    "kd": 2,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "book-storage-ideas"
+  },
+  {
+    "keyword": "small pantry organization ideas",
+    "volume": 1400,
+    "kd": 4,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "small-pantry-organization-ideas"
+  },
+  {
+    "keyword": "diy garage storage ideas",
+    "volume": 1300,
+    "kd": 17,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-garage-storage-ideas"
+  },
+  {
+    "keyword": "garage bike storage ideas",
+    "volume": 1000,
+    "kd": 4,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "garage-bike-storage-ideas"
+  },
+  {
+    "keyword": "small entryway shoe storage ideas",
+    "volume": 800,
+    "kd": 0,
+    "category": "Entryway",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "storage-ideas-for-small-homes"
+    "slug": "small-entryway-shoe-storage-ideas"
+  },
+  {
+    "keyword": "fridge organization ideas",
+    "volume": 700,
+    "kd": 6,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "fridge-organization-ideas"
+  },
+  {
+    "keyword": "walk in closet organization ideas",
+    "volume": 700,
+    "kd": 7,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "walk-in-closet-organization-ideas"
+  },
+  {
+    "keyword": "small kitchen organization ideas",
+    "volume": 700,
+    "kd": 11,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "small-kitchen-organization-ideas"
+  },
+  {
+    "keyword": "kitchen drawer organizer for large utensils",
+    "volume": 600,
+    "kd": 2,
+    "category": "Kitchen",
+    "intent": "Commercial",
+    "priority": "Tier 2",
+    "slug": "kitchen-drawer-organizer-for-large-utensils"
+  },
+  {
+    "keyword": "bathroom towel storage ideas",
+    "volume": 600,
+    "kd": 1,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "bathroom-towel-storage-ideas"
+  },
+  {
+    "keyword": "kids room organization ideas",
+    "volume": 500,
+    "kd": 2,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "kids-room-organization-ideas"
+  },
+  {
+    "keyword": "garage shoe storage ideas",
+    "volume": 450,
+    "kd": 0,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "garage-shoe-storage-ideas"
+  },
+  {
+    "keyword": "gaming desk setup ideas",
+    "volume": 400,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "gaming-desk-setup-ideas"
+  },
+  {
+    "keyword": "hidden toy storage ideas",
+    "volume": 400,
+    "kd": 0,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "hidden-toy-storage-ideas"
   },
   {
     "keyword": "home storage ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Informational",
+    "volume": 400,
+    "kd": 16,
+    "category": "Storage",
     "intent": "Informational",
     "priority": "Tier 2",
     "slug": "home-storage-ideas"
   },
   {
-    "keyword": "wall shelf inspiration",
-    "volume": 200,
+    "keyword": "toy storage ideas for small spaces",
+    "volume": 300,
     "kd": 0,
-    "category": "Informational",
+    "category": "Kids & Toys",
     "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "wall-shelf-inspiration"
+    "slug": "toy-storage-ideas-for-small-spaces"
   },
   {
-    "keyword": "where to buy dish racks",
-    "volume": 200,
-    "kd": 0,
-    "category": "Buyer Intent",
-    "intent": "Transactional",
+    "keyword": "bathroom storage cabinet ideas",
+    "volume": 250,
+    "kd": 1,
+    "category": "Bathroom",
+    "intent": "Commercial",
     "priority": "Tier 2",
-    "slug": "where-to-buy-dish-racks"
+    "slug": "bathroom-storage-cabinet-ideas"
   },
   {
-    "keyword": "home organizer essentials",
-    "volume": 200,
-    "kd": 0,
-    "category": "Home Living",
-    "intent": "Head",
+    "keyword": "small laundry room organization",
+    "volume": 250,
+    "kd": 5,
+    "category": "Laundry",
+    "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "home-organizer-essentials"
+    "slug": "small-laundry-room-organization"
   },
   {
-    "keyword": "holiday hosting preparation checklist",
-    "volume": 200,
+    "keyword": "medicine cabinet organization ideas",
+    "volume": 250,
     "kd": 0,
-    "category": "Seasonal",
-    "intent": "Seasonal",
+    "category": "Bathroom",
+    "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "holiday-hosting-preparation-checklist"
+    "slug": "medicine-cabinet-organization-ideas"
   },
   {
-    "keyword": "minimalist kids bookshelf",
+    "keyword": "how to organize your desk",
+    "volume": 250,
+    "kd": 1,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-organize-your-desk"
+  },
+  {
+    "keyword": "under kitchen sink organization ideas",
     "volume": 200,
     "kd": 0,
-    "category": "Seasonal",
-    "intent": "Seasonal",
+    "category": "Kitchen",
+    "intent": "Informational",
     "priority": "Tier 2",
-    "slug": "minimalist-kids-bookshelf"
+    "slug": "under-kitchen-sink-organization-ideas"
+  },
+  {
+    "keyword": "office desk setup ideas",
+    "volume": 200,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "office-desk-setup-ideas"
+  },
+  {
+    "keyword": "work from home desk setup ideas",
+    "volume": 200,
+    "kd": 2,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "work-from-home-desk-setup-ideas"
+  },
+  {
+    "keyword": "jewelry organization ideas",
+    "volume": 200,
+    "kd": 2,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "jewelry-organization-ideas"
+  },
+  {
+    "keyword": "storage bin labels",
+    "volume": 200,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Commercial",
+    "priority": "Tier 2",
+    "slug": "storage-bin-labels"
+  },
+  {
+    "keyword": "indoor plant wall shelf ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Plants",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "indoor-plant-wall-shelf-ideas"
+  },
+  {
+    "keyword": "small linen closet organization",
+    "volume": 200,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "small-linen-closet-organization"
+  },
+  {
+    "keyword": "purse organization ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "purse-organization-ideas"
+  },
+  {
+    "keyword": "indoor plant stand ideas",
+    "volume": 200,
+    "kd": 1,
+    "category": "Plants",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "indoor-plant-stand-ideas"
+  },
+  {
+    "keyword": "kids bedroom storage ideas",
+    "volume": 200,
+    "kd": 1,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "kids-bedroom-storage-ideas"
+  },
+  {
+    "keyword": "tupperware organization ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "tupperware-organization-ideas"
+  },
+  {
+    "keyword": "3 car garage organization ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "3-car-garage-organization-ideas"
+  },
+  {
+    "keyword": "storage ideas for small spaces bedroom",
+    "volume": 200,
+    "kd": 3,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "storage-ideas-for-small-spaces-bedroom"
+  },
+  {
+    "keyword": "home gym organization ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "home-gym-organization-ideas"
+  },
+  {
+    "keyword": "under sink organization ideas",
+    "volume": 150,
+    "kd": 5,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "under-sink-organization-ideas"
+  },
+  {
+    "keyword": "under bathroom sink organization ideas",
+    "volume": 150,
+    "kd": 1,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "under-bathroom-sink-organization-ideas"
+  },
+  {
+    "keyword": "office supplies organization ideas",
+    "volume": 150,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Commercial",
+    "priority": "Tier 3",
+    "slug": "office-supplies-organization-ideas"
+  },
+  {
+    "keyword": "craft room organization ideas on a budget",
+    "volume": 150,
+    "kd": 0,
+    "category": "Craft Room",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "craft-room-organization-ideas-on-a-budget"
+  },
+  {
+    "keyword": "diy plant stand ideas",
+    "volume": 150,
+    "kd": 2,
+    "category": "Plants",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "diy-plant-stand-ideas"
+  },
+  {
+    "keyword": "carry on packing tips",
+    "volume": 150,
+    "kd": 12,
+    "category": "Travel",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "carry-on-packing-tips"
+  },
+  {
+    "keyword": "sock drawer organization",
+    "volume": 150,
+    "kd": 0,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "sock-drawer-organization"
+  },
+  {
+    "keyword": "kids book storage ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "kids-book-storage-ideas"
+  },
+  {
+    "keyword": "book storage ideas for small spaces",
+    "volume": 150,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "book-storage-ideas-for-small-spaces"
+  },
+  {
+    "keyword": "winter hat and glove storage ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "winter-hat-and-glove-storage-ideas"
+  },
+  {
+    "keyword": "car organization ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Travel",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "car-organization-ideas"
+  },
+  {
+    "keyword": "home office desk organization",
+    "volume": 100,
+    "kd": 6,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "home-office-desk-organization"
+  },
+  {
+    "keyword": "desk cable management ideas",
+    "volume": 100,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "desk-cable-management-ideas"
+  },
+  {
+    "keyword": "bedroom organization ideas for small spaces",
+    "volume": 100,
+    "kd": 1,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "bedroom-organization-ideas-for-small-spaces"
+  },
+  {
+    "keyword": "nightstand organization ideas",
+    "volume": 100,
+    "kd": 0,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "nightstand-organization-ideas"
+  },
+  {
+    "keyword": "diy cardboard box storage ideas",
+    "volume": 100,
+    "kd": 1,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "diy-cardboard-box-storage-ideas"
+  },
+  {
+    "keyword": "suitcase packing tips",
+    "volume": 100,
+    "kd": 3,
+    "category": "Travel",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "suitcase-packing-tips"
+  },
+  {
+    "keyword": "outdoor plant shelf ideas",
+    "volume": 100,
+    "kd": 1,
+    "category": "Plants",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "outdoor-plant-shelf-ideas"
+  },
+  {
+    "keyword": "small entryway organization ideas",
+    "volume": 100,
+    "kd": 0,
+    "category": "Entryway",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "small-entryway-organization-ideas"
+  },
+  {
+    "keyword": "makeup organization ideas",
+    "volume": 100,
+    "kd": 1,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "makeup-organization-ideas"
+  },
+  {
+    "keyword": "seasonal decor storage",
+    "volume": 100,
+    "kd": 3,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "seasonal-decor-storage"
+  },
+  {
+    "keyword": "home organization ideas for small spaces",
+    "volume": 90,
+    "kd": 8,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "home-organization-ideas-for-small-spaces"
+  },
+  {
+    "keyword": "entryway closet organization ideas",
+    "volume": 90,
+    "kd": 1,
+    "category": "Entryway",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "entryway-closet-organization-ideas"
+  },
+  {
+    "keyword": "under dorm bed storage ideas",
+    "volume": 80,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "under-dorm-bed-storage-ideas"
+  },
+  {
+    "keyword": "makeup vanity organization ideas",
+    "volume": 80,
+    "kd": 0,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "makeup-vanity-organization-ideas"
+  },
+  {
+    "keyword": "coffee station organization",
+    "volume": 80,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "coffee-station-organization"
+  },
+  {
+    "keyword": "mail organization ideas",
+    "volume": 70,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "mail-organization-ideas"
+  },
+  {
+    "keyword": "mini fridge organization ideas",
+    "volume": 50,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "mini-fridge-organization-ideas"
+  },
+  {
+    "keyword": "free printable storage bin labels",
+    "volume": 50,
+    "kd": 4,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "free-printable-storage-bin-labels"
+  },
+  {
+    "keyword": "spice rack organization",
+    "volume": 50,
+    "kd": 5,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "spice-rack-organization"
+  },
+  {
+    "keyword": "dresser drawer organization ideas",
+    "volume": 40,
+    "kd": 2,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "dresser-drawer-organization-ideas"
+  },
+  {
+    "keyword": "small space organization hacks",
+    "volume": 40,
+    "kd": 4,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "small-space-organization-hacks"
+  },
+  {
+    "keyword": "tiny kitchen layout ideas",
+    "volume": 40,
+    "kd": 3,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "tiny-kitchen-layout-ideas"
   }
 ]
