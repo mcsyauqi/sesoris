@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Newspaper, Download, ExternalLink, Mail } from 'lucide-react';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris Press | Home Organization Brand Profile',
   description: 'Press information for Sesoris: media inquiries, collaborations, and brand profile for our Live More Organized mission.',
-  alternates: { canonical: '/press' },
+  alternates: selfReferencingAlternates('/press'),
   openGraph: {
     title: 'Sesoris Press | Home Organization Brand Profile | Sesoris',
     description: 'Press information for Sesoris: media inquiries, collaborations, and brand profile for our Live More Organized mission.',

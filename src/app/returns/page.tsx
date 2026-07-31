@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, RotateCcw, CheckCircle, XCircle, Clock, Package } from 'lucide-react';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris Returns | How to Exchange & Refund',
   description: 'Learn how returns, exchanges, and refunds work at Sesoris so shopping for home organizers stays safe and easy.',
-  alternates: { canonical: '/returns' },
+  alternates: selfReferencingAlternates('/returns'),
   openGraph: {
     title: 'Sesoris Returns | How to Exchange & Refund | Sesoris',
     description: 'Learn how returns, exchanges, and refunds work at Sesoris so shopping for home organizers stays safe and easy.',

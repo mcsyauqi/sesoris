@@ -3,6 +3,7 @@ import Script from 'next/script';
 import './globals.css';
 import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
 import { DM_Sans, DM_Serif_Display } from 'next/font/google';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   publisher: 'Sesoris',
   metadataBase: new URL('https://www.sesoris.com'),
   alternates: {
-    canonical: 'https://www.sesoris.com/',
+    ...selfReferencingAlternates('https://www.sesoris.com/'),
     types: {
       'application/rss+xml': '/feed.xml',
     },

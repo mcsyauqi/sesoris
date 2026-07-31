@@ -9,11 +9,12 @@ import {
   TestimonialsSection,
   HomeFAQSection,
 } from '@/components/home';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris | Home Organizers for a More Organized Home',
   description: 'Discover home organizers, storage shelves, and curated home living essentials from Sesoris to make your home tidier and more comfortable.',
-  alternates: { canonical: '/' },
+  alternates: selfReferencingAlternates('https://www.sesoris.com/'),
   openGraph: {
     title: 'Sesoris | Home Organizers for a More Organized Home | Sesoris',
     description: 'Discover home organizers, storage shelves, and curated home living essentials from Sesoris to make your home tidier and more comfortable.',

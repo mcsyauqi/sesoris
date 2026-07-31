@@ -5,11 +5,12 @@ import { Home, ChevronRight, Star, Heart, ShoppingCart, Percent } from 'lucide-r
 import { products } from '@/data/products';
 import { formatPrice, calculateDiscount } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sale',
   description: 'Shop Sesoris sale items. Great deals on quality home organizers, storage solutions, and accessories.',
-  alternates: { canonical: '/on-sale' },
+  alternates: selfReferencingAlternates('/on-sale'),
   openGraph: {
     title: 'Sale | Sesoris',
     description: 'Shop Sesoris sale items. Great deals on quality home organizers, storage solutions, and accessories.',

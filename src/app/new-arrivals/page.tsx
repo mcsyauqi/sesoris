@@ -5,11 +5,12 @@ import { Home, ChevronRight, Star, Heart, ShoppingCart } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris New Arrivals | Home Organizers 2026',
   description: 'Browse the latest Sesoris collection: home organizers, kitchen storage, and practical home living accessories for 2026.',
-  alternates: { canonical: '/new-arrivals' },
+  alternates: selfReferencingAlternates('/new-arrivals'),
   openGraph: {
     title: 'Sesoris New Arrivals | Home Organizers 2026 | Sesoris',
     description: 'Browse the latest Sesoris collection: home organizers, kitchen storage, and practical home living accessories for 2026.',

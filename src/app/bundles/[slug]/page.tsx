@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getBundleBySlug, bundles } from '@/data/bundles';
 import { products } from '@/data/products';
 import BundlePageClient from './BundlePageClient';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${bundle.name}, Save ${bundle.discountPercent}% | Sesoris`,
     description: bundle.description,
-    alternates: { canonical: `/bundles/${bundle.slug}` },
+    alternates: selfReferencingAlternates(`/bundles/${bundle.slug}`),
     openGraph: {
       title: `${bundle.name} | Sesoris Bundle Deal`,
       description: bundle.description,

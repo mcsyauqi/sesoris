@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, FileText, ShoppingBag, Truck, RefreshCw, AlertTriangle, Scale, Mail } from 'lucide-react';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris Terms of Service | Safe Shopping',
   description: 'Read the Sesoris terms of service for home organizer shopping, payment, shipping, returns, and website use.',
-  alternates: { canonical: '/terms' },
+  alternates: selfReferencingAlternates('/terms'),
   openGraph: {
     title: 'Sesoris Terms of Service | Safe Shopping | Sesoris',
     description: 'Read the Sesoris terms of service for home organizer shopping, payment, shipping, returns, and website use.',

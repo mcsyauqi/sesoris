@@ -5,11 +5,12 @@ import { Home, ChevronRight, Star, Heart, ShoppingCart, TrendingUp } from 'lucid
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris Best Sellers | Top-Rated Home Organizers',
   description: 'Shop Sesoris best sellers, from storage racks to kitchen organizers our customers choose most often.',
-  alternates: { canonical: '/best-sellers' },
+  alternates: selfReferencingAlternates('/best-sellers'),
   openGraph: {
     title: 'Sesoris Best Sellers | Top-Rated Home Organizers | Sesoris',
     description: 'Shop Sesoris best sellers, from storage racks to kitchen organizers our customers choose most often.',

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, Truck, Clock, MapPin, Package, CheckCircle } from 'lucide-react';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris Shipping Info | Delivery Times & Costs',
   description: 'Check Sesoris shipping information, estimated delivery times, carrier options, and shipping policy for home organizer orders.',
-  alternates: { canonical: '/shipping' },
+  alternates: selfReferencingAlternates('/shipping'),
   openGraph: {
     title: 'Sesoris Shipping Info | Delivery Times & Costs | Sesoris',
     description: 'Check Sesoris shipping information, estimated delivery times, carrier options, and shipping policy for home organizer orders.',

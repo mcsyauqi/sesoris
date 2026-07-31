@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import ShopPageClient from './ShopPageClient';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris Shop | Home Organizers, Kitchen & Lifestyle',
   description: 'Shop a curated catalog of 23 home organizers, kitchen essentials, handy tools, gift sets, and lifestyle picks at Sesoris. Free shipping over $50.',
-  alternates: { canonical: '/shop' },
+  alternates: selfReferencingAlternates('/shop'),
   openGraph: {
     title: 'Sesoris Shop | Home Organizers, Kitchen & Lifestyle',
     description: 'Shop home organizers, kitchen essentials, handy tools, gift sets, and lifestyle picks at Sesoris.',

@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Heart, Globe, Users, Leaf, Award } from 'lucide-react';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'About Sesoris | Live More Organized',
   description: 'Get to know Sesoris, a home organization store that helps households choose practical organizers for a more organized home.',
-  alternates: { canonical: '/about' },
+  alternates: selfReferencingAlternates('/about'),
   openGraph: {
     title: 'About Sesoris | Live More Organized | Sesoris',
     description: 'Get to know Sesoris, a home organization store that helps households choose practical organizers for a more organized home.',

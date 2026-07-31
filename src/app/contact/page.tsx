@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import ContactPageClient from './ContactPageClient';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Contact Sesoris | Home Organizer Store',
   description: 'Contact Sesoris for questions about home organizers, kitchen storage, travel products, orders, wholesale, and customer support.',
-  alternates: { canonical: '/contact' },
+  alternates: selfReferencingAlternates('/contact'),
   openGraph: {
     title: 'Contact Sesoris | Home Organizer Store',
     description: 'Contact Sesoris for questions about home organizers, kitchen storage, travel products, orders, wholesale, and customer support.',

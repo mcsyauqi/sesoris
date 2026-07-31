@@ -6,11 +6,12 @@ import { bundles } from '@/data/bundles';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Bundle Deals, Save Up to 18% | Sesoris',
   description: 'Shop curated product bundles at Sesoris and save up to 18%. Kitchen Starter Kit, Home Office Bundle, Organizer Essential, and more.',
-  alternates: { canonical: '/bundles' },
+  alternates: selfReferencingAlternates('/bundles'),
   openGraph: {
     title: 'Bundle Deals, Save Up to 18% | Sesoris',
     description: 'Shop curated product bundles and save up to 18% vs buying separately.',

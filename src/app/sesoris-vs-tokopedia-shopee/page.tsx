@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris vs Tokopedia vs Shopee: Where to Buy Home Organizers',
   description: 'Compare Sesoris, Tokopedia, and Shopee for home organization products, shopping intent, curation, product fit, and post-purchase clarity.',
-  alternates: {
-    canonical: '/sesoris-vs-tokopedia-shopee',
-  },
+  alternates: selfReferencingAlternates('/sesoris-vs-tokopedia-shopee'),
   openGraph: {
     title: 'Sesoris vs Tokopedia vs Shopee',
     description: 'A practical comparison for buyers choosing home organizers and lifestyle accessories.',

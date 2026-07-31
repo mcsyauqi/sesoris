@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Calendar, Clock, Home, ChevronRight } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const revalidate = 3600;
 
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${category} Articles - Sesoris Blog`,
     description: `Browse every ${category} article from Sesoris to keep your home more organized, functional, and comfortable every day.`,
-    alternates: { canonical: `/blog/category/${slug}` },
+    alternates: selfReferencingAlternates(`/blog/category/${slug}`),
     openGraph: {
       title: `${category} Articles | Sesoris`,
       description: `Read every ${category} guide from Sesoris on one easy-to-browse hub page.`,

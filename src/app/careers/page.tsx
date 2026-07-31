@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, Briefcase, MapPin, Clock, Users, Heart, Zap, Coffee, ArrowRight } from 'lucide-react';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Careers',
   description: 'Join the Sesoris team. Explore career opportunities in e-commerce, design, marketing, and more.',
-  alternates: { canonical: '/careers' },
+  alternates: selfReferencingAlternates('/careers'),
   openGraph: {
     title: 'Careers | Sesoris',
     description: 'Join the Sesoris team. Explore career opportunities in e-commerce, design, marketing, and more.',

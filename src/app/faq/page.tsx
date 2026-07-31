@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import FAQPageClient from './FAQPageClient';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris FAQ | Shopping & Organizer Questions',
   description: 'Find answers about products, shipping, payment, returns, and how to choose home organizers at Sesoris.',
-  alternates: { canonical: '/faq' },
+  alternates: selfReferencingAlternates('/faq'),
   openGraph: {
     title: 'Sesoris FAQ | Shopping & Organizer Questions | Sesoris',
     description: 'Find answers about products, shipping, payment, returns, and how to choose home organizers at Sesoris.',

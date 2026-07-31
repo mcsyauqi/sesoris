@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, Ruler, HelpCircle } from 'lucide-react';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Size Guide',
   description: 'Sesoris product size guide. Find the perfect fit for organizers, storage solutions, and home accessories.',
-  alternates: { canonical: '/size-guide' },
+  alternates: selfReferencingAlternates('/size-guide'),
   openGraph: {
     title: 'Size Guide | Sesoris',
     description: 'Sesoris product size guide. Find the perfect fit for organizers, storage solutions, and home accessories.',
