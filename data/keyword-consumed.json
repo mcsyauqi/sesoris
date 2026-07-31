@@ -1024,5 +1024,17 @@
     "date": "2026-07-31",
     "status": "published",
     "note": "Created content\\blog\\office-organization-supplies.json"
+  },
+  {
+    "keyword": "home organization ideas for small spaces",
+    "volume": 90,
+    "kd": 8,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "home-organization-ideas-for-small-spaces",
+    "date": "2026-07-31",
+    "status": "published",
+    "note": "Created content\\blog\\home-organization-ideas-for-small-spaces.json"
   }
 ]

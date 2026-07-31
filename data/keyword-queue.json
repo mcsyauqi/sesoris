@@ -36,15 +36,6 @@
     "slug": "small-bathroom-storage-ideas"
   },
   {
-    "keyword": "toy storage ideas",
-    "volume": 2900,
-    "kd": 10,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "toy-storage-ideas"
-  },
-  {
     "keyword": "hat storage ideas",
     "volume": 2500,
     "kd": 0,
@@ -72,15 +63,6 @@
     "slug": "book-storage-ideas"
   },
   {
-    "keyword": "small pantry organization ideas",
-    "volume": 1400,
-    "kd": 4,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "small-pantry-organization-ideas"
-  },
-  {
     "keyword": "diy garage storage ideas",
     "volume": 1300,
     "kd": 17,
@@ -99,15 +81,6 @@
     "slug": "garage-bike-storage-ideas"
   },
   {
-    "keyword": "small entryway shoe storage ideas",
-    "volume": 800,
-    "kd": 0,
-    "category": "Entryway",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "small-entryway-shoe-storage-ideas"
-  },
-  {
     "keyword": "fridge organization ideas",
     "volume": 700,
     "kd": 6,
@@ -115,15 +88,6 @@
     "intent": "Informational",
     "priority": "Tier 2",
     "slug": "fridge-organization-ideas"
-  },
-  {
-    "keyword": "walk in closet organization ideas",
-    "volume": 700,
-    "kd": 7,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "walk-in-closet-organization-ideas"
   },
   {
     "keyword": "small kitchen organization ideas",
@@ -556,15 +520,6 @@
     "intent": "Informational",
     "priority": "Tier 3",
     "slug": "seasonal-decor-storage"
-  },
-  {
-    "keyword": "home organization ideas for small spaces",
-    "volume": 90,
-    "kd": 8,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "home-organization-ideas-for-small-spaces"
   },
   {
     "keyword": "entryway closet organization ideas",
