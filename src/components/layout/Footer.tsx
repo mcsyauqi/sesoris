@@ -27,6 +27,18 @@ const footerLinks = {
     { name: 'Careers', href: '/careers' },
     { name: 'Press', href: '/press' },
   ],
+  // Free /tools/* utility pages. Added to the footer 2026-07-31: GSC URL
+  // Inspection showed all five were orphans (zero inbound internal links,
+  // unreachable from the homepage), so Google left them at
+  // "Discovered - currently not indexed". A sitewide footer link makes them
+  // reachable at depth 1 from every page on the site.
+  tools: [
+    { name: 'Storage Box Capacity Calculator', href: '/tools/kalkulator-kapasitas-kebutuhan-storage-box' },
+    { name: 'Decluttering Calculator for Small Rooms', href: '/tools/kalkulator-decluttering-tata-ruang-sempit-kamar-kostdapur-minimalis' },
+    { name: 'Home Organization Type Quiz', href: '/tools/quiz-tipe-organisasi-rumahmu-rekomendasi-produk' },
+    { name: 'Online Ruler and Measuring Tool', href: '/tools/penggaris-alat-ukur-online' },
+    { name: 'Online Unit Converter', href: '/tools/konverter-satuan-online' },
+  ],
   popularArticles: [
     { name: 'Small Apartment Kitchen Organization', href: '/blog/cara-menata-dapur-kecil-apartemen' },
     { name: 'L-Shaped Kitchen Design', href: '/blog/desain-dapur-letter-l-layout-paling-efisien' },
@@ -210,6 +222,18 @@ export function Footer() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Free Tools */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '24px 0' }}>
+          <h3 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Free Tools</h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
+            {footerLinks.tools.map((link) => (
+              <Link key={link.name} href={link.href} style={{ fontSize: '13px', opacity: 0.7 }}>
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
 
