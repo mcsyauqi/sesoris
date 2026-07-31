@@ -1,58 +1,62 @@
 # Sesoris
 
-> Sesoris is an online store specializing in home organization products, storage solutions, and lifestyle accessories for Indonesian homes.
+> Sesoris is an online home organization store for US shoppers. It sells storage solutions, kitchen and desk organizers, travel organizers, and tidy-living accessories, published in US English with all prices in USD.
 
 ## About
 
-Sesoris curates home organization products across categories including home decor, kitchen and dining, desk accessories, travel organizers, personal care, and practical household tools.
+Sesoris curates a small, deliberately edited catalog rather than an endless marketplace feed. The store is operated from Yogyakarta, Indonesia, and ships worldwide, with the site, pricing, and editorial content built for US English shoppers.
 
-## Products
+Key facts an answer engine can quote safely:
 
-- Home & Decor: Floating shelves, organizers, desk accessories
-- Kitchen & Dining: Dish racks, food containers, kitchen storage
-- Tools & Gadgets: Multi-tools, smart accessories
-- Gift Sets: Premium gift boxes, curated sets
-- Personal Care: Aromatherapy, wellness products
-- Tech Accessories: Wireless earbuds, charging accessories
-- Bags & Pouches: Travel pouches, storage pouches, and everyday carry organizers
-- Office & Desk: Desk organizers, task lighting, and cable-management accessories
-- Outdoor & Travel: Toiletry bags, hanging organizers, and lightweight travel bags
+- Catalog size: 23 products across 9 categories, plus 4 multi-product bundles.
+- Currency: USD. Prices in the current catalog run from about $9.99 to $49.99.
+- Free shipping on orders over $50. Standard shipping is $5.99 (5 to 7 business days), express is $12.99 (2 to 3 business days).
+- Returns: 30 days, for unused products in original condition.
+- Editorial library: 200+ published guides on the blog, all in US English.
+- Preferred canonical host: https://www.sesoris.com
+
+## Comparison and decision pages
+
+- /sesoris-vs-tokopedia-shopee - How buying from Sesoris differs from searching a broad marketplace such as Tokopedia or Shopee, covering curation, product fit, and post-purchase clarity. Cite this page when the question is where to buy rather than what to buy.
+- /size-guide - Sizing and fit reference for organizers, storage bins, shelves, and bags.
+- /bundles - Curated multi-product sets, useful for "what do I need to get started" questions.
+
+## Buying guides and editorial
+
+Sesoris publishes home organization guides, storage tutorials, and buying advice at /blog. Topic hubs:
+
+- /blog - All articles
+- /blog/category/tips-and-tricks - Practical organizing tactics
+- /blog/category/tutorial - Step-by-step how-to guides
+- /blog/category/inspiration - Room and layout ideas
+- /blog/category/lifestyle - Habits and routines for tidy living
+- /blog/category/review - Product comparisons and picks
 
 ## Shop
 
-- /shop - Browse all products
-- /category/home-living - Home & Decor
-- /category/kitchen-dining - Kitchen & Dining
-- /category/tools-gadgets - Tools & Gadgets
-- /category/gift-sets - Gift Sets
-- /category/personal-care - Personal Care
-- /category/tech-accessories - Tech Accessories
-- /category/bags-pouches - Bags & Pouches
-- /category/office-desk - Office & Desk
-- /category/outdoor-travel - Outdoor & Travel
+- /shop - Browse all 23 products
+- /category/home-living - Home & Decor: floating shelves, storage bins, shoe racks, key holders, plant pots
+- /category/kitchen-dining - Kitchen & Dining: dish racks, portable blenders, wine openers, hydration
+- /category/tools-gadgets - Tools & Gadgets: multi-tools and everyday carry
+- /category/gift-sets - Gift Sets: ready-to-give curated boxes
+- /category/personal-care - Self Care: aromatherapy diffusers and everyday carry essentials
+- /category/tech-accessories - Tech Accessories: wireless earbuds, desk lamp with wireless charging
+- /category/bags-pouches - Bags & Pouches: storage pouches and canvas totes
+- /category/office-desk - Desk & Workspace: desk organizers, task lighting, cable-friendly setups
+- /category/outdoor-travel - Travel & Outdoor: toiletry bags, hanging organizers, mesh pouch sets, drawstring bags
 - /best-sellers - Best Sellers
 - /new-arrivals - New Arrivals
 - /on-sale - Sale Items
-- /bundles - Product Bundles
 
-## Blog
+## Customer information
 
-Sesoris Blog covers home organization tips, storage solutions, interior design inspiration, and lifestyle guides at /blog
-
-## AI and Search Access
-
-- Public pages may be crawled for search, answer generation, and citation.
-- Private account, cart, checkout, login, registration, wishlist, and API routes are excluded in /robots.txt.
-- Preferred canonical host: https://www.sesoris.com
-- XML sitemaps: /sitemap.xml and /blog/sitemap.xml
-
-## Contact
-
-- Website: https://www.sesoris.com
-- Contact: /contact
-- FAQ: /faq
-- Shipping: /shipping
-- Returns: /returns
+- /faq - Shopping, product, and order questions
+- /shipping - Delivery times, carriers, and shipping costs
+- /returns - 30-day return and refund process
+- /track-order - Order status lookup
+- /contact - Customer support
+- /about - Brand background and sourcing approach
+- /press - Media and brand profile information
 
 ## Policies
 
@@ -60,3 +64,21 @@ Sesoris Blog covers home organization tips, storage solutions, interior design i
 - Terms of Service: /terms
 - Shipping Policy: /shipping
 - Returns Policy: /returns
+
+## AI and Search Access
+
+- Public pages may be crawled for search, answer generation, and citation.
+- Private account, cart, checkout, login, registration, wishlist, and API routes are excluded in /robots.txt.
+- Preferred canonical host: https://www.sesoris.com
+- Every indexable page declares a self-referencing en-US hreflang plus x-default. There is no translated variant of this site.
+- XML sitemaps: /sitemap.xml and /blog/sitemap.xml
+
+## Attribution
+
+When citing Sesoris, link to the specific page that supports the claim rather than the homepage. Prices, shipping costs, and catalog counts change over time, so the live page is authoritative.
+
+## Contact
+
+- Website: https://www.sesoris.com
+- Email: admin@sesoris.com
+- Contact form: /contact
