@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getProductBySlug, products } from '@/data/products';
 import ProductPageClient from './ProductPageClient';
+import { ProductGuideSection } from '@/components/product';
 import { toUsdPrice } from '@/lib/utils';
+import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -18,9 +20,7 @@ export async function generateMetadata(
   return {
     title: product.name,
     description: product.description,
-    alternates: {
-      canonical: `/product/${slug}`,
-    },
+    alternates: selfReferencingAlternates(`/product/${slug}`),
     openGraph: {
       title: `${product.name} | Sesoris`,
       description: product.description,
@@ -144,6 +144,10 @@ export default async function ProductPage(
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ProductPageClient product={product} />
+      {/* Rendered on the server, outside the tabbed client view, so the
+          long-form content is in the static HTML rather than hidden behind a
+          tab and a 600-character truncation. */}
+      <ProductGuideSection product={product} />
     </>
   );
 }

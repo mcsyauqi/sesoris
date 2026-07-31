@@ -194,7 +194,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               )}
             </div>
 
-            {/* Short Deskripsi */}
+            {/* Short description */}
             <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '24px', fontSize: '15px' }}>
               {product.description}
             </p>
@@ -217,10 +217,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
               </div>
             )}
 
-            {/* Jumlah */}
+            {/* Quantity */}
             <div style={{ marginBottom: '24px' }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: '8px', color: '#212529' }}>
-                Jumlah
+                Quantity
               </label>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{
@@ -372,7 +372,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 transition: 'all 0.2s'
               }}
             >
-              Deskripsi
+              Description
             </button>
             <button
               onClick={() => setActiveTab('specs')}
@@ -389,7 +389,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 transition: 'all 0.2s'
               }}
             >
-              Spesifikasi
+              Specifications
             </button>
             <button
               onClick={() => setActiveTab('reviews')}
@@ -456,9 +456,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
                       }}
                     >
                       {showFullDesc ? (
-                        <>Tampilkan Lebih Sedikit <ChevronUp style={{ width: '16px', height: '16px' }} /></>
+                        <>Show Less <ChevronUp style={{ width: '16px', height: '16px' }} /></>
                       ) : (
-                        <>Baca Selengkapnya <ChevronDown style={{ width: '16px', height: '16px' }} /></>
+                        <>Read More <ChevronDown style={{ width: '16px', height: '16px' }} /></>
                       )}
                     </button>
                   )}
@@ -470,7 +470,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {product.features && product.features.length > 0 && (
                 <div style={{ marginTop: '32px' }}>
                   <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
-                    Fitur Utama
+                    Key Features
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     {product.features.map((feature, index) => (
