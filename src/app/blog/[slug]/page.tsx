@@ -548,11 +548,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {post.category}
               </span>
               <h1 style={{
-                fontSize: '36px',
+                width: '100%',
+                minWidth: 0,
+                fontSize: 'clamp(28px, 8vw, 36px)',
                 fontWeight: 700,
                 color: 'white',
                 marginBottom: '16px',
                 lineHeight: 1.3,
+                overflowWrap: 'anywhere',
               }}>
                 {post.title}
               </h1>
