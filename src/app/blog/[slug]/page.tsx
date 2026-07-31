@@ -533,8 +533,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             inset: 0,
             background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
           }} />
-          <div className="container" style={{ position: 'relative', zIndex: 1, padding: '0 16px 48px' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div className="container" style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '100vw', minWidth: 0, padding: '0 16px 48px' }}>
+            <div style={{ width: '100%', maxWidth: '800px', minWidth: 0, margin: '0 auto' }}>
               <span style={{
                 display: 'inline-block',
                 background: '#1B5E3B',
