@@ -1036,5 +1036,41 @@
     "date": "2026-07-31",
     "status": "published",
     "note": "Created content\\blog\\home-organization-ideas-for-small-spaces.json"
+  },
+  {
+    "keyword": "compression packing cubes",
+    "volume": 10000,
+    "kd": 12,
+    "category": "Travel",
+    "intent": "Commercial",
+    "priority": "Tier 1",
+    "slug": "compression-packing-cubes",
+    "date": "2026-07-31",
+    "status": "published",
+    "note": "Created content/blog/compression-packing-cubes.json"
+  },
+  {
+    "keyword": "how to pack a suitcase efficiently",
+    "volume": 6700,
+    "kd": 4,
+    "category": "Travel",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "how-to-pack-a-suitcase-efficiently",
+    "date": "2026-07-31",
+    "status": "published",
+    "note": "Created content/blog/how-to-pack-a-suitcase-efficiently.json"
+  },
+  {
+    "keyword": "bathroom storage ideas",
+    "volume": 3900,
+    "kd": 6,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "bathroom-storage-ideas",
+    "date": "2026-07-31",
+    "status": "published",
+    "note": "Created content/blog/bathroom-storage-ideas.json"
   }
 ]
