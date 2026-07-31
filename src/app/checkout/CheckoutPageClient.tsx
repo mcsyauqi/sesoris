@@ -1,21 +1,76 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Lock, CreditCard, Truck, ShieldCheck } from 'lucide-react';
+import { Home, ChevronRight, Lock, CreditCard, Truck, ShieldCheck, CheckCircle } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
 import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
+import { createMockTransactionId, trackBeginCheckout, trackPurchase } from '@/lib/analytics';
 
 export default function CheckoutPageClient() {
-  const { items, getSubtotal, getItemCount } = useCartStore();
+  const { items, getSubtotal, getItemCount, clearCart } = useCartStore();
   const [step, setStep] = useState(1);
+  const [placedOrderId, setPlacedOrderId] = useState<string | null>(null);
+  const beginCheckoutFired = useRef(false);
 
   const subtotal = getSubtotal();
   const shipping = subtotal > 50 ? 0 : 5.99;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
+
+  // GA4 begin_checkout: once per checkout page visit that starts with a cart.
+  useEffect(() => {
+    if (beginCheckoutFired.current) return;
+    if (items.length === 0) return;
+    beginCheckoutFired.current = true;
+    trackBeginCheckout(items);
+  }, [items]);
+
+  // Mock order confirmation. There is no payment processor or order backend yet,
+  // so this is the mock success point where GA4 purchase fires.
+  const handlePlaceOrder = () => {
+    if (items.length === 0) return;
+    const transactionId = createMockTransactionId();
+    trackPurchase({ transactionId, cartItems: items, shipping, tax });
+    setPlacedOrderId(transactionId);
+    clearCart();
+  };
+
+  if (placedOrderId) {
+    return (
+      <>
+        <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+          <div className="container">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+                <Home style={{ width: '14px', height: '14px' }} />
+              </Link>
+              <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+              <span style={{ color: '#212529', fontWeight: 500 }}>Order Confirmed</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="container" style={{ padding: '80px 16px', textAlign: 'center' }}>
+          <CheckCircle style={{ width: '56px', height: '56px', color: '#1B5E3B', marginBottom: '16px' }} />
+          <h1 style={{ fontSize: '26px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+            Thank you for your order
+          </h1>
+          <p style={{ color: '#6C757D', marginBottom: '8px' }}>
+            Order reference: <strong style={{ color: '#212529' }}>{placedOrderId}</strong>
+          </p>
+          <p style={{ color: '#6C757D', marginBottom: '24px' }}>
+            A confirmation email with tracking details will follow shortly.
+          </p>
+          <Link href="/shop" className="btn btn-primary">
+            Continue Shopping
+          </Link>
+        </div>
+      </>
+    );
+  }
 
   if (items.length === 0) {
     return (
@@ -213,7 +268,7 @@ export default function CheckoutPageClient() {
                   <button onClick={() => setStep(2)} style={{ flex: 1, padding: '14px', border: '1px solid #E9ECEF', borderRadius: '10px', background: 'white', cursor: 'pointer', fontWeight: 500 }}>
                     Back
                   </button>
-                  <button className="btn btn-primary" style={{ flex: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <button onClick={handlePlaceOrder} className="btn btn-primary" style={{ flex: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                     <Lock style={{ width: '16px', height: '16px' }} />
                     Place Order
                   </button>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,6 +13,7 @@ import { ProductReviewSection } from '@/components/product/ProductReviewSection'
 import { getReviewsByProductId, products as allProducts } from '@/data/products';
 import { getBundlesForProduct } from '@/data/bundles';
 import { getProductImageAlt } from '@/lib/product-image-alt';
+import { trackViewItem } from '@/lib/analytics';
 
 const FrequentlyBoughtTogether = dynamic(
   () => import('@/components/product/FrequentlyBoughtTogether').then((mod) => mod.FrequentlyBoughtTogether),
@@ -28,6 +29,11 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const [selectedImage, setSelectedImage] = useState(0);
   const addToCart = useCartStore((s) => s.addItem);
   const { toggleItem, isInWishlist } = useWishlistStore();
+
+  // GA4 view_item: one event per product detail page view.
+  useEffect(() => {
+    trackViewItem(product);
+  }, [product]);
 
   const wishlisted = isInWishlist(product.id);
   const onSale = product.compareAtPrice && product.compareAtPrice > product.price;
@@ -264,7 +270,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
             {/* Actions */}
             <div style={{ display: 'flex', gap: '12px', marginBottom: '32px' }}>
               <button
-                onClick={() => { for (let i = 0; i < quantity; i++) addToCart(product); }}
+                onClick={() => addToCart(product, quantity)}
                 className="btn btn-primary"
                 style={{
                   flex: 1,
