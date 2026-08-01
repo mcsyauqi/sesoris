@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "small bathroom storage ideas",
-    "volume": 3100,
-    "kd": 14,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "small-bathroom-storage-ideas"
-  },
-  {
-    "keyword": "hat storage ideas",
-    "volume": 2500,
-    "kd": 0,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "hat-storage-ideas"
-  },
-  {
-    "keyword": "bedroom storage ideas",
-    "volume": 2000,
-    "kd": 4,
-    "category": "Bedroom",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "bedroom-storage-ideas"
-  },
-  {
     "keyword": "book storage ideas",
     "volume": 1500,
     "kd": 2,

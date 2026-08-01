@@ -1072,5 +1072,41 @@
     "date": "2026-07-31",
     "status": "published",
     "note": "Created content/blog/bathroom-storage-ideas.json"
+  },
+  {
+    "keyword": "small bathroom storage ideas",
+    "volume": 3100,
+    "kd": 14,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "small-bathroom-storage-ideas",
+    "date": "2026-08-01",
+    "status": "published",
+    "note": "Created content/blog/small-bathroom-storage-ideas.json"
+  },
+  {
+    "keyword": "hat storage ideas",
+    "volume": 2500,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "hat-storage-ideas",
+    "date": "2026-08-01",
+    "status": "published",
+    "note": "Created content/blog/hat-storage-ideas.json"
+  },
+  {
+    "keyword": "bedroom storage ideas",
+    "volume": 2000,
+    "kd": 4,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "bedroom-storage-ideas",
+    "date": "2026-08-01",
+    "status": "published",
+    "note": "Created content/blog/bedroom-storage-ideas.json"
   }
 ]
