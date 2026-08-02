@@ -450,7 +450,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
-  if (post.retired || !isPostPublished(post.date)) {
+  // Retired posts declare where they were consolidated to. Honour it.
+  //
+  // Fix (cycle #45, 2026-08-03): `redirectTo` was declared on the BlogPost
+  // interface and set on all 194 retired posts, but nothing ever read it -- this
+  // branch called notFound() for every retired post. So 194 consolidated URLs
+  // served a hard 404 instead of a 301, dumping whatever authority and inbound
+  // links they held, and 58 live posts still carry 220 body links straight into
+  // them (the 15 articles audited today accounted for 33 of those).
+  // Values are stored as a bare slug ("food-storage-containers-airtight"), with
+  // a leading "/" tolerated. All 194 targets were verified to resolve to a
+  // published, non-retired post: no missing targets, no chains, no self-loops.
+  if (post.retired) {
+    if (post.redirectTo) {
+      const target = post.redirectTo.startsWith('/') ? post.redirectTo : `/blog/${post.redirectTo}`;
+      permanentRedirect(target);
+    }
+    notFound();
+  }
+
+  if (!isPostPublished(post.date)) {
     notFound();
   }
 
