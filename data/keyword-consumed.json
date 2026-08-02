@@ -1108,5 +1108,41 @@
     "date": "2026-08-01",
     "status": "published",
     "note": "Created content/blog/bedroom-storage-ideas.json"
+  },
+  {
+    "keyword": "book storage ideas",
+    "volume": 1500,
+    "kd": 2,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "book-storage-ideas",
+    "date": "2026-08-02",
+    "status": "published",
+    "note": "Created content/blog/book-storage-ideas.json"
+  },
+  {
+    "keyword": "diy garage storage ideas",
+    "volume": 1300,
+    "kd": 17,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-garage-storage-ideas",
+    "date": "2026-08-02",
+    "status": "published",
+    "note": "Created content/blog/diy-garage-storage-ideas.json"
+  },
+  {
+    "keyword": "garage bike storage ideas",
+    "volume": 1000,
+    "kd": 4,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "garage-bike-storage-ideas",
+    "date": "2026-08-02",
+    "status": "published",
+    "note": "Created content/blog/garage-bike-storage-ideas.json"
   }
 ]

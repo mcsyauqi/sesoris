@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "book storage ideas",
-    "volume": 1500,
-    "kd": 2,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "book-storage-ideas"
-  },
-  {
-    "keyword": "diy garage storage ideas",
-    "volume": 1300,
-    "kd": 17,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-garage-storage-ideas"
-  },
-  {
-    "keyword": "garage bike storage ideas",
-    "volume": 1000,
-    "kd": 4,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "garage-bike-storage-ideas"
-  },
-  {
     "keyword": "fridge organization ideas",
     "volume": 700,
     "kd": 6,
