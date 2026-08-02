@@ -22,18 +22,32 @@ export interface BlogPost {
 }
 
 /**
- * Returns the best SEO title for a blog post (≤ 70 chars including " | Sesoris" suffix).
- * Priority: post.seoTitle → smart-truncated post.title
+ * Returns the best SEO title for a blog post (<= 60 chars including the
+ * " | Sesoris" suffix the layout template appends).
+ * Priority: post.seoTitle -> smart-truncated post.title
  *
  * Smart truncation rules:
  * - Cut at last word boundary before MAX_TITLE_LEN
- * - Strip trailing connector/preposition words (for, to, of, with, and, in, on, the, a, an, by, at)
- *   so output never ends mid-thought (e.g. "Efficient Layout for" -> "Efficient Layout")
+ * - Strip trailing connector/filler words so output never ends mid-thought
+ * - Drop a dangling "<connector> <word>" tail ("... Ideas to Maximize")
  * - Strip trailing punctuation
+ *
+ * Fix (cycle #45, 2026-08-03): MAX_TITLE_LEN was 60, but the layout appends
+ * " | Sesoris" (10 chars) AFTER this function returns, so every long title
+ * shipped a 65-72 char <title> that Google truncates. Worse, the stop-tail
+ * list only covered prepositions, so 7 of the 15 articles audited that day
+ * ended on a dangling word and read as cut off in SERPs:
+ *   "...Ideas to Maximize Every | Sesoris"
+ *   "...The Complete 2026 Review & | Sesoris"
+ *   "...The Ultimate 2026 Guide to a Stylish | Sesoris"
+ * Budget is now 50 so the rendered <title> lands at <= 60, and the tail
+ * cleanup also removes dangling determiners, superlatives, bare years and
+ * orphaned "to <verb>" phrases.
  */
 export function getBlogSeoTitle(post: BlogPost): string {
-  // " | Sesoris" is appended by layout template, costs 10 chars
-  const MAX_TITLE_LEN = 60;
+  // " | Sesoris" is appended by the layout template and costs 10 chars,
+  // so the budget here is 60 - 10 = 50.
+  const MAX_TITLE_LEN = 50;
   if (post.seoTitle) return post.seoTitle;
   if (post.title.length <= MAX_TITLE_LEN) return post.title;
 
@@ -42,21 +56,37 @@ export function getBlogSeoTitle(post: BlogPost): string {
   const STOP_TAILS = new Set([
     'for', 'to', 'of', 'with', 'and', 'in', 'on', 'the',
     'a', 'an', 'by', 'at', 'or', 'but', 'as', 'into', 'from',
+    // dangling determiners / quantifiers left behind by a hard cut
+    'your', 'my', 'our', 'its', 'their', 'every', 'each',
+    'that', 'this', 'these', 'those', 'any', 'all', 'more',
+    // dangling superlatives and filler adjectives ("The Complete", "The Ultimate")
+    'complete', 'ultimate', 'essential', 'definitive', 'simple', 'easy',
+    'best', 'top', 'smart', 'stylish', 'perfect', 'great',
     // Indonesian connectors (fix: dangling "yang" in truncated titles)
     'yang', 'untuk', 'dengan', 'dari', 'di', 'ke', 'dan', 'atau',
     'pada', 'agar', 'serta', 'saat', 'para', 'bagi',
+    'lengkap', 'terbaik', 'paling',
   ]);
-  // strip up to 3 trailing connector words
-  for (let i = 0; i < 3; i++) {
-    const lastWord = truncated.split(/\s+/).pop()?.toLowerCase().replace(/[^a-z]/g, '') ?? '';
-    if (STOP_TAILS.has(lastWord)) {
+  const isStopTail = (w: string) =>
+    STOP_TAILS.has(w) || /^(19|20)\d{2}$/.test(w) || w === '';
+
+  // strip up to 6 trailing connector/filler words
+  for (let i = 0; i < 6; i++) {
+    const raw = truncated.split(/\s+/).pop() ?? '';
+    const lastWord = raw.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (isStopTail(lastWord) && truncated.includes(' ')) {
       truncated = truncated.replace(/\s+\S+$/, '');
     } else {
       break;
     }
   }
+
+  // A connector immediately before the final word means the verb/noun phrase
+  // it introduces got cut ("...Storage Ideas to Maximize"). Drop both words.
+  truncated = truncated.replace(/\s+(?:to|and|&|of|for|with|into)\s+\S+$/i, '');
+
   // strip trailing punctuation
-  truncated = truncated.replace(/[\s,;:\-–, ]+$/, '');
+  truncated = truncated.replace(/[\s,;:&\-–]+$/, '');
   return truncated;
 }
 

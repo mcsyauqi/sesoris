@@ -42,8 +42,34 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 // --- Rich Markdown Renderer ---
 
-function renderInline(text: string): React.ReactNode[] {
+/**
+ * Flatten markdown to plain prose for machine-readable fields (JSON-LD).
+ *
+ * Fix (cycle #45, 2026-08-03): FAQ answers were pushed into
+ * `acceptedAnswer.text` with their markdown intact, so Google received
+ * `... at [Sesoris](https://www.sesoris.com)` verbatim and rendered the raw
+ * brackets in FAQ rich results. Schema.org text fields must be plain text:
+ * strip link syntax down to its label and drop bold/italic markers.
+ */
+function plainText(md: string): string {
+  return md
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+    .replace(/\*\*/g, '')
+    .replace(/(^|\s)\*(\S[^*]*?)\*/g, '$1$2')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function renderInline(text: string, keyPrefix = ''): React.ReactNode[] {
   // Parse inline markdown: **bold**, [link](url)
+  //
+  // Fix (cycle #45, 2026-08-03): a bold span that CONTAINS a link
+  // (`**Think about your existing [home storage solutions](/blog/x) ...**`)
+  // used to render the inner markdown literally, so readers saw the raw
+  // `[label](https://...)` on the page and the link never became an anchor.
+  // Cause: <strong> received match[2] as a plain string instead of being
+  // parsed again. 49 of 443 published posts were affected. The bold branch
+  // now recurses through renderInline so nested links resolve properly.
   const parts: React.ReactNode[] = [];
   const regex = /(\*\*(.+?)\*\*)|(\[([^\]]+)\]\(([^)]+)\))/g;
   let lastIndex = 0;
@@ -54,8 +80,8 @@ function renderInline(text: string): React.ReactNode[] {
       parts.push(text.slice(lastIndex, match.index));
     }
     if (match[1]) {
-      // Bold: **text**
-      parts.push(<strong key={match.index}>{match[2]}</strong>);
+      // Bold: **text** (may itself contain links)
+      parts.push(<strong key={`${keyPrefix}b${match.index}`}>{renderInline(match[2], `${keyPrefix}${match.index}-`)}</strong>);
     } else if (match[3]) {
       // Link: [text](url)
       const href = match[5];
@@ -63,13 +89,13 @@ function renderInline(text: string): React.ReactNode[] {
       if (isInternal) {
         const cleanHref = href.replace('https://www.sesoris.com', '').replace('https://sesoris.com', '') || '/';
         parts.push(
-          <Link key={match.index} href={cleanHref} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
+          <Link key={`${keyPrefix}l${match.index}`} href={cleanHref} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
             {match[4]}
           </Link>
         );
       } else {
         parts.push(
-          <a key={match.index} href={href} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
+          <a key={`${keyPrefix}a${match.index}`} href={href} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
             {match[4]}
           </a>
         );
@@ -484,8 +510,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   for (let i = 0; i < flatForFaq.length; i++) {
     const line = flatForFaq[i];
     if (line.startsWith('**Q:') || line.startsWith('**Q :')) {
-      const question = line.replace(/^\*\*Q\s*:\s*/, '').replace(/\*\*$/, '').trim();
-      const answer = (i + 1 < flatForFaq.length) ? flatForFaq[i + 1].replace(/\*\*/g, '').trim() : '';
+      const question = plainText(line.replace(/^\*\*Q\s*:\s*/, '').replace(/\*\*$/, ''));
+      const answer = (i + 1 < flatForFaq.length) ? plainText(flatForFaq[i + 1]) : '';
       if (question && answer && !answer.startsWith('##') && !answer.startsWith('**Q')) {
         faqItems.push({ question, answer });
       }
