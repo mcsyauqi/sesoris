@@ -98,7 +98,7 @@ export function HeroSlider() {
             {/* Static H1 for SEO, always visible to crawlers */}
             <h1 className="hero-title" aria-label="Sesoris, Home Organizers & Storage Solutions">
               {slide.title}
-              <br />
+              <br />{' '}
               <span className="hero-title-accent">{slide.titleAccent}</span>
             </h1>
 
