@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "fridge organization ideas",
-    "volume": 700,
-    "kd": 6,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "fridge-organization-ideas"
-  },
-  {
-    "keyword": "small kitchen organization ideas",
-    "volume": 700,
-    "kd": 11,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "small-kitchen-organization-ideas"
-  },
-  {
-    "keyword": "kitchen drawer organizer for large utensils",
-    "volume": 600,
-    "kd": 2,
-    "category": "Kitchen",
-    "intent": "Commercial",
-    "priority": "Tier 2",
-    "slug": "kitchen-drawer-organizer-for-large-utensils"
-  },
-  {
     "keyword": "bathroom towel storage ideas",
     "volume": 600,
     "kd": 1,

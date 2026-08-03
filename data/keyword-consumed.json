@@ -1144,5 +1144,41 @@
     "date": "2026-08-02",
     "status": "published",
     "note": "Created content/blog/garage-bike-storage-ideas.json"
+  },
+  {
+    "keyword": "fridge organization ideas",
+    "volume": 700,
+    "kd": 6,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "fridge-organization-ideas",
+    "date": "2026-08-03",
+    "status": "published",
+    "note": "Created content/blog/fridge-organization-ideas.json"
+  },
+  {
+    "keyword": "small kitchen organization ideas",
+    "volume": 700,
+    "kd": 11,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "small-kitchen-organization-ideas",
+    "date": "2026-08-03",
+    "status": "published",
+    "note": "Created content/blog/small-kitchen-organization-ideas.json"
+  },
+  {
+    "keyword": "kitchen drawer organizer for large utensils",
+    "volume": 600,
+    "kd": 2,
+    "category": "Kitchen",
+    "intent": "Commercial",
+    "priority": "Tier 2",
+    "slug": "kitchen-drawer-organizer-for-large-utensils",
+    "date": "2026-08-03",
+    "status": "published",
+    "note": "Created content/blog/kitchen-drawer-organizer-for-large-utensils.json"
   }
 ]
