@@ -45,7 +45,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
@@ -231,6 +231,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 }}>
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    aria-label="Decrease quantity"
                     style={{
                       width: '44px',
                       height: '44px',
@@ -247,6 +248,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   <span style={{ width: '48px', textAlign: 'center', fontWeight: 600 }}>{quantity}</span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
+                    aria-label="Increase quantity"
                     style={{
                       width: '44px',
                       height: '44px',
@@ -293,6 +295,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
               </button>
               <button
                 onClick={() => toggleItem(product)}
+                aria-label={wishlisted ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
+                aria-pressed={wishlisted}
                 style={{
                   width: '56px',
                   height: '56px',

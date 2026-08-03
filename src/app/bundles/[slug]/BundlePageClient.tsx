@@ -40,7 +40,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', flexWrap: 'wrap' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
             <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
