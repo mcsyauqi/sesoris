@@ -75,12 +75,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/shop" style={{ color: '#6C757D' }}>Shop</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
+            <Link href="/shop" style={{ color: '#5F6873' }}>Shop</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>{category.name}</span>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
 
         {products.length === 0 && (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <p style={{ color: '#6C757D' }}>No products found in this category.</p>
+            <p style={{ color: '#5F6873' }}>No products found in this category.</p>
           </div>
         )}
       </div>
@@ -207,7 +207,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             {/* Related Categories */}
             {seo.relatedCategories.length > 0 && (
               <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid #E9ECEF' }}>
-                <p style={{ fontSize: '14px', color: '#6C757D', marginBottom: '12px' }}>
+                <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
                   Also explore:
                 </p>
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>

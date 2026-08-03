@@ -55,10 +55,10 @@ export default function PressPage() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Press</span>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function PressPage() {
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
             Press & Media
           </h1>
-          <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
+          <p style={{ color: '#5F6873', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
             Latest news, press releases, and media coverage about Sesoris
           </p>
         </div>
@@ -102,7 +102,7 @@ export default function PressPage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontWeight: 700,
-                color: '#6C757D',
+                color: '#5F6873',
                 fontSize: '14px',
               }}>
                 {media.logo}
@@ -128,13 +128,13 @@ export default function PressPage() {
                   <Image src={release.image} alt={release.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '20px' }}>
-                  <div style={{ fontSize: '13px', color: '#6C757D', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '13px', color: '#5F6873', marginBottom: '8px' }}>
                     {release.date}
                   </div>
                   <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', lineHeight: 1.4 }}>
                     {release.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#6C757D', lineHeight: 1.5, marginBottom: '16px' }}>
+                  <p style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.5, marginBottom: '16px' }}>
                     {release.excerpt}
                   </p>
                   <button style={{
@@ -213,7 +213,7 @@ export default function PressPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
             Media Contact
           </h2>
-          <p style={{ color: '#6C757D', marginBottom: '24px', lineHeight: 1.6 }}>
+          <p style={{ color: '#5F6873', marginBottom: '24px', lineHeight: 1.6 }}>
             For interviews, media collaborations, or further information,
             please contact our Public Relations team.
           </p>

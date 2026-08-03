@@ -106,10 +106,10 @@ export default function FAQPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>FAQ</span>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function FAQPageClient() {
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
             Frequently Asked Questions
           </h1>
-          <p style={{ color: '#6C757D', fontSize: '16px', marginBottom: '32px' }}>
+          <p style={{ color: '#5F6873', fontSize: '16px', marginBottom: '32px' }}>
             Find answers to common questions about orders, shipping, returns, and more.
           </p>
 
@@ -145,7 +145,7 @@ export default function FAQPageClient() {
               transform: 'translateY(-50%)',
               width: '20px',
               height: '20px',
-              color: '#6C757D',
+              color: '#5F6873',
             }} />
             <input
               type="text"
@@ -202,7 +202,7 @@ export default function FAQPageClient() {
                           style={{
                             width: '20px',
                             height: '20px',
-                            color: '#6C757D',
+                            color: '#5F6873',
                             transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
                             transition: 'transform 0.2s',
                           }}
@@ -211,7 +211,7 @@ export default function FAQPageClient() {
                       {isOpen && (
                         <div style={{
                           padding: '0 20px 16px',
-                          color: '#6C757D',
+                          color: '#5F6873',
                           fontSize: '14px',
                           lineHeight: 1.6,
                         }}>
@@ -238,7 +238,7 @@ export default function FAQPageClient() {
           <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
             Still have questions?
           </h3>
-          <p style={{ color: '#6C757D', marginBottom: '20px' }}>
+          <p style={{ color: '#5F6873', marginBottom: '20px' }}>
             Can&apos;t find the answer you&apos;re looking for? Our team is here to help.
           </p>
           <Link href="/contact" className="btn btn-primary">

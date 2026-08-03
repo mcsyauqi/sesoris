@@ -172,7 +172,7 @@ export function NewsletterPopup() {
                 <Mail style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
               </div>
               <p style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>You&apos;re in!</p>
-              <p style={{ fontSize: '14px', color: '#6C757D' }}>{message}</p>
+              <p style={{ fontSize: '14px', color: '#5F6873' }}>{message}</p>
             </div>
           ) : (
             <>

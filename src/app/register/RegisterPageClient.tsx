@@ -26,10 +26,10 @@ export default function RegisterPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Create Account</span>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function RegisterPageClient() {
             <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
               Create Account
             </h1>
-            <p style={{ color: '#6C757D' }}>
+            <p style={{ color: '#5F6873' }}>
               Join us and start shopping with ease
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function RegisterPageClient() {
                     transform: 'translateY(-50%)',
                     width: '18px',
                     height: '18px',
-                    color: '#6C757D',
+                    color: '#5F6873',
                   }} />
                   <input
                     type="text"
@@ -111,7 +111,7 @@ export default function RegisterPageClient() {
                   transform: 'translateY(-50%)',
                   width: '18px',
                   height: '18px',
-                  color: '#6C757D',
+                  color: '#5F6873',
                 }} />
                 <input
                   type="email"
@@ -142,7 +142,7 @@ export default function RegisterPageClient() {
                   transform: 'translateY(-50%)',
                   width: '18px',
                   height: '18px',
-                  color: '#6C757D',
+                  color: '#5F6873',
                 }} />
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -173,13 +173,13 @@ export default function RegisterPageClient() {
                   }}
                 >
                   {showPassword ? (
-                    <EyeOff style={{ width: '18px', height: '18px', color: '#6C757D' }} />
+                    <EyeOff style={{ width: '18px', height: '18px', color: '#5F6873' }} />
                   ) : (
-                    <Eye style={{ width: '18px', height: '18px', color: '#6C757D' }} />
+                    <Eye style={{ width: '18px', height: '18px', color: '#5F6873' }} />
                   )}
                 </button>
               </div>
-              <p style={{ fontSize: '13px', color: '#6C757D', marginTop: '8px' }}>
+              <p style={{ fontSize: '13px', color: '#5F6873', marginTop: '8px' }}>
                 Must be at least 8 characters
               </p>
             </div>
@@ -198,7 +198,7 @@ export default function RegisterPageClient() {
                 onChange={(e) => setFormData({ ...formData, acceptTerms: e.target.checked })}
                 style={{ width: '16px', height: '16px', marginTop: '2px', accentColor: '#1B5E3B' }}
               />
-              <span style={{ fontSize: '14px', color: '#6C757D', lineHeight: 1.4 }}>
+              <span style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.4 }}>
                 I agree to the{' '}
                 <Link href="/terms" style={{ color: '#1B5E3B' }}>Terms of Service</Link>
                 {' '}and{' '}
@@ -211,7 +211,7 @@ export default function RegisterPageClient() {
             </button>
 
             <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-              <span style={{ color: '#6C757D', fontSize: '14px' }}>
+              <span style={{ color: '#5F6873', fontSize: '14px' }}>
                 Already have an account?{' '}
                 <Link href="/login" style={{ color: '#1B5E3B', fontWeight: 500 }}>
                   Sign In
@@ -224,7 +224,7 @@ export default function RegisterPageClient() {
                 <div style={{ width: '100%', height: '1px', background: '#E9ECEF' }} />
               </div>
               <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-                <span style={{ background: 'white', padding: '0 16px', fontSize: '14px', color: '#6C757D' }}>
+                <span style={{ background: 'white', padding: '0 16px', fontSize: '14px', color: '#5F6873' }}>
                   Or sign up with
                 </span>
               </div>

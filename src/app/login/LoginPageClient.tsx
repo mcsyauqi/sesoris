@@ -21,10 +21,10 @@ export default function LoginPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Sign In</span>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function LoginPageClient() {
             <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
               Welcome Back
             </h1>
-            <p style={{ color: '#6C757D' }}>
+            <p style={{ color: '#5F6873' }}>
               Sign in to your account to continue shopping
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function LoginPageClient() {
                   transform: 'translateY(-50%)',
                   width: '18px',
                   height: '18px',
-                  color: '#6C757D',
+                  color: '#5F6873',
                 }} />
                 <input
                   type="email"
@@ -85,7 +85,7 @@ export default function LoginPageClient() {
                   transform: 'translateY(-50%)',
                   width: '18px',
                   height: '18px',
-                  color: '#6C757D',
+                  color: '#5F6873',
                 }} />
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -116,9 +116,9 @@ export default function LoginPageClient() {
                   }}
                 >
                   {showPassword ? (
-                    <EyeOff style={{ width: '18px', height: '18px', color: '#6C757D' }} />
+                    <EyeOff style={{ width: '18px', height: '18px', color: '#5F6873' }} />
                   ) : (
-                    <Eye style={{ width: '18px', height: '18px', color: '#6C757D' }} />
+                    <Eye style={{ width: '18px', height: '18px', color: '#5F6873' }} />
                   )}
                 </button>
               </div>
@@ -127,7 +127,7 @@ export default function LoginPageClient() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
                 <input type="checkbox" style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }} />
-                <span style={{ fontSize: '14px', color: '#6C757D' }}>Remember me</span>
+                <span style={{ fontSize: '14px', color: '#5F6873' }}>Remember me</span>
               </label>
               <button
                 type="button"
@@ -143,7 +143,7 @@ export default function LoginPageClient() {
             </button>
 
             <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-              <span style={{ color: '#6C757D', fontSize: '14px' }}>
+              <span style={{ color: '#5F6873', fontSize: '14px' }}>
                 Don&apos;t have an account?{' '}
                 <Link href="/register" style={{ color: '#1B5E3B', fontWeight: 500 }}>
                   Sign Up
@@ -156,7 +156,7 @@ export default function LoginPageClient() {
                 <div style={{ width: '100%', height: '1px', background: '#E9ECEF' }} />
               </div>
               <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-                <span style={{ background: 'white', padding: '0 16px', fontSize: '14px', color: '#6C757D' }}>
+                <span style={{ background: 'white', padding: '0 16px', fontSize: '14px', color: '#5F6873' }}>
                   Or continue with
                 </span>
               </div>

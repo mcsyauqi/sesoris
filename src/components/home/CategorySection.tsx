@@ -16,7 +16,7 @@ export function CategorySection() {
           }}>
             Shop by Category
           </h2>
-          <p style={{ color: '#6C757D', fontSize: '15px' }}>
+          <p style={{ color: '#5F6873', fontSize: '15px' }}>
             Find the right product for every need
           </p>
         </div>

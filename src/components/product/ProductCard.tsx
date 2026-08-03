@@ -79,6 +79,8 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           {/* Wishlist Button */}
           <button
             onClick={(e) => { e.preventDefault(); toggleItem(product); }}
+            aria-label={wishlisted ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
+            aria-pressed={wishlisted}
             style={{
               position: 'absolute',
               top: '10px',
@@ -170,7 +172,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             }}
           />
         ))}
-        <span style={{ fontSize: '12px', color: '#6C757D', marginLeft: '4px' }}>
+        <span style={{ fontSize: '12px', color: '#5F6873', marginLeft: '4px' }}>
           ({product.reviewCount})
         </span>
       </div>
@@ -180,7 +182,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           {formatPrice(product.price)}
         </span>
         {onSale && (
-          <span style={{ fontSize: '13px', color: '#6C757D', textDecoration: 'line-through' }}>
+          <span style={{ fontSize: '13px', color: '#5F6873', textDecoration: 'line-through' }}>
             {formatPrice(product.compareAtPrice!)}
           </span>
         )}

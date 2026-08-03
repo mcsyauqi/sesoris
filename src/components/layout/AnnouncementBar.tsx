@@ -37,6 +37,7 @@ export function AnnouncementBar() {
       </div>
       <button
         onClick={() => setIsVisible(false)}
+        aria-label="Dismiss announcement"
         style={{
           position: 'absolute',
           right: '12px',

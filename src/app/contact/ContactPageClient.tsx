@@ -36,10 +36,10 @@ export default function ContactPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Contact</span>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function ContactPageClient() {
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>Contact Sesoris</h1>
-          <p style={{ color: '#6C757D', fontSize: '16px' }}>
+          <p style={{ color: '#5F6873', fontSize: '16px' }}>
             Need help choosing the right organizer for your home, kitchen, desk, or travel gear? The Sesoris team is based in Yogyakarta and supports customers worldwide with product questions, orders, and wholesale inquiries.
           </p>
         </div>
@@ -71,8 +71,8 @@ export default function ContactPageClient() {
                 <Phone style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Phone</div>
-                  <a href="tel:+6281326102061" style={{ color: '#6C757D' }}>+62 813 2610 2061</a>
-                  <div style={{ fontSize: '13px', color: '#6C757D', marginTop: '4px' }}>
+                  <a href="tel:+6281326102061" style={{ color: '#5F6873' }}>+62 813 2610 2061</a>
+                  <div style={{ fontSize: '13px', color: '#5F6873', marginTop: '4px' }}>
                     WhatsApp: +62 813 2610 2061
                   </div>
                 </div>
@@ -82,7 +82,7 @@ export default function ContactPageClient() {
                 <MapPin style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Address</div>
-                  <div style={{ color: '#6C757D', lineHeight: 1.5 }}>
+                  <div style={{ color: '#5F6873', lineHeight: 1.5 }}>
                     Yogyakarta, Special Region of Yogyakarta, Indonesia<br />
                     Online store with worldwide shipping
                   </div>
@@ -93,7 +93,7 @@ export default function ContactPageClient() {
                 <Clock style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Operating Hours</div>
-                  <div style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.6 }}>
+                  <div style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.6 }}>
                     Monday - Friday: 9:00 AM - 6:00 PM<br />
                     Saturday: 10:00 AM - 4:00 PM<br />
                     Sunday &amp; Holidays: Closed
@@ -212,7 +212,7 @@ export default function ContactPageClient() {
                 <Send style={{ width: '16px', height: '16px' }} />
                 {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
-              <p style={{ marginTop: '12px', fontSize: '13px', color: '#6C757D' }}>
+              <p style={{ marginTop: '12px', fontSize: '13px', color: '#5F6873' }}>
                 Prefer WhatsApp?{' '}
                 <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500 }}>Message us directly</a>
                 {' '}or email <a href="mailto:admin@sesoris.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>admin@sesoris.com</a>.
@@ -240,7 +240,7 @@ export default function ContactPageClient() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#6C757D',
+          color: '#5F6873',
         }}>
           <div style={{ textAlign: 'center' }}>
             <MapPin style={{ width: '32px', height: '32px', marginBottom: '12px', color: '#1B5E3B' }} />

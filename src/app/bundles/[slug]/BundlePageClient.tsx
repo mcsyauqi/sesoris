@@ -40,12 +40,12 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', flexWrap: 'wrap' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/bundles" style={{ color: '#6C757D' }}>Bundle Deals</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
+            <Link href="/bundles" style={{ color: '#5F6873' }}>Bundle Deals</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>{bundle.name}</span>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
             <h1 style={{ fontSize: '32px', fontWeight: 800, color: '#212529', marginBottom: '12px' }}>
               {bundle.name}
             </h1>
-            <p style={{ fontSize: '16px', color: '#6C757D', lineHeight: '1.6', marginBottom: '32px' }}>
+            <p style={{ fontSize: '16px', color: '#5F6873', lineHeight: '1.6', marginBottom: '32px' }}>
               {bundle.description}
             </p>
 
@@ -165,9 +165,9 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                             }}
                           />
                         ))}
-                        <span style={{ fontSize: '12px', color: '#6C757D' }}>({product.reviewCount})</span>
+                        <span style={{ fontSize: '12px', color: '#5F6873' }}>({product.reviewCount})</span>
                       </div>
-                      <p style={{ fontSize: '13px', color: '#6C757D', margin: 0, lineHeight: '1.4' }}>
+                      <p style={{ fontSize: '13px', color: '#5F6873', margin: 0, lineHeight: '1.4' }}>
                         {product.description.substring(0, 80)}...
                       </p>
                     </div>
@@ -244,7 +244,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
 
               <div style={{ borderTop: '1px solid #E9ECEF', margin: '12px 0', paddingTop: '12px' }}>
                 {allSelected && (
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: '#28A745', fontWeight: 600, marginBottom: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: '#1E7E34', fontWeight: 600, marginBottom: '8px' }}>
                     <span>Bundle Discount ({bundle.discountPercent}%)</span>
                     <span>-{formatPrice(savings)}</span>
                   </div>
@@ -279,7 +279,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '8px',
-                  background: added ? '#28A745' : selectedProducts.length === 0 ? '#ADB5BD' : '#1B5E3B',
+                  background: added ? '#1E7E34' : selectedProducts.length === 0 ? '#ADB5BD' : '#1B5E3B',
                   color: 'white',
                   border: 'none',
                   borderRadius: '10px',
@@ -305,7 +305,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                   { icon: RefreshCw, text: '30-day easy returns' },
                   { icon: Package, text: 'Secure bundled packaging' },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#6C757D' }}>
+                  <div key={text} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#5F6873' }}>
                     <Icon style={{ width: '14px', height: '14px', color: '#1B5E3B' }} />
                     {text}
                   </div>

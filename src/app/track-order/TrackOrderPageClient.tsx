@@ -20,10 +20,10 @@ export default function TrackOrderPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Track Order</span>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function TrackOrderPageClient() {
             <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
               Track Your Order
             </h1>
-            <p style={{ color: '#6C757D' }}>
+            <p style={{ color: '#5F6873' }}>
               Enter your order details to see the current status of your shipment.
             </p>
           </div>
@@ -109,11 +109,11 @@ export default function TrackOrderPageClient() {
               padding: '32px 24px',
               textAlign: 'center',
             }}>
-              <SearchX style={{ width: '40px', height: '40px', color: '#6C757D', margin: '0 auto 16px' }} />
+              <SearchX style={{ width: '40px', height: '40px', color: '#5F6873', margin: '0 auto 16px' }} />
               <div style={{ fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
                 We couldn&apos;t find order {orderNumber}
               </div>
-              <p style={{ fontSize: '14px', color: '#6C757D', lineHeight: '1.7', margin: 0 }}>
+              <p style={{ fontSize: '14px', color: '#5F6873', lineHeight: '1.7', margin: 0 }}>
                 Double-check the order number and email against your confirmation email.
                 If the details are correct and you still can&apos;t find your order, our team
                 can look it up for you via{' '}
@@ -130,7 +130,7 @@ export default function TrackOrderPageClient() {
             borderRadius: '12px',
             textAlign: 'center',
           }}>
-            <p style={{ fontSize: '14px', color: '#6C757D', marginBottom: '12px' }}>
+            <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
               Need help with your order?
             </p>
             <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>
@@ -143,17 +143,17 @@ export default function TrackOrderPageClient() {
             <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
               How Order Tracking Works at Sesoris
             </h2>
-            <p style={{ color: '#6C757D', lineHeight: '1.7', marginBottom: '12px', fontSize: '14px' }}>
+            <p style={{ color: '#5F6873', lineHeight: '1.7', marginBottom: '12px', fontSize: '14px' }}>
               After placing your order at Sesoris, you will receive a confirmation email with your order number. Once your order is shipped, we will send a tracking number that you can use to monitor your delivery in real time.
             </p>
-            <p style={{ color: '#6C757D', lineHeight: '1.7', marginBottom: '16px', fontSize: '14px' }}>
+            <p style={{ color: '#5F6873', lineHeight: '1.7', marginBottom: '16px', fontSize: '14px' }}>
               Standard delivery takes 5-7 business days, with express options available in 2-3 business days. All shipments are fully insured and trackable from our warehouse to your doorstep.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Link href="/shipping" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>Shipping Policy</Link>
-              <span style={{ color: '#6C757D' }}>·</span>
+              <span style={{ color: '#5F6873' }}>·</span>
               <Link href="/returns" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>Returns Policy</Link>
-              <span style={{ color: '#6C757D' }}>·</span>
+              <span style={{ color: '#5F6873' }}>·</span>
               <Link href="/faq" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>FAQ</Link>
             </div>
           </div>

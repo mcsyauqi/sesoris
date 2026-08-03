@@ -21,10 +21,10 @@ export default function TermsPage() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Terms & Conditions</span>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function TermsPage() {
             <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
               Terms & Conditions
             </h1>
-            <p style={{ color: '#6C757D', fontSize: '16px' }}>
+            <p style={{ color: '#5F6873', fontSize: '16px' }}>
               Last updated: January 1, 2026
             </p>
           </div>

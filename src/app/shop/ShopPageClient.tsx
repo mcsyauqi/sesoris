@@ -66,7 +66,7 @@ export default function ShopPageClient() {
                 style={{ width: '16px', height: '16px', accentColor: '#1B5E3B' }}
               />
               <span style={{ fontSize: '14px', color: '#343A40' }}>{cat.name}</span>
-              <span style={{ fontSize: '12px', color: '#6C757D', marginLeft: 'auto' }}>({cat.productCount})</span>
+              <span style={{ fontSize: '12px', color: '#5F6873', marginLeft: 'auto' }}>({cat.productCount})</span>
             </label>
           ))}
         </div>
@@ -124,10 +124,10 @@ export default function ShopPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Shop</span>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function ShopPageClient() {
             }}>
               All Sesoris Products
             </h1>
-            <p style={{ color: '#6C757D', fontSize: '14px' }}>
+            <p style={{ color: '#5F6873', fontSize: '14px' }}>
               Showing {filteredProducts.length} products
             </p>
           </div>
@@ -226,7 +226,7 @@ export default function ShopPageClient() {
           }}>
             Shop by Category
           </h2>
-          <p style={{ color: '#6C757D', fontSize: '15px', marginBottom: '32px', maxWidth: '640px' }}>
+          <p style={{ color: '#5F6873', fontSize: '15px', marginBottom: '32px', maxWidth: '640px' }}>
             Browse our curated collection of home organizers, kitchen essentials, handy tools, and lifestyle picks designed to make any home tidier and more comfortable.
           </p>
           <div style={{

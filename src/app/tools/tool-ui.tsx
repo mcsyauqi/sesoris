@@ -27,10 +27,10 @@ export function ToolPageShell({
       <div style={{ background: '#F8F9FA', padding: '12px 0', borderBottom: '1px solid #E9ECEF' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', minWidth: 0 }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D', flexShrink: 0 }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873', flexShrink: 0 }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D', flexShrink: 0 }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873', flexShrink: 0 }} />
             <span
               style={{
                 color: '#212529',
@@ -76,7 +76,7 @@ export function ToolPageShell({
           >
             {title}
           </h1>
-          <p style={{ fontSize: '17px', color: '#6C757D', lineHeight: 1.7 }}>{subtitle}</p>
+          <p style={{ fontSize: '17px', color: '#5F6873', lineHeight: 1.7 }}>{subtitle}</p>
           {children}
         </article>
       </div>
@@ -124,7 +124,7 @@ export function FaqCards({ faqs }: { faqs: { q: string; a: string }[] }) {
           }}
         >
           <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>{f.q}</h3>
-          <p style={{ fontSize: '14px', color: '#6C757D', lineHeight: 1.7, margin: 0 }}>{f.a}</p>
+          <p style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.7, margin: 0 }}>{f.a}</p>
         </div>
       ))}
     </div>

@@ -22,7 +22,7 @@ export function TestimonialsSection() {
           }}>
             What Our Customers Say
           </h2>
-          <p style={{ color: '#6C757D', fontSize: '15px' }}>Real reviews from our verified buyers</p>
+          <p style={{ color: '#5F6873', fontSize: '15px' }}>Real reviews from our verified buyers</p>
         </div>
 
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
@@ -81,9 +81,9 @@ export function TestimonialsSection() {
               <div style={{ textAlign: 'left' }}>
                 <div style={{ fontWeight: 600, color: '#212529' }}>{testimonial.name}</div>
                 {testimonial.verified && (
-                  <div style={{ fontSize: '13px', color: '#28A745', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <div style={{ fontSize: '13px', color: '#1E7E34', display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <CheckCircle style={{ width: '12px', height: '12px' }} />
-                    Pembeli Terverifikasi
+                    Verified Buyer
                   </div>
                 )}
               </div>
@@ -98,6 +98,7 @@ export function TestimonialsSection() {
             }}>
               <button
                 onClick={() => setCurrent((p) => (p - 1 + testimonials.length) % testimonials.length)}
+                aria-label="Show previous customer review"
                 style={{
                   width: '40px',
                   height: '40px',
@@ -113,26 +114,45 @@ export function TestimonialsSection() {
                 <ChevronLeft style={{ width: '20px', height: '20px' }} />
               </button>
 
-              <div style={{ display: 'flex', gap: '8px' }}>
-                {testimonials.map((_, i) => (
+              {/* gap 0 because every dot button is a 24x24 touch target already;
+                  the visible 8px dot is the inner span. */}
+              <div style={{ display: 'flex', gap: 0 }}>
+                {testimonials.map((t, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
+                    aria-label={`Show review ${i + 1} of ${testimonials.length}, by ${t.name}`}
+                    aria-current={i === current ? 'true' : undefined}
                     style={{
-                      width: i === current ? '24px' : '8px',
-                      height: '8px',
-                      borderRadius: '50px',
+                      width: i === current ? '40px' : '24px',
+                      height: '24px',
+                      flexShrink: 0,
                       border: 'none',
-                      background: i === current ? '#1B5E3B' : '#E9ECEF',
+                      background: 'transparent',
+                      padding: 0,
                       cursor: 'pointer',
-                      transition: 'all 0.2s'
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
-                  />
+                  >
+                    <span
+                      style={{
+                        display: 'block',
+                        width: i === current ? '24px' : '8px',
+                        height: '8px',
+                        borderRadius: '50px',
+                        background: i === current ? '#1B5E3B' : '#E9ECEF',
+                        transition: 'all 0.2s'
+                      }}
+                    />
+                  </button>
                 ))}
               </div>
 
               <button
                 onClick={() => setCurrent((p) => (p + 1) % testimonials.length)}
+                aria-label="Show next customer review"
                 style={{
                   width: '40px',
                   height: '40px',

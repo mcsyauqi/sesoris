@@ -21,10 +21,10 @@ export default function SizeGuidePage() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Size Guide</span>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function SizeGuidePage() {
             <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
               Size Guide
             </h1>
-            <p style={{ color: '#6C757D', fontSize: '16px' }}>
+            <p style={{ color: '#5F6873', fontSize: '16px' }}>
               Find the right size for your Sesoris products
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function SizeGuidePage() {
                       <td style={{ padding: '14px 16px', fontWeight: 600, color: '#1B5E3B' }}>{row.size}</td>
                       <td style={{ padding: '14px 16px', color: '#212529' }}>{row.dim}</td>
                       <td style={{ padding: '14px 16px', color: '#212529' }}>{row.cap}</td>
-                      <td style={{ padding: '14px 16px', color: '#6C757D' }}>{row.use}</td>
+                      <td style={{ padding: '14px 16px', color: '#5F6873' }}>{row.use}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -115,7 +115,7 @@ export default function SizeGuidePage() {
                       <td style={{ padding: '14px 16px', fontWeight: 500, color: '#212529' }}>{row.prod}</td>
                       <td style={{ padding: '14px 16px', color: '#212529' }}>{row.size}</td>
                       <td style={{ padding: '14px 16px', color: '#1B5E3B', fontWeight: 500 }}>{row.cap}</td>
-                      <td style={{ padding: '14px 16px', color: '#6C757D' }}>{row.portion}</td>
+                      <td style={{ padding: '14px 16px', color: '#5F6873' }}>{row.portion}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -148,7 +148,7 @@ export default function SizeGuidePage() {
                     <tr key={row.type} style={{ background: i % 2 === 0 ? '#F8F9FA' : 'white' }}>
                       <td style={{ padding: '14px 16px', fontWeight: 500, color: '#212529' }}>{row.type}</td>
                       <td style={{ padding: '14px 16px', color: '#212529' }}>{row.dim}</td>
-                      <td style={{ padding: '14px 16px', color: '#6C757D' }}>{row.use}</td>
+                      <td style={{ padding: '14px 16px', color: '#5F6873' }}>{row.use}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -183,7 +183,7 @@ export default function SizeGuidePage() {
             borderRadius: '12px',
             textAlign: 'center',
           }}>
-            <p style={{ color: '#6C757D', marginBottom: '12px' }}>
+            <p style={{ color: '#5F6873', marginBottom: '12px' }}>
               Still unsure about which size to choose?
             </p>
             <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>

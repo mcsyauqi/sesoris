@@ -45,12 +45,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/shop" style={{ color: '#6C757D' }}>Shop</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
+            <Link href="/shop" style={{ color: '#5F6873' }}>Shop</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>{product.name}</span>
           </div>
         </div>
@@ -172,11 +172,11 @@ export default function ProductPageClient({ product }: { product: Product }) {
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: '14px', color: '#6C757D' }}>({product.reviewCount} reviews)</span>
+                <span style={{ fontSize: '14px', color: '#5F6873' }}>({product.reviewCount} reviews)</span>
               </div>
             ) : (
               <div style={{ marginBottom: '20px' }}>
-                <span style={{ fontSize: '13px', color: '#6C757D', fontStyle: 'italic' }}>
+                <span style={{ fontSize: '13px', color: '#5F6873', fontStyle: 'italic' }}>
                   Be the first to review this product!
                 </span>
               </div>
@@ -188,7 +188,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 {formatPrice(product.price)}
               </span>
               {onSale && (
-                <span style={{ fontSize: '20px', color: '#6C757D', textDecoration: 'line-through' }}>
+                <span style={{ fontSize: '20px', color: '#5F6873', textDecoration: 'line-through' }}>
                   {formatPrice(product.compareAtPrice!)}
                 </span>
               )}
@@ -309,7 +309,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 <Heart style={{
                   width: '22px',
                   height: '22px',
-                  color: wishlisted ? '#DC3545' : '#6C757D',
+                  color: wishlisted ? '#DC3545' : '#5F6873',
                   fill: wishlisted ? '#DC3545' : 'none'
                 }} />
               </button>
@@ -328,21 +328,21 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 <Truck style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Free Shipping</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>Min. $50</div>
+                  <div style={{ fontSize: '11px', color: '#5F6873' }}>Min. $50</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <RefreshCw style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Easy Returns</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>30 Days</div>
+                  <div style={{ fontSize: '11px', color: '#5F6873' }}>30 Days</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Shield style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Warranty</div>
-                  <div style={{ fontSize: '11px', color: '#6C757D' }}>1 Year</div>
+                  <div style={{ fontSize: '11px', color: '#5F6873' }}>1 Year</div>
                 </div>
               </div>
             </div>
@@ -367,7 +367,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 marginBottom: '-2px',
                 fontSize: '15px',
                 fontWeight: 600,
-                color: activeTab === 'description' ? '#1B5E3B' : '#6C757D',
+                color: activeTab === 'description' ? '#1B5E3B' : '#5F6873',
                 cursor: 'pointer',
                 transition: 'all 0.2s'
               }}
@@ -384,7 +384,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 marginBottom: '-2px',
                 fontSize: '15px',
                 fontWeight: 600,
-                color: activeTab === 'specs' ? '#1B5E3B' : '#6C757D',
+                color: activeTab === 'specs' ? '#1B5E3B' : '#5F6873',
                 cursor: 'pointer',
                 transition: 'all 0.2s'
               }}
@@ -401,7 +401,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 marginBottom: '-2px',
                 fontSize: '15px',
                 fontWeight: 600,
-                color: activeTab === 'reviews' ? '#1B5E3B' : '#6C757D',
+                color: activeTab === 'reviews' ? '#1B5E3B' : '#5F6873',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
                 display: 'flex',
@@ -567,7 +567,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
           <Package style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
           <div>
             <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>What&apos;s in the Box</div>
-            <div style={{ fontSize: '14px', color: '#6C757D' }}>
+            <div style={{ fontSize: '14px', color: '#5F6873' }}>
               1x {product.name}, Warranty Card, User Guide
             </div>
           </div>

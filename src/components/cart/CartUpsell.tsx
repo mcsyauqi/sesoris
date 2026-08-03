@@ -61,7 +61,7 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
         </span>
       </div>
 
-      <p style={{ fontSize: '13px', color: '#6C757D', marginBottom: '12px', lineHeight: '1.5' }}>
+      <p style={{ fontSize: '13px', color: '#5F6873', marginBottom: '12px', lineHeight: '1.5' }}>
         You already have items from this bundle. Add the missing products to unlock the full bundle discount.
       </p>
 
@@ -98,10 +98,10 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-        <div style={{ fontSize: '13px', color: '#6C757D' }}>
+        <div style={{ fontSize: '13px', color: '#5F6873' }}>
           Add {missingProducts.length} more item{missingProducts.length > 1 ? 's' : ''} for{' '}
           <strong style={{ color: '#212529' }}>{formatPrice(addMissingCost)}</strong>
-          {' '}and save <strong style={{ color: '#28A745' }}>{formatPrice(bundle.originalPrice - bundle.bundlePrice)}</strong> total
+          {' '}and save <strong style={{ color: '#1E7E34' }}>{formatPrice(bundle.originalPrice - bundle.bundlePrice)}</strong> total
         </div>
 
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -117,7 +117,7 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              background: isAdded ? '#28A745' : '#1B5E3B',
+              background: isAdded ? '#1E7E34' : '#1B5E3B',
               color: 'white',
               border: 'none',
               borderRadius: '8px',

@@ -44,10 +44,10 @@ export default function CheckoutPageClient() {
         <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
           <div className="container">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
               <span style={{ color: '#212529', fontWeight: 500 }}>Order Confirmed</span>
             </div>
           </div>
@@ -58,10 +58,10 @@ export default function CheckoutPageClient() {
           <h1 style={{ fontSize: '26px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
             Thank you for your order
           </h1>
-          <p style={{ color: '#6C757D', marginBottom: '8px' }}>
+          <p style={{ color: '#5F6873', marginBottom: '8px' }}>
             Order reference: <strong style={{ color: '#212529' }}>{placedOrderId}</strong>
           </p>
-          <p style={{ color: '#6C757D', marginBottom: '24px' }}>
+          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
             A confirmation email with tracking details will follow shortly.
           </p>
           <Link href="/shop" className="btn btn-primary">
@@ -78,10 +78,10 @@ export default function CheckoutPageClient() {
         <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
           <div className="container">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
               <span style={{ color: '#212529', fontWeight: 500 }}>Checkout</span>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function CheckoutPageClient() {
           <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
             Your cart is empty
           </h1>
-          <p style={{ color: '#6C757D', marginBottom: '24px' }}>
+          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
             Add items to your cart before checking out.
           </p>
           <Link href="/shop" className="btn btn-primary">
@@ -107,12 +107,12 @@ export default function CheckoutPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/cart" style={{ color: '#6C757D' }}>Cart</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
+            <Link href="/cart" style={{ color: '#5F6873' }}>Cart</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Checkout</span>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function CheckoutPageClient() {
                 height: '32px',
                 borderRadius: '50%',
                 background: step > i ? '#1B5E3B' : step === i + 1 ? '#1B5E3B' : '#E9ECEF',
-                color: step >= i + 1 ? 'white' : '#6C757D',
+                color: step >= i + 1 ? 'white' : '#5F6873',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -137,7 +137,7 @@ export default function CheckoutPageClient() {
               }}>
                 {i + 1}
               </div>
-              <span style={{ fontWeight: step === i + 1 ? 600 : 400, color: step === i + 1 ? '#212529' : '#6C757D' }}>
+              <span style={{ fontWeight: step === i + 1 ? 600 : 400, color: step === i + 1 ? '#212529' : '#5F6873' }}>
                 {label}
               </span>
             </div>
@@ -219,7 +219,7 @@ export default function CheckoutPageClient() {
                   <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Card Number</label>
                   <div style={{ position: 'relative' }}>
                     <input type="text" placeholder="1234 5678 9012 3456" style={{ width: '100%', padding: '12px 16px', paddingRight: '48px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                    <CreditCard style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#6C757D' }} />
+                    <CreditCard style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#5F6873' }} />
                   </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
@@ -251,7 +251,7 @@ export default function CheckoutPageClient() {
                 <div style={{ background: '#F8F9FA', borderRadius: '12px', padding: '20px', marginBottom: '24px' }}>
                   <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid #E9ECEF' }}>
                     <div style={{ fontWeight: 600, marginBottom: '8px' }}>Shipping Address</div>
-                    <div style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.5 }}>
+                    <div style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.5 }}>
                       John Doe<br />
                       123 Main Street<br />
                       New York, NY 10001
@@ -259,7 +259,7 @@ export default function CheckoutPageClient() {
                   </div>
                   <div>
                     <div style={{ fontWeight: 600, marginBottom: '8px' }}>Payment Method</div>
-                    <div style={{ color: '#6C757D', fontSize: '14px' }}>
+                    <div style={{ color: '#5F6873', fontSize: '14px' }}>
                       Credit Card ending in 3456
                     </div>
                   </div>
@@ -290,7 +290,7 @@ export default function CheckoutPageClient() {
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontSize: '14px', fontWeight: 500, marginBottom: '4px' }}>{item.product.name}</div>
-                      <div style={{ fontSize: '13px', color: '#6C757D' }}>Qty: {item.quantity}</div>
+                      <div style={{ fontSize: '13px', color: '#5F6873' }}>Qty: {item.quantity}</div>
                     </div>
                     <div style={{ fontWeight: 500 }}>{formatPrice(item.product.price * item.quantity)}</div>
                   </div>
@@ -299,15 +299,15 @@ export default function CheckoutPageClient() {
 
               <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '20px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#6C757D' }}>Subtotal</span>
+                  <span style={{ color: '#5F6873' }}>Subtotal</span>
                   <span>{formatPrice(subtotal)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#6C757D' }}>Shipping</span>
-                  <span style={{ color: shipping === 0 ? '#28A745' : '#212529' }}>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
+                  <span style={{ color: '#5F6873' }}>Shipping</span>
+                  <span style={{ color: shipping === 0 ? '#1E7E34' : '#212529' }}>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#6C757D' }}>Tax</span>
+                  <span style={{ color: '#5F6873' }}>Tax</span>
                   <span>{formatPrice(tax)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '12px', borderTop: '1px solid #E9ECEF' }}>
@@ -318,11 +318,11 @@ export default function CheckoutPageClient() {
 
               {/* Trust Badges */}
               <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #E9ECEF' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6C757D', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#5F6873', marginBottom: '8px' }}>
                   <ShieldCheck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />
                   Secure checkout
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6C757D' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#5F6873' }}>
                   <Truck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />
                   Free shipping on orders over $50
                 </div>

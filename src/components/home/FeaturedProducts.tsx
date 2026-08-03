@@ -31,7 +31,7 @@ export function FeaturedProducts() {
             }}>
               Popular This Week
             </h2>
-            <p style={{ color: '#6C757D', fontSize: '15px' }}>Discover our customers' favorite products</p>
+            <p style={{ color: '#5F6873', fontSize: '15px' }}>Discover our customers' favorite products</p>
           </div>
 
           <div className="tab-pills">

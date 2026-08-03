@@ -28,10 +28,10 @@ export default function AccountPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>My Account</span>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function AccountPageClient() {
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontWeight: 600, color: '#212529' }}>John Doe</div>
-                <div style={{ fontSize: '14px', color: '#6C757D' }}>john@example.com</div>
+                <div style={{ fontSize: '14px', color: '#5F6873' }}>john@example.com</div>
               </div>
             </div>
 
@@ -75,7 +75,7 @@ export default function AccountPageClient() {
                       gap: '12px',
                       padding: '12px 16px',
                       borderRadius: '8px',
-                      color: '#6C757D',
+                      color: '#5F6873',
                       fontSize: '15px',
                     }}
                   >
@@ -94,7 +94,7 @@ export default function AccountPageClient() {
                       borderRadius: '8px',
                       border: 'none',
                       background: activeTab === item.id ? '#E8F5E9' : 'transparent',
-                      color: activeTab === item.id ? '#1B5E3B' : '#6C757D',
+                      color: activeTab === item.id ? '#1B5E3B' : '#5F6873',
                       cursor: 'pointer',
                       fontSize: '15px',
                       textAlign: 'left',
@@ -179,7 +179,7 @@ export default function AccountPageClient() {
                     >
                       <div>
                         <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>{order.id}</div>
-                        <div style={{ fontSize: '14px', color: '#6C757D' }}>{order.date} • {order.items} items</div>
+                        <div style={{ fontSize: '14px', color: '#5F6873' }}>{order.date} • {order.items} items</div>
                       </div>
                       <div style={{
                         padding: '6px 12px',
@@ -226,7 +226,7 @@ export default function AccountPageClient() {
                       Default
                     </span>
                     <div style={{ fontWeight: 600, marginBottom: '8px' }}>Home</div>
-                    <div style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.5 }}>
+                    <div style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.5 }}>
                       John Doe<br />
                       123 Main Street<br />
                       New York, NY 10001<br />
@@ -239,7 +239,7 @@ export default function AccountPageClient() {
                   </div>
                   <div style={{ padding: '20px', border: '1px solid #E9ECEF', borderRadius: '12px' }}>
                     <div style={{ fontWeight: 600, marginBottom: '8px' }}>Office</div>
-                    <div style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.5 }}>
+                    <div style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.5 }}>
                       John Doe<br />
                       456 Business Ave, Suite 100<br />
                       New York, NY 10002<br />
@@ -271,7 +271,7 @@ export default function AccountPageClient() {
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontWeight: 500 }}>•••• •••• •••• 3456</div>
-                      <div style={{ fontSize: '13px', color: '#6C757D' }}>Expires 12/27</div>
+                      <div style={{ fontSize: '13px', color: '#5F6873' }}>Expires 12/27</div>
                     </div>
                     <span style={{ fontSize: '12px', padding: '4px 8px', background: '#E8F5E9', color: '#1B5E3B', borderRadius: '4px' }}>Default</span>
                   </div>
@@ -294,7 +294,7 @@ export default function AccountPageClient() {
                     <label key={item.title} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', background: '#F8F9FA', borderRadius: '10px', cursor: 'pointer' }}>
                       <div>
                         <div style={{ fontWeight: 500, marginBottom: '4px' }}>{item.title}</div>
-                        <div style={{ fontSize: '14px', color: '#6C757D' }}>{item.desc}</div>
+                        <div style={{ fontSize: '14px', color: '#5F6873' }}>{item.desc}</div>
                       </div>
                       <input type="checkbox" defaultChecked style={{ width: '20px', height: '20px', accentColor: '#1B5E3B' }} />
                     </label>

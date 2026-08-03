@@ -35,10 +35,10 @@ export default function AboutPage() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>About Us</span>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function AboutPage() {
           <h1 style={{ fontSize: '40px', fontWeight: 700, color: '#212529', marginBottom: '20px', maxWidth: '600px', margin: '0 auto 20px' }}>
             Practical Home Organization from Yogyakarta
           </h1>
-          <p style={{ color: '#6C757D', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
+          <p style={{ color: '#5F6873', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
             Sesoris is a Yogyakarta-founded home organizer brand helping households choose practical storage, kitchen, desk, and travel products for calmer daily routines.
           </p>
         </div>
@@ -101,19 +101,19 @@ export default function AboutPage() {
                 <Award style={{ width: '28px', height: '28px', color: '#1B5E3B' }} />
                 <div>
                   <div style={{ fontWeight: 700, color: '#212529' }}>Yogyakarta, Indonesia</div>
-                  <div style={{ fontSize: '12px', color: '#6C757D' }}>Online home organizer store</div>
+                  <div style={{ fontSize: '12px', color: '#5F6873' }}>Online home organizer store</div>
                 </div>
               </div>
             </div>
             <div>
               <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '20px' }}>Who We Are</h2>
-              <p style={{ color: '#6C757D', lineHeight: 1.8, marginBottom: '16px' }}>
+              <p style={{ color: '#5F6873', lineHeight: 1.8, marginBottom: '16px' }}>
                 At Sesoris, we believe a tidy home starts with products that are easy to use, easy to clean, and easy to fit into real living spaces. Our team works from Yogyakarta and curates items for kitchens, desks, rooms, wardrobes, and travel needs.
               </p>
-              <p style={{ color: '#6C757D', lineHeight: 1.8, marginBottom: '16px' }}>
+              <p style={{ color: '#5F6873', lineHeight: 1.8, marginBottom: '16px' }}>
                 The Yogyakarta roots matter to us: it is where the idea for Sesoris started, shaping a calm, practical approach to home organization that we bring to every product we curate.
               </p>
-              <p style={{ color: '#6C757D', lineHeight: 1.8 }}>
+              <p style={{ color: '#5F6873', lineHeight: 1.8 }}>
                 &ldquo;Do It With Ease&rdquo; is our promise: simple product choices, clear support, and practical storage ideas for people who want their home to feel more organized without making the process complicated.
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       <section style={{ padding: '64px 0', background: '#F8F9FA' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ color: '#6C757D', marginBottom: '8px' }}>The principles that guide everything we do</p>
+            <p style={{ color: '#5F6873', marginBottom: '8px' }}>The principles that guide everything we do</p>
             <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529' }}>Our Values</h2>
           </div>
           <div className="about-values-grid" style={{ display: 'grid', gap: '24px' }}>
@@ -149,7 +149,7 @@ export default function AboutPage() {
                   <value.icon style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
                 </div>
                 <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>{value.title}</h3>
-                <p style={{ color: '#6C757D', fontSize: '14px', lineHeight: 1.6 }}>{value.desc}</p>
+                <p style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.6 }}>{value.desc}</p>
               </div>
             ))}
           </div>
@@ -191,7 +191,7 @@ export default function AboutPage() {
             <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '16px' }}>
               Ready to Discover Amazing Products?
             </h2>
-            <p style={{ color: '#6C757D', marginBottom: '32px' }}>
+            <p style={{ color: '#5F6873', marginBottom: '32px' }}>
               Browse our collection and find the perfect items for yourself or someone special.
             </p>
             <Link

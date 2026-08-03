@@ -40,7 +40,7 @@ export function AboutSection() {
               <Leaf style={{ width: '36px', height: '36px', color: '#1B5E3B' }} />
               <div>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: '#1B5E3B' }}>Sesoris</div>
-                <div style={{ fontSize: '11px', color: '#6C757D' }}>Do It With Ease</div>
+                <div style={{ fontSize: '11px', color: '#5F6873' }}>Do It With Ease</div>
               </div>
             </div>
           </div>
@@ -68,13 +68,13 @@ export function AboutSection() {
             }}>
               Why Choose Sesoris?
             </h2>
-            <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
+            <p style={{ color: '#5F6873', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
               Sesoris is a home organizer brand dedicated to helping you create a tidier, more functional living space. From kitchen storage racks and food containers to desk organizers and travel pouches, every product is chosen for quality, durability, and everyday practicality.
             </p>
-            <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
+            <p style={{ color: '#5F6873', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
               We partner with trusted manufacturers to bring you rust-resistant stainless steel, food-grade plastics, and premium materials at accessible prices. Whether you live in a small apartment or a spacious home, our storage solutions scale with your needs.
             </p>
-            <p style={{ color: '#6C757D', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ color: '#5F6873', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px' }}>
               Sesoris curates practical organizers for kitchens, desks, closets, travel, and small-space living, one shelf, container, and cabinet at a time.
             </p>
 
@@ -82,15 +82,15 @@ export function AboutSection() {
             <div className="grid-stats" style={{ marginBottom: '28px' }}>
               <div>
                 <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>23</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Products</div>
+                <div style={{ fontSize: '13px', color: '#5F6873' }}>Products</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>9</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Categories</div>
+                <div style={{ fontSize: '13px', color: '#5F6873' }}>Categories</div>
               </div>
               <div>
                 <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>30-Day</div>
-                <div style={{ fontSize: '13px', color: '#6C757D' }}>Returns</div>
+                <div style={{ fontSize: '13px', color: '#5F6873' }}>Returns</div>
               </div>
             </div>
 

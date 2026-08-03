@@ -21,10 +21,10 @@ export default function ShippingPage() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Shipping</span>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function ShippingPage() {
             <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
               Shipping Information
             </h1>
-            <p style={{ color: '#6C757D', fontSize: '16px' }}>
+            <p style={{ color: '#5F6873', fontSize: '16px' }}>
               We are committed to delivering your orders quickly and safely
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function ShippingPage() {
                 }}>
                   <div>
                     <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>{option.name}</div>
-                    <div style={{ fontSize: '14px', color: '#6C757D', marginBottom: '4px' }}>{option.desc}</div>
+                    <div style={{ fontSize: '14px', color: '#5F6873', marginBottom: '4px' }}>{option.desc}</div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#1B5E3B' }}>
                       <Clock style={{ width: '14px', height: '14px' }} />
                       {option.time}
@@ -126,7 +126,7 @@ export default function ShippingPage() {
                   <MapPin style={{ width: '18px', height: '18px', color: '#1B5E3B' }} />
                   <span style={{ fontWeight: 600, color: '#212529' }}>Domestic</span>
                 </div>
-                <p style={{ fontSize: '14px', color: '#6C757D', margin: 0 }}>
+                <p style={{ fontSize: '14px', color: '#5F6873', margin: 0 }}>
                   Estimated 3-7 business days for standard shipping
                 </p>
               </div>
@@ -135,7 +135,7 @@ export default function ShippingPage() {
                   <MapPin style={{ width: '18px', height: '18px', color: '#1B5E3B' }} />
                   <span style={{ fontWeight: 600, color: '#212529' }}>International</span>
                 </div>
-                <p style={{ fontSize: '14px', color: '#6C757D', margin: 0 }}>
+                <p style={{ fontSize: '14px', color: '#5F6873', margin: 0 }}>
                   Estimated 10-14 business days for standard shipping
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function ShippingPage() {
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
               Shipping Partners
             </h2>
-            <p style={{ color: '#6C757D', marginBottom: '16px' }}>
+            <p style={{ color: '#5F6873', marginBottom: '16px' }}>
               We partner with trusted carriers to ensure your packages arrive safely:
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
@@ -178,7 +178,7 @@ export default function ShippingPage() {
               ].map((item, i) => (
                 <div key={i} style={{ padding: '20px', background: '#F8F9FA', borderRadius: '12px' }}>
                   <div style={{ fontWeight: 600, color: '#212529', marginBottom: '8px' }}>{item.q}</div>
-                  <div style={{ fontSize: '14px', color: '#6C757D', lineHeight: 1.6 }}>{item.a}</div>
+                  <div style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.6 }}>{item.a}</div>
                 </div>
               ))}
             </div>
@@ -192,7 +192,7 @@ export default function ShippingPage() {
             borderRadius: '12px',
             textAlign: 'center',
           }}>
-            <p style={{ color: '#6C757D', marginBottom: '12px' }}>
+            <p style={{ color: '#5F6873', marginBottom: '12px' }}>
               Have more questions about shipping?
             </p>
             <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>

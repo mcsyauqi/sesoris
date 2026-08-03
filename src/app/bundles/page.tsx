@@ -119,7 +119,7 @@ export default function BundlesPage() {
                     <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
                       {bundle.name}
                     </h3>
-                    <p style={{ fontSize: '13px', color: '#6C757D', marginBottom: '16px', lineHeight: '1.5' }}>
+                    <p style={{ fontSize: '13px', color: '#5F6873', marginBottom: '16px', lineHeight: '1.5' }}>
                       {bundle.description}
                     </p>
 
@@ -149,7 +149,7 @@ export default function BundlesPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontSize: '11px',
-                        color: '#6C757D',
+                        color: '#5F6873',
                         fontWeight: 600,
                       }}>
                         {bundle.productIds.length} items
@@ -167,7 +167,7 @@ export default function BundlesPage() {
                             {formatPrice(bundle.originalPrice)}
                           </span>
                         </div>
-                        <div style={{ fontSize: '12px', color: '#28A745', fontWeight: 600 }}>
+                        <div style={{ fontSize: '12px', color: '#1E7E34', fontWeight: 600 }}>
                           Save {formatPrice(bundle.originalPrice - bundle.bundlePrice)}
                         </div>
                       </div>

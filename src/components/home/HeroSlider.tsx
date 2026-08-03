@@ -143,7 +143,8 @@ export function HeroSlider() {
                 key={i}
                 onClick={() => goToSlide(i)}
                 className={`hero-dot ${i === current ? 'active' : ''}`}
-                aria-label={`Slide ${i + 1}`}
+                aria-label={`Show slide ${i + 1}: ${slides[i].title} ${slides[i].titleAccent}`}
+                aria-current={i === current ? 'true' : undefined}
               />
             ))}
           </div>

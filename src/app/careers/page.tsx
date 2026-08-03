@@ -79,10 +79,10 @@ export default function CareersPage() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Careers</span>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function CareersPage() {
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', textAlign: 'center', marginBottom: '16px' }}>
             Why Join Sesoris?
           </h2>
-          <p style={{ color: '#6C757D', textAlign: 'center', maxWidth: '600px', margin: '0 auto 40px' }}>
+          <p style={{ color: '#5F6873', textAlign: 'center', maxWidth: '600px', margin: '0 auto 40px' }}>
             We believe that happy employees produce the best work
           </p>
           <div className="careers-benefits-grid" style={{ display: 'grid', gap: '24px' }}>
@@ -149,7 +149,7 @@ export default function CareersPage() {
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
                   {benefit.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: '#6C757D', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: '#5F6873', margin: 0, lineHeight: 1.5 }}>
                   {benefit.desc}
                 </p>
               </div>
@@ -190,15 +190,15 @@ export default function CareersPage() {
                   <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
                     {job.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#6C757D', marginBottom: '12px' }}>
+                  <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
                     {job.desc}
                   </p>
                   <div style={{ display: 'flex', gap: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
                       <MapPin style={{ width: '14px', height: '14px' }} />
                       {job.location}
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
                       <Clock style={{ width: '14px', height: '14px' }} />
                       {job.type}
                     </div>
@@ -237,7 +237,7 @@ export default function CareersPage() {
           <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
             Don&apos;t see a position that fits?
           </h3>
-          <p style={{ color: '#6C757D', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
+          <p style={{ color: '#5F6873', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
             Send us your resume and portfolio. We are always open to exceptional talent!
           </p>
           <a href="mailto:admin@sesoris.com" style={{

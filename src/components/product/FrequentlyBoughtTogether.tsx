@@ -93,7 +93,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                 {bundleProducts.map((product, index) => (
                   <div key={product.id} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     {index > 0 && (
-                      <Plus style={{ width: '16px', height: '16px', color: '#6C757D', flexShrink: 0 }} />
+                      <Plus style={{ width: '16px', height: '16px', color: '#5F6873', flexShrink: 0 }} />
                     )}
                     <div style={{
                       display: 'flex',
@@ -147,7 +147,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                       -{bundle.discountPercent}%
                     </span>
                   </div>
-                  <div style={{ fontSize: '13px', color: '#28A745', fontWeight: 600, marginTop: '2px' }}>
+                  <div style={{ fontSize: '13px', color: '#1E7E34', fontWeight: 600, marginTop: '2px' }}>
                     Anda hemat {formatPrice(bundle.originalPrice - bundle.bundlePrice)}!
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    background: isAdded ? '#28A745' : '#1B5E3B',
+                    background: isAdded ? '#1E7E34' : '#1B5E3B',
                     color: 'white',
                     border: 'none',
                     borderRadius: '10px',

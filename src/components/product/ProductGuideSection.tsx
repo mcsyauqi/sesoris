@@ -85,7 +85,7 @@ export function ProductGuideSection({ product }: { product: Product }) {
         )}
 
         <div style={{ marginTop: '32px', paddingTop: '22px', borderTop: '1px solid #E9ECEF' }}>
-          <p style={{ fontSize: '14px', color: '#6C757D', marginBottom: '12px' }}>Keep browsing:</p>
+          <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>Keep browsing:</p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <Link
               href={`/category/${product.category.slug}`}

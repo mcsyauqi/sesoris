@@ -38,7 +38,7 @@ export function TrustBadges() {
               </div>
               <div>
                 <div style={{ fontWeight: 600, fontSize: '13px', color: '#212529' }}>{badge.title}</div>
-                <div style={{ fontSize: '12px', color: '#6C757D' }}>{badge.desc}</div>
+                <div style={{ fontSize: '12px', color: '#5F6873' }}>{badge.desc}</div>
               </div>
             </div>
           ))}

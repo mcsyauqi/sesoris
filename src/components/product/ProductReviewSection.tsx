@@ -48,7 +48,7 @@ function RatingBar({ stars, count, total }: { stars: number; count: number; tota
       <div style={{ flex: 1, background: '#E9ECEF', borderRadius: '4px', height: '8px', overflow: 'hidden' }}>
         <div style={{ width: `${pct}%`, background: '#FFC107', height: '100%', borderRadius: '4px', transition: 'width 0.5s' }} />
       </div>
-      <span style={{ width: '24px', color: '#6C757D' }}>{count}</span>
+      <span style={{ width: '24px', color: '#5F6873' }}>{count}</span>
     </div>
   );
 }
@@ -114,7 +114,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                 }} />
               ))}
             </div>
-            <div style={{ fontSize: '13px', color: '#6C757D' }}>{totalReviews} reviews</div>
+            <div style={{ fontSize: '13px', color: '#5F6873' }}>{totalReviews} reviews</div>
           </div>
 
           {/* Bars */}
@@ -191,7 +191,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
             <h3 style={{ fontSize: '17px', fontWeight: 600, color: '#212529', margin: 0 }}>
               Review: {productName}
             </h3>
-            <button onClick={() => setShowForm(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6C757D' }}>
+            <button onClick={() => setShowForm(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#5F6873' }}>
               <X style={{ width: '20px', height: '20px' }} />
             </button>
           </div>
@@ -255,7 +255,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                   fontFamily: 'inherit',
                 }}
               />
-              <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#6C757D' }}>
+              <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#5F6873' }}>
                 Minimum 20 characters · {form.content.length} / 1000
               </p>
             </div>
@@ -274,13 +274,13 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontSize: '13px',
-                color: '#6C757D',
+                color: '#5F6873',
               }}>
                 <Camera style={{ width: '16px', height: '16px' }} />
                 Upload product photo
                 <input type="file" accept="image/*" style={{ display: 'none' }} />
               </label>
-              <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#6C757D' }}>
+              <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#5F6873' }}>
                 Show your {productName} in use, photo reviews get 3x more helpful votes!
               </p>
             </div>
@@ -393,13 +393,13 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                     <span style={{ fontWeight: 600, color: '#212529', fontSize: '15px' }}>{review.name}</span>
                     {review.verified && (
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '12px', color: '#28A745' }}>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '12px', color: '#1E7E34' }}>
                         <CheckCircle style={{ width: '12px', height: '12px' }} />
                         Verified Purchase
                       </span>
                     )}
                     {review.location && (
-                      <span style={{ fontSize: '12px', color: '#6C757D' }}>· {review.location}</span>
+                      <span style={{ fontSize: '12px', color: '#5F6873' }}>· {review.location}</span>
                     )}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
@@ -412,7 +412,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                         }} />
                       ))}
                     </div>
-                    <span style={{ fontSize: '12px', color: '#6C757D' }}>{review.date}</span>
+                    <span style={{ fontSize: '12px', color: '#5F6873' }}>{review.date}</span>
                   </div>
                 </div>
               </div>
@@ -437,7 +437,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
 
               {/* Helpful */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ fontSize: '12px', color: '#6C757D' }}>Helpful?</span>
+                <span style={{ fontSize: '12px', color: '#5F6873' }}>Helpful?</span>
                 <button
                   onClick={() => toggleHelpful(review.id)}
                   style={{
@@ -449,7 +449,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
                     borderColor: helpfulVotes[review.id] ? '#1B5E3B' : '#E9ECEF',
                     borderRadius: '6px',
                     background: helpfulVotes[review.id] ? '#E8F5E9' : 'transparent',
-                    color: helpfulVotes[review.id] ? '#1B5E3B' : '#6C757D',
+                    color: helpfulVotes[review.id] ? '#1B5E3B' : '#5F6873',
                     cursor: 'pointer',
                     fontSize: '12px',
                     fontWeight: 500,
@@ -469,7 +469,7 @@ export function ProductReviewSection({ productId, productName, reviews }: Produc
           padding: '48px 24px',
           background: '#F8F9FA',
           borderRadius: '12px',
-          color: '#6C757D',
+          color: '#5F6873',
         }}>
           <Star style={{ width: '40px', height: '40px', margin: '0 auto 12px', opacity: 0.3, display: 'block' }} />
           <p style={{ fontSize: '16px', fontWeight: 500, marginBottom: '6px', color: '#495057' }}>

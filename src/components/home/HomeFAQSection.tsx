@@ -66,7 +66,7 @@ export function HomeFAQSection() {
           }}>
             Frequently Asked Questions
           </h2>
-          <p style={{ color: '#6C757D', fontSize: '15px' }}>
+          <p style={{ color: '#5F6873', fontSize: '15px' }}>
             Everything you need to know about Sesoris products and shopping experience.
           </p>
         </div>
@@ -114,7 +114,7 @@ export function HomeFAQSection() {
                 />
               </button>
               {openIndex === i && (
-                <div style={{ padding: '0 20px 18px', color: '#6C757D', fontSize: '14px', lineHeight: 1.7 }}>
+                <div style={{ padding: '0 20px 18px', color: '#5F6873', fontSize: '14px', lineHeight: 1.7 }}>
                   {faq.answer}
                 </div>
               )}
@@ -123,7 +123,7 @@ export function HomeFAQSection() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '32px' }}>
-          <p style={{ color: '#6C757D', fontSize: '14px' }}>
+          <p style={{ color: '#5F6873', fontSize: '14px' }}>
             Still have questions?{' '}
             <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 600, textDecoration: 'underline' }}>
               Contact our team

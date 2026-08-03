@@ -121,6 +121,7 @@ export function Footer() {
                   <input
                     type="email"
                     placeholder="Your email address"
+                    aria-label="Email address for the newsletter"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -140,6 +141,7 @@ export function Footer() {
                   <button
                     type="submit"
                     disabled={status === 'loading'}
+                    aria-label="Subscribe to the newsletter"
                     style={{
                       padding: '10px 16px',
                       borderRadius: '8px',
@@ -255,13 +257,13 @@ export function Footer() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <span style={{ fontSize: '13px', opacity: 0.7 }}>Follow us:</span>
               <div style={{ display: 'flex', gap: '12px' }}>
-                <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on Facebook (opens in a new tab)" style={{ color: 'inherit' }}>
                   <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
                 </a>
-                <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on Instagram (opens in a new tab)" style={{ color: 'inherit' }}>
                   <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
                 </a>
-                <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on YouTube (opens in a new tab)" style={{ color: 'inherit' }}>
                   <Youtube style={{ width: '18px', height: '18px', opacity: 0.8 }} />
                 </a>
               </div>
@@ -290,8 +292,10 @@ export function Footer() {
           justifyContent: 'center',
           gap: '24px'
         }}>
-          <Link href="/privacy" style={{ fontSize: '12px', opacity: 0.6 }}>Privacy Policy</Link>
-          <Link href="/terms" style={{ fontSize: '12px', opacity: 0.6 }}>Terms & Conditions</Link>
+          {/* opacity 0.6 rendered as #A4BFB1 on the #1B5E3B footer = 3.93:1, below AA.
+              0.8 renders as #D1DFD8 = 5.63:1. */}
+          <Link href="/privacy" style={{ fontSize: '12px', opacity: 0.8 }}>Privacy Policy</Link>
+          <Link href="/terms" style={{ fontSize: '12px', opacity: 0.8 }}>Terms & Conditions</Link>
         </div>
       </div>
     </footer>

@@ -78,10 +78,10 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ s
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}><Home style={{ width: '14px', height: '14px' }} /></Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/blog" style={{ color: '#6C757D', textDecoration: 'none' }}>Blog</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}><Home style={{ width: '14px', height: '14px' }} /></Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
+            <Link href="/blog" style={{ color: '#5F6873', textDecoration: 'none' }}>Blog</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>{category}</span>
           </div>
         </div>
@@ -91,17 +91,17 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ s
         <section style={{ textAlign: 'center', marginBottom: '40px' }}>
           <p style={{ color: '#1B5E3B', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', fontSize: '13px', marginBottom: '12px' }}>Blog Hub</p>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 800, color: '#212529', marginBottom: '16px', lineHeight: 1.15 }}>{category} Articles</h1>
-          <p style={{ color: '#6C757D', fontSize: '17px', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto' }}>
+          <p style={{ color: '#5F6873', fontSize: '17px', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto' }}>
             Explore every {category} article from Sesoris. This hub page gathers guides, checklists, and inspiration so you can find the topics most relevant to your home.
           </p>
         </section>
 
         <nav aria-label="Blog categories" style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '40px' }}>
-          <Link href="/blog" style={{ padding: '10px 18px', borderRadius: '999px', background: '#F8F9FA', color: '#6C757D', textDecoration: 'none', fontWeight: 600 }}>All</Link>
+          <Link href="/blog" style={{ padding: '10px 18px', borderRadius: '999px', background: '#F8F9FA', color: '#5F6873', textDecoration: 'none', fontWeight: 600 }}>All</Link>
           {categories.map((cat) => {
             const catSlug = slugifyCategory(cat);
             return (
-              <Link key={cat} href={`/blog/category/${catSlug}`} style={{ padding: '10px 18px', borderRadius: '999px', background: cat === category ? '#1B5E3B' : '#F8F9FA', color: cat === category ? '#fff' : '#6C757D', textDecoration: 'none', fontWeight: 600 }}>
+              <Link key={cat} href={`/blog/category/${catSlug}`} style={{ padding: '10px 18px', borderRadius: '999px', background: cat === category ? '#1B5E3B' : '#F8F9FA', color: cat === category ? '#fff' : '#5F6873', textDecoration: 'none', fontWeight: 600 }}>
                 {cat}
               </Link>
             );
@@ -118,8 +118,8 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ s
                 <div style={{ padding: '20px' }}>
                   <p style={{ color: '#1B5E3B', fontSize: '13px', fontWeight: 700, marginBottom: '10px' }}>{post.category}</p>
                   <h2 style={{ fontSize: '18px', lineHeight: 1.35, color: '#212529', marginBottom: '12px' }}>{post.title}</h2>
-                  <p style={{ color: '#6C757D', lineHeight: 1.6, fontSize: '14px', marginBottom: '16px' }}>{post.excerpt}</p>
-                  <div style={{ display: 'flex', gap: '14px', color: '#6C757D', fontSize: '12px', alignItems: 'center' }}>
+                  <p style={{ color: '#5F6873', lineHeight: 1.6, fontSize: '14px', marginBottom: '16px' }}>{post.excerpt}</p>
+                  <div style={{ display: 'flex', gap: '14px', color: '#5F6873', fontSize: '12px', alignItems: 'center' }}>
                     <span style={{ display: 'inline-flex', gap: '5px', alignItems: 'center' }}><Calendar style={{ width: '13px', height: '13px' }} />{post.dateFormatted}</span>
                     <span style={{ display: 'inline-flex', gap: '5px', alignItems: 'center' }}><Clock style={{ width: '13px', height: '13px' }} />{post.readTime}</span>
                   </div>

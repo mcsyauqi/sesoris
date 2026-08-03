@@ -196,7 +196,7 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
             {imgMatch[1] && (
               <figcaption style={{
                 fontSize: '13px',
-                color: '#6C757D',
+                color: '#5F6873',
                 textAlign: 'center',
                 marginTop: '8px',
                 fontStyle: 'italic',
@@ -558,12 +558,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
-            <Link href="/blog" style={{ color: '#6C757D' }}>Blog</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
+            <Link href="/blog" style={{ color: '#5F6873' }}>Blog</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>{post.category}</span>
           </div>
         </div>
@@ -646,7 +646,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
                 <div>
                   <div style={{ fontWeight: 600, color: '#212529' }}>{post.author.name}</div>
-                  <div style={{ fontSize: '14px', color: '#6C757D' }}>{post.author.role}</div>
+                  <div style={{ fontSize: '14px', color: '#5F6873' }}>{post.author.role}</div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '8px' }}>
@@ -688,7 +688,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       paddingLeft: item.level === 3 ? '20px' : '0',
                     }}>
                       <a href={`#${item.id}`} style={{
-                        color: item.level === 2 ? '#343A40' : '#6C757D',
+                        color: item.level === 2 ? '#343A40' : '#5F6873',
                         textDecoration: 'none',
                         fontSize: item.level === 2 ? '14px' : '13px',
                         fontWeight: item.level === 2 ? 500 : 400,
@@ -757,7 +757,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   points at three category pages instead of one. */}
               {shopLinks.secondaryCategories.length > 0 && (
                 <div style={{ marginTop: '18px', paddingTop: '16px', borderTop: '1px solid rgba(27,94,59,0.12)' }}>
-                  <div style={{ fontSize: '13px', color: '#6C757D', marginBottom: '10px' }}>
+                  <div style={{ fontSize: '13px', color: '#5F6873', marginBottom: '10px' }}>
                     Related collections
                   </div>
                   <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>

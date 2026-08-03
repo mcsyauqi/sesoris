@@ -153,7 +153,7 @@ export function Header() {
 
             {/* Actions */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
-              <button className="hide-mobile" style={{
+              <button className="hide-mobile" aria-label="Search products" style={{
                 padding: '10px',
                 borderRadius: '8px',
                 background: 'transparent',
@@ -163,7 +163,7 @@ export function Header() {
                 <Search style={{ width: '20px', height: '20px', color: '#343A40' }} />
               </button>
 
-              <Link href="/wishlist" style={{
+              <Link href="/wishlist" aria-label={wishlistCount > 0 ? `Wishlist, ${wishlistCount} items` : 'Wishlist'} style={{
                 position: 'relative',
                 padding: '10px',
                 borderRadius: '8px',
@@ -191,7 +191,7 @@ export function Header() {
                 )}
               </Link>
 
-              <Link href="/account" className="hide-mobile" style={{
+              <Link href="/account" className="hide-mobile" aria-label="My account" style={{
                 padding: '10px',
                 borderRadius: '8px'
               }}>
@@ -200,6 +200,7 @@ export function Header() {
 
               <Link
                 href="/cart"
+                aria-label={cartCount > 0 ? `Shopping cart, ${cartCount} items` : 'Shopping cart'}
                 style={{
                   position: 'relative',
                   padding: '10px',
@@ -233,6 +234,8 @@ export function Header() {
               <button
                 className="show-mobile"
                 onClick={() => setMobileMenuOpen(true)}
+                aria-label="Open navigation menu"
+                aria-expanded={mobileMenuOpen}
                 style={{
                   padding: '8px',
                   borderRadius: '8px',
@@ -271,6 +274,7 @@ export function Header() {
           </Link>
           <button
             onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close navigation menu"
             style={{
               padding: '8px',
               borderRadius: '8px',
@@ -326,7 +330,7 @@ export function Header() {
                             display: 'block',
                             padding: '12px 20px 12px 36px',
                             fontSize: '14px',
-                            color: '#6C757D',
+                            color: '#5F6873',
                           }}
                         >
                           {item.name}

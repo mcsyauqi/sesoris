@@ -31,10 +31,10 @@ export default function CartPageClient() {
         <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
           <div className="container">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
               <span style={{ color: '#212529', fontWeight: 500 }}>Cart</span>
             </div>
           </div>
@@ -51,12 +51,12 @@ export default function CartPageClient() {
             justifyContent: 'center',
             margin: '0 auto 24px',
           }}>
-            <ShoppingBag style={{ width: '32px', height: '32px', color: '#6C757D' }} />
+            <ShoppingBag style={{ width: '32px', height: '32px', color: '#5F6873' }} />
           </div>
           <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
             Your cart is empty
           </h1>
-          <p style={{ color: '#6C757D', marginBottom: '24px' }}>
+          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
             You have not added any products yet.
           </p>
           <Link href="/shop" className="btn btn-primary">
@@ -73,10 +73,10 @@ export default function CartPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Cart ({getItemCount()} items)</span>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function CartPageClient() {
                   >
                     {item.product.name}
                   </Link>
-                  <div style={{ fontSize: '14px', color: '#6C757D', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
                     {formatPrice(item.product.price)}
                   </div>
 
@@ -198,8 +198,8 @@ export default function CartPageClient() {
 
               <div style={{ marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <Tag style={{ width: '16px', height: '16px', color: '#6C757D' }} />
-                  <span style={{ fontSize: '14px', color: '#6C757D' }}>Promo Code</span>
+                  <Tag style={{ width: '16px', height: '16px', color: '#5F6873' }} />
+                  <span style={{ fontSize: '14px', color: '#5F6873' }}>Promo Code</span>
                 </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   <input
@@ -234,12 +234,12 @@ export default function CartPageClient() {
 
               <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '20px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#6C757D' }}>Subtotal</span>
+                  <span style={{ color: '#5F6873' }}>Subtotal</span>
                   <span style={{ fontWeight: 500, color: '#212529' }}>{formatPrice(subtotal)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#6C757D' }}>Shipping</span>
-                  <span style={{ fontWeight: 500, color: shipping === 0 ? '#28A745' : '#212529' }}>
+                  <span style={{ color: '#5F6873' }}>Shipping</span>
+                  <span style={{ fontWeight: 500, color: shipping === 0 ? '#1E7E34' : '#212529' }}>
                     {shipping === 0 ? 'Free' : formatPrice(shipping)}
                   </span>
                 </div>

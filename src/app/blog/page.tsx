@@ -68,10 +68,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Blog</span>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
             Blog Sesoris
           </h1>
-          <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '680px', margin: '0 auto' }}>
+          <p style={{ color: '#5F6873', fontSize: '16px', maxWidth: '680px', margin: '0 auto' }}>
             Home organization tips, storage inspiration, kitchen guides, and tidy living ideas from Sesoris.
           </p>
         </div>
@@ -99,7 +99,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         >
           {selectedCategory !== 'All' && <input type="hidden" name="category" value={selectedCategory} />}
           <div style={{ position: 'relative', flex: 1 }}>
-            <Search style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '18px', height: '18px', color: '#6C757D' }} />
+            <Search style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '18px', height: '18px', color: '#5F6873' }} />
             <input
               type="search"
               name="q"
@@ -141,7 +141,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 padding: '10px 20px',
                 borderRadius: '50px',
                 background: selectedCategory === cat ? '#1B5E3B' : '#F8F9FA',
-                color: selectedCategory === cat ? 'white' : '#6C757D',
+                color: selectedCategory === cat ? 'white' : '#5F6873',
                 fontWeight: 500,
                 fontSize: '14px',
                 textDecoration: 'none',
@@ -179,20 +179,20 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                     }}>
                       {featuredPost.category}
                     </span>
-                    <span style={{ fontSize: '13px', color: '#6C757D' }}>Featured Article</span>
+                    <span style={{ fontSize: '13px', color: '#5F6873' }}>Featured Article</span>
                   </div>
                   <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '16px', lineHeight: 1.3 }}>
                     {featuredPost.title}
                   </h2>
-                  <p style={{ color: '#6C757D', lineHeight: 1.6, marginBottom: '24px' }}>
+                  <p style={{ color: '#5F6873', lineHeight: 1.6, marginBottom: '24px' }}>
                     {featuredPost.excerpt}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
                       <Calendar style={{ width: '14px', height: '14px' }} />
                       {featuredPost.dateFormatted}
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6C757D' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
                       <Clock style={{ width: '14px', height: '14px' }} />
                       {featuredPost.readTime}
                     </div>
@@ -222,7 +222,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
           {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
         </h2>
-        <p style={{ color: '#6C757D', marginBottom: '32px', fontSize: '14px' }}>
+        <p style={{ color: '#5F6873', marginBottom: '32px', fontSize: '14px' }}>
           Showing {filteredPosts.length} article{filteredPosts.length === 1 ? '' : 's'}
           {searchQuery ? ` for "${searchQuery}"` : ''}
         </p>
@@ -248,13 +248,13 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                   <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', lineHeight: 1.4 }}>
                     {post.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#6C757D', lineHeight: 1.5, marginBottom: '16px' }}>
+                  <p style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.5, marginBottom: '16px' }}>
                     {post.excerpt}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <span style={{ fontSize: '12px', color: '#6C757D' }}>{post.dateFormatted}</span>
-                      <span style={{ fontSize: '12px', color: '#6C757D' }}>{post.readTime}</span>
+                      <span style={{ fontSize: '12px', color: '#5F6873' }}>{post.dateFormatted}</span>
+                      <span style={{ fontSize: '12px', color: '#5F6873' }}>{post.readTime}</span>
                     </div>
                     <span style={{
                       color: '#1B5E3B',
@@ -277,7 +277,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         {posts.length === 0 && (
           <div style={{ textAlign: 'center', padding: '48px 16px', background: '#F8F9FA', borderRadius: '16px' }}>
             <h3 style={{ color: '#212529', marginBottom: '8px' }}>No articles found</h3>
-            <p style={{ color: '#6C757D', marginBottom: '20px' }}>Try another keyword or browse all Sesoris articles.</p>
+            <p style={{ color: '#5F6873', marginBottom: '20px' }}>Try another keyword or browse all Sesoris articles.</p>
             <Link href="/blog" style={{ color: '#1B5E3B', fontWeight: 600, textDecoration: 'none' }}>
               Back to all articles
             </Link>

@@ -19,10 +19,10 @@ export default function WishlistPageClient() {
         <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
           <div className="container">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
               <span style={{ color: '#212529', fontWeight: 500 }}>Wishlist</span>
             </div>
           </div>
@@ -39,12 +39,12 @@ export default function WishlistPageClient() {
             justifyContent: 'center',
             margin: '0 auto 24px',
           }}>
-            <Heart style={{ width: '32px', height: '32px', color: '#6C757D' }} />
+            <Heart style={{ width: '32px', height: '32px', color: '#5F6873' }} />
           </div>
           <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
             Your wishlist is empty
           </h1>
-          <p style={{ color: '#6C757D', marginBottom: '24px' }}>
+          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
             Save items you love by clicking the heart icon on any product.
           </p>
           <Link href="/shop" className="btn btn-primary">
@@ -61,10 +61,10 @@ export default function WishlistPageClient() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Wishlist ({items.length} items)</span>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function WishlistPageClient() {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              color: '#6C757D',
+              color: '#5F6873',
               background: 'none',
               border: '1px solid #E9ECEF',
               padding: '8px 16px',

@@ -27,10 +27,10 @@ export default function BestSellersPage() {
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#6C757D' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#6C757D' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
             <span style={{ color: '#212529', fontWeight: 500 }}>Best Sellers</span>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function BestSellersPage() {
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
             Best Sellers
           </h1>
-          <p style={{ color: '#6C757D', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
+          <p style={{ color: '#5F6873', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
             Our customers' favorites with the best ratings and reviews
           </p>
         </div>
@@ -105,11 +105,11 @@ export default function BestSellersPage() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                   }}
                 >
-                  <Heart style={{ width: '18px', height: '18px', color: '#6C757D' }} />
+                  <Heart style={{ width: '18px', height: '18px', color: '#5F6873' }} />
                 </button>
               </div>
               <div style={{ padding: '16px' }}>
-                <div style={{ fontSize: '13px', color: '#6C757D', marginBottom: '4px' }}>
+                <div style={{ fontSize: '13px', color: '#5F6873', marginBottom: '4px' }}>
                   {product.category.name}
                 </div>
                 <Link
@@ -120,7 +120,7 @@ export default function BestSellersPage() {
                 </Link>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '8px' }}>
                   <Star style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
-                  <span style={{ fontSize: '13px', color: '#6C757D' }}>{product.rating} ({product.reviewCount} reviews)</span>
+                  <span style={{ fontSize: '13px', color: '#5F6873' }}>{product.rating} ({product.reviewCount} reviews)</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span style={{ fontSize: '16px', fontWeight: 700, color: '#1B5E3B' }}>
@@ -149,7 +149,7 @@ export default function BestSellersPage() {
 
         {bestSellers.length === 0 && (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ color: '#6C757D' }}>No best-selling products available at the moment.</p>
+            <p style={{ color: '#5F6873' }}>No best-selling products available at the moment.</p>
           </div>
         )}
       </div>

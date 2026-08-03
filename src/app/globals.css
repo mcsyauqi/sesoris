@@ -10,10 +10,10 @@
   --gray-50: #F8F9FA;
   --gray-100: #E9ECEF;
   --gray-200: #DEE2E6;
-  --gray-500: #6C757D;
+  --gray-500: #5F6873;
   --gray-700: #343A40;
   --gray-900: #212529;
-  --success: #28A745;
+  --success: #1E7E34;
   --warning: #FFC107;
   --error: #DC3545;
 }
@@ -933,21 +933,43 @@ select:focus-visible {
 
 .hero-dots {
   display: flex;
-  gap: 8px;
+  /* No gap: each dot button is already a 24px touch target, so butting them
+     together keeps 24px of safe clickable space between neighbours while the
+     visible dot stays 8px. */
+  gap: 0;
 }
 
+/* The button is the touch target (WCAG 2.2 target-size, min 24x24). The dot
+   the user actually sees is drawn by ::before so the visual design is
+   unchanged while the tappable area grows. */
 .hero-dot {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-dot::before {
+  content: '';
+  display: block;
   width: 8px;
   height: 8px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.35);
-  border: none;
-  cursor: pointer;
   transition: all 0.4s;
-  padding: 0;
 }
 
 .hero-dot.active {
+  width: 52px;
+}
+
+.hero-dot.active::before {
   width: 36px;
   background: white;
 }
