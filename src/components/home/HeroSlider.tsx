@@ -1,123 +1,55 @@
-'use client';
-
-import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Star, Truck, ShieldCheck } from 'lucide-react';
 
-const slides = [
-  {
-    id: 1,
-    tagline: 'New Collection 2026',
-    title: 'Tidy Home,',
-    titleAccent: 'Calmer Living.',
-    description: 'Smart storage solutions for a tidier, more comfortable home.',
-    image: '/images/hero/hero-1.webp',
-    buttonText: 'Shop the Collection',
-    buttonLink: '/shop',
-    stat: { value: '23', label: 'Products' },
-  },
-  {
-    id: 2,
-    tagline: 'Best Sellers',
-    title: 'Organized Kitchen,',
-    titleAccent: 'Cooking Made Easy.',
-    description: 'Premium kitchen racks, organizers, and food containers for a dream kitchen.',
-    image: '/images/hero/hero-2.webp',
-    buttonText: 'Shop Best Sellers',
-    buttonLink: '/best-sellers',
-    stat: { value: '30-Day', label: 'Easy Returns' },
-  },
-  {
-    id: 3,
-    tagline: 'Special Offers',
-    title: 'Save Up To',
-    titleAccent: '50%.',
-    description: 'Limited-time deals on selected items. Upgrade your home without breaking the bank.',
-    image: '/images/hero/hero-3.webp',
-    buttonText: 'Shop Now',
-    buttonLink: '/on-sale',
-    stat: { value: '9', label: 'Categories' },
-  },
-];
+const hero = {
+  tagline: 'New Collection 2026',
+  title: 'Tidy Home,',
+  titleAccent: 'Calmer Living.',
+  description: 'Smart storage solutions for a tidier, more comfortable home.',
+  image: '/images/hero/hero-1.webp',
+  buttonText: 'Shop the Collection',
+  buttonLink: '/shop',
+  stat: { value: '23', label: 'Products' },
+};
 
 export function HeroSlider() {
-  const [current, setCurrent] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  // ponytail: fade-in from opacity 0 delayed LCP ~0.8s; disable transition until hydrated
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  const goToSlide = useCallback((index: number) => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrent(index);
-    setTimeout(() => setIsTransitioning(false), 600);
-  }, [isTransitioning]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      goToSlide((current + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [current, goToSlide]);
-
-  const slide = slides[current];
-
   return (
     <section className="hero-section">
-      {/* Background image with overlay */}
       <div className="hero-bg">
-        {slides.map((s, i) => (
-          <div
-            key={s.id}
-            className={`hero-bg-slide ${i === current ? 'active' : ''}${mounted ? '' : ' no-fade'}`}
-          >
-            <Image
-              src={s.image}
-              alt={s.title}
-              fill
-              style={{ objectFit: 'cover' }}
-              priority={i === 0}
-              fetchPriority={i === 0 ? 'high' : 'auto'}
-              sizes="100vw"
-            />
-          </div>
-        ))}
+        <div className="hero-bg-slide active no-fade">
+          <Image
+            src={hero.image}
+            alt="Tidy home with organized storage"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+          />
+        </div>
         <div className="hero-overlay" />
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="hero-content-grid">
-          {/* Main content */}
           <div className="hero-text">
-            <span className="hero-tagline">
-              {slide.tagline}
-            </span>
-
-            {/* Static H1 for SEO, always visible to crawlers */}
+            <span className="hero-tagline">{hero.tagline}</span>
             <h1 className="hero-title" aria-label="Sesoris, Home Organizers & Storage Solutions">
-              {slide.title}
+              {hero.title}
               <br />{' '}
-              <span className="hero-title-accent">{slide.titleAccent}</span>
+              <span className="hero-title-accent">{hero.titleAccent}</span>
             </h1>
-
-            <p className="hero-description">
-              {slide.description}
-            </p>
+            <p className="hero-description">{hero.description}</p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <Link
-                href={slide.buttonLink}
-                className="hero-cta"
-              >
-                {slide.buttonText}
+              <Link href={hero.buttonLink} className="hero-cta">
+                {hero.buttonText}
                 <ArrowRight style={{ width: '18px', height: '18px' }} />
               </Link>
-
               <div className="hero-rating">
                 <div style={{ display: 'flex', gap: '2px' }}>
-                  {[1,2,3,4,5].map(i => (
+                  {[1, 2, 3, 4, 5].map((i) => (
                     <Star key={i} style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
                   ))}
                 </div>
@@ -126,29 +58,16 @@ export function HeroSlider() {
             </div>
           </div>
 
-          {/* Right side - floating stat card */}
           <div className="hero-side">
             <div className="hero-stat-card">
-              <div className="hero-stat-value">{slide.stat.value}</div>
-              <div className="hero-stat-label">{slide.stat.label}</div>
+              <div className="hero-stat-value">{hero.stat.value}</div>
+              <div className="hero-stat-label">{hero.stat.label}</div>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar: dots + trust badges */}
         <div className="hero-bottom">
-          <div className="hero-dots">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goToSlide(i)}
-                className={`hero-dot ${i === current ? 'active' : ''}`}
-                aria-label={`Show slide ${i + 1}: ${slides[i].title} ${slides[i].titleAccent}`}
-                aria-current={i === current ? 'true' : undefined}
-              />
-            ))}
-          </div>
-
+          <div />
           <div className="hero-mini-badges">
             <div className="hero-mini-badge">
               <Truck style={{ width: '16px', height: '16px' }} />
