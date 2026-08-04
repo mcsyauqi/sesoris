@@ -1180,5 +1180,41 @@
     "date": "2026-08-03",
     "status": "published",
     "note": "Created content/blog/kitchen-drawer-organizer-for-large-utensils.json"
+  },
+  {
+    "keyword": "bathroom towel storage ideas",
+    "volume": 600,
+    "kd": 1,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "bathroom-towel-storage-ideas",
+    "date": "2026-08-04",
+    "status": "published",
+    "note": "Created content/blog/bathroom-towel-storage-ideas.json"
+  },
+  {
+    "keyword": "kids room organization ideas",
+    "volume": 500,
+    "kd": 2,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "kids-room-organization-ideas",
+    "date": "2026-08-04",
+    "status": "published",
+    "note": "Created content/blog/kids-room-organization-ideas.json"
+  },
+  {
+    "keyword": "garage shoe storage ideas",
+    "volume": 450,
+    "kd": 0,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "garage-shoe-storage-ideas",
+    "date": "2026-08-04",
+    "status": "published",
+    "note": "Created content/blog/garage-shoe-storage-ideas.json"
   }
 ]

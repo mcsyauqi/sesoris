@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "bathroom towel storage ideas",
-    "volume": 600,
-    "kd": 1,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "bathroom-towel-storage-ideas"
-  },
-  {
-    "keyword": "kids room organization ideas",
-    "volume": 500,
-    "kd": 2,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "kids-room-organization-ideas"
-  },
-  {
-    "keyword": "garage shoe storage ideas",
-    "volume": 450,
-    "kd": 0,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "garage-shoe-storage-ideas"
-  },
-  {
     "keyword": "gaming desk setup ideas",
     "volume": 400,
     "kd": 4,
