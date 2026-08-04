@@ -25,6 +25,9 @@ export function HeroSlider() {
             style={{ objectFit: 'cover' }}
             priority
             fetchPriority="high"
+            loading="eager"
+            decoding="sync"
+            unoptimized
             sizes="100vw"
           />
         </div>

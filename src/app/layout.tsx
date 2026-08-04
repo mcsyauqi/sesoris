@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
+import { AnalyticsScripts } from '@/components/layout/AnalyticsScripts';
 import { DM_Sans, DM_Serif_Display } from 'next/font/google';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
@@ -16,9 +16,6 @@ const dmSerif = DM_Serif_Display({
   weight: ['400'],
   variable: '--font-heading',
 });
-
-const GA_MEASUREMENT_ID = 'G-V2Y9KVBKFP';
-const CLARITY_PROJECT_ID = 'xutrh8d0dz';
 
 export const metadata: Metadata = {
   title: {
@@ -151,39 +148,7 @@ export default function RootLayout({
         />
       </head>
       <body className={dmSans.className}>
-        {/* Google Analytics 4 */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-
-        {/* Microsoft Clarity (session recording + heatmaps).
-            Internal traffic is excluded two ways:
-            1. IP blocking configured in the Clarity dashboard (Settings > IP blocking).
-            2. The hostname guard below, which skips init on localhost / 127.0.0.1
-               so local development sessions are never recorded. */}
-        <Script id="microsoft-clarity" strategy="lazyOnload">
-          {`
-            (function(c,l,a,r,i,t,y){
-              var h = l.location.hostname;
-              if (h === 'localhost' || h === '127.0.0.1' || h === '[::1]' || h.endsWith('.local')) { return; }
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
-          `}
-        </Script>
-
+        <AnalyticsScripts />
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <AnnouncementBar />
           <Header />
