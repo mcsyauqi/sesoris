@@ -84,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <head>
+        <meta name="sesoris-deploy-marker" content="2026-08-04-release-procedure-verified" />
         <meta property="og:url" content="https://www.sesoris.com" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Sesoris" />
