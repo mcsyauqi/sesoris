@@ -1216,5 +1216,41 @@
     "date": "2026-08-04",
     "status": "published",
     "note": "Created content/blog/garage-shoe-storage-ideas.json"
+  },
+  {
+    "keyword": "gaming desk setup ideas",
+    "volume": 400,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "gaming-desk-setup-ideas",
+    "date": "2026-08-05",
+    "status": "published",
+    "note": "Created content/blog/gaming-desk-setup-ideas.json"
+  },
+  {
+    "keyword": "hidden toy storage ideas",
+    "volume": 400,
+    "kd": 0,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "hidden-toy-storage-ideas",
+    "date": "2026-08-05",
+    "status": "published",
+    "note": "Created content/blog/hidden-toy-storage-ideas.json"
+  },
+  {
+    "keyword": "home storage ideas",
+    "volume": 400,
+    "kd": 16,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "home-storage-ideas",
+    "date": "2026-08-05",
+    "status": "published",
+    "note": "Created content/blog/home-storage-ideas.json"
   }
 ]

@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "gaming desk setup ideas",
-    "volume": 400,
-    "kd": 4,
-    "category": "Workspace",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "gaming-desk-setup-ideas"
-  },
-  {
-    "keyword": "hidden toy storage ideas",
-    "volume": 400,
-    "kd": 0,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "hidden-toy-storage-ideas"
-  },
-  {
-    "keyword": "home storage ideas",
-    "volume": 400,
-    "kd": 16,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "home-storage-ideas"
-  },
-  {
     "keyword": "toy storage ideas for small spaces",
     "volume": 300,
     "kd": 0,
