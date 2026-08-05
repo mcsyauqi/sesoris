@@ -523,17 +523,27 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     ],
   };
 
-  // Extract FAQ from (flattened) content if present
+  // Extract FAQ from both generated **Q:** blocks and legacy FAQ H3 sections.
   const flatForFaq = flattenContentBlocks(post.content);
   const faqItems: { question: string; answer: string }[] = [];
+  let inFaqSection = false;
   for (let i = 0; i < flatForFaq.length; i++) {
     const line = flatForFaq[i];
-    if (line.startsWith('**Q:') || line.startsWith('**Q :')) {
-      const question = plainText(line.replace(/^\*\*Q\s*:\s*/, '').replace(/\*\*$/, ''));
-      const answer = (i + 1 < flatForFaq.length) ? plainText(flatForFaq[i + 1]) : '';
-      if (question && answer && !answer.startsWith('##') && !answer.startsWith('**Q')) {
-        faqItems.push({ question, answer });
-      }
+    if (line.startsWith('## ')) {
+      inFaqSection = /\bfaq\b|frequently asked questions|common questions/i.test(plainText(line));
+      continue;
+    }
+
+    const isGeneratedQuestion = line.startsWith('**Q:') || line.startsWith('**Q :');
+    const isLegacyQuestion = inFaqSection && line.startsWith('### ') && line.trim().endsWith('?');
+    if (!isGeneratedQuestion && !isLegacyQuestion) continue;
+
+    const question = isGeneratedQuestion
+      ? plainText(line.replace(/^\*\*Q\s*:\s*/, '').replace(/\*\*$/, ''))
+      : plainText(line.replace(/^###\s+/, ''));
+    const answer = (i + 1 < flatForFaq.length) ? plainText(flatForFaq[i + 1]) : '';
+    if (question && answer && !answer.startsWith('##') && !answer.startsWith('**Q')) {
+      faqItems.push({ question, answer });
     }
   }
 
