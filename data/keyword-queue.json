@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "toy storage ideas for small spaces",
-    "volume": 300,
-    "kd": 0,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "toy-storage-ideas-for-small-spaces"
-  },
-  {
-    "keyword": "bathroom storage cabinet ideas",
-    "volume": 250,
-    "kd": 1,
-    "category": "Bathroom",
-    "intent": "Commercial",
-    "priority": "Tier 2",
-    "slug": "bathroom-storage-cabinet-ideas"
-  },
-  {
-    "keyword": "small laundry room organization",
-    "volume": 250,
-    "kd": 5,
-    "category": "Laundry",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "small-laundry-room-organization"
-  },
-  {
     "keyword": "medicine cabinet organization ideas",
     "volume": 250,
     "kd": 0,

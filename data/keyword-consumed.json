@@ -1252,5 +1252,41 @@
     "date": "2026-08-05",
     "status": "published",
     "note": "Created content/blog/home-storage-ideas.json"
+  },
+  {
+    "keyword": "toy storage ideas for small spaces",
+    "volume": 300,
+    "kd": 0,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "toy-storage-ideas-for-small-spaces",
+    "date": "2026-08-06",
+    "status": "published",
+    "note": "Created content/blog/toy-storage-ideas-for-small-spaces.json"
+  },
+  {
+    "keyword": "bathroom storage cabinet ideas",
+    "volume": 250,
+    "kd": 1,
+    "category": "Bathroom",
+    "intent": "Commercial",
+    "priority": "Tier 2",
+    "slug": "bathroom-storage-cabinet-ideas",
+    "date": "2026-08-06",
+    "status": "published",
+    "note": "Created content/blog/bathroom-storage-cabinet-ideas.json"
+  },
+  {
+    "keyword": "small laundry room organization",
+    "volume": 250,
+    "kd": 5,
+    "category": "Laundry",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "small-laundry-room-organization",
+    "date": "2026-08-06",
+    "status": "published",
+    "note": "Created content/blog/small-laundry-room-organization.json"
   }
 ]
