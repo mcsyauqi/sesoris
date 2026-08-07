@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "medicine cabinet organization ideas",
-    "volume": 250,
-    "kd": 0,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "medicine-cabinet-organization-ideas"
-  },
-  {
-    "keyword": "how to organize your desk",
-    "volume": 250,
-    "kd": 1,
-    "category": "Workspace",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "how-to-organize-your-desk"
-  },
-  {
-    "keyword": "under kitchen sink organization ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "under-kitchen-sink-organization-ideas"
-  },
-  {
     "keyword": "office desk setup ideas",
     "volume": 200,
     "kd": 4,

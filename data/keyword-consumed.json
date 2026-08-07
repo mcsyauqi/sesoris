@@ -1288,5 +1288,41 @@
     "date": "2026-08-06",
     "status": "published",
     "note": "Created content/blog/small-laundry-room-organization.json"
+  },
+  {
+    "keyword": "medicine cabinet organization ideas",
+    "volume": 250,
+    "kd": 0,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "medicine-cabinet-organization-ideas",
+    "date": "2026-08-07",
+    "status": "published",
+    "note": "Created content/blog/medicine-cabinet-organization-ideas.json"
+  },
+  {
+    "keyword": "how to organize your desk",
+    "volume": 250,
+    "kd": 1,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "how-to-organize-your-desk",
+    "date": "2026-08-07",
+    "status": "published",
+    "note": "Created content/blog/how-to-organize-your-desk.json"
+  },
+  {
+    "keyword": "under kitchen sink organization ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "under-kitchen-sink-organization-ideas",
+    "date": "2026-08-07",
+    "status": "published",
+    "note": "Created content/blog/under-kitchen-sink-organization-ideas.json"
   }
 ]
