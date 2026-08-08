@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "office desk setup ideas",
-    "volume": 200,
-    "kd": 4,
-    "category": "Workspace",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "office-desk-setup-ideas"
-  },
-  {
-    "keyword": "work from home desk setup ideas",
-    "volume": 200,
-    "kd": 2,
-    "category": "Workspace",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "work-from-home-desk-setup-ideas"
-  },
-  {
-    "keyword": "jewelry organization ideas",
-    "volume": 200,
-    "kd": 2,
-    "category": "Bedroom",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "jewelry-organization-ideas"
-  },
-  {
     "keyword": "storage bin labels",
     "volume": 200,
     "kd": 0,

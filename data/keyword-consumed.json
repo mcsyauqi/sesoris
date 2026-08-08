@@ -1324,5 +1324,41 @@
     "date": "2026-08-07",
     "status": "published",
     "note": "Created content/blog/under-kitchen-sink-organization-ideas.json"
+  },
+  {
+    "keyword": "office desk setup ideas",
+    "volume": 200,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "office-desk-setup-ideas",
+    "date": "2026-08-08",
+    "status": "published",
+    "note": "Created content/blog/office-desk-setup-ideas.json"
+  },
+  {
+    "keyword": "work from home desk setup ideas",
+    "volume": 200,
+    "kd": 2,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "work-from-home-desk-setup-ideas",
+    "date": "2026-08-08",
+    "status": "published",
+    "note": "Created content/blog/work-from-home-desk-setup-ideas.json"
+  },
+  {
+    "keyword": "jewelry organization ideas",
+    "volume": 200,
+    "kd": 2,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "jewelry-organization-ideas",
+    "date": "2026-08-08",
+    "status": "published",
+    "note": "Created content/blog/jewelry-organization-ideas.json"
   }
 ]
