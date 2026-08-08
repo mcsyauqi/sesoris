@@ -34,9 +34,9 @@ jobs:
           # Run sequentially; each pulls the next keyword from the queue.
           # Non-fatal so one failed generation does not block the others
           # (the generator returns a failed keyword back to the queue).
-          npm run generate:blog || echo "::warning::generate run 1 failed, continuing"
-          npm run generate:blog || echo "::warning::generate run 2 failed, continuing"
-          npm run generate:blog || echo "::warning::generate run 3 failed, continuing"
+          PUBLISH_DATE=$(date -u -d "+7 days" +%F) npm run generate:blog || echo "::warning::generate run 1 failed, continuing"
+          PUBLISH_DATE=$(date -u -d "+7 days" +%F) npm run generate:blog || echo "::warning::generate run 2 failed, continuing"
+          PUBLISH_DATE=$(date -u -d "+7 days" +%F) npm run generate:blog || echo "::warning::generate run 3 failed, continuing"
 
       - name: Verify generation produced files (cycle #9 audit)
         run: |
