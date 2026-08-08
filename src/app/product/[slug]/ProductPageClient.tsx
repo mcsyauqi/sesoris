@@ -27,6 +27,11 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const productBundles = getBundlesForProduct(product.id);
   const [showFullDesc, setShowFullDesc] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const reviewCount = productReviews.length;
+  const reviewRating =
+    reviewCount > 0
+      ? Number((productReviews.reduce((sum, r) => sum + r.rating, 0) / reviewCount).toFixed(1))
+      : product.rating;
   const addToCart = useCartStore((s) => s.addItem);
   const { toggleItem, isInWishlist } = useWishlistStore();
 
@@ -157,7 +162,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
             </h1>
 
             {/* Rating - only show if there are reviews */}
-            {product.reviewCount > 0 ? (
+            {reviewCount > 0 ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', gap: '2px' }}>
                   {[...Array(5)].map((_, i) => (
@@ -166,13 +171,13 @@ export default function ProductPageClient({ product }: { product: Product }) {
                       style={{
                         width: '18px',
                         height: '18px',
-                        fill: i < Math.floor(product.rating) ? '#FFC107' : '#E9ECEF',
-                        color: i < Math.floor(product.rating) ? '#FFC107' : '#E9ECEF'
+                        fill: i < Math.floor(reviewRating) ? '#FFC107' : '#E9ECEF',
+                        color: i < Math.floor(reviewRating) ? '#FFC107' : '#E9ECEF'
                       }}
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: '14px', color: '#5F6873' }}>({product.reviewCount} reviews)</span>
+                <span style={{ fontSize: '14px', color: '#5F6873' }}>({reviewCount} reviews)</span>
               </div>
             ) : (
               <div style={{ marginBottom: '20px' }}>
