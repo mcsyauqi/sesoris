@@ -1360,5 +1360,41 @@
     "date": "2026-08-08",
     "status": "published",
     "note": "Created content/blog/jewelry-organization-ideas.json"
+  },
+  {
+    "keyword": "storage bin labels",
+    "volume": 200,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Commercial",
+    "priority": "Tier 2",
+    "slug": "storage-bin-labels",
+    "date": "2026-08-09",
+    "status": "published",
+    "note": "Created content/blog/storage-bin-labels.json"
+  },
+  {
+    "keyword": "indoor plant wall shelf ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Plants",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "indoor-plant-wall-shelf-ideas",
+    "date": "2026-08-09",
+    "status": "published",
+    "note": "Created content/blog/indoor-plant-wall-shelf-ideas.json"
+  },
+  {
+    "keyword": "small linen closet organization",
+    "volume": 200,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "small-linen-closet-organization",
+    "date": "2026-08-09",
+    "status": "published",
+    "note": "Created content/blog/small-linen-closet-organization.json"
   }
 ]

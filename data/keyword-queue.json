@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "storage bin labels",
-    "volume": 200,
-    "kd": 0,
-    "category": "Storage",
-    "intent": "Commercial",
-    "priority": "Tier 2",
-    "slug": "storage-bin-labels"
-  },
-  {
-    "keyword": "indoor plant wall shelf ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Plants",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "indoor-plant-wall-shelf-ideas"
-  },
-  {
-    "keyword": "small linen closet organization",
-    "volume": 200,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "small-linen-closet-organization"
-  },
-  {
     "keyword": "purse organization ideas",
     "volume": 200,
     "kd": 0,
