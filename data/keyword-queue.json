@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "purse organization ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "purse-organization-ideas"
-  },
-  {
-    "keyword": "indoor plant stand ideas",
-    "volume": 200,
-    "kd": 1,
-    "category": "Plants",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "indoor-plant-stand-ideas"
-  },
-  {
-    "keyword": "kids bedroom storage ideas",
-    "volume": 200,
-    "kd": 1,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "kids-bedroom-storage-ideas"
-  },
-  {
     "keyword": "tupperware organization ideas",
     "volume": 200,
     "kd": 0,
