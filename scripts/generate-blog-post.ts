@@ -19,6 +19,12 @@ interface QueuedKeyword {
   category: string;
   intent: string;
   priority: string;
+  /**
+   * Set when this keyword substring-overlaps an already-published article and the
+   * overlap was resolved by locking a distinct angle instead of dropping the keyword.
+   * Injected into the generation prompt so the two pages do not cannibalize.
+   */
+  angleLock?: string;
 }
 
 interface KeywordConsumptionLedgerEntry extends QueuedKeyword {
@@ -283,7 +289,15 @@ KEYWORD DATA:
 
 TOPIC CONTEXT:
 - Least used category: ${leastUsedCategory} (use this if it fits the keyword)
-- Available categories: ${categories.join(', ')}`;
+- Available categories: ${categories.join(', ')}${
+      queuedKeyword.angleLock
+        ? `
+
+ANGLE LOCK (MANDATORY - a published article already covers an overlapping phrase):
+${queuedKeyword.angleLock}
+Do not restate or re-list the material owned by that existing article. Keep this article on the angle above so the two pages stay distinct.`
+        : ''
+    }`;
   } else {
     basePrompt = `Write a NEW blog article in English. The article should be:
 - Informative, practical, and comprehensive for an international audience
