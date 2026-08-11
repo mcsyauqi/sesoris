@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ShopPageClient from './ShopPageClient';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Sesoris Shop | Home Organizers, Kitchen & Lifestyle',
   description: 'Shop a curated catalog of 23 home organizers, kitchen essentials, handy tools, gift sets, and lifestyle picks at Sesoris. Free shipping over $50.',
   alternates: selfReferencingAlternates('/shop'),
@@ -13,6 +13,20 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
+
+type ShopPageProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export async function generateMetadata({ searchParams }: ShopPageProps): Promise<Metadata> {
+  const params = searchParams ? await searchParams : {};
+  const hasQuery = Object.keys(params).length > 0;
+
+  return {
+    ...baseMetadata,
+    ...(hasQuery ? { robots: { index: false, follow: true } } : {}),
+  };
+}
 
 const shopSchema = {
   '@context': 'https://schema.org',

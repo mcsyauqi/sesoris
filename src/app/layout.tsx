@@ -111,6 +111,18 @@ export default function RootLayout({
                 name: 'Yogyakarta, Indonesia',
               },
               areaServed: ['Worldwide'],
+              hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+                merchantReturnDays: 30,
+                returnMethod: 'https://schema.org/ReturnByMail',
+              },
+              hasShippingService: {
+                '@type': 'ShippingService',
+                name: 'Sesoris Shipping',
+                serviceType: ['Standard', 'Express', 'Same Day'],
+                areaServed: 'Worldwide',
+              },
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+62-813-2610-2061',

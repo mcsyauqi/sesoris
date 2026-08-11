@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation';
 import { getProductBySlug, products } from '@/data/products';
 import ProductPageClient from './ProductPageClient';
 import { ProductGuideSection } from '@/components/product';
-import { toUsdPrice } from '@/lib/utils';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+import { buildProductSchema } from '@/lib/product-schema';
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -43,60 +43,7 @@ export default async function ProductPage(
   const product = getProductBySlug(slug);
   if (!product) notFound();
 
-  const productSchema: Record<string, unknown> = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: product.name,
-    description: product.description,
-    image: product.images[0]?.url,
-    sku: `SES-${product.id.toString().padStart(4, '0')}`,
-    brand: { '@type': 'Brand', name: 'Sesoris' },
-    offers: {
-      '@type': 'Offer',
-      price: toUsdPrice(product.price),
-      priceCurrency: 'USD',
-      availability: product.inStock
-        ? 'https://schema.org/InStock'
-        : 'https://schema.org/OutOfStock',
-      url: `https://www.sesoris.com/product/${product.slug}`,
-      seller: { '@type': 'Organization', name: 'Sesoris' },
-      hasMerchantReturnPolicy: {
-        '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'ID',
-        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-        merchantReturnDays: 30,
-        returnMethod: 'https://schema.org/ReturnByMail',
-        returnFees: 'https://schema.org/FreeReturn',
-      },
-      shippingDetails: {
-        '@type': 'OfferShippingDetails',
-        shippingRate: {
-          '@type': 'MonetaryAmount',
-          value: '0',
-          currency: 'USD',
-        },
-        shippingDestination: {
-          '@type': 'DefinedRegion',
-          addressCountry: 'ID',
-        },
-        deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          handlingTime: {
-            '@type': 'QuantitativeValue',
-            minValue: 1,
-            maxValue: 2,
-            unitCode: 'DAY',
-          },
-          transitTime: {
-            '@type': 'QuantitativeValue',
-            minValue: 2,
-            maxValue: 5,
-            unitCode: 'DAY',
-          },
-        },
-      },
-    },
-  };
+  const productSchema = buildProductSchema(product);
 
   // NOTE: No AggregateRating/Review structured data is emitted on purpose.
   // The review entries in src/data/products.ts are seeded placeholder data,

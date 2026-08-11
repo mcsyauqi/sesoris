@@ -6,7 +6,6 @@ import { getCategoryBySlug, getProductsByCategory, categories } from '@/data/pro
 import { categoryContent } from '@/data/categoryContent';
 import { notFound } from 'next/navigation';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
-import { toUsdPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
 
 const stripSesorisBrandSuffix = (title: string) =>
@@ -17,11 +16,20 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> }
+  {
+    params,
+    searchParams,
+  }: {
+    params: Promise<{ slug: string }>;
+    searchParams?: Promise<Record<string, string | string[] | undefined>>;
+  }
 ): Promise<Metadata> {
   const { slug } = await params;
   const category = getCategoryBySlug(slug);
   if (!category) return {};
+
+  const query = searchParams ? await searchParams : {};
+  const hasQuery = Object.keys(query).length > 0;
 
   const seo = categoryContent[slug];
   const title = seo?.seoTitle ? stripSesorisBrandSuffix(seo.seoTitle) : `${category.name} Products | Shop`;
@@ -31,6 +39,7 @@ export async function generateMetadata(
     title,
     description,
     alternates: selfReferencingAlternates(`/category/${slug}`),
+    ...(hasQuery ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title,
       description,
@@ -67,38 +76,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     isPartOf: { '@type': 'WebSite', name: 'Sesoris', url: 'https://www.sesoris.com' },
   };
 
-  const productListSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: `${category.name} products`,
-    numberOfItems: products.length,
-    itemListElement: products.map((product, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@type': 'Product',
-        name: product.name,
-        url: `https://www.sesoris.com/product/${product.slug}`,
-        image: `https://www.sesoris.com${product.images[0].url}`,
-        offers: {
-          '@type': 'Offer',
-          url: `https://www.sesoris.com/product/${product.slug}`,
-          price: toUsdPrice(product.price).toFixed(2),
-          priceCurrency: 'USD',
-          availability: product.inStock
-            ? 'https://schema.org/InStock'
-            : 'https://schema.org/OutOfStock',
-          itemCondition: 'https://schema.org/NewCondition',
-        },
-      },
-    })),
-  };
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productListSchema) }} />
 
       {/* Breadcrumb */}
       <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
