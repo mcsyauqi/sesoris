@@ -1498,5 +1498,17 @@
     "slug": "under-bathroom-sink-organization-ideas",
     "date": "2026-08-11",
     "status": "consumed"
+  },
+  {
+    "keyword": "home gym organization ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "home-gym-organization-ideas",
+    "date": "2026-08-11",
+    "status": "putback",
+    "note": "API call failed: 401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CdwoBA8wZUtXufoTdu7Ku\"}"
   }
 ]

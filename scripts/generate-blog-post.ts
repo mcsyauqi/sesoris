@@ -313,11 +313,21 @@ TOPIC CONTEXT:
 
   console.log('Generating blog post with Claude Sonnet...');
 
-  const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 20000,
-    messages: [{ role: 'user', content: prompt }],
-  });
+  // The putback calls below only guard a BAD RESPONSE. If this request THROWS -- expired
+  // credit, rate limit, network -- the exception skipped every one of them and the keyword
+  // stayed marked `consumed` with no article written. On 2026-08-11 that silently burned 3
+  // keywords in a single run while the workflow reported success.
+  let message;
+  try {
+    message = await client.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 20000,
+      messages: [{ role: 'user', content: prompt }],
+    });
+  } catch (err) {
+    putbackKeyword?.('putback', `API call failed: ${(err as Error).message.slice(0, 200)}`);
+    throw err;
+  }
 
   const textBlock = message.content.find((b) => b.type === 'text');
   if (!textBlock || textBlock.type !== 'text') {
