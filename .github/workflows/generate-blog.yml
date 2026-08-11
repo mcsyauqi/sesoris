@@ -34,9 +34,17 @@ jobs:
           # Run sequentially; each pulls the next keyword from the queue.
           # Non-fatal so one failed generation does not block the others
           # (the generator returns a failed keyword back to the queue).
-          PUBLISH_DATE=$(date -u -d "+7 days" +%F) npm run generate:blog || echo "::warning::generate run 1 failed, continuing"
-          PUBLISH_DATE=$(date -u -d "+7 days" +%F) npm run generate:blog || echo "::warning::generate run 2 failed, continuing"
-          PUBLISH_DATE=$(date -u -d "+7 days" +%F) npm run generate:blog || echo "::warning::generate run 3 failed, continuing"
+          #
+          # The date is resolved per run, not fixed at "+7 days". A fixed offset assumes the
+          # buffer in between is already full; it was not, so adopting it stranded
+          # 2026-08-09..08-15 with zero articles while this workflow stayed green.
+          # next-publish-date.mjs picks the earliest day from today forward that is still
+          # under quota, so it fills today first and cannot open a hole behind itself.
+          for i in 1 2 3; do
+            PUBLISH_DATE=$(node scripts/next-publish-date.mjs)
+            echo "run $i -> PUBLISH_DATE=$PUBLISH_DATE"
+            PUBLISH_DATE=$PUBLISH_DATE npm run generate:blog || echo "::warning::generate run $i failed, continuing"
+          done
 
       - name: Verify generation produced files (cycle #9 audit)
         run: |
