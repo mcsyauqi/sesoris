@@ -1432,5 +1432,38 @@
     "date": "2026-08-10",
     "status": "published",
     "note": "Created content/blog/kids-bedroom-storage-ideas.json"
+  },
+  {
+    "keyword": "tupperware organization ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "tupperware-organization-ideas",
+    "date": "2026-08-11",
+    "status": "consumed"
+  },
+  {
+    "keyword": "3 car garage organization ideas",
+    "volume": 200,
+    "kd": 0,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "3-car-garage-organization-ideas",
+    "date": "2026-08-11",
+    "status": "consumed"
+  },
+  {
+    "keyword": "storage ideas for small spaces bedroom",
+    "volume": 200,
+    "kd": 3,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 2",
+    "slug": "storage-ideas-for-small-spaces-bedroom",
+    "date": "2026-08-11",
+    "status": "consumed"
   }
 ]

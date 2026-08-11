@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "tupperware organization ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "tupperware-organization-ideas"
-  },
-  {
-    "keyword": "3 car garage organization ideas",
-    "volume": 200,
-    "kd": 0,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "3-car-garage-organization-ideas"
-  },
-  {
-    "keyword": "storage ideas for small spaces bedroom",
-    "volume": 200,
-    "kd": 3,
-    "category": "Bedroom",
-    "intent": "Informational",
-    "priority": "Tier 2",
-    "slug": "storage-ideas-for-small-spaces-bedroom"
-  },
-  {
     "keyword": "home gym organization ideas",
     "volume": 150,
     "kd": 0,
