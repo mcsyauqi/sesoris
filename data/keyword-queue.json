@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "home gym organization ideas",
-    "volume": 150,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "home-gym-organization-ideas"
-  },
-  {
-    "keyword": "under sink organization ideas",
-    "volume": 150,
-    "kd": 5,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "under-sink-organization-ideas"
-  },
-  {
-    "keyword": "under bathroom sink organization ideas",
-    "volume": 150,
-    "kd": 1,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "under-bathroom-sink-organization-ideas"
-  },
-  {
     "keyword": "office supplies organization ideas",
     "volume": 150,
     "kd": 4,
