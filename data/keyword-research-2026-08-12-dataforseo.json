@@ -1,0 +1,628 @@
+{
+  "generated_at": "2026-08-12",
+  "market": "United States (Google US, location_code 2840, language_code en)",
+  "tool": "DataForSEO API (DATAFORSEO_LOGIN/PASSWORD)",
+  "why_not_ahrefs": "ahrefs-web-pp-cli session returned HTTP 401 [\"Error\",\"TooManySessions\"] on 2026-08-12. Probed under the shared ahrefs-web lock: doctor reported cookie age 2h29m and a valid session file, but the live /v4 call failed (tkGetSubscriptions 401) and ke difficulty failed the same way (keGetDifficulty 401). Same block logged on the card on 2026-08-03, 08-06 and 08-08. AHREFS_API_KEY was NOT used: it is forbidden without explicit approval from Syauqi. The card title allows Ahrefs OR DataForSEO.",
+  "endpoints_used": [
+    "POST /v3/dataforseo_labs/google/keyword_ideas/live  -> candidate discovery, keyword_info.search_volume + keyword_properties.keyword_difficulty",
+    "POST /v3/dataforseo_labs/google/bulk_keyword_difficulty/live  -> independent KD re-read for all 60",
+    "POST /v3/keywords_data/google_ads/search_volume/live  -> independent volume re-read for all 60"
+  ],
+  "method": [
+    "36 seed keywords across the niches named on Trello card sPb4z9R0 (home organization, closet, kitchen, pantry, garage, laundry, bathroom, small space, apartment, decluttering, desk/home office, cable management, travel/packing, bedroom, kids, entryway, craft, seasonal).",
+    "Two harvest passes. The first sorted by volume and returned mostly head terms, so a second pass filtered the volume band server-side (100-5000) to surface long-tail rows. 15,340 unique candidates total.",
+    "Gates applied in order: KD <= 20, volume 100-5000, minimum 2 words, ASCII only, Indonesian function-word gate (same regex as isNonEnglishKeyword in scripts/generate-blog-post.ts), brand-dependency, self-storage industry, off-niche, wrong sense of the word \"organization\" (corporate/biological), vehicle and remodel topics, decor/cooking/dictionary queries, informational-intent requirement, product-catalogue shape, concrete home context requirement.",
+    "Collision checks: existing queue, keyword-consumed.json ledger, live article slugs in content/blog (exact and prefix, both directions), legacy-blog-redirects.json sources, and all 1,060 rows of the Keyword Database spreadsheet 1MY7gCk8Yy3Ebxmqn8eQjTKlVvhhPJbJN1m7AnAkBBbg.",
+    "Near-duplicate intent collapse: keywords are normalised (stopwords removed, organize/organizing/organization/organizer stemmed to one token, shelf/shelves/shelving to one, ideas/tips/solutions/system treated as generic) so that \"laundry room storage ideas\" and \"laundry storage solutions\" cannot both enter the queue.",
+    "Diversity caps applied when picking: per category and per topic head-noun, so no single room produces a cluster of near-duplicate articles.",
+    "Every KD and volume was then re-read through two endpoints that did not produce the shortlist. All 60 matched exactly."
+  ],
+  "gates_enforced": {
+    "max_kd": 20,
+    "volume_band": [
+      100,
+      5000
+    ],
+    "volume_cap_reason": "sesoris.com is DR 1.1. Head terms are unwinnable regardless of what any KD model reports, and DataForSEO returned implausibly low KD for several 100k+ volume brand terms during this run.",
+    "schema_locked": [
+      "keyword",
+      "volume",
+      "kd",
+      "category",
+      "intent",
+      "priority",
+      "slug"
+    ],
+    "collision_checks": "live article slugs (exact AND prefix), legacy redirect sources, consumed ledger, existing queue, Keyword Database spreadsheet, normalised intent"
+  },
+  "verification": {
+    "kd_source_of_record": "dataforseo_labs/google/bulk_keyword_difficulty/live",
+    "volume_source_of_record": "keywords_data/google_ads/search_volume/live",
+    "keywords_checked": 60,
+    "kd_confirmed_identical": 60,
+    "volume_confirmed_identical": 60,
+    "kd_missing_no_data": 0,
+    "volume_missing_no_data": 0
+  },
+  "queue_size_before": 33,
+  "keywords_added": 60,
+  "queue_size_after": 93,
+  "kd_range": [
+    0,
+    18
+  ],
+  "kd_average": 2.88,
+  "volume_range": [
+    1300,
+    4400
+  ],
+  "reject_counts": {
+    "volume_above_5000_head_term": 3331,
+    "off_niche": 134,
+    "not_home_organization": 8338,
+    "wrong_sense_of_organization": 107,
+    "not_about_organising": 422,
+    "wrong_domain_vehicle_or_remodel": 164,
+    "not_informational_intent": 1700,
+    "junk_modifier": 89,
+    "brand_dependent": 379,
+    "no_concrete_home_context": 281,
+    "self_storage_industry": 254,
+    "already_in_queue_or_consumed": 5,
+    "intent_already_covered": 19,
+    "slug_prefix_collides_live_article": 7,
+    "non_ascii": 2,
+    "malformed_characters": 9
+  },
+  "spreadsheet_cross_check": {
+    "spreadsheet": "1MY7gCk8Yy3Ebxmqn8eQjTKlVvhhPJbJN1m7AnAkBBbg",
+    "tab": "Keyword Database",
+    "rows_read": 1060,
+    "kd_filled": 898,
+    "kd_empty_or_no_data": 162,
+    "overlap_with_this_batch": 0,
+    "note": "The sheet also holds 368 English keywords with KD <= 20 and volume >= 100 that have no article and are not in the consumed ledger. They were NOT reused here because their KD and volume carry no pull date, and this card requires sourced figures. They are a separate, larger opportunity worth its own card."
+  },
+  "queue": [
+    {
+      "keyword": "declutter garage",
+      "volume": 4400,
+      "kd": 0,
+      "category": "Garage",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "declutter-garage"
+    },
+    {
+      "keyword": "diy shelves",
+      "volume": 4400,
+      "kd": 0,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-shelves"
+    },
+    {
+      "keyword": "lego storage ideas",
+      "volume": 4400,
+      "kd": 1,
+      "category": "Kids & Toys",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "lego-storage-ideas"
+    },
+    {
+      "keyword": "mudroom storage solutions",
+      "volume": 4400,
+      "kd": 1,
+      "category": "Entryway",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "mudroom-storage-solutions"
+    },
+    {
+      "keyword": "modular shelving system",
+      "volume": 4400,
+      "kd": 3,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "modular-shelving-system"
+    },
+    {
+      "keyword": "pantry shelving ideas",
+      "volume": 4400,
+      "kd": 6,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "pantry-shelving-ideas"
+    },
+    {
+      "keyword": "diy garage shelves",
+      "volume": 4400,
+      "kd": 7,
+      "category": "Garage",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-garage-shelves"
+    },
+    {
+      "keyword": "small walk in closet ideas",
+      "volume": 4400,
+      "kd": 7,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "small-walk-in-closet-ideas"
+    },
+    {
+      "keyword": "garage organization systems",
+      "volume": 4400,
+      "kd": 9,
+      "category": "Garage",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "garage-organization-systems"
+    },
+    {
+      "keyword": "tool storage & organization",
+      "volume": 4400,
+      "kd": 11,
+      "category": "Garage",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "tool-storage-organization"
+    },
+    {
+      "keyword": "floating shelf ideas",
+      "volume": 3600,
+      "kd": 0,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "floating-shelf-ideas"
+    },
+    {
+      "keyword": "butler pantry ideas",
+      "volume": 3600,
+      "kd": 0,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "butler-pantry-ideas"
+    },
+    {
+      "keyword": "small pantry ideas",
+      "volume": 3600,
+      "kd": 0,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "small-pantry-ideas"
+    },
+    {
+      "keyword": "diy closet shelves",
+      "volume": 3600,
+      "kd": 1,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-closet-shelves"
+    },
+    {
+      "keyword": "decluttering home decor",
+      "volume": 3600,
+      "kd": 4,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "decluttering-home-decor"
+    },
+    {
+      "keyword": "diy closet",
+      "volume": 3600,
+      "kd": 4,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-closet"
+    },
+    {
+      "keyword": "bathroom organization ideas",
+      "volume": 3600,
+      "kd": 5,
+      "category": "Bathroom",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "bathroom-organization-ideas"
+    },
+    {
+      "keyword": "declutter your house",
+      "volume": 3600,
+      "kd": 16,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "declutter-your-house"
+    },
+    {
+      "keyword": "laundry room cabinet ideas",
+      "volume": 2900,
+      "kd": 0,
+      "category": "Laundry",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "laundry-room-cabinet-ideas"
+    },
+    {
+      "keyword": "craft room organization",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Craft Room",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "craft-room-organization"
+    },
+    {
+      "keyword": "bathroom shelf ideas",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Bathroom",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "bathroom-shelf-ideas"
+    },
+    {
+      "keyword": "corner cabinet kitchen ideas",
+      "volume": 2400,
+      "kd": 9,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "corner-cabinet-kitchen-ideas"
+    },
+    {
+      "keyword": "laundry room storage ideas",
+      "volume": 2400,
+      "kd": 15,
+      "category": "Laundry",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "laundry-room-storage-ideas"
+    },
+    {
+      "keyword": "basement storage ideas",
+      "volume": 1900,
+      "kd": 0,
+      "category": "Storage",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "basement-storage-ideas"
+    },
+    {
+      "keyword": "office organization ideas",
+      "volume": 1900,
+      "kd": 0,
+      "category": "Workspace",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "office-organization-ideas"
+    },
+    {
+      "keyword": "bedroom organization ideas",
+      "volume": 1900,
+      "kd": 0,
+      "category": "Bedroom",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "bedroom-organization-ideas"
+    },
+    {
+      "keyword": "laundry closet ideas",
+      "volume": 1900,
+      "kd": 3,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "laundry-closet-ideas"
+    },
+    {
+      "keyword": "lego organizer ideas",
+      "volume": 1600,
+      "kd": 0,
+      "category": "Kids & Toys",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "lego-organizer-ideas"
+    },
+    {
+      "keyword": "jewelry storage ideas",
+      "volume": 1600,
+      "kd": 0,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "jewelry-storage-ideas"
+    },
+    {
+      "keyword": "bedroom shelving ideas",
+      "volume": 1600,
+      "kd": 0,
+      "category": "Bedroom",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "bedroom-shelving-ideas"
+    },
+    {
+      "keyword": "playroom organization",
+      "volume": 1600,
+      "kd": 0,
+      "category": "Kids & Toys",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "playroom-organization"
+    },
+    {
+      "keyword": "bathroom cabinet ideas",
+      "volume": 1600,
+      "kd": 2,
+      "category": "Bathroom",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "bathroom-cabinet-ideas"
+    },
+    {
+      "keyword": "kitchen organization dish rack alternatives",
+      "volume": 1300,
+      "kd": 0,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "kitchen-organization-dish-rack-alternatives"
+    },
+    {
+      "keyword": "declutter office",
+      "volume": 1300,
+      "kd": 0,
+      "category": "Workspace",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "declutter-office"
+    },
+    {
+      "keyword": "kitchen floating shelf ideas",
+      "volume": 1300,
+      "kd": 2,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "kitchen-floating-shelf-ideas"
+    },
+    {
+      "keyword": "playroom storage ideas",
+      "volume": 1300,
+      "kd": 2,
+      "category": "Kids & Toys",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "playroom-storage-ideas"
+    },
+    {
+      "keyword": "shoe rack ideas",
+      "volume": 1300,
+      "kd": 6,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "shoe-rack-ideas"
+    },
+    {
+      "keyword": "modular closet organization",
+      "volume": 3600,
+      "kd": 18,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "modular-closet-organization"
+    },
+    {
+      "keyword": "diy room divider",
+      "volume": 2900,
+      "kd": 0,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-room-divider"
+    },
+    {
+      "keyword": "pantry organization bins",
+      "volume": 2400,
+      "kd": 2,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "pantry-organization-bins"
+    },
+    {
+      "keyword": "pegboard garage organization",
+      "volume": 2400,
+      "kd": 5,
+      "category": "Garage",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "pegboard-garage-organization"
+    },
+    {
+      "keyword": "laundry room shelving ideas",
+      "volume": 1600,
+      "kd": 0,
+      "category": "Laundry",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "laundry-room-shelving-ideas"
+    },
+    {
+      "keyword": "corner shelf ideas",
+      "volume": 1600,
+      "kd": 3,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "corner-shelf-ideas"
+    },
+    {
+      "keyword": "refrigerator organization",
+      "volume": 2900,
+      "kd": 2,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "refrigerator-organization"
+    },
+    {
+      "keyword": "purse storage ideas",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "purse-storage-ideas"
+    },
+    {
+      "keyword": "newborn closet organization",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "newborn-closet-organization"
+    },
+    {
+      "keyword": "organizing children's closet",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "organizing-children-s-closet"
+    },
+    {
+      "keyword": "pantry storage ideas",
+      "volume": 1900,
+      "kd": 2,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "pantry-storage-ideas"
+    },
+    {
+      "keyword": "pantry cabinet ideas",
+      "volume": 1900,
+      "kd": 12,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "pantry-cabinet-ideas"
+    },
+    {
+      "keyword": "living room shelving ideas",
+      "volume": 1300,
+      "kd": 0,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "living-room-shelving-ideas"
+    },
+    {
+      "keyword": "diy shelf brackets",
+      "volume": 1300,
+      "kd": 0,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-shelf-brackets"
+    },
+    {
+      "keyword": "garage cabinet ideas",
+      "volume": 1300,
+      "kd": 0,
+      "category": "Garage",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "garage-cabinet-ideas"
+    },
+    {
+      "keyword": "yarn storage ideas",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Craft Room",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "yarn-storage-ideas"
+    },
+    {
+      "keyword": "over the toilet storage ideas",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "over-the-toilet-storage-ideas"
+    },
+    {
+      "keyword": "corner closet system",
+      "volume": 1900,
+      "kd": 0,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "corner-closet-system"
+    },
+    {
+      "keyword": "under stairs closet storage ideas",
+      "volume": 1900,
+      "kd": 0,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "under-stairs-closet-storage-ideas"
+    },
+    {
+      "keyword": "open shelving kitchen ideas",
+      "volume": 1600,
+      "kd": 7,
+      "category": "Kitchen",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "open-shelving-kitchen-ideas"
+    },
+    {
+      "keyword": "diy wood shelves",
+      "volume": 1300,
+      "kd": 2,
+      "category": "Home Organization",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-wood-shelves"
+    },
+    {
+      "keyword": "diy clothes rack",
+      "volume": 2400,
+      "kd": 0,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "diy-clothes-rack"
+    },
+    {
+      "keyword": "storage for clothes",
+      "volume": 2400,
+      "kd": 6,
+      "category": "Closet",
+      "intent": "Informational",
+      "priority": "Tier 1",
+      "slug": "storage-for-clothes"
+    }
+  ]
+}

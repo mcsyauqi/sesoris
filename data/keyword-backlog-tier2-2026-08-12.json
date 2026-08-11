@@ -1,0 +1,189 @@
+{
+  "generated_at": "2026-08-12",
+  "note": "Tier 2 backlog, KD 21-25. Deliberately NOT merged into keyword-queue.json: the card sets a hard ceiling of KD 20 for the main queue while sesoris.com sits at DR 1.1. Promote from here only after Domain Rating improves.",
+  "source": "DataForSEO dataforseo_labs/google/keyword_ideas/live, location_code 2840, language_code en",
+  "gates": "same quality gates as the main queue; deduped against queue, consumed ledger, live slugs, legacy redirects, Keyword Database spreadsheet and the 60 keywords added today",
+  "count": 30,
+  "keywords": [
+    {
+      "keyword": "closet design ideas",
+      "volume": 4400,
+      "kd": 24,
+      "slug": "closet-design-ideas"
+    },
+    {
+      "keyword": "kitchen pantry ideas",
+      "volume": 2900,
+      "kd": 25,
+      "slug": "kitchen-pantry-ideas"
+    },
+    {
+      "keyword": "organizing drawers",
+      "volume": 1900,
+      "kd": 21,
+      "slug": "organizing-drawers"
+    },
+    {
+      "keyword": "packing tips",
+      "volume": 1000,
+      "kd": 25,
+      "slug": "packing-tips"
+    },
+    {
+      "keyword": "kitchen cupboard storage ideas",
+      "volume": 880,
+      "kd": 22,
+      "slug": "kitchen-cupboard-storage-ideas"
+    },
+    {
+      "keyword": "how to label an envelope to mail",
+      "volume": 880,
+      "kd": 22,
+      "slug": "how-to-label-an-envelope-to-mail"
+    },
+    {
+      "keyword": "diy closet organizer ideas",
+      "volume": 880,
+      "kd": 23,
+      "slug": "diy-closet-organizer-ideas"
+    },
+    {
+      "keyword": "storage room ideas",
+      "volume": 880,
+      "kd": 24,
+      "slug": "storage-room-ideas"
+    },
+    {
+      "keyword": "travel packing tips",
+      "volume": 880,
+      "kd": 24,
+      "slug": "travel-packing-tips"
+    },
+    {
+      "keyword": "kitchen cabinet storage solutions",
+      "volume": 390,
+      "kd": 21,
+      "slug": "kitchen-cabinet-storage-solutions"
+    },
+    {
+      "keyword": "space saving kitchen ideas",
+      "volume": 390,
+      "kd": 23,
+      "slug": "space-saving-kitchen-ideas"
+    },
+    {
+      "keyword": "kitchen cabinets ideas for small kitchen",
+      "volume": 390,
+      "kd": 25,
+      "slug": "kitchen-cabinets-ideas-for-small-kitchen"
+    },
+    {
+      "keyword": "small space room divider ideas",
+      "volume": 320,
+      "kd": 21,
+      "slug": "small-space-room-divider-ideas"
+    },
+    {
+      "keyword": "kitchen cabinets design layout",
+      "volume": 320,
+      "kd": 21,
+      "slug": "kitchen-cabinets-design-layout"
+    },
+    {
+      "keyword": "organization racks",
+      "volume": 320,
+      "kd": 24,
+      "slug": "organization-racks"
+    },
+    {
+      "keyword": "closet organizer ideas for small closets",
+      "volume": 320,
+      "kd": 25,
+      "slug": "closet-organizer-ideas-for-small-closets"
+    },
+    {
+      "keyword": "closet build ideas",
+      "volume": 260,
+      "kd": 21,
+      "slug": "closet-build-ideas"
+    },
+    {
+      "keyword": "small space kitchen ideas",
+      "volume": 260,
+      "kd": 23,
+      "slug": "small-space-kitchen-ideas"
+    },
+    {
+      "keyword": "shelf organizing ideas",
+      "volume": 260,
+      "kd": 23,
+      "slug": "shelf-organizing-ideas"
+    },
+    {
+      "keyword": "cool closet ideas",
+      "volume": 210,
+      "kd": 21,
+      "slug": "cool-closet-ideas"
+    },
+    {
+      "keyword": "how do i declutter my house",
+      "volume": 210,
+      "kd": 22,
+      "slug": "how-do-i-declutter-my-house"
+    },
+    {
+      "keyword": "ideas for inside kitchen cabinets",
+      "volume": 210,
+      "kd": 23,
+      "slug": "ideas-for-inside-kitchen-cabinets"
+    },
+    {
+      "keyword": "metal closet system",
+      "volume": 210,
+      "kd": 23,
+      "slug": "metal-closet-system"
+    },
+    {
+      "keyword": "organization help for home",
+      "volume": 210,
+      "kd": 24,
+      "slug": "organization-help-for-home"
+    },
+    {
+      "keyword": "closet set up ideas",
+      "volume": 210,
+      "kd": 25,
+      "slug": "closet-set-up-ideas"
+    },
+    {
+      "keyword": "food storage system",
+      "volume": 210,
+      "kd": 25,
+      "slug": "food-storage-system"
+    },
+    {
+      "keyword": "storage room organization ideas",
+      "volume": 170,
+      "kd": 21,
+      "slug": "storage-room-organization-ideas"
+    },
+    {
+      "keyword": "clever kitchen storage ideas",
+      "volume": 170,
+      "kd": 22,
+      "slug": "clever-kitchen-storage-ideas"
+    },
+    {
+      "keyword": "kitchen cabinet layout planner",
+      "volume": 170,
+      "kd": 23,
+      "slug": "kitchen-cabinet-layout-planner"
+    },
+    {
+      "keyword": "food organization containers",
+      "volume": 170,
+      "kd": 25,
+      "slug": "food-organization-containers"
+    }
+  ]
+}
