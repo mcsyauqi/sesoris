@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 import { products, categories } from '@/data/products';
+import { comparisonGuides } from '@/data/comparison-guides';
 
 // ISR: regenerate sitemap every hour so scheduled blog publishes appear
 // without requiring a deploy (cycle #16 fix, 2026-05-25).
@@ -70,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog`,
       lastModified: LAST_BLOG_UPDATE,
       changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/guides`,
+      lastModified: '2026-08-12T00:00:00.000Z',
+      changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
@@ -188,6 +195,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const comparisonGuidePages: MetadataRoute.Sitemap = comparisonGuides.map(({ slug }) => ({
+    url: `${baseUrl}/guides/${slug}`,
+    lastModified: '2026-08-12T00:00:00.000Z',
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
   // Blog article pages (date-filtered: only published, no future-dated)
   // Fixed 2026-05-21: switched from getAllSlugs() to getAllPosts() to prevent
   // GSC warnings on future-dated blog URLs (was causing 84 warnings).
@@ -200,5 +214,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...categoryPages, ...productPages, ...blogPages];
+  return [...staticPages, ...categoryPages, ...productPages, ...comparisonGuidePages, ...blogPages];
 }

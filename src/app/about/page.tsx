@@ -116,6 +116,12 @@ export default function AboutPage() {
               <p style={{ color: '#5F6873', lineHeight: 1.8 }}>
                 &ldquo;Do It With Ease&rdquo; is our promise: simple product choices, clear support, and practical storage ideas for people who want their home to feel more organized without making the process complicated.
               </p>
+              <div style={{ marginTop: '24px', padding: '20px', borderRadius: '14px', background: '#F2F8F3', border: '1px solid #D5E7D8' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1B5E3B', marginBottom: '8px' }}>The Sesoris name</h3>
+                <p style={{ color: '#4B5563', lineHeight: 1.7 }}>
+                  Sesoris at sesoris.com is an independent home organization and storage store founded in Yogyakarta, Indonesia. We are not affiliated with Sessori or with similarly named fashion, jewelry, or media websites. Our official website is always <Link href="/" style={{ color: '#1B5E3B', fontWeight: 700 }}>www.sesoris.com</Link>.
+                </p>
+              </div>
             </div>
           </div>
         </div>

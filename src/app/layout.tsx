@@ -94,11 +94,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': ['Organization', 'LocalBusiness', 'Store'],
+              '@type': ['Organization', 'OnlineStore'],
               name: 'Sesoris',
+              alternateName: ['Sesoris Home Organization', 'Sesoris Home Organizers'],
               url: 'https://www.sesoris.com',
               logo: 'https://www.sesoris.com/logo.webp',
-              description: 'Yogyakarta-based online store for quality home organizers, kitchen storage, desk accessories, and storage solutions, shipping worldwide.',
+              description: 'Sesoris is an independent Yogyakarta-founded online home organization store for storage, kitchen, desk, and tidy-living products. It is not affiliated with similarly named fashion or jewelry websites.',
               priceRange: '$5 - $50',
               address: {
                 '@type': 'PostalAddress',
@@ -110,7 +111,8 @@ export default function RootLayout({
                 '@type': 'Place',
                 name: 'Yogyakarta, Indonesia',
               },
-              areaServed: ['Worldwide'],
+              areaServed: ['United States', 'Worldwide'],
+              knowsAbout: ['Home organization', 'Storage solutions', 'Kitchen organization', 'Desk organization'],
               hasMerchantReturnPolicy: {
                 '@type': 'MerchantReturnPolicy',
                 returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
