@@ -478,9 +478,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
 
               {product.features && product.features.length > 0 && (
                 <div style={{ marginTop: '32px' }}>
-                  <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+                  <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
                     Key Features
-                  </h3>
+                  </h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     {product.features.map((feature, index) => (
                       <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>

@@ -55,7 +55,7 @@ export default function ShopPageClient() {
     <>
       {/* Categories */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Categories</h3>
+        <div style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Categories</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {categories.map((cat) => (
             <label key={cat.id} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
@@ -74,7 +74,7 @@ export default function ShopPageClient() {
 
       {/* Price Range */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Price Range</h3>
+        <div style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Price Range</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {priceRanges.map((range, i) => (
             <label key={range.label} style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
@@ -93,7 +93,7 @@ export default function ShopPageClient() {
 
       {/* Availability */}
       <div>
-        <h3 style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Availability</h3>
+        <div style={{ fontWeight: 600, color: '#212529', marginBottom: '16px', fontSize: '15px' }}>Availability</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
             <input
@@ -323,7 +323,7 @@ export default function ShopPageClient() {
           padding: '16px 20px',
           borderBottom: '1px solid #E9ECEF'
         }}>
-          <h3 style={{ fontWeight: 600, fontSize: '16px' }}>Filter</h3>
+          <div style={{ fontWeight: 600, fontSize: '16px' }}>Filter</div>
           <button
             onClick={() => setFilterOpen(false)}
             style={{ padding: '8px', borderRadius: '8px', background: '#F8F9FA', border: 'none', cursor: 'pointer', display: 'flex' }}

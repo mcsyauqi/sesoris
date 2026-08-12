@@ -145,19 +145,19 @@ export function ProductCard({ product, priority = false }: { product: Product; p
 
       {/* Info */}
       <Link href={`/product/${product.slug}`}>
-        <h3 style={{
+        <span style={{
           fontWeight: 500,
           fontSize: '14px',
           color: '#212529',
           marginBottom: '6px',
-          lineHeight: 1.4,
           display: '-webkit-box',
+          lineHeight: 1.4,
           WebkitLineClamp: 2,
           WebkitBoxOrient: 'vertical' as const,
           overflow: 'hidden'
         }}>
           {product.name}
-        </h3>
+        </span>
       </Link>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '6px' }}>
