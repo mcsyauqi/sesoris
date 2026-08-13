@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "office supplies organization ideas",
-    "volume": 150,
-    "kd": 4,
-    "category": "Workspace",
-    "intent": "Commercial",
-    "priority": "Tier 3",
-    "slug": "office-supplies-organization-ideas"
-  },
-  {
-    "keyword": "diy plant stand ideas",
-    "volume": 150,
-    "kd": 2,
-    "category": "Plants",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "diy-plant-stand-ideas"
-  },
-  {
-    "keyword": "carry on packing tips",
-    "volume": 150,
-    "kd": 12,
-    "category": "Travel",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "carry-on-packing-tips"
-  },
-  {
     "keyword": "sock drawer organization",
     "volume": 150,
     "kd": 0,

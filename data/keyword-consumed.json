@@ -1546,5 +1546,41 @@
     "date": "2026-08-12",
     "status": "published",
     "note": "Created content/blog/under-bathroom-sink-organization-ideas.json"
+  },
+  {
+    "keyword": "office supplies organization ideas",
+    "volume": 150,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Commercial",
+    "priority": "Tier 3",
+    "slug": "office-supplies-organization-ideas",
+    "date": "2026-08-13",
+    "status": "published",
+    "note": "Created content/blog/office-supplies-organization-ideas.json"
+  },
+  {
+    "keyword": "diy plant stand ideas",
+    "volume": 150,
+    "kd": 2,
+    "category": "Plants",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "diy-plant-stand-ideas",
+    "date": "2026-08-13",
+    "status": "published",
+    "note": "Created content/blog/diy-plant-stand-ideas.json"
+  },
+  {
+    "keyword": "carry on packing tips",
+    "volume": 150,
+    "kd": 12,
+    "category": "Travel",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "carry-on-packing-tips",
+    "date": "2026-08-13",
+    "status": "published",
+    "note": "Created content/blog/carry-on-packing-tips.json"
   }
 ]
