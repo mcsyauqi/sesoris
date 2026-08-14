@@ -1582,5 +1582,41 @@
     "date": "2026-08-13",
     "status": "published",
     "note": "Created content/blog/carry-on-packing-tips.json"
+  },
+  {
+    "keyword": "sock drawer organization",
+    "volume": 150,
+    "kd": 0,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "sock-drawer-organization",
+    "date": "2026-08-14",
+    "status": "published",
+    "note": "Created content/blog/sock-drawer-organization.json"
+  },
+  {
+    "keyword": "kids book storage ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "kids-book-storage-ideas",
+    "date": "2026-08-14",
+    "status": "published",
+    "note": "Created content/blog/kids-book-storage-ideas.json"
+  },
+  {
+    "keyword": "book storage ideas for small spaces",
+    "volume": 150,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "book-storage-ideas-for-small-spaces",
+    "date": "2026-08-14",
+    "status": "published",
+    "note": "Created content/blog/book-storage-ideas-for-small-spaces.json"
   }
 ]

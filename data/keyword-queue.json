@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "sock drawer organization",
-    "volume": 150,
-    "kd": 0,
-    "category": "Bedroom",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "sock-drawer-organization"
-  },
-  {
-    "keyword": "kids book storage ideas",
-    "volume": 150,
-    "kd": 0,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "kids-book-storage-ideas"
-  },
-  {
-    "keyword": "book storage ideas for small spaces",
-    "volume": 150,
-    "kd": 0,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "book-storage-ideas-for-small-spaces"
-  },
-  {
     "keyword": "winter hat and glove storage ideas",
     "volume": 150,
     "kd": 0,
