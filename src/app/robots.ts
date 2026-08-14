@@ -38,6 +38,10 @@ export default function robots(): MetadataRoute.Robots {
           '/wishlist/',
         ],
       },
+      {
+        userAgent: 'CCBot',
+        disallow: '/',
+      },
     ],
     sitemap: [
       'https://www.sesoris.com/sitemap.xml',
