@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "winter hat and glove storage ideas",
-    "volume": 150,
-    "kd": 0,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "winter-hat-and-glove-storage-ideas"
-  },
-  {
-    "keyword": "car organization ideas",
-    "volume": 150,
-    "kd": 0,
-    "category": "Travel",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "car-organization-ideas"
-  },
-  {
-    "keyword": "home office desk organization",
-    "volume": 100,
-    "kd": 6,
-    "category": "Workspace",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "home-office-desk-organization"
-  },
-  {
     "keyword": "desk cable management ideas",
     "volume": 100,
     "kd": 4,

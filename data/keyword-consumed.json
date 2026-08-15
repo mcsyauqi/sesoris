@@ -1618,5 +1618,41 @@
     "date": "2026-08-14",
     "status": "published",
     "note": "Created content/blog/book-storage-ideas-for-small-spaces.json"
+  },
+  {
+    "keyword": "winter hat and glove storage ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "winter-hat-and-glove-storage-ideas",
+    "date": "2026-08-15",
+    "status": "published",
+    "note": "Created content/blog/winter-hat-and-glove-storage-ideas.json"
+  },
+  {
+    "keyword": "car organization ideas",
+    "volume": 150,
+    "kd": 0,
+    "category": "Travel",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "car-organization-ideas",
+    "date": "2026-08-15",
+    "status": "published",
+    "note": "Created content/blog/car-organization-ideas.json"
+  },
+  {
+    "keyword": "home office desk organization",
+    "volume": 100,
+    "kd": 6,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "home-office-desk-organization",
+    "date": "2026-08-15",
+    "status": "published",
+    "note": "Created content/blog/home-office-desk-organization.json"
   }
 ]
