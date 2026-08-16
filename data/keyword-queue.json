@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "desk cable management ideas",
-    "volume": 100,
-    "kd": 4,
-    "category": "Workspace",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "desk-cable-management-ideas"
-  },
-  {
-    "keyword": "nightstand organization ideas",
-    "volume": 100,
-    "kd": 0,
-    "category": "Bedroom",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "nightstand-organization-ideas"
-  },
-  {
-    "keyword": "diy cardboard box storage ideas",
-    "volume": 100,
-    "kd": 1,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "diy-cardboard-box-storage-ideas"
-  },
-  {
     "keyword": "suitcase packing tips",
     "volume": 100,
     "kd": 3,

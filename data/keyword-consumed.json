@@ -1654,5 +1654,41 @@
     "date": "2026-08-15",
     "status": "published",
     "note": "Created content/blog/home-office-desk-organization.json"
+  },
+  {
+    "keyword": "desk cable management ideas",
+    "volume": 100,
+    "kd": 4,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "desk-cable-management-ideas",
+    "date": "2026-08-16",
+    "status": "published",
+    "note": "Created content/blog/desk-cable-management-ideas.json"
+  },
+  {
+    "keyword": "nightstand organization ideas",
+    "volume": 100,
+    "kd": 0,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "nightstand-organization-ideas",
+    "date": "2026-08-16",
+    "status": "published",
+    "note": "Created content/blog/nightstand-organization-ideas.json"
+  },
+  {
+    "keyword": "diy cardboard box storage ideas",
+    "volume": 100,
+    "kd": 1,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "diy-cardboard-box-storage-ideas",
+    "date": "2026-08-16",
+    "status": "published",
+    "note": "Created content/blog/diy-cardboard-box-storage-ideas.json"
   }
 ]
