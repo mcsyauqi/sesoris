@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "suitcase packing tips",
-    "volume": 100,
-    "kd": 3,
-    "category": "Travel",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "suitcase-packing-tips"
-  },
-  {
-    "keyword": "outdoor plant shelf ideas",
-    "volume": 100,
-    "kd": 1,
-    "category": "Plants",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "outdoor-plant-shelf-ideas"
-  },
-  {
-    "keyword": "small entryway organization ideas",
-    "volume": 100,
-    "kd": 0,
-    "category": "Entryway",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "small-entryway-organization-ideas"
-  },
-  {
     "keyword": "makeup organization ideas",
     "volume": 100,
     "kd": 1,

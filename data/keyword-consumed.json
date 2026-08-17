@@ -1690,5 +1690,41 @@
     "date": "2026-08-16",
     "status": "published",
     "note": "Created content/blog/diy-cardboard-box-storage-ideas.json"
+  },
+  {
+    "keyword": "suitcase packing tips",
+    "volume": 100,
+    "kd": 3,
+    "category": "Travel",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "suitcase-packing-tips",
+    "date": "2026-08-17",
+    "status": "published",
+    "note": "Created content/blog/suitcase-packing-tips.json"
+  },
+  {
+    "keyword": "outdoor plant shelf ideas",
+    "volume": 100,
+    "kd": 1,
+    "category": "Plants",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "outdoor-plant-shelf-ideas",
+    "date": "2026-08-17",
+    "status": "published",
+    "note": "Created content/blog/outdoor-plant-shelf-ideas.json"
+  },
+  {
+    "keyword": "small entryway organization ideas",
+    "volume": 100,
+    "kd": 0,
+    "category": "Entryway",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "small-entryway-organization-ideas",
+    "date": "2026-08-17",
+    "status": "published",
+    "note": "Created content/blog/small-entryway-organization-ideas.json"
   }
 ]
