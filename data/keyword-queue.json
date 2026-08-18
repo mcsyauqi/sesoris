@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "makeup organization ideas",
-    "volume": 100,
-    "kd": 1,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "makeup-organization-ideas"
-  },
-  {
-    "keyword": "seasonal decor storage",
-    "volume": 100,
-    "kd": 3,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "seasonal-decor-storage"
-  },
-  {
-    "keyword": "entryway closet organization ideas",
-    "volume": 90,
-    "kd": 1,
-    "category": "Entryway",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "entryway-closet-organization-ideas"
-  },
-  {
     "keyword": "under dorm bed storage ideas",
     "volume": 80,
     "kd": 0,

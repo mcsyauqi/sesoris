@@ -1726,5 +1726,41 @@
     "date": "2026-08-17",
     "status": "published",
     "note": "Created content/blog/small-entryway-organization-ideas.json"
+  },
+  {
+    "keyword": "makeup organization ideas",
+    "volume": 100,
+    "kd": 1,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "makeup-organization-ideas",
+    "date": "2026-08-18",
+    "status": "published",
+    "note": "Created content/blog/makeup-organization-ideas.json"
+  },
+  {
+    "keyword": "seasonal decor storage",
+    "volume": 100,
+    "kd": 3,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "seasonal-decor-storage",
+    "date": "2026-08-18",
+    "status": "published",
+    "note": "Created content/blog/seasonal-decor-storage.json"
+  },
+  {
+    "keyword": "entryway closet organization ideas",
+    "volume": 90,
+    "kd": 1,
+    "category": "Entryway",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "entryway-closet-organization-ideas",
+    "date": "2026-08-18",
+    "status": "published",
+    "note": "Created content/blog/entryway-closet-organization-ideas.json"
   }
 ]
