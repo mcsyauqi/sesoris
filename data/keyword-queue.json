@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "under dorm bed storage ideas",
-    "volume": 80,
-    "kd": 0,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "under-dorm-bed-storage-ideas"
-  },
-  {
-    "keyword": "makeup vanity organization ideas",
-    "volume": 80,
-    "kd": 0,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "makeup-vanity-organization-ideas"
-  },
-  {
-    "keyword": "coffee station organization",
-    "volume": 80,
-    "kd": 0,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "coffee-station-organization"
-  },
-  {
     "keyword": "mail organization ideas",
     "volume": 70,
     "kd": 0,
