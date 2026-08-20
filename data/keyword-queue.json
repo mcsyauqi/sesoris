@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "mail organization ideas",
-    "volume": 70,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "mail-organization-ideas"
-  },
-  {
-    "keyword": "mini fridge organization ideas",
-    "volume": 50,
-    "kd": 0,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "mini-fridge-organization-ideas"
-  },
-  {
-    "keyword": "free printable storage bin labels",
-    "volume": 50,
-    "kd": 4,
-    "category": "Storage",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "free-printable-storage-bin-labels"
-  },
-  {
     "keyword": "spice rack organization",
     "volume": 50,
     "kd": 5,

@@ -1798,5 +1798,41 @@
     "date": "2026-08-19",
     "status": "published",
     "note": "Created content/blog/coffee-station-organization.json"
+  },
+  {
+    "keyword": "mail organization ideas",
+    "volume": 70,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "mail-organization-ideas",
+    "date": "2026-08-20",
+    "status": "published",
+    "note": "Created content/blog/mail-organization-ideas.json"
+  },
+  {
+    "keyword": "mini fridge organization ideas",
+    "volume": 50,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "mini-fridge-organization-ideas",
+    "date": "2026-08-20",
+    "status": "published",
+    "note": "Created content/blog/mini-fridge-organization-ideas.json"
+  },
+  {
+    "keyword": "free printable storage bin labels",
+    "volume": 50,
+    "kd": 4,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "free-printable-storage-bin-labels",
+    "date": "2026-08-20",
+    "status": "published",
+    "note": "Created content/blog/free-printable-storage-bin-labels.json"
   }
 ]
