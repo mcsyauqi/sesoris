@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
 import { AnalyticsScripts } from '@/components/layout/AnalyticsScripts';
+import { CartHydration } from '@/components/layout/CartHydration';
 import { DM_Sans, DM_Serif_Display } from 'next/font/google';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
@@ -163,6 +164,7 @@ export default function RootLayout({
       </head>
       <body className={dmSans.className}>
         <AnalyticsScripts />
+        <CartHydration />
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <AnnouncementBar />
           <Header />

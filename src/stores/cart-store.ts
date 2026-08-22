@@ -67,6 +67,11 @@ export const useCartStore = create<CartState>()(
       getSubtotal: () =>
         get().items.reduce((acc, item) => acc + item.product.price * item.quantity, 0),
     }),
-    { name: 'sesoris-cart' }
+    {
+      name: 'sesoris-cart',
+      // Defer localStorage reads until after the first client render so SSR and
+      // hydration produce the same markup on cart-dependent pages.
+      skipHydration: true,
+    }
   )
 );
