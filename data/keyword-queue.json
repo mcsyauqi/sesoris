@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "tiny kitchen layout ideas",
-    "volume": 40,
-    "kd": 3,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 3",
-    "slug": "tiny-kitchen-layout-ideas"
-  },
-  {
-    "keyword": "declutter garage",
-    "volume": 4400,
-    "kd": 0,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "declutter-garage"
-  },
-  {
-    "keyword": "diy shelves",
-    "volume": 4400,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-shelves"
-  },
-  {
     "keyword": "lego storage ideas",
     "volume": 4400,
     "kd": 1,

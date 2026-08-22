@@ -1870,5 +1870,41 @@
     "date": "2026-08-21",
     "status": "published",
     "note": "Created content/blog/small-space-organization-hacks.json"
+  },
+  {
+    "keyword": "tiny kitchen layout ideas",
+    "volume": 40,
+    "kd": 3,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 3",
+    "slug": "tiny-kitchen-layout-ideas",
+    "date": "2026-08-22",
+    "status": "published",
+    "note": "Created content/blog/tiny-kitchen-layout-ideas.json"
+  },
+  {
+    "keyword": "declutter garage",
+    "volume": 4400,
+    "kd": 0,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "declutter-garage",
+    "date": "2026-08-22",
+    "status": "published",
+    "note": "Created content/blog/declutter-garage.json"
+  },
+  {
+    "keyword": "diy shelves",
+    "volume": 4400,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-shelves",
+    "date": "2026-08-22",
+    "status": "published",
+    "note": "Created content/blog/diy-shelves.json"
   }
 ]
