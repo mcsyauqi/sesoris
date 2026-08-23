@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "lego storage ideas",
-    "volume": 4400,
-    "kd": 1,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "lego-storage-ideas"
-  },
-  {
-    "keyword": "mudroom storage solutions",
-    "volume": 4400,
-    "kd": 1,
-    "category": "Entryway",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "mudroom-storage-solutions"
-  },
-  {
-    "keyword": "modular shelving system",
-    "volume": 4400,
-    "kd": 3,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "modular-shelving-system"
-  },
-  {
     "keyword": "pantry shelving ideas",
     "volume": 4400,
     "kd": 6,

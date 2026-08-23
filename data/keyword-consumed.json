@@ -1906,5 +1906,41 @@
     "date": "2026-08-22",
     "status": "published",
     "note": "Created content/blog/diy-shelves.json"
+  },
+  {
+    "keyword": "lego storage ideas",
+    "volume": 4400,
+    "kd": 1,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "lego-storage-ideas",
+    "date": "2026-08-23",
+    "status": "published",
+    "note": "Created content/blog/lego-storage-ideas.json"
+  },
+  {
+    "keyword": "mudroom storage solutions",
+    "volume": 4400,
+    "kd": 1,
+    "category": "Entryway",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "mudroom-storage-solutions",
+    "date": "2026-08-23",
+    "status": "published",
+    "note": "Created content/blog/mudroom-storage-solutions.json"
+  },
+  {
+    "keyword": "modular shelving system",
+    "volume": 4400,
+    "kd": 3,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "modular-shelving-system",
+    "date": "2026-08-23",
+    "status": "published",
+    "note": "Created content/blog/modular-shelving-system.json"
   }
 ]
