@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "pantry shelving ideas",
-    "volume": 4400,
-    "kd": 6,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "pantry-shelving-ideas"
-  },
-  {
-    "keyword": "diy garage shelves",
-    "volume": 4400,
-    "kd": 7,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-garage-shelves"
-  },
-  {
-    "keyword": "small walk in closet ideas",
-    "volume": 4400,
-    "kd": 7,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "small-walk-in-closet-ideas"
-  },
-  {
     "keyword": "garage organization systems",
     "volume": 4400,
     "kd": 9,
