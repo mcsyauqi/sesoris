@@ -1978,5 +1978,41 @@
     "date": "2026-08-24",
     "status": "published",
     "note": "Created content/blog/small-walk-in-closet-ideas.json"
+  },
+  {
+    "keyword": "garage organization systems",
+    "volume": 4400,
+    "kd": 9,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "garage-organization-systems",
+    "date": "2026-08-25",
+    "status": "published",
+    "note": "Created content/blog/garage-organization-systems.json"
+  },
+  {
+    "keyword": "tool storage & organization",
+    "volume": 4400,
+    "kd": 11,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "tool-storage-organization",
+    "date": "2026-08-25",
+    "status": "published",
+    "note": "Created content/blog/tool-storage-organization.json"
+  },
+  {
+    "keyword": "floating shelf ideas",
+    "volume": 3600,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "floating-shelf-ideas",
+    "date": "2026-08-25",
+    "status": "published",
+    "note": "Created content/blog/floating-shelf-ideas.json"
   }
 ]

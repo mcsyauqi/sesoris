@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "garage organization systems",
-    "volume": 4400,
-    "kd": 9,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "garage-organization-systems"
-  },
-  {
-    "keyword": "tool storage & organization",
-    "volume": 4400,
-    "kd": 11,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "tool-storage-organization"
-  },
-  {
-    "keyword": "floating shelf ideas",
-    "volume": 3600,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "floating-shelf-ideas"
-  },
-  {
     "keyword": "butler pantry ideas",
     "volume": 3600,
     "kd": 0,
