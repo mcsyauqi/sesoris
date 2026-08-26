@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "butler pantry ideas",
-    "volume": 3600,
-    "kd": 0,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "butler-pantry-ideas"
-  },
-  {
-    "keyword": "small pantry ideas",
-    "volume": 3600,
-    "kd": 0,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "small-pantry-ideas"
-  },
-  {
-    "keyword": "diy closet shelves",
-    "volume": 3600,
-    "kd": 1,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-closet-shelves"
-  },
-  {
     "keyword": "decluttering home decor",
     "volume": 3600,
     "kd": 4,

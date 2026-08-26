@@ -2014,5 +2014,41 @@
     "date": "2026-08-25",
     "status": "published",
     "note": "Created content/blog/floating-shelf-ideas.json"
+  },
+  {
+    "keyword": "butler pantry ideas",
+    "volume": 3600,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "butler-pantry-ideas",
+    "date": "2026-08-26",
+    "status": "published",
+    "note": "Created content/blog/butler-pantry-ideas.json"
+  },
+  {
+    "keyword": "small pantry ideas",
+    "volume": 3600,
+    "kd": 0,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "small-pantry-ideas",
+    "date": "2026-08-26",
+    "status": "published",
+    "note": "Created content/blog/small-pantry-ideas.json"
+  },
+  {
+    "keyword": "diy closet shelves",
+    "volume": 3600,
+    "kd": 1,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-closet-shelves",
+    "date": "2026-08-26",
+    "status": "published",
+    "note": "Created content/blog/diy-closet-shelves.json"
   }
 ]
