@@ -482,6 +482,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   // inbound internal links to older/deep posts.
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
+  const revisionMarker = ['floating-shelf-ideas', 'garage-organization-systems', 'tool-storage-organization'].includes(post.slug)
+    ? 'sesoris-2026-08-27-media-citation-v1'
+    : undefined;
 
   // JSON-LD Structured Data
   const jsonLd = {
@@ -713,7 +716,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             )}
 
             {/* Content */}
-            <div style={{ padding: '40px 0 48px' }}>
+            <div data-revision-marker={revisionMarker} style={{ padding: '40px 0 48px' }}>
               {renderContentBlocks(post.content)}
             </div>
 
