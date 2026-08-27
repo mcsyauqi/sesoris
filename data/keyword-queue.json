@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "decluttering home decor",
-    "volume": 3600,
-    "kd": 4,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "decluttering-home-decor"
-  },
-  {
-    "keyword": "diy closet",
-    "volume": 3600,
-    "kd": 4,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-closet"
-  },
-  {
-    "keyword": "bathroom organization ideas",
-    "volume": 3600,
-    "kd": 5,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "bathroom-organization-ideas"
-  },
-  {
     "keyword": "declutter your house",
     "volume": 3600,
     "kd": 16,

@@ -2050,5 +2050,41 @@
     "date": "2026-08-26",
     "status": "published",
     "note": "Created content/blog/diy-closet-shelves.json"
+  },
+  {
+    "keyword": "decluttering home decor",
+    "volume": 3600,
+    "kd": 4,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "decluttering-home-decor",
+    "date": "2026-08-27",
+    "status": "published",
+    "note": "Created content/blog/decluttering-home-decor.json"
+  },
+  {
+    "keyword": "diy closet",
+    "volume": 3600,
+    "kd": 4,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-closet",
+    "date": "2026-08-27",
+    "status": "published",
+    "note": "Created content/blog/diy-closet.json"
+  },
+  {
+    "keyword": "bathroom organization ideas",
+    "volume": 3600,
+    "kd": 5,
+    "category": "Bathroom",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "bathroom-organization-ideas",
+    "date": "2026-08-27",
+    "status": "published",
+    "note": "Created content/blog/bathroom-organization-ideas.json"
   }
 ]
