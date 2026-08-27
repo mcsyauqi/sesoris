@@ -483,7 +483,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = ['floating-shelf-ideas', 'garage-organization-systems', 'tool-storage-organization'].includes(post.slug)
-    ? 'sesoris-2026-08-27-media-citation-v1'
+    ? 'sesoris-2026-08-27-scheduled-articles-v2'
     : undefined;
 
   // JSON-LD Structured Data
