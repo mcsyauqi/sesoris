@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "declutter your house",
-    "volume": 3600,
-    "kd": 16,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "declutter-your-house"
-  },
-  {
-    "keyword": "laundry room cabinet ideas",
-    "volume": 2900,
-    "kd": 0,
-    "category": "Laundry",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "laundry-room-cabinet-ideas"
-  },
-  {
-    "keyword": "craft room organization",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Craft Room",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "craft-room-organization"
-  },
-  {
     "keyword": "bathroom shelf ideas",
     "volume": 2400,
     "kd": 0,

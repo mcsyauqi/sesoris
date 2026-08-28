@@ -2086,5 +2086,41 @@
     "date": "2026-08-27",
     "status": "published",
     "note": "Created content/blog/bathroom-organization-ideas.json"
+  },
+  {
+    "keyword": "declutter your house",
+    "volume": 3600,
+    "kd": 16,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "declutter-your-house",
+    "date": "2026-08-28",
+    "status": "published",
+    "note": "Created content/blog/declutter-your-house.json"
+  },
+  {
+    "keyword": "laundry room cabinet ideas",
+    "volume": 2900,
+    "kd": 0,
+    "category": "Laundry",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "laundry-room-cabinet-ideas",
+    "date": "2026-08-28",
+    "status": "published",
+    "note": "Created content/blog/laundry-room-cabinet-ideas.json"
+  },
+  {
+    "keyword": "craft room organization",
+    "volume": 2400,
+    "kd": 0,
+    "category": "Craft Room",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "craft-room-organization",
+    "date": "2026-08-28",
+    "status": "published",
+    "note": "Created content/blog/craft-room-organization.json"
   }
 ]
