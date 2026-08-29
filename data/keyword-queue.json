@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "bathroom shelf ideas",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "bathroom-shelf-ideas"
-  },
-  {
-    "keyword": "corner cabinet kitchen ideas",
-    "volume": 2400,
-    "kd": 9,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "corner-cabinet-kitchen-ideas"
-  },
-  {
-    "keyword": "laundry room storage ideas",
-    "volume": 2400,
-    "kd": 15,
-    "category": "Laundry",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "laundry-room-storage-ideas"
-  },
-  {
     "keyword": "basement storage ideas",
     "volume": 1900,
     "kd": 0,
