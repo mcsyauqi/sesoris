@@ -2158,5 +2158,43 @@
     "date": "2026-08-29",
     "status": "published",
     "note": "Created content/blog/laundry-room-storage-ideas.json"
+  },
+  {
+    "keyword": "basement storage ideas",
+    "volume": 1900,
+    "kd": 0,
+    "category": "Storage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "basement-storage-ideas",
+    "date": "2026-08-30",
+    "status": "published",
+    "note": "Created content/blog/basement-storage-ideas.json"
+  },
+  {
+    "keyword": "office organization ideas",
+    "volume": 1900,
+    "kd": 0,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "office-organization-ideas",
+    "angleLock": "Target the GENERAL office: shared/team offices, professional and corporate workspaces, desk systems, filing, and supply storage. The published article /blog/small-home-office-organization-ideas already owns the small home office / tiny workspace angle (30+ listicle, all 9 H2s scoped to small home office) - link to it for that cut instead of repeating it. Kept rather than dropped because the US SERPs for the two phrases share only 3 of 10 organic URLs (DataForSEO, location 2840, en, measured 2026-08-11).",
+    "date": "2026-08-30",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
+  },
+  {
+    "keyword": "office organization ideas",
+    "volume": 1900,
+    "kd": 0,
+    "category": "Workspace",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "office-organization-ideas",
+    "angleLock": "Target the GENERAL office: shared/team offices, professional and corporate workspaces, desk systems, filing, and supply storage. The published article /blog/small-home-office-organization-ideas already owns the small home office / tiny workspace angle (30+ listicle, all 9 H2s scoped to small home office) - link to it for that cut instead of repeating it. Kept rather than dropped because the US SERPs for the two phrases share only 3 of 10 organic URLs (DataForSEO, location 2840, en, measured 2026-08-11).",
+    "date": "2026-08-30",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
   }
 ]
