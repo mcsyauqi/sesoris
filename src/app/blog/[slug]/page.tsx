@@ -486,12 +486,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'floating-shelf-ideas': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-organization-systems': 'sesoris-2026-08-27-scheduled-articles-v3',
     'tool-storage-organization': 'sesoris-2026-08-27-scheduled-articles-v3',
-    'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v1',
-    'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v1',
-    'laundry-room-storage-ideas': 'sesoris-2026-09-01-content-gate-v1',
-    'basement-storage-ideas': 'sesoris-2026-09-01-content-gate-v1',
-    'bedroom-organization-ideas': 'sesoris-2026-09-01-content-gate-v1',
-    'office-organization-ideas': 'sesoris-2026-09-01-content-gate-v1',
+    'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'laundry-room-storage-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'basement-storage-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'bedroom-organization-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'office-organization-ideas': 'sesoris-2026-09-01-content-gate-v2',
   }[post.slug];
 
   // JSON-LD Structured Data
