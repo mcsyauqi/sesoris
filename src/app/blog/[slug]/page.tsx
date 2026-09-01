@@ -482,9 +482,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   // inbound internal links to older/deep posts.
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
-  const revisionMarker = ['floating-shelf-ideas', 'garage-organization-systems', 'tool-storage-organization'].includes(post.slug)
-    ? 'sesoris-2026-08-27-scheduled-articles-v3'
-    : undefined;
+  const revisionMarker = {
+    'floating-shelf-ideas': 'sesoris-2026-08-27-scheduled-articles-v3',
+    'garage-organization-systems': 'sesoris-2026-08-27-scheduled-articles-v3',
+    'tool-storage-organization': 'sesoris-2026-08-27-scheduled-articles-v3',
+    'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v1',
+    'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v1',
+    'laundry-room-storage-ideas': 'sesoris-2026-09-01-content-gate-v1',
+    'basement-storage-ideas': 'sesoris-2026-09-01-content-gate-v1',
+    'bedroom-organization-ideas': 'sesoris-2026-09-01-content-gate-v1',
+    'office-organization-ideas': 'sesoris-2026-09-01-content-gate-v1',
+  }[post.slug];
 
   // JSON-LD Structured Data
   const jsonLd = {
