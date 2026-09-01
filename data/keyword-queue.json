@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "lego organizer ideas",
-    "volume": 1600,
-    "kd": 0,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "lego-organizer-ideas"
-  },
-  {
-    "keyword": "jewelry storage ideas",
-    "volume": 1600,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "jewelry-storage-ideas"
-  },
-  {
-    "keyword": "bedroom shelving ideas",
-    "volume": 1600,
-    "kd": 0,
-    "category": "Bedroom",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "bedroom-shelving-ideas"
-  },
-  {
     "keyword": "playroom organization",
     "volume": 1600,
     "kd": 0,

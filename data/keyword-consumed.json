@@ -2233,5 +2233,41 @@
     "date": "2026-08-31",
     "status": "published",
     "note": "Created content/blog/laundry-closet-ideas.json"
+  },
+  {
+    "keyword": "lego organizer ideas",
+    "volume": 1600,
+    "kd": 0,
+    "category": "Kids & Toys",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "lego-organizer-ideas",
+    "date": "2026-09-01",
+    "status": "published",
+    "note": "Created content/blog/lego-organizer-ideas.json"
+  },
+  {
+    "keyword": "jewelry storage ideas",
+    "volume": 1600,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "jewelry-storage-ideas",
+    "date": "2026-09-01",
+    "status": "published",
+    "note": "Created content/blog/jewelry-storage-ideas.json"
+  },
+  {
+    "keyword": "bedroom shelving ideas",
+    "volume": 1600,
+    "kd": 0,
+    "category": "Bedroom",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "bedroom-shelving-ideas",
+    "date": "2026-09-01",
+    "status": "published",
+    "note": "Created content/blog/bedroom-shelving-ideas.json"
   }
 ]
