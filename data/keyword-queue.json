@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "playroom organization",
-    "volume": 1600,
-    "kd": 0,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "playroom-organization"
-  },
-  {
-    "keyword": "bathroom cabinet ideas",
-    "volume": 1600,
-    "kd": 2,
-    "category": "Bathroom",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "bathroom-cabinet-ideas"
-  },
-  {
-    "keyword": "kitchen organization dish rack alternatives",
-    "volume": 1300,
-    "kd": 0,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "kitchen-organization-dish-rack-alternatives"
-  },
-  {
     "keyword": "declutter office",
     "volume": 1300,
     "kd": 0,
