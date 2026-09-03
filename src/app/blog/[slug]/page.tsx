@@ -257,11 +257,7 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
       const items: React.ReactNode[] = [];
       while (i < content.length && (content[i].startsWith('• ') || content[i].startsWith('- '))) {
         const itemText = content[i].replace(/^[•-]\s*/, '');
-        items.push(
-          <li key={i} style={{ marginBottom: '8px', paddingLeft: '4px' }}>
-            {renderInline(itemText)}
-          </li>
-        );
+        items.push(renderInline(itemText));
         i++;
       }
       elements.push(
@@ -271,10 +267,10 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
           margin: '16px 0 20px',
         }}>
           {items.map((item, idx) => (
-            <div key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-              <span style={{ color: '#1B5E3B', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>&#x2022;</span>
-              <div style={{ fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>{item}</div>
-            </div>
+            <li key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>
+              <span aria-hidden="true" style={{ color: '#1B5E3B', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>&#x2022;</span>
+              <span>{item}</span>
+            </li>
           ))}
         </ul>
       );
@@ -286,11 +282,7 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
       const items: React.ReactNode[] = [];
       while (i < content.length && /^\d+\.\s/.test(content[i])) {
         const itemText = content[i].replace(/^\d+\.\s*/, '');
-        items.push(
-          <li key={i} style={{ marginBottom: '8px', paddingLeft: '4px' }}>
-            {renderInline(itemText)}
-          </li>
-        );
+        items.push(renderInline(itemText));
         i++;
       }
       elements.push(
@@ -301,8 +293,8 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
           listStyle: 'none',
         }}>
           {items.map((item, idx) => (
-            <div key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px' }}>
-              <span style={{
+            <li key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>
+              <span aria-hidden="true" style={{
                 color: '#fff',
                 background: '#1B5E3B',
                 width: '24px',
@@ -318,8 +310,8 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
               }}>
                 {idx + 1}
               </span>
-              <div style={{ fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>{item}</div>
-            </div>
+              <span>{item}</span>
+            </li>
           ))}
         </ol>
       );
@@ -672,8 +664,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '8px' }}>
-                {[Facebook, Twitter, Linkedin, Share2].map((Icon, idx) => (
-                  <button key={idx} style={{
+        {[Facebook, Twitter, Linkedin, Share2].map((Icon, idx) => {
+                  const labels = ['Share on Facebook', 'Share on Twitter', 'Share on LinkedIn', 'Share article'];
+                  return (
+                  <button key={idx} aria-label={labels[idx]} style={{
                     width: '36px',
                     height: '36px',
                     borderRadius: '8px',
@@ -686,7 +680,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   }}>
                     <Icon style={{ width: '16px', height: '16px', color: '#343A40' }} />
                   </button>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
