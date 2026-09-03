@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "declutter office",
-    "volume": 1300,
-    "kd": 0,
-    "category": "Workspace",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "declutter-office"
-  },
-  {
-    "keyword": "kitchen floating shelf ideas",
-    "volume": 1300,
-    "kd": 2,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "kitchen-floating-shelf-ideas"
-  },
-  {
-    "keyword": "playroom storage ideas",
-    "volume": 1300,
-    "kd": 2,
-    "category": "Kids & Toys",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "playroom-storage-ideas"
-  },
-  {
     "keyword": "shoe rack ideas",
     "volume": 1300,
     "kd": 6,
