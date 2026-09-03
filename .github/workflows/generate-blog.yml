@@ -35,10 +35,15 @@ jobs:
           # Non-fatal so one failed generation does not block the others
           # (the generator returns a failed keyword back to the queue).
           #
-          # Keep the queue ahead of the live date. Three posts are still generated per run,
-          # but they carry a D+7 date so a missed run does not leave today's slot empty.
+          # Keep the queue ahead of the live date (hybrid schedule, cycle #60).
+          # Each post takes the EARLIEST day between tomorrow and D+7 that still has fewer
+          # than 3 posts (scripts/next-publish-date.mjs). Never today: today's slot was
+          # filled by an earlier run, so a missed run cannot empty the live day (the intent
+          # of 23a0bbf). Never a fixed +7 either: that offset assumed the buffer was already
+          # full and left 2026-09-03..09-07 with zero articles while the run stayed green.
+          # Only when tomorrow..D+7 are all at quota does it fall back to D+7.
           for i in 1 2 3; do
-            PUBLISH_DATE=$(date -u -d "+7 days" +%F)
+            PUBLISH_DATE=$(node scripts/next-publish-date.mjs --min-offset 1 --horizon 7)
             echo "run $i -> PUBLISH_DATE=$PUBLISH_DATE"
             PUBLISH_DATE=$PUBLISH_DATE npm run generate:blog || echo "::warning::generate run $i failed, continuing"
           done
