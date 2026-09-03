@@ -489,6 +489,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'laundry-room-storage-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'laundry-closet-ideas': 'sesoris-2026-09-03-laundry-closet-ideas-v1',
     'basement-storage-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'bedroom-organization-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'office-organization-ideas': 'sesoris-2026-09-01-content-gate-v2',
