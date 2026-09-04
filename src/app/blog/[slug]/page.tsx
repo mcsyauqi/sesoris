@@ -212,24 +212,52 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
     }
 
     // "Read Also" box (supports both old :::baca-juga and new :::read-also)
+    //
+    // Fix (cycle #60, 2026-09-04): the generator emits this as ONE array element --
+    // "opening-marker\n- [text](url)\n...\n:::" joined by single newlines. flattenContentBlocks()
+    // only splits on blank-line separators, so the closing ':::' never becomes its own array
+    // entry. The old code below always assumed it would, and scanned forward for a literal
+    // ':::' that could never appear -- silently consuming (and dropping) every remaining block
+    // in the article, headings included. That was live on 10 published articles, this one
+    // (bathroom-cabinet-ideas) among them: everything after the "Also Read" box, including the
+    // Conclusion heading and closing CTA, was missing from the rendered page even though the
+    // source JSON had it. Parse links out of THIS block's own lines first; only fall back to
+    // scanning later array elements for a genuine legacy multi-block form, and even then never
+    // cross a heading, so a malformed block can no longer eat the rest of the article.
     if (line.startsWith(':::baca-juga') || line.startsWith(':::read-also')) {
       const links: React.ReactNode[] = [];
-      i++;
-      while (i < content.length && content[i] !== ':::') {
-        const linkMatch = content[i].match(/\[([^\]]+)\]\(([^)]+)\)/);
-        if (linkMatch) {
-          const href = linkMatch[2].replace('https://www.sesoris.com', '').replace('https://sesoris.com', '') || '/';
-          links.push(
-            <li key={i} style={{ marginBottom: '8px' }}>
-              <Link href={href} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
-                {linkMatch[1]}
-              </Link>
-            </li>
-          );
-        }
-        i++;
+      const pushLink = (key: string, text: string, url: string) => {
+        const href = url.replace('https://www.sesoris.com', '').replace('https://sesoris.com', '') || '/';
+        links.push(
+          <li key={key} style={{ marginBottom: '8px' }}>
+            <Link href={href} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
+              {text}
+            </Link>
+          </li>
+        );
+      };
+
+      let closedInline = false;
+      for (const inner of line.split('\n').slice(1)) {
+        if (inner.trim() === ':::') { closedInline = true; break; }
+        const linkMatch = inner.match(/\[([^\]]+)\]\(([^)]+)\)/);
+        if (linkMatch) pushLink(`${i}-${links.length}`, linkMatch[1], linkMatch[2]);
       }
+      i++;
+
+      if (!closedInline) {
+        // Legacy multi-block form (marker / link lines / ':::' as separate array entries).
+        // No live article currently uses this, but stop at the next heading regardless, so a
+        // missing closer degrades to "no Also Read box" instead of swallowing the article.
+        while (i < content.length && content[i] !== ':::' && !content[i].startsWith('## ') && !content[i].startsWith('### ')) {
+          const linkMatch = content[i].match(/\[([^\]]+)\]\(([^)]+)\)/);
+          if (linkMatch) pushLink(`${i}`, linkMatch[1], linkMatch[2]);
+          i++;
+        }
+        if (content[i] === ':::') i++;
+      }
+
       if (links.length > 0) {
         elements.push(
           <div key={`baca-${i}`} style={{
@@ -248,7 +276,6 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
           </div>
         );
       }
-      i++;
       continue;
     }
 
