@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "shoe rack ideas",
-    "volume": 1300,
-    "kd": 6,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "shoe-rack-ideas"
-  },
-  {
-    "keyword": "modular closet organization",
-    "volume": 3600,
-    "kd": 18,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "modular-closet-organization"
-  },
-  {
-    "keyword": "diy room divider",
-    "volume": 2900,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-room-divider"
-  },
-  {
     "keyword": "pantry organization bins",
     "volume": 2400,
     "kd": 2,

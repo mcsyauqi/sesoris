@@ -2341,5 +2341,41 @@
     "date": "2026-09-03",
     "status": "published",
     "note": "Created content/blog/playroom-storage-ideas.json"
+  },
+  {
+    "keyword": "shoe rack ideas",
+    "volume": 1300,
+    "kd": 6,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "shoe-rack-ideas",
+    "date": "2026-09-04",
+    "status": "published",
+    "note": "Created content/blog/shoe-rack-ideas.json"
+  },
+  {
+    "keyword": "modular closet organization",
+    "volume": 3600,
+    "kd": 18,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "modular-closet-organization",
+    "date": "2026-09-04",
+    "status": "published",
+    "note": "Created content/blog/modular-closet-organization.json"
+  },
+  {
+    "keyword": "diy room divider",
+    "volume": 2900,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-room-divider",
+    "date": "2026-09-04",
+    "status": "published",
+    "note": "Created content/blog/diy-room-divider.json"
   }
 ]
