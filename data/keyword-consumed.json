@@ -2377,5 +2377,41 @@
     "date": "2026-09-04",
     "status": "published",
     "note": "Created content/blog/diy-room-divider.json"
+  },
+  {
+    "keyword": "pantry organization bins",
+    "volume": 2400,
+    "kd": 2,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "pantry-organization-bins",
+    "date": "2026-09-05",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
+  },
+  {
+    "keyword": "pantry organization bins",
+    "volume": 2400,
+    "kd": 2,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "pantry-organization-bins",
+    "date": "2026-09-05",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
+  },
+  {
+    "keyword": "pantry organization bins",
+    "volume": 2400,
+    "kd": 2,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "pantry-organization-bins",
+    "date": "2026-09-05",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
   }
 ]
