@@ -512,6 +512,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'basement-storage-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'bedroom-organization-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'office-organization-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'bathroom-cabinet-ideas': 'sesoris-2026-09-05-bathroom-cabinet-ideas-v1',
+    'diy-room-divider': 'sesoris-2026-09-05-diy-room-divider-v1',
+    'modular-closet-organization': 'sesoris-2026-09-05-modular-closet-organization-v1',
+    'shoe-rack-ideas': 'sesoris-2026-09-05-shoe-rack-ideas-v1',
   }[post.slug];
 
   // JSON-LD Structured Data
