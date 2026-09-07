@@ -516,6 +516,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'diy-room-divider': 'sesoris-2026-09-05-diy-room-divider-v2',
     'modular-closet-organization': 'sesoris-2026-09-05-modular-closet-organization-v2',
     'shoe-rack-ideas': 'sesoris-2026-09-05-shoe-rack-ideas-v2',
+    'pantry-organization-bins': 'sesoris-2026-09-07-pantry-organization-bins-v1',
   }[post.slug];
 
   // JSON-LD Structured Data
