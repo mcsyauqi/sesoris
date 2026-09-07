@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "pegboard garage organization",
-    "volume": 2400,
-    "kd": 5,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "pegboard-garage-organization"
-  },
-  {
-    "keyword": "laundry room shelving ideas",
-    "volume": 1600,
-    "kd": 0,
-    "category": "Laundry",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "laundry-room-shelving-ideas"
-  },
-  {
-    "keyword": "corner shelf ideas",
-    "volume": 1600,
-    "kd": 3,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "corner-shelf-ideas"
-  },
-  {
     "keyword": "refrigerator organization",
     "volume": 2900,
     "kd": 2,

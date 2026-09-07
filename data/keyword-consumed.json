@@ -2497,5 +2497,41 @@
     "date": "2026-09-06",
     "status": "Published",
     "note": "Manually written (cycle61 gap-fill) after 6x Anthropic API credit-balance failures 2026-09-05/06; ANTHROPIC_API_KEY for this repo needs billing top-up."
+  },
+  {
+    "keyword": "pegboard garage organization",
+    "volume": 2400,
+    "kd": 5,
+    "category": "Garage",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "pegboard-garage-organization",
+    "date": "2026-09-07",
+    "status": "published",
+    "note": "Created content/blog/pegboard-garage-organization.json"
+  },
+  {
+    "keyword": "laundry room shelving ideas",
+    "volume": 1600,
+    "kd": 0,
+    "category": "Laundry",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "laundry-room-shelving-ideas",
+    "date": "2026-09-07",
+    "status": "published",
+    "note": "Created content/blog/laundry-room-shelving-ideas.json"
+  },
+  {
+    "keyword": "corner shelf ideas",
+    "volume": 1600,
+    "kd": 3,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "corner-shelf-ideas",
+    "date": "2026-09-07",
+    "status": "published",
+    "note": "Created content/blog/corner-shelf-ideas.json"
   }
 ]
