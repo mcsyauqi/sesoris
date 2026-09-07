@@ -1,14 +1,5 @@
 [
   {
-    "keyword": "refrigerator organization",
-    "volume": 2900,
-    "kd": 2,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "refrigerator-organization"
-  },
-  {
     "keyword": "purse storage ideas",
     "volume": 2400,
     "kd": 0,
