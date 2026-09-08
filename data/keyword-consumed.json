@@ -2545,5 +2545,41 @@
     "date": "2026-09-07",
     "status": "Published",
     "note": "Manually written (cycle61 gap-fill) - 2026-09-07 had zero scheduled articles because the generator run that day (e538ce1) only produced forward-dated content (09-08/09-09/09-11), leaving 09-07 empty. Written manually to close the true schedule gap."
+  },
+  {
+    "keyword": "purse storage ideas",
+    "volume": 2400,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "purse-storage-ideas",
+    "date": "2026-09-08",
+    "status": "published",
+    "note": "Created content/blog/purse-storage-ideas.json"
+  },
+  {
+    "keyword": "newborn closet organization",
+    "volume": 2400,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "newborn-closet-organization",
+    "date": "2026-09-08",
+    "status": "published",
+    "note": "Created content/blog/newborn-closet-organization.json"
+  },
+  {
+    "keyword": "organizing children's closet",
+    "volume": 2400,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "organizing-children-s-closet",
+    "date": "2026-09-08",
+    "status": "published",
+    "note": "Created content/blog/organizing-children-s-closet.json"
   }
 ]

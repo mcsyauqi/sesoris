@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "purse storage ideas",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "purse-storage-ideas"
-  },
-  {
-    "keyword": "newborn closet organization",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "newborn-closet-organization"
-  },
-  {
-    "keyword": "organizing children's closet",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "organizing-children-s-closet"
-  },
-  {
     "keyword": "pantry storage ideas",
     "volume": 1900,
     "kd": 2,
