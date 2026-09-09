@@ -517,6 +517,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'modular-closet-organization': 'sesoris-2026-09-05-modular-closet-organization-v2',
     'shoe-rack-ideas': 'sesoris-2026-09-05-shoe-rack-ideas-v2',
     'pantry-organization-bins': 'sesoris-2026-09-07-pantry-organization-bins-v2',
+    'kitchen-organization-dish-rack-alternatives': 'sesoris-2026-09-09-scheduled-images-v1',
+    'laundry-room-shelving-ideas': 'sesoris-2026-09-09-scheduled-images-v1',
+    'playroom-organization': 'sesoris-2026-09-09-scheduled-images-v1',
   }[post.slug];
 
   // JSON-LD Structured Data
@@ -752,7 +755,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             )}
 
             {/* Content */}
-            <div data-revision-marker={revisionMarker} style={{ padding: '40px 0 48px' }}>
+            <div data-revision-marker={revisionMarker} data-article-content={post.slug} style={{ padding: '40px 0 48px' }}>
               {renderContentBlocks(post.content)}
             </div>
 
