@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "pantry storage ideas",
-    "volume": 1900,
-    "kd": 2,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "pantry-storage-ideas"
-  },
-  {
-    "keyword": "pantry cabinet ideas",
-    "volume": 1900,
-    "kd": 12,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "pantry-cabinet-ideas"
-  },
-  {
-    "keyword": "living room shelving ideas",
-    "volume": 1300,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "living-room-shelving-ideas"
-  },
-  {
     "keyword": "diy shelf brackets",
     "volume": 1300,
     "kd": 0,
