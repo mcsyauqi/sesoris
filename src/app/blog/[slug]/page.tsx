@@ -518,7 +518,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'shoe-rack-ideas': 'sesoris-2026-09-05-shoe-rack-ideas-v2',
     'pantry-organization-bins': 'sesoris-2026-09-07-pantry-organization-bins-v2',
     'kitchen-organization-dish-rack-alternatives': 'sesoris-2026-09-09-scheduled-images-v1',
-    'laundry-room-shelving-ideas': 'sesoris-2026-09-09-scheduled-images-v1',
+    'laundry-room-shelving-ideas': 'sesoris-2026-09-09-scheduled-images-v2',
     'playroom-organization': 'sesoris-2026-09-09-scheduled-images-v1',
   }[post.slug];
 
