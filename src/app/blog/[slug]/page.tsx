@@ -517,8 +517,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'modular-closet-organization': 'sesoris-2026-09-05-modular-closet-organization-v2',
     'shoe-rack-ideas': 'sesoris-2026-09-05-shoe-rack-ideas-v2',
     'pantry-organization-bins': 'sesoris-2026-09-07-pantry-organization-bins-v2',
-    'kitchen-organization-dish-rack-alternatives': 'sesoris-2026-09-09-scheduled-images-v3',
-    'laundry-room-shelving-ideas': 'sesoris-2026-09-09-scheduled-images-v3',
+    'declutter-office': 'sesoris-2026-09-10-3cbe0d1',
+    'kitchen-floating-shelf-ideas': 'sesoris-2026-09-10-3cbe0d1',
+    'playroom-storage-ideas': 'sesoris-2026-09-10-3cbe0d1',
+    'kitchen-organization-dish-rack-alternatives': 'sesoris-2026-09-10-3cbe0d1',
+    'laundry-room-shelving-ideas': 'sesoris-2026-09-10-3cbe0d1',
     'playroom-organization': 'sesoris-2026-09-09-scheduled-images-v3',
   }[post.slug];
 
