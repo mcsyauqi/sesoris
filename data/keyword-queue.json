@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "diy shelf brackets",
-    "volume": 1300,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-shelf-brackets"
-  },
-  {
-    "keyword": "garage cabinet ideas",
-    "volume": 1300,
-    "kd": 0,
-    "category": "Garage",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "garage-cabinet-ideas"
-  },
-  {
-    "keyword": "yarn storage ideas",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Craft Room",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "yarn-storage-ideas"
-  },
-  {
     "keyword": "over the toilet storage ideas",
     "volume": 2400,
     "kd": 0,
