@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "over the toilet storage ideas",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "over-the-toilet-storage-ideas"
-  },
-  {
-    "keyword": "corner closet system",
-    "volume": 1900,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "corner-closet-system"
-  },
-  {
-    "keyword": "under stairs closet storage ideas",
-    "volume": 1900,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "under-stairs-closet-storage-ideas"
-  },
-  {
     "keyword": "open shelving kitchen ideas",
     "volume": 1600,
     "kd": 7,

@@ -2653,5 +2653,41 @@
     "date": "2026-09-10",
     "status": "published",
     "note": "Created content/blog/yarn-storage-ideas.json"
+  },
+  {
+    "keyword": "over the toilet storage ideas",
+    "volume": 2400,
+    "kd": 0,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "over-the-toilet-storage-ideas",
+    "date": "2026-09-11",
+    "status": "published",
+    "note": "Created content/blog/over-the-toilet-storage-ideas.json"
+  },
+  {
+    "keyword": "corner closet system",
+    "volume": 1900,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "corner-closet-system",
+    "date": "2026-09-11",
+    "status": "published",
+    "note": "Created content/blog/corner-closet-system.json"
+  },
+  {
+    "keyword": "under stairs closet storage ideas",
+    "volume": 1900,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "under-stairs-closet-storage-ideas",
+    "date": "2026-09-11",
+    "status": "published",
+    "note": "Created content/blog/under-stairs-closet-storage-ideas.json"
   }
 ]
