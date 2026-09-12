@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "open shelving kitchen ideas",
-    "volume": 1600,
-    "kd": 7,
-    "category": "Kitchen",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "open-shelving-kitchen-ideas"
-  },
-  {
-    "keyword": "diy wood shelves",
-    "volume": 1300,
-    "kd": 2,
-    "category": "Home Organization",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-wood-shelves"
-  },
-  {
-    "keyword": "diy clothes rack",
-    "volume": 2400,
-    "kd": 0,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "diy-clothes-rack"
-  },
-  {
     "keyword": "storage for clothes",
     "volume": 2400,
     "kd": 6,

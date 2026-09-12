@@ -2689,5 +2689,41 @@
     "date": "2026-09-11",
     "status": "published",
     "note": "Created content/blog/under-stairs-closet-storage-ideas.json"
+  },
+  {
+    "keyword": "open shelving kitchen ideas",
+    "volume": 1600,
+    "kd": 7,
+    "category": "Kitchen",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "open-shelving-kitchen-ideas",
+    "date": "2026-09-12",
+    "status": "published",
+    "note": "Created content/blog/open-shelving-kitchen-ideas.json"
+  },
+  {
+    "keyword": "diy wood shelves",
+    "volume": 1300,
+    "kd": 2,
+    "category": "Home Organization",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-wood-shelves",
+    "date": "2026-09-12",
+    "status": "published",
+    "note": "Created content/blog/diy-wood-shelves.json"
+  },
+  {
+    "keyword": "diy clothes rack",
+    "volume": 2400,
+    "kd": 0,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "diy-clothes-rack",
+    "date": "2026-09-12",
+    "status": "published",
+    "note": "Created content/blog/diy-clothes-rack.json"
   }
 ]
