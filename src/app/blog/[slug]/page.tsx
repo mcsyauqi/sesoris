@@ -521,7 +521,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'kitchen-floating-shelf-ideas': 'sesoris-2026-09-10-3cbe0d1',
     'playroom-storage-ideas': 'sesoris-2026-09-10-3cbe0d1',
     'corner-shelf-ideas': 'sesoris-2026-09-12-corner-shelf-ideas-v3',
-    'newborn-closet-organization': 'sesoris-2026-09-12-newborn-closet-organization-v3',
+    'newborn-closet-organization': 'sesoris-2026-09-12-newborn-closet-organization-v4',
     'purse-storage-ideas': 'sesoris-2026-09-12-purse-storage-ideas-v3',
     'organizing-children-s-closet': 'sesoris-2026-09-12-organizing-children-s-closet-v1',
     'pantry-cabinet-ideas': 'sesoris-2026-09-12-pantry-cabinet-ideas-v1',
