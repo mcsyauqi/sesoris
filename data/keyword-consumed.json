@@ -2725,5 +2725,41 @@
     "date": "2026-09-12",
     "status": "published",
     "note": "Created content/blog/diy-clothes-rack.json"
+  },
+  {
+    "keyword": "storage for clothes",
+    "volume": 2400,
+    "kd": 6,
+    "category": "Closet",
+    "intent": "Informational",
+    "priority": "Tier 1",
+    "slug": "storage-for-clothes",
+    "date": "2026-09-13",
+    "status": "published",
+    "note": "Created content/blog/storage-for-clothes.json"
+  },
+  {
+    "keyword": "organization closet ideas",
+    "volume": 22200,
+    "kd": 31,
+    "category": "closet organization ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "organization-closet-ideas",
+    "date": "2026-09-13",
+    "status": "published",
+    "note": "Created content/blog/organization-closet-ideas.json"
+  },
+  {
+    "keyword": "organization ideas: closet",
+    "volume": 22200,
+    "kd": 31,
+    "category": "closet organization ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "organization-ideas-closet",
+    "date": "2026-09-13",
+    "status": "published",
+    "note": "Created content/blog/organization-ideas-closet.json"
   }
 ]

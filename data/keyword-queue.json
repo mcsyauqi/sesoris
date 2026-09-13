@@ -1,30 +1,5 @@
 [
   {
-    "keyword": "storage for clothes",
-    "volume": 2400,
-    "kd": 6,
-    "category": "Closet",
-    "intent": "Informational",
-    "priority": "Tier 1",
-    "slug": "storage-for-clothes"
-  },
-  {
-    "keyword": "organization closet ideas",
-    "volume": 22200,
-    "kd": 31,
-    "category": "closet organization ideas",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "organization ideas: closet",
-    "volume": 22200,
-    "kd": 31,
-    "category": "closet organization ideas",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "glass containers for food storage",
     "volume": 22200,
     "kd": 22,
