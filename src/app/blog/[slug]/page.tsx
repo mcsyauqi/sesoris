@@ -529,6 +529,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'kitchen-organization-dish-rack-alternatives': 'sesoris-2026-09-10-3cbe0d1',
     'laundry-room-shelving-ideas': 'sesoris-2026-09-10-3cbe0d1',
     'playroom-organization': 'sesoris-2026-09-09-scheduled-images-v3',
+    'living-room-shelving-ideas': 'sesoris-2026-09-13-scheduled-images-v1',
+    'diy-shelf-brackets': 'sesoris-2026-09-13-scheduled-images-v1',
+    'garage-cabinet-ideas': 'sesoris-2026-09-13-scheduled-images-v1',
   }[post.slug];
 
   // JSON-LD Structured Data
