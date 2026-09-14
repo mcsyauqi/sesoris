@@ -531,7 +531,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'playroom-organization': 'sesoris-2026-09-09-scheduled-images-v3',
     'living-room-shelving-ideas': 'sesoris-2026-09-13-scheduled-images-v2',
     'diy-shelf-brackets': 'sesoris-2026-09-13-scheduled-images-v2',
-    'garage-cabinet-ideas': 'sesoris-2026-09-13-scheduled-images-v2',
+    'garage-cabinet-ideas': 'sesoris-2026-09-14-citation-repair-v1',
+    'corner-closet-system': 'sesoris-2026-09-14-citation-repair-v1',
+    'over-the-toilet-storage-ideas': 'sesoris-2026-09-14-citation-repair-v1',
+    'yarn-storage-ideas': 'sesoris-2026-09-14-citation-repair-v1',
   }[post.slug];
 
   // JSON-LD Structured Data
