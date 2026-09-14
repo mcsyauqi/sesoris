@@ -2761,5 +2761,40 @@
     "date": "2026-09-13",
     "status": "published",
     "note": "Created content/blog/organization-ideas-closet.json"
+  },
+  {
+    "keyword": "glass containers for food storage",
+    "volume": 22200,
+    "kd": 22,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "glass-containers-for-food-storage",
+    "date": "2026-09-14",
+    "status": "published",
+    "note": "Created content/blog/glass-containers-for-food-storage.json"
+  },
+  {
+    "keyword": "glasslock food storage containers",
+    "volume": 22200,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "glasslock-food-storage-containers",
+    "date": "2026-09-14",
+    "status": "published",
+    "note": "Created content/blog/glasslock-food-storage-containers.json"
+  },
+  {
+    "keyword": "glassware food storage containers",
+    "volume": 22200,
+    "kd": 22,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "glassware-food-storage-containers",
+    "date": "2026-09-14",
+    "status": "putback"
   }
 ]
