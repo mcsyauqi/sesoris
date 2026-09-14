@@ -5,8 +5,10 @@
 import fs from 'fs';
 import path from 'path';
 import assert from 'assert';
+import { execFileSync } from 'child_process';
 
 const blogDir = path.join(process.cwd(), 'content', 'blog');
+const IMG_RE = /!\[[^\]]*\]\(\/images\//;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 // The exact gate getAllPosts() uses, in UTC.
@@ -74,4 +76,55 @@ assert.strictEqual(
 
 console.log(
   `OK — ${redirectSources.size} exact /blog redirect sources, 0 broad matchers, 0 collisions with ${liveSlugs.size} live slugs.`
+);
+
+// ---------------------------------------------------------------------------
+// 4. HERO / BODY-IMAGE GATE (cycle #64).
+//    scripts/generate-image.ts called a model id that Google retired
+//    (imagen-4.0-generate-001:predict -> HTTP 404). Every failure was swallowed,
+//    so the generator fell back to /images/blog/default-hero.webp and stripped
+//    every PLACEHOLDER_IMAGE line. 63 articles shipped with one shared hero and
+//    no body images while this workflow kept reporting success.
+//    Only files this run actually touched are checked: the historic articles are
+//    repaired separately and must not block a green pipeline forever.
+// ---------------------------------------------------------------------------
+const DEFAULT_HERO = '/images/blog/default-hero.webp';
+let touchedArticles = [];
+try {
+  touchedArticles = execFileSync('git', ['status', '--porcelain', '--', 'content/blog'], { encoding: 'utf-8' })
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0 && !line.startsWith('D '))
+    .map((line) => line.replace(/^[A-Z?!]{1,2}\s+/, '').replace(/^"|"$/g, ''))
+    .filter((f) => f.endsWith('.json'));
+} catch {
+  console.log('Image gate: git status unavailable, nothing to compare against.');
+}
+
+const heroViolations = [];
+const bodyViolations = [];
+for (const rel of touchedArticles) {
+  const abs = path.join(process.cwd(), rel);
+  if (!fs.existsSync(abs)) continue;
+  const post = JSON.parse(fs.readFileSync(abs, 'utf-8'));
+  if (!post.image || post.image === DEFAULT_HERO) {
+    heroViolations.push(rel + ': image=' + JSON.stringify(post.image));
+  }
+  const bodyImages = (post.content || []).filter((line) => IMG_RE.test(line)).length;
+  if (bodyImages === 0) bodyViolations.push(rel);
+}
+assert.strictEqual(
+  heroViolations.length,
+  0,
+  'Article(s) still point at the shared placeholder hero, which means image generation failed. ' +
+    'Fix the image pipeline instead of publishing these:\n' + heroViolations.join('\n')
+);
+assert.strictEqual(
+  bodyViolations.length,
+  0,
+  'Article(s) have zero body images (every PLACEHOLDER_IMAGE was dropped, so image generation failed):\n' +
+    bodyViolations.join('\n')
+);
+console.log(
+  `OK — image gate: ${touchedArticles.length} touched article file(s), 0 placeholder heroes, 0 image-less bodies.`
 );

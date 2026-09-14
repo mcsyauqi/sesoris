@@ -86,9 +86,11 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
     return;
   }
 
-  // Generate images via Gemini Imagen 4
-  let heroImage = '/images/blog/default-hero.webp';
+  // Generate images via Gemini (see scripts/generate-image.ts).
+  const DEFAULT_HERO = '/images/blog/default-hero.webp';
+  let heroImage = DEFAULT_HERO;
   let contentArray: string[] = generated.content;
+  let imageFailures: { filename: string; error: string }[] = [];
 
   if (generated.image_prompts && generated.image_prompts.length > 0) {
     const imageDescs = generated.image_prompts.map((ip: { filename: string; prompt: string; alt: string }) => ({
@@ -97,7 +99,8 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
       altText: ip.alt,
     }));
 
-    const images = await generateArticleImages(generated.slug, imageDescs);
+    const { images, failures } = await generateArticleImages(generated.slug, imageDescs);
+    imageFailures = failures;
 
     // Replace PLACEHOLDER_IMAGE references in content with actual paths
     contentArray = generated.content.map((line: string) => {
@@ -118,7 +121,21 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
     }
   }
 
-  // Remove any remaining unresolved PLACEHOLDER_IMAGE lines (if image gen failed)
+  // HERO GATE (cycle #64): never write an article that still points at the
+  // shared placeholder hero. A default hero means image generation failed, so
+  // the body images are missing too; publishing it silently is what put one
+  // picture on 63 different articles.
+  if (heroImage === DEFAULT_HERO) {
+    const why = imageFailures.length
+      ? imageFailures.map((f) => `${f.filename}: ${f.error}`).join(' | ')
+      : 'the model returned no image_prompts, so no hero could be generated';
+    throw new Error(
+      `HERO GATE FAILED for ${generated.slug}: image generation produced no hero, ` +
+        `so nothing was written. Cause: ${why}`,
+    );
+  }
+
+  // Remove any remaining unresolved PLACEHOLDER_IMAGE lines (partial failure only).
   contentArray = contentArray.filter((line) => !line.includes('PLACEHOLDER_IMAGE'));
 
   const post = {

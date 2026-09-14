@@ -447,9 +447,13 @@ TOPIC CONTEXT:
   // Pick random author
   const author = authors[Math.floor(Math.random() * authors.length)];
 
-  // Generate images via Gemini Imagen 4
-  let heroImage = '/images/blog/default-hero.webp';
+  // Generate images via Gemini (see scripts/generate-image.ts).
+  // DEFAULT_HERO is the last-resort placeholder, never an acceptable result:
+  // the hero gate below fails the run if an article still points at it.
+  const DEFAULT_HERO = '/images/blog/default-hero.webp';
+  let heroImage = DEFAULT_HERO;
   let contentArray: string[] = generated.content;
+  let imageFailures: { filename: string; error: string }[] = [];
 
   if (generated.image_prompts && generated.image_prompts.length > 0) {
     console.log(`Generating ${generated.image_prompts.length} images...`);
@@ -459,7 +463,8 @@ TOPIC CONTEXT:
       altText: ip.alt,
     }));
 
-    const images = await generateArticleImages(generated.slug, imageDescs);
+    const { images, failures } = await generateArticleImages(generated.slug, imageDescs);
+    imageFailures = failures;
 
     // Replace PLACEHOLDER_IMAGE references in content with actual paths
     contentArray = generated.content.map((line: string) => {
@@ -480,7 +485,30 @@ TOPIC CONTEXT:
     }
   }
 
-  // Remove any remaining unresolved PLACEHOLDER_IMAGE lines (if image gen failed)
+  // HERO GATE (cycle #64). An article whose hero is still the shared
+  // default-hero.webp is a broken article, not a publishable one: it means
+  // image generation failed, so the body images are missing too. This used to
+  // pass silently and put the SAME picture on 63 different articles while the
+  // workflow still reported success. Fail loudly, return the keyword to the
+  // queue, write nothing.
+  if (heroImage === DEFAULT_HERO) {
+    const why = imageFailures.length
+      ? imageFailures.map((f) => `${f.filename}: ${f.error}`).join(' | ')
+      : 'the model returned no image_prompts, so no hero could be generated';
+    putbackKeyword?.('putback', `image generation produced no hero for ${generated.slug}`);
+    console.error(
+      `HERO GATE FAILED: ${generated.slug} would have shipped with the shared placeholder hero ` +
+        `(${DEFAULT_HERO}). Keyword returned to queue; nothing was written. Cause: ${why}`,
+    );
+    process.exit(1);
+  }
+
+  // Drop any placeholder the (non-hero) image generation could not fill. The
+  // hero gate above already caught a total failure, so this is partial only.
+  const unresolvedPlaceholders = contentArray.filter((line) => line.includes('PLACEHOLDER_IMAGE')).length;
+  if (unresolvedPlaceholders > 0) {
+    console.warn(`  [Image] ${unresolvedPlaceholders} image placeholder(s) could not be filled and were dropped.`);
+  }
   contentArray = contentArray.filter((line) => !line.includes('PLACEHOLDER_IMAGE'));
   contentArray = injectRelatedProductLinks(contentArray, generated.slug, generated.title, generated.category);
 
