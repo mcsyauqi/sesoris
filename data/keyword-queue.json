@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "glass food storage containers with glass lids",
-    "volume": 14800,
-    "kd": 18,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "glass food storage containers with lid",
-    "volume": 14800,
-    "kd": 0,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "pyrex food storage containers",
-    "volume": 12100,
-    "kd": 2,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "storage containers dog food",
     "volume": 12100,
     "kd": 0,

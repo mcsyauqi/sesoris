@@ -2832,5 +2832,41 @@
     "date": "2026-09-15",
     "status": "published",
     "note": "Created content/blog/glass-storage-food-containers-with-lids.json"
+  },
+  {
+    "keyword": "glass food storage containers with glass lids",
+    "volume": 14800,
+    "kd": 18,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "glass-food-storage-containers-with-glass-lids",
+    "date": "2026-09-16",
+    "status": "published",
+    "note": "Created content/blog/glass-food-storage-containers-with-glass-lids.json"
+  },
+  {
+    "keyword": "glass food storage containers with lid",
+    "volume": 14800,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "glass-food-storage-containers-with-lid",
+    "date": "2026-09-16",
+    "status": "published",
+    "note": "Created content/blog/glass-food-storage-containers-with-lid.json"
+  },
+  {
+    "keyword": "pyrex food storage containers",
+    "volume": 12100,
+    "kd": 2,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "pyrex-food-storage-containers",
+    "date": "2026-09-16",
+    "status": "published",
+    "note": "Created content/blog/pyrex-food-storage-containers.json"
   }
 ]
