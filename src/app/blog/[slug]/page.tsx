@@ -535,6 +535,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'corner-closet-system': 'sesoris-2026-09-14-citation-repair-v1',
     'over-the-toilet-storage-ideas': 'sesoris-2026-09-14-citation-repair-v1',
     'yarn-storage-ideas': 'sesoris-2026-09-14-citation-repair-v1',
+    'diy-wood-shelves': 'sesoris-2026-09-16-daily-article-gate-v1',
+    'open-shelving-kitchen-ideas': 'sesoris-2026-09-16-daily-article-gate-v1',
+    'under-stairs-closet-storage-ideas': 'sesoris-2026-09-16-daily-article-gate-v1',
+    'diy-clothes-rack': 'sesoris-2026-09-16-daily-article-gate-v1',
+    'organization-closet-ideas': 'sesoris-2026-09-16-daily-article-gate-v1',
+    'storage-for-clothes': 'sesoris-2026-09-16-daily-article-gate-v1',
   }[post.slug];
 
   // JSON-LD Structured Data
