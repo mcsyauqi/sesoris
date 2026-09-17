@@ -10,6 +10,72 @@ const blogDir = path.join(process.cwd(), 'content', 'blog');
 
 const categories = ['Tips & Tricks', 'Tutorial', 'Inspiration', 'Lifestyle', 'Review'];
 
+// ---------------------------------------------------------------------------
+// BRAND-CAPTION SCRUB (cycle #66).
+// Every blog image here is an AI-generated illustration of a generic home
+// setting. When the keyword is a brand keyword ("pyrex food storage
+// containers") the model happily wrote alt text like "Pyrex glass food storage
+// containers on a countertop" — and src/app/blog/[slug]/page.tsx prints alt
+// text as a visible <figcaption>, so that is a reader-facing claim that the
+// picture shows a real product it does not show. 15 articles shipped that way
+// before this scrub existed. Brand names in the article PROSE are legitimate
+// editorial content and are left alone; only image captions and image prompts
+// are scrubbed. This runs before the file is written, so the queue keeps
+// moving instead of a brand keyword dead-locking the run.
+// ---------------------------------------------------------------------------
+const IMAGE_BRAND_REPLACEMENTS: Array<[RegExp, string]> = [
+  [/\bRubbermaid\s+Brilliance\b/gi, 'clear plastic'],
+  [/\bAmazon\s+Basics\b/gi, 'value'],
+  [/\bAnchor\s+Hocking\b/gi, 'tempered glass'],
+  [/\bContainer\s+Store\b/gi, 'specialty storage'],
+  [/\bLock\s*&\s*Lock\b/gi, 'snap-lock'],
+  [/\bGlasslock\b/gi, 'tempered glass'],
+  [/\bPyrex\b/gi, 'tempered glass'],
+  [/\bCorelle\b/gi, 'tempered glass'],
+  [/\bRubbermaid\b/gi, 'clear plastic'],
+  [/\bTupperware\b/gi, 'plastic'],
+  [/\bSterilite\b/gi, 'clear plastic'],
+  [/\bSnapware\b/gi, 'snap-lock'],
+  [/\bIKEA\b/gi, 'modular'],
+  [/\b(?:PAX|IVAR|ALGOT|BOAXEL|KALLAX|BILLY|TROFAST|SKUBB)\b/g, ''],
+  [/\bClosetMaid\b/gi, 'wire shelving'],
+  [/\bElfa\b/gi, 'modular wire'],
+  [/\bSimplehuman\b/gi, 'stainless steel'],
+  [/\bmDesign\b/gi, 'clear acrylic'],
+  [/\bOXO\b/g, 'pop-top'],
+  [/\bZiploc\b/gi, 'zip-top'],
+  [/\bWayfair\b/gi, 'online-retail'],
+  [/\bLe\s+Creuset\b/gi, 'enameled cast iron'],
+];
+
+export function scrubBrandsFromCaption(alt: string): string {
+  let out = alt;
+  for (const [re, replacement] of IMAGE_BRAND_REPLACEMENTS) out = out.replace(re, replacement);
+  return out
+    // "tempered glass glass containers" -> "tempered glass containers"
+    .replace(/\b(glass)\s+glass\b/gi, '$1')
+    .replace(/\b(plastic)\s+plastic\b/gi, '$1')
+    .replace(/\b(modular)\s+modular\b/gi, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\s+([,.;:])/g, '$1')
+    .replace(/^[\s,.;:]+/, '')
+    .trim()
+    .replace(/^./, (c) => c.toUpperCase());
+}
+
+function scrubBrandsFromImageLines(lines: string[]): { lines: string[]; scrubbed: string[] } {
+  const scrubbed: string[] = [];
+  const next = lines.map((line) =>
+    line.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (whole, alt: string, src: string) => {
+      const cleaned = scrubBrandsFromCaption(alt);
+      if (cleaned === alt) return whole;
+      scrubbed.push(`${alt} -> ${cleaned}`);
+      return `![${cleaned}](${src})`;
+    }),
+  );
+  return { lines: next, scrubbed };
+}
+
 const keywordQueuePath = path.join(process.cwd(), 'data', 'keyword-queue.json');
 const keywordConsumedPath = path.join(process.cwd(), 'data', 'keyword-consumed.json');
 
@@ -458,9 +524,12 @@ TOPIC CONTEXT:
   if (generated.image_prompts && generated.image_prompts.length > 0) {
     console.log(`Generating ${generated.image_prompts.length} images...`);
     const imageDescs = generated.image_prompts.map((ip: { filename: string; prompt: string; alt: string }) => ({
-      prompt: ip.prompt,
+      // Scrub brands out of the PROMPT too: asking the model for "a Pyrex dish"
+      // invites it to invent that brand's trade dress on a picture we then
+      // publish as if it were the real product.
+      prompt: scrubBrandsFromCaption(ip.prompt),
       filename: ip.filename,
-      altText: ip.alt,
+      altText: scrubBrandsFromCaption(ip.alt),
     }));
 
     const { images, failures } = await generateArticleImages(generated.slug, imageDescs);
@@ -510,6 +579,15 @@ TOPIC CONTEXT:
     console.warn(`  [Image] ${unresolvedPlaceholders} image placeholder(s) could not be filled and were dropped.`);
   }
   contentArray = contentArray.filter((line) => !line.includes('PLACEHOLDER_IMAGE'));
+
+  // Brand-caption scrub (cycle #66) — see IMAGE_BRAND_REPLACEMENTS above.
+  const { lines: scrubbedContent, scrubbed } = scrubBrandsFromImageLines(contentArray);
+  contentArray = scrubbedContent;
+  if (scrubbed.length > 0) {
+    console.log(`  [Image] scrubbed a real brand name out of ${scrubbed.length} image caption(s):`);
+    for (const change of scrubbed) console.log(`    ${change}`);
+  }
+
   contentArray = injectRelatedProductLinks(contentArray, generated.slug, generated.title, generated.category);
 
   const post = {

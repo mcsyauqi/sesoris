@@ -128,3 +128,84 @@ assert.strictEqual(
 console.log(
   `OK — image gate: ${touchedArticles.length} touched article file(s), 0 placeholder heroes, 0 image-less bodies.`
 );
+
+// ---------------------------------------------------------------------------
+// 5. CORPUS RATCHET (cycle #66).
+//    The cycle-#64 gate above only inspects files the CURRENT run touched, so it
+//    stops a bad article from being born but says nothing about the ones already
+//    in the tree. 39 pre-gate articles still point at default-hero.webp, and one
+//    of them (organization-ideas-closet) reached its scheduled publish date on
+//    2026-09-17 and went live with the shared placeholder while every workflow
+//    stayed green. A gate that only looks at today cannot see a defect that was
+//    committed a week ago and detonates on a timer.
+//
+//    data/image-debt.json is the grandfather list. It may SHRINK, never grow:
+//    any article NOT on it that shows a defect fails the run. That blocks a
+//    regression on day one without holding the daily pipeline hostage to 39
+//    historic repairs. Prune a slug from the ledger in the same commit that
+//    repairs it.
+//
+//    Defect 1 — placeholder hero: image === /images/blog/default-hero.webp.
+//    Defect 2 — brand-named caption: the renderer prints markdown alt text as a
+//    visible <figcaption>, and every image here is an AI illustration of a
+//    generic home setting, so "Pyrex glass containers on a countertop" is a
+//    reader-facing claim that the picture shows a real product it does not show.
+//    scripts/generate-blog-post.ts scrubs these at the source; this is a backstop.
+// ---------------------------------------------------------------------------
+const debtPath = path.join(process.cwd(), 'data', 'image-debt.json');
+const debt = fs.existsSync(debtPath)
+  ? JSON.parse(fs.readFileSync(debtPath, 'utf-8'))
+  : { placeholder_hero: [], brand_captions: [] };
+const heroDebt = new Set(debt.placeholder_hero || []);
+const brandDebt = new Set(debt.brand_captions || []);
+
+const CAPTION_BRAND_RE =
+  /\b(Glasslock|Pyrex|Corelle|Rubbermaid|Tupperware|Sterilite|Snapware|IKEA|PAX|IVAR|ALGOT|BOAXEL|KALLAX|BILLY|TROFAST|SKUBB|ClosetMaid|Elfa|Simplehuman|mDesign|OXO|Ziploc|Wayfair|Le Creuset|Anchor Hocking|Amazon Basics|Container Store|Lock\s*&\s*Lock)\b/i;
+
+const newHeroDebt = [];
+const newBrandDebt = [];
+const repairedHero = [];
+const repairedBrand = [];
+
+for (const f of files) {
+  const post = JSON.parse(fs.readFileSync(path.join(blogDir, f), 'utf-8'));
+  const slug = post.slug || f.replace(/\.json$/, '');
+
+  const hasPlaceholderHero = post.image === DEFAULT_HERO;
+  if (hasPlaceholderHero && !heroDebt.has(slug)) newHeroDebt.push(slug);
+  if (!hasPlaceholderHero && heroDebt.has(slug)) repairedHero.push(slug);
+
+  const alts = [];
+  for (const line of post.content || []) {
+    for (const m of line.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)) alts.push(m[1]);
+  }
+  const hasBrandCaption = alts.some((a) => CAPTION_BRAND_RE.test(a));
+  if (hasBrandCaption && !brandDebt.has(slug)) newBrandDebt.push(slug);
+  if (!hasBrandCaption && brandDebt.has(slug)) repairedBrand.push(slug);
+}
+
+assert.strictEqual(
+  newHeroDebt.length,
+  0,
+  'RATCHET: article(s) point at the shared placeholder hero and are NOT in data/image-debt.json. ' +
+    'Give them a real hero instead of adding them to the ledger:\n' + newHeroDebt.join('\n')
+);
+assert.strictEqual(
+  newBrandDebt.length,
+  0,
+  'RATCHET: image caption(s) name a real brand on an AI-generated illustration, and the article is ' +
+    'NOT in data/image-debt.json. The caption is printed as a visible <figcaption>, so it claims the ' +
+    'picture shows a product it does not show. Describe the material/form instead:\n' + newBrandDebt.join('\n')
+);
+
+if (repairedHero.length || repairedBrand.length) {
+  console.log(
+    `NOTE — image debt repaid but still listed in data/image-debt.json ` +
+      `(${repairedHero.length} hero, ${repairedBrand.length} caption). Prune them so the ratchet tightens:\n` +
+      [...repairedHero, ...repairedBrand].join('\n')
+  );
+}
+console.log(
+  `OK — corpus ratchet: ${files.length} articles, 0 new placeholder heroes, 0 new brand-named captions ` +
+    `(${heroDebt.size} hero + ${brandDebt.size} caption grandfathered).`
+);

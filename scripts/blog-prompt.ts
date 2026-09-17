@@ -95,6 +95,15 @@ CONTENT FORMAT (array of strings):
 
 SEO GUIDELINES (IMPORTANT):
 - Image alt text MUST be descriptive and contain keywords naturally, in US English
+- Image alt text MUST NOT name a real brand, manufacturer, retailer or product line
+  (Pyrex, Glasslock, Rubbermaid, IKEA, PAX, IVAR, ALGOT, OXO, Tupperware, Sterilite,
+  ClosetMaid, Elfa and the like). Every image on this site is an AI-generated
+  illustration of a generic home setting, so a caption that says "Pyrex containers"
+  claims the picture shows a real product it does not show. The blog renderer prints
+  alt text as a visible <figcaption>, so this is a reader-facing factual claim.
+  Describe the material and form instead: "tempered glass food storage containers
+  with locking lids", "white modular closet shelving". Brand names in the ARTICLE
+  PROSE are fine, this rule is only about image alt text.
 - Primary keyword MUST appear in: title, first paragraph, at least 2 H2 headings, and conclusion
 - Every image must have alt text that specifically describes the image
 - H2 headings should contain keyword variations (LSI keywords)
