@@ -2868,5 +2868,41 @@
     "date": "2026-09-16",
     "status": "published",
     "note": "Created content/blog/pyrex-food-storage-containers.json"
+  },
+  {
+    "keyword": "storage containers dog food",
+    "volume": 12100,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "storage-containers-dog-food",
+    "date": "2026-09-17",
+    "status": "published",
+    "note": "Created content/blog/storage-containers-dog-food.json"
+  },
+  {
+    "keyword": "dog food containers & storage",
+    "volume": 12100,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "dog-food-containers-storage",
+    "date": "2026-09-17",
+    "status": "published",
+    "note": "Created content/blog/dog-food-containers-storage.json"
+  },
+  {
+    "keyword": "rubbermaid brilliance food storage containers",
+    "volume": 12100,
+    "kd": 13,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "rubbermaid-brilliance-food-storage-containers",
+    "date": "2026-09-17",
+    "status": "published",
+    "note": "Created content/blog/rubbermaid-brilliance-food-storage-containers.json"
   }
 ]

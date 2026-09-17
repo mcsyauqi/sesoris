@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "storage containers dog food",
-    "volume": 12100,
-    "kd": 0,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "dog food containers & storage",
-    "volume": 12100,
-    "kd": 0,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "rubbermaid brilliance food storage containers",
-    "volume": 12100,
-    "kd": 13,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "organization ideas for a small closet",
     "volume": 9900,
     "kd": 14,
