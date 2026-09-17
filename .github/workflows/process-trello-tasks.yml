@@ -38,6 +38,13 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: npm run process:trello
 
+      - name: Pre-publish guard (dates, redirect/slug conflicts, image debt)
+        # This workflow also commits blog posts, and until cycle #66 it did so
+        # with no guard at all: every check lived in generate-blog.yml only.
+        # Same gate, same exit code, so a Trello-published article cannot slip
+        # past the checks the cron-published ones must pass.
+        run: node scripts/check-scheduled-publishing.mjs
+
       - name: Commit new blog posts (if any)
         run: |
           git config user.name "github-actions[bot]"

@@ -5,6 +5,8 @@ import { getBoardCards, moveCardToList, addComment, addAttachment, type TrelloCa
 import { authors } from './authors';
 import { buildRichContentPrompt } from './blog-prompt';
 import { generateArticleImages } from './generate-image';
+// Brand-caption scrub, shared with generate-blog-post.ts (cycle #66).
+import { scrubBrandsFromCaption, scrubBrandsFromImageLines } from './brand-scrub';
 
 // --- Config ---
 const BOARD_ID = '67cd86248c2571637e6ba911';
@@ -94,9 +96,11 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
 
   if (generated.image_prompts && generated.image_prompts.length > 0) {
     const imageDescs = generated.image_prompts.map((ip: { filename: string; prompt: string; alt: string }) => ({
-      prompt: ip.prompt,
+      // Asking the image model for "a Pyrex dish" invites it to invent that
+      // brand's trade dress on a picture we then publish as the real product.
+      prompt: scrubBrandsFromCaption(ip.prompt),
       filename: ip.filename,
-      altText: ip.alt,
+      altText: scrubBrandsFromCaption(ip.alt),
     }));
 
     const { images, failures } = await generateArticleImages(generated.slug, imageDescs);
@@ -137,6 +141,16 @@ async function processContentTask(card: TrelloCard): Promise<{ url: string; titl
 
   // Remove any remaining unresolved PLACEHOLDER_IMAGE lines (partial failure only).
   contentArray = contentArray.filter((line) => !line.includes('PLACEHOLDER_IMAGE'));
+
+  // Brand-caption scrub (cycle #66) — see scripts/brand-scrub.ts. The blog
+  // renderer prints markdown alt text as a visible <figcaption>, so a caption
+  // naming a real brand claims the AI render shows a product it does not show.
+  const scrub = scrubBrandsFromImageLines(contentArray);
+  contentArray = scrub.lines;
+  if (scrub.scrubbed.length > 0) {
+    console.log(`  [Image] scrubbed a real brand name out of ${scrub.scrubbed.length} image caption(s):`);
+    for (const change of scrub.scrubbed) console.log(`    ${change}`);
+  }
 
   const post = {
     slug: generated.slug,
