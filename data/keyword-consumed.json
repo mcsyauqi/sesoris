@@ -2904,5 +2904,41 @@
     "date": "2026-09-17",
     "status": "published",
     "note": "Created content/blog/rubbermaid-brilliance-food-storage-containers.json"
+  },
+  {
+    "keyword": "organization ideas for a small closet",
+    "volume": 9900,
+    "kd": 14,
+    "category": "closet organization ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "organization-ideas-for-a-small-closet",
+    "date": "2026-09-18",
+    "status": "published",
+    "note": "Created content/blog/organization-ideas-for-a-small-closet.json"
+  },
+  {
+    "keyword": "very small closet organization ideas",
+    "volume": 9900,
+    "kd": 15,
+    "category": "closet organization ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "very-small-closet-organization-ideas",
+    "date": "2026-09-18",
+    "status": "published",
+    "note": "Created content/blog/very-small-closet-organization-ideas.json"
+  },
+  {
+    "keyword": "food storage containers with lids",
+    "volume": 9900,
+    "kd": 5,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "food-storage-containers-with-lids",
+    "date": "2026-09-18",
+    "status": "published",
+    "note": "Created content/blog/food-storage-containers-with-lids.json"
   }
 ]

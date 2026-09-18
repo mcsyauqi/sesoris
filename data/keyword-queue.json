@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "organization ideas for a small closet",
-    "volume": 9900,
-    "kd": 14,
-    "category": "closet organization ideas",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "very small closet organization ideas",
-    "volume": 9900,
-    "kd": 15,
-    "category": "closet organization ideas",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "food storage containers with lids",
-    "volume": 9900,
-    "kd": 5,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "lidded food storage containers",
     "volume": 9900,
     "kd": 5,
