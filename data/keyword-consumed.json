@@ -2940,5 +2940,41 @@
     "date": "2026-09-18",
     "status": "published",
     "note": "Created content/blog/food-storage-containers-with-lids.json"
+  },
+  {
+    "keyword": "lidded food storage containers",
+    "volume": 9900,
+    "kd": 5,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "lidded-food-storage-containers",
+    "date": "2026-09-19",
+    "status": "published",
+    "note": "Created content/blog/lidded-food-storage-containers.json"
+  },
+  {
+    "keyword": "food storage containers with lid",
+    "volume": 9900,
+    "kd": 5,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "food-storage-containers-with-lid",
+    "date": "2026-09-19",
+    "status": "published",
+    "note": "Created content/blog/food-storage-containers-with-lid.json"
+  },
+  {
+    "keyword": "organization pantry ideas",
+    "volume": 9900,
+    "kd": 8,
+    "category": "pantry organization ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "organization-pantry-ideas",
+    "date": "2026-09-19",
+    "status": "published",
+    "note": "Created content/blog/organization-pantry-ideas.json"
   }
 ]

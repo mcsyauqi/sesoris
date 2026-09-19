@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "lidded food storage containers",
-    "volume": 9900,
-    "kd": 5,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "food storage containers with lid",
-    "volume": 9900,
-    "kd": 5,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "organization pantry ideas",
-    "volume": 9900,
-    "kd": 8,
-    "category": "pantry organization ideas",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "plastic storage containers food",
     "volume": 9900,
     "kd": 14,
