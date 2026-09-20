@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "plastic storage containers food",
-    "volume": 9900,
-    "kd": 14,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "storage containers for food bpa free",
-    "volume": 9900,
-    "kd": 12,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "bpa-free food storage containers",
-    "volume": 9900,
-    "kd": 12,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "storage solutions in garage",
     "volume": 6600,
     "kd": 26,

@@ -2976,5 +2976,41 @@
     "date": "2026-09-19",
     "status": "published",
     "note": "Created content/blog/organization-pantry-ideas.json"
+  },
+  {
+    "keyword": "plastic storage containers food",
+    "volume": 9900,
+    "kd": 14,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "plastic-storage-containers-food",
+    "date": "2026-09-20",
+    "status": "published",
+    "note": "Created content/blog/plastic-storage-containers-food.json"
+  },
+  {
+    "keyword": "storage containers for food bpa free",
+    "volume": 9900,
+    "kd": 12,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "storage-containers-for-food-bpa-free",
+    "date": "2026-09-20",
+    "status": "published",
+    "note": "Created content/blog/storage-containers-for-food-bpa-free.json"
+  },
+  {
+    "keyword": "bpa-free food storage containers",
+    "volume": 9900,
+    "kd": 12,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "bpa-free-food-storage-containers",
+    "date": "2026-09-20",
+    "status": "published",
+    "note": "Created content/blog/bpa-free-food-storage-containers.json"
   }
 ]
