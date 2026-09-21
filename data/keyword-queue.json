@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "storage solutions in garage",
-    "volume": 6600,
-    "kd": 26,
-    "category": "garage storage solutions",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "organization laundry room",
-    "volume": 6600,
-    "kd": 0,
-    "category": "laundry room organization",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "ideas for shoe storage",
-    "volume": 6600,
-    "kd": 2,
-    "category": "shoe storage ideas",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "pet food storage containers",
     "volume": 6600,
     "kd": 0,
