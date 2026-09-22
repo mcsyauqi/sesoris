@@ -3048,5 +3048,41 @@
     "date": "2026-09-21",
     "status": "published",
     "note": "Created content/blog/ideas-for-shoe-storage.json"
+  },
+  {
+    "keyword": "pet food storage containers",
+    "volume": 6600,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "pet-food-storage-containers",
+    "date": "2026-09-22",
+    "status": "published",
+    "note": "Created content/blog/pet-food-storage-containers.json"
+  },
+  {
+    "keyword": "pretty food storage containers",
+    "volume": 6600,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "pretty-food-storage-containers",
+    "date": "2026-09-22",
+    "status": "published",
+    "note": "Created content/blog/pretty-food-storage-containers.json"
+  },
+  {
+    "keyword": "best food storage containers glass",
+    "volume": 6600,
+    "kd": 8,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "best-food-storage-containers-glass",
+    "date": "2026-09-22",
+    "status": "published",
+    "note": "Created content/blog/best-food-storage-containers-glass.json"
   }
 ]

@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "pet food storage containers",
-    "volume": 6600,
-    "kd": 0,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "pretty food storage containers",
-    "volume": 6600,
-    "kd": 0,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "best food storage containers glass",
-    "volume": 6600,
-    "kd": 8,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "top rated glass food storage containers",
     "volume": 6600,
     "kd": 8,
