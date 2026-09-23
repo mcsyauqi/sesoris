@@ -3120,5 +3120,89 @@
     "date": "2026-09-23",
     "status": "published",
     "note": "Created content/blog/stainless-food-storage-containers.json"
+  },
+  {
+    "keyword": "under staircase storage ideas",
+    "volume": 5400,
+    "kd": 0,
+    "category": "Inspiration",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "under-staircase-storage-ideas",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/under-staircase-storage-ideas.json"
+  },
+  {
+    "keyword": "kitchen organizer ideas",
+    "volume": 4400,
+    "kd": 37,
+    "category": "kitchen organizer ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "kitchen-organizer-ideas",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/kitchen-organizer-ideas.json"
+  },
+  {
+    "keyword": "pantry food storage containers",
+    "volume": 4400,
+    "kd": 20,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "pantry-food-storage-containers",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/pantry-food-storage-containers.json"
+  },
+  {
+    "keyword": "kitchen food storage containers",
+    "volume": 4400,
+    "kd": 24,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "kitchen-food-storage-containers",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/kitchen-food-storage-containers.json"
+  },
+  {
+    "keyword": "airtight pet food storage containers",
+    "volume": 4400,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "airtight-pet-food-storage-containers",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/airtight-pet-food-storage-containers.json"
+  },
+  {
+    "keyword": "food storage containers for rice",
+    "volume": 4400,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "food-storage-containers-for-rice",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/food-storage-containers-for-rice.json"
+  },
+  {
+    "keyword": "rubbermaid food storage containers",
+    "volume": 4400,
+    "kd": 10,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "rubbermaid-food-storage-containers",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/rubbermaid-food-storage-containers.json"
   }
 ]
