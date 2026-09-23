@@ -3084,5 +3084,41 @@
     "date": "2026-09-22",
     "status": "published",
     "note": "Created content/blog/best-food-storage-containers-glass.json"
+  },
+  {
+    "keyword": "top rated glass food storage containers",
+    "volume": 6600,
+    "kd": 8,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "top-rated-glass-food-storage-containers",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/top-rated-glass-food-storage-containers.json"
+  },
+  {
+    "keyword": "stainless steel food storage containers",
+    "volume": 5400,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "stainless-steel-food-storage-containers",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/stainless-steel-food-storage-containers.json"
+  },
+  {
+    "keyword": "stainless food storage containers",
+    "volume": 5400,
+    "kd": 9,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "stainless-food-storage-containers",
+    "date": "2026-09-23",
+    "status": "published",
+    "note": "Created content/blog/stainless-food-storage-containers.json"
   }
 ]

@@ -1,29 +1,5 @@
 [
   {
-    "keyword": "top rated glass food storage containers",
-    "volume": 6600,
-    "kd": 8,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "stainless steel food storage containers",
-    "volume": 5400,
-    "kd": 0,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
-    "keyword": "stainless food storage containers",
-    "volume": 5400,
-    "kd": 9,
-    "category": "food storage containers",
-    "intent": "Head",
-    "priority": "Tier 1"
-  },
-  {
     "keyword": "under staircase storage ideas",
     "volume": 5400,
     "kd": 0,
