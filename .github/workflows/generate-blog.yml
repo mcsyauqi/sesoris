@@ -26,25 +26,45 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate 3 blog posts (batched into one build)
+      - name: Generate blog posts (bootstrap buffer, then 3/day)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          # Run sequentially; each pulls the next keyword from the queue.
-          # Non-fatal so one failed generation does not block the others
-          # (the generator returns a failed keyword back to the queue).
-          #
-          # Keep the queue ahead of the live date (hybrid schedule, cycle #60).
-          # Each post takes the EARLIEST day between tomorrow and D+7 that still has fewer
-          # than 3 posts (scripts/next-publish-date.mjs). Never today: today's slot was
-          # filled by an earlier run, so a missed run cannot empty the live day (the intent
-          # of 23a0bbf). Never a fixed +7 either: that offset assumed the buffer was already
-          # full and left 2026-09-03..09-07 with zero articles while the run stayed green.
-          # Only when tomorrow..D+7 are all at quota does it fall back to D+7.
-          for i in 1 2 3; do
+          # Keep the production buffer above the card's >15 acceptance gate without
+          # changing the publishing cadence. When the forward buffer is low, bootstrap
+          # enough future slots in this run; once healthy, return to 3 generated posts/day.
+          FUTURE_COUNT=$(python3 - <<'PY'
+          import json
+          from datetime import date, datetime, timezone
+          from pathlib import Path
+
+          today = datetime.now(timezone.utc).date()
+          count = 0
+          for path in Path('content/blog').glob('*.json'):
+              try:
+                  post = json.loads(path.read_text())
+                  published = date.fromisoformat(str(post.get('date', ''))[:10])
+              except (ValueError, TypeError, json.JSONDecodeError):
+                  continue
+              if not post.get('retired') and published > today:
+                  count += 1
+          print(count)
+          PY
+          )
+          if [ "$FUTURE_COUNT" -le 15 ]; then
+            RUNS=7
+            echo "bootstrap mode: future_count=$FUTURE_COUNT, generation_runs=$RUNS"
+          else
+            RUNS=3
+            echo "steady mode: future_count=$FUTURE_COUNT, generation_runs=$RUNS"
+          fi
+
+          # Each run pulls the next keyword and uses the earliest under-quota date
+          # between tomorrow and D+7. That keeps at most 3 articles per publish date.
+          for i in $(seq 1 "$RUNS"); do
             PUBLISH_DATE=$(node scripts/next-publish-date.mjs --min-offset 1 --horizon 7)
-            echo "run $i -> PUBLISH_DATE=$PUBLISH_DATE"
+            echo "run $i/$RUNS -> PUBLISH_DATE=$PUBLISH_DATE"
             PUBLISH_DATE=$PUBLISH_DATE npm run generate:blog || echo "::warning::generate run $i failed, continuing"
           done
 
