@@ -5,7 +5,8 @@
     "kd": 3,
     "category": "laundry room organization",
     "intent": "Head",
-    "priority": "Tier 1"
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
   },
   {
     "keyword": "shelf on wall ideas",
@@ -13,7 +14,8 @@
     "kd": 23,
     "category": "wall shelf ideas",
     "intent": "Head",
-    "priority": "Tier 1"
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
   },
   {
     "keyword": "wall to wall shelf ideas",
@@ -21,7 +23,8 @@
     "kd": 23,
     "category": "wall shelf ideas",
     "intent": "Head",
-    "priority": "Tier 1"
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
   },
   {
     "keyword": "craft storage room",
@@ -29,7 +32,8 @@
     "kd": 2,
     "category": "craft room storage",
     "intent": "Head",
-    "priority": "Tier 1"
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
   },
   {
     "keyword": "ideas for linen closet organization",
@@ -37,7 +41,8 @@
     "kd": 0,
     "category": "closet organization ideas",
     "intent": "Head",
-    "priority": "Tier 1"
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
   },
   {
     "keyword": "best garage storage solutions",
@@ -45,6 +50,7 @@
     "kd": 4,
     "category": "garage storage solutions",
     "intent": "Head",
-    "priority": "Tier 1"
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
   }
 ]

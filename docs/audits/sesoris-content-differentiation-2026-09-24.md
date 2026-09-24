@@ -1,0 +1,96 @@
+# Sesoris content character and differentiation audit
+
+**Audit date:** 2026-09-24 (UTC)
+
+**Scope:** 66 blog URLs with the highest impressions in the available page-level Search Console snapshot. The source snapshot contained 334 page rows, including 297 blog rows; this audit intentionally freezes the top 66 blog URLs required by the Trello card.
+
+**Method:** deterministic sort by impressions descending, average position ascending, then URL; classification uses the slug/title and whether the article contains links to owned product/category pages. This is a reproducible content heuristic, not a claim of hands-on product testing.
+
+## Operating decision
+
+Sesoris should remain a practical home-organization publisher with a transparent third-party review/comparison layer. Existing pages are not deleted or noindexed from this audit. A review page may summarize official specifications, but it must not imply that Sesoris physically tested a product unless the page has documented test evidence. Future queue items receive an angle lock that enforces this distinction.
+
+## Classification summary
+
+| Type | Count | Decision |
+| --- | ---: | --- |
+| third-party review/comparison | 29 | Keep, but separate official specs from hands-on claims |
+| commercial-support guide | 35 | Keep, connect only to relevant owned catalog items |
+| informational guide | 2 | Keep, deepen practical utility and original evidence |
+
+## Page-by-page classification
+
+| # | URL slug | Impressions | Clicks | Avg position | Type | Decision | Rationale |
+| ---: | --- | ---: | ---: | ---: | --- | --- | --- |
+| 1 | `laundry-room-storage-ideas` | 459 | 0 | 38.66 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 2 | `diy-garage-storage-solutions` | 456 | 1 | 25.89 | informational guide | KEEP, deepen practical utility | Keep the informational intent and improve original checklists, measurements, diagrams, or clearly sourced examples. |
+| 3 | `office-organization-supplies` | 400 | 0 | 30.47 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 4 | `laundry-room-cabinet-ideas` | 349 | 0 | 30.24 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 5 | `purse-storage-ideas` | 232 | 0 | 22.19 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 6 | `outdoor-plant-stand-ideas` | 207 | 3 | 8.93 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 7 | `storage-boxes-for-home` | 200 | 0 | 15.42 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 8 | `rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026` | 193 | 0 | 8.41 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 9 | `modular-shelving-system` | 175 | 0 | 21.84 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 10 | `craft-room-storage-furniture-complete-review-buying-guide-2026` | 158 | 0 | 17.85 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 11 | `under-dorm-bed-storage-ideas` | 152 | 0 | 19.41 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 12 | `garage-storage-solutions-costco-complete-review-buying-guide-2026` | 151 | 0 | 17.55 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 13 | `food-storage-containers-airtight` | 134 | 0 | 9.87 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 14 | `diy-storage-box` | 133 | 1 | 12.60 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 15 | `open-shelving-kitchen-ideas` | 115 | 0 | 48.81 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 16 | `laundry-closet-ideas` | 113 | 0 | 48.05 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 17 | `home-office-desk-organization` | 109 | 0 | 33.08 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 18 | `shoe-rack-ideas` | 97 | 0 | 32.96 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 19 | `home-storage-ideas` | 96 | 2 | 32.64 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 20 | `pantry-shelving-ideas` | 95 | 0 | 20.98 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 21 | `winter-hat-and-glove-storage-ideas` | 94 | 0 | 9.37 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 22 | `minimalist-shelf-ideas` | 93 | 0 | 19.24 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 23 | `spice-storage-containers` | 91 | 0 | 13.52 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 24 | `cable-management` | 88 | 0 | 15.57 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 25 | `mudroom-storage-solutions` | 88 | 0 | 27.30 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 26 | `stationery-organizer-ideas` | 87 | 1 | 7.45 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 27 | `shoe-storage-ideas-garage` | 86 | 2 | 8.01 | informational guide | KEEP, deepen practical utility | Keep the informational intent and improve original checklists, measurements, diagrams, or clearly sourced examples. |
+| 28 | `under-stairs-closet-storage-ideas` | 78 | 0 | 31.88 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 29 | `storage-shelving-ideas` | 75 | 1 | 12.53 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 30 | `kids-bedroom-storage-ideas` | 73 | 0 | 5.53 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 31 | `rubbermaid-food-storage-containers-complete-guide-premium-kitchen-organization-2026` | 71 | 0 | 10.07 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 32 | `diy-room-divider` | 70 | 0 | 37.47 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 33 | `mail-organization-ideas` | 69 | 0 | 8.96 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 34 | `office-supplies-organization-ideas` | 69 | 0 | 15.17 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 35 | `living-room-shelving-ideas` | 67 | 0 | 41.30 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 36 | `mini-fridge-organization-ideas` | 66 | 0 | 8.29 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 37 | `garage-bike-storage-ideas` | 63 | 0 | 12.08 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 38 | `laundry-room-organization-ikea-smart-ideas-transform-space-2026` | 63 | 0 | 13.46 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 39 | `shoe-storage-cabinet-ideas` | 61 | 0 | 11.31 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 40 | `toy-storage-ideas-for-small-spaces` | 61 | 0 | 11.59 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 41 | `organizer-travel-bag` | 60 | 1 | 48.47 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 42 | `diy-cardboard-box-storage-ideas` | 59 | 0 | 8.46 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 43 | `desk-cable-management-ideas` | 59 | 1 | 18.98 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 44 | `playroom-storage-ideas` | 59 | 0 | 52.54 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 45 | `small-walk-in-closet-ideas` | 58 | 0 | 48.48 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 46 | `office-desk-setup-ideas` | 57 | 0 | 11.63 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 47 | `bathroom-cabinet-ideas` | 57 | 0 | 27.72 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 48 | `diy-closet-shelves` | 51 | 0 | 52.22 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 49 | `small-space-kitchen-storage-ideas` | 48 | 0 | 12.90 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 50 | `how-to-organize-your-desk` | 46 | 0 | 45.13 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 51 | `closet-shelf-organization-ideas-transform-storage-space-2026` | 45 | 0 | 9.58 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 52 | `book-storage-ideas` | 45 | 0 | 12.40 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 53 | `tren-home-organization-2026` | 44 | 0 | 6.43 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 54 | `wall-mounted-spice-rack-rak-bumbu-dapur-tempel-dinding-review-buying-guide-2026` | 43 | 0 | 8.79 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 55 | `desk-setup-ideas` | 43 | 1 | 11.40 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 56 | `garage-cabinet-ideas` | 42 | 0 | 29.76 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 57 | `floating-shelf-ideas` | 42 | 0 | 39.21 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 58 | `laundry-room-shelving-ideas` | 42 | 0 | 42.76 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 59 | `small-home-office-organization-ideas` | 41 | 0 | 12.46 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 60 | `diy-closet` | 40 | 0 | 34.77 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 61 | `garage-storage-solutions-near-me` | 39 | 0 | 14.72 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 62 | `closet-organization-ideas-for-nursery-perfect-baby-storage-2026` | 38 | 0 | 9.89 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+| 63 | `rak-piring-dapur-dish-rack-guide-best-kitchen-plate-storage-solutions-2026` | 38 | 0 | 11.42 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 64 | `panduan-meal-prep-container-untuk-pemula` | 37 | 0 | 16.35 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 65 | `outdoor-plant-shelf-ideas` | 35 | 0 | 7.89 | third-party review/comparison | KEEP, strengthen evidence boundary | Retain search demand, but label official-spec research separately from hands-on testing and add first-party product evidence before claiming use. |
+| 66 | `book-storage-ideas-for-small-spaces` | 33 | 1 | 13.21 | commercial-support guide | KEEP, connect to owned catalog | Use the guide to support relevant Sesoris products without presenting third-party specifications as owned-product experience. |
+
+## Queue change
+
+The reviewed keyword queue remains active, but every queued keyword now carries an `angleLock` policy: use a practical, source-backed angle; identify whether evidence is official-spec research or documented hands-on testing; never imply testing that did not happen; and connect to an owned Sesoris product only when the fit is real.
+
+This is deliberately conservative. It improves differentiation without deleting demand or making a broad noindex decision from a page-level snapshot alone.
