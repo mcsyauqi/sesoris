@@ -284,7 +284,8 @@ export default function FoodContainerDataPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-8">
-        <div className="overflow-x-auto rounded-3xl border border-[#DDE8E0] bg-white shadow-[0_24px_80px_rgba(18,53,36,0.08)]">
+        <p className="mb-3 text-sm text-slate-500 md:hidden">Swipe horizontally to see all table fields.</p>
+        <div className="overflow-x-auto rounded-3xl border border-[#DDE8E0] bg-white shadow-[0_24px_80px_rgba(18,53,36,0.08)]" aria-label="Scrollable food container reference table">
           <table className="min-w-[1500px] w-full border-collapse text-left">
             <caption className="sr-only">Food container size and capacity data</caption>
             <thead className="bg-[#EEF5EE]">
