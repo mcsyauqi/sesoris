@@ -3204,5 +3204,89 @@
     "date": "2026-09-23",
     "status": "published",
     "note": "Created content/blog/rubbermaid-food-storage-containers.json"
+  },
+  {
+    "keyword": "best storage food containers",
+    "volume": 3600,
+    "kd": 20,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "best-storage-food-containers",
+    "date": "2026-09-24",
+    "status": "published",
+    "note": "Created content/blog/best-storage-food-containers.json"
+  },
+  {
+    "keyword": "bathroom storage solutions",
+    "volume": 2900,
+    "kd": 14,
+    "category": "bathroom storage solutions",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "bathroom-storage-solutions",
+    "date": "2026-09-24",
+    "status": "published",
+    "note": "Created content/blog/bathroom-storage-solutions.json"
+  },
+  {
+    "keyword": "freezable food storage containers",
+    "volume": 2900,
+    "kd": 0,
+    "category": "food storage containers",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "freezable-food-storage-containers",
+    "date": "2026-09-24",
+    "status": "published",
+    "note": "Created content/blog/freezable-food-storage-containers.json"
+  },
+  {
+    "keyword": "storage ideas for small space",
+    "volume": 2900,
+    "kd": 12,
+    "category": "small space storage ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "storage-ideas-for-small-space",
+    "date": "2026-09-24",
+    "status": "published",
+    "note": "Created content/blog/storage-ideas-for-small-space.json"
+  },
+  {
+    "keyword": "kitchen cupboards organizer ideas",
+    "volume": 1900,
+    "kd": 24,
+    "category": "kitchen organizer ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "kitchen-cupboards-organizer-ideas",
+    "date": "2026-09-24",
+    "status": "published",
+    "note": "Created content/blog/kitchen-cupboards-organizer-ideas.json"
+  },
+  {
+    "keyword": "kitchen cabinet organizer ideas",
+    "volume": 1900,
+    "kd": 24,
+    "category": "kitchen organizer ideas",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "kitchen-cabinet-organizer-ideas",
+    "date": "2026-09-24",
+    "status": "published",
+    "note": "Created content/blog/kitchen-cabinet-organizer-ideas.json"
+  },
+  {
+    "keyword": "laundry room organization ideas",
+    "volume": 1900,
+    "kd": 1,
+    "category": "laundry room organization",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "slug": "laundry-room-organization-ideas",
+    "date": "2026-09-24",
+    "status": "published",
+    "note": "Created content/blog/laundry-room-organization-ideas.json"
   }
 ]
