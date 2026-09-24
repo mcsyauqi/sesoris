@@ -80,6 +80,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/guides/data-ukuran-kapasitas-wadah-makanan`,
+      lastModified: '2026-09-24T00:00:00.000Z',
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',

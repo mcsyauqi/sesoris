@@ -25,6 +25,12 @@ export default function BuyingGuidesPage() {
               <span className="mt-5 inline-block font-bold text-[#A9431C]">Open comparison guide</span>
             </Link>
           ))}
+          <Link href="/guides/data-ukuran-kapasitas-wadah-makanan" className="rounded-3xl border border-[#DDE8E0] bg-white p-7 transition hover:-translate-y-1 hover:shadow-xl">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#1B5E3B]">Reference data</p>
+            <h2 className="mt-3 text-2xl font-bold text-[#0D3D23]">Food container size and capacity data</h2>
+            <p className="mt-3 leading-7 text-slate-600">Compare 20 Rubbermaid and Glasslock containers by capacity, dimensions, material, microwave use, and freezer guidance.</p>
+            <span className="mt-5 inline-block font-bold text-[#A9431C]">Open reference table</span>
+          </Link>
         </div>
       </section>
     </main>
