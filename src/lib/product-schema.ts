@@ -23,6 +23,7 @@ export function buildProductSchema(product: Product): Record<string, unknown> {
     image: product.images[0]?.url,
     sku: `SES-${product.id.toString().padStart(4, '0')}`,
     brand: { '@type': 'Brand', name: 'Sesoris' },
+    category: product.category.name,
     offers: {
       '@type': 'Offer',
       price,

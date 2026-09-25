@@ -34,6 +34,9 @@ for (const product of products) {
   const validUntil = String(offer.priceValidUntil ?? '');
 
   assert.equal(schema['@type'], 'Product', `${product.slug}: schema type must be Product`);
+  assert.match(String(schema.sku ?? ''), /^SES-\d{4}$/, `${product.slug}: sku must be populated`);
+  assert.deepEqual(schema.brand, { '@type': 'Brand', name: 'Sesoris' }, `${product.slug}: brand must be Sesoris`);
+  assert.equal(schema.category, product.category.name, `${product.slug}: category must match product data`);
   assert.equal(typeof offer.price, 'number', `${product.slug}: offer price must be numeric`);
   assert.ok(Number.isFinite(offer.price), `${product.slug}: offer price must be finite`);
   assert.ok(Number(offer.price) > 0, `${product.slug}: offer price must be greater than zero`);
