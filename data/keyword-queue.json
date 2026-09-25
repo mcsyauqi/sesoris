@@ -1,32 +1,5 @@
 [
   {
-    "keyword": "laundry room organization tips",
-    "volume": 1900,
-    "kd": 3,
-    "category": "laundry room organization",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
-  },
-  {
-    "keyword": "shelf on wall ideas",
-    "volume": 1600,
-    "kd": 23,
-    "category": "wall shelf ideas",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
-  },
-  {
-    "keyword": "wall to wall shelf ideas",
-    "volume": 1600,
-    "kd": 23,
-    "category": "wall shelf ideas",
-    "intent": "Head",
-    "priority": "Tier 1",
-    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real."
-  },
-  {
     "keyword": "craft storage room",
     "volume": 1600,
     "kd": 2,
