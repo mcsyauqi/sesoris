@@ -3327,5 +3327,44 @@
     "date": "2026-09-25",
     "status": "published",
     "note": "Created content/blog/wall-to-wall-shelf-ideas.json"
+  },
+  {
+    "keyword": "craft storage room",
+    "volume": 1600,
+    "kd": 2,
+    "category": "craft room storage",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real.",
+    "slug": "craft-storage-room",
+    "date": "2026-09-26",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
+  },
+  {
+    "keyword": "craft storage room",
+    "volume": 1600,
+    "kd": 2,
+    "category": "craft room storage",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real.",
+    "slug": "craft-storage-room",
+    "date": "2026-09-26",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
+  },
+  {
+    "keyword": "craft storage room",
+    "volume": 1600,
+    "kd": 2,
+    "category": "craft room storage",
+    "intent": "Head",
+    "priority": "Tier 1",
+    "angleLock": "Differentiation policy 2026-09-24: use a practical source-backed angle; separate official-spec research from documented hands-on testing; never imply product testing without evidence; connect to an owned Sesoris product only when the fit is real.",
+    "slug": "craft-storage-room",
+    "date": "2026-09-26",
+    "status": "putback",
+    "note": "API call failed: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"reque"
   }
 ]
