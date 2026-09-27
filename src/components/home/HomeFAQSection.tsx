@@ -7,7 +7,7 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: 'What types of home organizers does Sesoris sell?',
-    answer: 'Sesoris offers 23 curated products across 9 categories, including Home Living, Kitchen & Dining, Bags & Pouches, Tools & Gadgets, Office Desk Organizers, and Outdoor & Travel Gear. From kitchen racks and food containers to desk organizers and travel bags, all in one place.',
+    answer: 'Sesoris offers 12 products across 4 categories: Home & Decor, Kitchen & Dining, Bags & Pouches, and Travel & Outdoor. The range covers pull-out cabinet organizers, an over-the-door pantry rack, stackable storage bins, a corner shower caddy, makeup bags, and packing cubes, all shipped from a US warehouse.',
   },
   {
     question: 'Does Sesoris offer free shipping?',

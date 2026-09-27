@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Leaf, ArrowRight } from 'lucide-react';
+import { products, categories } from '@/data/products';
 
 export function AboutSection() {
   return (
@@ -81,11 +82,11 @@ export function AboutSection() {
             {/* Stats */}
             <div className="grid-stats" style={{ marginBottom: '28px' }}>
               <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>23</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>{products.length}</div>
                 <div style={{ fontSize: '13px', color: '#5F6873' }}>Products</div>
               </div>
               <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>9</div>
+                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>{categories.length}</div>
                 <div style={{ fontSize: '13px', color: '#5F6873' }}>Categories</div>
               </div>
               <div>
