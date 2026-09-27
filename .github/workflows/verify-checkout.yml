@@ -1,0 +1,69 @@
+# Checks the live checkout from outside (the office network cannot reach the server).
+# API rules + a real browser run through cart -> checkout, with screenshots as artifacts.
+name: verify-checkout
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: API checks
+        env:
+          CHECKOUT_COUPONS: ${{ secrets.CHECKOUT_COUPONS }}
+        run: |
+          set -u
+          U=https://www.sesoris.com/api/checkout/paypal
+          ITEMS='[{"slug":"pull-out-cabinet-organizer-14-inch","quantity":1}]'
+          ADDR='{"name":"Test Buyer","address1":"350 5th Ave","city":"New York","state":"NY","zip":"10118"}'
+          fail=0
+          check() { code=$(curl -s -o r.json -w '%{http_code}' -X POST "$1" -H 'Content-Type: application/json' --data "$2"); echo "$3 -> $code $(cat r.json)"; [ "$code" = "$4" ] || fail=1; }
+          check "$U" "{\"items\":$ITEMS}" "no address (expect 400)" 400
+          check "$U" "{\"items\":$ITEMS,\"shipTo\":{\"name\":\"T B\",\"address1\":\"1 Main St\",\"city\":\"X\",\"state\":\"ZZ\",\"zip\":\"123\"}}" "bad state/zip (expect 400)" 400
+          check "$U?preview=1" "{\"items\":$ITEMS,\"coupon\":\"${CHECKOUT_COUPONS%%:*}\"}" "coupon preview (expect 200)" 200
+          check "$U" "{\"items\":$ITEMS,\"shipTo\":$ADDR}" "valid US address creates unpaid PayPal order (expect 200)" 200
+          exit $fail
+
+      - name: Browser run
+        run: |
+          mkdir b && cd b && npm init -y >/dev/null && npm i playwright@1 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+          cat > run.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          const b = await chromium.launch();
+          const p = await b.newPage({ viewport: { width: 1280, height: 1600 } });
+          const log = (...a) => console.log(...a);
+          await p.goto('https://www.sesoris.com/product/pull-out-cabinet-organizer-14-inch', { waitUntil: 'networkidle' });
+          await p.getByRole('button', { name: /add to cart/i }).first().click();
+          await p.goto('https://www.sesoris.com/checkout', { waitUntil: 'networkidle' });
+          await p.waitForSelector('iframe[title="PayPal"]', { timeout: 30000 });
+          log('address form fields:', await p.locator('input[autocomplete="address-line1"], select[autocomplete="address-level1"]').count());
+          await p.screenshot({ path: 'checkout.png', fullPage: true });
+          const pp = p.frameLocator('iframe[title="PayPal"]');
+          // Empty address: clicking the card button must show our error and not start a PayPal order.
+          let created = 0;
+          p.on('request', (r) => { if (r.method() === 'POST' && r.url().endsWith('/api/checkout/paypal')) created++; });
+          await pp.getByRole('link', { name: /debit or credit card/i }).or(pp.getByRole('button', { name: /debit or credit card/i })).first().click();
+          await p.waitForTimeout(3000);
+          log('error shown with empty address:', await p.locator('[role="alert"]').innerText().catch(() => 'none'));
+          log('orders created with empty address:', created);
+          await p.screenshot({ path: 'empty-address.png' });
+          // Valid address: the same click must create an order and open the card form.
+          await p.fill('input[autocomplete="name"]', 'Test Buyer');
+          await p.fill('input[autocomplete="address-line1"]', '350 5th Ave');
+          await p.fill('input[autocomplete="address-level2"]', 'New York');
+          await p.selectOption('select[autocomplete="address-level1"]', 'NY');
+          await p.fill('input[autocomplete="postal-code"]', '10118');
+          await pp.getByRole('link', { name: /debit or credit card/i }).or(pp.getByRole('button', { name: /debit or credit card/i })).first().click();
+          await p.waitForTimeout(8000);
+          log('orders created with valid address:', created);
+          await p.screenshot({ path: 'valid-address.png', fullPage: true });
+          await b.close();
+          EOF
+          node run.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: checkout-screens
+          path: b/*.png
