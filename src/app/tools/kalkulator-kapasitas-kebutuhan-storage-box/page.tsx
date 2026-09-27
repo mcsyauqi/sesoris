@@ -12,14 +12,14 @@ import {
 const TOOL_NAME = 'Storage Box Capacity Calculator';
 const TOOL_URL = 'https://www.sesoris.com/tools/kalkulator-kapasitas-kebutuhan-storage-box';
 const TOOL_DESCRIPTION =
-  'Estimate how many storage boxes you need for clothes, books, shoes, and small items. Get a quick result with this free calculator.';
+  'Free storage box calculator. Enter your items and get an instant estimate for clothes, books, shoes, and small items, no sign-up needed.';
 
 export const metadata: Metadata = {
-  title: 'How Many Storage Boxes Do You Need? Free Calculator',
+  title: 'Storage Box Calculator: How Many Do You Need?',
   description: TOOL_DESCRIPTION,
   alternates: { canonical: '/tools/kalkulator-kapasitas-kebutuhan-storage-box' },
   openGraph: {
-    title: 'How Many Storage Boxes Do You Need? Free Calculator | Sesoris',
+    title: 'Storage Box Calculator: How Many Do You Need? | Sesoris',
     description: TOOL_DESCRIPTION,
     type: 'website',
     url: '/tools/kalkulator-kapasitas-kebutuhan-storage-box',
