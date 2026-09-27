@@ -168,7 +168,7 @@ export function Footer() {
 
           {/* Shop Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Shop</h3>
+            <h2 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Shop</h2>
             <ul style={{ listStyle: 'none' }}>
               {footerLinks.shop.map((link) => (
                 <li key={link.name} style={{ marginBottom: '10px' }}>
@@ -182,7 +182,7 @@ export function Footer() {
 
           {/* Help Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Help</h3>
+            <h2 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Help</h2>
             <ul style={{ listStyle: 'none' }}>
               {footerLinks.help.map((link) => (
                 <li key={link.name} style={{ marginBottom: '10px' }}>
@@ -196,7 +196,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Company</h3>
+            <h2 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Company</h2>
             <ul style={{ listStyle: 'none', marginBottom: '24px' }}>
               {footerLinks.company.map((link) => (
                 <li key={link.name} style={{ marginBottom: '10px' }}>
@@ -228,7 +228,7 @@ export function Footer() {
 
         {/* Free Tools */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '24px 0' }}>
-          <h3 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Free Tools</h3>
+          <h2 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Free Tools</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
             {footerLinks.tools.map((link) => (
               <Link key={link.name} href={link.href} style={{ fontSize: '13px', opacity: 0.7 }}>
@@ -240,7 +240,7 @@ export function Footer() {
 
         {/* Popular Articles */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '24px 0' }}>
-          <h3 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Popular Articles</h3>
+          <h2 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Popular Articles</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
             {footerLinks.popularArticles.map((link) => (
               <Link key={link.name} href={link.href} style={{ fontSize: '13px', opacity: 0.7 }}>
