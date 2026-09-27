@@ -14,6 +14,7 @@ type ContainerRow = {
 };
 
 const sourceDate = '2026-09-24';
+const nextReviewDate = '2026-12-18';
 const pagePath = '/guides/data-ukuran-kapasitas-wadah-makanan';
 const pageUrl = `https://www.sesoris.com${pagePath}`;
 
@@ -221,7 +222,7 @@ const containers: ContainerRow[] = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Food Container Size and Capacity Data | Sesoris',
+  title: 'Food Container Size and Capacity Data',
   description: 'A source-backed reference table of 20 popular Rubbermaid and Glasslock food containers with capacity, dimensions, material, microwave, and freezer guidance.',
   alternates: selfReferencingAlternates(pagePath),
   openGraph: {
@@ -333,7 +334,7 @@ export default function FoodContainerDataPage() {
 
       <section className="mx-auto max-w-4xl px-5 pb-16 text-slate-600">
         <h2 className="text-3xl font-bold text-[#0D3D23]">Keep the source in view</h2>
-        <p className="mt-4 leading-8">Manufacturers can change packaging, dimensions, and care instructions. This reference was checked on {sourceDate}. Open the source in the relevant row before making a purchase or heating decision, especially when the lid is involved.</p>
+        <p className="mt-4 leading-8">Manufacturers can change packaging, dimensions, and care instructions. This reference was checked on {sourceDate} and is reviewed quarterly; the next scheduled review is {nextReviewDate}. Open the source in the relevant row before making a purchase or heating decision, especially when the lid is involved.</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/guides" className="rounded-full bg-[#1B5E3B] px-5 py-3 font-bold text-white">Back to buying guides</Link>
           <Link href="/shop" className="rounded-full border border-[#1B5E3B] px-5 py-3 font-bold text-[#1B5E3B]">Browse organizers</Link>
