@@ -7,14 +7,9 @@ import type { Product } from '@/types';
 // linking every post to the same category (fixes 0 internal links from
 // blog -> money pages, see [[sesoris-seo-audit-2026-07-05]] root cause #3).
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
-  'home-living': ['floating shelf', 'wall shelf', 'home organizer', 'decor', 'living room', 'storage bin', 'basket', 'display shelf', 'bedroom', 'home organization', 'declutter', 'closet'],
-  'kitchen-dining': ['kitchen', 'dish rack', 'food storage', 'food container', 'pantry', 'cutting board', 'spice', 'dining table', 'dining', 'glass container'],
-  'tools-gadgets': ['multi-tool', 'kitchen gadget', 'practical tools', 'diy', 'home repair', 'cable management', 'screwdriver'],
-  'gift-sets': ['gift', 'gift set', 'wedding gift', 'housewarming', 'corporate gift', 'parcel'],
-  'personal-care': ['self-care', 'self care', 'skincare', 'aromatherapy', 'diffuser', 'wellness', 'bathroom organizer', 'facial roller', 'gua sha'],
-  'tech-accessories': ['earbuds', 'wireless charging', 'charging station', 'cable organizer', 'smart home', 'power bank', 'headphone'],
-  'bags-pouches': ['bag', 'pouch', 'toiletry bag', 'tote bag', 'packing cube', 'suitcase', 'mesh pouch'],
-  'office-desk': ['desk', 'desk organizer', 'workspace', 'home office', 'desk lamp', 'wfh'],
+  'home-living': ['bathroom organizer', 'shower caddy', 'shower', 'bathroom', 'floating shelf', 'wall shelf', 'home organizer', 'decor', 'living room', 'storage bin', 'basket', 'display shelf', 'bedroom', 'home organization', 'declutter', 'closet'],
+  'kitchen-dining': ['kitchen', 'dish rack', 'food storage', 'food container', 'pantry', 'cutting board', 'spice', 'dining table', 'dining', 'glass container'],
+  'bags-pouches': ['bag', 'pouch', 'toiletry bag', 'tote bag', 'packing cube', 'suitcase', 'mesh pouch'],
   'outdoor-travel': ['travel organizer', 'outdoor', 'vacation', 'trip', 'hiking', 'camping', 'day trip', 'travel gear'],
 };
 

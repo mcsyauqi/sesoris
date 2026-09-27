@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Truck, ShieldCheck } from 'lucide-react';
+import { products } from '@/data/products';
 
 const hero = {
   tagline: 'New Collection 2026',
@@ -10,7 +11,7 @@ const hero = {
   image: '/images/hero/hero-1.webp',
   buttonText: 'Shop the Collection',
   buttonLink: '/shop',
-  stat: { value: '23', label: 'Products' },
+  stat: { value: String(products.length), label: 'Products' },
 };
 
 export function HeroSlider() {

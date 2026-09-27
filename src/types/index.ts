@@ -11,6 +11,8 @@ export interface Product {
   images: { url: string; alt: string }[];
   category: Category;
   inStock: boolean;
+  shipDays?: string;
+  cj?: { pid: string; vid: string };
   isNew?: boolean;
   isFeatured?: boolean;
 }

@@ -175,11 +175,11 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
 
 
 const productLinkSuggestions = [
-  { match: /(desk|office|workspace|meja|lamp|charging|wireless)/i, links: ['[LED Desk Lamp with Wireless Charger](/product/led-desk-lamp-wireless-charger)', '[Bamboo Desk Organizer](/product/bamboo-desk-organizer)', '[Desk & Workspace collection](/category/office-desk)'] },
-  { match: /(dish|rack|kitchen|dapur|pantry|container|food|meal|cook)/i, links: ['[Stainless Steel 2-Tier Dish Rack](/product/stainless-steel-2-tier-dish-rack)', '[Portable Blender](/product/portable-blender)', '[Kitchen & Dining collection](/category/kitchen-dining)'] },
-  { match: /(storage|box|organizer|declutter|home|shelf|rak|closet|room)/i, links: ['[Foldable Storage Bins](/product/foldable-storage-bins)', '[Floating Wall Shelf Set](/product/rak-dinding-floating-shelf-set)', '[Home & Decor collection](/category/home-living)'] },
-  { match: /(travel|pouch|bag|packing|outdoor|trip)/i, links: ['[Travel Toiletry Bag](/product/travel-toiletry-bag)', '[Mesh Zipper Pouches Set](/product/mesh-zipper-pouches-set)', '[Travel & Outdoor collection](/category/outdoor-travel)'] },
-  { match: /(self care|wellness|aroma|bath|beauty|skincare|diffuser)/i, links: ['[Aromatherapy Diffuser](/product/aromatherapy-diffuser)', '[Minimalist Wallet](/product/minimalist-wallet)', '[Self Care collection](/category/personal-care)'] },
+  { match: /(desk|office|workspace|meja|lamp|charging|wireless)/i, links: ['[Stackable Storage Bins, 24 Pack](/product/stackable-storage-bins-24-pack)', '[Slide-Out Cabinet Drawer, Black Steel](/product/slide-out-cabinet-drawer-black)', '[Home & Decor collection](/category/home-living)'] },
+  { match: /(dish|rack|kitchen|dapur|pantry|container|food|meal|cook)/i, links: ['[Pull-Out Cabinet Organizer, 14 in. Wide](/product/pull-out-cabinet-organizer-14-inch)', '[Over-the-Door Pantry Organizer, 8 Tier](/product/over-the-door-pantry-organizer-8-tier)', '[Kitchen & Dining collection](/category/kitchen-dining)'] },
+  { match: /(storage|box|organizer|declutter|home|shelf|rak|closet|room)/i, links: ['[Stackable Storage Bins, 24 Pack](/product/stackable-storage-bins-24-pack)', '[Pull-Out Cabinet Organizer, 17 in. Wide](/product/pull-out-cabinet-organizer-17-inch)', '[Home & Decor collection](/category/home-living)'] },
+  { match: /(travel|pouch|bag|packing|outdoor|trip)/i, links: ['[Packing Cubes, 9-Piece Set](/product/packing-cubes-9-piece-set)', '[Large Travel Makeup Bag](/product/travel-makeup-bag-large)', '[Travel & Outdoor collection](/category/outdoor-travel)'] },
+  { match: /(self care|wellness|aroma|bath|beauty|skincare|diffuser)/i, links: ['[Corner Shower Caddy, Stainless Steel](/product/corner-shower-caddy-silver)', '[Aluminum Makeup Train Case with Mirror](/product/aluminum-makeup-train-case)', '[Bags & Pouches collection](/category/bags-pouches)'] },
 ];
 
 function buildRelatedProductBlock(slug: string, title: string, category: string): string[] {

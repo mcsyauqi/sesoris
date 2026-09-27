@@ -25,10 +25,10 @@ const BUDGETS = [
 
 // Real catalog picks per room, ordered space-saving first (small rooms get the top of the list)
 const ROOM_PICKS: Record<string, string[]> = {
-  bedroom: ['foldable-storage-bins', 'multi-purpose-storage-pouch', 'rak-dinding-floating-shelf-set', 'rak-sepatu-minimalis-5-tingkat'],
-  kitchen: ['stainless-steel-2-tier-dish-rack', 'portable-blender', 'smart-water-bottle', 'electric-wine-opener'],
-  bath: ['mesh-zipper-pouches-set', 'hanging-travel-organizer', 'travel-toiletry-bag', 'aromatherapy-diffuser'],
-  living: ['gantungan-kunci-dinding-magnetik', 'rak-dinding-floating-shelf-set', 'ceramic-plant-pot-set', 'rak-buku-minimalis-industrial'],
+  bedroom: ['stackable-storage-bins-24-pack', 'packing-cubes-9-piece-set', 'travel-makeup-bag-large', 'aluminum-makeup-train-case'],
+  kitchen: ['pull-out-cabinet-organizer-11-5-inch', 'over-the-door-pantry-organizer-8-tier', 'pull-out-cabinet-organizer-14-inch', 'bamboo-bread-box-double-layer'],
+  bath: ['corner-shower-caddy-silver', 'pull-out-cabinet-organizer-11-5-inch', 'travel-makeup-bag-large', 'stackable-storage-bins-24-pack'],
+  living: ['stackable-storage-bins-24-pack', 'slide-out-cabinet-drawer-black', 'over-the-door-pantry-organizer-8-tier', 'pull-out-cabinet-organizer-17-inch'],
 };
 
 const ROOM_TIPS: Record<string, string> = {

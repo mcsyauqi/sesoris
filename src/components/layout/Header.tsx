@@ -10,8 +10,7 @@ import { useWishlistStore } from '@/stores/wishlist-store';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Shop', href: '/shop', hasDropdown: true },
-  { name: 'Collections', href: '/collections' },
+  { name: 'Shop', href: '/shop', hasDropdown: true },
   { name: 'Track Order', href: '/track-order' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
@@ -22,8 +21,7 @@ const shopLinks = [
   { name: 'All Products', href: '/shop' },
   { name: 'New Arrivals', href: '/new-arrivals' },
   { name: 'Best Sellers', href: '/best-sellers' },
-  { name: 'On Sale', href: '/on-sale' },
-  { name: 'Bundles', href: '/bundles' },
+  { name: 'On Sale', href: '/on-sale' },
 ];
 
 export function Header() {

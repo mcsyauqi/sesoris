@@ -240,7 +240,7 @@ export default function ShopPageClient() {
                 Home &amp; Decor
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Transform any room with our Home &amp; Decor collection, from floating shelves and wall organizers to decorative baskets and storage solutions. You&apos;ll find the perfect pieces to keep your home tidy and stylish.
+                Stackable storage bins and corner shower caddies that put unused corners and shelves to work.
               </p>
               <Link href="/category/home-living" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
                 Shop Home &amp; Decor →
@@ -251,7 +251,7 @@ export default function ShopPageClient() {
                 Kitchen &amp; Dining
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Stock the kitchen with dish racks, storage containers, cutting boards, and dining essentials for easier, more efficient cooking.
+                Pull-out cabinet organizers, an over-the-door pantry rack, and a bamboo bread box that make deep cabinets and pantry doors easy to use.
               </p>
               <Link href="/category/kitchen-dining" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
                 Shop Kitchen &amp; Dining →
@@ -259,52 +259,30 @@ export default function ShopPageClient() {
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Tools &amp; Gadgets
+                Bags &amp; Pouches
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Discover innovative tools and everyday gadgets that solve real problems. From multi-tools to smart kitchen gadgets, our Tools &amp; Gadgets picks are built for performance and convenience.
+                Travel makeup bags and an aluminum makeup train case with a mirror, sized to keep cosmetics and small essentials sorted at home or on the road.
               </p>
-              <Link href="/category/tools-gadgets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Tools &amp; Gadgets →
+              <Link href="/category/bags-pouches" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Bags &amp; Pouches →
               </Link>
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Gift Sets
+                Travel &amp; Outdoor
               </h3>
               <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Find the perfect gift for any occasion. Our curated Gift Sets are thoughtfully packaged and ready to give. Ideal for birthdays, holidays, housewarmings, and celebrations.
+                Packing cubes that split a suitcase into clear sections, so clothes stay folded and easy to find.
               </p>
-              <Link href="/category/gift-sets" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Gift Sets →
-              </Link>
-            </div>
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Self Care
-              </h3>
-              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Elevate your self-care routine with our Self Care collection, aromatherapy diffusers, organizers, skincare tools, and wellness accessories. Every pick is chosen for quality.
-              </p>
-              <Link href="/category/personal-care" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Self Care →
-              </Link>
-            </div>
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1B5E3B', marginBottom: '8px' }}>
-                Tech Accessories
-              </h3>
-              <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.6' }}>
-                Stay connected and organized with our Tech Accessories, wireless earbuds, charging stations, cable organizers, and smart home gadgets. Built for the tech-savvy lifestyle.
-              </p>
-              <Link href="/category/tech-accessories" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
-                Shop Tech Accessories →
+              <Link href="/category/outdoor-travel" style={{ fontSize: '14px', color: '#1B5E3B', fontWeight: 500, display: 'inline-block', marginTop: '8px' }}>
+                Shop Travel &amp; Outdoor →
               </Link>
             </div>
           </div>
           <div style={{ marginTop: '32px', padding: '20px', background: '#fff', borderRadius: '12px', border: '1px solid #E9ECEF' }}>
             <p style={{ fontSize: '14px', color: '#495057', lineHeight: '1.7', margin: 0 }}>
-              <strong style={{ color: '#212529' }}>About Sesoris Shop:</strong> Sesoris curates quality organizer and lifestyle products to help any home feel tidier, brighter, and more comfortable. If you are comparing shelves for the kitchen, bedroom, or living room, browse our full catalog by category above. Enjoy free shipping on orders over $50.
+              <strong style={{ color: '#212529' }}>About Sesoris Shop:</strong> Sesoris curates quality organizer and lifestyle products to help any home feel tidier, brighter, and more comfortable. If you are comparing shelves for the kitchen, bedroom, or living room, browse our full catalog by category above.
             </p>
           </div>
         </div>
