@@ -8,6 +8,9 @@ import { trackAddToCart } from '@/lib/analytics';
 interface CartState {
   items: CartItem[];
   isOpen: boolean;
+  /** Coupon priced for the current cart by the server; any cart change clears it. */
+  coupon: { code: string; discount: number } | null;
+  setCoupon: (coupon: { code: string; discount: number } | null) => void;
   /**
    * Adds `quantity` units of a product to the cart and emits the GA4
    * `add_to_cart` event. Instrumenting here means every entry point
@@ -29,6 +32,8 @@ export const useCartStore = create<CartState>()(
     (set, get) => ({
       items: [],
       isOpen: false,
+      coupon: null,
+      setCoupon: (coupon) => set({ coupon }),
       addItem: (product, quantity = 1) => {
         const qty = Math.max(1, Math.floor(quantity));
         const items = get().items;
@@ -44,10 +49,11 @@ export const useCartStore = create<CartState>()(
         } else {
           set({ items: [...items, { product, quantity: qty }] });
         }
+        set({ coupon: null });
         trackAddToCart(product, qty);
       },
       removeItem: (productId) => {
-        set({ items: get().items.filter((item) => item.product.id !== productId) });
+        set({ items: get().items.filter((item) => item.product.id !== productId), coupon: null });
       },
       updateQuantity: (productId, quantity) => {
         if (quantity <= 0) {
@@ -57,10 +63,11 @@ export const useCartStore = create<CartState>()(
             items: get().items.map((item) =>
               item.product.id === productId ? { ...item, quantity } : item
             ),
+            coupon: null,
           });
         }
       },
-      clearCart: () => set({ items: [] }),
+      clearCart: () => set({ items: [], coupon: null }),
       openCart: () => set({ isOpen: true }),
       closeCart: () => set({ isOpen: false }),
       getItemCount: () => get().items.reduce((acc, item) => acc + item.quantity, 0),

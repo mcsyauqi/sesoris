@@ -10,6 +10,8 @@ import { formatPrice } from '@/lib/utils';
 import { bundles } from '@/data/bundles';
 import { products } from '@/data/products';
 import { getProductImageAlt } from '@/lib/product-image-alt';
+import { shippingFor } from '@/lib/checkout';
+import { applyCoupon } from '@/lib/apply-coupon';
 
 const CartUpsell = dynamic(
   () => import('@/components/cart/CartUpsell').then((mod) => mod.CartUpsell),
@@ -17,12 +19,28 @@ const CartUpsell = dynamic(
 );
 
 export default function CartPageClient() {
-  const { items, removeItem, updateQuantity, getSubtotal, getItemCount } = useCartStore();
+  const { items, removeItem, updateQuantity, getSubtotal, getItemCount, coupon, setCoupon } = useCartStore();
   const [promoCode, setPromoCode] = useState('');
+  const [promoError, setPromoError] = useState('');
+  const [applying, setApplying] = useState(false);
 
   const subtotal = getSubtotal();
-  const shipping = subtotal > 50 ? 0 : 5.99;
-  const total = subtotal + shipping;
+  const shipping = shippingFor(subtotal);
+  const discount = coupon?.discount ?? 0;
+  const total = Math.round((subtotal - discount + shipping) * 100) / 100;
+
+  const onApply = async () => {
+    setPromoError('');
+    setApplying(true);
+    try {
+      setCoupon(await applyCoupon(items, promoCode));
+    } catch (e) {
+      setCoupon(null);
+      setPromoError((e as Error).message);
+    } finally {
+      setApplying(false);
+    }
+  };
 
   if (items.length === 0) {
     return (
@@ -218,6 +236,9 @@ export default function CartPageClient() {
                     }}
                   />
                   <button
+                    type="button"
+                    onClick={onApply}
+                    disabled={applying || !promoCode.trim()}
                     style={{
                       padding: '10px 16px',
                       background: '#212529',
@@ -229,9 +250,11 @@ export default function CartPageClient() {
                       fontWeight: 500,
                     }}
                   >
-                    Apply
+                    {applying ? 'Checking...' : 'Apply'}
                   </button>
                 </div>
+                {promoError && <p role="alert" style={{ color: '#842029', fontSize: '13px', marginTop: '8px' }}>{promoError}</p>}
+                {coupon && <p style={{ color: '#1E7E34', fontSize: '13px', marginTop: '8px' }}>Code {coupon.code} applied.</p>}
               </div>
 
               <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '20px' }}>
@@ -239,6 +262,12 @@ export default function CartPageClient() {
                   <span style={{ color: '#5F6873' }}>Subtotal</span>
                   <span style={{ fontWeight: 500, color: '#212529' }}>{formatPrice(subtotal)}</span>
                 </div>
+                {discount > 0 && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                    <span style={{ color: '#5F6873' }}>Discount</span>
+                    <span style={{ fontWeight: 500, color: '#1E7E34' }}>-{formatPrice(discount)}</span>
+                  </div>
+                )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
                   <span style={{ color: '#5F6873' }}>Shipping</span>
                   <span style={{ fontWeight: 500, color: shipping === 0 ? '#1E7E34' : '#212529' }}>

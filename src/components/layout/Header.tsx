@@ -10,7 +10,7 @@ import { useWishlistStore } from '@/stores/wishlist-store';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Shop', href: '/shop', hasDropdown: true },
+  { name: 'Shop', href: '/shop', hasDropdown: true },
   { name: 'Track Order', href: '/track-order' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
@@ -21,13 +21,14 @@ const shopLinks = [
   { name: 'All Products', href: '/shop' },
   { name: 'New Arrivals', href: '/new-arrivals' },
   { name: 'Best Sellers', href: '/best-sellers' },
-  { name: 'On Sale', href: '/on-sale' },
+  { name: 'On Sale', href: '/on-sale' },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [mobileShopOpen, setMobileShopOpen] = useState(false);
   const cartCount = useCartStore((s) => s.getItemCount());
   const wishlistCount = useWishlistStore((s) => s.getItemCount());
@@ -151,7 +152,7 @@ export function Header() {
 
             {/* Actions */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
-              <button className="hide-mobile" aria-label="Search products" style={{
+              <button className="hide-mobile" aria-label="Search products" aria-expanded={searchOpen} onClick={() => setSearchOpen((o) => !o)} style={{
                 padding: '10px',
                 borderRadius: '8px',
                 background: 'transparent',
@@ -249,6 +250,16 @@ export function Header() {
             </div>
           </div>
         </div>
+        {/* ponytail: plain GET form to /shop?search=, no client routing needed */}
+        {searchOpen && (
+          <div className="container" style={{ paddingBottom: '12px' }}>
+          <form action="/shop" method="get" role="search" style={{ display: 'flex', gap: '8px', maxWidth: '560px', marginLeft: 'auto' }}>
+            <label htmlFor="header-search" style={{ position: 'absolute', width: '1px', height: '1px', overflow: 'hidden', clip: 'rect(0,0,0,0)' }}>Search products</label>
+            <input id="header-search" name="search" type="search" required placeholder="Search products" style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', border: '1px solid #CED4DA', fontSize: '15px' }} />
+            <button type="submit" style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', background: '#1B5E3B', color: 'white', fontWeight: 600, cursor: 'pointer' }}>Search</button>
+          </form>
+          </div>
+        )}
       </header>
 
       {/* Mobile Menu Overlay */}
@@ -286,6 +297,14 @@ export function Header() {
           >
             <X style={{ width: '20px', height: '20px' }} />
           </button>
+        </div>
+
+        <div style={{ padding: '12px 20px 0' }}>
+          <form action="/shop" method="get" role="search" style={{ display: 'flex', gap: '8px' }}>
+            <label htmlFor="mobile-search" style={{ position: 'absolute', width: '1px', height: '1px', overflow: 'hidden', clip: 'rect(0,0,0,0)' }}>Search products</label>
+            <input id="mobile-search" name="search" type="search" required placeholder="Search products" style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', border: '1px solid #CED4DA', fontSize: '15px' }} />
+            <button type="submit" style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', background: '#1B5E3B', color: 'white', fontWeight: 600, cursor: 'pointer' }}>Search</button>
+          </form>
         </div>
 
         {/* Mobile Nav Links */}

@@ -13,7 +13,8 @@ const priceRanges = [
   { label: 'Over $50', min: 50, max: Infinity },
 ];
 
-export default function ShopPageClient() {
+export default function ShopPageClient({ search = '' }: { search?: string }) {
+  const terms = search.toLowerCase().split(/\s+/).filter(Boolean);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
   const [sortBy, setSortBy] = useState('featured');
@@ -22,6 +23,10 @@ export default function ShopPageClient() {
   const [filterOpen, setFilterOpen] = useState(false);
 
   const filteredProducts = products.filter((p) => {
+    if (terms.length > 0) {
+      const haystack = `${p.name} ${p.description} ${p.category.name}`.toLowerCase();
+      if (!terms.every((t) => haystack.includes(t))) return false;
+    }
     if (selectedCategories.length > 0 && !selectedCategories.includes(p.category.slug)) return false;
     if (selectedPrice !== null) {
       const range = priceRanges[selectedPrice];
@@ -153,7 +158,7 @@ export default function ShopPageClient() {
               All Sesoris Products
             </h1>
             <p style={{ color: '#5F6873', fontSize: '14px' }}>
-              Showing {filteredProducts.length} products
+              {search ? <>Showing {filteredProducts.length} results for &quot;{search}&quot; · <Link href="/shop" style={{ color: '#1B5E3B' }}>Clear search</Link></> : <>Showing {filteredProducts.length} products</>}
             </p>
           </div>
 

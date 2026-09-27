@@ -10,6 +10,7 @@ import { shippingFor, FREE_SHIPPING_MIN } from '@/lib/checkout';
 import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
 import { trackBeginCheckout, trackPurchase } from '@/lib/analytics';
+import { applyCoupon as priceCoupon } from '@/lib/apply-coupon';
 
 interface PaypalButtonsApi {
   Buttons: (opts: Record<string, unknown>) => { render: (el: HTMLElement) => Promise<void>; close?: () => void };
@@ -41,11 +42,10 @@ const crumb = (label: string) => (
 );
 
 export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: string; sandbox: boolean }) {
-  const { items, clearCart } = useCartStore();
+  const { items, clearCart, coupon, setCoupon } = useCartStore();
   const [placed, setPlaced] = useState<{ id: string; total: number } | null>(null);
   const [error, setError] = useState('');
   const [couponInput, setCouponInput] = useState('');
-  const [coupon, setCoupon] = useState<{ code: string; discount: number } | null>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const beginFired = useRef(false);
 
@@ -62,19 +62,15 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
   const cartKey = lines.map((l) => `${l.product.slug}:${l.quantity}`).join(',');
   const cartItems = () => cartKey.split(',').map((p) => ({ slug: p.split(':')[0], quantity: Number(p.split(':')[1]) }));
 
-  // A coupon is priced for one cart; changing the cart drops it so the shown total stays true.
-  useEffect(() => setCoupon(null), [cartKey]);
-
+  // The cart store clears the coupon on any cart change, so a stored discount always matches this cart.
   const applyCoupon = async () => {
     setError('');
-    const res = await fetch('/api/checkout/paypal?preview=1', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: cartItems(), coupon: couponInput }),
-    });
-    const json = await res.json();
-    if (!res.ok) { setCoupon(null); setError(json.error || 'This coupon code is not valid.'); return; }
-    setCoupon({ code: couponInput.trim().toUpperCase(), discount: json.discount });
+    try {
+      setCoupon(await priceCoupon(items, couponInput));
+    } catch (e) {
+      setCoupon(null);
+      setError((e as Error).message);
+    }
   };
 
   useEffect(() => {
