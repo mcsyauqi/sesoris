@@ -44,12 +44,20 @@ jobs:
           rm body.json
           curl "${H[@]}" -X POST "$COOLIFY/applications/$UUID/restart" || curl "${H[@]}" "$COOLIFY/applications/$UUID/restart"
 
-      - name: Smoke test checkout API (waits for the restart)
+      - name: Smoke test checkout API (waits for restart/deploy)
         if: inputs.paypal_env != 'check'
+        env:
+          CHECKOUT_COUPONS: ${{ secrets.CHECKOUT_COUPONS }}
         run: |
-          for i in $(seq 1 20); do
-            out=$(curl -s -X POST https://www.sesoris.com/api/checkout/paypal -H 'Content-Type: application/json'               --data '{"items":[{"slug":"packing-cubes-9-piece-set","quantity":1}]}' || true)
-            echo "$out" | grep -q '"id"' && { echo "PayPal order created OK: $out"; exit 0; }
-            echo "try $i: $out"; sleep 15
+          CODE="${CHECKOUT_COUPONS%%:*}"
+          for i in $(seq 1 60); do
+            pv=$(curl -s -X POST 'https://www.sesoris.com/api/checkout/paypal?preview=1' -H 'Content-Type: application/json'               --data "{\"items\":[{\"slug\":\"packing-cubes-9-piece-set\",\"quantity\":1}],\"coupon\":\"$CODE\"}" || true)
+            if echo "$pv" | grep -q '"discount":[1-9]'; then
+              echo "coupon preview OK: $pv"
+              out=$(curl -s -X POST https://www.sesoris.com/api/checkout/paypal -H 'Content-Type: application/json'                 --data '{"items":[{"slug":"packing-cubes-9-piece-set","quantity":1}]}')
+              echo "$out" | grep -q '"id"' && { echo "PayPal order created OK (unpaid): $out"; exit 0; }
+              echo "create failed: $out"; exit 1
+            fi
+            echo "try $i: $pv"; sleep 15
           done
           exit 1
