@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Star, Truck, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Truck, ShieldCheck } from 'lucide-react';
 
 const hero = {
   tagline: 'New Collection 2026',
@@ -51,11 +51,6 @@ export function HeroSlider() {
                 <ArrowRight style={{ width: '18px', height: '18px' }} />
               </Link>
               <div className="hero-rating">
-                <div style={{ display: 'flex', gap: '2px' }}>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
-                  ))}
-                </div>
                 <span style={{ fontSize: '13px', opacity: 0.9 }}>Curated for organized living</span>
               </div>
             </div>

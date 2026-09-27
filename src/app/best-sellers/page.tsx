@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Star, Heart, ShoppingCart, TrendingUp } from 'lucide-react';
+import { Home, ChevronRight, Heart, ShoppingCart, TrendingUp } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
@@ -9,11 +9,11 @@ import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Sesoris Best Sellers | Top-Rated Home Organizers',
-  description: 'Shop Sesoris best sellers, from storage racks to kitchen organizers our customers choose most often.',
+  description: 'Shop Sesoris best sellers, our top picks in storage racks, kitchen organizers, and desk organizers.',
   alternates: selfReferencingAlternates('/best-sellers'),
   openGraph: {
     title: 'Sesoris Best Sellers | Top-Rated Home Organizers | Sesoris',
-    description: 'Shop Sesoris best sellers, from storage racks to kitchen organizers our customers choose most often.',
+    description: 'Shop Sesoris best sellers, our top picks in storage racks, kitchen organizers, and desk organizers.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
@@ -57,7 +57,7 @@ export default function BestSellersPage() {
             Best Sellers
           </h1>
           <p style={{ color: '#5F6873', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
-            Our customers' favorites with the best ratings and reviews
+            Our top picks for an organized home
           </p>
         </div>
 
@@ -118,10 +118,6 @@ export default function BestSellersPage() {
                 >
                   {product.name}
                 </Link>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '8px' }}>
-                  <Star style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
-                  <span style={{ fontSize: '13px', color: '#5F6873' }}>{product.rating} ({product.reviewCount} reviews)</span>
-                </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span style={{ fontSize: '16px', fontWeight: 700, color: '#1B5E3B' }}>
                     {formatPrice(product.price)}
@@ -161,7 +157,7 @@ export default function BestSellersPage() {
             Why Shop Our Best Sellers?
           </h2>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
-            Our best-selling products are chosen by thousands of customers who value quality, functionality, and design. Each product on this list has earned its place through consistently high ratings, repeat purchases, and positive reviews from real customers.
+            These are the pieces we recommend first: practical storage racks, kitchen organizers, and desk organizers chosen for everyday function and durable materials.
           </p>
           <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
             At Sesoris, we curate our best sellers from categories including home organization, kitchen storage, desk accessories, and lifestyle products. Whether you are looking to declutter your home, organize your kitchen, or find the perfect gift, our top-rated products deliver exceptional value.

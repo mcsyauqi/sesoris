@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, ShoppingCart, Check, Tag, Star, Package, Truck, Shield, RefreshCw, Plus } from 'lucide-react';
+import { Home, ChevronRight, ShoppingCart, Check, Tag, Package, Truck, Shield, RefreshCw, Plus } from 'lucide-react';
 import type { Bundle, Product } from '@/types';
 import { formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
@@ -153,20 +153,6 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                       >
                         {product.name}
                       </Link>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '4px', margin: '4px 0' }}>
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            style={{
-                              width: '12px',
-                              height: '12px',
-                              fill: i < Math.round(product.rating) ? '#FFC107' : '#E9ECEF',
-                              stroke: 'none',
-                            }}
-                          />
-                        ))}
-                        <span style={{ fontSize: '12px', color: '#5F6873' }}>({product.reviewCount})</span>
-                      </div>
                       <p style={{ fontSize: '13px', color: '#5F6873', margin: 0, lineHeight: '1.4' }}>
                         {product.description.substring(0, 80)}...
                       </p>

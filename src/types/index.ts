@@ -10,8 +10,6 @@ export interface Product {
   compareAtPrice?: number;
   images: { url: string; alt: string }[];
   category: Category;
-  rating: number;
-  reviewCount: number;
   inStock: boolean;
   isNew?: boolean;
   isFeatured?: boolean;
@@ -29,15 +27,6 @@ export interface Category {
 export interface CartItem {
   product: Product;
   quantity: number;
-}
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  avatar: string;
-  content: string;
-  rating: number;
-  verified: boolean;
 }
 
 export interface Review {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Star, Heart, ShoppingCart, Percent } from 'lucide-react';
+import { Home, ChevronRight, Heart, ShoppingCart, Percent } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice, calculateDiscount } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
@@ -115,10 +115,6 @@ export default function OnSalePage() {
                   >
                     {product.name}
                   </Link>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '8px' }}>
-                    <Star style={{ width: '14px', height: '14px', fill: '#FFC107', color: '#FFC107' }} />
-                    <span style={{ fontSize: '13px', color: '#5F6873' }}>{product.rating} ({product.reviewCount})</span>
-                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div>
                       <span style={{ fontSize: '16px', fontWeight: 700, color: '#DC3545' }}>

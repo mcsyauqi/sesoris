@@ -6,7 +6,6 @@ import {
   FeaturedProducts,
   NewsletterSection,
   AboutSection,
-  TestimonialsSection,
   HomeFAQSection,
 } from '@/components/home';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
@@ -31,7 +30,6 @@ export default function HomePage() {
       <FeaturedProducts />
       <NewsletterSection />
       <AboutSection />
-      <TestimonialsSection />
       <HomeFAQSection />
     </>
   );

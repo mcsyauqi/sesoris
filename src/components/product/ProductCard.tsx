@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, ShoppingCart, Star } from 'lucide-react';
+import { Heart, ShoppingCart } from 'lucide-react';
 import { formatPrice, calculateDiscount } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
 import { useCartStore } from '@/stores/cart-store';
@@ -159,23 +159,6 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           {product.name}
         </span>
       </Link>
-
-      <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '6px' }}>
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            style={{
-              width: '12px',
-              height: '12px',
-              fill: i < Math.floor(product.rating) ? '#FFC107' : '#E9ECEF',
-              color: i < Math.floor(product.rating) ? '#FFC107' : '#E9ECEF'
-            }}
-          />
-        ))}
-        <span style={{ fontSize: '12px', color: '#5F6873', marginLeft: '4px' }}>
-          ({product.reviewCount})
-        </span>
-      </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <span style={{ fontWeight: 600, fontSize: '15px', color: '#1B5E3B' }}>

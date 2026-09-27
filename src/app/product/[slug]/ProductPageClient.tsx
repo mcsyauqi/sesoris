@@ -31,7 +31,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const reviewRating =
     reviewCount > 0
       ? Number((productReviews.reduce((sum, r) => sum + r.rating, 0) / reviewCount).toFixed(1))
-      : product.rating;
+      : 0;
   const addToCart = useCartStore((s) => s.addItem);
   const { toggleItem, isInWishlist } = useWishlistStore();
 

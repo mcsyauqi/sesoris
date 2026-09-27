@@ -1,4 +1,4 @@
-import type { Product, Category, Testimonial, Review } from '@/types';
+import type { Product, Category, Review } from '@/types';
 
 export const categories: Category[] = [
   {
@@ -113,8 +113,6 @@ This organizer is perfect for home offices, workplaces, or as a gift for colleag
       { url: '/images/products/bamboo-desk-organizer-detail.webp', alt: 'Bamboo Desk Organizer material detail' },
     ],
     category: categories[0],
-    rating: 4.7,
-    reviewCount: 3,
     inStock: true,
     isFeatured: true,
   },
@@ -156,8 +154,6 @@ The ergonomic design with an anti-slip grip makes it easy to carry this bottle a
       { url: '/images/products/smart-water-bottle-detail.webp', alt: 'Smart Water Bottle cap detail' },
     ],
     category: categories[1],
-    rating: 4.6,
-    reviewCount: 24,
     inStock: true,
     isNew: true,
     isFeatured: true,
@@ -202,8 +198,6 @@ The 360° flexible neck allows you to direct light to the exact position needed.
       { url: '/images/products/led-desk-lamp-workspace.webp', alt: 'LED Desk Lamp on workspace' },
     ],
     category: categories[5],
-    rating: 4.8,
-    reviewCount: 31,
     inStock: true,
     isFeatured: true,
   },
@@ -246,8 +240,6 @@ Perfect for various occasions: birthdays, anniversaries, Mother's Day, or simply
       { url: '/images/products/premium-gift-box-contents.webp', alt: 'Premium Gift Box Set contents' },
     ],
     category: categories[3],
-    rating: 4.7,
-    reviewCount: 18,
     inStock: true,
     isFeatured: true,
   },
@@ -289,8 +281,6 @@ Hand-stitched with waxed thread for long-lasting durability. The leather will de
       { url: '/images/products/minimalist-wallet-leather.webp', alt: 'Minimalist Wallet leather texture' },
     ],
     category: categories[4],
-    rating: 4.5,
-    reviewCount: 42,
     inStock: true,
     isFeatured: true,
   },
@@ -336,8 +326,6 @@ Battery lasts up to 8 hours per charge with ANC on, or 10 hours with ANC off. Th
       { url: '/images/products/wireless-earbuds-with-case.webp', alt: 'Wireless Earbuds Pro with charging case' },
     ],
     category: categories[5],
-    rating: 4.6,
-    reviewCount: 28,
     inStock: true,
     isNew: true,
     isFeatured: true,
@@ -383,8 +371,6 @@ The jar is made from BPA-free Tritan that is food-safe, impact-resistant, and do
       { url: '/images/products/portable-blender-ingredients.webp', alt: 'Portable Blender with ingredients' },
     ],
     category: categories[1],
-    rating: 4.7,
-    reviewCount: 35,
     inStock: true,
     isNew: true,
   },
@@ -428,8 +414,6 @@ Auto shut-off when the water runs out protects the unit from damage and ensures 
       { url: '/images/products/aromatherapy-diffuser-candles.webp', alt: 'Aromatherapy Diffuser with candles' },
     ],
     category: categories[4],
-    rating: 4.8,
-    reviewCount: 22,
     inStock: true,
   },
   {
@@ -471,8 +455,6 @@ The high-temperature firing process produces strong and durable ceramic. The smo
       { url: '/images/products/ceramic-plant-pot-with-plants.webp', alt: 'Ceramic Plant Pot Set with plants' },
     ],
     category: categories[0],
-    rating: 4.6,
-    reviewCount: 19,
     inStock: true,
   },
   {
@@ -515,8 +497,6 @@ The stainless steel body with G10 insets provides a secure grip even when wet. C
       { url: '/images/products/multi-tool-knife-blade.webp', alt: 'Multi-Tool Pocket Knife blade close-up' },
     ],
     category: categories[2],
-    rating: 4.5,
-    reviewCount: 27,
     inStock: true,
     isNew: true,
   },
@@ -560,8 +540,6 @@ A transparent label holder on the front allows you to identify contents easily w
       { url: '/images/products/storage-bins-cabinet.webp', alt: 'Foldable Storage Bins in cabinet' },
     ],
     category: categories[0],
-    rating: 4.4,
-    reviewCount: 1,
     inStock: true,
   },
   {
@@ -603,8 +581,6 @@ The complete set includes: electric opener, charging base/stand, foil cutter for
       { url: '/images/products/wine-opener-opening.webp', alt: 'Electric Wine Opener opening a bottle' },
     ],
     category: categories[1],
-    rating: 4.7,
-    reviewCount: 15,
     inStock: true,
   },
   {
@@ -645,8 +621,6 @@ Easy to assemble without tools, set up in just 5 minutes. The sturdy structure c
       { url: '/images/products/dish-rack-with-dishes.webp', alt: 'Dish Rack with plates and glasses' },
     ],
     category: categories[1],
-    rating: 5.0,
-    reviewCount: 2,
     inStock: true,
     isFeatured: true,
     isNew: true,
@@ -689,8 +663,6 @@ The slim dimensions (60 x 30 cm footprint) make this rack ideal for tight spaces
       { url: '/images/products/shoe-rack-with-shoes.webp', alt: 'Shoe Rack with various shoes' },
     ],
     category: categories[0],
-    rating: 5.0,
-    reviewCount: 1,
     inStock: true,
     isFeatured: true,
     isNew: true,
@@ -732,8 +704,6 @@ Perfect for displaying decorative plants, favorite books, family photos, or deco
       { url: '/images/products/floating-shelf-plants.webp', alt: 'Floating Shelf with plant decorations' },
     ],
     category: categories[0],
-    rating: 5.0,
-    reviewCount: 1,
     inStock: true,
     isNew: true,
   },
@@ -774,8 +744,6 @@ N52-grade neodymium magnets, the highest grade, can hold up to 500 grams per poi
       { url: '/images/products/key-holder-entryway.webp', alt: 'Key Holder in home entryway' },
     ],
     category: categories[0],
-    rating: 5.0,
-    reviewCount: 1,
     inStock: true,
     isFeatured: true,
     isNew: true,
@@ -818,8 +786,6 @@ The feet feature adjustable levelers for uneven floors. The compact dimensions (
       { url: '/images/products/bookshelf-books.webp', alt: 'Bookshelf with book collection' },
     ],
     category: categories[0],
-    rating: 4.6,
-    reviewCount: 14,
     inStock: true,
     isNew: true,
   },
@@ -859,8 +825,6 @@ Whether you're a frequent flyer, a student, or simply someone who values order a
       { url: '/images/blog/bag-organizer-travel-section2.webp', alt: 'Storage Pouch in use' },
     ],
     category: categories[6],
-    rating: 4.6,
-    reviewCount: 12,
     inStock: true,
     isNew: true,
   },
@@ -900,8 +864,6 @@ Use it as your everyday bag, a reusable grocery tote, a gym bag, or a weekend ca
       { url: '/images/blog/tas-travel-lipat-section2.webp', alt: 'Canvas Tote in daily use' },
     ],
     category: categories[6],
-    rating: 4.7,
-    reviewCount: 19,
     inStock: true,
     isNew: true,
   },
@@ -941,8 +903,6 @@ TSA-compliant sizing means it's approved for carry-on use. Premium materials thr
       { url: '/images/blog/travel-accessories-section2.webp', alt: 'Travel Toiletry Bag rolled up' },
     ],
     category: categories[8],
-    rating: 4.8,
-    reviewCount: 27,
     inStock: true,
     isFeatured: true,
   },
@@ -982,8 +942,6 @@ Use them to organise cables and adapters, sort makeup and skincare, pack snacks 
       { url: '/images/blog/packing-cubes-section2.webp', alt: 'Mesh Pouch size comparison' },
     ],
     category: categories[8],
-    rating: 4.5,
-    reviewCount: 34,
     inStock: true,
   },
   {
@@ -1022,8 +980,6 @@ Beyond travel, use it in your bedroom closet to organise seasonal items, scarves
       { url: '/images/blog/perlengkapan-traveling-section2.webp', alt: 'Hanging Organizer folded for packing' },
     ],
     category: categories[8],
-    rating: 4.6,
-    reviewCount: 21,
     inStock: true,
     isFeatured: true,
   },
@@ -1063,132 +1019,17 @@ Available in bold cobalt blue, this bag is as much a style statement as it is a 
       { url: '/images/blog/tas-outdoor-section2.webp', alt: 'Gym Bag in use at the gym' },
     ],
     category: categories[8],
-    rating: 4.4,
-    reviewCount: 16,
     inStock: true,
     isNew: true,
   },
 ];
 
-export const testimonials: Testimonial[] = [
-  {
-    id: '1',
-    name: 'Sarah M.',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
-    content: 'Outstanding product quality! Fast shipping and very helpful customer service. Will definitely order again!',
-    rating: 5,
-    verified: true,
-  },
-  {
-    id: '2',
-    name: 'James K.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
-    content: 'Found the perfect gift for my wife here. Beautiful packaging and the product exceeded expectations.',
-    rating: 5,
-    verified: true,
-  },
-  {
-    id: '3',
-    name: 'Emily R.',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-    content: 'Love the product variety. Everything is well curated and reasonably priced.',
-    rating: 5,
-    verified: true,
-  },
-];
-
-// ── Product Reviews ──────────────────────────────────────────────────────────
-export const reviews: Review[] = [
-  // Bamboo Desk Organizer
-  {
-    id: 'r1', productId: '1', name: 'Rina Dewi',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face',
-    rating: 5, title: 'Best organizer I have ever bought!',
-    content: 'The material feels really solid, sturdy with just the right weight. I have used it for 3 months and there are no signs of wear. My desk is so much tidier now. Definitely worth it for the price!',
-    verified: true, date: '2026-03-10', helpful: 12, location: 'Jakarta',
-  },
-  {
-    id: 'r2', productId: '1', name: 'Budi Santoso',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face',
-    rating: 5, title: 'Premium quality, fast shipping',
-    content: 'The packaging was very secure, the product arrived in perfect condition. The minimalist design fits my desk setup perfectly. The compartments are plenty for all my stationery.',
-    verified: true, date: '2026-03-05', helpful: 8, location: 'Surabaya',
-  },
-  {
-    id: 'r3', productId: '1', name: 'Maya Putri',
-    rating: 4, title: 'Great, just missing one slot',
-    content: 'Overall very satisfied. Real bamboo, no weird smell. I just wish there was an extra slot for a long ruler. But for this price it is already excellent!',
-    verified: true, date: '2026-02-28', helpful: 5, location: 'Bandung',
-  },
-  // Stainless Steel Dish Rack
-  {
-    id: 'r4', productId: '13', name: 'Sari Indah',
-    avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop&crop=face',
-    rating: 5, title: 'The dish rack of my dreams, rust-proof!',
-    content: 'I have used it for 4 months and there is no rust at all. Such a difference from the cheap dish rack I had before. The capacity is huge, it fits a lot of plates at once. The drainage is great too, no water pooling.',
-    verified: true, date: '2026-03-15', helpful: 18, location: 'Jakarta',
-  },
-  {
-    id: 'r5', productId: '13', name: 'Hendri K.',
-    rating: 5, title: 'Worth every penny!',
-    content: 'My wife loved it the moment she saw it. Looks expensive but the price is reasonable. Thick stainless steel, does not wobble. Easy to set up too, no special tools needed.',
-    verified: true, date: '2026-03-01', helpful: 9, location: 'Medan',
-  },
-  // Shoe Rack
-  {
-    id: 'r6', productId: '14', name: 'Tika Rahayu',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face',
-    rating: 5, title: 'Best solution for a narrow hallway',
-    content: 'My apartment is small so space is very limited. This shoe rack is perfect! The 5 tiers fit about 20 pairs of shoes. Assembly was easy, took just 15 minutes. Sturdy material, no wobbling.',
-    verified: true, date: '2026-03-18', helpful: 14, location: 'Depok',
-  },
-  // Floating Shelf
-  {
-    id: 'r7', productId: '15', name: 'Dian Pratiwi',
-    rating: 5, title: 'Beautiful shelf, premium look',
-    content: 'I mounted it in the living room to hold plants and books. It looks gorgeous! Sturdy too, I have loaded it with thick books plus a small plant pot and there are no signs of sagging. Highly recommended!',
-    verified: true, date: '2026-03-12', helpful: 11, location: 'Yogyakarta',
-  },
-  // Foldable Storage Bins
-  {
-    id: 'r8', productId: '11', name: 'Anto Wijaya',
-    rating: 4, title: 'Practical for bedroom storage',
-    content: 'I love that it folds flat when not in use. The material is strong enough to store clothes. The color is neutral too, fits my bedroom decor. Shipping was fast and secure.',
-    verified: true, date: '2026-02-20', helpful: 7, location: 'Semarang',
-  },
-  // Wireless Earbuds Pro
-  {
-    id: 'r10', productId: '6', name: 'Rizky Firmansyah',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face',
-    rating: 5, title: 'The ANC is incredible, worth every penny!',
-    content: 'I have tried a lot of earbuds in this price range, but these are the winner. The ANC is genuinely effective, it cuts outside noise by up to 70%. The bass is deep but not boomy. The 32-hour total battery life is legit, I have used them daily for 2 weeks now. Highly recommended!',
-    verified: true, date: '2026-03-20', helpful: 23, location: 'Jakarta',
-  },
-  {
-    id: 'r11', productId: '6', name: 'Cindy Octaviani',
-    avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face',
-    rating: 4, title: 'Premium quality, stable connection',
-    content: 'The Bluetooth 5.2 connection is genuinely stable, it never cuts out even with my phone in my pocket. The transparency mode is also really useful when out and about. Minor downside: the touch controls sometimes need a double tap. But overall very satisfied for the price.',
-    verified: true, date: '2026-03-14', helpful: 15, location: 'Bandung',
-  },
-  // Magnetic Key Holder
-  {
-    id: 'r9', productId: '16', name: 'Ayu Lestari',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face',
-    rating: 5, title: 'No more "where are my keys??"',
-    content: 'Looks simple but it is life-changing! I never lose my keys anymore because they now have a permanent spot. The magnet is strong, it holds my keys plus a fairly heavy keychain.',
-    verified: true, date: '2026-03-08', helpful: 16, location: 'Tangerang',
-  },
-];
+// ponytail: kosong sampai ada pembeli nyata. Jangan isi ulasan karangan (FTC fake review rule).
+export const reviews: Review[] = [];
 
 export const getReviewsByProductId = (productId: string) =>
   reviews.filter((r) => r.productId === productId);
 
-export const getAverageRating = (productId: string) => {
-  const productReviews = getReviewsByProductId(productId);
-  if (!productReviews.length) return 0;
-  return productReviews.reduce((sum, r) => sum + r.rating, 0) / productReviews.length;
-};
 
 export const getFeaturedProducts = () => products.filter((p) => p.isFeatured);
 export const getNewArrivals = () => products.filter((p) => p.isNew);
