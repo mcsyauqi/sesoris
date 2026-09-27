@@ -1,0 +1,43 @@
+# Pushes checkout secrets into the Coolify app env and restarts it.
+# Exists because coolify.mcsyauqi.com is not reachable from the office network, but is from GitHub runners.
+name: coolify-env
+
+on:
+  workflow_dispatch:
+    inputs:
+      paypal_env:
+        description: 'PayPal mode'
+        type: choice
+        options: [check, sandbox, live]
+        # check = only list the app's env keys, change nothing
+        default: sandbox
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push env + restart
+        env:
+          COOLIFY: https://coolify.mcsyauqi.com/api/v1
+          TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+          PAYPAL_ENV: ${{ inputs.paypal_env }}
+          PAYPAL_CLIENT_ID: ${{ inputs.paypal_env == 'live' && secrets.PAYPAL_LIVE_CLIENT_ID || secrets.PAYPAL_SANDBOX_CLIENT_ID }}
+          PAYPAL_CLIENT_SECRET: ${{ inputs.paypal_env == 'live' && secrets.PAYPAL_LIVE_CLIENT_SECRET || secrets.PAYPAL_SANDBOX_CLIENT_SECRET }}
+          CJ_API_KEY: ${{ secrets.CJ_API_KEY }}
+        run: |
+          set -euo pipefail
+          H=(-H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -sS --fail-with-body)
+          UUID=$(curl "${H[@]}" "$COOLIFY/applications" | jq -r '[.[] | select((.fqdn // "") | test("sesoris\\.com"))][0].uuid')
+          test -n "$UUID" && test "$UUID" != null || { echo "sesoris app not found"; exit 1; }
+          echo "app: $UUID"
+          echo "env keys before:"; curl "${H[@]}" "$COOLIFY/applications/$UUID/envs" | jq -r '[.[].key] | unique | join(" ")'
+          [ "$PAYPAL_ENV" = check ] && exit 0
+          test -n "$PAYPAL_CLIENT_ID" && test -n "$PAYPAL_CLIENT_SECRET" || { echo "PayPal $PAYPAL_ENV secrets missing"; exit 1; }
+          jq -n --arg a "$PAYPAL_ENV" --arg b "$PAYPAL_CLIENT_ID" --arg c "$PAYPAL_CLIENT_SECRET" --arg d "$CJ_API_KEY" '{data: [
+            {key:"PAYPAL_ENV", value:$a, is_preview:false, is_literal:true},
+            {key:"PAYPAL_CLIENT_ID", value:$b, is_preview:false, is_literal:true},
+            {key:"PAYPAL_CLIENT_SECRET", value:$c, is_preview:false, is_literal:true},
+            {key:"CJ_API_KEY", value:$d, is_preview:false, is_literal:true}]}' > body.json
+          curl "${H[@]}" -X PATCH "$COOLIFY/applications/$UUID/envs/bulk" --data @body.json | jq -c 'if type=="array" then map(.key) else . end'
+          rm body.json
+          curl "${H[@]}" -X POST "$COOLIFY/applications/$UUID/restart" || curl "${H[@]}" "$COOLIFY/applications/$UUID/restart"
