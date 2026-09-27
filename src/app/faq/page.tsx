@@ -86,7 +86,7 @@ const faqSchema = {
       name: 'What payment methods do you accept?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay.',
+        text: 'We accept PayPal and all major credit and debit cards (Visa, Mastercard, American Express). Card payments run through PayPal, and you do not need a PayPal account to pay by card.',
       },
     },
     {

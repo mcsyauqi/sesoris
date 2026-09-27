@@ -3,100 +3,131 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Lock, CreditCard, Truck, ShieldCheck, CheckCircle } from 'lucide-react';
+import { Home, ChevronRight, Truck, ShieldCheck, CheckCircle } from 'lucide-react';
 import { useCartStore } from '@/stores/cart-store';
+import { getProductBySlug } from '@/data/products';
+import { shippingFor, FREE_SHIPPING_MIN } from '@/lib/checkout';
 import { formatPrice } from '@/lib/utils';
 import { getProductImageAlt } from '@/lib/product-image-alt';
-import { createMockTransactionId, trackBeginCheckout, trackPurchase } from '@/lib/analytics';
+import { trackBeginCheckout, trackPurchase } from '@/lib/analytics';
 
-export default function CheckoutPageClient() {
-  const { items, getSubtotal, getItemCount, clearCart } = useCartStore();
-  const [step, setStep] = useState(1);
-  const [placedOrderId, setPlacedOrderId] = useState<string | null>(null);
-  const beginCheckoutFired = useRef(false);
+interface PaypalButtonsApi {
+  Buttons: (opts: Record<string, unknown>) => { render: (el: HTMLElement) => Promise<void>; close?: () => void };
+}
+declare global {
+  interface Window { paypal?: PaypalButtonsApi }
+}
 
-  const subtotal = getSubtotal();
-  const shipping = subtotal > 50 ? 0 : 5.99;
-  const tax = subtotal * 0.08;
-  const total = subtotal + shipping + tax;
+function loadPaypal(clientId: string): Promise<PaypalButtonsApi> {
+  if (window.paypal) return Promise.resolve(window.paypal);
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    // Apple Pay, Google Pay, Venmo and Pay Later are off on purpose: only PayPal and card.
+    s.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(clientId)}&currency=USD&intent=capture&components=buttons&enable-funding=card&disable-funding=venmo,paylater,credit`;
+    s.onload = () => (window.paypal ? resolve(window.paypal) : reject(new Error('PayPal failed to load')));
+    s.onerror = () => reject(new Error('PayPal failed to load'));
+    document.head.appendChild(s);
+  });
+}
 
-  // GA4 begin_checkout: once per checkout page visit that starts with a cart.
+const crumb = (label: string) => (
+  <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+    <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+      <Link href="/" aria-label="Home" style={{ display: 'flex', color: '#5F6873' }}><Home style={{ width: '14px', height: '14px' }} /></Link>
+      <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
+      <span style={{ color: '#212529', fontWeight: 500 }}>{label}</span>
+    </div>
+  </div>
+);
+
+export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: string; sandbox: boolean }) {
+  const { items, clearCart } = useCartStore();
+  const [placed, setPlaced] = useState<{ id: string; total: number } | null>(null);
+  const [error, setError] = useState('');
+  const buttonsRef = useRef<HTMLDivElement>(null);
+  const beginFired = useRef(false);
+
+  // Show current catalog data (price, name) rather than the copy saved in localStorage.
+  const lines = items.flatMap((i) => {
+    const product = getProductBySlug(i.product.slug);
+    return product ? [{ product, quantity: i.quantity }] : [];
+  });
+
+  const subtotal = Math.round(lines.reduce((s, l) => s + l.product.price * l.quantity, 0) * 100) / 100;
+  const shipping = shippingFor(subtotal);
+  const total = subtotal + shipping;
+  const cartKey = lines.map((l) => `${l.product.slug}:${l.quantity}`).join(',');
+
   useEffect(() => {
-    if (beginCheckoutFired.current) return;
-    if (items.length === 0) return;
-    beginCheckoutFired.current = true;
-    trackBeginCheckout(items);
-  }, [items]);
+    if (beginFired.current || lines.length === 0) return;
+    beginFired.current = true;
+    trackBeginCheckout(lines);
+  }, [lines]);
 
-  // Mock order confirmation. There is no payment processor or order backend yet,
-  // so this is the mock success point where GA4 purchase fires.
-  const handlePlaceOrder = () => {
-    if (items.length === 0) return;
-    const transactionId = createMockTransactionId();
-    trackPurchase({ transactionId, cartItems: items, shipping, tax });
-    setPlacedOrderId(transactionId);
-    clearCart();
-  };
+  useEffect(() => {
+    if (!clientId || !cartKey || !buttonsRef.current) return;
+    const el = buttonsRef.current;
+    let buttons: ReturnType<PaypalButtonsApi['Buttons']> | undefined;
+    loadPaypal(clientId)
+      .then((paypal) => {
+        el.innerHTML = '';
+        buttons = paypal.Buttons({
+          style: { layout: 'vertical', shape: 'rect', label: 'pay' },
+          createOrder: async () => {
+            setError('');
+            const res = await fetch('/api/checkout/paypal', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ items: cartKey.split(',').map((p) => ({ slug: p.split(':')[0], quantity: Number(p.split(':')[1]) })) }),
+            });
+            const json = await res.json();
+            if (!res.ok) throw new Error(json.error || 'Payment could not be started.');
+            return json.id as string;
+          },
+          onShippingAddressChange: async (data: { shippingAddress?: { countryCode?: string } }, actions: { reject: (e?: unknown) => Promise<void> }) => {
+            if (data.shippingAddress?.countryCode && data.shippingAddress.countryCode !== 'US') return actions.reject();
+          },
+          onApprove: async (data: { orderID: string }) => {
+            const res = await fetch(`/api/checkout/paypal/${data.orderID}/capture`, { method: 'POST' });
+            const json = await res.json();
+            if (!res.ok) { setError(json.error || 'Payment was not completed.'); return; }
+            trackPurchase({ transactionId: json.orderId, cartItems: lines, shipping, tax: 0 });
+            setPlaced({ id: json.orderId, total: json.total });
+            clearCart();
+          },
+          onError: (err: unknown) => setError(err instanceof Error ? err.message : 'Something went wrong with the payment. Please try again.'),
+        });
+        return buttons.render(el);
+      })
+      .catch((err: Error) => setError(err.message));
+    return () => buttons?.close?.();
+    // lines/shipping are derived from cartKey; re-render buttons only when the cart changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clientId, cartKey]);
 
-  if (placedOrderId) {
+  if (placed) {
     return (
       <>
-        <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
-          <div className="container">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
-                <Home style={{ width: '14px', height: '14px' }} />
-              </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-              <span style={{ color: '#212529', fontWeight: 500 }}>Order Confirmed</span>
-            </div>
-          </div>
-        </div>
-
+        {crumb('Order Confirmed')}
         <div className="container" style={{ padding: '80px 16px', textAlign: 'center' }}>
           <CheckCircle style={{ width: '56px', height: '56px', color: '#1B5E3B', marginBottom: '16px' }} />
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
-            Thank you for your order
-          </h1>
-          <p style={{ color: '#5F6873', marginBottom: '8px' }}>
-            Order reference: <strong style={{ color: '#212529' }}>{placedOrderId}</strong>
-          </p>
-          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
-            A confirmation email with tracking details will follow shortly.
-          </p>
-          <Link href="/shop" className="btn btn-primary">
-            Continue Shopping
-          </Link>
+          <h1 style={{ fontSize: '26px', fontWeight: 600, marginBottom: '12px' }}>Thank you for your order</h1>
+          <p style={{ color: '#5F6873', marginBottom: '8px' }}>Order reference: <strong style={{ color: '#212529' }}>{placed.id}</strong> ({formatPrice(placed.total)})</p>
+          <p style={{ color: '#5F6873', marginBottom: '24px' }}>A confirmation email is on its way. We will send tracking as soon as your order ships from our US warehouse.</p>
+          <Link href="/shop" className="btn btn-primary">Continue Shopping</Link>
         </div>
       </>
     );
   }
 
-  if (items.length === 0) {
+  if (lines.length === 0) {
     return (
       <>
-        <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
-          <div className="container">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
-                <Home style={{ width: '14px', height: '14px' }} />
-              </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-              <span style={{ color: '#212529', fontWeight: 500 }}>Checkout</span>
-            </div>
-          </div>
-        </div>
-
+        {crumb('Checkout')}
         <div className="container" style={{ padding: '80px 16px', textAlign: 'center' }}>
-          <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
-            Your cart is empty
-          </h1>
-          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
-            Add items to your cart before checking out.
-          </p>
-          <Link href="/shop" className="btn btn-primary">
-            Start Shopping
-          </Link>
+          <h1 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '12px' }}>Your cart is empty</h1>
+          <p style={{ color: '#5F6873', marginBottom: '24px' }}>Add items to your cart before checking out.</p>
+          <Link href="/shop" className="btn btn-primary">Start Shopping</Link>
         </div>
       </>
     );
@@ -104,232 +135,47 @@ export default function CheckoutPageClient() {
 
   return (
     <>
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
-        <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
-              <Home style={{ width: '14px', height: '14px' }} />
-            </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <Link href="/cart" style={{ color: '#5F6873' }}>Cart</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Checkout</span>
-          </div>
-        </div>
-      </div>
+      {crumb('Checkout')}
+      <div className="container" style={{ padding: '48px 16px 80px', maxWidth: '640px' }}>
+        <h1 style={{ fontSize: '26px', fontWeight: 600, marginBottom: '24px' }}>Checkout</h1>
+        {sandbox && (
+          <p style={{ background: '#FFF3CD', color: '#664D03', padding: '10px 14px', borderRadius: '8px', fontSize: '14px', marginBottom: '20px' }}>
+            Test mode: payments go to the PayPal sandbox and no real money is charged.
+          </p>
+        )}
 
-      <div className="container" style={{ padding: '48px 16px 80px' }}>
-        <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>Checkout</h1>
-        {/* Progress Steps */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', marginBottom: '48px' }}>
-          {['Shipping', 'Payment', 'Review'].map((label, i) => (
-            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '50%',
-                background: step > i ? '#1B5E3B' : step === i + 1 ? '#1B5E3B' : '#E9ECEF',
-                color: step >= i + 1 ? 'white' : '#5F6873',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 600,
-                fontSize: '14px',
-              }}>
-                {i + 1}
+        <div style={{ background: '#F8F9FA', borderRadius: '16px', padding: '24px', marginBottom: '24px' }}>
+          {lines.map(({ product, quantity }) => (
+            <div key={product.slug} style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
+              <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', position: 'relative', background: 'white', flexShrink: 0 }}>
+                <Image src={product.images[0]?.url} alt={getProductImageAlt(product)} fill style={{ objectFit: 'cover' }} />
               </div>
-              <span style={{ fontWeight: step === i + 1 ? 600 : 400, color: step === i + 1 ? '#212529' : '#5F6873' }}>
-                {label}
-              </span>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: '14px', fontWeight: 500 }}>{product.name}</div>
+                <div style={{ fontSize: '13px', color: '#5F6873' }}>Qty: {quantity}</div>
+              </div>
+              <div style={{ fontWeight: 500 }}>{formatPrice(product.price * quantity)}</div>
             </div>
           ))}
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '48px' }}>
-          {/* Form */}
-          <div>
-            {step === 1 && (
-              <div>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-                  Shipping Information
-                </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
-                  <div>
-                    <label htmlFor="checkout-first-name" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>First Name</label>
-                    <input id="checkout-first-name" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                  </div>
-                  <div>
-                    <label htmlFor="checkout-last-name" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Last Name</label>
-                    <input id="checkout-last-name" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                  </div>
-                </div>
-                <div style={{ marginBottom: '20px' }}>
-                  <label htmlFor="checkout-email" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Email</label>
-                  <input id="checkout-email" type="email" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                </div>
-                <div style={{ marginBottom: '20px' }}>
-                  <label htmlFor="checkout-address" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Address</label>
-                  <input id="checkout-address" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '24px' }}>
-                  <div>
-                    <label htmlFor="checkout-city" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>City</label>
-                    <input id="checkout-city" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                  </div>
-                  <div>
-                    <label htmlFor="checkout-state" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>State</label>
-                    <input id="checkout-state" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                  </div>
-                  <div>
-                    <label htmlFor="checkout-zip-code" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>ZIP Code</label>
-                    <input id="checkout-zip-code" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                  </div>
-                </div>
-                <button onClick={() => setStep(2)} className="btn btn-primary" style={{ width: '100%' }}>
-                  Continue to Payment
-                </button>
-              </div>
-            )}
-
-            {step === 2 && (
-              <div>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-                  Payment Method
-                </h2>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-                  {['Credit Card', 'PayPal', 'Apple Pay'].map((method) => (
-                    <label
-                      key={method}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '12px',
-                        padding: '16px',
-                        border: '1px solid #E9ECEF',
-                        borderRadius: '10px',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      <input type="radio" name="payment" defaultChecked={method === 'Credit Card'} />
-                      <span style={{ fontWeight: 500 }}>{method}</span>
-                    </label>
-                  ))}
-                </div>
-
-                <div style={{ marginBottom: '20px' }}>
-                  <label htmlFor="checkout-card-number" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Card Number</label>
-                  <div style={{ position: 'relative' }}>
-                    <input id="checkout-card-number" type="text" placeholder="1234 5678 9012 3456" style={{ width: '100%', padding: '12px 16px', paddingRight: '48px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                    <CreditCard style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#5F6873' }} />
-                  </div>
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
-                  <div>
-                    <label htmlFor="checkout-expiry-date" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Expiry Date</label>
-                    <input id="checkout-expiry-date" type="text" placeholder="MM/YY" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                  </div>
-                  <div>
-                    <label htmlFor="checkout-cvv" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>CVV</label>
-                    <input id="checkout-cvv" type="text" placeholder="123" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <button onClick={() => setStep(1)} style={{ flex: 1, padding: '14px', border: '1px solid #E9ECEF', borderRadius: '10px', background: 'white', cursor: 'pointer', fontWeight: 500 }}>
-                    Back
-                  </button>
-                  <button onClick={() => setStep(3)} className="btn btn-primary" style={{ flex: 2 }}>
-                    Review Order
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {step === 3 && (
-              <div>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
-                  Review Your Order
-                </h2>
-                <div style={{ background: '#F8F9FA', borderRadius: '12px', padding: '20px', marginBottom: '24px' }}>
-                  <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid #E9ECEF' }}>
-                    <div style={{ fontWeight: 600, marginBottom: '8px' }}>Shipping Address</div>
-                    <div style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.5 }}>
-                      John Doe<br />
-                      123 Main Street<br />
-                      New York, NY 10001
-                    </div>
-                  </div>
-                  <div>
-                    <div style={{ fontWeight: 600, marginBottom: '8px' }}>Payment Method</div>
-                    <div style={{ color: '#5F6873', fontSize: '14px' }}>
-                      Credit Card ending in 3456
-                    </div>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <button onClick={() => setStep(2)} style={{ flex: 1, padding: '14px', border: '1px solid #E9ECEF', borderRadius: '10px', background: 'white', cursor: 'pointer', fontWeight: 500 }}>
-                    Back
-                  </button>
-                  <button onClick={handlePlaceOrder} className="btn btn-primary" style={{ flex: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                    <Lock style={{ width: '16px', height: '16px' }} />
-                    Place Order
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Order Summary */}
-          <div>
-            <div style={{ background: '#F8F9FA', borderRadius: '16px', padding: '24px', position: 'sticky', top: '100px' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '20px' }}>Order Summary ({getItemCount()} items)</h3>
-
-              <div style={{ maxHeight: '240px', overflowY: 'auto', marginBottom: '20px' }}>
-                {items.map((item) => (
-                  <div key={item.product.id} style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
-                    <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', position: 'relative', background: 'white' }}>
-                      <Image src={item.product.images[0]?.url || '/placeholder.jpg'} alt={getProductImageAlt(item.product)} fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: '14px', fontWeight: 500, marginBottom: '4px' }}>{item.product.name}</div>
-                      <div style={{ fontSize: '13px', color: '#5F6873' }}>Qty: {item.quantity}</div>
-                    </div>
-                    <div style={{ fontWeight: 500 }}>{formatPrice(item.product.price * item.quantity)}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '20px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#5F6873' }}>Subtotal</span>
-                  <span>{formatPrice(subtotal)}</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#5F6873' }}>Shipping</span>
-                  <span style={{ color: shipping === 0 ? '#1E7E34' : '#212529' }}>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#5F6873' }}>Tax</span>
-                  <span>{formatPrice(tax)}</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '12px', borderTop: '1px solid #E9ECEF' }}>
-                  <span style={{ fontWeight: 600 }}>Total</span>
-                  <span style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B' }}>{formatPrice(total)}</span>
-                </div>
-              </div>
-
-              {/* Trust Badges */}
-              <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #E9ECEF' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#5F6873', marginBottom: '8px' }}>
-                  <ShieldCheck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />
-                  Secure checkout
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#5F6873' }}>
-                  <Truck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />
-                  Free shipping on orders over $50
-                </div>
-              </div>
+          <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '16px', display: 'grid', gap: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Subtotal</span><span>{formatPrice(subtotal)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Shipping (US only)</span><span>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #E9ECEF', paddingTop: '10px' }}>
+              <span style={{ fontWeight: 600 }}>Total</span><span style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B' }}>{formatPrice(total)}</span>
             </div>
           </div>
+        </div>
+
+        <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Pay with PayPal or card</h2>
+        <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '16px' }}>
+          No PayPal account needed: choose &quot;Debit or Credit Card&quot; to pay by card. Your shipping address is entered in the payment window.
+        </p>
+        {error && <p role="alert" style={{ background: '#F8D7DA', color: '#842029', padding: '10px 14px', borderRadius: '8px', fontSize: '14px', marginBottom: '16px' }}>{error}</p>}
+        {clientId ? <div ref={buttonsRef} style={{ minHeight: '150px' }} /> : <p style={{ color: '#5F6873' }}>Checkout is temporarily unavailable. Please try again shortly.</p>}
+
+        <div style={{ marginTop: '24px', display: 'grid', gap: '8px', fontSize: '13px', color: '#5F6873' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><ShieldCheck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />Payments are processed by PayPal. Sesoris never sees your card number.</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Truck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />Free shipping on orders over ${FREE_SHIPPING_MIN}. Ships from our US warehouse.</div>
         </div>
       </div>
     </>

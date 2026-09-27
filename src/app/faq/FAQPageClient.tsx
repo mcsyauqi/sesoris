@@ -52,7 +52,7 @@ const faqs = [
     questions: [
       {
         q: 'What payment methods do you accept?',
-        a: 'We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay.',
+        a: 'We accept PayPal and all major credit and debit cards (Visa, Mastercard, American Express). Card payments run through PayPal, and you do not need a PayPal account to pay by card.',
       },
       {
         q: 'Is my payment information secure?',

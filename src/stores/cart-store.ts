@@ -68,7 +68,8 @@ export const useCartStore = create<CartState>()(
         get().items.reduce((acc, item) => acc + item.product.price * item.quantity, 0),
     }),
     {
-      name: 'sesoris-cart',
+      // v2: 2026-09-27 catalog change reused product ids, so carts saved before it are dropped.
+      name: 'sesoris-cart-v2',
       // Defer localStorage reads until after the first client render so SSR and
       // hydration produce the same markup on cart-dependent pages.
       skipHydration: true,

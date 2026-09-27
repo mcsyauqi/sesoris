@@ -95,11 +95,8 @@ export default function TermsPage() {
 
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>2.2 Payment Methods</h3>
               <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Credit/Debit Cards (Visa, Mastercard, American Express)</li>
+                <li style={{ marginBottom: '8px' }}>Credit/Debit Cards (Visa, Mastercard, American Express), processed by PayPal</li>
                 <li style={{ marginBottom: '8px' }}>PayPal</li>
-                <li style={{ marginBottom: '8px' }}>Apple Pay and Google Pay</li>
-                <li style={{ marginBottom: '8px' }}>Bank Transfer</li>
-                <li style={{ marginBottom: '8px' }}>Buy Now, Pay Later (for qualifying orders)</li>
               </ul>
             </div>
           </section>

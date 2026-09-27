@@ -37,6 +37,6 @@ export const useWishlistStore = create<WishlistState>()(
       getItemCount: () => get().items.length,
       clearWishlist: () => set({ items: [] }),
     }),
-    { name: 'sesoris-wishlist' }
+    { name: 'sesoris-wishlist-v2' } // v2: dropped pre-2026-09-27 catalog
   )
 );
