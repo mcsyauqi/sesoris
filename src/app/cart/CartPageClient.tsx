@@ -120,6 +120,7 @@ export default function CartPageClient() {
                     <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E9ECEF', borderRadius: '8px' }}>
                       <button
                         onClick={() => updateQuantity(item.product.id, Math.max(1, item.quantity - 1))}
+                        aria-label={`Decrease quantity of ${item.product.name}`}
                         style={{
                           width: '36px',
                           height: '36px',
@@ -136,6 +137,7 @@ export default function CartPageClient() {
                       <span style={{ width: '40px', textAlign: 'center', fontWeight: 500 }}>{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                        aria-label={`Increase quantity of ${item.product.name}`}
                         style={{
                           width: '36px',
                           height: '36px',

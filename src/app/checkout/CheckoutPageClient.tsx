@@ -64,6 +64,7 @@ export default function CheckoutPageClient() {
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
+        <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>Checkout</h1>
         {/* Progress Steps */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', marginBottom: '48px' }}>
           {['Shipping', 'Payment', 'Review'].map((label, i) => (
@@ -99,34 +100,34 @@ export default function CheckoutPageClient() {
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>First Name</label>
-                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <label htmlFor="checkout-first-name" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>First Name</label>
+                    <input id="checkout-first-name" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Last Name</label>
-                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <label htmlFor="checkout-last-name" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Last Name</label>
+                    <input id="checkout-last-name" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
                 </div>
                 <div style={{ marginBottom: '20px' }}>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Email</label>
-                  <input type="email" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                  <label htmlFor="checkout-email" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Email</label>
+                  <input id="checkout-email" type="email" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                 </div>
                 <div style={{ marginBottom: '20px' }}>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Address</label>
-                  <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                  <label htmlFor="checkout-address" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Address</label>
+                  <input id="checkout-address" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '24px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>City</label>
-                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <label htmlFor="checkout-city" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>City</label>
+                    <input id="checkout-city" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>State</label>
-                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <label htmlFor="checkout-state" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>State</label>
+                    <input id="checkout-state" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>ZIP Code</label>
-                    <input type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <label htmlFor="checkout-zip-code" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>ZIP Code</label>
+                    <input id="checkout-zip-code" type="text" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
                 </div>
                 <button onClick={() => setStep(2)} className="btn btn-primary" style={{ width: '100%' }}>
@@ -161,20 +162,20 @@ export default function CheckoutPageClient() {
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Card Number</label>
+                  <label htmlFor="checkout-card-number" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Card Number</label>
                   <div style={{ position: 'relative' }}>
-                    <input type="text" placeholder="1234 5678 9012 3456" style={{ width: '100%', padding: '12px 16px', paddingRight: '48px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <input id="checkout-card-number" type="text" placeholder="1234 5678 9012 3456" style={{ width: '100%', padding: '12px 16px', paddingRight: '48px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                     <CreditCard style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#6C757D' }} />
                   </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Expiry Date</label>
-                    <input type="text" placeholder="MM/YY" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <label htmlFor="checkout-expiry-date" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Expiry Date</label>
+                    <input id="checkout-expiry-date" type="text" placeholder="MM/YY" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>CVV</label>
-                    <input type="text" placeholder="123" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+                    <label htmlFor="checkout-cvv" style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>CVV</label>
+                    <input id="checkout-cvv" type="text" placeholder="123" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: '12px' }}>

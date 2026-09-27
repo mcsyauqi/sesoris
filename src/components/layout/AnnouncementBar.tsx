@@ -18,7 +18,7 @@ export function AnnouncementBar() {
   const { icon: Icon, text } = messages[currentMessage];
 
   return (
-    <div style={{
+    <aside aria-label="Announcement" style={{
       background: '#1B5E3B',
       color: 'white',
       padding: '8px 16px',
@@ -37,6 +37,7 @@ export function AnnouncementBar() {
       </div>
       <button
         onClick={() => setIsVisible(false)}
+        aria-label="Close announcement"
         style={{
           position: 'absolute',
           right: '12px',
@@ -51,6 +52,6 @@ export function AnnouncementBar() {
       >
         <X style={{ width: '16px', height: '16px' }} />
       </button>
-    </div>
+    </aside>
   );
 }
