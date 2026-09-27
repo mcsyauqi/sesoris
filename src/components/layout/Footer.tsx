@@ -274,11 +274,10 @@ export function Footer() {
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
               <span style={{ fontSize: '13px', opacity: 0.7 }}>Payment:</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>BCA</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>Mandiri</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>GoPay</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>OVO</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>DANA</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>PayPal</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>Visa</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>Mastercard</span>
+              <span style={{ fontSize: '12px', fontWeight: 600 }}>Amex</span>
             </div>
           </div>
         </div>

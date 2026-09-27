@@ -58,3 +58,29 @@ export function quote(items: { slug: string; quantity: number }[], coupon?: stri
   const shipping = shippingFor(subtotal);
   return { lines, subtotal, discount, coupon: code, shipping, total: round2(subtotal - discount + shipping) };
 }
+
+// Supplier warehouses are in the US and ship to US addresses only, so the address is collected
+// here (country fixed to US) and handed to PayPal as SET_PROVIDED_ADDRESS: buyers cannot change it.
+export const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'] as const;
+
+export interface ShipTo {
+  name: string;
+  address1: string;
+  address2?: string;
+  city: string;
+  state: string;
+  zip: string;
+  phone?: string;
+}
+
+/** Returns an error message for the first invalid field, or null when the address can be shipped to. */
+export function shipToError(a: Partial<ShipTo>): string | null {
+  if (!a.name || a.name.trim().length < 2 || a.name.length > 50) return 'Please enter the full name for delivery.';
+  if (!a.address1 || a.address1.trim().length < 3 || a.address1.length > 100) return 'Please enter the street address.';
+  if ((a.address2 ?? '').length > 100) return 'Address line 2 is too long.';
+  if (!a.city || a.city.trim().length < 2 || a.city.length > 50) return 'Please enter the city.';
+  if (!a.state || !(US_STATES as readonly string[]).includes(a.state)) return 'Please choose a US state.';
+  if (!a.zip || !/^\d{5}(-\d{4})?$/.test(a.zip.trim())) return 'Please enter a 5-digit US ZIP code.';
+  if (a.phone && !/^[\d\s()+.-]{7,20}$/.test(a.phone)) return 'Please enter a valid phone number.';
+  return null;
+}

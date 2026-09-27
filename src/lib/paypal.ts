@@ -1,4 +1,4 @@
-import type { Quote } from '@/lib/checkout';
+import type { Quote, ShipTo } from '@/lib/checkout';
 
 const BASE = process.env.PAYPAL_ENV === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
 export const isPaypalSandbox = process.env.PAYPAL_ENV !== 'live';
@@ -41,7 +41,7 @@ async function call<T>(path: string, init: { method: 'GET' | 'POST'; body?: unkn
 
 const usd = (n: number) => ({ currency_code: 'USD', value: n.toFixed(2) });
 
-export async function createPaypalOrder(q: Quote): Promise<string> {
+export async function createPaypalOrder(q: Quote, shipTo: ShipTo): Promise<string> {
   const { status, data } = await call<{ id?: string; message?: string }>('/v2/checkout/orders', {
     method: 'POST',
     body: {
@@ -61,9 +61,22 @@ export async function createPaypalOrder(q: Quote): Promise<string> {
             unit_amount: usd(l.product.price),
             category: 'PHYSICAL_GOODS',
           })),
+          shipping: {
+            type: 'SHIPPING',
+            name: { full_name: shipTo.name.trim() },
+            address: {
+              address_line_1: shipTo.address1.trim(),
+              ...(shipTo.address2?.trim() ? { address_line_2: shipTo.address2.trim() } : {}),
+              admin_area_2: shipTo.city.trim(),
+              admin_area_1: shipTo.state,
+              postal_code: shipTo.zip.trim(),
+              country_code: 'US',
+            },
+          },
         },
       ],
-      application_context: { brand_name: 'Sesoris', shipping_preference: 'GET_FROM_FILE', user_action: 'PAY_NOW' },
+      // SET_PROVIDED_ADDRESS: the buyer cannot swap in a non-US address inside the PayPal window.
+      application_context: { brand_name: 'Sesoris', shipping_preference: 'SET_PROVIDED_ADDRESS', user_action: 'PAY_NOW' },
     },
   });
   if (status >= 300 || !data.id) throw new Error(`PayPal create order failed (${status}): ${data.message ?? ''}`);

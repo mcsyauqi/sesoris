@@ -40,6 +40,7 @@ function quoteFromOrder(order: PaypalOrder): Quote {
 
 export async function POST(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  const phoneFromRequest = await _request.json().then((b: { phone?: string }) => b?.phone?.slice(0, 20)).catch(() => undefined);
   if (!/^[A-Z0-9]{10,30}$/.test(id)) return NextResponse.json({ error: 'Invalid order.' }, { status: 400 });
 
   let order: PaypalOrder;
@@ -55,6 +56,7 @@ export async function POST(_request: NextRequest, { params }: { params: Promise<
   // Refuse before any money moves: we only ship from US warehouses to US addresses.
   const address = order.purchase_units[0]?.shipping?.address;
   if (address?.country_code !== 'US') {
+    console.error(`[Checkout] refused non-US order ${id} (country ${address?.country_code ?? 'none'}), not captured`);
     return NextResponse.json({ error: 'We currently ship to US addresses only.' }, { status: 400 });
   }
 
@@ -93,7 +95,7 @@ export async function POST(_request: NextRequest, { params }: { params: Promise<
           city: address.admin_area_2 ?? '',
           state: address.admin_area_1 ?? '',
           zip: address.postal_code ?? '',
-          phone: order.payer?.phone?.phone_number?.national_number,
+          phone: order.payer?.phone?.phone_number?.national_number ?? phoneFromRequest,
           email: buyerEmail,
         },
         products: q.lines.map((l, i) => ({ vid: l.product.cj!.vid, quantity: l.quantity, lineId: `${id}-${i + 1}` })),
