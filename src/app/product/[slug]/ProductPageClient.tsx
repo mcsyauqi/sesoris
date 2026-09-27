@@ -350,8 +350,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Shield style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Warranty</div>
-                  <div style={{ fontSize: '11px', color: '#5F6873' }}>1 Year</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Ships from US</div>
+                  <div style={{ fontSize: '11px', color: '#5F6873' }}>{product.shipDays ? `Est. ${product.shipDays} days` : 'US warehouse'}</div>
                 </div>
               </div>
             </div>
@@ -577,7 +577,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
           <div>
             <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>What&apos;s in the Box</div>
             <div style={{ fontSize: '14px', color: '#5F6873' }}>
-              1x {product.name}, Warranty Card, User Guide
+              {product.specifications?.find((s) => s.label === 'Package contents')?.value ?? `1x ${product.name}`}
             </div>
           </div>
         </div>
