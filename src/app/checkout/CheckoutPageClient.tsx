@@ -44,6 +44,8 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
   const { items, clearCart } = useCartStore();
   const [placed, setPlaced] = useState<{ id: string; total: number } | null>(null);
   const [error, setError] = useState('');
+  const [couponInput, setCouponInput] = useState('');
+  const [coupon, setCoupon] = useState<{ code: string; discount: number } | null>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const beginFired = useRef(false);
 
@@ -55,8 +57,25 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
 
   const subtotal = Math.round(lines.reduce((s, l) => s + l.product.price * l.quantity, 0) * 100) / 100;
   const shipping = shippingFor(subtotal);
-  const total = subtotal + shipping;
+  const discount = coupon?.discount ?? 0;
+  const total = Math.round((subtotal - discount + shipping) * 100) / 100;
   const cartKey = lines.map((l) => `${l.product.slug}:${l.quantity}`).join(',');
+  const cartItems = () => cartKey.split(',').map((p) => ({ slug: p.split(':')[0], quantity: Number(p.split(':')[1]) }));
+
+  // A coupon is priced for one cart; changing the cart drops it so the shown total stays true.
+  useEffect(() => setCoupon(null), [cartKey]);
+
+  const applyCoupon = async () => {
+    setError('');
+    const res = await fetch('/api/checkout/paypal?preview=1', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: cartItems(), coupon: couponInput }),
+    });
+    const json = await res.json();
+    if (!res.ok) { setCoupon(null); setError(json.error || 'This coupon code is not valid.'); return; }
+    setCoupon({ code: couponInput.trim().toUpperCase(), discount: json.discount });
+  };
 
   useEffect(() => {
     if (beginFired.current || lines.length === 0) return;
@@ -78,7 +97,7 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
             const res = await fetch('/api/checkout/paypal', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ items: cartKey.split(',').map((p) => ({ slug: p.split(':')[0], quantity: Number(p.split(':')[1]) })) }),
+              body: JSON.stringify({ items: cartItems(), coupon: coupon?.code }),
             });
             const json = await res.json();
             if (!res.ok) throw new Error(json.error || 'Payment could not be started.');
@@ -103,7 +122,7 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
     return () => buttons?.close?.();
     // lines/shipping are derived from cartKey; re-render buttons only when the cart changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [clientId, cartKey]);
+  }, [clientId, cartKey, coupon?.code]);
 
   if (placed) {
     return (
@@ -159,11 +178,18 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
           ))}
           <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '16px', display: 'grid', gap: '10px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Subtotal</span><span>{formatPrice(subtotal)}</span></div>
+            {discount > 0 && <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Discount ({coupon?.code})</span><span style={{ color: '#1E7E34' }}>-{formatPrice(discount)}</span></div>}
             <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Shipping (US only)</span><span>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span></div>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #E9ECEF', paddingTop: '10px' }}>
               <span style={{ fontWeight: 600 }}>Total</span><span style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B' }}>{formatPrice(total)}</span>
             </div>
           </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
+          <label htmlFor="checkout-coupon" style={{ position: 'absolute', width: '1px', height: '1px', overflow: 'hidden', clip: 'rect(0,0,0,0)' }}>Coupon code</label>
+          <input id="checkout-coupon" value={couponInput} onChange={(e) => setCouponInput(e.target.value)} placeholder="Coupon code" style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
+          <button type="button" onClick={applyCoupon} disabled={!couponInput.trim()} style={{ padding: '10px 18px', borderRadius: '8px', border: '1px solid #1B5E3B', background: 'white', color: '#1B5E3B', fontWeight: 600, cursor: 'pointer' }}>Apply</button>
         </div>
 
         <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Pay with PayPal or card</h2>

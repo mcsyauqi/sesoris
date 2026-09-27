@@ -49,7 +49,11 @@ export async function createPaypalOrder(q: Quote): Promise<string> {
       purchase_units: [
         {
           description: 'Sesoris order',
-          amount: { ...usd(q.total), breakdown: { item_total: usd(q.subtotal), shipping: usd(q.shipping) } },
+          custom_id: q.coupon ? `coupon:${q.coupon}`.slice(0, 127) : undefined,
+          amount: {
+            ...usd(q.total),
+            breakdown: { item_total: usd(q.subtotal), shipping: usd(q.shipping), ...(q.discount > 0 ? { discount: usd(q.discount) } : {}) },
+          },
           items: q.lines.map((l) => ({
             name: l.product.name.slice(0, 127),
             sku: l.product.slug,
@@ -81,6 +85,7 @@ export interface PaypalOrder {
   payer?: { email_address?: string; name?: { given_name?: string; surname?: string }; phone?: { phone_number?: { national_number?: string } } };
   purchase_units: {
     amount: { value: string };
+    custom_id?: string;
     items?: { sku?: string; quantity: string }[];
     shipping?: { name?: { full_name?: string }; address?: PaypalAddress };
     payments?: { captures?: { id: string; status: string; amount: { value: string } }[] };

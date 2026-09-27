@@ -23,13 +23,19 @@ function summaryHtml(q: Quote, orderId: string): string {
     .map((l) => `<tr><td>${esc(l.product.name)} x ${l.quantity}</td><td style="text-align:right">$${l.lineTotal.toFixed(2)}</td></tr>`)
     .join('');
   return `<p>Order <strong>${esc(orderId)}</strong></p><table cellpadding="6">${rows}
+${q.discount > 0 ? `<tr><td>Discount (${esc(q.coupon ?? '')})</td><td style="text-align:right">-$${q.discount.toFixed(2)}</td></tr>` : ''}
 <tr><td>Shipping</td><td style="text-align:right">${q.shipping === 0 ? 'Free' : `$${q.shipping.toFixed(2)}`}</td></tr>
 <tr><td><strong>Total</strong></td><td style="text-align:right"><strong>$${q.total.toFixed(2)}</strong></td></tr></table>`;
 }
 
 function quoteFromOrder(order: PaypalOrder): Quote {
-  const items = (order.purchase_units[0]?.items ?? []).map((i) => ({ slug: i.sku ?? '', quantity: Number(i.quantity) }));
-  return quote(items);
+  const unit = order.purchase_units[0];
+  const items = (unit?.items ?? []).map((i) => ({ slug: i.sku ?? '', quantity: Number(i.quantity) }));
+  const coupon = unit?.custom_id?.startsWith('coupon:') ? unit.custom_id.slice(7) : undefined;
+  const q = quote(items, coupon);
+  // The amount PayPal will charge must match our own price for these items.
+  if (Math.abs(Number(unit?.amount.value) - q.total) > 0.001) throw new Error(`Amount mismatch: ${unit?.amount.value} vs ${q.total}`);
+  return q;
 }
 
 export async function POST(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
