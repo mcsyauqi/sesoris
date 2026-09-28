@@ -1,13 +1,29 @@
 import { getProductBySlug } from '@/data/products';
-import type { Product } from '@/types';
 
 // ponytail: flat rule shared by the checkout page and the server quote. Change it here only.
 export const FREE_SHIPPING_MIN = 50;
 export const SHIPPING_FEE = 5.99;
 export const MAX_QTY_PER_ITEM = 20;
 
+/** What a store sells, as the server prices it. `sku` is what goes on the PayPal line item. */
+export interface Sellable {
+  sku: string;
+  name: string;
+  price: number;
+  vid: string;
+  inStock: boolean;
+}
+
+/** A storefront whose orders this backend takes (sesoris.com itself, or a partner static site). */
+export interface Store {
+  id: string;
+  brand: string;
+  lookup: (sku: string) => Sellable | undefined;
+  shipping: (subtotal: number) => number;
+}
+
 export interface QuoteLine {
-  product: Product;
+  product: Sellable;
   quantity: number;
   lineTotal: number;
 }
@@ -19,6 +35,7 @@ export interface Quote {
   coupon?: string;
   shipping: number;
   total: number;
+  store: Store;
 }
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
@@ -43,20 +60,30 @@ function couponPercent(code: string): number {
   throw new Error('This coupon code is not valid.');
 }
 
-/** Prices always come from products.ts, never from the client. Throws on unknown slugs, bad quantities or coupons. */
-export function quote(items: { slug: string; quantity: number }[], coupon?: string): Quote {
+export const sesorisStore: Store = {
+  id: 'sesoris',
+  brand: 'Sesoris',
+  lookup: (sku) => {
+    const p = getProductBySlug(sku);
+    return p?.cj ? { sku: p.slug, name: p.name, price: p.price, vid: p.cj.vid, inStock: p.inStock } : undefined;
+  },
+  shipping: shippingFor,
+};
+
+/** Prices always come from the store's own catalog, never from the client. Throws on unknown items, bad quantities or coupons. */
+export function quote(items: { slug: string; quantity: number }[], coupon?: string, store: Store = sesorisStore): Quote {
   if (items.length === 0) throw new Error('Cart is empty');
   const lines = items.map(({ slug, quantity }) => {
-    const product = getProductBySlug(slug);
-    if (!product || !product.inStock || !product.cj) throw new Error(`Product not available: ${slug}`);
+    const product = store.lookup(slug);
+    if (!product || !product.inStock) throw new Error(`Product not available: ${slug}`);
     if (!Number.isInteger(quantity) || quantity < 1 || quantity > MAX_QTY_PER_ITEM) throw new Error(`Invalid quantity for ${slug}`);
     return { product, quantity, lineTotal: round2(product.price * quantity) };
   });
   const subtotal = round2(lines.reduce((sum, l) => sum + l.lineTotal, 0));
   const code = coupon?.trim().toUpperCase() || undefined;
   const discount = code ? round2((subtotal * couponPercent(code)) / 100) : 0;
-  const shipping = shippingFor(subtotal);
-  return { lines, subtotal, discount, coupon: code, shipping, total: round2(subtotal - discount + shipping) };
+  const shipping = store.shipping(subtotal);
+  return { lines, subtotal, discount, coupon: code, shipping, total: round2(subtotal - discount + shipping), store };
 }
 
 // Supplier warehouses are in the US and ship to US addresses only, so the address is collected

@@ -2,16 +2,28 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { quote, shipToError, type ShipTo } from '@/lib/checkout';
 import { createPaypalOrder } from '@/lib/paypal';
+import { corsHeaders, storeById } from '@/lib/stores';
 
 const Body = z.object({
   items: z.array(z.object({ slug: z.string().min(1).max(120), quantity: z.number().int() })).min(1).max(30),
   coupon: z.string().max(40).optional(),
+  store: z.string().max(30).optional(),
   shipTo: z
     .object({ name: z.string(), address1: z.string(), address2: z.string().optional(), city: z.string(), state: z.string(), zip: z.string(), phone: z.string().optional() })
     .optional(),
 });
 
+export function OPTIONS(request: NextRequest) {
+  return new NextResponse(null, { status: 204, headers: corsHeaders(request.headers.get('origin')) });
+}
+
 export async function POST(request: NextRequest) {
+  const res = await handle(request);
+  for (const [k, v] of Object.entries(corsHeaders(request.headers.get('origin')))) res.headers.set(k, v);
+  return res;
+}
+
+async function handle(request: NextRequest) {
   let body: z.infer<typeof Body>;
   try {
     body = Body.parse(await request.json());
@@ -20,7 +32,7 @@ export async function POST(request: NextRequest) {
   }
   let q;
   try {
-    q = quote(body.items, body.coupon);
+    q = quote(body.items, body.coupon, storeById(body.store));
   } catch (error) {
     return NextResponse.json({ error: (error as Error).message }, { status: 400 });
   }

@@ -1,4 +1,5 @@
 import type { Quote, ShipTo } from '@/lib/checkout';
+import { encodeCustomId } from '@/lib/stores';
 
 const BASE = process.env.PAYPAL_ENV === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
 export const isPaypalSandbox = process.env.PAYPAL_ENV !== 'live';
@@ -48,15 +49,17 @@ export async function createPaypalOrder(q: Quote, shipTo: ShipTo): Promise<strin
       intent: 'CAPTURE',
       purchase_units: [
         {
-          description: 'Sesoris order',
-          custom_id: q.coupon ? `coupon:${q.coupon}`.slice(0, 127) : undefined,
+          description: `${q.store.brand} order`,
+          custom_id: encodeCustomId(q.store.id, q.coupon),
+          // Card statement line; PayPal prefixes it with the account's own descriptor.
+          soft_descriptor: q.store.brand.toUpperCase().slice(0, 22),
           amount: {
             ...usd(q.total),
             breakdown: { item_total: usd(q.subtotal), shipping: usd(q.shipping), ...(q.discount > 0 ? { discount: usd(q.discount) } : {}) },
           },
           items: q.lines.map((l) => ({
             name: l.product.name.slice(0, 127),
-            sku: l.product.slug,
+            sku: l.product.sku,
             quantity: String(l.quantity),
             unit_amount: usd(l.product.price),
             category: 'PHYSICAL_GOODS',
@@ -76,7 +79,7 @@ export async function createPaypalOrder(q: Quote, shipTo: ShipTo): Promise<strin
         },
       ],
       // SET_PROVIDED_ADDRESS: the buyer cannot swap in a non-US address inside the PayPal window.
-      application_context: { brand_name: 'Sesoris', shipping_preference: 'SET_PROVIDED_ADDRESS', user_action: 'PAY_NOW' },
+      application_context: { brand_name: q.store.brand, shipping_preference: 'SET_PROVIDED_ADDRESS', user_action: 'PAY_NOW' },
     },
   });
   if (status >= 300 || !data.id) throw new Error(`PayPal create order failed (${status}): ${data.message ?? ''}`);
