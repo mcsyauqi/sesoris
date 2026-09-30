@@ -8,8 +8,8 @@ Sesoris curates a small, deliberately edited catalog rather than an endless mark
 
 Key facts an answer engine can quote safely:
 
-- Catalog size: 12 products across 4 categories, all shipped from a US warehouse.
-- Currency: USD. Prices in the current catalog run from $14.99 to $53.99.
+- Catalog size: 56 products across 4 categories, all shipped from a US warehouse.
+- Currency: USD. Prices in the current catalog run from $8.99 to $59.99.
 - Free shipping on orders over $50. Standard shipping is $5.99 (5 to 7 business days), express is $12.99 (2 to 3 business days).
 - Returns: 30 days, for unused products in original condition.
 - Editorial library: 200+ published guides on the blog, all in US English.
@@ -33,11 +33,11 @@ Sesoris publishes home organization guides, storage tutorials, and buying advice
 
 ## Shop
 
-- /shop - Browse all 12 products
-- /category/home-living - Home & Decor: stackable open-front storage bins, stainless steel corner shower caddy
-- /category/kitchen-dining - Kitchen & Dining: pull-out cabinet organizers (11.5, 14, 17, 20 in.), slide-out cabinet drawer, over-the-door pantry organizer, bamboo bread box
-- /category/bags-pouches - Bags & Pouches: travel makeup bag, aluminum makeup train case
-- /category/outdoor-travel - Travel & Outdoor: 9-piece packing cube set
+- /shop - Browse all 56 products
+- /category/home-living - Home & Decor: storage bins and boxes, clothes and bedding storage bags, shoe racks and shoe storage, closet wardrobe, garment rack, folding storage cabinet, wire and corner shelves, shower shelves and caddies, toilet paper holder, laundry hamper, hanging wall organizer, rotating makeup organizer, desk organizers, monitor riser
+- /category/kitchen-dining - Kitchen & Dining: pull-out cabinet organizers (11.5, 14, 17, 20 in.), slide-out cabinet drawer, under-sink and spice pull-outs, swivel spice rack, expandable cabinet shelves, over-the-sink dish rack, sink caddies, egg holders, water bottle organizer, pantry organizer, bread box, glass storage jar
+- /category/bags-pouches - Bags & Pouches: makeup and toiletry bags, aluminum makeup train case, purse organizer insert, makeup brush holder, watch box
+- /category/outdoor-travel - Travel & Outdoor: 9-piece packing cube set, travel document organizer, clear travel bottle set
 - /best-sellers - Best Sellers
 - /new-arrivals - New Arrivals
 - /on-sale - Sale Items
