@@ -137,6 +137,7 @@ export default function RootLayout({
                 'https://www.instagram.com/sesoris_com',
                 'https://www.facebook.com/sesoris',
                 'https://www.tiktok.com/@sesoris',
+                'https://www.youtube.com/@sesoris',
               ],
             }),
           }}
