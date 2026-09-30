@@ -504,6 +504,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const revisionMarker = {
     'floating-shelf-ideas': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-organization-systems': 'sesoris-2026-08-27-scheduled-articles-v3',
+    'garage-storage-solutions-costco-complete-review-buying-guide-2026': 'sesoris-2026-09-30-garage-citation-538d172',
     'tool-storage-organization': 'sesoris-2026-08-27-scheduled-articles-v3',
     'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v2',
