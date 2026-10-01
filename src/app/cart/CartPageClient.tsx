@@ -46,14 +46,14 @@ export default function CartPageClient() {
     return (
       <>
         {/* Breadcrumb */}
-        <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+        <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
           <div className="container">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+              <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-              <span style={{ color: '#212529', fontWeight: 500 }}>Cart</span>
+              <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+              <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Cart</span>
             </div>
           </div>
         </div>
@@ -63,18 +63,18 @@ export default function CartPageClient() {
             width: '80px',
             height: '80px',
             borderRadius: '50%',
-            background: '#F8F9FA',
+            background: 'var(--surface-2)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 24px',
           }}>
-            <ShoppingBag style={{ width: '32px', height: '32px', color: '#5F6873' }} />
+            <ShoppingBag style={{ width: '32px', height: '32px', color: 'var(--ink-muted)' }} />
           </div>
-          <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>
             Your cart is empty
           </h1>
-          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--ink-muted)', marginBottom: '24px' }}>
             You have not added any products yet.
           </p>
           <Link href="/shop" className="btn btn-primary">
@@ -88,20 +88,20 @@ export default function CartPageClient() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Cart ({getItemCount()} items)</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Cart ({getItemCount()} items)</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '32px' }}>
+        <h1 style={{ fontSize: '32px', fontWeight: 700, color: 'var(--ink)', marginBottom: '32px' }}>
           Shopping Cart
         </h1>
 
@@ -116,26 +116,26 @@ export default function CartPageClient() {
                   gridTemplateColumns: '100px 1fr auto',
                   gap: '20px',
                   padding: '24px 0',
-                  borderBottom: '1px solid #E9ECEF',
+                  borderBottom: '1px solid var(--line)',
                 }}
               >
-                <div style={{ width: '100px', height: '100px', borderRadius: '12px', overflow: 'hidden', position: 'relative', background: '#F8F9FA' }}>
+                <div style={{ width: '100px', height: '100px', borderRadius: '12px', overflow: 'hidden', position: 'relative', background: 'var(--surface-2)' }}>
                   <Image src={item.product.images[0]?.url || '/placeholder.jpg'} alt={getProductImageAlt(item.product)} fill style={{ objectFit: 'cover' }} />
                 </div>
 
                 <div>
                   <Link
                     href={`/product/${item.product.slug}`}
-                    style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '4px', display: 'block' }}
+                    style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '4px', display: 'block' }}
                   >
                     {item.product.name}
                   </Link>
-                  <div style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '12px' }}>
                     {formatPrice(item.product.price)}
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #E9ECEF', borderRadius: '8px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', border: '1px solid var(--line)', borderRadius: '8px' }}>
                       <button
                         onClick={() => updateQuantity(item.product.id, Math.max(1, item.quantity - 1))}
                         aria-label={`Decrease quantity of ${item.product.name}`}
@@ -177,7 +177,7 @@ export default function CartPageClient() {
                         display: 'flex',
                         alignItems: 'center',
                         gap: '6px',
-                        color: '#DC3545',
+                        color: 'var(--danger)',
                         background: 'none',
                         border: 'none',
                         cursor: 'pointer',
@@ -190,7 +190,7 @@ export default function CartPageClient() {
                   </div>
                 </div>
 
-                <div style={{ fontWeight: 600, color: '#212529' }}>
+                <div style={{ fontWeight: 600, color: 'var(--ink)' }}>
                   {formatPrice(item.product.price * item.quantity)}
                 </div>
               </div>
@@ -208,18 +208,18 @@ export default function CartPageClient() {
           {/* Order Summary */}
           <div>
             <div style={{
-              background: '#F8F9FA',
+              background: 'var(--surface-2)',
               borderRadius: '16px',
               padding: '24px',
             }}>
-              <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
+              <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>
                 Order Summary
               </h2>
 
               <div style={{ marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <Tag style={{ width: '16px', height: '16px', color: '#5F6873' }} />
-                  <span style={{ fontSize: '14px', color: '#5F6873' }}>Promo Code</span>
+                  <Tag style={{ width: '16px', height: '16px', color: 'var(--ink-muted)' }} />
+                  <span style={{ fontSize: '14px', color: 'var(--ink-muted)' }}>Promo Code</span>
                 </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   <input
@@ -231,7 +231,7 @@ export default function CartPageClient() {
                       flex: 1,
                       padding: '10px 14px',
                       borderRadius: '8px',
-                      border: '1px solid #E9ECEF',
+                      border: '1px solid var(--line)',
                       fontSize: '14px',
                     }}
                   />
@@ -241,7 +241,7 @@ export default function CartPageClient() {
                     disabled={applying || !promoCode.trim()}
                     style={{
                       padding: '10px 16px',
-                      background: '#212529',
+                      background: 'var(--ink)',
                       color: 'white',
                       border: 'none',
                       borderRadius: '8px',
@@ -254,31 +254,31 @@ export default function CartPageClient() {
                   </button>
                 </div>
                 {promoError && <p role="alert" style={{ color: '#842029', fontSize: '13px', marginTop: '8px' }}>{promoError}</p>}
-                {coupon && <p style={{ color: '#1E7E34', fontSize: '13px', marginTop: '8px' }}>Code {coupon.code} applied.</p>}
+                {coupon && <p style={{ color: 'var(--success)', fontSize: '13px', marginTop: '8px' }}>Code {coupon.code} applied.</p>}
               </div>
 
-              <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '20px' }}>
+              <div style={{ borderTop: '1px solid var(--line)', paddingTop: '20px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#5F6873' }}>Subtotal</span>
-                  <span style={{ fontWeight: 500, color: '#212529' }}>{formatPrice(subtotal)}</span>
+                  <span style={{ color: 'var(--ink-muted)' }}>Subtotal</span>
+                  <span style={{ fontWeight: 500, color: 'var(--ink)' }}>{formatPrice(subtotal)}</span>
                 </div>
                 {discount > 0 && (
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                    <span style={{ color: '#5F6873' }}>Discount</span>
-                    <span style={{ fontWeight: 500, color: '#1E7E34' }}>-{formatPrice(discount)}</span>
+                    <span style={{ color: 'var(--ink-muted)' }}>Discount</span>
+                    <span style={{ fontWeight: 500, color: 'var(--success)' }}>-{formatPrice(discount)}</span>
                   </div>
                 )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                  <span style={{ color: '#5F6873' }}>Shipping</span>
-                  <span style={{ fontWeight: 500, color: shipping === 0 ? '#1E7E34' : '#212529' }}>
+                  <span style={{ color: 'var(--ink-muted)' }}>Shipping</span>
+                  <span style={{ fontWeight: 500, color: shipping === 0 ? 'var(--success)' : 'var(--ink)' }}>
                     {shipping === 0 ? 'Free' : formatPrice(shipping)}
                   </span>
                 </div>
                 {subtotal < 50 && (
                   <div style={{
                     fontSize: '13px',
-                    color: '#1B5E3B',
-                    background: '#E8F5E9',
+                    color: 'var(--brand)',
+                    background: 'var(--brand-tint)',
                     padding: '10px 12px',
                     borderRadius: '8px',
                     marginBottom: '12px',
@@ -290,10 +290,10 @@ export default function CartPageClient() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   paddingTop: '12px',
-                  borderTop: '1px solid #E9ECEF',
+                  borderTop: '1px solid var(--line)',
                 }}>
-                  <span style={{ fontSize: '16px', fontWeight: 600, color: '#212529' }}>Total</span>
-                  <span style={{ fontSize: '20px', fontWeight: 700, color: '#212529' }}>{formatPrice(total)}</span>
+                  <span style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)' }}>Total</span>
+                  <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--ink)' }}>{formatPrice(total)}</span>
                 </div>
               </div>
 
@@ -318,7 +318,7 @@ export default function CartPageClient() {
                 style={{
                   display: 'block',
                   textAlign: 'center',
-                  color: '#1B5E3B',
+                  color: 'var(--brand)',
                   fontSize: '14px',
                   marginTop: '16px',
                 }}

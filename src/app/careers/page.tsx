@@ -76,21 +76,21 @@ export default function CareersPage() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Careers</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Careers</span>
           </div>
         </div>
       </div>
 
       {/* Hero */}
       <div style={{
-        background: 'linear-gradient(135deg, #1B5E3B 0%, #2E7D4A 100%)',
+        background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-strong) 100%)',
         padding: '80px 16px',
         color: 'white',
         textAlign: 'center',
@@ -106,7 +106,7 @@ export default function CareersPage() {
           <a href="#openings" style={{
             display: 'inline-block',
             background: 'white',
-            color: '#1B5E3B',
+            color: 'var(--brand)',
             padding: '14px 32px',
             borderRadius: '10px',
             fontWeight: 600,
@@ -120,17 +120,17 @@ export default function CareersPage() {
       <div className="container" style={{ padding: '64px 16px 80px' }}>
         {/* Why Join Us */}
         <div style={{ marginBottom: '64px' }}>
-          <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', textAlign: 'center', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--ink)', textAlign: 'center', marginBottom: '16px' }}>
             Why Join Sesoris?
           </h2>
-          <p style={{ color: '#5F6873', textAlign: 'center', maxWidth: '600px', margin: '0 auto 40px' }}>
+          <p style={{ color: 'var(--ink-muted)', textAlign: 'center', maxWidth: '600px', margin: '0 auto 40px' }}>
             We believe that happy employees produce the best work
           </p>
           <div className="careers-benefits-grid" style={{ display: 'grid', gap: '24px' }}>
             {benefits.map((benefit) => (
               <div key={benefit.title} style={{
                 padding: '24px',
-                background: '#F8F9FA',
+                background: 'var(--surface-2)',
                 borderRadius: '16px',
                 textAlign: 'center',
               }}>
@@ -138,18 +138,18 @@ export default function CareersPage() {
                   width: '56px',
                   height: '56px',
                   borderRadius: '50%',
-                  background: '#E8F5E9',
+                  background: 'var(--brand-tint)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto 16px',
                 }}>
-                  <benefit.icon style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
+                  <benefit.icon style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
                 </div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '8px' }}>
                   {benefit.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: '#5F6873', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: 'var(--ink-muted)', margin: 0, lineHeight: 1.5 }}>
                   {benefit.desc}
                 </p>
               </div>
@@ -159,7 +159,7 @@ export default function CareersPage() {
 
         {/* Open Positions */}
         <div id="openings">
-          <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '32px' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--ink)', marginBottom: '32px' }}>
             Open Positions
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -167,7 +167,7 @@ export default function CareersPage() {
               <div key={job.id} style={{
                 padding: '24px',
                 background: 'white',
-                border: '1px solid #E9ECEF',
+                border: '1px solid var(--line)',
                 borderRadius: '16px',
                 display: 'grid',
                 gridTemplateColumns: '1fr auto',
@@ -177,8 +177,8 @@ export default function CareersPage() {
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
                     <span style={{
-                      background: '#E8F5E9',
-                      color: '#1B5E3B',
+                      background: 'var(--brand-tint)',
+                      color: 'var(--brand)',
                       padding: '4px 10px',
                       borderRadius: '6px',
                       fontSize: '12px',
@@ -187,18 +187,18 @@ export default function CareersPage() {
                       {job.department}
                     </span>
                   </div>
-                  <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
+                  <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--ink)', marginBottom: '8px' }}>
                     {job.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '12px' }}>
                     {job.desc}
                   </p>
                   <div style={{ display: 'flex', gap: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--ink-muted)' }}>
                       <MapPin style={{ width: '14px', height: '14px' }} />
                       {job.location}
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--ink-muted)' }}>
                       <Clock style={{ width: '14px', height: '14px' }} />
                       {job.type}
                     </div>
@@ -208,7 +208,7 @@ export default function CareersPage() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  background: '#1B5E3B',
+                  background: 'var(--brand)',
                   color: 'white',
                   padding: '12px 24px',
                   borderRadius: '10px',
@@ -229,20 +229,20 @@ export default function CareersPage() {
         <div style={{
           marginTop: '64px',
           padding: 'clamp(24px, 4vw, 48px)',
-          background: '#F8F9FA',
+          background: 'var(--surface-2)',
           borderRadius: '16px',
           textAlign: 'center',
         }}>
-          <Briefcase style={{ width: '40px', height: '40px', color: '#1B5E3B', marginBottom: '16px' }} />
-          <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+          <Briefcase style={{ width: '40px', height: '40px', color: 'var(--brand)', marginBottom: '16px' }} />
+          <h3 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>
             Don&apos;t see a position that fits?
           </h3>
-          <p style={{ color: '#5F6873', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
+          <p style={{ color: 'var(--ink-muted)', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
             Send us your resume and portfolio. We are always open to exceptional talent!
           </p>
           <a href="mailto:admin@sesoris.com" style={{
             display: 'inline-block',
-            background: '#1B5E3B',
+            background: 'var(--brand)',
             color: 'white',
             padding: '14px 32px',
             borderRadius: '10px',

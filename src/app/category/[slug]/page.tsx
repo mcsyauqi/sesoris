@@ -82,87 +82,61 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
 
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <Link href="/shop" style={{ color: '#5F6873' }}>Shop</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>{category.name}</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <Link href="/shop" style={{ color: 'var(--ink-muted)' }}>Shop</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{category.name}</span>
           </div>
         </div>
       </div>
 
-      {/* Hero */}
-      <div style={{
-        position: 'relative',
-        height: '280px',
-        background: '#343A40',
-        overflow: 'hidden'
-      }}>
-        <Image
-          src={category.image}
-          alt={`${category.name} products at Sesoris`}
-          fill
-          sizes="100vw"
-          style={{ objectFit: 'cover', opacity: 0.4 }}
-          priority
-        />
-        <div className="container" style={{
-          position: 'relative',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center'
-        }}>
-          <h1 style={{ fontSize: '40px', fontWeight: 700, color: 'white', marginBottom: '8px' }}>
-            {category.name}
-          </h1>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', maxWidth: '560px' }}>
-            {seo?.intro?.substring(0, 120) ?? category.description}
-          </p>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', marginTop: '8px' }}>
-            {products.length} products
-          </p>
+      {/* Header */}
+      <section className="cat-hero">
+        <div className="container cat-hero-grid">
+          <div>
+            <h1 className="section-title" style={{ fontSize: 'clamp(2rem, 1.5rem + 2vw, 3.25rem)' }}>{category.name}</h1>
+            <p className="section-lede" style={{ fontSize: '17px', color: 'var(--ink-2)' }}>
+              {seo?.intro?.split('. ')[0].replace(/\.$/, '') ?? category.description}.
+            </p>
+            <p style={{ marginTop: '14px', fontSize: '14px', color: 'var(--ink-muted)' }}>
+              {products.length} {products.length === 1 ? 'product' : 'products'}, shipped from our US warehouse
+            </p>
+          </div>
+          <div className="cat-hero-img">
+            <Image src={category.image} alt="" fill sizes="(max-width: 768px) 40vw, 320px" priority />
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Products */}
-      <div className="container" style={{ padding: '48px 16px' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '24px'
-        }}>
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-
-        {products.length === 0 && (
+      <div className="container" style={{ paddingBlock: '48px 72px' }}>
+        {products.length > 0 ? (
+          <div className="grid-products">
+            {products.map((product, i) => (
+              <ProductCard key={product.id} product={product} priority={i < 2} />
+            ))}
+          </div>
+        ) : (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <p style={{ color: '#5F6873' }}>No products found in this category.</p>
+            <p style={{ color: 'var(--ink-muted)' }}>No products found in this category.</p>
           </div>
         )}
       </div>
 
       {/* SEO Content Section */}
       {seo && (
-        <div style={{ background: '#F8F9FA', padding: '48px 0', marginTop: '8px' }}>
+        <div style={{ background: 'var(--surface-2)', padding: '56px 0' }}>
           <div className="container">
-            <h2 style={{
-              fontFamily: 'var(--font-heading), Georgia, serif',
-              fontSize: 'clamp(20px, 3vw, 24px)',
-              fontWeight: 400,
-              color: '#212529',
-              marginBottom: '12px',
-            }}>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 1.3rem + 0.8vw, 2rem)', marginBottom: '12px' }}>
               About {category.name}
             </h2>
-            <p style={{ color: '#495057', fontSize: '15px', lineHeight: '1.7', marginBottom: '32px', maxWidth: '720px' }}>
+            <p style={{ color: 'var(--ink-2)', fontSize: '15px', lineHeight: '1.7', marginBottom: '32px', maxWidth: '720px' }}>
               {seo.intro}
             </p>
 
@@ -172,16 +146,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                 sub-points of the intro. */}
             {seo.sections.map((section, i) => (
               <div key={i} style={{ marginBottom: '28px' }}>
-                <h2 style={{
-                  fontFamily: 'var(--font-heading), Georgia, serif',
-                  fontSize: '19px',
-                  fontWeight: 400,
-                  color: '#1B5E3B',
-                  marginBottom: '8px',
-                }}>
+                <h2 style={{ fontSize: '19px', fontWeight: 650, color: 'var(--ink)', marginBottom: '8px' }}>
                   {section.heading}
                 </h2>
-                <p style={{ fontSize: '15px', color: '#495057', lineHeight: '1.75', maxWidth: '720px' }}>
+                <p style={{ fontSize: '15px', color: 'var(--ink-2)', lineHeight: '1.75', maxWidth: '720px' }}>
                   {section.text}
                 </p>
               </div>
@@ -191,22 +159,16 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                 emitted here on purpose, matching the deliberate decision on
                 product pages to keep unverifiable markup off this site. */}
             {seo.faqs.length > 0 && (
-              <div style={{ marginTop: '40px', paddingTop: '28px', borderTop: '1px solid #E9ECEF' }}>
-                <h2 style={{
-                  fontFamily: 'var(--font-heading), Georgia, serif',
-                  fontSize: 'clamp(19px, 3vw, 22px)',
-                  fontWeight: 400,
-                  color: '#212529',
-                  marginBottom: '20px',
-                }}>
+              <div style={{ marginTop: '40px', paddingTop: '28px', borderTop: '1px solid var(--line)' }}>
+                <h2 style={{ fontSize: 'clamp(20px, 3vw, 24px)', fontWeight: 700, color: 'var(--ink)', marginBottom: '20px' }}>
                   {category.name} questions, answered
                 </h2>
                 {seo.faqs.map((faq, i) => (
                   <div key={i} style={{ marginBottom: '22px', maxWidth: '720px' }}>
-                    <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#212529', marginBottom: '6px' }}>
+                    <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--ink)', marginBottom: '6px' }}>
                       {faq.question}
                     </h3>
-                    <p style={{ fontSize: '15px', color: '#495057', lineHeight: '1.75' }}>
+                    <p style={{ fontSize: '15px', color: 'var(--ink-2)', lineHeight: '1.75' }}>
                       {faq.answer}
                     </p>
                   </div>
@@ -216,8 +178,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
 
             {/* Related Categories */}
             {seo.relatedCategories.length > 0 && (
-              <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid #E9ECEF' }}>
-                <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
+              <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid var(--line)' }}>
+                <p style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '12px' }}>
                   Also explore:
                 </p>
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
@@ -228,15 +190,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                       <Link
                         key={relSlug}
                         href={`/category/${relSlug}`}
-                        style={{
-                          padding: '8px 16px',
-                          borderRadius: '20px',
-                          border: '1px solid #1B5E3B',
-                          color: '#1B5E3B',
-                          fontSize: '13px',
-                          fontWeight: 500,
-                          textDecoration: 'none',
-                        }}
+                        className="btn btn-outline"
+                        style={{ minHeight: '40px', fontSize: '14px' }}
                       >
                         {relCat.name}
                       </Link>

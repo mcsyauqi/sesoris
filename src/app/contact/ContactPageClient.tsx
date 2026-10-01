@@ -33,22 +33,22 @@ export default function ContactPageClient() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Contact</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Contact</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>Contact Sesoris</h1>
-          <p style={{ color: '#5F6873', fontSize: '16px' }}>
+          <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>Contact Sesoris</h1>
+          <p style={{ color: 'var(--ink-muted)', fontSize: '16px' }}>
             Need help choosing the right organizer for your home, kitchen, desk, or travel gear? The Sesoris team is based in Yogyakarta and supports customers worldwide with product questions, orders, and wholesale inquiries.
           </p>
         </div>
@@ -56,33 +56,33 @@ export default function ContactPageClient() {
         <div className="contact-grid" style={{ display: 'grid', gap: '40px' }}>
           {/* Contact Info */}
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Contact Information</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>Contact Information</h2>
 
             <div style={{ marginBottom: '24px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
-                <Mail style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
+                <Mail style={{ width: '20px', height: '20px', color: 'var(--brand)', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Email</div>
-                  <a href="mailto:admin@sesoris.com" style={{ color: '#1B5E3B' }}>admin@sesoris.com</a>
+                  <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>Email</div>
+                  <a href="mailto:admin@sesoris.com" style={{ color: 'var(--brand)' }}>admin@sesoris.com</a>
                 </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
-                <Phone style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
+                <Phone style={{ width: '20px', height: '20px', color: 'var(--brand)', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Phone</div>
-                  <a href="tel:+6281326102061" style={{ color: '#5F6873' }}>+62 813 2610 2061</a>
-                  <div style={{ fontSize: '13px', color: '#5F6873', marginTop: '4px' }}>
+                  <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>Phone</div>
+                  <a href="tel:+6281326102061" style={{ color: 'var(--ink-muted)' }}>+62 813 2610 2061</a>
+                  <div style={{ fontSize: '13px', color: 'var(--ink-muted)', marginTop: '4px' }}>
                     WhatsApp: +62 813 2610 2061
                   </div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
-                <MapPin style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
+                <MapPin style={{ width: '20px', height: '20px', color: 'var(--brand)', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Address</div>
-                  <div style={{ color: '#5F6873', lineHeight: 1.5 }}>
+                  <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>Address</div>
+                  <div style={{ color: 'var(--ink-muted)', lineHeight: 1.5 }}>
                     Yogyakarta, Special Region of Yogyakarta, Indonesia<br />
                     Online store with worldwide shipping
                   </div>
@@ -90,10 +90,10 @@ export default function ContactPageClient() {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                <Clock style={{ width: '20px', height: '20px', color: '#1B5E3B', marginTop: '2px' }} />
+                <Clock style={{ width: '20px', height: '20px', color: 'var(--brand)', marginTop: '2px' }} />
                 <div>
-                  <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>Operating Hours</div>
-                  <div style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.6 }}>
+                  <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>Operating Hours</div>
+                  <div style={{ color: 'var(--ink-muted)', fontSize: '14px', lineHeight: 1.6 }}>
                     Monday - Friday: 9:00 AM - 6:00 PM<br />
                     Saturday: 10:00 AM - 4:00 PM<br />
                     Sunday &amp; Holidays: Closed
@@ -103,19 +103,19 @@ export default function ContactPageClient() {
             </div>
 
             <div>
-              <div style={{ fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Follow Us</div>
+              <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>Follow Us</div>
               <div style={{ display: 'flex', gap: '12px' }}>
-                <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Facebook style={{ width: '18px', height: '18px', color: '#343A40' }} />
+                <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Facebook style={{ width: '18px', height: '18px', color: 'var(--ink-2)' }} />
                 </a>
-                <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Instagram style={{ width: '18px', height: '18px', color: '#343A40' }} />
+                <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Instagram style={{ width: '18px', height: '18px', color: 'var(--ink-2)' }} />
                 </a>
-                <a href="https://x.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Twitter style={{ width: '18px', height: '18px', color: '#343A40' }} />
+                <a href="https://x.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Twitter style={{ width: '18px', height: '18px', color: 'var(--ink-2)' }} />
                 </a>
-                <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: '#F8F9FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Youtube style={{ width: '18px', height: '18px', color: '#343A40' }} />
+                <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Youtube style={{ width: '18px', height: '18px', color: 'var(--ink-2)' }} />
                 </a>
               </div>
             </div>
@@ -123,11 +123,11 @@ export default function ContactPageClient() {
 
           {/* Contact Form */}
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>Send a Message</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>Send a Message</h2>
             <form onSubmit={handleSubmit}>
               <div className="contact-form-row" style={{ display: 'grid', gap: '20px', marginBottom: '20px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Full Name</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>Full Name</label>
                   <input
                     type="text"
                     required
@@ -138,13 +138,13 @@ export default function ContactPageClient() {
                       width: '100%',
                       padding: '12px 16px',
                       borderRadius: '8px',
-                      border: '1px solid #E9ECEF',
+                      border: '1px solid var(--line)',
                       fontSize: '15px'
                     }}
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Email Address</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>Email Address</label>
                   <input
                     type="email"
                     required
@@ -155,7 +155,7 @@ export default function ContactPageClient() {
                       width: '100%',
                       padding: '12px 16px',
                       borderRadius: '8px',
-                      border: '1px solid #E9ECEF',
+                      border: '1px solid var(--line)',
                       fontSize: '15px'
                     }}
                   />
@@ -163,7 +163,7 @@ export default function ContactPageClient() {
               </div>
 
               <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Subject</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>Subject</label>
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -171,7 +171,7 @@ export default function ContactPageClient() {
                     width: '100%',
                     padding: '12px 16px',
                     borderRadius: '8px',
-                    border: '1px solid #E9ECEF',
+                    border: '1px solid var(--line)',
                     fontSize: '15px',
                     background: 'white'
                   }}
@@ -185,7 +185,7 @@ export default function ContactPageClient() {
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>Message</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>Message</label>
                 <textarea
                   required
                   rows={5}
@@ -196,7 +196,7 @@ export default function ContactPageClient() {
                     width: '100%',
                     padding: '12px 16px',
                     borderRadius: '8px',
-                    border: '1px solid #E9ECEF',
+                    border: '1px solid var(--line)',
                     fontSize: '15px',
                     resize: 'vertical'
                   }}
@@ -212,19 +212,19 @@ export default function ContactPageClient() {
                 <Send style={{ width: '16px', height: '16px' }} />
                 {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
-              <p style={{ marginTop: '12px', fontSize: '13px', color: '#5F6873' }}>
+              <p style={{ marginTop: '12px', fontSize: '13px', color: 'var(--ink-muted)' }}>
                 Prefer WhatsApp?{' '}
-                <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500 }}>Message us directly</a>
-                {' '}or email <a href="mailto:admin@sesoris.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>admin@sesoris.com</a>.
+                <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand)', fontWeight: 500 }}>Message us directly</a>
+                {' '}or email <a href="mailto:admin@sesoris.com" style={{ color: 'var(--brand)', fontWeight: 500 }}>admin@sesoris.com</a>.
               </p>
               {status === 'sent' && (
-                <p style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: '#E8F5E9', color: '#1B5E3B', fontSize: '14px' }}>
+                <p style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: 'var(--brand-tint)', color: 'var(--brand)', fontSize: '14px' }}>
                   Your message has been sent. We will get back to you within 1-2 business days.
                 </p>
               )}
               {status === 'fallback' && (
                 <p style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: '#FFF3E0', color: '#8A4B08', fontSize: '14px' }}>
-                  Email is temporarily unavailable. <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 600 }}>Continue via WhatsApp</a> so your message is not lost.
+                  Email is temporarily unavailable. <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand)', fontWeight: 600 }}>Continue via WhatsApp</a> so your message is not lost.
                 </p>
               )}
             </form>
@@ -235,36 +235,36 @@ export default function ContactPageClient() {
         <div style={{
           marginTop: '64px',
           height: '300px',
-          background: '#F8F9FA',
+          background: 'var(--surface-2)',
           borderRadius: '16px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#5F6873',
+          color: 'var(--ink-muted)',
         }}>
           <div style={{ textAlign: 'center' }}>
-            <MapPin style={{ width: '32px', height: '32px', marginBottom: '12px', color: '#1B5E3B' }} />
-            <div style={{ fontWeight: 600, color: '#212529' }}>Sesoris Online Store - Yogyakarta</div>
+            <MapPin style={{ width: '32px', height: '32px', marginBottom: '12px', color: 'var(--brand)' }} />
+            <div style={{ fontWeight: 600, color: 'var(--ink)' }}>Sesoris Online Store - Yogyakarta</div>
             <div style={{ fontSize: '14px' }}>Worldwide shipping</div>
           </div>
         </div>
 
         <section style={{ marginTop: '56px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Organizer Shopping Help</h2>
-            <p style={{ color: '#495057', lineHeight: 1.7, fontSize: '15px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>Organizer Shopping Help</h2>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, fontSize: '15px' }}>
               Talk to our team about home storage, kitchen racks, desk organizers, or travel gear. We help recommend the right size, material, and product for your space.
             </p>
           </div>
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Orders and Shipping</h2>
-            <p style={{ color: '#495057', lineHeight: 1.7, fontSize: '15px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>Orders and Shipping</h2>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, fontSize: '15px' }}>
               Reach out to check order status, shipping estimates, returns, or invoice requests. The Sesoris team supports customers worldwide.
             </p>
           </div>
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>Wholesale Partnerships</h2>
-            <p style={{ color: '#495057', lineHeight: 1.7, fontSize: '15px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>Wholesale Partnerships</h2>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, fontSize: '15px' }}>
               For office, hampers, reseller, or bulk orders, send your requirements via the form. We will prepare product recommendations and special offers.
             </p>
           </div>

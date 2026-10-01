@@ -3,19 +3,15 @@ import './globals.css';
 import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
 import { AnalyticsScripts } from '@/components/layout/AnalyticsScripts';
 import { CartHydration } from '@/components/layout/CartHydration';
-import { DM_Sans, DM_Serif_Display } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
-const dmSans = DM_Sans({
+// One variable family; headings use the width axis (font-stretch) instead of a second font.
+const archivo = Archivo({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  axes: ['wdth'],
   variable: '--font-body',
-});
-
-const dmSerif = DM_Serif_Display({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-heading',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -80,9 +76,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={archivo.variable}>
       <head>
-        <meta name="sesoris-deploy-marker" content="2026-08-22-cart-hydration-0280d41" />
+        <meta name="sesoris-deploy-marker" content="2026-10-01-redesign" />
         <meta property="og:url" content="https://www.sesoris.com" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Sesoris" />
@@ -163,7 +159,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={dmSans.className}>
+      <body className={archivo.className}>
         <AnalyticsScripts />
         <CartHydration />
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>

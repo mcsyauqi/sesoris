@@ -18,14 +18,14 @@ export default function SizeGuidePage() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Size Guide</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Size Guide</span>
           </div>
         </div>
       </div>
@@ -37,31 +37,31 @@ export default function SizeGuidePage() {
               width: '64px',
               height: '64px',
               borderRadius: '50%',
-              background: '#E8F5E9',
+              background: 'var(--brand-tint)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 20px',
             }}>
-              <Ruler style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
+              <Ruler style={{ width: '32px', height: '32px', color: 'var(--brand)' }} />
             </div>
-            <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+            <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
               Size Guide
             </h1>
-            <p style={{ color: '#5F6873', fontSize: '16px' }}>
+            <p style={{ color: 'var(--ink-muted)', fontSize: '16px' }}>
               Find the right size for your Sesoris products
             </p>
           </div>
 
           {/* Storage Containers */}
           <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>
               Storage Containers
             </h2>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
                 <thead>
-                  <tr style={{ background: '#1B5E3B', color: 'white' }}>
+                  <tr style={{ background: 'var(--brand)', color: 'white' }}>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Size</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Dimensions (L x W x H)</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Capacity</th>
@@ -76,11 +76,11 @@ export default function SizeGuidePage() {
                     { size: 'L', dim: '40 x 30 x 20 cm', cap: '12 L', use: 'Clothing, shoes' },
                     { size: 'XL', dim: '50 x 40 x 30 cm', cap: '30 L', use: 'Blankets, gear' },
                   ].map((row, i) => (
-                    <tr key={row.size} style={{ background: i % 2 === 0 ? '#F8F9FA' : 'white' }}>
-                      <td style={{ padding: '14px 16px', fontWeight: 600, color: '#1B5E3B' }}>{row.size}</td>
-                      <td style={{ padding: '14px 16px', color: '#212529' }}>{row.dim}</td>
-                      <td style={{ padding: '14px 16px', color: '#212529' }}>{row.cap}</td>
-                      <td style={{ padding: '14px 16px', color: '#5F6873' }}>{row.use}</td>
+                    <tr key={row.size} style={{ background: i % 2 === 0 ? 'var(--surface-2)' : 'white' }}>
+                      <td style={{ padding: '14px 16px', fontWeight: 600, color: 'var(--brand)' }}>{row.size}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--ink)' }}>{row.dim}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--ink)' }}>{row.cap}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--ink-muted)' }}>{row.use}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -90,13 +90,13 @@ export default function SizeGuidePage() {
 
           {/* Kitchen Items */}
           <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>
               Kitchen Items
             </h2>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
                 <thead>
-                  <tr style={{ background: '#1B5E3B', color: 'white' }}>
+                  <tr style={{ background: 'var(--brand)', color: 'white' }}>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Product</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Size</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Capacity</th>
@@ -111,11 +111,11 @@ export default function SizeGuidePage() {
                     { prod: 'Tumbler Standard', size: '\u00D8 7 x 22 cm', cap: '500 ml', portion: '2-3 cups' },
                     { prod: 'Tumbler Large', size: '\u00D8 8 x 26 cm', cap: '750 ml', portion: '3-4 cups' },
                   ].map((row, i) => (
-                    <tr key={row.prod} style={{ background: i % 2 === 0 ? '#F8F9FA' : 'white' }}>
-                      <td style={{ padding: '14px 16px', fontWeight: 500, color: '#212529' }}>{row.prod}</td>
-                      <td style={{ padding: '14px 16px', color: '#212529' }}>{row.size}</td>
-                      <td style={{ padding: '14px 16px', color: '#1B5E3B', fontWeight: 500 }}>{row.cap}</td>
-                      <td style={{ padding: '14px 16px', color: '#5F6873' }}>{row.portion}</td>
+                    <tr key={row.prod} style={{ background: i % 2 === 0 ? 'var(--surface-2)' : 'white' }}>
+                      <td style={{ padding: '14px 16px', fontWeight: 500, color: 'var(--ink)' }}>{row.prod}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--ink)' }}>{row.size}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--brand)', fontWeight: 500 }}>{row.cap}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--ink-muted)' }}>{row.portion}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -125,13 +125,13 @@ export default function SizeGuidePage() {
 
           {/* Bags */}
           <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>
               Bags & Organizers
             </h2>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
                 <thead>
-                  <tr style={{ background: '#1B5E3B', color: 'white' }}>
+                  <tr style={{ background: 'var(--brand)', color: 'white' }}>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Type</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Dimensions</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: 600 }}>Ideal For</th>
@@ -145,10 +145,10 @@ export default function SizeGuidePage() {
                     { type: 'Tote Bag M', dim: '40 x 35 x 12 cm', use: 'Laptop 13", daily shopping' },
                     { type: 'Tote Bag L', dim: '45 x 40 x 15 cm', use: 'Laptop 15", gym, travel' },
                   ].map((row, i) => (
-                    <tr key={row.type} style={{ background: i % 2 === 0 ? '#F8F9FA' : 'white' }}>
-                      <td style={{ padding: '14px 16px', fontWeight: 500, color: '#212529' }}>{row.type}</td>
-                      <td style={{ padding: '14px 16px', color: '#212529' }}>{row.dim}</td>
-                      <td style={{ padding: '14px 16px', color: '#5F6873' }}>{row.use}</td>
+                    <tr key={row.type} style={{ background: i % 2 === 0 ? 'var(--surface-2)' : 'white' }}>
+                      <td style={{ padding: '14px 16px', fontWeight: 500, color: 'var(--ink)' }}>{row.type}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--ink)' }}>{row.dim}</td>
+                      <td style={{ padding: '14px 16px', color: 'var(--ink-muted)' }}>{row.use}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -159,15 +159,15 @@ export default function SizeGuidePage() {
           {/* How to Measure */}
           <div style={{
             padding: '24px',
-            background: '#E8F5E9',
+            background: 'var(--brand-tint)',
             borderRadius: '12px',
             marginBottom: '48px',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-              <HelpCircle style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
-              <span style={{ fontWeight: 600, color: '#1B5E3B' }}>Measurement Tips</span>
+              <HelpCircle style={{ width: '20px', height: '20px', color: 'var(--brand)' }} />
+              <span style={{ fontWeight: 600, color: 'var(--brand)' }}>Measurement Tips</span>
             </div>
-            <ul style={{ margin: 0, paddingLeft: '20px', color: '#212529', fontSize: '14px', lineHeight: 1.8 }}>
+            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--ink)', fontSize: '14px', lineHeight: 1.8 }}>
               <li>L = Length (longest side)</li>
               <li>W = Width (second longest side)</li>
               <li>H = Height (from base to top)</li>
@@ -179,14 +179,14 @@ export default function SizeGuidePage() {
           {/* Contact CTA */}
           <div style={{
             padding: '24px',
-            background: '#F8F9FA',
+            background: 'var(--surface-2)',
             borderRadius: '12px',
             textAlign: 'center',
           }}>
-            <p style={{ color: '#5F6873', marginBottom: '12px' }}>
+            <p style={{ color: 'var(--ink-muted)', marginBottom: '12px' }}>
               Still unsure about which size to choose?
             </p>
-            <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>
+            <Link href="/contact" style={{ color: 'var(--brand)', fontWeight: 500 }}>
               Ask Our Customer Service
             </Link>
           </div>

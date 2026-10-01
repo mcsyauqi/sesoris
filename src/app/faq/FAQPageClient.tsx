@@ -103,14 +103,14 @@ export default function FAQPageClient() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>FAQ</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>FAQ</span>
           </div>
         </div>
       </div>
@@ -121,18 +121,18 @@ export default function FAQPageClient() {
             width: '64px',
             height: '64px',
             borderRadius: '50%',
-            background: '#E8F5E9',
+            background: 'var(--brand-tint)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 20px',
           }}>
-            <HelpCircle style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
+            <HelpCircle style={{ width: '32px', height: '32px', color: 'var(--brand)' }} />
           </div>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+          <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
             Frequently Asked Questions
           </h1>
-          <p style={{ color: '#5F6873', fontSize: '16px', marginBottom: '32px' }}>
+          <p style={{ color: 'var(--ink-muted)', fontSize: '16px', marginBottom: '32px' }}>
             Find answers to common questions about orders, shipping, returns, and more.
           </p>
 
@@ -145,7 +145,7 @@ export default function FAQPageClient() {
               transform: 'translateY(-50%)',
               width: '20px',
               height: '20px',
-              color: '#5F6873',
+              color: 'var(--ink-muted)',
             }} />
             <input
               type="text"
@@ -156,7 +156,7 @@ export default function FAQPageClient() {
                 width: '100%',
                 padding: '14px 16px 14px 48px',
                 borderRadius: '12px',
-                border: '1px solid #E9ECEF',
+                border: '1px solid var(--line)',
                 fontSize: '15px',
               }}
             />
@@ -166,7 +166,7 @@ export default function FAQPageClient() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {filteredFaqs.map((category) => (
             <div key={category.category} style={{ marginBottom: '40px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
                 {category.category}
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -179,7 +179,7 @@ export default function FAQPageClient() {
                       style={{
                         background: 'white',
                         borderRadius: '12px',
-                        border: '1px solid #E9ECEF',
+                        border: '1px solid var(--line)',
                         overflow: 'hidden',
                       }}
                     >
@@ -197,12 +197,12 @@ export default function FAQPageClient() {
                           textAlign: 'left',
                         }}
                       >
-                        <span style={{ fontWeight: 500, color: '#212529' }}>{item.q}</span>
+                        <span style={{ fontWeight: 500, color: 'var(--ink)' }}>{item.q}</span>
                         <ChevronDown
                           style={{
                             width: '20px',
                             height: '20px',
-                            color: '#5F6873',
+                            color: 'var(--ink-muted)',
                             transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
                             transition: 'transform 0.2s',
                           }}
@@ -211,7 +211,7 @@ export default function FAQPageClient() {
                       {isOpen && (
                         <div style={{
                           padding: '0 20px 16px',
-                          color: '#5F6873',
+                          color: 'var(--ink-muted)',
                           fontSize: '14px',
                           lineHeight: 1.6,
                         }}>
@@ -230,15 +230,15 @@ export default function FAQPageClient() {
         <div style={{
           maxWidth: '600px',
           margin: '48px auto 0',
-          background: '#F8F9FA',
+          background: 'var(--surface-2)',
           borderRadius: '16px',
           padding: '32px',
           textAlign: 'center',
         }}>
-          <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--ink)', marginBottom: '8px' }}>
             Still have questions?
           </h3>
-          <p style={{ color: '#5F6873', marginBottom: '20px' }}>
+          <p style={{ color: 'var(--ink-muted)', marginBottom: '20px' }}>
             Can&apos;t find the answer you&apos;re looking for? Our team is here to help.
           </p>
           <Link href="/contact" className="btn btn-primary">

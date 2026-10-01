@@ -23,7 +23,7 @@ export default function BundlesPage() {
   return (
     <>
       {/* Hero */}
-      <div style={{ background: 'linear-gradient(135deg, #1B5E3B 0%, #2D8659 100%)', padding: '64px 0', textAlign: 'center' }}>
+      <div style={{ background: 'linear-gradient(135deg, var(--brand) 0%, #2D8659 100%)', padding: '64px 0', textAlign: 'center' }}>
         <div className="container">
           <div style={{
             display: 'inline-flex',
@@ -65,7 +65,7 @@ export default function BundlesPage() {
                 style={{ textDecoration: 'none' }}
               >
                 <div style={{
-                  border: '1px solid #E9ECEF',
+                  border: '1px solid var(--line)',
                   borderRadius: '20px',
                   overflow: 'hidden',
                   background: 'white',
@@ -90,7 +90,7 @@ export default function BundlesPage() {
                     }}>
                       {bundle.badge && (
                         <span style={{
-                          background: '#1B5E3B',
+                          background: 'var(--brand)',
                           color: 'white',
                           fontSize: '11px',
                           fontWeight: 700,
@@ -103,7 +103,7 @@ export default function BundlesPage() {
                         </span>
                       )}
                       <span style={{
-                        background: '#FF6B35',
+                        background: 'var(--accent)',
                         color: 'white',
                         fontSize: '12px',
                         fontWeight: 700,
@@ -116,10 +116,10 @@ export default function BundlesPage() {
                   </div>
 
                   <div style={{ padding: '20px' }}>
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--ink)', marginBottom: '8px' }}>
                       {bundle.name}
                     </h3>
-                    <p style={{ fontSize: '13px', color: '#5F6873', marginBottom: '16px', lineHeight: '1.5' }}>
+                    <p style={{ fontSize: '13px', color: 'var(--ink-muted)', marginBottom: '16px', lineHeight: '1.5' }}>
                       {bundle.description}
                     </p>
 
@@ -128,7 +128,7 @@ export default function BundlesPage() {
                       {bundleProducts.map((product) => product && (
                         <div
                           key={product.id}
-                          style={{ width: '48px', height: '48px', position: 'relative', borderRadius: '8px', overflow: 'hidden', border: '1px solid #E9ECEF' }}
+                          style={{ width: '48px', height: '48px', position: 'relative', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--line)' }}
                         >
                           <Image
                             src={product.images[0].url}
@@ -143,13 +143,13 @@ export default function BundlesPage() {
                         width: '48px',
                         height: '48px',
                         borderRadius: '8px',
-                        background: '#F8F9FA',
-                        border: '1px dashed #DEE2E6',
+                        background: 'var(--surface-2)',
+                        border: '1px dashed var(--line-strong)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontSize: '11px',
-                        color: '#5F6873',
+                        color: 'var(--ink-muted)',
                         fontWeight: 600,
                       }}>
                         {bundle.productIds.length} items
@@ -160,14 +160,14 @@ export default function BundlesPage() {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <div>
                         <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                          <span style={{ fontSize: '20px', fontWeight: 800, color: '#212529' }}>
+                          <span style={{ fontSize: '20px', fontWeight: 800, color: 'var(--ink)' }}>
                             {formatPrice(bundle.bundlePrice)}
                           </span>
-                          <span style={{ fontSize: '13px', color: '#ADB5BD', textDecoration: 'line-through' }}>
+                          <span style={{ fontSize: '13px', color: 'var(--ink-faint)', textDecoration: 'line-through' }}>
                             {formatPrice(bundle.originalPrice)}
                           </span>
                         </div>
-                        <div style={{ fontSize: '12px', color: '#1E7E34', fontWeight: 600 }}>
+                        <div style={{ fontSize: '12px', color: 'var(--success)', fontWeight: 600 }}>
                           Save {formatPrice(bundle.originalPrice - bundle.bundlePrice)}
                         </div>
                       </div>
@@ -175,7 +175,7 @@ export default function BundlesPage() {
                         display: 'flex',
                         alignItems: 'center',
                         gap: '4px',
-                        color: '#1B5E3B',
+                        color: 'var(--brand)',
                         fontWeight: 600,
                         fontSize: '14px',
                       }}>

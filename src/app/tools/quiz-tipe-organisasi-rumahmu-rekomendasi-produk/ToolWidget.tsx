@@ -65,7 +65,7 @@ export default function ToolWidget() {
     setRoom(''); setSize(''); setBudget(''); setResult(null); setError('');
   };
 
-  const questionBox: React.CSSProperties = { marginBottom: '16px', padding: '12px', background: '#fff', border: '1px solid #E9ECEF', borderRadius: '8px' };
+  const questionBox: React.CSSProperties = { marginBottom: '16px', padding: '12px', background: '#fff', border: '1px solid var(--line)', borderRadius: '8px' };
   const qTitle: React.CSSProperties = { fontWeight: 600, margin: '0 0 8px 0' };
   const optLabel: React.CSSProperties = { display: 'block', padding: '6px 0', cursor: 'pointer' };
 
@@ -105,14 +105,14 @@ export default function ToolWidget() {
           {error && <p style={{ color: '#B02A37', textAlign: 'center', margin: 0 }}>{error}</p>}
           {result && (
             <div>
-              <p style={{ fontSize: '20px', fontWeight: 'bold', color: '#1B5E3B', textAlign: 'center', margin: '0 0 4px 0' }}>
+              <p style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--brand)', textAlign: 'center', margin: '0 0 4px 0' }}>
                 Recommended for you
               </p>
               <p style={{ color: '#444', textAlign: 'center', margin: '0 0 12px 0' }}>{result.tip}</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {result.picks.map((p) => (
-                  <li key={p.slug} style={{ padding: '8px 0', borderTop: '1px solid #E9ECEF', display: 'flex', justifyContent: 'space-between', gap: '12px' }}>
-                    <Link href={`/product/${p.slug}`} style={{ color: '#1B5E3B', fontWeight: 500 }}>{p.name}</Link>
+                  <li key={p.slug} style={{ padding: '8px 0', borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', gap: '12px' }}>
+                    <Link href={`/product/${p.slug}`} style={{ color: 'var(--brand)', fontWeight: 500 }}>{p.name}</Link>
                     <span style={{ color: '#444' }}>${p.price.toFixed(2)}</span>
                   </li>
                 ))}

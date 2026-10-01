@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Calendar, Clock, ArrowLeft, Facebook, Twitter, Linkedin, Share2, BookOpen } from 'lucide-react';
+import { Home, ChevronRight, ArrowLeft, ArrowRight, Facebook, Linkedin, BookOpen } from 'lucide-react';
 import { notFound, redirect, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { getPostBySlug, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelatedPosts, getArchiveDeepLinks } from '@/lib/blog';
 import { getShopLinksForPost } from '@/lib/shopLinks';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
-import { NewsletterSidebar } from '@/components/layout';
+import { NewsletterForm } from '@/components/layout/NewsletterForm';
 import React from 'react';
 
 // Revalidate every hour so scheduled articles appear on time
@@ -89,13 +89,13 @@ function renderInline(text: string, keyPrefix = ''): React.ReactNode[] {
       if (isInternal) {
         const cleanHref = href.replace('https://www.sesoris.com', '').replace('https://sesoris.com', '') || '/';
         parts.push(
-          <Link key={`${keyPrefix}l${match.index}`} href={cleanHref} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
+          <Link key={`${keyPrefix}l${match.index}`} href={cleanHref} style={{ color: 'var(--brand)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
             {match[4]}
           </Link>
         );
       } else {
         parts.push(
-          <a key={`${keyPrefix}a${match.index}`} href={href} target="_blank" rel="noopener noreferrer" style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
+          <a key={`${keyPrefix}a${match.index}`} href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'rgba(27,94,59,0.3)', textUnderlineOffset: '3px' }}>
             {match[4]}
           </a>
         );
@@ -146,14 +146,13 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
       const headingId = headingText.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
       elements.push(
         <h2 key={i} id={headingId} style={{
-          fontSize: '24px',
+          fontSize: 'clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem)',
           fontWeight: 700,
-          color: '#1B5E3B',
-          marginTop: '40px',
+          color: 'var(--ink)',
+          marginTop: '56px',
           marginBottom: '16px',
-          paddingBottom: '8px',
-          borderBottom: '2px solid rgba(27,94,59,0.15)',
-          lineHeight: 1.3,
+          lineHeight: 1.2,
+          scrollMarginTop: '96px',
         }}>
           {headingText}
         </h2>
@@ -166,12 +165,13 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
     if (line.startsWith('### ')) {
       elements.push(
         <h3 key={i} style={{
-          fontSize: '19px',
-          fontWeight: 600,
-          color: '#212529',
-          marginTop: '28px',
+          fontSize: '20px',
+          fontWeight: 650,
+          color: 'var(--ink)',
+          marginTop: '36px',
           marginBottom: '12px',
-          lineHeight: 1.4,
+          lineHeight: 1.3,
+          scrollMarginTop: '96px',
         }}>
           {line.split('\n')[0].replace('### ', '')}
         </h3>
@@ -185,21 +185,19 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
       const imgMatch = line.match(/!\[([^\]]*)\]\(([^)]+)\)/);
       if (imgMatch) {
         elements.push(
-          <figure key={i} style={{ margin: '32px 0', borderRadius: '12px', overflow: 'hidden' }}>
+          <figure key={i} style={{ margin: '36px 0' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imgMatch[2]}
               alt={imgMatch[1]}
               loading="eager"
-              style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: '12px', display: 'block' }}
+              style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: 'var(--radius-lg)', display: 'block' }}
             />
             {imgMatch[1] && (
               <figcaption style={{
-                fontSize: '13px',
-                color: '#5F6873',
-                textAlign: 'center',
-                marginTop: '8px',
-                fontStyle: 'italic',
+                fontSize: '14px',
+                color: 'var(--ink-muted)',
+                marginTop: '10px',
               }}>
                 {imgMatch[1]}
               </figcaption>
@@ -230,7 +228,7 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
         const href = url.replace('https://www.sesoris.com', '').replace('https://sesoris.com', '') || '/';
         links.push(
           <li key={key} style={{ marginBottom: '8px' }}>
-            <Link href={href} style={{ color: '#1B5E3B', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <Link href={href} style={{ color: 'var(--brand)', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
               {text}
             </Link>
@@ -261,14 +259,12 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
       if (links.length > 0) {
         elements.push(
           <div key={`baca-${i}`} style={{
-            background: 'linear-gradient(135deg, rgba(27,94,59,0.06), rgba(27,94,59,0.02))',
-            border: '1px solid rgba(27,94,59,0.15)',
-            borderLeft: '4px solid #1B5E3B',
-            borderRadius: '0 12px 12px 0',
+            background: 'var(--brand-tint)',
+            borderRadius: 'var(--radius-lg)',
             padding: '20px 24px',
-            margin: '28px 0',
+            margin: '32px 0',
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', fontWeight: 600, color: '#1B5E3B', fontSize: '15px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', fontWeight: 650, color: 'var(--ink)', fontSize: '15px' }}>
               <BookOpen style={{ width: '16px', height: '16px' }} />
               Also Read
             </div>
@@ -294,8 +290,8 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
           margin: '16px 0 20px',
         }}>
           {items.map((item, idx) => (
-            <li key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>
-              <span aria-hidden="true" style={{ color: '#1B5E3B', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>&#x2022;</span>
+            <li key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', fontSize: '17px', lineHeight: 1.75, color: 'var(--ink-2)' }}>
+              <span aria-hidden="true" style={{ color: 'var(--brand)', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>&#x2022;</span>
               <span>{item}</span>
             </li>
           ))}
@@ -320,10 +316,10 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
           listStyle: 'none',
         }}>
           {items.map((item, idx) => (
-            <li key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', fontSize: '16px', lineHeight: 1.8, color: '#343A40' }}>
+            <li key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', fontSize: '17px', lineHeight: 1.75, color: 'var(--ink-2)' }}>
               <span aria-hidden="true" style={{
                 color: '#fff',
-                background: '#1B5E3B',
+                background: 'var(--brand)',
                 width: '24px',
                 height: '24px',
                 borderRadius: '50%',
@@ -372,11 +368,11 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
                   {headerRow.map((cell, ci) => (
                     <th key={ci} style={{
                       padding: '12px 16px',
-                      background: '#1B5E3B',
-                      color: '#fff',
-                      fontWeight: 600,
+                      background: 'var(--brand-tint)',
+                      color: 'var(--ink)',
+                      fontWeight: 650,
                       textAlign: 'left',
-                      borderBottom: '2px solid #1B5E3B',
+                      borderBottom: '1.5px solid var(--brand-line)',
                       whiteSpace: 'nowrap',
                     }}>
                       {renderInline(cell)}
@@ -386,12 +382,12 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
               </thead>
               <tbody>
                 {bodyRows.map((row, ri) => (
-                  <tr key={ri} style={{ background: ri % 2 === 0 ? '#f8f9fa' : '#fff' }}>
+                  <tr key={ri}>
                     {row.map((cell, ci) => (
                       <td key={ci} style={{
                         padding: '10px 16px',
-                        borderBottom: '1px solid #dee2e6',
-                        color: '#343A40',
+                        borderBottom: '1px solid var(--line)',
+                        color: 'var(--ink-2)',
                       }}>
                         {renderInline(cell)}
                       </td>
@@ -410,13 +406,14 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
     if (line.startsWith('> ')) {
       elements.push(
         <blockquote key={i} style={{
-          borderLeft: '4px solid #1B5E3B',
-          paddingLeft: '20px',
-          margin: '24px 0',
-          color: '#495057',
-          fontStyle: 'italic',
-          fontSize: '17px',
-          lineHeight: 1.7,
+          margin: '32px 0',
+          padding: '20px 24px',
+          borderRadius: 'var(--radius-lg)',
+          background: 'var(--surface-2)',
+          color: 'var(--ink)',
+          fontSize: '18px',
+          fontWeight: 500,
+          lineHeight: 1.6,
         }}>
           {renderInline(line.replace('> ', ''))}
         </blockquote>
@@ -428,10 +425,10 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
     // Regular paragraph
     elements.push(
       <p key={i} style={{
-        fontSize: '16px',
-        lineHeight: 1.8,
-        color: '#343A40',
-        marginBottom: '20px',
+        fontSize: '17px',
+        lineHeight: 1.75,
+        color: 'var(--ink-2)',
+        marginBottom: '22px',
       }}>
         {renderInline(line)}
       </p>
@@ -626,132 +623,67 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
 
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <Link href="/blog" style={{ color: '#5F6873' }}>Blog</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>{post.category}</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <Link href="/blog" style={{ color: 'var(--ink-muted)' }}>Blog</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{post.category}</span>
           </div>
         </div>
       </div>
 
       <article>
-        {/* Hero */}
-        <div style={{ position: 'relative', minHeight: '450px', display: 'flex', alignItems: 'flex-end' }}>
-          <Image src={post.image} alt={post.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
-          }} />
-          <div className="container" style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '100vw', minWidth: 0, padding: '0 16px 48px' }}>
-            <div style={{ width: '100%', maxWidth: '800px', minWidth: 0, margin: '0 auto' }}>
-              <span style={{
-                display: 'inline-block',
-                background: '#1B5E3B',
-                color: 'white',
-                padding: '6px 14px',
-                borderRadius: '6px',
-                fontSize: '13px',
-                fontWeight: 500,
-                marginBottom: '16px',
-              }}>
-                {post.category}
-              </span>
-              <h1 style={{
-                width: '100%',
-                minWidth: 0,
-                fontSize: 'clamp(28px, 8vw, 36px)',
-                fontWeight: 700,
-                color: 'white',
-                marginBottom: '16px',
-                lineHeight: 1.3,
-                overflowWrap: 'anywhere',
-              }}>
-                {post.title}
-              </h1>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: 'rgba(255,255,255,0.9)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Calendar style={{ width: '16px', height: '16px' }} />
-                  <span style={{ fontSize: '14px' }}>{post.dateFormatted}</span>
+        {/* Header */}
+        <header className="container article-head">
+          <div className="article-measure">
+            <Link href={`/blog?category=${encodeURIComponent(post.category)}`} className="text-link" style={{ fontSize: '14px' }}>
+              {post.category}
+            </Link>
+            <h1 className="article-title">{post.title}</h1>
+            {post.excerpt && <p className="article-dek">{post.excerpt}</p>}
+            <div className="article-byline">
+              <div className="article-author">
+                <span className="article-avatar" aria-hidden>{post.author.avatar}</span>
+                <div>
+                  <div style={{ fontWeight: 600, color: 'var(--ink)' }}>{post.author.name}</div>
+                  <div style={{ fontSize: '14px', color: 'var(--ink-muted)' }}>
+                    <time dateTime={post.date}>{post.dateFormatted}</time> · {post.readTime}
+                  </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Clock style={{ width: '16px', height: '16px' }} />
-                  <span style={{ fontSize: '14px' }}>{post.readTime}</span>
-                </div>
+              </div>
+              <div className="article-share">
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.sesoris.com/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook (opens in a new tab)" className="icon-btn"><Facebook /></a>
+                <a href={`https://x.com/intent/post?url=${encodeURIComponent(`https://www.sesoris.com/blog/${post.slug}`)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X (opens in a new tab)" className="icon-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9L18.9 2Zm-1.1 18.1h1.7L6.3 3.8H4.5l13.3 16.3Z" /></svg>
+                </a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.sesoris.com/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn (opens in a new tab)" className="icon-btn"><Linkedin /></a>
               </div>
             </div>
           </div>
+        </header>
+
+        <div className="container">
+          <div className="article-hero">
+            <Image src={post.image} alt={post.title} fill priority sizes="(max-width: 1100px) 100vw, 1040px" />
+          </div>
         </div>
 
-        <div className="container" style={{ padding: '0 16px' }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-
-            {/* Author */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '24px 0',
-              borderBottom: '1px solid #E9ECEF',
-              marginTop: '24px',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '50%',
-                  background: '#1B5E3B',
-                  color: 'white',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 600,
-                }}>
-                  {post.author.avatar}
-                </div>
-                <div>
-                  <div style={{ fontWeight: 600, color: '#212529' }}>{post.author.name}</div>
-                  <div style={{ fontSize: '14px', color: '#5F6873' }}>{post.author.role}</div>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '8px' }}>
-        {[Facebook, Twitter, Linkedin, Share2].map((Icon, idx) => {
-                  const labels = ['Share on Facebook', 'Share on Twitter', 'Share on LinkedIn', 'Share article'];
-                  return (
-                  <button key={idx} aria-label={labels[idx]} style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: '#F8F9FA',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                    <Icon style={{ width: '16px', height: '16px', color: '#343A40' }} />
-                  </button>
-                  );
-                })}
-              </div>
-            </div>
-
+        <div className="container">
+          <div className="article-measure">
             {/* Table of Contents */}
             {toc.length > 3 && (
-              <nav style={{
-                background: '#F8FAF9',
-                border: '1px solid rgba(27,94,59,0.12)',
-                borderRadius: '12px',
+              <nav aria-label="Table of contents" style={{
+                border: '1px solid var(--line)',
+                borderRadius: 'var(--radius-lg)',
                 padding: '24px 28px',
-                marginTop: '32px',
+                marginTop: '40px',
               }}>
-                <div style={{ fontWeight: 700, fontSize: '15px', color: '#1B5E3B', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{ fontWeight: 650, fontSize: '16px', color: 'var(--ink)', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <BookOpen style={{ width: '16px', height: '16px' }} />
                   Table of Contents
                 </div>
@@ -761,10 +693,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       marginBottom: '6px',
                       paddingLeft: item.level === 3 ? '20px' : '0',
                     }}>
-                      <a href={`#${item.id}`} style={{
-                        color: item.level === 2 ? '#343A40' : '#5F6873',
-                        textDecoration: 'none',
-                        fontSize: item.level === 2 ? '14px' : '13px',
+                      <a href={`#${item.id}`} className="toc-link" style={{
+                        color: item.level === 2 ? 'var(--ink-2)' : 'var(--ink-muted)',
+                        fontSize: item.level === 2 ? '15px' : '14px',
                         fontWeight: item.level === 2 ? 500 : 400,
                         lineHeight: 1.6,
                       }}>
@@ -783,27 +714,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* Shop the Solution — links this article to real product/category pages */}
             <div style={{
-              background: '#F8FAF9',
-              border: '1px solid rgba(27,94,59,0.12)',
-              borderRadius: '12px',
-              padding: '28px',
-              marginBottom: '40px',
+              background: 'var(--brand-tint)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'clamp(20px, 4vw, 32px)',
+              marginBottom: '48px',
             }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1B5E3B', marginBottom: '16px' }}>
-                Shop the Solution
+              <h3 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--ink)', marginBottom: '18px' }}>
+                Shop the solution
               </h3>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '16px', marginBottom: '16px' }}>
                 {shopLinks.products.map((product) => (
                   <Link key={product.slug} href={`/product/${product.slug}`} style={{ textDecoration: 'none' }}>
-                    <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid #E9ECEF', background: '#fff' }}>
+                    <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', background: '#fff' }}>
                       <div style={{ position: 'relative', aspectRatio: '1/1' }}>
-                        <Image src={product.images[0]?.url} alt={product.images[0]?.alt ?? product.name} fill sizes="180px" style={{ objectFit: 'cover' }} />
+                        <Image src={product.images[0]?.url} alt={product.images[0]?.alt ?? product.name} fill sizes="180px" style={{ objectFit: 'contain', padding: '8%' }} />
                       </div>
                       <div style={{ padding: '10px 12px' }}>
-                        <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                           {product.name}
                         </div>
-                        <div style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 700, marginTop: '4px' }}>
+                        <div style={{ fontSize: '14px', color: 'var(--ink)', fontWeight: 700, marginTop: '4px' }}>
                           ${product.price.toFixed(2)}
                         </div>
                       </div>
@@ -811,17 +741,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   </Link>
                 ))}
               </div>
-              <Link href={`/category/${shopLinks.categorySlug}`} style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                color: '#1B5E3B',
-                fontWeight: 600,
-                fontSize: '14px',
-                textDecoration: 'none',
-              }}>
+              <Link href={`/category/${shopLinks.categorySlug}`} className="text-link">
                 Browse all {shopLinks.categoryName}
-                <ChevronRight style={{ width: '14px', height: '14px' }} />
+                <ArrowRight aria-hidden />
               </Link>
 
               {/* Secondary category links. Category pages were the most
@@ -830,8 +752,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   separated indexed URLs from uncrawled ones. Each article now
                   points at three category pages instead of one. */}
               {shopLinks.secondaryCategories.length > 0 && (
-                <div style={{ marginTop: '18px', paddingTop: '16px', borderTop: '1px solid rgba(27,94,59,0.12)' }}>
-                  <div style={{ fontSize: '13px', color: '#5F6873', marginBottom: '10px' }}>
+                <div style={{ marginTop: '18px', paddingTop: '16px', borderTop: '1px solid var(--brand-line)' }}>
+                  <div style={{ fontSize: '13px', color: 'var(--ink-muted)', marginBottom: '10px' }}>
                     Related collections
                   </div>
                   <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
@@ -839,15 +761,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       <Link
                         key={cat.slug}
                         href={`/category/${cat.slug}`}
-                        style={{
-                          padding: '7px 14px',
-                          borderRadius: '20px',
-                          border: '1px solid rgba(27,94,59,0.35)',
-                          color: '#1B5E3B',
-                          fontSize: '13px',
-                          fontWeight: 500,
-                          textDecoration: 'none',
-                        }}
+                        className="chip"
+                        style={{ background: '#fff', borderColor: 'transparent' }}
                       >
                         {cat.name}
                       </Link>
@@ -858,35 +773,34 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
 
             {/* Newsletter CTA */}
-            <div style={{ marginBottom: '40px' }}>
-              <NewsletterSidebar />
+            <div className="news-card" style={{ marginBottom: '48px' }}>
+              <h2>Liked this guide?</h2>
+              <p>Get new organizing guides and the occasional new product by email. No spam, unsubscribe anytime.</p>
+              <NewsletterForm source="article" formClass="news-form" buttonClass="btn btn-light" />
+              <div className="ruler" aria-hidden />
             </div>
 
             {/* Related Posts */}
             {relatedPosts.length > 0 && (
               <div style={{
-                borderTop: '1px solid #E9ECEF',
+                borderTop: '1px solid var(--line)',
                 paddingTop: '40px',
                 paddingBottom: '40px',
               }}>
-                <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#212529', marginBottom: '24px' }}>
-                  Related Articles
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--ink)', marginBottom: '24px' }}>
+                  Related articles
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
                   {relatedPosts.map((related) => (
-                    <Link key={related.slug} href={`/blog/${related.slug}`} style={{ textDecoration: 'none' }}>
-                      <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #E9ECEF' }}>
-                        <div style={{ position: 'relative', aspectRatio: '16/9' }}>
-                          <Image src={related.image} alt={related.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
-                        </div>
-                        <div style={{ padding: '14px' }}>
-                          <span style={{ fontSize: '11px', color: '#1B5E3B', fontWeight: 600, textTransform: 'uppercase' }}>
-                            {related.category}
-                          </span>
-                          <h4 style={{ fontSize: '14px', fontWeight: 600, color: '#212529', marginTop: '4px', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                            {related.title}
-                          </h4>
-                        </div>
+                    <Link key={related.slug} href={`/blog/${related.slug}`} className="post-card" style={{ gap: '10px' }}>
+                      <div className="post-card-img" style={{ aspectRatio: '16/10' }}>
+                        <Image src={related.image} alt={related.title} fill sizes="(max-width: 768px) 100vw, 260px" />
+                      </div>
+                      <div>
+                        <div className="post-card-meta"><b>{related.category}</b></div>
+                        <h4 className="post-card-title" style={{ fontSize: '16px', marginTop: '4px', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                          {related.title}
+                        </h4>
                       </div>
                     </Link>
                   ))}
@@ -897,18 +811,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Explore More (archive deep links — spreads internal link equity) */}
             {archiveDeepLinks.length > 0 && (
               <div style={{
-                borderTop: '1px solid #E9ECEF',
+                borderTop: '1px solid var(--line)',
                 paddingTop: '32px',
                 paddingBottom: '8px',
               }}>
-                <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#212529', marginBottom: '20px' }}>
-                  Explore More Articles
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--ink)', marginBottom: '20px' }}>
+                  Explore more articles
                 </h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '10px 24px' }}>
                   {archiveDeepLinks.map((link) => (
                     <li key={link.slug} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                      <ChevronRight style={{ width: '16px', height: '16px', color: '#1B5E3B', flexShrink: 0, marginTop: '3px' }} />
-                      <Link href={`/blog/${link.slug}`} style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none', lineHeight: 1.4 }}>
+                      <ChevronRight style={{ width: '16px', height: '16px', color: 'var(--brand)', flexShrink: 0, marginTop: '3px' }} />
+                      <Link href={`/blog/${link.slug}`} className="toc-link" style={{ color: 'var(--ink-2)', fontSize: '15px', fontWeight: 500, lineHeight: 1.45 }}>
                         {link.title}
                       </Link>
                     </li>
@@ -920,18 +834,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Back to Blog */}
             <div style={{
               paddingBottom: '48px',
-              borderTop: '1px solid #E9ECEF',
+              borderTop: '1px solid var(--line)',
               paddingTop: '24px',
             }}>
-              <Link href="/blog" style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: '#1B5E3B',
-                fontWeight: 500,
-              }}>
-                <ArrowLeft style={{ width: '18px', height: '18px' }} />
-                Back to Blog
+              <Link href="/blog" className="text-link">
+                <ArrowLeft aria-hidden />
+                Back to the blog
               </Link>
             </div>
           </div>

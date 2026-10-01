@@ -1,61 +1,49 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { categories } from '@/data/products';
+import { ArrowRight } from 'lucide-react';
+import { getCategoryBySlug } from '@/data/products';
+
+// Tile order + art direction. Images are catalog photos chosen to read at tile size.
+const TILES = [
+  { slug: 'kitchen-dining', image: '/images/products/stackable-water-bottle-organizer-4-tier-1.webp', variant: 'is-lead' },
+  { slug: 'home-living', image: '/images/products/folding-storage-cabinet-4-tier-wheels-small-1.webp', variant: 'is-wide' },
+  { slug: 'bags-pouches', image: '/images/products/three-section-pu-leather-toiletry-bag-white-1.webp', variant: '' },
+  { slug: 'outdoor-travel', image: '/images/products/packing-cubes-9-piece-set-1.webp', variant: '' },
+];
 
 export function CategorySection() {
   return (
     <section className="section-padding">
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h2 style={{
-            fontFamily: 'var(--font-heading), Georgia, serif',
-            fontSize: 'clamp(24px, 4vw, 32px)',
-            fontWeight: 400,
-            color: '#212529',
-            marginBottom: '12px'
-          }}>
-            Shop by Category
-          </h2>
-          <p style={{ color: '#5F6873', fontSize: '15px' }}>
-            Find the right product for every need
-          </p>
+        <div className="section-head">
+          <div>
+            <h2 className="section-title">Shop by category</h2>
+            <p className="section-lede">Start with the room that bothers you most.</p>
+          </div>
+          <Link href="/shop" className="text-link">
+            All products <ArrowRight aria-hidden />
+          </Link>
         </div>
 
-        <div className="grid-categories">
-          {categories.map((cat) => (
-            <Link key={cat.id} href={`/category/${cat.slug}`} style={{ display: 'block' }}>
-              <div className="img-hover-zoom" style={{
-                position: 'relative',
-                aspectRatio: '1',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                background: '#F1F3F5'
-              }}>
-                <Image
-                  src={cat.image}
-                  alt={cat.name}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                  style={{ objectFit: 'cover' }}
-                />
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)'
-                }} />
-                <div style={{
-                  position: 'absolute',
-                  bottom: '14px',
-                  left: '14px',
-                  right: '14px',
-                  color: 'white'
-                }}>
-                  <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '2px' }}>{cat.name}</div>
-                  <div style={{ fontSize: '12px', opacity: 0.8 }}>{cat.productCount} {cat.productCount === 1 ? 'product' : 'products'}</div>
+        <div className="cat-grid">
+          {TILES.map((t) => {
+            const cat = getCategoryBySlug(t.slug);
+            if (!cat) return null;
+            return (
+              <Link key={cat.slug} href={`/category/${cat.slug}`} className={`cat-tile ${t.variant}`}>
+                <div>
+                  <div className="cat-tile-name">{cat.name}</div>
+                  <div className="cat-tile-count">
+                    {cat.productCount} {cat.productCount === 1 ? 'product' : 'products'}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+                <span className="cat-tile-arrow" aria-hidden><ArrowRight /></span>
+                <span className="cat-tile-img">
+                  <Image src={t.image} alt="" fill sizes="(max-width: 900px) 45vw, 30vw" />
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

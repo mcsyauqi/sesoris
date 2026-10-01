@@ -24,16 +24,16 @@ export function ToolPageShell({
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0', borderBottom: '1px solid #E9ECEF' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', minWidth: 0 }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873', flexShrink: 0 }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)', flexShrink: 0 }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873', flexShrink: 0 }} />
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)', flexShrink: 0 }} />
             <span
               style={{
-                color: '#212529',
+                color: 'var(--ink)',
                 fontWeight: 500,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
@@ -54,8 +54,8 @@ export function ToolPageShell({
               alignItems: 'center',
               gap: '6px',
               padding: '6px 16px',
-              background: '#E8F5E9',
-              color: '#1B5E3B',
+              background: 'var(--brand-tint)',
+              color: 'var(--brand)',
               fontSize: '13px',
               fontWeight: 600,
               borderRadius: '50px',
@@ -69,14 +69,14 @@ export function ToolPageShell({
             style={{
               fontSize: 'clamp(28px, 4vw, 38px)',
               fontWeight: 700,
-              color: '#212529',
+              color: 'var(--ink)',
               marginBottom: '14px',
               lineHeight: 1.25,
             }}
           >
             {title}
           </h1>
-          <p style={{ fontSize: '17px', color: '#5F6873', lineHeight: 1.7 }}>{subtitle}</p>
+          <p style={{ fontSize: '17px', color: 'var(--ink-muted)', lineHeight: 1.7 }}>{subtitle}</p>
           {children}
         </article>
       </div>
@@ -87,7 +87,7 @@ export function ToolPageShell({
 export function ToolSection({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section style={{ margin: '44px 0' }}>
-      <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#212529', marginBottom: '16px' }}>{title}</h2>
+      <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--ink)', marginBottom: '16px' }}>{title}</h2>
       {children}
     </section>
   );
@@ -96,7 +96,7 @@ export function ToolSection({ title, children }: { title: string; children: Reac
 export const orderedListStyle: CSSProperties = {
   listStyle: 'decimal',
   paddingLeft: '22px',
-  color: '#495057',
+  color: 'var(--ink-2)',
   fontSize: '15px',
   lineHeight: 1.8,
   display: 'grid',
@@ -117,14 +117,14 @@ export function FaqCards({ faqs }: { faqs: { q: string; a: string }[] }) {
           key={i}
           style={{
             background: 'white',
-            border: '1px solid #E9ECEF',
+            border: '1px solid var(--line)',
             borderRadius: '12px',
             padding: '20px',
             boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
           }}
         >
-          <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>{f.q}</h3>
-          <p style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.7, margin: 0 }}>{f.a}</p>
+          <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '8px' }}>{f.q}</h3>
+          <p style={{ fontSize: '14px', color: 'var(--ink-muted)', lineHeight: 1.7, margin: 0 }}>{f.a}</p>
         </div>
       ))}
     </div>
@@ -141,8 +141,8 @@ export function RelatedLinks({ links }: { links: { url: string; title: string }[
             style={{
               display: 'inline-block',
               padding: '8px 18px',
-              background: '#E8F5E9',
-              color: '#1B5E3B',
+              background: 'var(--brand-tint)',
+              color: 'var(--brand)',
               borderRadius: '50px',
               fontSize: '14px',
               fontWeight: 600,
@@ -159,8 +159,8 @@ export function RelatedLinks({ links }: { links: { url: string; title: string }[
 
 /** Styles shared by the interactive ToolWidget client components. */
 export const widgetCardStyle: CSSProperties = {
-  background: '#F8F9FA',
-  border: '1px solid #E9ECEF',
+  background: 'var(--surface-2)',
+  border: '1px solid var(--line)',
   borderRadius: '16px',
   padding: 'clamp(16px, 3vw, 28px)',
   margin: '32px 0',
@@ -169,7 +169,7 @@ export const widgetCardStyle: CSSProperties = {
 export const widgetTitleStyle: CSSProperties = {
   fontSize: '20px',
   fontWeight: 700,
-  color: '#212529',
+  color: 'var(--ink)',
   marginBottom: '16px',
 };
 
@@ -184,7 +184,7 @@ export const widgetResultStyle: CSSProperties = {
   marginTop: '20px',
   padding: '16px 20px',
   background: 'white',
-  border: '1px solid #E9ECEF',
+  border: '1px solid var(--line)',
   borderRadius: '12px',
   fontSize: '16px',
   lineHeight: 1.7,

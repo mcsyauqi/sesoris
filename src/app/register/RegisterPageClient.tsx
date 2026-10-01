@@ -23,14 +23,14 @@ export default function RegisterPageClient() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Create Account</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Create Account</span>
           </div>
         </div>
       </div>
@@ -38,10 +38,10 @@ export default function RegisterPageClient() {
       <div className="container" style={{ padding: '64px 16px 80px' }}>
         <div style={{ maxWidth: '420px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-            <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '8px' }}>
+            <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--ink)', marginBottom: '8px' }}>
               Create Account
             </h1>
-            <p style={{ color: '#5F6873' }}>
+            <p style={{ color: 'var(--ink-muted)' }}>
               Join us and start shopping with ease
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function RegisterPageClient() {
           <form onSubmit={handleSubmit}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>
                   First Name
                 </label>
                 <div style={{ position: 'relative' }}>
@@ -60,7 +60,7 @@ export default function RegisterPageClient() {
                     transform: 'translateY(-50%)',
                     width: '18px',
                     height: '18px',
-                    color: '#5F6873',
+                    color: 'var(--ink-muted)',
                   }} />
                   <input
                     type="text"
@@ -72,14 +72,14 @@ export default function RegisterPageClient() {
                       width: '100%',
                       padding: '14px 16px 14px 44px',
                       borderRadius: '10px',
-                      border: '1px solid #E9ECEF',
+                      border: '1px solid var(--line)',
                       fontSize: '15px',
                     }}
                   />
                 </div>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>
                   Last Name
                 </label>
                 <input
@@ -92,7 +92,7 @@ export default function RegisterPageClient() {
                     width: '100%',
                     padding: '14px 16px',
                     borderRadius: '10px',
-                    border: '1px solid #E9ECEF',
+                    border: '1px solid var(--line)',
                     fontSize: '15px',
                   }}
                 />
@@ -100,7 +100,7 @@ export default function RegisterPageClient() {
             </div>
 
             <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>
                 Email Address
               </label>
               <div style={{ position: 'relative' }}>
@@ -111,7 +111,7 @@ export default function RegisterPageClient() {
                   transform: 'translateY(-50%)',
                   width: '18px',
                   height: '18px',
-                  color: '#5F6873',
+                  color: 'var(--ink-muted)',
                 }} />
                 <input
                   type="email"
@@ -123,7 +123,7 @@ export default function RegisterPageClient() {
                     width: '100%',
                     padding: '14px 16px 14px 44px',
                     borderRadius: '10px',
-                    border: '1px solid #E9ECEF',
+                    border: '1px solid var(--line)',
                     fontSize: '15px',
                   }}
                 />
@@ -131,7 +131,7 @@ export default function RegisterPageClient() {
             </div>
 
             <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>
                 Password
               </label>
               <div style={{ position: 'relative' }}>
@@ -142,7 +142,7 @@ export default function RegisterPageClient() {
                   transform: 'translateY(-50%)',
                   width: '18px',
                   height: '18px',
-                  color: '#5F6873',
+                  color: 'var(--ink-muted)',
                 }} />
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -154,7 +154,7 @@ export default function RegisterPageClient() {
                     width: '100%',
                     padding: '14px 44px 14px 44px',
                     borderRadius: '10px',
-                    border: '1px solid #E9ECEF',
+                    border: '1px solid var(--line)',
                     fontSize: '15px',
                   }}
                 />
@@ -173,13 +173,13 @@ export default function RegisterPageClient() {
                   }}
                 >
                   {showPassword ? (
-                    <EyeOff style={{ width: '18px', height: '18px', color: '#5F6873' }} />
+                    <EyeOff style={{ width: '18px', height: '18px', color: 'var(--ink-muted)' }} />
                   ) : (
-                    <Eye style={{ width: '18px', height: '18px', color: '#5F6873' }} />
+                    <Eye style={{ width: '18px', height: '18px', color: 'var(--ink-muted)' }} />
                   )}
                 </button>
               </div>
-              <p style={{ fontSize: '13px', color: '#5F6873', marginTop: '8px' }}>
+              <p style={{ fontSize: '13px', color: 'var(--ink-muted)', marginTop: '8px' }}>
                 Must be at least 8 characters
               </p>
             </div>
@@ -196,13 +196,13 @@ export default function RegisterPageClient() {
                 required
                 checked={formData.acceptTerms}
                 onChange={(e) => setFormData({ ...formData, acceptTerms: e.target.checked })}
-                style={{ width: '16px', height: '16px', marginTop: '2px', accentColor: '#1B5E3B' }}
+                style={{ width: '16px', height: '16px', marginTop: '2px', accentColor: 'var(--brand)' }}
               />
-              <span style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.4 }}>
+              <span style={{ fontSize: '14px', color: 'var(--ink-muted)', lineHeight: 1.4 }}>
                 I agree to the{' '}
-                <Link href="/terms" style={{ color: '#1B5E3B' }}>Terms of Service</Link>
+                <Link href="/terms" style={{ color: 'var(--brand)' }}>Terms of Service</Link>
                 {' '}and{' '}
-                <Link href="/privacy" style={{ color: '#1B5E3B' }}>Privacy Policy</Link>
+                <Link href="/privacy" style={{ color: 'var(--brand)' }}>Privacy Policy</Link>
               </span>
             </label>
 
@@ -211,9 +211,9 @@ export default function RegisterPageClient() {
             </button>
 
             <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-              <span style={{ color: '#5F6873', fontSize: '14px' }}>
+              <span style={{ color: 'var(--ink-muted)', fontSize: '14px' }}>
                 Already have an account?{' '}
-                <Link href="/login" style={{ color: '#1B5E3B', fontWeight: 500 }}>
+                <Link href="/login" style={{ color: 'var(--brand)', fontWeight: 500 }}>
                   Sign In
                 </Link>
               </span>
@@ -221,10 +221,10 @@ export default function RegisterPageClient() {
 
             <div style={{ position: 'relative', marginBottom: '24px' }}>
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
-                <div style={{ width: '100%', height: '1px', background: '#E9ECEF' }} />
+                <div style={{ width: '100%', height: '1px', background: 'var(--line)' }} />
               </div>
               <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-                <span style={{ background: 'white', padding: '0 16px', fontSize: '14px', color: '#5F6873' }}>
+                <span style={{ background: 'white', padding: '0 16px', fontSize: '14px', color: 'var(--ink-muted)' }}>
                   Or sign up with
                 </span>
               </div>
@@ -235,7 +235,7 @@ export default function RegisterPageClient() {
                 type="button"
                 style={{
                   padding: '12px',
-                  border: '1px solid #E9ECEF',
+                  border: '1px solid var(--line)',
                   borderRadius: '10px',
                   background: 'white',
                   cursor: 'pointer',
@@ -254,7 +254,7 @@ export default function RegisterPageClient() {
                 type="button"
                 style={{
                   padding: '12px',
-                  border: '1px solid #E9ECEF',
+                  border: '1px solid var(--line)',
                   borderRadius: '10px',
                   background: 'white',
                   cursor: 'pointer',

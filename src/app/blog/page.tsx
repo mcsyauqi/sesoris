@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Calendar, Clock, ArrowRight, Tag, Search } from 'lucide-react';
+import { Home, ChevronRight, ArrowRight, Search } from 'lucide-react';
+import { NewsletterForm } from '@/components/layout/NewsletterForm';
 import { getAllPosts } from '@/lib/blog';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
@@ -65,209 +66,104 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Blog</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Blog</span>
           </div>
         </div>
       </div>
 
-      <div className="container" style={{ padding: '48px 16px 80px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
-            Blog Sesoris
-          </h1>
-          <p style={{ color: '#5F6873', fontSize: '16px', maxWidth: '680px', margin: '0 auto' }}>
-            Home organization tips, storage inspiration, kitchen guides, and tidy living ideas from Sesoris.
-          </p>
+      <div className="container" style={{ paddingBlock: '48px 88px' }}>
+        <div className="blog-head">
+          <div>
+            <h1 className="section-title" style={{ fontSize: 'clamp(2rem, 1.5rem + 2vw, 3.25rem)' }}>The Sesoris Blog</h1>
+            <p className="section-lede" style={{ fontSize: '17px' }}>
+              Home organization tips, storage inspiration, kitchen guides, and tidy living ideas, with new articles every day.
+            </p>
+          </div>
+          <form action="/blog" role="search" className="search-form" style={{ margin: 0, width: '100%', maxWidth: '440px' }}>
+            {selectedCategory !== 'All' && <input type="hidden" name="category" value={selectedCategory} />}
+            <label htmlFor="blog-search" className="sr-only">Search articles</label>
+            <input id="blog-search" type="search" name="q" defaultValue={searchQuery} placeholder="Search tips, storage, kitchen…" className="field" />
+            <button type="submit" className="btn btn-primary" aria-label="Search articles"><Search aria-hidden /></button>
+          </form>
         </div>
 
-        <form
-          action="/blog"
-          style={{
-            maxWidth: '640px',
-            margin: '0 auto 28px',
-            display: 'flex',
-            gap: '10px',
-            alignItems: 'center',
-          }}
-        >
-          {selectedCategory !== 'All' && <input type="hidden" name="category" value={selectedCategory} />}
-          <div style={{ position: 'relative', flex: 1 }}>
-            <Search style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '18px', height: '18px', color: '#5F6873' }} />
-            <input
-              type="search"
-              name="q"
-              defaultValue={searchQuery}
-              placeholder="Search organization tips, storage, kitchen..."
-              style={{
-                width: '100%',
-                padding: '14px 16px 14px 44px',
-                borderRadius: '12px',
-                border: '1px solid #E9ECEF',
-                fontSize: '15px',
-              }}
-            />
-          </div>
-          <button
-            type="submit"
-            style={{
-              padding: '14px 22px',
-              borderRadius: '12px',
-              border: 'none',
-              background: '#1B5E3B',
-              color: 'white',
-              fontWeight: 600,
-              cursor: 'pointer',
-            }}
-          >
-            Search
-          </button>
-        </form>
-
         {/* Categories */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '48px', flexWrap: 'wrap' }}>
+        <nav aria-label="Blog categories" className="chip-row">
           {categories.map((cat) => (
             <Link
               key={cat}
               href={buildBlogHref({ category: cat, q: searchQuery })}
-              style={{
-                display: 'inline-flex',
-                padding: '10px 20px',
-                borderRadius: '50px',
-                background: selectedCategory === cat ? '#1B5E3B' : '#F8F9FA',
-                color: selectedCategory === cat ? 'white' : '#5F6873',
-                fontWeight: 500,
-                fontSize: '14px',
-                textDecoration: 'none',
-              }}
+              className="chip"
+              aria-current={selectedCategory === cat ? 'page' : undefined}
             >
-              {cat}{cat !== 'All' ? ` (${categoryCounts[cat]})` : ''}
+              {cat}{cat !== 'All' ? <span>{categoryCounts[cat]}</span> : null}
             </Link>
           ))}
-        </div>
+        </nav>
 
         {/* Featured Post */}
         {featuredPost && (
-          <Link href={`/blog/${featuredPost.slug}`} style={{ display: 'block', textDecoration: 'none' }}>
-            <div style={{
-              marginBottom: '64px',
-              borderRadius: '20px',
-              overflow: 'hidden',
-              background: 'white',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
-            }}>
-              <div className="blog-featured-grid" style={{ display: 'grid' }}>
-                <div style={{ aspectRatio: '4/3', position: 'relative' }}>
-                  <Image src={featuredPost.image} alt={featuredPost.title} fill priority sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
-                </div>
-                <div style={{ padding: 'clamp(20px, 4vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <span style={{
-                      background: '#E8F5E9',
-                      color: '#1B5E3B',
-                      padding: '6px 12px',
-                      borderRadius: '6px',
-                      fontSize: '13px',
-                      fontWeight: 500,
-                    }}>
-                      {featuredPost.category}
-                    </span>
-                    <span style={{ fontSize: '13px', color: '#5F6873' }}>Featured Article</span>
-                  </div>
-                  <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#212529', marginBottom: '16px', lineHeight: 1.3 }}>
-                    {featuredPost.title}
-                  </h2>
-                  <p style={{ color: '#5F6873', lineHeight: 1.6, marginBottom: '24px' }}>
-                    {featuredPost.excerpt}
-                  </p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
-                      <Calendar style={{ width: '14px', height: '14px' }} />
-                      {featuredPost.dateFormatted}
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#5F6873' }}>
-                      <Clock style={{ width: '14px', height: '14px' }} />
-                      {featuredPost.readTime}
-                    </div>
-                  </div>
-                  <span style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    background: '#1B5E3B',
-                    color: 'white',
-                    padding: '14px 28px',
-                    borderRadius: '10px',
-                    fontWeight: 600,
-                    fontSize: '15px',
-                    width: 'fit-content',
-                  }}>
-                    Read Article
-                    <ArrowRight style={{ width: '18px', height: '18px' }} />
-                  </span>
-                </div>
+          <Link href={`/blog/${featuredPost.slug}`} className="post-card blog-featured">
+            <div className="post-card-img">
+              <Image src={featuredPost.image} alt={featuredPost.title} fill priority sizes="(max-width: 768px) 100vw, 55vw" />
+            </div>
+            <div>
+              <div className="post-card-meta">
+                <b>{featuredPost.category}</b>
+                <span>{featuredPost.dateFormatted}</span>
+                <span>{featuredPost.readTime}</span>
               </div>
+              <h2 className="post-card-title" style={{ fontSize: 'clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem)', marginTop: '10px', lineHeight: 1.2 }}>
+                {featuredPost.title}
+              </h2>
+              <p className="post-card-excerpt" style={{ marginTop: '12px', fontSize: '16px' }}>
+                {featuredPost.excerpt}
+              </p>
+              <span className="text-link" style={{ marginTop: '20px' }}>
+                Read the article <ArrowRight aria-hidden />
+              </span>
             </div>
           </Link>
         )}
 
         {/* Posts Grid */}
-        <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
-          {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
-        </h2>
-        <p style={{ color: '#5F6873', marginBottom: '32px', fontSize: '14px' }}>
-          Showing {filteredPosts.length} article{filteredPosts.length === 1 ? '' : 's'}
-          {searchQuery ? ` for "${searchQuery}"` : ''}
-        </p>
-        <div className="blog-posts-grid" style={{ display: 'grid', gap: '24px' }}>
+        <div className="section-head" style={{ marginBottom: '28px' }}>
+          <div>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 1.3rem + 0.8vw, 2rem)' }}>
+              {selectedCategory === 'All' ? 'Latest articles' : `${selectedCategory} articles`}
+            </h2>
+            <p style={{ color: 'var(--ink-muted)', marginTop: '6px', fontSize: '15px' }}>
+              {filteredPosts.length} article{filteredPosts.length === 1 ? '' : 's'}
+              {searchQuery ? ` for "${searchQuery}"` : ''}
+            </p>
+          </div>
+        </div>
+        <div className="blog-posts-grid" style={{ display: 'grid', gap: '40px 28px' }}>
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
-              <article style={{
-                background: 'white',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                height: '100%',
-              }}>
-                <div style={{ aspectRatio: '16/10', position: 'relative' }}>
-                  <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="post-card">
+              <article style={{ display: 'contents' }}>
+                <div className="post-card-img">
+                  <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 </div>
-                <div style={{ padding: '20px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                    <Tag style={{ width: '14px', height: '14px', color: '#1B5E3B' }} />
-                    <span style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 500 }}>{post.category}</span>
+                <div>
+                  <div className="post-card-meta">
+                    <b>{post.category}</b>
+                    <span>{post.dateFormatted}</span>
+                    <span>{post.readTime}</span>
                   </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', lineHeight: 1.4 }}>
+                  <h3 className="post-card-title" style={{ marginTop: '6px', fontSize: '18px' }}>
                     {post.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#5F6873', lineHeight: 1.5, marginBottom: '16px' }}>
+                  <p className="post-card-excerpt" style={{ marginTop: '6px' }}>
                     {post.excerpt}
                   </p>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <span style={{ fontSize: '12px', color: '#5F6873' }}>{post.dateFormatted}</span>
-                      <span style={{ fontSize: '12px', color: '#5F6873' }}>{post.readTime}</span>
-                    </div>
-                    <span style={{
-                      color: '#1B5E3B',
-                      fontWeight: 500,
-                      fontSize: '14px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                    }}>
-                      Read
-                      <ArrowRight style={{ width: '14px', height: '14px' }} />
-                    </span>
-                  </div>
                 </div>
               </article>
             </Link>
@@ -275,19 +171,19 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </div>
 
         {posts.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '48px 16px', background: '#F8F9FA', borderRadius: '16px' }}>
-            <h3 style={{ color: '#212529', marginBottom: '8px' }}>No articles found</h3>
-            <p style={{ color: '#5F6873', marginBottom: '20px' }}>Try another keyword or browse all Sesoris articles.</p>
-            <Link href="/blog" style={{ color: '#1B5E3B', fontWeight: 600, textDecoration: 'none' }}>
+          <div style={{ textAlign: 'center', padding: '48px 16px', background: 'var(--surface-2)', borderRadius: 'var(--radius-lg)' }}>
+            <h3 style={{ color: 'var(--ink)', marginBottom: '8px' }}>No articles found</h3>
+            <p style={{ color: 'var(--ink-muted)', marginBottom: '20px' }}>Try another keyword or browse all Sesoris articles.</p>
+            <Link href="/blog" className="text-link">
               Back to all articles
             </Link>
           </div>
         )}
 
         {totalPages > 1 && (
-          <nav aria-label="Blog pagination" style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '48px', flexWrap: 'wrap' }}>
+          <nav aria-label="Blog pagination" className="pager">
             {page > 1 && (
-              <Link href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: page - 1 })} style={{ padding: '12px 18px', borderRadius: '10px', border: '1px solid #E9ECEF', color: '#212529', textDecoration: 'none', fontWeight: 500 }}>
+              <Link href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: page - 1 })}>
                 Previous
               </Link>
             )}
@@ -296,23 +192,12 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 key={pageNumber}
                 href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: pageNumber })}
                 aria-current={pageNumber === page ? 'page' : undefined}
-                style={{
-                  minWidth: '44px',
-                  textAlign: 'center',
-                  padding: '12px 14px',
-                  borderRadius: '10px',
-                  border: '1px solid #E9ECEF',
-                  background: pageNumber === page ? '#1B5E3B' : 'white',
-                  color: pageNumber === page ? 'white' : '#212529',
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                }}
               >
                 {pageNumber}
               </Link>
             ))}
             {page < totalPages && (
-              <Link href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: page + 1 })} style={{ padding: '12px 18px', borderRadius: '10px', border: '1px solid #E9ECEF', color: '#212529', textDecoration: 'none', fontWeight: 500 }}>
+              <Link href={buildBlogHref({ category: selectedCategory, q: searchQuery, page: page + 1 })}>
                 Next
               </Link>
             )}
@@ -320,44 +205,13 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         )}
 
         {/* Newsletter */}
-        <div style={{
-          marginTop: '64px',
-          padding: 'clamp(24px, 4vw, 48px)',
-          background: 'linear-gradient(135deg, #1B5E3B 0%, #2E7D4A 100%)',
-          borderRadius: '20px',
-          color: 'white',
-          textAlign: 'center',
-        }}>
-          <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '12px' }}>
-            Get the Latest Tips
-          </h3>
-          <p style={{ opacity: 0.9, marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
-            Subscribe to our newsletter to get the latest articles and tips delivered straight to your inbox.
-          </p>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', maxWidth: '450px', margin: '0 auto' }}>
-            <input
-              type="email"
-              placeholder="Your email address"
-              style={{
-                flex: 1,
-                padding: '14px 18px',
-                borderRadius: '10px',
-                border: 'none',
-                fontSize: '15px',
-              }}
-            />
-            <button style={{
-              padding: '14px 24px',
-              background: 'white',
-              color: '#1B5E3B',
-              border: 'none',
-              borderRadius: '10px',
-              fontWeight: 600,
-              cursor: 'pointer',
-            }}>
-              Subscribe
-            </button>
+        <div className="news-card" style={{ marginTop: '72px' }}>
+          <h2>Get new guides by email</h2>
+          <p>New organizing guides and the occasional new product. No spam, unsubscribe anytime.</p>
+          <div style={{ maxWidth: '520px' }}>
+            <NewsletterForm source="blog" formClass="news-form" buttonClass="btn btn-light" />
           </div>
+          <div className="ruler" aria-hidden />
         </div>
       </div>
     </>

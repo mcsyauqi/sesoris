@@ -37,13 +37,13 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
       <h2 style={{
         fontSize: '22px',
         fontWeight: 700,
-        color: '#212529',
+        color: 'var(--ink)',
         marginBottom: '24px',
         display: 'flex',
         alignItems: 'center',
         gap: '10px',
       }}>
-        <Tag style={{ width: '22px', height: '22px', color: '#1B5E3B' }} />
+        <Tag style={{ width: '22px', height: '22px', color: 'var(--brand)' }} />
         Sering Dibeli Bersama
       </h2>
 
@@ -58,17 +58,17 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
             <div
               key={bundle.id}
               style={{
-                border: '2px solid #E8F5E9',
+                border: '2px solid var(--brand-tint)',
                 borderRadius: '16px',
                 padding: '24px',
-                background: 'linear-gradient(135deg, #F1F8F4 0%, #FFFFFF 100%)',
+                background: 'linear-gradient(135deg, var(--brand-tint) 0%, #FFFFFF 100%)',
               }}
             >
               {/* Bundle badge + name */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
                 {bundle.badge && (
                   <span style={{
-                    background: '#1B5E3B',
+                    background: 'var(--brand)',
                     color: 'white',
                     fontSize: '11px',
                     fontWeight: 700,
@@ -82,7 +82,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                 )}
                 <Link
                   href={`/bundles/${bundle.slug}`}
-                  style={{ fontSize: '16px', fontWeight: 700, color: '#1B5E3B', textDecoration: 'none' }}
+                  style={{ fontSize: '16px', fontWeight: 700, color: 'var(--brand)', textDecoration: 'none' }}
                 >
                   {bundle.name}
                 </Link>
@@ -93,14 +93,14 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                 {bundleProducts.map((product, index) => (
                   <div key={product.id} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     {index > 0 && (
-                      <Plus style={{ width: '16px', height: '16px', color: '#5F6873', flexShrink: 0 }} />
+                      <Plus style={{ width: '16px', height: '16px', color: 'var(--ink-muted)', flexShrink: 0 }} />
                     )}
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
                       gap: '10px',
                       background: 'white',
-                      border: product.id === currentProductId ? '2px solid #1B5E3B' : '1px solid #E9ECEF',
+                      border: product.id === currentProductId ? '2px solid var(--brand)' : '1px solid var(--line)',
                       borderRadius: '10px',
                       padding: '8px 12px',
                     }}>
@@ -114,10 +114,10 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                         />
                       </div>
                       <div>
-                        <div style={{ fontSize: '12px', fontWeight: 600, color: '#212529', maxWidth: '120px', lineHeight: '1.3' }}>
+                        <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--ink)', maxWidth: '120px', lineHeight: '1.3' }}>
                           {product.name}
                         </div>
-                        <div style={{ fontSize: '12px', color: '#1B5E3B', fontWeight: 600 }}>
+                        <div style={{ fontSize: '12px', color: 'var(--brand)', fontWeight: 600 }}>
                           {formatPrice(product.price)}
                         </div>
                       </div>
@@ -130,14 +130,14 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                    <span style={{ fontSize: '22px', fontWeight: 800, color: '#212529' }}>
+                    <span style={{ fontSize: '22px', fontWeight: 800, color: 'var(--ink)' }}>
                       {formatPrice(bundle.bundlePrice)}
                     </span>
-                    <span style={{ fontSize: '14px', color: '#ADB5BD', textDecoration: 'line-through' }}>
+                    <span style={{ fontSize: '14px', color: 'var(--ink-faint)', textDecoration: 'line-through' }}>
                       {formatPrice(bundle.originalPrice)}
                     </span>
                     <span style={{
-                      background: '#FF6B35',
+                      background: 'var(--accent)',
                       color: 'white',
                       fontSize: '12px',
                       fontWeight: 700,
@@ -147,7 +147,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                       -{bundle.discountPercent}%
                     </span>
                   </div>
-                  <div style={{ fontSize: '13px', color: '#1E7E34', fontWeight: 600, marginTop: '2px' }}>
+                  <div style={{ fontSize: '13px', color: 'var(--success)', fontWeight: 600, marginTop: '2px' }}>
                     Anda hemat {formatPrice(bundle.originalPrice - bundle.bundlePrice)}!
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export function FrequentlyBoughtTogether({ currentProductId, allProducts, bundle
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    background: isAdded ? '#1E7E34' : '#1B5E3B',
+                    background: isAdded ? 'var(--success)' : 'var(--brand)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '10px',

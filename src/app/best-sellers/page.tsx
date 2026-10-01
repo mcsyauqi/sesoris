@@ -22,14 +22,14 @@ export default function BestSellersPage() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Best Sellers</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Best Sellers</span>
           </div>
         </div>
       </div>
@@ -51,10 +51,10 @@ export default function BestSellersPage() {
             <TrendingUp style={{ width: '16px', height: '16px' }} />
             Most Popular
           </span>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+          <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
             Best Sellers
           </h1>
-          <p style={{ color: '#5F6873', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
+          <p style={{ color: 'var(--ink-muted)', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
             Our top picks for an organized home
           </p>
         </div>
@@ -65,37 +65,37 @@ export default function BestSellersPage() {
 
         {bestSellers.length === 0 && (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ color: '#5F6873' }}>No best-selling products available at the moment.</p>
+            <p style={{ color: 'var(--ink-muted)' }}>No best-selling products available at the moment.</p>
           </div>
         )}
       </div>
 
       {/* SEO Content Section */}
-      <div style={{ background: '#F8F9FA', padding: '48px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '48px 0' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
             Why Shop Our Best Sellers?
           </h2>
-          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+          <p style={{ color: 'var(--ink-2)', lineHeight: '1.7', marginBottom: '16px' }}>
             These are the pieces we recommend first: practical storage racks, kitchen organizers, and desk organizers chosen for everyday function and durable materials.
           </p>
-          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+          <p style={{ color: 'var(--ink-2)', lineHeight: '1.7', marginBottom: '16px' }}>
             At Sesoris, we curate our best sellers from categories including home organization, kitchen storage, desk accessories, and lifestyle products. Whether you are looking to declutter your home, organize your kitchen, or find the perfect gift, our top-rated products deliver exceptional value.
           </p>
-          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--ink-2)', lineHeight: '1.7', marginBottom: '24px' }}>
             All best-selling products come with our quality guarantee, free shipping on orders over $50, and a 30-day return policy. Shop with confidence knowing that what others love, you will love too.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid var(--brand)', color: 'var(--brand)', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
               Shop All Products
             </Link>
-            <Link href="/new-arrivals" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/new-arrivals" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid var(--brand)', color: 'var(--brand)', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
               New Arrivals
             </Link>
-            <Link href="/on-sale" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/on-sale" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid var(--brand)', color: 'var(--brand)', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
               On Sale
             </Link>
-            <Link href="/category/home-living" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/category/home-living" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid var(--brand)', color: 'var(--brand)', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
               Home & Decor
             </Link>
           </div>

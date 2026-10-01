@@ -17,14 +17,14 @@ export default function TrackOrderPageClient() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Track Order</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Track Order</span>
           </div>
         </div>
       </div>
@@ -36,25 +36,25 @@ export default function TrackOrderPageClient() {
               width: '64px',
               height: '64px',
               borderRadius: '50%',
-              background: '#E8F5E9',
+              background: 'var(--brand-tint)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 20px',
             }}>
-              <Package style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
+              <Package style={{ width: '32px', height: '32px', color: 'var(--brand)' }} />
             </div>
-            <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+            <h1 style={{ fontSize: '32px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
               Track Your Order
             </h1>
-            <p style={{ color: '#5F6873' }}>
+            <p style={{ color: 'var(--ink-muted)' }}>
               Enter your order details to see the current status of your shipment.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} style={{ marginBottom: '40px' }}>
             <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>
                 Order Number
               </label>
               <input
@@ -67,13 +67,13 @@ export default function TrackOrderPageClient() {
                   width: '100%',
                   padding: '14px 16px',
                   borderRadius: '10px',
-                  border: '1px solid #E9ECEF',
+                  border: '1px solid var(--line)',
                   fontSize: '15px',
                 }}
               />
             </div>
             <div style={{ marginBottom: '24px' }}>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#212529', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', marginBottom: '8px' }}>
                 Email Address
               </label>
               <input
@@ -86,7 +86,7 @@ export default function TrackOrderPageClient() {
                   width: '100%',
                   padding: '14px 16px',
                   borderRadius: '10px',
-                  border: '1px solid #E9ECEF',
+                  border: '1px solid var(--line)',
                   fontSize: '15px',
                 }}
               />
@@ -105,20 +105,20 @@ export default function TrackOrderPageClient() {
             <div style={{
               background: 'white',
               borderRadius: '16px',
-              border: '1px solid #E9ECEF',
+              border: '1px solid var(--line)',
               padding: '32px 24px',
               textAlign: 'center',
             }}>
-              <SearchX style={{ width: '40px', height: '40px', color: '#5F6873', margin: '0 auto 16px' }} />
-              <div style={{ fontWeight: 600, color: '#212529', marginBottom: '8px' }}>
+              <SearchX style={{ width: '40px', height: '40px', color: 'var(--ink-muted)', margin: '0 auto 16px' }} />
+              <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '8px' }}>
                 We couldn&apos;t find order {orderNumber}
               </div>
-              <p style={{ fontSize: '14px', color: '#5F6873', lineHeight: '1.7', margin: 0 }}>
+              <p style={{ fontSize: '14px', color: 'var(--ink-muted)', lineHeight: '1.7', margin: 0 }}>
                 Double-check the order number and email against your confirmation email.
                 If the details are correct and you still can&apos;t find your order, our team
                 can look it up for you via{' '}
-                <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>Contact Support</Link>{' '}
-                or email <a href="mailto:admin@sesoris.com" style={{ color: '#1B5E3B', fontWeight: 500 }}>admin@sesoris.com</a>.
+                <Link href="/contact" style={{ color: 'var(--brand)', fontWeight: 500 }}>Contact Support</Link>{' '}
+                or email <a href="mailto:admin@sesoris.com" style={{ color: 'var(--brand)', fontWeight: 500 }}>admin@sesoris.com</a>.
               </p>
             </div>
           )}
@@ -126,35 +126,35 @@ export default function TrackOrderPageClient() {
           <div style={{
             marginTop: '40px',
             padding: '24px',
-            background: '#F8F9FA',
+            background: 'var(--surface-2)',
             borderRadius: '12px',
             textAlign: 'center',
           }}>
-            <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '12px' }}>
               Need help with your order?
             </p>
-            <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 500 }}>
+            <Link href="/contact" style={{ color: 'var(--brand)', fontWeight: 500 }}>
               Contact Support
             </Link>
           </div>
 
           {/* SEO Content */}
-          <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #E9ECEF' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+          <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--line)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>
               How Order Tracking Works at Sesoris
             </h2>
-            <p style={{ color: '#5F6873', lineHeight: '1.7', marginBottom: '12px', fontSize: '14px' }}>
+            <p style={{ color: 'var(--ink-muted)', lineHeight: '1.7', marginBottom: '12px', fontSize: '14px' }}>
               After placing your order at Sesoris, you will receive a confirmation email with your order number. Once your order is shipped, we will send a tracking number that you can use to monitor your delivery in real time.
             </p>
-            <p style={{ color: '#5F6873', lineHeight: '1.7', marginBottom: '16px', fontSize: '14px' }}>
+            <p style={{ color: 'var(--ink-muted)', lineHeight: '1.7', marginBottom: '16px', fontSize: '14px' }}>
               Standard delivery takes 5-7 business days, with express options available in 2-3 business days. All shipments are fully insured and trackable from our warehouse to your doorstep.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <Link href="/shipping" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>Shipping Policy</Link>
-              <span style={{ color: '#5F6873' }}>·</span>
-              <Link href="/returns" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>Returns Policy</Link>
-              <span style={{ color: '#5F6873' }}>·</span>
-              <Link href="/faq" style={{ color: '#1B5E3B', fontSize: '14px', fontWeight: 500 }}>FAQ</Link>
+              <Link href="/shipping" style={{ color: 'var(--brand)', fontSize: '14px', fontWeight: 500 }}>Shipping Policy</Link>
+              <span style={{ color: 'var(--ink-muted)' }}>·</span>
+              <Link href="/returns" style={{ color: 'var(--brand)', fontSize: '14px', fontWeight: 500 }}>Returns Policy</Link>
+              <span style={{ color: 'var(--ink-muted)' }}>·</span>
+              <Link href="/faq" style={{ color: 'var(--brand)', fontSize: '14px', fontWeight: 500 }}>FAQ</Link>
             </div>
           </div>
         </div>

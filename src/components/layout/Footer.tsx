@@ -1,16 +1,18 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
-import { useState } from 'react';
+import { NewsletterForm } from './NewsletterForm';
 
 const footerLinks = {
   shop: [
     { name: 'All Products', href: '/shop' },
+    { name: 'Kitchen & Dining', href: '/category/kitchen-dining' },
+    { name: 'Home & Decor', href: '/category/home-living' },
+    { name: 'Bags & Pouches', href: '/category/bags-pouches' },
+    { name: 'Travel & Outdoor', href: '/category/outdoor-travel' },
     { name: 'New Arrivals', href: '/new-arrivals' },
     { name: 'Best Sellers', href: '/best-sellers' },
-    { name: 'On Sale', href: '/on-sale' },
+    { name: 'On Sale', href: '/on-sale' },
   ],
   help: [
     { name: 'FAQ', href: '/faq' },
@@ -50,250 +52,79 @@ const footerLinks = {
   ],
 };
 
-export function Footer() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
-
-  async function handleSubscribe(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email) return;
-    setStatus('loading');
-    try {
-      const res = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'footer' }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus('success');
-        setMessage(data.message || 'Subscribed!');
-        setEmail('');
-      } else {
-        setStatus('error');
-        setMessage(data.error || 'Something went wrong.');
-      }
-    } catch {
-      setStatus('error');
-      setMessage('Network error. Please try again.');
-    }
-  }
-
+function LinkColumn({ title, links }: { title: string; links: { name: string; href: string }[] }) {
   return (
-    <footer style={{ background: '#1B5E3B', color: 'white', paddingTop: '48px' }}>
+    <div className="footer-col">
+      <h2>{title}</h2>
+      <ul>
+        {links.map((l) => (
+          <li key={l.href}><Link href={l.href}>{l.name}</Link></li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="ruler is-top" aria-hidden />
       <div className="container">
-        <div className="grid-footer" style={{ paddingBottom: '40px' }}>
-          {/* Brand */}
-          <div>
-            <div style={{ marginBottom: '16px' }}>
-              <Image
-                src="/logo.webp"
-                alt="Sesoris"
-                width={280}
-                height={90}
-                style={{ height: '40px', width: 'auto', filter: 'brightness(0) invert(1)' }}
-              />
-              <div style={{ fontSize: '11px', opacity: 0.7, marginTop: '4px' }}>Do It With Ease</div>
-            </div>
-            <p style={{ fontSize: '14px', opacity: 0.8, lineHeight: 1.6, marginBottom: '24px' }}>
-              Sesoris is a Yogyakarta-based online store for home organizers, kitchen storage,
-              desk accessories, and practical storage solutions with worldwide shipping.
+        <div className="footer-top">
+          <div className="footer-brand">
+            <Image src="/logo.webp" alt="Sesoris" width={280} height={90} />
+            <p>
+              Sesoris is an independent home organization store founded in Yogyakarta, Indonesia.
+              Orders ship to US addresses from our US warehouse.
             </p>
-            <div style={{ marginBottom: '16px' }}>
-              <p style={{ fontWeight: 600, marginBottom: '12px', fontSize: '14px' }}>Subscribe to Newsletter</p>
-              <p style={{ fontSize: '13px', opacity: 0.7, marginBottom: '12px' }}>
-                Get the latest deals and product updates straight to your inbox.
-              </p>
-              {status === 'success' ? (
-                <div style={{
-                  background: 'rgba(255,255,255,0.15)',
-                  borderRadius: '8px',
-                  padding: '12px 14px',
-                  fontSize: '13px',
-                  color: 'white',
-                }}>
-                  ✓ {message}
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '8px' }}>
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    aria-label="Email address for the newsletter"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    disabled={status === 'loading'}
-                    style={{
-                      flex: 1,
-                      padding: '10px 14px',
-                      borderRadius: '8px',
-                      border: status === 'error' ? '1px solid #ff6b6b' : 'none',
-                      background: 'rgba(255,255,255,0.1)',
-                      color: 'white',
-                      fontSize: '14px',
-                      minWidth: 0,
-                      opacity: status === 'loading' ? 0.7 : 1,
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    aria-label="Subscribe to the newsletter"
-                    style={{
-                      padding: '10px 16px',
-                      borderRadius: '8px',
-                      background: 'white',
-                      color: '#1B5E3B',
-                      border: 'none',
-                      fontWeight: 600,
-                      cursor: status === 'loading' ? 'not-allowed' : 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                      opacity: status === 'loading' ? 0.7 : 1,
-                    }}
-                  >
-                    <Mail style={{ width: '16px', height: '16px' }} />
-                  </button>
-                </form>
-              )}
-              {status === 'error' && (
-                <p style={{ fontSize: '12px', color: '#ff6b6b', marginTop: '6px' }}>{message}</p>
-              )}
+            <div className="footer-news">
+              <p>New organizers and guides, by email</p>
+              <NewsletterForm source="footer" buttonLabel="Join" />
             </div>
           </div>
 
-          {/* Shop Links */}
+          <div className="footer-cols">
+            <LinkColumn title="Shop" links={footerLinks.shop} />
+            <LinkColumn title="Help" links={footerLinks.help} />
+            <div>
+              <LinkColumn title="Company" links={footerLinks.company} />
+              <div className="footer-contact">
+                <div><Mail aria-hidden /> <a href="mailto:admin@sesoris.com">admin@sesoris.com</a></div>
+                <div><Phone aria-hidden /> <a href="https://wa.me/6281326102061">+62 813 2610 2061 (WhatsApp)</a></div>
+                <div><MapPin aria-hidden /> <span>Yogyakarta, Indonesia</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-links-row">
+          <h2>Free tools</h2>
           <div>
-            <h2 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Shop</h2>
-            <ul style={{ listStyle: 'none' }}>
-              {footerLinks.shop.map((link) => (
-                <li key={link.name} style={{ marginBottom: '10px' }}>
-                  <Link href={link.href} style={{ fontSize: '14px', opacity: 0.8 }}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {footerLinks.tools.map((l) => <Link key={l.href} href={l.href}>{l.name}</Link>)}
           </div>
+        </div>
 
-          {/* Help Links */}
+        <div className="footer-links-row">
+          <h2>Popular articles</h2>
           <div>
-            <h2 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Help</h2>
-            <ul style={{ listStyle: 'none' }}>
-              {footerLinks.help.map((link) => (
-                <li key={link.name} style={{ marginBottom: '10px' }}>
-                  <Link href={link.href} style={{ fontSize: '14px', opacity: 0.8 }}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h2 style={{ fontWeight: 600, marginBottom: '20px', fontSize: '15px' }}>Company</h2>
-            <ul style={{ listStyle: 'none', marginBottom: '24px' }}>
-              {footerLinks.company.map((link) => (
-                <li key={link.name} style={{ marginBottom: '10px' }}>
-                  <Link href={link.href} style={{ fontSize: '14px', opacity: 0.8 }}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div style={{ fontSize: '14px', opacity: 0.8 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <Mail style={{ width: '14px', height: '14px', flexShrink: 0 }} />
-                admin@sesoris.com
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <Phone style={{ width: '14px', height: '14px', flexShrink: 0 }} />
-                +62 813 2610 2061
-              </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                <MapPin style={{ width: '14px', height: '14px', marginTop: '2px', flexShrink: 0 }} />
-                <span>
-                  Yogyakarta, Special Region of Yogyakarta, Indonesia<br />
-                  Online store with worldwide shipping
-                </span>
-              </div>
-            </div>
+            {footerLinks.popularArticles.map((l) => <Link key={l.href} href={l.href}>{l.name}</Link>)}
           </div>
         </div>
 
-        {/* Free Tools */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '24px 0' }}>
-          <h2 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Free Tools</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
-            {footerLinks.tools.map((link) => (
-              <Link key={link.name} href={link.href} style={{ fontSize: '13px', opacity: 0.7 }}>
-                {link.name}
-              </Link>
-            ))}
+        <div className="footer-bottom">
+          <div className="footer-social">
+            <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on Facebook (opens in a new tab)"><Facebook /></a>
+            <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on Instagram (opens in a new tab)"><Instagram /></a>
+            <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on YouTube (opens in a new tab)"><Youtube /></a>
           </div>
-        </div>
-
-        {/* Popular Articles */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '24px 0' }}>
-          <h2 style={{ fontWeight: 600, marginBottom: '16px', fontSize: '14px', opacity: 0.9 }}>Popular Articles</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
-            {footerLinks.popularArticles.map((link) => (
-              <Link key={link.name} href={link.href} style={{ fontSize: '13px', opacity: 0.7 }}>
-                {link.name}
-              </Link>
-            ))}
+          <div className="footer-pay" aria-label="Accepted payment methods">
+            <span>PayPal</span><span>Visa</span><span>Mastercard</span><span>Amex</span>
           </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '20px 0' }}>
-          <div className="footer-bottom">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <span style={{ fontSize: '13px', opacity: 0.7 }}>Follow us:</span>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <a href="https://facebook.com/sesoris" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on Facebook (opens in a new tab)" style={{ color: 'inherit' }}>
-                  <Facebook style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-                </a>
-                <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on Instagram (opens in a new tab)" style={{ color: 'inherit' }}>
-                  <Instagram style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-                </a>
-                <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" aria-label="Sesoris on YouTube (opens in a new tab)" style={{ color: 'inherit' }}>
-                  <Youtube style={{ width: '18px', height: '18px', opacity: 0.8 }} />
-                </a>
-              </div>
-            </div>
-
-            <p style={{ fontSize: '13px', opacity: 0.7 }}>
-              © 2026 Sesoris. All rights reserved.
-            </p>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <span style={{ fontSize: '13px', opacity: 0.7 }}>Payment:</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>PayPal</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>Visa</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>Mastercard</span>
-              <span style={{ fontSize: '12px', fontWeight: 600 }}>Amex</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Legal */}
-        <div style={{
-          borderTop: '1px solid rgba(255,255,255,0.1)',
-          padding: '16px 0',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '24px'
-        }}>
-          {/* opacity 0.6 rendered as #A4BFB1 on the #1B5E3B footer = 3.93:1, below AA.
-              0.8 renders as #D1DFD8 = 5.63:1. */}
-          <Link href="/privacy" style={{ fontSize: '12px', opacity: 0.8 }}>Privacy Policy</Link>
-          <Link href="/terms" style={{ fontSize: '12px', opacity: 0.8 }}>Terms & Conditions</Link>
+          <nav aria-label="Legal">
+            <span>© {new Date().getFullYear()} Sesoris</span>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms &amp; Conditions</Link>
+          </nav>
         </div>
       </div>
     </footer>

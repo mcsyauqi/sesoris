@@ -4,11 +4,15 @@ import {
   TrustBadges,
   CategorySection,
   FeaturedProducts,
-  NewsletterSection,
+  MeasureSection,
+  JournalSection,
   AboutSection,
   HomeFAQSection,
 } from '@/components/home';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+
+// Picks up newly scheduled blog posts for the journal section without waiting for a deploy.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Sesoris | Home Organizers for a More Organized Home',
@@ -28,7 +32,8 @@ export default function HomePage() {
       <TrustBadges />
       <CategorySection />
       <FeaturedProducts />
-      <NewsletterSection />
+      <MeasureSection />
+      <JournalSection />
       <AboutSection />
       <HomeFAQSection />
     </>

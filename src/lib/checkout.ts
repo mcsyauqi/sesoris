@@ -1,8 +1,8 @@
 import { getProductBySlug } from '@/data/products';
 
-// ponytail: flat rule shared by the checkout page and the server quote. Change it here only.
-export const FREE_SHIPPING_MIN = 50;
-export const SHIPPING_FEE = 5.99;
+// ponytail: flat rule shared by the checkout page, the server quote, and the storefront copy. Change it in shipping.ts only.
+import { FREE_SHIPPING_MIN, SHIPPING_FEE } from './shipping';
+export { FREE_SHIPPING_MIN, SHIPPING_FEE };
 export const MAX_QTY_PER_ITEM = 20;
 
 /** What a store sells, as the server prices it. `sku` is what goes on the PayPal line item. */

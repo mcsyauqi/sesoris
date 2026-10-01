@@ -1,139 +1,69 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown } from 'lucide-react';
+import { Plus } from 'lucide-react';
+import { products, categories } from '@/data/products';
+import { FREE_SHIPPING_MIN, SHIPPING_FEE } from '@/lib/shipping';
 
+// Answers must match checkout.ts (US-only shipping, flat fee) and the returns page.
 const faqs = [
   {
     question: 'What types of home organizers does Sesoris sell?',
-    answer: 'Sesoris offers 56 products across 4 categories: Home & Decor, Kitchen & Dining, Bags & Pouches, and Travel & Outdoor. The range covers pull-out cabinet organizers, spice racks, sink caddies, shoe racks, storage bins and boxes, shelving, closet storage, makeup and toiletry bags, and travel organizers, all shipped from a US warehouse.',
+    answer: `Sesoris offers ${products.length} products across ${categories.length} categories: ${categories.map((c) => c.name).join(', ')}. The range covers pull-out cabinet organizers, spice racks, sink caddies, shoe racks, storage bins and boxes, shelving, closet storage, makeup and toiletry bags, and travel organizers, all shipped from a US warehouse.`,
   },
   {
     question: 'Does Sesoris offer free shipping?',
-    answer: 'Yes! We offer free shipping on all orders over $50. For orders below that threshold, a flat shipping fee applies based on your location. Most orders are processed within 1 business day and delivered in 2–5 days.',
+    answer: `Yes. Shipping is free on orders over $${FREE_SHIPPING_MIN}. Below that, shipping is a flat $${SHIPPING_FEE}. Each product page shows its estimated delivery time.`,
   },
   {
     question: 'Are Sesoris products good quality?',
-    answer: 'Sesoris products are carefully curated for durability and functionality. Our stainless steel kitchen racks, food storage containers, desk organizers, and storage boxes are selected for everyday use, with a focus on rust-resistant stainless steel, food-grade plastics, and sturdy construction.',
+    answer: 'Sesoris products are chosen for durability and everyday use: chrome-plated and carbon steel racks, food-safe containers, and sturdy fabric and PU organizers. Each listing states the material, measurements, and weight capacity where it applies, so you can judge before you buy.',
   },
   {
     question: 'How do I choose the right storage solution for my kitchen?',
-    answer: 'Start by measuring your available space, countertop, cabinet, and wall space. Then identify what you need to store: spices, cookware, utensils, or dry goods. Our Kitchen & Dining category is organized by use case to make selection easy. For small kitchens, wall-mounted racks and stackable containers work best.',
+    answer: 'Start by measuring the inside of the space: width, depth, and height, plus any hinges, face frames, or pipes. Then decide what you need to store (spices, cookware, cleaning supplies, or dry goods) and compare with the dimensions and minimum opening listed on each product. For deep base cabinets, a pull-out basket brings the back of the cabinet within reach.',
   },
   {
     question: 'Can I return or exchange a product?',
-    answer: 'Yes. We offer a 30-day satisfaction guarantee. If you are not satisfied with your purchase, contact our customer service team via WhatsApp at +62-813-2610-2061 and we will arrange a return or exchange at no extra cost, provided the item is in original condition.',
+    answer: 'Yes. You can return a product within 30 days if it is still in its original condition. Contact us by email at admin@sesoris.com or on WhatsApp at +62-813-2610-2061 and we will arrange the return or exchange.',
   },
   {
     question: 'Where is Sesoris based?',
-    answer: 'Sesoris is based in Yogyakarta, Indonesia. We ship worldwide. For bulk or wholesale inquiries, please contact us directly.',
+    answer: 'Sesoris was founded in Yogyakarta, Indonesia. Orders ship to addresses in the United States from our US warehouse. For bulk or wholesale inquiries, please contact us directly.',
   },
 ];
 
 export function HomeFAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
-
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
     })),
   };
 
   return (
-    <section className="section-padding" style={{ background: '#F8F9FA' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h2 style={{
-            fontFamily: 'var(--font-heading), Georgia, serif',
-            fontSize: 'clamp(24px, 4vw, 32px)',
-            fontWeight: 400,
-            color: '#212529',
-            marginBottom: '12px',
-          }}>
-            Frequently Asked Questions
-          </h2>
-          <p style={{ color: '#5F6873', fontSize: '15px' }}>
-            Everything you need to know about Sesoris products and shopping experience.
+    <section className="section-padding">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <div className="container faq-grid">
+        <div className="faq-aside">
+          <h2 className="section-title">Questions, answered</h2>
+          <p className="section-lede">
+            Still unsure? <Link href="/contact" className="text-link">Contact us</Link> or browse
+            the <Link href="/blog" className="text-link">home organization blog</Link>.
           </p>
         </div>
 
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              style={{
-                background: 'white',
-                borderRadius: '12px',
-                marginBottom: '12px',
-                overflow: 'hidden',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-              }}
-            >
-              <button
-                onClick={() => toggle(i)}
-                style={{
-                  width: '100%',
-                  textAlign: 'left',
-                  padding: '18px 20px',
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  gap: '12px',
-                }}
-                aria-expanded={openIndex === i}
-              >
-                <span style={{ fontWeight: 600, fontSize: '15px', color: '#212529', lineHeight: 1.4 }}>
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  style={{
-                    width: '20px',
-                    height: '20px',
-                    color: '#1B5E3B',
-                    flexShrink: 0,
-                    transform: openIndex === i ? 'rotate(180deg)' : 'rotate(0deg)',
-                    transition: 'transform 0.2s',
-                  }}
-                />
-              </button>
-              {openIndex === i && (
-                <div style={{ padding: '0 20px 18px', color: '#5F6873', fontSize: '14px', lineHeight: 1.7 }}>
-                  {faq.answer}
-                </div>
-              )}
-            </div>
+        <div className="faq-list">
+          {faqs.map((faq) => (
+            <details key={faq.question} className="faq-item">
+              <summary>
+                {faq.question}
+                <Plus aria-hidden />
+              </summary>
+              <p className="faq-answer">{faq.answer}</p>
+            </details>
           ))}
-        </div>
-
-        <div style={{ textAlign: 'center', marginTop: '32px' }}>
-          <p style={{ color: '#5F6873', fontSize: '14px' }}>
-            Still have questions?{' '}
-            <Link href="/contact" style={{ color: '#1B5E3B', fontWeight: 600, textDecoration: 'underline' }}>
-              Contact our team
-            </Link>
-            {' '}or browse our{' '}
-            <Link href="/blog" style={{ color: '#1B5E3B', fontWeight: 600, textDecoration: 'underline' }}>
-              home organization blog
-            </Link>
-            .
-          </p>
         </div>
       </div>
     </section>

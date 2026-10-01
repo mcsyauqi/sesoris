@@ -18,14 +18,14 @@ export default function TermsPage() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Terms & Conditions</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Terms & Conditions</span>
           </div>
         </div>
       </div>
@@ -36,25 +36,25 @@ export default function TermsPage() {
             <div style={{
               width: '64px',
               height: '64px',
-              background: '#E8F5E9',
+              background: 'var(--brand-tint)',
               borderRadius: '16px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 20px'
             }}>
-              <FileText style={{ width: '32px', height: '32px', color: '#1B5E3B' }} />
+              <FileText style={{ width: '32px', height: '32px', color: 'var(--brand)' }} />
             </div>
-            <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+            <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
               Terms & Conditions
             </h1>
-            <p style={{ color: '#5F6873', fontSize: '16px' }}>
+            <p style={{ color: 'var(--ink-muted)', fontSize: '16px' }}>
               Last updated: January 1, 2026
             </p>
           </div>
 
-          <div style={{ background: '#F8F9FA', padding: '20px 24px', borderRadius: '12px', marginBottom: '32px' }}>
-            <p style={{ color: '#495057', lineHeight: 1.7, margin: 0 }}>
+          <div style={{ background: 'var(--surface-2)', padding: '20px 24px', borderRadius: '12px', marginBottom: '32px' }}>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, margin: 0 }}>
               Welcome to Sesoris. By accessing and using our website, you agree to be bound
               by the following terms and conditions. Please read them carefully before making a purchase.
             </p>
@@ -62,13 +62,13 @@ export default function TermsPage() {
 
           {/* Section 1 */}
           <section style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
               1. General Terms
             </h2>
-            <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '16px' }}>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, marginBottom: '16px' }}>
               By using Sesoris services, you represent that:
             </p>
-            <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
+            <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px' }}>
               <li style={{ marginBottom: '8px' }}>You are at least 18 years old or have parental/guardian consent.</li>
               <li style={{ marginBottom: '8px' }}>The information you provide is accurate and complete.</li>
               <li style={{ marginBottom: '8px' }}>You are responsible for maintaining the confidentiality of your account.</li>
@@ -79,22 +79,22 @@ export default function TermsPage() {
           {/* Section 2 */}
           <section style={{ marginBottom: '40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <ShoppingBag style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
-              <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
+              <ShoppingBag style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
+              <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', margin: 0 }}>
                 2. Orders and Payment
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>2.1 Order Process</h3>
-              <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px', marginBottom: '20px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>2.1 Order Process</h3>
+              <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px', marginBottom: '20px' }}>
                 <li style={{ marginBottom: '8px' }}>All orders are subject to product availability.</li>
                 <li style={{ marginBottom: '8px' }}>We reserve the right to refuse or cancel orders for reasonable cause.</li>
                 <li style={{ marginBottom: '8px' }}>Order confirmation will be sent via email after successful payment.</li>
                 <li style={{ marginBottom: '8px' }}>Prices may change without prior notice, but will not affect confirmed orders.</li>
               </ul>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>2.2 Payment Methods</h3>
-              <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>2.2 Payment Methods</h3>
+              <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px' }}>
                 <li style={{ marginBottom: '8px' }}>Credit/Debit Cards (Visa, Mastercard, American Express), processed by PayPal</li>
                 <li style={{ marginBottom: '8px' }}>PayPal</li>
               </ul>
@@ -104,13 +104,13 @@ export default function TermsPage() {
           {/* Section 3 */}
           <section style={{ marginBottom: '40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <Truck style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
-              <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
+              <Truck style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
+              <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', margin: 0 }}>
                 3. Shipping
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
-              <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
+              <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px' }}>
                 <li style={{ marginBottom: '8px' }}>Orders are processed within 1-2 business days after payment is confirmed.</li>
                 <li style={{ marginBottom: '8px' }}>Estimated delivery time: 3-7 business days (depending on location).</li>
                 <li style={{ marginBottom: '8px' }}>Shipping costs are calculated based on weight and delivery location.</li>
@@ -124,39 +124,39 @@ export default function TermsPage() {
           {/* Section 4 */}
           <section style={{ marginBottom: '40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <RefreshCw style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
-              <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
+              <RefreshCw style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
+              <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', margin: 0 }}>
                 4. Returns and Refunds
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>4.1 Return Policy</h3>
-              <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px', marginBottom: '20px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>4.1 Return Policy</h3>
+              <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px', marginBottom: '20px' }}>
                 <li style={{ marginBottom: '8px' }}>Products can be returned within 30 days of receipt.</li>
                 <li style={{ marginBottom: '8px' }}>Products must be in original condition, unused, with complete packaging.</li>
                 <li style={{ marginBottom: '8px' }}>Personalized or custom products cannot be returned.</li>
                 <li style={{ marginBottom: '8px' }}>Return shipping costs are borne by the buyer, unless the product is defective or incorrectly shipped.</li>
               </ul>
 
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>4.2 Refund Process</h3>
-              <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>4.2 Refund Process</h3>
+              <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px' }}>
                 <li style={{ marginBottom: '8px' }}>Refunds are processed within 7-14 business days after the product is received and verified.</li>
                 <li style={{ marginBottom: '8px' }}>Refunds will be credited to the original payment method.</li>
                 <li style={{ marginBottom: '8px' }}>For COD payments, refunds are issued via bank transfer.</li>
               </ul>
-              <p style={{ color: '#495057', lineHeight: 1.7, marginTop: '16px' }}>
+              <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, marginTop: '16px' }}>
                 For full details, please visit our{' '}
-                <Link href="/returns" style={{ color: '#1B5E3B', fontWeight: 500 }}>Returns</Link> page.
+                <Link href="/returns" style={{ color: 'var(--brand)', fontWeight: 500 }}>Returns</Link> page.
               </p>
             </div>
           </section>
 
           {/* Section 5 */}
           <section style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
               5. Product Warranty
             </h2>
-            <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
+            <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px' }}>
               <li style={{ marginBottom: '8px' }}>All Sesoris products are guaranteed free from manufacturing defects.</li>
               <li style={{ marginBottom: '8px' }}>Warranty is valid for 1 year for manufacturing defects (not damage from use).</li>
               <li style={{ marginBottom: '8px' }}>Warranty claims must include proof of purchase.</li>
@@ -166,19 +166,19 @@ export default function TermsPage() {
 
           {/* Section 6 */}
           <section style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
               6. Intellectual Property
             </h2>
-            <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '16px' }}>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, marginBottom: '16px' }}>
               All content on this site, including but not limited to:
             </p>
-            <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
+            <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px' }}>
               <li style={{ marginBottom: '8px' }}>Logos, trademarks, and the &quot;Sesoris&quot; name</li>
               <li style={{ marginBottom: '8px' }}>Product photos and images</li>
               <li style={{ marginBottom: '8px' }}>Product descriptions and text</li>
               <li style={{ marginBottom: '8px' }}>Website design and layout</li>
             </ul>
-            <p style={{ color: '#495057', lineHeight: 1.7 }}>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7 }}>
               are the property of Sesoris and are protected by applicable copyright laws. Copying, distributing,
               or using content without our written permission is prohibited.
             </p>
@@ -187,22 +187,22 @@ export default function TermsPage() {
           {/* Section 7 */}
           <section style={{ marginBottom: '40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <AlertTriangle style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
-              <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
+              <AlertTriangle style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
+              <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', margin: 0 }}>
                 7. Limitation of Liability
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
-              <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '16px' }}>
+              <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, marginBottom: '16px' }}>
                 Sesoris shall not be liable for:
               </p>
-              <ul style={{ color: '#495057', lineHeight: 1.8, paddingLeft: '20px' }}>
+              <ul style={{ color: 'var(--ink-2)', lineHeight: 1.8, paddingLeft: '20px' }}>
                 <li style={{ marginBottom: '8px' }}>Indirect or consequential damages from product use</li>
                 <li style={{ marginBottom: '8px' }}>Shipping delays caused by carriers or force majeure</li>
                 <li style={{ marginBottom: '8px' }}>Damage caused by improper use</li>
                 <li style={{ marginBottom: '8px' }}>Service interruptions due to system maintenance or factors beyond our control</li>
               </ul>
-              <p style={{ color: '#495057', lineHeight: 1.7 }}>
+              <p style={{ color: 'var(--ink-2)', lineHeight: 1.7 }}>
                 Our maximum liability is limited to the value of the product purchased.
               </p>
             </div>
@@ -211,13 +211,13 @@ export default function TermsPage() {
           {/* Section 8 */}
           <section style={{ marginBottom: '40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <Scale style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
-              <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', margin: 0 }}>
+              <Scale style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
+              <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', margin: 0 }}>
                 8. Governing Law
               </h2>
             </div>
             <div style={{ paddingLeft: '36px' }}>
-              <p style={{ color: '#495057', lineHeight: 1.7 }}>
+              <p style={{ color: 'var(--ink-2)', lineHeight: 1.7 }}>
                 These Terms and Conditions are governed by and construed in accordance with applicable laws.
                 Any disputes arising shall be resolved through mutual discussion. If no agreement is reached,
                 disputes shall be settled through the appropriate jurisdiction.
@@ -227,10 +227,10 @@ export default function TermsPage() {
 
           {/* Section 9 */}
           <section style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '22px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
               9. Changes to Terms & Conditions
             </h2>
-            <p style={{ color: '#495057', lineHeight: 1.7 }}>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7 }}>
               We reserve the right to modify these Terms & Conditions at any time. Changes take effect immediately upon
               publication on the website. Continued use of our services after changes constitutes your
               acceptance of the updated terms.
@@ -239,7 +239,7 @@ export default function TermsPage() {
 
           {/* Contact */}
           <section style={{
-            background: 'linear-gradient(135deg, #1B5E3B 0%, #2E7D4A 100%)',
+            background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-strong) 100%)',
             padding: '32px',
             borderRadius: '16px',
             color: 'white'

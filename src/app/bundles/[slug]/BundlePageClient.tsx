@@ -37,16 +37,16 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', flexWrap: 'wrap' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <Link href="/bundles" style={{ color: '#5F6873' }}>Bundle Deals</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>{bundle.name}</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <Link href="/bundles" style={{ color: 'var(--ink-muted)' }}>Bundle Deals</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{bundle.name}</span>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
               {bundle.badge && (
                 <span style={{
-                  background: '#1B5E3B',
+                  background: 'var(--brand)',
                   color: 'white',
                   fontSize: '11px',
                   fontWeight: 700,
@@ -73,7 +73,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
               )}
               <span style={{
                 background: '#FFF3EE',
-                color: '#FF6B35',
+                color: 'var(--accent)',
                 fontSize: '12px',
                 fontWeight: 700,
                 padding: '3px 10px',
@@ -83,15 +83,15 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
               </span>
             </div>
 
-            <h1 style={{ fontSize: '32px', fontWeight: 800, color: '#212529', marginBottom: '12px' }}>
+            <h1 style={{ fontSize: '32px', fontWeight: 800, color: 'var(--ink)', marginBottom: '12px' }}>
               {bundle.name}
             </h1>
-            <p style={{ fontSize: '16px', color: '#5F6873', lineHeight: '1.6', marginBottom: '32px' }}>
+            <p style={{ fontSize: '16px', color: 'var(--ink-muted)', lineHeight: '1.6', marginBottom: '32px' }}>
               {bundle.description}
             </p>
 
             {/* Products in bundle */}
-            <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--ink)', marginBottom: '16px' }}>
               What's Included ({bundle.productIds.length} items)
             </h2>
 
@@ -100,7 +100,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                 <div key={product.id}>
                   {index > 0 && (
                     <div style={{ display: 'flex', justifyContent: 'center', margin: '8px 0' }}>
-                      <Plus style={{ width: '20px', height: '20px', color: '#ADB5BD' }} />
+                      <Plus style={{ width: '20px', height: '20px', color: 'var(--ink-faint)' }} />
                     </div>
                   )}
                   <div
@@ -108,7 +108,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                       display: 'flex',
                       gap: '16px',
                       padding: '16px',
-                      border: selectedItems[product.id] ? '2px solid #1B5E3B' : '2px solid #E9ECEF',
+                      border: selectedItems[product.id] ? '2px solid var(--brand)' : '2px solid var(--line)',
                       borderRadius: '12px',
                       background: 'white',
                       cursor: 'pointer',
@@ -122,8 +122,8 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                       height: '22px',
                       borderRadius: '6px',
                       border: '2px solid',
-                      borderColor: selectedItems[product.id] ? '#1B5E3B' : '#DEE2E6',
-                      background: selectedItems[product.id] ? '#1B5E3B' : 'white',
+                      borderColor: selectedItems[product.id] ? 'var(--brand)' : 'var(--line-strong)',
+                      background: selectedItems[product.id] ? 'var(--brand)' : 'white',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -149,22 +149,22 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                       <Link
                         href={`/product/${product.slug}`}
                         onClick={(e) => e.stopPropagation()}
-                        style={{ fontSize: '15px', fontWeight: 600, color: '#212529', textDecoration: 'none' }}
+                        style={{ fontSize: '15px', fontWeight: 600, color: 'var(--ink)', textDecoration: 'none' }}
                       >
                         {product.name}
                       </Link>
-                      <p style={{ fontSize: '13px', color: '#5F6873', margin: 0, lineHeight: '1.4' }}>
+                      <p style={{ fontSize: '13px', color: 'var(--ink-muted)', margin: 0, lineHeight: '1.4' }}>
                         {product.description.substring(0, 80)}...
                       </p>
                     </div>
 
                     {/* Price */}
                     <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: '#212529' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--ink)' }}>
                         {formatPrice(product.price)}
                       </div>
                       {product.compareAtPrice && (
-                        <div style={{ fontSize: '12px', color: '#ADB5BD', textDecoration: 'line-through' }}>
+                        <div style={{ fontSize: '12px', color: 'var(--ink-faint)', textDecoration: 'line-through' }}>
                           {formatPrice(product.compareAtPrice)}
                         </div>
                       )}
@@ -177,18 +177,18 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
             {/* Bundle highlights */}
             {bundle.highlights && (
               <div style={{
-                background: '#F1F8F4',
+                background: 'var(--brand-tint)',
                 border: '1px solid #C8E6C9',
                 borderRadius: '12px',
                 padding: '20px',
               }}>
-                <div style={{ fontWeight: 700, color: '#1B5E3B', marginBottom: '12px', fontSize: '15px' }}>
+                <div style={{ fontWeight: 700, color: 'var(--brand)', marginBottom: '12px', fontSize: '15px' }}>
                   Why this bundle?
                 </div>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {bundle.highlights.map((h, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '14px', color: '#495057' }}>
-                      <Check style={{ width: '16px', height: '16px', color: '#1B5E3B', flexShrink: 0, marginTop: '1px' }} />
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '14px', color: 'var(--ink-2)' }}>
+                      <Check style={{ width: '16px', height: '16px', color: 'var(--brand)', flexShrink: 0, marginTop: '1px' }} />
                       {h}
                     </li>
                   ))}
@@ -200,13 +200,13 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
           {/* Right: sticky order summary */}
           <div style={{ position: 'sticky', top: '100px' }}>
             <div style={{
-              border: '1px solid #E9ECEF',
+              border: '1px solid var(--line)',
               borderRadius: '16px',
               padding: '24px',
               background: 'white',
               boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
             }}>
-              <div style={{ fontWeight: 700, fontSize: '16px', color: '#212529', marginBottom: '16px' }}>
+              <div style={{ fontWeight: 700, fontSize: '16px', color: 'var(--ink)', marginBottom: '16px' }}>
                 Order Summary
               </div>
 
@@ -218,7 +218,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                     display: 'flex',
                     justifyContent: 'space-between',
                     fontSize: '13px',
-                    color: selectedItems[p.id] ? '#495057' : '#ADB5BD',
+                    color: selectedItems[p.id] ? 'var(--ink-2)' : 'var(--ink-faint)',
                     marginBottom: '8px',
                     textDecoration: selectedItems[p.id] ? 'none' : 'line-through',
                   }}
@@ -228,14 +228,14 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                 </div>
               ))}
 
-              <div style={{ borderTop: '1px solid #E9ECEF', margin: '12px 0', paddingTop: '12px' }}>
+              <div style={{ borderTop: '1px solid var(--line)', margin: '12px 0', paddingTop: '12px' }}>
                 {allSelected && (
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: '#1E7E34', fontWeight: 600, marginBottom: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'var(--success)', fontWeight: 600, marginBottom: '8px' }}>
                     <span>Bundle Discount ({bundle.discountPercent}%)</span>
                     <span>-{formatPrice(savings)}</span>
                   </div>
                 )}
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: '18px', color: '#212529' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: '18px', color: 'var(--ink)' }}>
                   <span>Total</span>
                   <span>{formatPrice(displayPrice)}</span>
                 </div>
@@ -243,11 +243,11 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
 
               {allSelected && (
                 <div style={{
-                  background: '#E8F5E9',
+                  background: 'var(--brand-tint)',
                   borderRadius: '8px',
                   padding: '10px 12px',
                   fontSize: '13px',
-                  color: '#1B5E3B',
+                  color: 'var(--brand)',
                   fontWeight: 600,
                   textAlign: 'center',
                   marginBottom: '16px',
@@ -265,7 +265,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '8px',
-                  background: added ? '#1E7E34' : selectedProducts.length === 0 ? '#ADB5BD' : '#1B5E3B',
+                  background: added ? 'var(--success)' : selectedProducts.length === 0 ? 'var(--ink-faint)' : 'var(--brand)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '10px',
@@ -291,8 +291,8 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
                   { icon: RefreshCw, text: '30-day easy returns' },
                   { icon: Package, text: 'Secure bundled packaging' },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#5F6873' }}>
-                    <Icon style={{ width: '14px', height: '14px', color: '#1B5E3B' }} />
+                  <div key={text} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: 'var(--ink-muted)' }}>
+                    <Icon style={{ width: '14px', height: '14px', color: 'var(--brand)' }} />
                     {text}
                   </div>
                 ))}
@@ -301,7 +301,7 @@ export default function BundlePageClient({ bundle, bundleProducts }: BundlePageC
 
             <Link
               href="/bundles"
-              style={{ display: 'block', textAlign: 'center', color: '#1B5E3B', fontSize: '14px', marginTop: '16px', textDecoration: 'none' }}
+              style={{ display: 'block', textAlign: 'center', color: 'var(--brand)', fontSize: '14px', marginTop: '16px', textDecoration: 'none' }}
             >
               ← View all bundle deals
             </Link>

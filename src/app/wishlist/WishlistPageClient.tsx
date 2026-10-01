@@ -16,14 +16,14 @@ export default function WishlistPageClient() {
     return (
       <>
         {/* Breadcrumb */}
-        <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+        <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
           <div className="container">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-              <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+              <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
                 <Home style={{ width: '14px', height: '14px' }} />
               </Link>
-              <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-              <span style={{ color: '#212529', fontWeight: 500 }}>Wishlist</span>
+              <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+              <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Wishlist</span>
             </div>
           </div>
         </div>
@@ -33,18 +33,18 @@ export default function WishlistPageClient() {
             width: '80px',
             height: '80px',
             borderRadius: '50%',
-            background: '#F8F9FA',
+            background: 'var(--surface-2)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 24px',
           }}>
-            <Heart style={{ width: '32px', height: '32px', color: '#5F6873' }} />
+            <Heart style={{ width: '32px', height: '32px', color: 'var(--ink-muted)' }} />
           </div>
-          <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>
             Your wishlist is empty
           </h1>
-          <p style={{ color: '#5F6873', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--ink-muted)', marginBottom: '24px' }}>
             Save items you love by clicking the heart icon on any product.
           </p>
           <Link href="/shop" className="btn btn-primary">
@@ -58,21 +58,21 @@ export default function WishlistPageClient() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Wishlist ({items.length} items)</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Wishlist ({items.length} items)</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529' }}>
+          <h1 style={{ fontSize: '32px', fontWeight: 700, color: 'var(--ink)' }}>
             My Wishlist
           </h1>
           <button
@@ -81,9 +81,9 @@ export default function WishlistPageClient() {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              color: '#5F6873',
+              color: 'var(--ink-muted)',
               background: 'none',
-              border: '1px solid #E9ECEF',
+              border: '1px solid var(--line)',
               padding: '8px 16px',
               borderRadius: '8px',
               cursor: 'pointer',
@@ -106,7 +106,7 @@ export default function WishlistPageClient() {
                 boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
               }}
             >
-              <div style={{ aspectRatio: '1', position: 'relative', background: '#F8F9FA' }}>
+              <div style={{ aspectRatio: '1', position: 'relative', background: 'var(--surface-2)' }}>
                 <Image src={item.images[0]?.url || '/placeholder.jpg'} alt={getProductImageAlt(item)} fill style={{ objectFit: 'cover' }} />
                 <button
                   onClick={() => removeItem(item.id)}
@@ -126,17 +126,17 @@ export default function WishlistPageClient() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                   }}
                 >
-                  <Heart style={{ width: '18px', height: '18px', fill: '#DC3545', color: '#DC3545' }} />
+                  <Heart style={{ width: '18px', height: '18px', fill: 'var(--danger)', color: 'var(--danger)' }} />
                 </button>
               </div>
               <div style={{ padding: '16px' }}>
                 <Link
                   href={`/product/${item.slug}`}
-                  style={{ fontSize: '15px', fontWeight: 600, color: '#212529', marginBottom: '8px', display: 'block' }}
+                  style={{ fontSize: '15px', fontWeight: 600, color: 'var(--ink)', marginBottom: '8px', display: 'block' }}
                 >
                   {item.name}
                 </Link>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: '#1B5E3B', marginBottom: '12px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--brand)', marginBottom: '12px' }}>
                   {formatPrice(item.price)}
                 </div>
                 <button
@@ -148,7 +148,7 @@ export default function WishlistPageClient() {
                     justifyContent: 'center',
                     gap: '8px',
                     padding: '10px',
-                    background: '#1B5E3B',
+                    background: 'var(--brand)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '8px',

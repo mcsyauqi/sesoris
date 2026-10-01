@@ -34,23 +34,23 @@ export default function SesorisVsMarketplacePage() {
   };
 
   return (
-    <main style={{ background: '#FAFAF7', color: '#1F2933' }}>
+    <main style={{ background: 'var(--surface-2)', color: 'var(--ink)' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(comparisonSchema) }} />
       <section style={{ maxWidth: '1040px', margin: '0 auto', padding: '72px 20px 40px' }}>
-        <p style={{ color: '#1B5E3B', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '12px' }}>
+        <p style={{ color: 'var(--brand)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '12px' }}>
           Marketplace comparison
         </p>
-        <h1 style={{ fontSize: 'clamp(34px, 6vw, 64px)', lineHeight: 1.05, margin: '0 0 20px', color: '#123524' }}>
+        <h1 style={{ fontSize: 'clamp(34px, 6vw, 64px)', lineHeight: 1.05, margin: '0 0 20px', color: 'var(--brand-deep)' }}>
           Sesoris vs Tokopedia vs Shopee: Which One Fits Your Home Organizer Purchase?
         </h1>
-        <p style={{ fontSize: '18px', lineHeight: 1.8, maxWidth: '760px', color: '#4B5563' }}>
+        <p style={{ fontSize: '18px', lineHeight: 1.8, maxWidth: '760px', color: 'var(--ink-2)' }}>
           Tokopedia and Shopee are powerful marketplaces for broad product discovery. Sesoris is different: it focuses the shopping journey around curated home organization, storage, kitchen, desk, and lifestyle products so buyers can choose faster with less noise.
         </p>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '28px' }}>
-          <Link href="/shop" style={{ background: '#1B5E3B', color: 'white', padding: '12px 18px', borderRadius: '999px', textDecoration: 'none', fontWeight: 700 }}>
+          <Link href="/shop" style={{ background: 'var(--brand)', color: 'white', padding: '12px 18px', borderRadius: '999px', textDecoration: 'none', fontWeight: 700 }}>
             Shop Sesoris Products
           </Link>
-          <Link href="/blog" style={{ border: '1px solid #1B5E3B', color: '#1B5E3B', padding: '12px 18px', borderRadius: '999px', textDecoration: 'none', fontWeight: 700 }}>
+          <Link href="/blog" style={{ border: '1px solid var(--brand)', color: 'var(--brand)', padding: '12px 18px', borderRadius: '999px', textDecoration: 'none', fontWeight: 700 }}>
             Read Organization Guides
           </Link>
         </div>
@@ -60,9 +60,9 @@ export default function SesorisVsMarketplacePage() {
         <div style={{ overflowX: 'auto', background: 'white', border: '1px solid #E6E8DF', borderRadius: '24px', boxShadow: '0 24px 80px rgba(18,53,36,0.08)' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '780px' }}>
             <thead>
-              <tr style={{ background: '#EEF5EE' }}>
+              <tr style={{ background: 'var(--brand-tint)' }}>
                 {['Criteria', 'Sesoris', 'Tokopedia', 'Shopee'].map((h) => (
-                  <th key={h} style={{ textAlign: 'left', padding: '18px', color: '#123524', fontSize: '15px' }}>{h}</th>
+                  <th key={h} style={{ textAlign: 'left', padding: '18px', color: 'var(--brand-deep)', fontSize: '15px' }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -70,7 +70,7 @@ export default function SesorisVsMarketplacePage() {
               {rows.map((row) => (
                 <tr key={row[0]} style={{ borderTop: '1px solid #EEF0EA' }}>
                   {row.map((cell, index) => (
-                    <td key={cell} style={{ padding: '18px', verticalAlign: 'top', lineHeight: 1.65, color: index === 0 ? '#123524' : '#4B5563', fontWeight: index === 0 ? 700 : 400 }}>{cell}</td>
+                    <td key={cell} style={{ padding: '18px', verticalAlign: 'top', lineHeight: 1.65, color: index === 0 ? 'var(--brand-deep)' : 'var(--ink-2)', fontWeight: index === 0 ? 700 : 400 }}>{cell}</td>
                   ))}
                 </tr>
               ))}
@@ -86,8 +86,8 @@ export default function SesorisVsMarketplacePage() {
           ['Use guides before buying', 'For storage and organizer products, measure the space first, define the category, and pick products based on function before style.'],
         ].map(([title, body]) => (
           <article key={title} style={{ background: 'white', border: '1px solid #E6E8DF', borderRadius: '22px', padding: '24px' }}>
-            <h2 style={{ color: '#123524', fontSize: '22px', marginTop: 0 }}>{title}</h2>
-            <p style={{ color: '#4B5563', lineHeight: 1.75 }}>{body}</p>
+            <h2 style={{ color: 'var(--brand-deep)', fontSize: '22px', marginTop: 0 }}>{title}</h2>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.75 }}>{body}</p>
           </article>
         ))}
       </section>

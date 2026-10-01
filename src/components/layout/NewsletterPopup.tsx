@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { X, Mail, Gift } from 'lucide-react';
+import { X, Mail } from 'lucide-react';
 
 const POPUP_SHOWN_KEY = 'sesoris_newsletter_popup_shown';
 const POPUP_COOLDOWN_DAYS = 7;
@@ -82,25 +82,25 @@ export function NewsletterPopup() {
         style={{
           position: 'fixed',
           inset: 0,
-          background: 'rgba(0,0,0,0.5)',
-          zIndex: 9998,
+          background: 'rgb(10 24 17 / 0.5)',
+          zIndex: 109, // just under --z-modal
           animation: 'fadeIn 0.3s ease',
         }}
       />
 
       {/* Popup */}
-      <div style={{
+      <div role="dialog" aria-modal="true" aria-labelledby="popup-title" style={{
         position: 'fixed',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        zIndex: 9999,
+        zIndex: 110, // --z-modal
         background: 'white',
-        borderRadius: '20px',
+        borderRadius: 'var(--radius-lg)',
         overflow: 'hidden',
         width: 'min(480px, calc(100vw - 32px))',
-        boxShadow: '0 24px 64px rgba(0,0,0,0.2)',
-        animation: 'slideUp 0.3s ease',
+        boxShadow: '0 32px 64px -24px rgb(10 24 17 / 0.45)',
+        animation: 'slideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
       }}>
         {/* Close button */}
         <button
@@ -108,13 +108,14 @@ export function NewsletterPopup() {
           aria-label="Close"
           style={{
             position: 'absolute',
-            top: '12px',
-            right: '12px',
-            background: 'rgba(0,0,0,0.08)',
+            top: '10px',
+            right: '10px',
+            background: 'rgb(255 255 255 / 0.12)',
+            color: '#fff',
             border: 'none',
-            borderRadius: '50%',
-            width: '32px',
-            height: '32px',
+            borderRadius: 'var(--radius)',
+            width: '40px',
+            height: '40px',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
@@ -125,31 +126,19 @@ export function NewsletterPopup() {
           <X style={{ width: '16px', height: '16px' }} />
         </button>
 
-        {/* Green top section */}
+        {/* Top panel */}
         <div style={{
-          background: 'linear-gradient(135deg, #1B5E3B 0%, #2E7D4A 100%)',
-          padding: '40px 32px 32px',
-          textAlign: 'center',
+          background: 'var(--brand-deep)',
+          padding: '36px 32px 0',
           color: 'white',
         }}>
-          <div style={{
-            width: '64px',
-            height: '64px',
-            background: 'rgba(255,255,255,0.15)',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0 auto 16px',
-          }}>
-            <Gift style={{ width: '32px', height: '32px' }} />
-          </div>
-          <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '8px', lineHeight: 1.3 }}>
-            Get 10% OFF Your First Order
+          <h2 id="popup-title" style={{ fontSize: '28px', fontWeight: 750, marginBottom: '8px', lineHeight: 1.15, paddingRight: '32px' }}>
+            Get 10% off your first order
           </h2>
-          <p style={{ fontSize: '14px', opacity: 0.85, lineHeight: 1.6 }}>
-            Join our newsletter and receive exclusive deals, home organization tips, and new product alerts.
+          <p style={{ fontSize: '15px', color: 'rgb(255 255 255 / 0.82)', lineHeight: 1.6 }}>
+            Join our newsletter for deals, home organization guides, and new product alerts.
           </p>
+          <div className="ruler" aria-hidden style={{ margin: '24px -32px 0' }} />
         </div>
 
         {/* Form section */}
@@ -162,17 +151,17 @@ export function NewsletterPopup() {
               <div style={{
                 width: '56px',
                 height: '56px',
-                background: '#E8F5E9',
+                background: 'var(--brand-tint)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '0 auto 12px',
               }}>
-                <Mail style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
+                <Mail style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
               </div>
-              <p style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>You&apos;re in!</p>
-              <p style={{ fontSize: '14px', color: '#5F6873' }}>{message}</p>
+              <p style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>You&apos;re in!</p>
+              <p style={{ fontSize: '14px', color: 'var(--ink-muted)' }}>{message}</p>
             </div>
           ) : (
             <>
@@ -184,38 +173,19 @@ export function NewsletterPopup() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={status === 'loading'}
-                  style={{
-                    padding: '14px 16px',
-                    borderRadius: '10px',
-                    border: `1px solid ${status === 'error' ? '#dc3545' : '#DEE2E6'}`,
-                    fontSize: '15px',
-                    outline: 'none',
-                    width: '100%',
-                    boxSizing: 'border-box',
-                  }}
+                  aria-label="Email address"
+                  aria-invalid={status === 'error'}
+                  className="field"
+                  style={{ width: '100%', borderColor: status === 'error' ? 'var(--danger)' : undefined }}
                 />
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  style={{
-                    padding: '14px',
-                    borderRadius: '10px',
-                    background: '#1B5E3B',
-                    color: 'white',
-                    border: 'none',
-                    fontWeight: 600,
-                    fontSize: '15px',
-                    cursor: status === 'loading' ? 'not-allowed' : 'pointer',
-                    opacity: status === 'loading' ? 0.7 : 1,
-                  }}
-                >
-                  {status === 'loading' ? 'Subscribing...' : 'Claim My 10% Discount'}
+                <button type="submit" disabled={status === 'loading'} className="btn btn-primary">
+                  {status === 'loading' ? 'Subscribing…' : 'Get my 10% code'}
                 </button>
               </form>
               {status === 'error' && (
-                <p style={{ fontSize: '13px', color: '#dc3545', marginTop: '8px', textAlign: 'center' }}>{message}</p>
+                <p style={{ fontSize: '13px', color: 'var(--danger)', marginTop: '8px', textAlign: 'center' }}>{message}</p>
               )}
-              <p style={{ fontSize: '12px', color: '#ADB5BD', textAlign: 'center', marginTop: '12px' }}>
+              <p style={{ fontSize: '13px', color: 'var(--ink-muted)', textAlign: 'center', marginTop: '12px' }}>
                 No spam, ever. Unsubscribe anytime.
               </p>
               <button
@@ -225,14 +195,17 @@ export function NewsletterPopup() {
                   width: '100%',
                   background: 'none',
                   border: 'none',
-                  color: '#ADB5BD',
-                  fontSize: '12px',
+                  color: 'var(--ink-muted)',
+                  fontSize: '14px',
                   cursor: 'pointer',
-                  marginTop: '8px',
+                  marginTop: '4px',
+                  minHeight: '40px',
                   textAlign: 'center',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '3px',
                 }}
               >
-                No thanks, I don&apos;t want a discount
+                No thanks
               </button>
             </>
           )}

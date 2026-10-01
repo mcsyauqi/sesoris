@@ -69,24 +69,24 @@ export default function CollectionsPage() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>Collections</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>Collections</span>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ padding: '48px 16px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+          <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
             Our Collections
           </h1>
-          <p style={{ color: '#5F6873', fontSize: '16px' }}>
+          <p style={{ color: 'var(--ink-muted)', fontSize: '16px' }}>
             Explore our curated collections designed for every lifestyle
           </p>
         </div>
@@ -133,7 +133,7 @@ export default function CollectionsPage() {
                 </div>
               </div>
               <div style={{ padding: '20px' }}>
-                <p style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.5 }}>
+                <p style={{ color: 'var(--ink-muted)', fontSize: '14px', lineHeight: 1.5 }}>
                   {collection.description}
                 </p>
               </div>
@@ -143,28 +143,28 @@ export default function CollectionsPage() {
       </div>
 
       {/* SEO Content Section */}
-      <div style={{ background: '#F8F9FA', padding: '48px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '48px 0' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
             About Our Collections
           </h2>
-          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+          <p style={{ color: 'var(--ink-2)', lineHeight: '1.7', marginBottom: '16px' }}>
             Sesoris collections are carefully curated groups of products designed to work beautifully together. Each collection is built around a specific lifestyle theme, room, or function, making it easy to find coordinated products that complement each other and your home.
           </p>
-          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '16px' }}>
+          <p style={{ color: 'var(--ink-2)', lineHeight: '1.7', marginBottom: '16px' }}>
             From minimalist home office setups to complete kitchen organization systems, our collections take the guesswork out of home styling. Every product within a collection is selected for its design compatibility, quality, and practical value.
           </p>
-          <p style={{ color: '#495057', lineHeight: '1.7', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--ink-2)', lineHeight: '1.7', marginBottom: '24px' }}>
             Whether you are furnishing a new home, renovating a specific room, or looking for coordinated gift sets, our collections provide a cohesive starting point. Browse by theme or function and discover products that work together seamlessly.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/shop" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid var(--brand)', color: 'var(--brand)', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
               Shop All Products
             </Link>
-            <Link href="/best-sellers" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/best-sellers" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid var(--brand)', color: 'var(--brand)', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
               Best Sellers
             </Link>
-            <Link href="/bundles" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #1B5E3B', color: '#1B5E3B', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/bundles" style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid var(--brand)', color: 'var(--brand)', fontSize: '14px', fontWeight: 500, textDecoration: 'none' }}>
               Bundle Deals
             </Link>
           </div>

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Star, Heart, Minus, Plus, ShoppingCart, Truck, RefreshCw, Shield, Check, Package, ChevronDown, ChevronUp } from 'lucide-react';
+import { Home, ChevronRight, Star, Heart, Minus, Plus, ShoppingBag, Truck, RotateCcw, Warehouse, Check, Package, ChevronDown, ChevronUp, Ruler } from 'lucide-react';
 import type { Product } from '@/types';
 import { formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
@@ -14,6 +14,10 @@ import { getReviewsByProductId, products as allProducts } from '@/data/products'
 import { getBundlesForProduct } from '@/data/bundles';
 import { getProductImageAlt } from '@/lib/product-image-alt';
 import { trackViewItem } from '@/lib/analytics';
+import { FREE_SHIPPING_MIN } from '@/lib/shipping';
+
+// Specs that answer "will it fit / will it hold", surfaced next to the price.
+const FIT_SPECS = [/^Dimensions\b/, /^Minimum (cabinet )?opening/i, /^Weight capacity/i, /^Full-extension depth/i, /^Maximum pull-out/i];
 
 const FrequentlyBoughtTogether = dynamic(
   () => import('@/components/product/FrequentlyBoughtTogether').then((mod) => mod.FrequentlyBoughtTogether),
@@ -27,6 +31,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const productBundles = getBundlesForProduct(product.id);
   const [showFullDesc, setShowFullDesc] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [added, setAdded] = useState(false);
+  const fitSpecs = FIT_SPECS.map((re) => product.specifications?.find((sp) => re.test(sp.label))).filter((sp) => sp !== undefined);
   const reviewCount = productReviews.length;
   const reviewRating =
     reviewCount > 0
@@ -40,6 +46,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
     trackViewItem(product);
   }, [product]);
 
+  useEffect(() => {
+    if (!added) return;
+    const t = setTimeout(() => setAdded(false), 1800);
+    return () => clearTimeout(t);
+  }, [added]);
+
   const wishlisted = isInWishlist(product.id);
   const onSale = product.compareAtPrice && product.compareAtPrice > product.price;
   const discount = onSale ? Math.round(((product.compareAtPrice! - product.price) / product.compareAtPrice!) * 100) : 0;
@@ -47,45 +59,38 @@ export default function ProductPageClient({ product }: { product: Product }) {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <Link href="/shop" style={{ color: '#5F6873' }}>Shop</Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>{product.name}</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <Link href="/shop" style={{ color: 'var(--ink-muted)' }}>Shop</Link>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{product.name}</span>
           </div>
         </div>
       </div>
 
-      <div className="container" style={{ padding: '48px 16px' }}>
+      <div className="container" style={{ paddingBlock: '40px 72px' }}>
         <div className="product-detail-grid">
           {/* Image Gallery */}
           <div>
-            <div style={{
-              aspectRatio: '1',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              position: 'relative',
-              background: '#F8F9FA'
-            }} className="img-hover-zoom">
+            <div className="pdp-main-img">
               <Image
                 src={product.images[selectedImage]?.url || product.images[0]?.url || ''}
                 alt={getProductImageAlt(product, selectedImage)}
                 fill
                 priority={selectedImage === 0}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 55vw"
               />
               {onSale && (
                 <span style={{
                   position: 'absolute',
                   top: '16px',
                   left: '16px',
-                  background: '#DC3545',
+                  background: 'var(--danger)',
                   color: 'white',
                   padding: '6px 12px',
                   borderRadius: '6px',
@@ -95,47 +100,24 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   -{discount}%
                 </span>
               )}
-              {product.isNew && (
-                <span style={{
-                  position: 'absolute',
-                  top: onSale ? '56px' : '16px',
-                  left: '16px',
-                  background: '#1B5E3B',
-                  color: 'white',
-                  padding: '6px 12px',
-                  borderRadius: '6px',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                }}>
-                  New
-                </span>
-              )}
             </div>
 
             {/* Thumbnail Gallery */}
             {product.images.length > 1 && (
-              <div style={{ display: 'flex', gap: '8px', marginTop: '12px', flexWrap: 'wrap' }}>
+              <div className="pdp-thumbs">
                 {product.images.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    style={{
-                      width: '72px',
-                      height: '72px',
-                      borderRadius: '8px',
-                      overflow: 'hidden',
-                      position: 'relative',
-                      border: selectedImage === idx ? '2px solid #1B5E3B' : '2px solid #E9ECEF',
-                      padding: 0,
-                      cursor: 'pointer',
-                      flexShrink: 0,
-                    }}
+                    className="pdp-thumb"
+                    aria-label={`Show image ${idx + 1} of ${product.images.length}`}
+                    aria-pressed={selectedImage === idx}
                   >
                     <Image
                       src={img.url}
-                      alt={getProductImageAlt(product, idx)}
+                      alt=""
                       fill
-                      style={{ objectFit: 'cover' }}
+                      sizes="80px"
                     />
                   </button>
                 ))}
@@ -146,18 +128,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
           {/* Product Info */}
           <div>
             <div style={{ marginBottom: '8px' }}>
-              <Link href={`/category/${product.category.slug}`} style={{
-                fontSize: '13px',
-                color: '#1B5E3B',
-                fontWeight: 500,
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px'
-              }}>
+              <Link href={`/category/${product.category.slug}`} className="text-link" style={{ fontSize: '14px', fontWeight: 500 }}>
                 {product.category.name}
               </Link>
             </div>
 
-            <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '12px' }}>
+            <h1 style={{ fontSize: 'clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem)', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
               {product.name}
             </h1>
 
@@ -171,51 +147,59 @@ export default function ProductPageClient({ product }: { product: Product }) {
                       style={{
                         width: '18px',
                         height: '18px',
-                        fill: i < Math.floor(reviewRating) ? '#FFC107' : '#E9ECEF',
-                        color: i < Math.floor(reviewRating) ? '#FFC107' : '#E9ECEF'
+                        fill: i < Math.floor(reviewRating) ? '#FFC107' : 'var(--line)',
+                        color: i < Math.floor(reviewRating) ? '#FFC107' : 'var(--line)'
                       }}
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: '14px', color: '#5F6873' }}>({reviewCount} reviews)</span>
+                <span style={{ fontSize: '14px', color: 'var(--ink-muted)' }}>({reviewCount} reviews)</span>
               </div>
-            ) : (
-              <div style={{ marginBottom: '20px' }}>
-                <span style={{ fontSize: '13px', color: '#5F6873', fontStyle: 'italic' }}>
-                  Be the first to review this product!
-                </span>
-              </div>
-            )}
+            ) : null}
 
             {/* Price */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-              <span style={{ fontSize: '32px', fontWeight: 700, color: '#1B5E3B' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', margin: '8px 0 20px', fontVariantNumeric: 'tabular-nums' }}>
+              <span style={{ fontSize: '30px', fontWeight: 700, color: 'var(--ink)' }}>
                 {formatPrice(product.price)}
               </span>
               {onSale && (
-                <span style={{ fontSize: '20px', color: '#5F6873', textDecoration: 'line-through' }}>
+                <span style={{ fontSize: '20px', color: 'var(--ink-muted)', textDecoration: 'line-through' }}>
                   {formatPrice(product.compareAtPrice!)}
                 </span>
               )}
             </div>
 
             {/* Short description */}
-            <p style={{ color: '#495057', lineHeight: 1.7, marginBottom: '24px', fontSize: '15px' }}>
+            <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, marginBottom: '24px', fontSize: '16px' }}>
               {product.description}
             </p>
+
+            {fitSpecs.length > 0 && (
+              <div className="pdp-fit">
+                <div className="pdp-fit-title"><Ruler aria-hidden /> Size and fit</div>
+                <dl>
+                  {fitSpecs.map((sp) => (
+                    <div key={sp.label}>
+                      <dt>{sp.label}</dt>
+                      <dd>{sp.value.split(' (')[0]}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
 
             {/* Features List */}
             {product.features && product.features.length > 0 && (
               <div style={{ marginBottom: '24px' }}>
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '8px'
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                  gap: '10px 20px'
                 }}>
                   {product.features.slice(0, 6).map((feature, index) => (
                     <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                      <Check style={{ width: '16px', height: '16px', color: '#1B5E3B', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ fontSize: '13px', color: '#495057', lineHeight: 1.4 }}>{feature}</span>
+                      <Check style={{ width: '16px', height: '16px', color: 'var(--brand)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ fontSize: '14.5px', color: 'var(--ink-2)', lineHeight: 1.45 }}>{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -224,15 +208,15 @@ export default function ProductPageClient({ product }: { product: Product }) {
 
             {/* Quantity */}
             <div style={{ marginBottom: '24px' }}>
-              <label style={{ display: 'block', fontWeight: 600, marginBottom: '8px', color: '#212529' }}>
+              <div id="qty-label" style={{ fontWeight: 600, marginBottom: '8px', color: 'var(--ink)', fontSize: '15px' }}>
                 Quantity
-              </label>
+              </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <div style={{
+                <div role="group" aria-labelledby="qty-label" style={{
                   display: 'flex',
                   alignItems: 'center',
-                  border: '1px solid #E9ECEF',
-                  borderRadius: '8px'
+                  border: '1.5px solid var(--line-strong)',
+                  borderRadius: 'var(--radius)'
                 }}>
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -268,45 +252,32 @@ export default function ProductPageClient({ product }: { product: Product }) {
                     <Plus style={{ width: '16px', height: '16px' }} />
                   </button>
                 </div>
-                <span style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 500 }}>
-                  ✓ In stock
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px', color: product.inStock ? 'var(--brand)' : 'var(--danger)', fontWeight: 500 }}>
+                  {product.inStock ? <><Check aria-hidden style={{ width: '16px', height: '16px' }} /> In stock</> : 'Out of stock'}
                 </span>
               </div>
             </div>
 
             {/* Actions */}
-            <div style={{ display: 'flex', gap: '12px', marginBottom: '32px' }}>
+            <div aria-live="polite" style={{ display: 'flex', gap: '12px', marginBottom: '28px' }}>
               <button
-                onClick={() => addToCart(product, quantity)}
+                onClick={() => { addToCart(product, quantity); setAdded(true); }}
+                disabled={!product.inStock}
                 className="btn btn-primary"
-                style={{
-                  flex: 1,
-                  padding: '16px 32px',
-                  background: '#1B5E3B',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '10px',
-                  fontWeight: 600,
-                  fontSize: '15px',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '10px'
-                }}
+                style={{ flex: 1, minHeight: '54px', fontSize: '16px' }}
               >
-                <ShoppingCart style={{ width: '20px', height: '20px' }} />
-                Add to Cart
+                {added ? <Check aria-hidden /> : <ShoppingBag aria-hidden />}
+                {added ? 'Added to cart' : 'Add to cart'}
               </button>
               <button
                 onClick={() => toggleItem(product)}
                 aria-label={wishlisted ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
                 aria-pressed={wishlisted}
                 style={{
-                  width: '56px',
-                  height: '56px',
-                  border: '1px solid #E9ECEF',
-                  borderRadius: '10px',
+                  width: '54px',
+                  height: '54px',
+                  border: '1.5px solid var(--line-strong)',
+                  borderRadius: 'var(--radius)',
                   background: 'white',
                   cursor: 'pointer',
                   display: 'flex',
@@ -318,8 +289,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 <Heart style={{
                   width: '22px',
                   height: '22px',
-                  color: wishlisted ? '#DC3545' : '#5F6873',
-                  fill: wishlisted ? '#DC3545' : 'none'
+                  color: wishlisted ? 'var(--danger)' : 'var(--ink-muted)',
+                  fill: wishlisted ? 'var(--danger)' : 'none'
                 }} />
               </button>
             </div>
@@ -327,31 +298,31 @@ export default function ProductPageClient({ product }: { product: Product }) {
             {/* Features Grid */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
               gap: '16px',
-              padding: '20px',
-              background: '#F8F9FA',
-              borderRadius: '12px'
+              padding: '18px 20px',
+              border: '1px solid var(--line)',
+              borderRadius: 'var(--radius-lg)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Truck style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
+                <Truck aria-hidden style={{ width: '20px', height: '20px', color: 'var(--brand)', flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Free Shipping</div>
-                  <div style={{ fontSize: '11px', color: '#5F6873' }}>Min. $50</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ink)' }}>Free shipping</div>
+                  <div style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>On orders over ${FREE_SHIPPING_MIN}</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <RefreshCw style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
+                <RotateCcw aria-hidden style={{ width: '20px', height: '20px', color: 'var(--brand)', flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Easy Returns</div>
-                  <div style={{ fontSize: '11px', color: '#5F6873' }}>30 Days</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ink)' }}>30-day returns</div>
+                  <div style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>Original condition</div>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Shield style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
+                <Warehouse aria-hidden style={{ width: '20px', height: '20px', color: 'var(--brand)', flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>Ships from US</div>
-                  <div style={{ fontSize: '11px', color: '#5F6873' }}>{product.shipDays ? `Est. ${product.shipDays} days` : 'US warehouse'}</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ink)' }}>Ships from the US</div>
+                  <div style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>{product.shipDays ? `Est. ${product.shipDays} days` : 'US warehouse'}</div>
                 </div>
               </div>
             </div>
@@ -360,23 +331,26 @@ export default function ProductPageClient({ product }: { product: Product }) {
 
         {/* Product Details Tabs */}
         <div style={{ marginTop: '64px' }}>
-          <div style={{
+          <div role="tablist" aria-label="Product details" style={{
             display: 'flex',
-            gap: '0',
-            borderBottom: '2px solid #E9ECEF',
-            marginBottom: '32px'
+            gap: '28px',
+            borderBottom: '2px solid var(--line)',
+            marginBottom: '32px',
+            overflowX: 'auto'
           }}>
             <button
+              role="tab"
+              aria-selected={activeTab === 'description'}
               onClick={() => setActiveTab('description')}
               style={{
-                padding: '16px 32px',
+                padding: '14px 2px',
                 background: 'transparent',
                 border: 'none',
-                borderBottom: activeTab === 'description' ? '2px solid #1B5E3B' : '2px solid transparent',
+                borderBottom: activeTab === 'description' ? '2px solid var(--brand)' : '2px solid transparent',
                 marginBottom: '-2px',
                 fontSize: '15px',
                 fontWeight: 600,
-                color: activeTab === 'description' ? '#1B5E3B' : '#5F6873',
+                color: activeTab === 'description' ? 'var(--ink)' : 'var(--ink-muted)',
                 cursor: 'pointer',
                 transition: 'all 0.2s'
               }}
@@ -384,16 +358,18 @@ export default function ProductPageClient({ product }: { product: Product }) {
               Description
             </button>
             <button
+              role="tab"
+              aria-selected={activeTab === 'specs'}
               onClick={() => setActiveTab('specs')}
               style={{
-                padding: '16px 32px',
+                padding: '14px 2px',
                 background: 'transparent',
                 border: 'none',
-                borderBottom: activeTab === 'specs' ? '2px solid #1B5E3B' : '2px solid transparent',
+                borderBottom: activeTab === 'specs' ? '2px solid var(--brand)' : '2px solid transparent',
                 marginBottom: '-2px',
                 fontSize: '15px',
                 fontWeight: 600,
-                color: activeTab === 'specs' ? '#1B5E3B' : '#5F6873',
+                color: activeTab === 'specs' ? 'var(--ink)' : 'var(--ink-muted)',
                 cursor: 'pointer',
                 transition: 'all 0.2s'
               }}
@@ -401,16 +377,18 @@ export default function ProductPageClient({ product }: { product: Product }) {
               Specifications
             </button>
             <button
+              role="tab"
+              aria-selected={activeTab === 'reviews'}
               onClick={() => setActiveTab('reviews')}
               style={{
-                padding: '16px 32px',
+                padding: '14px 2px',
                 background: 'transparent',
                 border: 'none',
-                borderBottom: activeTab === 'reviews' ? '2px solid #1B5E3B' : '2px solid transparent',
+                borderBottom: activeTab === 'reviews' ? '2px solid var(--brand)' : '2px solid transparent',
                 marginBottom: '-2px',
                 fontSize: '15px',
                 fontWeight: 600,
-                color: activeTab === 'reviews' ? '#1B5E3B' : '#5F6873',
+                color: activeTab === 'reviews' ? 'var(--ink)' : 'var(--ink-muted)',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
                 display: 'flex',
@@ -421,7 +399,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               Reviews
               {productReviews.length > 0 && (
                 <span style={{
-                  background: '#1B5E3B',
+                  background: 'var(--brand)',
                   color: 'white',
                   fontSize: '11px',
                   fontWeight: 700,
@@ -439,9 +417,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {product.fullDescription ? (
                 <>
                   <div style={{
-                    color: '#495057',
-                    lineHeight: 1.8,
-                    fontSize: '15px',
+                    color: 'var(--ink-2)',
+                    lineHeight: 1.75,
+                    fontSize: '16px',
                     whiteSpace: 'pre-line'
                   }}>
                     {showFullDesc ? product.fullDescription : product.fullDescription.slice(0, 600) + '...'}
@@ -452,12 +430,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
                       style={{
                         marginTop: '16px',
                         padding: '10px 20px',
-                        background: '#F8F9FA',
-                        border: '1px solid #E9ECEF',
+                        background: 'var(--surface-2)',
+                        border: '1px solid var(--line)',
                         borderRadius: '8px',
                         fontSize: '14px',
                         fontWeight: 500,
-                        color: '#1B5E3B',
+                        color: 'var(--brand)',
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
@@ -473,12 +451,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   )}
                 </>
               ) : (
-                <p style={{ color: '#495057', lineHeight: 1.8 }}>{product.description}</p>
+                <p style={{ color: 'var(--ink-2)', lineHeight: 1.8 }}>{product.description}</p>
               )}
 
               {product.features && product.features.length > 0 && (
                 <div style={{ marginTop: '32px' }}>
-                  <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '16px' }}>
+                  <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
                     Key Features
                   </h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -488,15 +466,15 @@ export default function ProductPageClient({ product }: { product: Product }) {
                           width: '24px',
                           height: '24px',
                           borderRadius: '50%',
-                          background: '#E8F5E9',
+                          background: 'var(--brand-tint)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           flexShrink: 0
                         }}>
-                          <Check style={{ width: '14px', height: '14px', color: '#1B5E3B' }} />
+                          <Check style={{ width: '14px', height: '14px', color: 'var(--brand)' }} />
                         </div>
-                        <span style={{ fontSize: '15px', color: '#495057', lineHeight: 1.5 }}>{feature}</span>
+                        <span style={{ fontSize: '15px', color: 'var(--ink-2)', lineHeight: 1.5 }}>{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -508,34 +486,34 @@ export default function ProductPageClient({ product }: { product: Product }) {
           {activeTab === 'specs' && product.specifications && (
             <div style={{ maxWidth: '600px' }}>
               <div style={{
-                background: '#F8F9FA',
+                background: 'var(--surface-2)',
                 borderRadius: '12px',
                 overflow: 'hidden',
-                border: '1px solid #E9ECEF'
+                border: '1px solid var(--line)'
               }}>
                 {product.specifications.map((spec, index) => (
                   <div
                     key={index}
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: '180px 1fr',
-                      borderBottom: index < product.specifications!.length - 1 ? '1px solid #E9ECEF' : 'none'
+                      gridTemplateColumns: 'minmax(120px, 38%) 1fr',
+                      borderBottom: index < product.specifications!.length - 1 ? '1px solid var(--line)' : 'none'
                     }}
                   >
                     <div style={{
-                      padding: '14px 20px',
-                      background: '#F8F9FA',
+                      padding: '14px 16px',
+                      background: 'var(--surface-2)',
                       fontWeight: 600,
                       fontSize: '14px',
-                      color: '#495057'
+                      color: 'var(--ink-2)'
                     }}>
                       {spec.label}
                     </div>
                     <div style={{
-                      padding: '14px 20px',
+                      padding: '14px 16px',
                       background: 'white',
                       fontSize: '14px',
-                      color: '#212529'
+                      color: 'var(--ink)'
                     }}>
                       {spec.value}
                     </div>
@@ -567,16 +545,16 @@ export default function ProductPageClient({ product }: { product: Product }) {
         <div style={{
           marginTop: '48px',
           padding: '24px',
-          background: '#F8F9FA',
+          background: 'var(--surface-2)',
           borderRadius: '12px',
           display: 'flex',
           alignItems: 'center',
           gap: '16px'
         }}>
-          <Package style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
+          <Package style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
           <div>
-            <div style={{ fontWeight: 600, color: '#212529', marginBottom: '4px' }}>What&apos;s in the Box</div>
-            <div style={{ fontSize: '14px', color: '#5F6873' }}>
+            <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>What&apos;s in the Box</div>
+            <div style={{ fontSize: '14px', color: 'var(--ink-muted)' }}>
               {product.specifications?.find((s) => s.label === 'Package contents')?.value ?? `1x ${product.name}`}
             </div>
           </div>

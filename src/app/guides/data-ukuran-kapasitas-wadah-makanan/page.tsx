@@ -269,42 +269,42 @@ export default function FoodContainerDataPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FAFAF7] text-[#1F2933]">
+    <main className="min-h-screen bg-[var(--surface-2)] text-[var(--ink)]">
       {[articleSchema, datasetSchema, breadcrumbSchema].map((schema, index) => (
         <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       ))}
       <section className="mx-auto max-w-7xl px-5 pb-12 pt-16 md:pt-24">
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-[#1B5E3B]">Sesoris reference data</p>
-        <h1 className="max-w-4xl text-4xl font-bold leading-tight text-[#0D3D23] md:text-6xl">Food container size and capacity data</h1>
+        <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-[var(--brand)]">Sesoris reference data</p>
+        <h1 className="max-w-4xl text-4xl font-bold leading-tight text-[var(--brand-deep)] md:text-6xl">Food container size and capacity data</h1>
         <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">Use this table to match a container to a meal, shelf, lunch bag, or freezer drawer. It lists 20 popular containers and links each row to the manufacturer source used for the record.</p>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-[#DDE8E0] bg-white p-5"><p className="text-3xl font-bold text-[#0D3D23]">20</p><p className="mt-1 text-sm text-slate-600">manufacturer-sourced records</p></div>
-          <div className="rounded-2xl border border-[#DDE8E0] bg-white p-5"><p className="text-3xl font-bold text-[#0D3D23]">2 brands</p><p className="mt-1 text-sm text-slate-600">Rubbermaid and Glasslock</p></div>
-          <div className="rounded-2xl border border-[#DDE8E0] bg-white p-5"><p className="text-3xl font-bold text-[#0D3D23]">mL + cup</p><p className="mt-1 text-sm text-slate-600">capacity shown in both units</p></div>
+          <div className="rounded-2xl border border-[var(--brand-line)] bg-white p-5"><p className="text-3xl font-bold text-[var(--brand-deep)]">20</p><p className="mt-1 text-sm text-slate-600">manufacturer-sourced records</p></div>
+          <div className="rounded-2xl border border-[var(--brand-line)] bg-white p-5"><p className="text-3xl font-bold text-[var(--brand-deep)]">2 brands</p><p className="mt-1 text-sm text-slate-600">Rubbermaid and Glasslock</p></div>
+          <div className="rounded-2xl border border-[var(--brand-line)] bg-white p-5"><p className="text-3xl font-bold text-[var(--brand-deep)]">mL + cup</p><p className="mt-1 text-sm text-slate-600">capacity shown in both units</p></div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-8">
         <p className="mb-3 text-sm text-slate-500 md:hidden">Swipe horizontally to see all table fields.</p>
-        <div className="overflow-x-auto rounded-3xl border border-[#DDE8E0] bg-white shadow-[0_24px_80px_rgba(18,53,36,0.08)]" aria-label="Scrollable food container reference table">
+        <div className="overflow-x-auto rounded-3xl border border-[var(--brand-line)] bg-white shadow-[0_24px_80px_rgba(18,53,36,0.08)]" aria-label="Scrollable food container reference table">
           <table className="min-w-[1500px] w-full border-collapse text-left">
             <caption className="sr-only">Food container size and capacity data</caption>
-            <thead className="bg-[#EEF5EE]">
+            <thead className="bg-[var(--brand-tint)]">
               <tr>
-                {['Brand', 'Model', 'Capacity', 'Dimensions', 'Material', 'Microwave', 'Freezer', 'Source'].map((heading) => <th key={heading} scope="col" className="p-4 text-sm font-bold text-[#0D3D23]">{heading}</th>)}
+                {['Brand', 'Model', 'Capacity', 'Dimensions', 'Material', 'Microwave', 'Freezer', 'Source'].map((heading) => <th key={heading} scope="col" className="p-4 text-sm font-bold text-[var(--brand-deep)]">{heading}</th>)}
               </tr>
             </thead>
             <tbody>
               {containers.map((row) => (
                 <tr key={`${row.brand}-${row.model}`} className="border-t border-slate-100 align-top">
-                  <td className="p-4 font-bold text-[#0D3D23]">{row.brand}</td>
+                  <td className="p-4 font-bold text-[var(--brand-deep)]">{row.brand}</td>
                   <td className="p-4 font-semibold text-slate-700">{row.model}</td>
                   <td className="p-4 whitespace-nowrap text-slate-600">{row.capacity}</td>
                   <td className="p-4 whitespace-nowrap text-slate-600">{row.dimensions}</td>
                   <td className="p-4 text-slate-600">{row.material}</td>
                   <td className="p-4 text-slate-600">{row.microwave}</td>
                   <td className="p-4 text-slate-600">{row.freezer}</td>
-                  <td className="p-4"><a className="font-bold text-[#A9431C] underline" href={row.source} target="_blank" rel="noreferrer">Official source</a></td>
+                  <td className="p-4"><a className="font-bold text-[var(--accent-ink)] underline" href={row.source} target="_blank" rel="noreferrer">Official source</a></td>
                 </tr>
               ))}
             </tbody>
@@ -313,7 +313,7 @@ export default function FoodContainerDataPage() {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-8 px-5 py-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <article className="rounded-3xl bg-[#0D3D23] p-7 text-white md:p-9">
+        <article className="rounded-3xl bg-[var(--brand-deep)] p-7 text-white md:p-9">
           <h2 className="text-3xl font-bold">How to read the numbers</h2>
           <div className="mt-5 space-y-4 leading-8 text-white/85">
             <p>mL values are rounded from the manufacturer cup value using 1 US cup = 236.588 mL. They are a convenient comparison unit, not a promise that every container should be filled to the rim.</p>
@@ -321,23 +321,23 @@ export default function FoodContainerDataPage() {
             <p>For Glasslock rows, the microwave and freezer notes refer to the tempered-glass container. Lids are polypropylene and should be removed or used only as instructed by the manufacturer before heating.</p>
           </div>
         </article>
-        <article className="rounded-3xl border border-[#DDE8E0] bg-white p-7 md:p-9">
-          <h2 className="text-3xl font-bold text-[#0D3D23]">Quick size guide</h2>
+        <article className="rounded-3xl border border-[var(--brand-line)] bg-white p-7 md:p-9">
+          <h2 className="text-3xl font-bold text-[var(--brand-deep)]">Quick size guide</h2>
           <ul className="mt-5 space-y-4 leading-7 text-slate-600">
-            <li><strong className="text-[#0D3D23]">Under 500 mL:</strong> sauces, snacks, cut fruit, and single portions.</li>
-            <li><strong className="text-[#0D3D23]">500 to 1,000 mL:</strong> lunch portions, leftovers, and prepared sides.</li>
-            <li><strong className="text-[#0D3D23]">1,000 to 2,000 mL:</strong> family sides, meal prep, and larger leftovers.</li>
-            <li><strong className="text-[#0D3D23]">Over 2,000 mL:</strong> bulk ingredients, pantry storage, and batch cooking.</li>
+            <li><strong className="text-[var(--brand-deep)]">Under 500 mL:</strong> sauces, snacks, cut fruit, and single portions.</li>
+            <li><strong className="text-[var(--brand-deep)]">500 to 1,000 mL:</strong> lunch portions, leftovers, and prepared sides.</li>
+            <li><strong className="text-[var(--brand-deep)]">1,000 to 2,000 mL:</strong> family sides, meal prep, and larger leftovers.</li>
+            <li><strong className="text-[var(--brand-deep)]">Over 2,000 mL:</strong> bulk ingredients, pantry storage, and batch cooking.</li>
           </ul>
         </article>
       </section>
 
       <section className="mx-auto max-w-4xl px-5 pb-16 text-slate-600">
-        <h2 className="text-3xl font-bold text-[#0D3D23]">Keep the source in view</h2>
+        <h2 className="text-3xl font-bold text-[var(--brand-deep)]">Keep the source in view</h2>
         <p className="mt-4 leading-8">Manufacturers can change packaging, dimensions, and care instructions. This reference was checked on {sourceDate} and is reviewed quarterly; the next scheduled review is {nextReviewDate}. Open the source in the relevant row before making a purchase or heating decision, especially when the lid is involved.</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/guides" className="rounded-full bg-[#1B5E3B] px-5 py-3 font-bold text-white">Back to buying guides</Link>
-          <Link href="/shop" className="rounded-full border border-[#1B5E3B] px-5 py-3 font-bold text-[#1B5E3B]">Browse organizers</Link>
+          <Link href="/guides" className="rounded-full bg-[var(--brand)] px-5 py-3 font-bold text-white">Back to buying guides</Link>
+          <Link href="/shop" className="rounded-full border border-[var(--brand)] px-5 py-3 font-bold text-[var(--brand)]">Browse organizers</Link>
         </div>
       </section>
     </main>

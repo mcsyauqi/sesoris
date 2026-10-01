@@ -1,84 +1,70 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Truck, ShieldCheck } from 'lucide-react';
-import { products } from '@/data/products';
+import { ArrowRight } from 'lucide-react';
+import { products, getProductBySlug } from '@/data/products';
+import { formatPrice } from '@/lib/utils';
+import { shortDimensions } from '@/lib/product-dims';
+import { FREE_SHIPPING_MIN } from '@/lib/shipping';
 
-const hero = {
-  tagline: 'New Collection 2026',
-  title: 'Tidy Home,',
-  titleAccent: 'Calmer Living.',
-  description: 'Smart storage solutions for a tidier, more comfortable home.',
-  image: '/images/hero/hero-1.webp',
-  buttonText: 'Shop the Collection',
-  buttonLink: '/shop',
-  stat: { value: String(products.length), label: 'Products' },
-};
+// Real catalog items, not mood photography: the hero sells what the store actually ships.
+const HERO_SLUGS = [
+  'pull-out-under-sink-organizer-2-tier-black',
+  'slide-out-cabinet-drawer-black',
+  'swivel-cabinet-spice-rack-20-bottles-white',
+];
 
 export function HeroSlider() {
+  const tiles = HERO_SLUGS.map((s) => getProductBySlug(s)).filter((p) => p !== undefined);
+
   return (
-    <section className="hero-section">
-      <div className="hero-bg">
-        <div className="hero-bg-slide active no-fade">
-          <Image
-            src={hero.image}
-            alt="Tidy home with organized storage"
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
-            fetchPriority="high"
-            loading="eager"
-            decoding="sync"
-            unoptimized
-            sizes="100vw"
-          />
+    <section className="hero">
+      <div className="container hero-grid">
+        <div>
+          <h1 className="hero-title">
+            Home organizers that fit <em>the space you have.</em>
+          </h1>
+          <p className="hero-lede">
+            Pull-out cabinet baskets, pantry racks, shoe storage, and travel organizers, each listed
+            with its real measurements. Shipped from our US warehouse, free on orders over ${FREE_SHIPPING_MIN}.
+          </p>
+          <div className="hero-ctas">
+            <Link href="/shop" className="btn btn-light">
+              Shop all {products.length} organizers <ArrowRight aria-hidden />
+            </Link>
+            <Link href="/category/kitchen-dining" className="btn btn-ghost-light">
+              Kitchen storage
+            </Link>
+          </div>
         </div>
-        <div className="hero-overlay" />
-      </div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <div className="hero-content-grid">
-          <div className="hero-text">
-            <span className="hero-tagline">{hero.tagline}</span>
-            <h1 className="hero-title" aria-label="Sesoris, Home Organizers & Storage Solutions">
-              {hero.title}
-              <br />{' '}
-              <span className="hero-title-accent">{hero.titleAccent}</span>
-            </h1>
-            <p className="hero-description">{hero.description}</p>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <Link href={hero.buttonLink} className="hero-cta">
-                {hero.buttonText}
-                <ArrowRight style={{ width: '18px', height: '18px' }} />
+        <div className="hero-tiles">
+          {tiles.map((p, i) => {
+            const dims = shortDimensions(p);
+            return (
+              <Link key={p.slug} href={`/product/${p.slug}`} className={`hero-tile${i === 0 ? ' is-main' : ''}`}>
+                <span className="hero-tile-img">
+                  <Image
+                    src={p.images[0].url}
+                    alt={p.images[0].alt}
+                    fill
+                    priority={i === 0}
+                    fetchPriority={i === 0 ? 'high' : undefined}
+                    sizes={i === 0 ? '(max-width: 640px) 92vw, (max-width: 1024px) 55vw, 34vw' : '(max-width: 640px) 46vw, (max-width: 1024px) 40vw, 24vw'}
+                  />
+                </span>
+                <span className="hero-tile-caption">
+                  <span>
+                    <strong>{p.name}</strong>
+                    {dims && <small>{dims}</small>}
+                  </span>
+                  <span className="hero-tile-price">{formatPrice(p.price)}</span>
+                </span>
               </Link>
-              <div className="hero-rating">
-                <span style={{ fontSize: '13px', opacity: 0.9 }}>Curated for organized living</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-side">
-            <div className="hero-stat-card">
-              <div className="hero-stat-value">{hero.stat.value}</div>
-              <div className="hero-stat-label">{hero.stat.label}</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-bottom">
-          <div />
-          <div className="hero-mini-badges">
-            <div className="hero-mini-badge">
-              <Truck style={{ width: '16px', height: '16px' }} />
-              <span>Free Shipping</span>
-            </div>
-            <div className="hero-mini-badge">
-              <ShieldCheck style={{ width: '16px', height: '16px' }} />
-              <span>30-Day Guarantee</span>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
+      <div className="ruler" aria-hidden />
     </section>
   );
 }

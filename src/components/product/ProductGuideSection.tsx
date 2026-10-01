@@ -26,13 +26,13 @@ export function ProductGuideSection({ product }: { product: Product }) {
     fontFamily: 'var(--font-heading), Georgia, serif',
     fontSize: 'clamp(19px, 2.4vw, 22px)',
     fontWeight: 400 as const,
-    color: '#212529',
+    color: 'var(--ink)',
     marginBottom: '10px',
   };
 
   const bodyStyle = {
     fontSize: '15px',
-    color: '#495057',
+    color: 'var(--ink-2)',
     lineHeight: 1.75,
     maxWidth: '760px',
   };
@@ -42,7 +42,7 @@ export function ProductGuideSection({ product }: { product: Product }) {
   return (
     <section
       aria-labelledby="product-guide-heading"
-      style={{ background: '#F8F9FA', padding: '48px 0', marginTop: '48px' }}
+      style={{ background: 'var(--surface-2)', padding: '48px 0', marginTop: '48px' }}
     >
       <div className="container">
         <h2 id="product-guide-heading" style={headingStyle}>
@@ -71,29 +71,29 @@ export function ProductGuideSection({ product }: { product: Product }) {
         </div>
 
         {guide.faqs.length > 0 && (
-          <div style={{ marginTop: '36px', paddingTop: '26px', borderTop: '1px solid #E9ECEF' }}>
+          <div style={{ marginTop: '36px', paddingTop: '26px', borderTop: '1px solid var(--line)' }}>
             <h2 style={headingStyle}>{product.name} questions, answered</h2>
             {guide.faqs.map((faq, i) => (
               <div key={i} style={{ marginBottom: '20px', maxWidth: '760px' }}>
-                <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#212529', marginBottom: '6px' }}>
+                <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--ink)', marginBottom: '6px' }}>
                   {faq.question}
                 </h3>
-                <p style={{ fontSize: '15px', color: '#495057', lineHeight: 1.75 }}>{faq.answer}</p>
+                <p style={{ fontSize: '15px', color: 'var(--ink-2)', lineHeight: 1.75 }}>{faq.answer}</p>
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ marginTop: '32px', paddingTop: '22px', borderTop: '1px solid #E9ECEF' }}>
-          <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '12px' }}>Keep browsing:</p>
+        <div style={{ marginTop: '32px', paddingTop: '22px', borderTop: '1px solid var(--line)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '12px' }}>Keep browsing:</p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <Link
               href={`/category/${product.category.slug}`}
               style={{
                 padding: '8px 16px',
                 borderRadius: '20px',
-                border: '1px solid #1B5E3B',
-                color: '#1B5E3B',
+                border: '1px solid var(--brand)',
+                color: 'var(--brand)',
                 fontSize: '13px',
                 fontWeight: 500,
                 textDecoration: 'none',
@@ -106,8 +106,8 @@ export function ProductGuideSection({ product }: { product: Product }) {
               style={{
                 padding: '8px 16px',
                 borderRadius: '20px',
-                border: '1px solid #1B5E3B',
-                color: '#1B5E3B',
+                border: '1px solid var(--brand)',
+                color: 'var(--brand)',
                 fontSize: '13px',
                 fontWeight: 500,
                 textDecoration: 'none',
@@ -120,8 +120,8 @@ export function ProductGuideSection({ product }: { product: Product }) {
               style={{
                 padding: '8px 16px',
                 borderRadius: '20px',
-                border: '1px solid #1B5E3B',
-                color: '#1B5E3B',
+                border: '1px solid var(--brand)',
+                color: 'var(--brand)',
                 fontSize: '13px',
                 fontWeight: 500,
                 textDecoration: 'none',
@@ -134,8 +134,8 @@ export function ProductGuideSection({ product }: { product: Product }) {
               style={{
                 padding: '8px 16px',
                 borderRadius: '20px',
-                border: '1px solid #1B5E3B',
-                color: '#1B5E3B',
+                border: '1px solid var(--brand)',
+                color: 'var(--brand)',
                 fontSize: '13px',
                 fontWeight: 500,
                 textDecoration: 'none',

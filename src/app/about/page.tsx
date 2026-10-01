@@ -32,14 +32,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Breadcrumb */}
-      <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+      <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: '#5F6873' }}>
+            <Link href="/" aria-label="Home" style={{ display: 'flex', alignItems: 'center', color: 'var(--ink-muted)' }}>
               <Home style={{ width: '14px', height: '14px' }} />
             </Link>
-            <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-            <span style={{ color: '#212529', fontWeight: 500 }}>About Us</span>
+            <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>About Us</span>
           </div>
         </div>
       </div>
@@ -52,8 +52,8 @@ export default function AboutPage() {
             alignItems: 'center',
             gap: '6px',
             padding: '6px 16px',
-            background: '#E8F5E9',
-            color: '#1B5E3B',
+            background: 'var(--brand-tint)',
+            color: 'var(--brand)',
             fontSize: '13px',
             fontWeight: 600,
             borderRadius: '50px',
@@ -62,10 +62,10 @@ export default function AboutPage() {
             <Leaf style={{ width: '14px', height: '14px' }} />
             Our Yogyakarta Story
           </span>
-          <h1 style={{ fontSize: '40px', fontWeight: 700, color: '#212529', marginBottom: '20px', maxWidth: '600px', margin: '0 auto 20px' }}>
+          <h1 style={{ fontSize: '40px', fontWeight: 700, color: 'var(--ink)', marginBottom: '20px', maxWidth: '600px', margin: '0 auto 20px' }}>
             Practical Home Organization from Yogyakarta
           </h1>
-          <p style={{ color: '#5F6873', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
+          <p style={{ color: 'var(--ink-muted)', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
             Sesoris is a Yogyakarta-founded home organizer brand helping households choose practical storage, kitchen, desk, and travel products for calmer daily routines.
           </p>
         </div>
@@ -98,28 +98,28 @@ export default function AboutPage() {
                 alignItems: 'center',
                 gap: '10px'
               }}>
-                <Award style={{ width: '28px', height: '28px', color: '#1B5E3B' }} />
+                <Award style={{ width: '28px', height: '28px', color: 'var(--brand)' }} />
                 <div>
-                  <div style={{ fontWeight: 700, color: '#212529' }}>Yogyakarta, Indonesia</div>
-                  <div style={{ fontSize: '12px', color: '#5F6873' }}>Online home organizer store</div>
+                  <div style={{ fontWeight: 700, color: 'var(--ink)' }}>Yogyakarta, Indonesia</div>
+                  <div style={{ fontSize: '12px', color: 'var(--ink-muted)' }}>Online home organizer store</div>
                 </div>
               </div>
             </div>
             <div>
-              <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '20px' }}>Who We Are</h2>
-              <p style={{ color: '#5F6873', lineHeight: 1.8, marginBottom: '16px' }}>
+              <h2 style={{ fontSize: '32px', fontWeight: 700, color: 'var(--ink)', marginBottom: '20px' }}>Who We Are</h2>
+              <p style={{ color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '16px' }}>
                 At Sesoris, we believe a tidy home starts with products that are easy to use, easy to clean, and easy to fit into real living spaces. Our team works from Yogyakarta and curates items for kitchens, desks, rooms, wardrobes, and travel needs.
               </p>
-              <p style={{ color: '#5F6873', lineHeight: 1.8, marginBottom: '16px' }}>
+              <p style={{ color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '16px' }}>
                 The Yogyakarta roots matter to us: it is where the idea for Sesoris started, shaping a calm, practical approach to home organization that we bring to every product we curate.
               </p>
-              <p style={{ color: '#5F6873', lineHeight: 1.8 }}>
+              <p style={{ color: 'var(--ink-muted)', lineHeight: 1.8 }}>
                 &ldquo;Do It With Ease&rdquo; is our promise: simple product choices, clear support, and practical storage ideas for people who want their home to feel more organized without making the process complicated.
               </p>
-              <div style={{ marginTop: '24px', padding: '20px', borderRadius: '14px', background: '#F2F8F3', border: '1px solid #D5E7D8' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1B5E3B', marginBottom: '8px' }}>The Sesoris name</h3>
-                <p style={{ color: '#4B5563', lineHeight: 1.7 }}>
-                  Sesoris at sesoris.com is an independent home organization and storage store founded in Yogyakarta, Indonesia. We are not affiliated with Sessori or with similarly named fashion, jewelry, or media websites. Our official website is always <Link href="/" style={{ color: '#1B5E3B', fontWeight: 700 }}>www.sesoris.com</Link>.
+              <div style={{ marginTop: '24px', padding: '20px', borderRadius: '14px', background: 'var(--brand-tint)', border: '1px solid var(--brand-line)' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--brand)', marginBottom: '8px' }}>The Sesoris name</h3>
+                <p style={{ color: 'var(--ink-2)', lineHeight: 1.7 }}>
+                  Sesoris at sesoris.com is an independent home organization and storage store founded in Yogyakarta, Indonesia. We are not affiliated with Sessori or with similarly named fashion, jewelry, or media websites. Our official website is always <Link href="/" style={{ color: 'var(--brand)', fontWeight: 700 }}>www.sesoris.com</Link>.
                 </p>
               </div>
             </div>
@@ -128,11 +128,11 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section style={{ padding: '64px 0', background: '#F8F9FA' }}>
+      <section style={{ padding: '64px 0', background: 'var(--surface-2)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ color: '#5F6873', marginBottom: '8px' }}>The principles that guide everything we do</p>
-            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529' }}>Our Values</h2>
+            <p style={{ color: 'var(--ink-muted)', marginBottom: '8px' }}>The principles that guide everything we do</p>
+            <h2 style={{ fontSize: '32px', fontWeight: 700, color: 'var(--ink)' }}>Our Values</h2>
           </div>
           <div className="about-values-grid" style={{ display: 'grid', gap: '24px' }}>
             {values.map((value) => (
@@ -146,16 +146,16 @@ export default function AboutPage() {
                   width: '56px',
                   height: '56px',
                   borderRadius: '50%',
-                  background: '#E8F5E9',
+                  background: 'var(--brand-tint)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto 20px'
                 }}>
-                  <value.icon style={{ width: '24px', height: '24px', color: '#1B5E3B' }} />
+                  <value.icon style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
                 </div>
-                <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', marginBottom: '12px' }}>{value.title}</h3>
-                <p style={{ color: '#5F6873', fontSize: '14px', lineHeight: 1.6 }}>{value.desc}</p>
+                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>{value.title}</h3>
+                <p style={{ color: 'var(--ink-muted)', fontSize: '14px', lineHeight: 1.6 }}>{value.desc}</p>
               </div>
             ))}
           </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section style={{ padding: '48px 0', background: '#1B5E3B' }}>
+      <section style={{ padding: '48px 0', background: 'var(--brand)' }}>
         <div className="container">
           <div className="about-stats-grid" style={{ display: 'grid', gap: '24px', textAlign: 'center' }}>
             {stats.map((stat) => (
@@ -180,7 +180,7 @@ export default function AboutPage() {
       <section style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{
-            background: '#F8F9FA',
+            background: 'var(--surface-2)',
             borderRadius: '24px',
             padding: 'clamp(24px, 5vw, 64px)',
             textAlign: 'center',
@@ -192,12 +192,12 @@ export default function AboutPage() {
               left: '32px',
               width: '48px',
               height: '48px',
-              color: '#E8F5E9'
+              color: 'var(--brand-tint)'
             }} />
-            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 700, color: 'var(--ink)', marginBottom: '16px' }}>
               Ready to Discover Amazing Products?
             </h2>
-            <p style={{ color: '#5F6873', marginBottom: '32px' }}>
+            <p style={{ color: 'var(--ink-muted)', marginBottom: '32px' }}>
               Browse our collection and find the perfect items for yourself or someone special.
             </p>
             <Link

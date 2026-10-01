@@ -31,14 +31,14 @@ function loadPaypal(clientId: string): Promise<PaypalButtonsApi> {
   });
 }
 
-const inputStyle = { display: 'block', width: '100%', marginTop: '4px', padding: '10px 12px', borderRadius: '8px', border: '1px solid #CED4DA', fontSize: '15px', background: 'white' } as const;
+const inputStyle = { display: 'block', width: '100%', marginTop: '4px', padding: '10px 12px', borderRadius: '8px', border: '1px solid var(--line-strong)', fontSize: '15px', background: 'white' } as const;
 
 const crumb = (label: string) => (
-  <div style={{ background: '#F8F9FA', padding: '12px 0' }}>
+  <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
     <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-      <Link href="/" aria-label="Home" style={{ display: 'flex', color: '#5F6873' }}><Home style={{ width: '14px', height: '14px' }} /></Link>
-      <ChevronRight style={{ width: '14px', height: '14px', color: '#5F6873' }} />
-      <span style={{ color: '#212529', fontWeight: 500 }}>{label}</span>
+      <Link href="/" aria-label="Home" style={{ display: 'flex', color: 'var(--ink-muted)' }}><Home style={{ width: '14px', height: '14px' }} /></Link>
+      <ChevronRight style={{ width: '14px', height: '14px', color: 'var(--ink-muted)' }} />
+      <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{label}</span>
     </div>
   </div>
 );
@@ -139,10 +139,10 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
       <>
         {crumb('Order Confirmed')}
         <div className="container" style={{ padding: '80px 16px', textAlign: 'center' }}>
-          <CheckCircle style={{ width: '56px', height: '56px', color: '#1B5E3B', marginBottom: '16px' }} />
+          <CheckCircle style={{ width: '56px', height: '56px', color: 'var(--brand)', marginBottom: '16px' }} />
           <h1 style={{ fontSize: '26px', fontWeight: 600, marginBottom: '12px' }}>Thank you for your order</h1>
-          <p style={{ color: '#5F6873', marginBottom: '8px' }}>Order reference: <strong style={{ color: '#212529' }}>{placed.id}</strong> ({formatPrice(placed.total)})</p>
-          <p style={{ color: '#5F6873', marginBottom: '24px' }}>A confirmation email is on its way. We will send tracking as soon as your order ships from our US warehouse.</p>
+          <p style={{ color: 'var(--ink-muted)', marginBottom: '8px' }}>Order reference: <strong style={{ color: 'var(--ink)' }}>{placed.id}</strong> ({formatPrice(placed.total)})</p>
+          <p style={{ color: 'var(--ink-muted)', marginBottom: '24px' }}>A confirmation email is on its way. We will send tracking as soon as your order ships from our US warehouse.</p>
           <Link href="/shop" className="btn btn-primary">Continue Shopping</Link>
         </div>
       </>
@@ -155,7 +155,7 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
         {crumb('Checkout')}
         <div className="container" style={{ padding: '80px 16px', textAlign: 'center' }}>
           <h1 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '12px' }}>Your cart is empty</h1>
-          <p style={{ color: '#5F6873', marginBottom: '24px' }}>Add items to your cart before checking out.</p>
+          <p style={{ color: 'var(--ink-muted)', marginBottom: '24px' }}>Add items to your cart before checking out.</p>
           <Link href="/shop" className="btn btn-primary">Start Shopping</Link>
         </div>
       </>
@@ -173,7 +173,7 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
           </p>
         )}
 
-        <div style={{ background: '#F8F9FA', borderRadius: '16px', padding: '24px', marginBottom: '24px' }}>
+        <div style={{ background: 'var(--surface-2)', borderRadius: '16px', padding: '24px', marginBottom: '24px' }}>
           {lines.map(({ product, quantity }) => (
             <div key={product.slug} style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
               <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', position: 'relative', background: 'white', flexShrink: 0 }}>
@@ -181,25 +181,25 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
               </div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: '14px', fontWeight: 500 }}>{product.name}</div>
-                <div style={{ fontSize: '13px', color: '#5F6873' }}>Qty: {quantity}</div>
+                <div style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>Qty: {quantity}</div>
               </div>
               <div style={{ fontWeight: 500 }}>{formatPrice(product.price * quantity)}</div>
             </div>
           ))}
-          <div style={{ borderTop: '1px solid #E9ECEF', paddingTop: '16px', display: 'grid', gap: '10px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Subtotal</span><span>{formatPrice(subtotal)}</span></div>
-            {discount > 0 && <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Discount ({coupon?.code})</span><span style={{ color: '#1E7E34' }}>-{formatPrice(discount)}</span></div>}
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#5F6873' }}>Shipping (US only)</span><span>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span></div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #E9ECEF', paddingTop: '10px' }}>
-              <span style={{ fontWeight: 600 }}>Total</span><span style={{ fontSize: '20px', fontWeight: 700, color: '#1B5E3B' }}>{formatPrice(total)}</span>
+          <div style={{ borderTop: '1px solid var(--line)', paddingTop: '16px', display: 'grid', gap: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--ink-muted)' }}>Subtotal</span><span>{formatPrice(subtotal)}</span></div>
+            {discount > 0 && <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--ink-muted)' }}>Discount ({coupon?.code})</span><span style={{ color: 'var(--success)' }}>-{formatPrice(discount)}</span></div>}
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--ink-muted)' }}>Shipping (US only)</span><span>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--line)', paddingTop: '10px' }}>
+              <span style={{ fontWeight: 600 }}>Total</span><span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--brand)' }}>{formatPrice(total)}</span>
             </div>
           </div>
         </div>
 
         <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
           <label htmlFor="checkout-coupon" style={{ position: 'absolute', width: '1px', height: '1px', overflow: 'hidden', clip: 'rect(0,0,0,0)' }}>Coupon code</label>
-          <input id="checkout-coupon" value={couponInput} onChange={(e) => setCouponInput(e.target.value)} placeholder="Coupon code" style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', border: '1px solid #E9ECEF', fontSize: '15px' }} />
-          <button type="button" onClick={applyCoupon} disabled={!couponInput.trim()} style={{ padding: '10px 18px', borderRadius: '8px', border: '1px solid #1B5E3B', background: 'white', color: '#1B5E3B', fontWeight: 600, cursor: 'pointer' }}>Apply</button>
+          <input id="checkout-coupon" value={couponInput} onChange={(e) => setCouponInput(e.target.value)} placeholder="Coupon code" style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--line)', fontSize: '15px' }} />
+          <button type="button" onClick={applyCoupon} disabled={!couponInput.trim()} style={{ padding: '10px 18px', borderRadius: '8px', border: '1px solid var(--brand)', background: 'white', color: 'var(--brand)', fontWeight: 600, cursor: 'pointer' }}>Apply</button>
         </div>
 
         <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '12px' }}>Shipping address (US only)</h2>
@@ -212,12 +212,12 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
             ['zip', 'ZIP code', 'postal-code', true, 1],
             ['phone', 'Phone (for delivery, optional)', 'tel', false, 1],
           ] as const).map(([k, label, auto, required, span]) => (
-            <label key={k} style={{ gridColumn: `span ${span}`, fontSize: '13px', color: '#495057' }}>
+            <label key={k} style={{ gridColumn: `span ${span}`, fontSize: '13px', color: 'var(--ink-2)' }}>
               {label}
               <input {...field(k)} autoComplete={auto} required={required} style={inputStyle} />
             </label>
           ))}
-          <label style={{ fontSize: '13px', color: '#495057' }}>
+          <label style={{ fontSize: '13px', color: 'var(--ink-2)' }}>
             State
             <select {...field('state')} autoComplete="address-level1" required style={inputStyle}>
               <option value="">Choose...</option>
@@ -227,15 +227,15 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
         </div>
 
         <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Pay with PayPal or card</h2>
-        <p style={{ fontSize: '14px', color: '#5F6873', marginBottom: '16px' }}>
+        <p style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '16px' }}>
           No PayPal account needed: choose &quot;Debit or Credit Card&quot; to pay by card. We ship to the address above.
         </p>
         {error && <p role="alert" style={{ background: '#F8D7DA', color: '#842029', padding: '10px 14px', borderRadius: '8px', fontSize: '14px', marginBottom: '16px' }}>{error}</p>}
-        {clientId ? <div ref={buttonsRef} style={{ minHeight: '150px' }} /> : <p style={{ color: '#5F6873' }}>Checkout is temporarily unavailable. Please try again shortly.</p>}
+        {clientId ? <div ref={buttonsRef} style={{ minHeight: '150px' }} /> : <p style={{ color: 'var(--ink-muted)' }}>Checkout is temporarily unavailable. Please try again shortly.</p>}
 
-        <div style={{ marginTop: '24px', display: 'grid', gap: '8px', fontSize: '13px', color: '#5F6873' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><ShieldCheck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />Payments are processed by PayPal. Sesoris never sees your card number.</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Truck style={{ width: '16px', height: '16px', color: '#1B5E3B' }} />Free shipping on orders over ${FREE_SHIPPING_MIN}. Ships from our US warehouse.</div>
+        <div style={{ marginTop: '24px', display: 'grid', gap: '8px', fontSize: '13px', color: 'var(--ink-muted)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><ShieldCheck style={{ width: '16px', height: '16px', color: 'var(--brand)' }} />Payments are processed by PayPal. Sesoris never sees your card number.</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Truck style={{ width: '16px', height: '16px', color: 'var(--brand)' }} />Free shipping on orders over ${FREE_SHIPPING_MIN}. Ships from our US warehouse.</div>
         </div>
       </div>
     </>

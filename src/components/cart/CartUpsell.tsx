@@ -55,13 +55,13 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
       marginBottom: '24px',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-        <Tag style={{ width: '16px', height: '16px', color: '#FF6B35' }} />
-        <span style={{ fontSize: '14px', fontWeight: 700, color: '#FF6B35' }}>
+        <Tag style={{ width: '16px', height: '16px', color: 'var(--accent)' }} />
+        <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--accent)' }}>
           Complete {bundle.name} and save {bundle.discountPercent}%!
         </span>
       </div>
 
-      <p style={{ fontSize: '13px', color: '#5F6873', marginBottom: '12px', lineHeight: '1.5' }}>
+      <p style={{ fontSize: '13px', color: 'var(--ink-muted)', marginBottom: '12px', lineHeight: '1.5' }}>
         You already have items from this bundle. Add the missing products to unlock the full bundle discount.
       </p>
 
@@ -75,7 +75,7 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
               alignItems: 'center',
               gap: '8px',
               background: 'white',
-              border: '1px solid #E9ECEF',
+              border: '1px solid var(--line)',
               borderRadius: '10px',
               padding: '8px 12px',
             }}
@@ -90,24 +90,24 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
               />
             </div>
             <div>
-              <div style={{ fontSize: '12px', fontWeight: 600, color: '#212529' }}>{product.name}</div>
-              <div style={{ fontSize: '12px', color: '#1B5E3B' }}>{formatPrice(product.price)}</div>
+              <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--ink)' }}>{product.name}</div>
+              <div style={{ fontSize: '12px', color: 'var(--brand)' }}>{formatPrice(product.price)}</div>
             </div>
           </div>
         ))}
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-        <div style={{ fontSize: '13px', color: '#5F6873' }}>
+        <div style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>
           Add {missingProducts.length} more item{missingProducts.length > 1 ? 's' : ''} for{' '}
-          <strong style={{ color: '#212529' }}>{formatPrice(addMissingCost)}</strong>
-          {' '}and save <strong style={{ color: '#1E7E34' }}>{formatPrice(bundle.originalPrice - bundle.bundlePrice)}</strong> total
+          <strong style={{ color: 'var(--ink)' }}>{formatPrice(addMissingCost)}</strong>
+          {' '}and save <strong style={{ color: 'var(--success)' }}>{formatPrice(bundle.originalPrice - bundle.bundlePrice)}</strong> total
         </div>
 
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
           <Link
             href={`/bundles/${bundle.slug}`}
-            style={{ fontSize: '13px', color: '#1B5E3B', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}
+            style={{ fontSize: '13px', color: 'var(--brand)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}
           >
             View bundle <ArrowRight style={{ width: '12px', height: '12px' }} />
           </Link>
@@ -117,7 +117,7 @@ export function CartUpsell({ cartProductIds, allBundles, allProducts }: CartUpse
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              background: isAdded ? '#1E7E34' : '#1B5E3B',
+              background: isAdded ? 'var(--success)' : 'var(--brand)',
               color: 'white',
               border: 'none',
               borderRadius: '8px',

@@ -1,49 +1,28 @@
-import { Truck, RefreshCw, Shield, Headphones } from 'lucide-react';
+import { Truck, Warehouse, RotateCcw, LockKeyhole } from 'lucide-react';
+import { FREE_SHIPPING_MIN, SHIPPING_FEE } from '@/lib/shipping';
 
-const badges = [
-  { icon: Truck, title: 'Free Shipping', desc: 'For orders over $20' },
-  { icon: RefreshCw, title: 'Easy Returns', desc: '30 Days' },
-  { icon: Shield, title: 'Secure Payment', desc: '100% Protected' },
-  { icon: Headphones, title: '24/7 Support', desc: 'Always Ready to Help' },
+// Every line here must match checkout.ts and the policy pages. No "24/7" or other unprovable promises.
+const values = [
+  { icon: Truck, title: `Free shipping over $${FREE_SHIPPING_MIN}`, desc: `Flat $${SHIPPING_FEE} below that` },
+  { icon: Warehouse, title: 'Ships from the US', desc: 'Delivery estimate on every product' },
+  { icon: RotateCcw, title: '30-day returns', desc: 'Items in original condition' },
+  { icon: LockKeyhole, title: 'Secure checkout', desc: 'PayPal, debit, or credit card' },
 ];
 
 export function TrustBadges() {
   return (
-    <section style={{
-      background: '#F8F9FA',
-      borderTop: '1px solid #E9ECEF',
-      borderBottom: '1px solid #E9ECEF',
-      padding: '20px 0'
-    }}>
-      <div className="container">
-        <div className="grid-trust">
-          {badges.map((badge) => (
-            <div key={badge.title} style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              justifyContent: 'center'
-            }}>
-              <div style={{
-                width: '44px',
-                height: '44px',
-                borderRadius: '12px',
-                background: '#E8F5E9',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0
-              }}>
-                <badge.icon style={{ width: '20px', height: '20px', color: '#1B5E3B' }} />
-              </div>
-              <div>
-                <div style={{ fontWeight: 600, fontSize: '13px', color: '#212529' }}>{badge.title}</div>
-                <div style={{ fontSize: '12px', color: '#5F6873' }}>{badge.desc}</div>
-              </div>
+    <section className="values" aria-label="Shopping with Sesoris">
+      <ul className="container values-list">
+        {values.map(({ icon: Icon, title, desc }) => (
+          <li key={title}>
+            <Icon aria-hidden />
+            <div>
+              <strong>{title}</strong>
+              <span>{desc}</span>
             </div>
-          ))}
-        </div>
-      </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

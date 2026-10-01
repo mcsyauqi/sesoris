@@ -1,109 +1,37 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { Leaf, ArrowRight } from 'lucide-react';
-import { products, categories } from '@/data/products';
+import { ArrowRight, Ruler, RotateCcw, MapPin } from 'lucide-react';
+import { NewsletterForm } from '@/components/layout/NewsletterForm';
 
 export function AboutSection() {
   return (
-    <section className="section-padding" style={{ background: '#F8F9FA' }}>
-      <div className="container">
-        <div className="grid-about">
-          {/* Image */}
-          <div style={{ position: 'relative' }}>
-            <div style={{
-              aspectRatio: '4/3',
-              borderRadius: '20px',
-              overflow: 'hidden',
-              position: 'relative'
-            }}>
-              <Image
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=450&fit=crop&q=75"
-                alt="About Sesoris"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                loading="lazy"
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-            {/* Floating Card */}
-            <div className="hide-mobile" style={{
-              position: 'absolute',
-              bottom: '-20px',
-              right: '-20px',
-              background: 'white',
-              borderRadius: '16px',
-              padding: '20px 24px',
-              boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px'
-            }}>
-              <Leaf style={{ width: '36px', height: '36px', color: '#1B5E3B' }} />
-              <div>
-                <div style={{ fontSize: '18px', fontWeight: 700, color: '#1B5E3B' }}>Sesoris</div>
-                <div style={{ fontSize: '11px', color: '#5F6873' }}>Do It With Ease</div>
-              </div>
-            </div>
-          </div>
+    <section className="section-padding" style={{ background: 'var(--surface-2)' }}>
+      <div className="container about-news">
+        <div className="about-copy">
+          <h2 className="section-title" style={{ marginBottom: 20 }}>A small store with a narrow focus</h2>
+          <p>
+            Sesoris is an independent home organization store founded in Yogyakarta, Indonesia. We keep
+            the catalog small on purpose: organizers we can describe precisely,
+            with real measurements and stock in a US warehouse.
+          </p>
+          <p>
+            If something does not fit or is not what you expected, you have 30 days to send it back.
+            Questions before you order? Message us and a person answers.
+          </p>
+          <ul className="about-facts">
+            <li><Ruler aria-hidden /> Sizes and specs up front</li>
+            <li><RotateCcw aria-hidden /> 30-day returns</li>
+            <li><MapPin aria-hidden /> Ships from the US</li>
+          </ul>
+          <Link href="/about" className="btn btn-outline">
+            About Sesoris <ArrowRight aria-hidden />
+          </Link>
+        </div>
 
-          {/* Content */}
-          <div>
-            <span style={{
-              display: 'inline-block',
-              padding: '6px 16px',
-              background: '#E8F5E9',
-              color: '#1B5E3B',
-              fontSize: '13px',
-              fontWeight: 600,
-              borderRadius: '50px',
-              marginBottom: '16px'
-            }}>
-              About Us
-            </span>
-            <h2 style={{
-              fontFamily: 'var(--font-heading), Georgia, serif',
-              fontSize: 'clamp(24px, 4vw, 32px)',
-              fontWeight: 400,
-              color: '#212529',
-              marginBottom: '20px'
-            }}>
-              Why Choose Sesoris?
-            </h2>
-            <p style={{ color: '#5F6873', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
-              Sesoris is a home organizer brand dedicated to helping you create a tidier, more functional living space. From kitchen storage racks and food containers to desk organizers and travel pouches, every product is chosen for quality, durability, and everyday practicality.
-            </p>
-            <p style={{ color: '#5F6873', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
-              We partner with trusted manufacturers to bring you rust-resistant stainless steel, food-grade plastics, and premium materials at accessible prices. Whether you live in a small apartment or a spacious home, our storage solutions scale with your needs.
-            </p>
-            <p style={{ color: '#5F6873', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px' }}>
-              Sesoris curates practical organizers for kitchens, desks, closets, travel, and small-space living, one shelf, container, and cabinet at a time.
-            </p>
-
-            {/* Stats */}
-            <div className="grid-stats" style={{ marginBottom: '28px' }}>
-              <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>{products.length}</div>
-                <div style={{ fontSize: '13px', color: '#5F6873' }}>Products</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>{categories.length}</div>
-                <div style={{ fontSize: '13px', color: '#5F6873' }}>Categories</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#1B5E3B' }}>30-Day</div>
-                <div style={{ fontSize: '13px', color: '#5F6873' }}>Returns</div>
-              </div>
-            </div>
-
-            <Link
-              href="/about"
-              className="btn btn-primary"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-            >
-              About Sesoris
-              <ArrowRight style={{ width: '16px', height: '16px' }} />
-            </Link>
-          </div>
+        <div className="news-card">
+          <h2>New organizers and guides, by email</h2>
+          <p>Get new products and the best of the blog in your inbox. No spam, unsubscribe anytime.</p>
+          <NewsletterForm source="homepage" formClass="news-form" buttonClass="btn btn-light" />
+          <div className="ruler" aria-hidden />
         </div>
       </div>
     </section>

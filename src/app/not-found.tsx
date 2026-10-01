@@ -38,7 +38,7 @@ export default function NotFound() {
           style={{
             fontSize: "28px",
             fontWeight: 700,
-            color: "#212529",
+            color: "var(--ink)",
             marginBottom: "12px",
           }}
         >
@@ -47,7 +47,7 @@ export default function NotFound() {
         <p
           style={{
             fontSize: "16px",
-            color: "#5F6873",
+            color: "var(--ink-muted)",
             lineHeight: 1.6,
             marginBottom: "32px",
           }}
