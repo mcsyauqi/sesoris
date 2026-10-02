@@ -39,6 +39,18 @@ const legacyBlogRedirectOverrides: Record<string, string> = {
     "/blog/bathroom-wall-shelf-ideas-transform-space-2026",
 };
 
+// These exact high-value consolidations are handled in middleware so the
+// response is an explicit 301, matching the acceptance gate on the related
+// Trello work. Keep their archive metadata, but do not also emit Next's
+// `permanent: true` redirect (which is a 308).
+const explicit301BlogSources = new Set([
+  "/blog/entrance-shoe-storage-ideas",
+  "/blog/entrance-shoe-storage-ideas-transform-home-first-impression-2026",
+  "/blog/ideas-for-shoe-storage-in-entryway",
+  "/blog/ideas-for-shoe-storage-in-garage",
+  "/blog/bathroom-closet-organization-ideas-transform-storage-space-2026",
+]);
+
 const retiredBlogRedirects = readdirSync(path.join(process.cwd(), "content", "blog"))
   .filter((file) => file.endsWith(".json"))
   .flatMap((file) => {
@@ -47,6 +59,7 @@ const retiredBlogRedirects = readdirSync(path.join(process.cwd(), "content", "bl
     ) as { slug?: string; retired?: boolean; redirectTo?: string };
 
     if (!post.retired || !post.slug || !post.redirectTo) return [];
+    if (explicit301BlogSources.has(`/blog/${post.slug}`)) return [];
     return [{
       source: `/blog/${post.slug}`,
       destination: `/blog/${post.redirectTo}`,
