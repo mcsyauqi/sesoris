@@ -9,6 +9,7 @@ export interface BlogPost {
   image: string;
   category: string;
   date: string;
+  dateModified?: string;
   dateFormatted: string;
   readTime: string;
   author: {

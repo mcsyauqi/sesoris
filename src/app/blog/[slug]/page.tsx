@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [post.image],
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.dateModified ?? post.date,
       authors: [post.author.name],
     },
   };
@@ -555,7 +556,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.excerpt,
     image: post.image.startsWith('http') ? post.image : `https://www.sesoris.com${post.image}`,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.dateModified ?? post.date,
     author: {
       '@type': 'Person',
       name: post.author.name,
