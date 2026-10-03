@@ -91,8 +91,8 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
         </div>
       </div>
 
-      <section className="container" style={{ padding: '48px 0 24px' }}>
-        <div className="article-measure">
+      <section style={{ padding: '48px 0 24px' }}>
+        <div className="container"><div className="article-measure">
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
             <span className="article-avatar" aria-hidden>{author.avatar}</span>
             <div>
@@ -107,11 +107,11 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
             Learn more <Link href="/about" className="text-link">about Sesoris</Link>, or send a correction through our{' '}
             <Link href="/contact" className="text-link">contact page</Link>.
           </p>
-        </div>
+        </div></div>
       </section>
 
-      <section className="container" style={{ padding: '24px 0 64px' }}>
-        <div className="article-measure">
+      <section style={{ padding: '24px 0 64px' }}>
+        <div className="container"><div className="article-measure">
           <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--ink)', marginBottom: '16px' }}>
             Latest guides ({posts.length} published)
           </h2>
@@ -130,7 +130,7 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
               <Link href="/blog" className="text-link">Browse all {posts.length} guides on the blog</Link>
             </p>
           )}
-        </div>
+        </div></div>
       </section>
     </>
   );
