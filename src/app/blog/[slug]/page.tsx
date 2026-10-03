@@ -541,12 +541,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'diy-clothes-rack': 'sesoris-2026-09-16-daily-article-gate-v1',
     'organization-closet-ideas': 'sesoris-2026-09-16-daily-article-gate-v1',
     'storage-for-clothes': 'sesoris-2026-09-16-daily-article-gate-v1',
-    'craft-storage-room': 'sesoris-2026-10-02-image-citation-repair-v1',
-    'kitchen-cabinet-organizer-ideas': 'sesoris-2026-10-02-image-citation-repair-v1',
-    'laundry-room-organization-ideas': 'sesoris-2026-10-02-image-citation-repair-v1',
-    'laundry-room-organization-tips': 'sesoris-2026-10-02-image-citation-repair-v1',
-    'shelf-on-wall-ideas': 'sesoris-2026-10-02-image-citation-repair-v1',
-    'wall-to-wall-shelf-ideas': 'sesoris-2026-10-02-image-citation-repair-v1',
+    'craft-storage-room': 'sesoris-2026-10-02-image-citation-repair-v2',
+    'kitchen-cabinet-organizer-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
+    'laundry-room-organization-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
+    'laundry-room-organization-tips': 'sesoris-2026-10-02-image-citation-repair-v2',
+    'shelf-on-wall-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
+    'wall-to-wall-shelf-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
   }[post.slug];
 
   // Byline resolves through the author registry (no personas, see src/data/authors.ts)
