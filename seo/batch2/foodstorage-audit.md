@@ -50,3 +50,20 @@ Site property yang benar: `sc-domain:sesoris.com` (bukan `https://www.sesoris.co
 - PERDALAM (internal link masuk): artikel rubbermaid sebelumnya hanya punya 1 link masuk, storage-racks 3. Ditambah blok read-also di 6 artikel live: food-storage-containers-airtight, food-storage-containers-for-pantry-complete-guide-organization-2026, glass-containers-food-storage (ke rubbermaid); cheap-kitchen-storage-racks, kitchen-spice-rack-guide-best-organization-solutions-2026, container-box (ke storage-racks).
 - Koreksi audit: hub `air-tight-food-storage-containers` sudah retired dan redirect ke `food-storage-containers-airtight`, jadi hub yang hidup adalah yang kedua.
 - GABUNG pyrex: temuan tambahan, ada 4 artikel pyrex live (pyrex-food-storage-containers, pyrex-glass-food-storage-containers, pyrex-glass-food-storage-containers-complete-guide-2026, pyrex-food-storage-containers-complete-review-buying-guide-2026). Usulan: retire `pyrex-food-storage-containers-complete-review-buying-guide-2026` dan redirect ke `pyrex-food-storage-containers` (keyword identik). Disiapkan di branch terpisah `seo/pyrex-merge-proposal`, BELUM di-merge, menunggu keputusan Syauqi.
+
+## Recheck GSC url-inspection 2026-10-03 (hari ke-5 dari jendela 21 hari)
+
+Dicek live via URL Inspection API (`sc-domain:sesoris.com`), bukti mentah: `D:/Projects/Creativism App/temp/catchup/6a641902c7f4fc05038ab951/inspect-2026-10-03.json`.
+
+| URL | coverageState | lastCrawlTime |
+|---|---|---|
+| /blog/container-box | Submitted and indexed | 2026-09-13 |
+| /blog/box-storage | URL is unknown to Google (308 ke container-box, sesuai keputusan) | - |
+| /blog/rubbermaid-...-2026 | Submitted and indexed | 2026-06-11 (belum di-recrawl sejak link baru 09-28) |
+| /blog/storage-containers-for-food-bpa-free-...-2026 | Submitted and indexed | 2026-09-28 |
+| /blog/pyrex-food-storage-containers-complete-review-buying-guide-2026 | Submitted and indexed | 2026-09-30 |
+| /blog/storage-racks-for-items-...-2026 | Submitted and indexed | 2026-07-24 |
+
+Status baris 5 (pyrex): URL ini sekarang terindeks, jadi alasan GABUNG (tidak terindeks) sudah tidak berlaku. Branch `seo/pyrex-merge-proposal` tetap TIDAK di-merge; per komentar kartu 2026-10-03 (Syauqi via MinTiv) merge/redirect tidak lagi diperlukan. Keputusan efektif baris 5: PERDALAM (dipertahankan).
+
+Sisa Definition of Done: recheck kelima URL yang dipertahankan pada 2026-10-19 (21 hari setelah deploy 2026-09-28).
