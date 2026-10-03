@@ -29,7 +29,13 @@ export function AnalyticsScripts() {
 
       const analyticsWindow = window as AnalyticsWindow;
       analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
-      const gtag = (...args: unknown[]) => analyticsWindow.dataLayer?.push(args);
+      // gtag.js only processes Arguments objects pushed to dataLayer. Pushing a plain
+      // array (rest params) is silently ignored, which stopped all GA4 hits from
+      // 2026-08-05 (commit bb340d6) until this fix.
+      const gtag = function gtag() {
+        // eslint-disable-next-line prefer-rest-params
+        analyticsWindow.dataLayer?.push(arguments);
+      } as (...args: unknown[]) => void;
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID, { page_path: window.location.pathname });
 
