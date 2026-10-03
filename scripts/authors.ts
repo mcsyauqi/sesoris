@@ -1,10 +1,6 @@
-export const authors = [
-  { name: 'Sarah Putri', avatar: 'SP', role: 'Interior Designer' },
-  { name: 'Budi Santoso', avatar: 'BS', role: 'Home Care Expert' },
-  { name: 'Maya Dewi', avatar: 'MD', role: 'Interior Stylist' },
-  { name: 'Rina Wijaya', avatar: 'RW', role: 'Sustainability Advocate' },
-  { name: 'Hendra Kusuma', avatar: 'HK', role: 'Space Organizer' },
-  { name: 'Tim Sesoris', avatar: 'TS', role: 'Product Team' },
-  { name: 'Dian Pratama', avatar: 'DP', role: 'Home & Living Writer' },
-  { name: 'Ayu Lestari', avatar: 'AL', role: 'Lifestyle Blogger' },
-];
+// Byline registry for the blog generators. Source of truth lives in
+// src/data/authors.ts; only real people or the honest team attribution may
+// appear there (no personas). See that file for the rule.
+import { authors as registry, toPostAuthorRef } from '../src/data/authors';
+
+export const authors = registry.map(toPostAuthorRef);

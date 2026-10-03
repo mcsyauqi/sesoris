@@ -72,8 +72,8 @@ function buildChecks(htmlText, jsonData) {
   const usdMatches = (stripped13.match(/\$\s?\d/g) || []).length;
   checks.c13_idr_only = usdMatches === 0 ? 1 : 0;
 
-  // 14. "Tim Sesoris" byline present
-  checks.c14_tim_sesoris = /Tim Sesoris/.test(html) ? 1 : 0;
+  // 14. Honest team byline present (renamed from "Tim Sesoris" 2026-10-03)
+  checks.c14_tim_sesoris = /Sesoris Editorial Team/.test(html) ? 1 : 0;
 
   // 15. Em-dash absent (no, character in user-facing text)
   // We check the rendered visible HTML between body tags

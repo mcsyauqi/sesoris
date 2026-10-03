@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { resolveAuthor, toPostAuthorRef, type PostAuthorRef } from '@/data/authors';
 
 export interface BlogPost {
   slug: string;
@@ -12,11 +13,7 @@ export interface BlogPost {
   dateModified?: string;
   dateFormatted: string;
   readTime: string;
-  author: {
-    name: string;
-    avatar: string;
-    role: string;
-  };
+  author: PostAuthorRef;
   content: string[];
   retired?: boolean;
   redirectTo?: string;
@@ -93,11 +90,19 @@ export function getBlogSeoTitle(post: BlogPost): string {
 
 const blogDir = path.join(process.cwd(), 'content', 'blog');
 
+/**
+ * Every byline goes through the author registry (src/data/authors.ts), so a
+ * persona name left in a JSON file can never reach the page or the schema.
+ */
+function normalizePost(post: BlogPost): BlogPost {
+  return { ...post, author: toPostAuthorRef(resolveAuthor(post.author)) };
+}
+
 export function getAllPosts(): BlogPost[] {
   const files = fs.readdirSync(blogDir).filter((f) => f.endsWith('.json'));
   const posts = files.map((file) => {
     const raw = fs.readFileSync(path.join(blogDir, file), 'utf-8');
-    return JSON.parse(raw) as BlogPost;
+    return normalizePost(JSON.parse(raw) as BlogPost);
   });
   // Only show articles with date <= today (scheduled publishing)
   const today = new Date().toISOString().split('T')[0];
@@ -111,7 +116,7 @@ export function getAllPostsIncludingScheduled(): BlogPost[] {
   const files = fs.readdirSync(blogDir).filter((f) => f.endsWith('.json'));
   const posts = files.map((file) => {
     const raw = fs.readFileSync(path.join(blogDir, file), 'utf-8');
-    return JSON.parse(raw) as BlogPost;
+    return normalizePost(JSON.parse(raw) as BlogPost);
   });
   const activePosts = posts.filter((p) => !p.retired);
   activePosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -122,7 +127,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   const filePath = path.join(blogDir, `${slug}.json`);
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, 'utf-8');
-  return JSON.parse(raw) as BlogPost;
+  return normalizePost(JSON.parse(raw) as BlogPost);
 }
 
 export function findClosestSlug(slug: string): string | null {

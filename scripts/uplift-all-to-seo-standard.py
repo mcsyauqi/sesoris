@@ -133,13 +133,14 @@ def strip_usd(content):
 
 
 def fix_author(data):
-    """Force Tim Sesoris author."""
+    """Force the honest team byline (registry: src/data/authors.ts)."""
     current = data.get('author', {}) or {}
-    if current.get('name') == 'Tim Sesoris':
+    if current.get('slug') == 'sesoris-editorial-team':
         return False
     data['author'] = {
-        'name': 'Tim Sesoris',
-        'avatar': 'TS',
+        'name': 'Sesoris Editorial Team',
+        'slug': 'sesoris-editorial-team',
+        'avatar': 'SE',
         'role': 'Editorial Team'
     }
     return True
@@ -336,7 +337,10 @@ def add_key_takeaways(content, lang, body):
 
 
 def add_trust_block(content, lang, body):
-    """Add About Tim Sesoris trust block at end."""
+    """DISABLED 2026-10-03 (Trello xil03cdn): the old block claimed "experienced
+    writers" who "test products", which is untrue for AI-drafted guides. The
+    article template now renders an honest author box, so never append one."""
+    return content, False
     if 'Tentang Tim Sesoris' in body or 'About Tim Sesoris' in body or 'About the Author' in body:
         return content, False
 

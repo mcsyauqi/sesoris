@@ -423,6 +423,14 @@ TOPIC CONTEXT:
     process.exit(1);
   }
 
+  // Author box guard (card xil03cdn, 2026-10-03): the site renders the honest
+  // team byline itself. A model-written "About Tim Sesoris" / "About the author"
+  // section used to claim "experienced writers" who "test products", which is
+  // not true of an AI-drafted guide, so drop any such section before saving.
+  generated.content = generated.content.filter(
+    (line: string) => !/^##\s+About\s+(Tim Sesoris|the Author|the Sesoris)/i.test(line.trim()),
+  );
+
   if (queuedKeyword) {
     const targetSlug = queuedSlug ?? slugify(queuedKeyword.keyword);
     const modelSlug = generated.slug;

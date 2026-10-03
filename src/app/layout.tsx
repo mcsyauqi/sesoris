@@ -92,6 +92,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': ['Organization', 'OnlineStore'],
+              '@id': 'https://www.sesoris.com/#organization',
               name: 'Sesoris',
               alternateName: ['Sesoris Home Organization', 'Sesoris Home Organizers'],
               url: 'https://www.sesoris.com',

@@ -270,8 +270,9 @@ def fix_pass4_author(article, filename):
     author = article["author"]
     if isinstance(author, dict) and author.get("name") in fabricated:
         article["author"] = {
-            "name": "Tim Sesoris",
-            "avatar": "TS",
+            "name": "Sesoris Editorial Team",
+            "slug": "sesoris-editorial-team",
+            "avatar": "SE",
             "role": "Editorial Team"
         }
         stats["pass4_files_modified"].add(filename)

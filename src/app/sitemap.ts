@@ -86,6 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/authors/sesoris-editorial-team`,
+      lastModified: LAST_BLOG_UPDATE,
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: LAST_INFO_UPDATE,
       changeFrequency: 'monthly',

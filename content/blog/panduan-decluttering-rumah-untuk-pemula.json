@@ -9,9 +9,10 @@
   "dateFormatted": "June 26, 2026",
   "readTime": "8 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "**Decluttering your home** usually fails on day two, not day one. The initial burst of motivation is huge: closets get emptied, drawers get dumped onto the bed, and then your energy runs out before anything makes it back in. By nightfall the house is messier than when you started, and that pile can sit there for weeks.",

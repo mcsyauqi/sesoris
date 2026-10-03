@@ -9,9 +9,10 @@
   "dateFormatted": "June 26, 2026",
   "readTime": "7 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "**A productive WFH setup in a small minimalist home** runs into one hard truth: every square foot of a compact house, studio apartment, or rented room already has a job before your laptop shows up. The dining table is for eating, the bedroom is for sleeping. The question is not how to build a new workspace, but how to tuck a proper work area into space that is already spoken for.",

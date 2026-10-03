@@ -8,9 +8,10 @@
   "dateFormatted": "June 30, 2026",
   "readTime": "8 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "**Home organizing tips** only work when they match the reality of your home: humid weather, rooms that serve multiple purposes, monthly stock-up shopping, several family members, and belongings that constantly migrate between rooms. Copying a spotless minimalist feed is not enough. What a busy household needs is a system that survives daily family life.",

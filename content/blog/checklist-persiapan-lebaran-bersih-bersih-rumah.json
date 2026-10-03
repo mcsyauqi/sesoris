@@ -9,9 +9,10 @@
   "dateFormatted": "June 26, 2026",
   "readTime": "8 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "**An Eid al-Fitr prep checklist** usually falls apart not because anyone is lazy, but because every job gets crammed into the last three days. Washing curtains, scrubbing bathrooms, dusting ceilings, rearranging the living room, and filling cookie jars all pile up two days before Eid, tackled while fasting and while waiting for the first guests to arrive. The result is always half-done: the floors gleam but the guest bathroom still has limescale.",

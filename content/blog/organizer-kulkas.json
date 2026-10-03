@@ -8,9 +8,10 @@
   "dateFormatted": "June 11, 2026",
   "readTime": "9 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "A messy refrigerator not only makes it difficult to find ingredients, but it can also increase electricity consumption and speed up food spoilage. **Refrigerator organizers** are a simple yet effective solution to keep your fridge contents organized, hygienic, and energy-efficient.",
@@ -134,7 +135,6 @@
     "",
     "- [DIY Bedroom Drawer Organizer Tutorial](/blog/tutorial-membuat-organizer-laci-kamar-tidur-diy)",
     "- [Travel Organizer Bag Ultimate Guide Smart Packing Solutions 2026](/blog/organizer-travel-bag)",
-    "",
-    "## About Tim Sesoris\n\nThe Sesoris editorial team consists of experienced writers in home organization, minimalist lifestyle, and Indonesian e-commerce. We test products, review market trends, and craft guides based on in-depth research and field experience. All recommendations are curated to give you accurate, practical, and relevant information for Indonesian households.\n\nFor questions or suggestions, contact us through the [Sesoris contact page](https://www.sesoris.com/)."
+    ""
   ]
 }

@@ -8,8 +8,9 @@
   "dateFormatted": "July 22, 2026",
   "readTime": "10 min read",
   "author": {
-    "name": "Tim Editorial Sesoris",
-    "avatar": "TS",
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
     "role": "Editorial Team"
   },
   "content": [

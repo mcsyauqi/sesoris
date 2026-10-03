@@ -8,9 +8,10 @@
   "dateFormatted": "June 30, 2026",
   "readTime": "8 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "A **home office organizer** is a system for arranging your desk, documents, cables, and work tools so a home workspace feels productive without needing a big room. The key is not buying a pile of accessories but building a clear workflow: active items within reach, archived items away from the desk, and cables kept out of your typing zone.",

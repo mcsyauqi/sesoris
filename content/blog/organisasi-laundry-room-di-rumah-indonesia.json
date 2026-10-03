@@ -8,9 +8,10 @@
   "dateFormatted": "June 25, 2026",
   "readTime": "9 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "**Laundry room organization** is a system for arranging your washing, drying, folding, and detergent storage so the laundry routine runs faster, safer, and without clutter. The key is not a big room. The key is dividing the space into work zones, using vertical storage, labeling everything, and placing items along the path you actually walk every day.",

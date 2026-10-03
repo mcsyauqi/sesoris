@@ -9,9 +9,10 @@
   "dateFormatted": "June 26, 2026",
   "readTime": "7 min read",
   "author": {
-    "name": "Tim Sesoris",
-    "avatar": "/images/team/avatar-default.webp",
-    "role": "Home Organization Expert"
+    "name": "Sesoris Editorial Team",
+    "slug": "sesoris-editorial-team",
+    "avatar": "SE",
+    "role": "Editorial Team"
   },
   "content": [
     "**Bathroom corner shelves** are the cheapest way to add storage without giving up a single inch of floor space. In small homes, rentals, and studio apartments, the bathroom often measures barely 4 by 5 feet. The main walls are already taken by the mirror, towel bar, faucet, and toilet. What's left, and almost always left empty, is the corner.",

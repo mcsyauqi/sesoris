@@ -7,6 +7,7 @@ import { getPostBySlug, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelate
 import { getShopLinksForPost } from '@/lib/shopLinks';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 import { NewsletterForm } from '@/components/layout/NewsletterForm';
+import { resolveAuthor, authorUrl, authorJsonLdRef } from '@/data/authors';
 import React from 'react';
 
 // Revalidate every hour so scheduled articles appear on time
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       publishedTime: post.date,
       modifiedTime: post.dateModified ?? post.date,
-      authors: [post.author.name],
+      authors: [authorUrl(resolveAuthor(post.author))],
     },
   };
 }
@@ -548,6 +549,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'wall-to-wall-shelf-ideas': 'sesoris-2026-10-02-image-citation-repair-v1',
   }[post.slug];
 
+  // Byline resolves through the author registry (no personas, see src/data/authors.ts)
+  const author = resolveAuthor(post.author);
+  const authorPath = `/authors/${author.slug}`;
+
   // JSON-LD Structured Data
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -557,12 +562,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: post.image.startsWith('http') ? post.image : `https://www.sesoris.com${post.image}`,
     datePublished: post.date,
     dateModified: post.dateModified ?? post.date,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-    },
+    author: authorJsonLdRef(author),
     publisher: {
       '@type': 'Organization',
+      '@id': 'https://www.sesoris.com/#organization',
       name: 'Sesoris',
       url: 'https://www.sesoris.com',
       logo: {
@@ -655,9 +658,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.excerpt && <p className="article-dek">{post.excerpt}</p>}
             <div className="article-byline">
               <div className="article-author">
-                <span className="article-avatar" aria-hidden>{post.author.avatar}</span>
+                <span className="article-avatar" aria-hidden>{author.avatar}</span>
                 <div>
-                  <div style={{ fontWeight: 600, color: 'var(--ink)' }}>{post.author.name}</div>
+                  <div style={{ fontWeight: 600, color: 'var(--ink)' }}>
+                    <Link href={authorPath} rel="author" className="text-link" data-author-link={author.slug}>{author.name}</Link>
+                  </div>
                   <div style={{ fontSize: '14px', color: 'var(--ink-muted)' }}>
                     <time dateTime={post.date}>{post.dateFormatted}</time> · {post.readTime}
                   </div>
@@ -718,6 +723,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div data-revision-marker={revisionMarker} data-article-content={post.slug} style={{ padding: '40px 0 48px' }}>
               {renderContentBlocks(post.content)}
             </div>
+
+            {/* Author box: honest team attribution, links to the author profile page */}
+            <aside aria-label="About the author" style={{
+              border: '1px solid var(--line)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'clamp(20px, 4vw, 28px)',
+              marginBottom: '48px',
+              display: 'flex',
+              gap: '16px',
+              alignItems: 'flex-start',
+            }}>
+              <span className="article-avatar" aria-hidden>{author.avatar}</span>
+              <div>
+                <div style={{ fontSize: '13px', color: 'var(--ink-muted)', marginBottom: '4px' }}>Written by</div>
+                <Link href={authorPath} rel="author" className="text-link" style={{ fontWeight: 700, fontSize: '17px' }}>{author.name}</Link>
+                <p style={{ color: 'var(--ink-muted)', fontSize: '15px', lineHeight: 1.6, margin: '8px 0 0' }}>
+                  {author.bio[0]} <Link href={authorPath} className="text-link">How we write and update our guides</Link>.
+                </p>
+              </div>
+            </aside>
 
             {/* Shop the Solution — links this article to real product/category pages */}
             <div style={{

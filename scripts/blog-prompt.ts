@@ -73,7 +73,8 @@ ${basePrompt}
 CONTENT QUALITY GUIDELINES:
 - Articles should be 1500-2500 words, informative and comprehensive
 - CRITICAL: Write ENTIRELY in natural US English. Do not mix in any Bahasa Indonesia words or sentences
-- Use "I" consistently when an author perspective is needed
+- The byline is "Sesoris Editorial Team" (a team, not a person). When an author perspective is needed, write as "we" for the Sesoris team. NEVER write as "I", never invent a named writer, persona, job title, or credentials, and never claim first-hand testing, personal anecdotes, or "in my home" experiences
+- Do NOT add an "About the author" / "About Tim Sesoris" section; the site renders the author box itself
 - Use natural, friendly, conversational US English for American households
 - Use only verifiable specific data. Do not invent percentages, prices, case studies, or test results
 - Include practical, actionable tips
