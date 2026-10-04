@@ -118,6 +118,17 @@ Naturally insert links to credible/authoritative sources within the content:
 - Include data/statistics from verifiable sources
 Format: [natural anchor text](https://full-url)
 
+HEALTH, SAFETY, AND MONEY CLAIMS (REQUIRED, the byline is a team, so the sources carry the trust):
+- Any claim about health or safety (food safety and storage times, bacteria, mold, allergens, BPA or
+  plastics, cleaning chemicals, furniture tip-over, child or pet safety) MUST link, in the same
+  paragraph, to an authoritative source that actually states it: fda.gov, usda.gov (fsis.usda.gov),
+  foodsafety.gov, cdc.gov, epa.gov, cpsc.gov, nih.gov or pubmed.ncbi.nlm.nih.gov, who.int, or a
+  university extension (.edu). Lifestyle media (thespruce.com, goodhousekeeping.com) is NOT enough.
+- Any claim about money beyond product prices (savings, credit, insurance, taxes) MUST link to
+  consumerfinance.gov, ftc.gov, irs.gov, or an equivalent official source.
+- If you cannot name such a source for a claim, leave the claim out. Never invent a source, a
+  statistic, an expert, a credential, or a study.
+
 INTERNAL LINKING (REQUIRED, at least 5 internal links):
 Insert internal links naturally within paragraphs using [text](url) format.
 Also add 1-2 "Related Articles" boxes between sections.
