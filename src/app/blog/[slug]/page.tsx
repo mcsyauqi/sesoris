@@ -503,7 +503,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const revisionMarker = {
     'floating-shelf-ideas': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-organization-systems': 'sesoris-2026-08-27-scheduled-articles-v3',
-    'garage-storage-solutions-costco-complete-review-buying-guide-2026': 'sesoris-2026-09-30-garage-citation-538d172',
+    'garage-storage-solutions-costco-complete-review-buying-guide-2026': 'sesoris-2026-10-04-answer-first-v1',
     'tool-storage-organization': 'sesoris-2026-08-27-scheduled-articles-v3',
     'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v2',
@@ -547,6 +547,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'laundry-room-organization-tips': 'sesoris-2026-10-02-image-citation-repair-v2',
     'shelf-on-wall-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
     'wall-to-wall-shelf-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
+    'living-room-toy-storage-ideas': 'sesoris-2026-10-04-answer-first-v1',
+    'ideas-for-shoe-storage-in-small-closet': 'sesoris-2026-10-04-answer-first-v1',
+    'organization-ideas-for-small-home-office': 'sesoris-2026-10-04-answer-first-v1',
+    'ideas-for-shoe-storage-in-small-space-transform-home-2026': 'sesoris-2026-10-04-answer-first-v1',
+    'do-it-yourself-closet-organization-ideas': 'sesoris-2026-10-04-answer-first-v1',
+    'bathroom-closet-organization-ideas-transform-storage-space-2026': 'sesoris-2026-10-04-answer-first-v1',
+    'cable-management': 'sesoris-2026-10-04-answer-first-v1',
+    'container-box': 'sesoris-2026-10-04-answer-first-v1',
+    'storage-space-ideas-for-small-bathroom-maximize-every-inch-2026': 'sesoris-2026-10-04-answer-first-v1',
   }[post.slug];
 
   // Byline resolves through the author registry (no personas, see src/data/authors.ts)
