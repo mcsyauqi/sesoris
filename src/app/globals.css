@@ -63,10 +63,14 @@
   --error: var(--danger);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Reset lives in the base layer so Tailwind spacing utilities (used by /guides pages)
+   can override it. Unlayered, it silently zeroed every padding and margin utility. */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 html {
