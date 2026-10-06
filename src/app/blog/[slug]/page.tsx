@@ -424,6 +424,30 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
       continue;
     }
 
+    // Answer-first summary (GEO/AEO): a 40-60 word direct answer placed under the H1.
+    // Rendered as a labelled, server-side box so it sits in the first 100 words of the
+    // HTML for crawlers and answer engines without needing JavaScript.
+    if (line.startsWith('**Answer first:**')) {
+      elements.push(
+        <aside key={i} data-answer-first="true" aria-label="Quick answer" style={{
+          background: 'var(--brand-tint)',
+          borderLeft: '4px solid var(--brand)',
+          borderRadius: 'var(--radius-lg)',
+          padding: '18px 22px',
+          margin: '0 0 28px',
+        }}>
+          <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--brand)', margin: '0 0 6px' }}>
+            Quick answer
+          </p>
+          <p style={{ fontSize: '17px', lineHeight: 1.7, color: 'var(--ink)', margin: 0 }}>
+            {renderInline(line.replace(/^\*\*Answer first:\*\*\s*/, ''))}
+          </p>
+        </aside>
+      );
+      i++;
+      continue;
+    }
+
     // Regular paragraph
     elements.push(
       <p key={i} style={{
@@ -503,15 +527,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const revisionMarker = {
     'floating-shelf-ideas': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-organization-systems': 'sesoris-2026-08-27-scheduled-articles-v3',
-    'garage-storage-solutions-costco-complete-review-buying-guide-2026': 'sesoris-2026-10-04-answer-first-v1',
+    'garage-storage-solutions-costco-complete-review-buying-guide-2026': 'sesoris-2026-10-06-answer-first-v2',
     'shoe-storage-ideas-garage': 'sesoris-2026-10-04-answer-first-v1',
     'toy-storage-ideas-for-living-room-transform-family-space-2026': 'sesoris-2026-10-04-answer-first-v1',
-    'small-home-office-organization-ideas': 'sesoris-2026-10-04-answer-first-v1',
+    'small-home-office-organization-ideas': 'sesoris-2026-10-06-answer-first-v2',
     'bathroom-closet-organization-systems': 'sesoris-2026-10-04-answer-first-v1',
     'tool-storage-organization': 'sesoris-2026-08-27-scheduled-articles-v3',
     'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v2',
-    'laundry-room-storage-ideas': 'sesoris-2026-09-01-content-gate-v2',
+    'laundry-room-storage-ideas': 'sesoris-2026-10-06-answer-first-v2',
     'laundry-closet-ideas': 'sesoris-2026-09-03-laundry-closet-ideas-v1',
     'basement-storage-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'bedroom-organization-ideas': 'sesoris-2026-09-01-content-gate-v2',
@@ -552,14 +576,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'shelf-on-wall-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
     'wall-to-wall-shelf-ideas': 'sesoris-2026-10-02-image-citation-repair-v2',
     'living-room-toy-storage-ideas': 'sesoris-2026-10-04-answer-first-v1',
-    'ideas-for-shoe-storage-in-small-closet': 'sesoris-2026-10-04-answer-first-v1',
+    'ideas-for-shoe-storage-in-small-closet': 'sesoris-2026-10-06-answer-first-v2',
     'organization-ideas-for-small-home-office': 'sesoris-2026-10-04-answer-first-v1',
     'ideas-for-shoe-storage-in-small-space-transform-home-2026': 'sesoris-2026-10-04-answer-first-v1',
-    'do-it-yourself-closet-organization-ideas': 'sesoris-2026-10-04-answer-first-v1',
+    'do-it-yourself-closet-organization-ideas': 'sesoris-2026-10-06-answer-first-v2',
     'bathroom-closet-organization-ideas-transform-storage-space-2026': 'sesoris-2026-10-04-answer-first-v1',
-    'cable-management': 'sesoris-2026-10-04-answer-first-v1',
-    'container-box': 'sesoris-2026-10-04-answer-first-v1',
+    'cable-management': 'sesoris-2026-10-06-answer-first-v2',
+    'container-box': 'sesoris-2026-10-06-answer-first-v2',
     'storage-space-ideas-for-small-bathroom-maximize-every-inch-2026': 'sesoris-2026-10-04-answer-first-v1',
+    'diy-garage-storage-solutions': 'sesoris-2026-10-06-answer-first-v2',
+    'office-organization-supplies': 'sesoris-2026-10-06-answer-first-v2',
+    'home-office-desk-organization': 'sesoris-2026-10-06-answer-first-v2',
+    'home-storage-ideas': 'sesoris-2026-10-06-answer-first-v2',
+    'storage-boxes-for-home': 'sesoris-2026-10-06-answer-first-v2',
+    'garage-bike-storage-ideas': 'sesoris-2026-10-06-answer-first-v2',
+    'rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026': 'sesoris-2026-10-06-answer-first-v2',
   }[post.slug];
 
   // Byline resolves through the author registry (no personas, see src/data/authors.ts)
