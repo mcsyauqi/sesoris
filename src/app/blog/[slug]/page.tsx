@@ -130,7 +130,12 @@ function flattenContentBlocks(content: string[]): string[] {
       out.push(entry);
     }
   }
-  return out;
+  // A markdown table stored as one multi-line string must become one entry per row,
+  // because the table renderer below consumes consecutive `|...|` entries as rows.
+  return out.flatMap((block) => {
+    const lines = block.split('\n').map((l) => l.trim());
+    return lines.length > 1 && lines.every((l) => l.startsWith('|') && l.endsWith('|')) ? lines : [block];
+  });
 }
 
 function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
