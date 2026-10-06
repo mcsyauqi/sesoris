@@ -81,6 +81,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Apex -> www as a PERMANENT redirect. The Coolify proxy's own
+      // "redirect to www" setting emits 307, so the app does it (308) and
+      // the Coolify domain redirect is set to "both". Do NOT remove.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'sesoris.com' }],
+        destination: 'https://www.sesoris.com/:path*',
+        permanent: true,
+      },
       // Removed standalone landing page → /shop
       {
         source: '/rak-serbaguna-multifungsi',
