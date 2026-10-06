@@ -1,3 +1,5 @@
+import { getProductBySlug } from '@/data/products';
+
 export type ComparisonGuide = {
   slug: string;
   eyebrow: string;
@@ -9,13 +11,227 @@ export type ComparisonGuide = {
     name: string;
     bestFor: string;
     values: string[];
+    /** Catalog slug when the option is a real Sesoris product (product-vs-product guides). */
+    productSlug?: string;
   }>;
   buyingSteps: string[];
   recommendations: Array<{ title: string; body: string }>;
   faqs: Array<{ question: string; answer: string }>;
+  /** How the comparison was scored. Shown on the page as the method section. */
+  method?: string[];
+  /** ISO dates (YYYY-MM-DD). Shown on the page and used for Article schema + sitemap lastmod. */
+  datePublished?: string;
+  dateModified?: string;
 };
 
+export const DEFAULT_GUIDE_DATE = '2026-08-12';
+
+function perPieceOf(slug: string, count: number) {
+  const product = getProductBySlug(slug);
+  if (!product) throw new Error(`comparison-guides: unknown product slug ${slug}`);
+  return `${(product.price / count).toFixed(2)}`;
+}
+
+/** Live catalog price, so comparison tables never drift from the product data. */
+function priceOf(slug: string, units?: { count: number; noun: string }) {
+  const product = getProductBySlug(slug);
+  if (!product) throw new Error(`comparison-guides: unknown product slug ${slug}`);
+  const total = `$${product.price.toFixed(2)}`;
+  if (!units) return total;
+  return `${total} for ${units.count} (about $${(product.price / units.count).toFixed(2)} per ${units.noun})`;
+}
+
+const productComparisonMethod = [
+  'Both products in this comparison are sold by Sesoris. Every dimension, weight rating, material, and package count in the table comes from the specification sheet our US-warehouse supplier publishes for that exact product, the same data shown on each product page.',
+  'Prices are the current Sesoris prices pulled from the catalog when this page was built. Per-piece prices are the pack price divided by the number of pieces, rounded to the cent.',
+  'Durability is described through what the supplier states (material and rated load), not through our own lab testing, because we have not run one. Cleaning and access notes are our reading of the listed construction, for example an open wire floor versus a solid panel.',
+  'We update this page when a product, price, or specification changes. The date at the top of the page is the last time the table was checked against the catalog.',
+];
+
 export const comparisonGuides: ComparisonGuide[] = [
+  {
+    slug: 'lidded-boxes-vs-open-front-bins',
+    eyebrow: 'Sesoris product comparison',
+    title: 'Lidded Storage Boxes vs Open-Front Bins: Two 24-Packs Compared',
+    description: 'A side-by-side comparison of two Sesoris 24-packs: clear plastic boxes with snap lids and stackable open-front PP bins, by size, closure, stacking, cleaning, and price per piece.',
+    verdict: 'Choose the lidded boxes for tiny loose items that must stay put when a box is turned over, such as beads, earrings, and pins. Choose the open-front bins for parts and supplies you grab many times a day, because you can reach in without lifting a lid or unstacking.',
+    criteria: ['Closure', 'Size of each piece', 'Approximate volume per piece', 'Material and build', 'Stacking', 'Access and visibility', 'Ease of cleaning', 'Labeling', 'Sesoris price'],
+    options: [
+      {
+        name: 'Clear Plastic Storage Boxes with Lids, 24 Pack',
+        productSlug: 'clear-plastic-storage-boxes-24-pack',
+        bestFor: 'Beads, jewelry, craft findings, pins, and clips that must not spill',
+        values: [
+          'Hinged lid with a snap closure on every box',
+          '12 rectangular boxes at 5.11 x 3.14 x 1.18 in. and 12 square boxes at 2.16 x 2.16 x 0.78 in.',
+          'About 19 cu in. per rectangular box and about 3.6 cu in. per square box (outer dimensions)',
+          'Clear plastic, lids attached to the boxes',
+          'Stack flat in a drawer or on a shelf',
+          'Clear walls show the contents; the lid has to be opened to reach in',
+          'Shallow 1.18 in. depth is easy to wipe out; the hinge adds one more edge to clean',
+          'No labels included; the clear plastic is the label',
+          priceOf('clear-plastic-storage-boxes-24-pack', { count: 24, noun: 'box' }),
+        ],
+      },
+      {
+        name: 'Stackable Storage Bins, 24 Pack',
+        productSlug: 'stackable-storage-bins-24-pack',
+        bestFor: 'Hardware, office supplies, and small parts you reach for all day',
+        values: [
+          'No lid; the front is open for reach-in access',
+          '24 bins at 5.39 x 4.13 x 3.07 in. outside, 4.21 x 3.39 x 2.68 in. inside',
+          'About 38 cu in. per bin (inner dimensions)',
+          'PP plastic, full set weighs 3.97 lbs',
+          'Stack into columns with the 96 included plastic supports',
+          'Open front lets you see and reach the contents without moving the bin above',
+          'No lid or hinge; a single open shell that rinses out',
+          '48 label papers included',
+          priceOf('stackable-storage-bins-24-pack', { count: 24, noun: 'bin' }),
+        ],
+      },
+    ],
+    buyingSteps: [
+      'Sort what you want to store by size: anything smaller than a fingertip belongs in a closed box.',
+      'Decide how often you open each category. Daily items go in open-front bins, occasional items in lidded boxes.',
+      'Measure the drawer or shelf. The lidded boxes are 1.18 in. tall, the open bins are 3.07 in. tall.',
+      'Plan labels before filling. The open bins ship with 48 labels; clear boxes show their contents instead.',
+    ],
+    recommendations: [
+      { title: 'Choose the lidded boxes if contents are tiny', body: 'Snap lids keep beads, studs, and pins inside when a box is tipped or carried, and two box sizes let you split a collection by type.' },
+      { title: 'Choose the open-front bins for speed', body: 'Each bin holds roughly twice the volume of a rectangular lidded box and you can reach in from the front while the bins stay stacked.' },
+      { title: 'Use both on one bench', body: 'Many hobby and repair benches run open bins for daily parts and a drawer of lidded boxes for the smallest pieces.' },
+    ],
+    faqs: [
+      { question: 'Which pack is cheaper per piece?', answer: `At current Sesoris prices the lidded boxes work out to ${perPieceOf('clear-plastic-storage-boxes-24-pack', 24)} per box and the open-front bins to ${perPieceOf('stackable-storage-bins-24-pack', 24)} per bin. Each open bin holds about twice the volume of a rectangular lidded box.` },
+      { question: 'Can open-front bins hold very small items?', answer: 'They can, but tiny items can spill from the open front if a bin is tipped or pulled out quickly. Keep the smallest pieces in lidded boxes.' },
+      { question: 'How did you calculate the volume?', answer: 'Length times width times height from the supplier dimensions. The open bins list inner dimensions, so their figure is usable space. The lidded boxes list only outer dimensions, so their usable space is slightly smaller than the figure shown.' },
+    ],
+    method: productComparisonMethod,
+    datePublished: '2026-10-07',
+    dateModified: '2026-10-07',
+  },
+  {
+    slug: 'expandable-vs-fixed-shelving',
+    eyebrow: 'Sesoris product comparison',
+    title: 'Expandable Cabinet Shelves vs a Fixed 3-Tier Wire Rack',
+    description: 'Compare the Sesoris expandable steel cabinet shelves with the fixed-size 3-tier chrome wire rack by width, height, rated load, cleaning, assembly, and price.',
+    verdict: 'Choose the expandable shelves when you need to fit an existing cabinet or counter run, because width and height both adjust. Choose the fixed wire rack when you need more load per shelf and a stand-alone unit for a corner, pantry, or closet floor.',
+    criteria: ['Width', 'Depth', 'Height', 'Number of shelves', 'Rated load (durability)', 'Material and shelf surface', 'Ease of cleaning', 'Assembly', 'Best placement', 'Sesoris price'],
+    options: [
+      {
+        name: 'Expandable Stacking Cabinet Shelves, Set of 2',
+        productSlug: 'expandable-cabinet-shelf-2-tier-black',
+        bestFor: 'Inside kitchen cabinets and along counters of uneven width',
+        values: [
+          'Adjustable from 16 to 25.6 in.',
+          '8.7 in.',
+          '3.9 to 7.1 in. per shelf in four settings; up to 19.7 in. when stacked',
+          '2, used side by side or stacked',
+          '22.05 lbs per shelf as rated by the supplier',
+          'Black steel frame with flat solid shelf panels',
+          'Flat panels wipe clean in one pass and small jars do not tip through',
+          'Join the two shelves with the included screws and nuts',
+          'Inside a cabinet or on a counter',
+          priceOf('expandable-cabinet-shelf-2-tier-black'),
+        ],
+      },
+      {
+        name: '3-Tier Wire Shelving Rack, Chrome',
+        productSlug: '3-tier-wire-shelving-rack-chrome-12-inch',
+        bestFor: 'A stand-alone rack for a pantry corner, laundry room, or closet',
+        values: [
+          '11.8 in., fixed',
+          '11.8 in.',
+          '23.6 in. overall, fixed',
+          '3',
+          '66 lbs per shelf as rated by the supplier',
+          'Chrome-finish metal posts and open wire shelves, leveling feet',
+          'Open wire lets dust fall through, but each wire needs wiping and small items can tip on the gaps',
+          'Shelves lock onto the posts with sleeve connectors by hand, no power tools',
+          'Floor, counter, or pantry corner',
+          priceOf('3-tier-wire-shelving-rack-chrome-12-inch'),
+        ],
+      },
+    ],
+    buyingSteps: [
+      'Measure the inside width, depth, and height of the cabinet or the floor spot first.',
+      'Add up the heaviest load you plan for one shelf and compare it with the rated load.',
+      'Check whether small items like spice jars need a solid surface or can sit on wire.',
+      'Decide whether you need a unit that stands alone or one that slots into existing storage.',
+    ],
+    recommendations: [
+      { title: 'Expandable shelves for cabinets', body: 'Width adjusts from 16 to 25.6 in. and height from 3.9 to 7.1 in., so one set can be reconfigured when you move or change what the cabinet holds.' },
+      { title: 'Fixed wire rack for heavier loads', body: 'Each wire shelf is rated at 66 lbs, three times the 22.05 lbs per shelf rating of the expandable set, and it stands on its own leveling feet.' },
+      { title: 'Watch the depth', body: 'The expandable shelves are 8.7 in. deep and the wire rack is 11.8 in. deep. Measure cabinet depth before choosing, especially for plates.' },
+    ],
+    faqs: [
+      { question: 'Which option holds more weight?', answer: 'The fixed wire rack. The supplier rates each of its three shelves at 66 lbs, compared with 22.05 lbs for each expandable shelf.' },
+      { question: 'Will the expandable shelves fit a standard upper cabinet?', answer: 'They fit cabinets at least 16 in. wide and 8.7 in. deep. Height can be set from 3.9 to 7.1 in. per shelf, so measure the space between your existing shelves.' },
+      { question: 'Do I need tools to assemble either one?', answer: 'The wire rack goes together by hand. The expandable shelves are joined with the included screws and nuts when you stack them.' },
+    ],
+    method: productComparisonMethod,
+    datePublished: '2026-10-07',
+    dateModified: '2026-10-07',
+  },
+  {
+    slug: 'stainless-steel-vs-plastic-corner-shower-shelves',
+    eyebrow: 'Sesoris product comparison',
+    title: 'Stainless Steel vs Plastic Corner Shower Shelves',
+    description: 'Compare two no-drill Sesoris corner shower shelves, one in 304 stainless steel and one in white plastic, by rated load, mounting, drainage, cleaning, extras, and price.',
+    verdict: 'Choose the stainless steel caddy for heavier loads, since it is rated for 22 lbs against 8.8 lbs for the plastic shelf. Choose the plastic shelf when you want the two built-in hooks for a loofah or razor and a perforated base you can simply rinse.',
+    criteria: ['Material', 'Rated load (durability)', 'Size', 'Mounting', 'Drainage', 'Ease of cleaning', 'Extras', 'Sesoris price'],
+    options: [
+      {
+        name: 'Corner Shower Caddy, Stainless Steel',
+        productSlug: 'corner-shower-caddy-silver',
+        bestFor: 'Full-size bottles and heavier loads in a tiled corner',
+        values: [
+          '304 stainless steel, silver finish',
+          '22 lbs as rated by the supplier',
+          '10.5 in. along each back side',
+          '2 adhesive mounting plates, no drilling; wait 24 hours before loading',
+          'Open wire floor, water runs straight through',
+          'Wipe the wires and the rim; nothing to take apart',
+          'None listed',
+          priceOf('corner-shower-caddy-silver'),
+        ],
+      },
+      {
+        name: 'Adhesive Corner Shower Shelf with 2 Hooks, White',
+        productSlug: 'adhesive-corner-shower-shelf-2-hooks-white',
+        bestFor: 'Lighter loads and hanging a washcloth, loofah, or razor',
+        values: [
+          'White plastic',
+          '8.8 lbs as rated by the supplier',
+          'Quarter-round shelf for a 90 degree corner; side length not listed by the supplier',
+          'Adhesive strips on smooth surfaces such as tile, with a locking lever; wait 24 hours before loading',
+          'Perforated base with small drain holes and two larger round openings',
+          'Rinse with water and wipe dry, as the supplier recommends',
+          '2 hooks under the front edge',
+          priceOf('adhesive-corner-shower-shelf-2-hooks-white'),
+        ],
+      },
+    ],
+    buyingSteps: [
+      'Weigh what you plan to store: a full shampoo, conditioner, and body wash set can approach the plastic shelf rating.',
+      'Check the wall. Both mount with adhesive, so the tile must be smooth, clean, and dry.',
+      'Wait the full 24 hours before loading either shelf.',
+      'Decide whether built-in hooks matter for a loofah, washcloth, or razor.',
+    ],
+    recommendations: [
+      { title: 'Stainless steel for capacity', body: 'At 22 lbs rated load it carries two and a half times what the plastic shelf is rated for.' },
+      { title: 'Plastic for hooks and quick rinsing', body: 'The two hooks under the front edge and the perforated base make it a tidy spot for a loofah, razor, and a few lighter bottles.' },
+      { title: 'Stack two for a tall shower', body: 'Either shelf can be mounted twice at different heights to split bottles from smaller items, as long as each one stays within its rating.' },
+    ],
+    faqs: [
+      { question: 'Which shower shelf holds more?', answer: 'The stainless steel caddy, rated at 22 lbs by the supplier. The plastic shelf is rated at 8.8 lbs.' },
+      { question: 'Do I need to drill?', answer: 'No. The steel caddy hangs on two adhesive plates and the plastic shelf uses adhesive strips with a locking lever. Both need 24 hours before loading.' },
+      { question: 'Why is bamboo not in this comparison?', answer: 'Sesoris does not currently sell a bamboo shower shelf, and this page only compares products we actually stock with their published specifications.' },
+    ],
+    method: productComparisonMethod,
+    datePublished: '2026-10-07',
+    dateModified: '2026-10-07',
+  },
   {
     slug: 'shoe-storage-types',
     eyebrow: 'Shoe storage buying guide',

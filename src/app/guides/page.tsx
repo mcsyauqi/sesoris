@@ -5,7 +5,7 @@ import { selfReferencingAlternates } from '@/lib/seo-alternates';
 
 export const metadata: Metadata = {
   title: 'Home Organization Buying Guides',
-  description: 'Practical Sesoris comparison guides for choosing shoe storage, storage boxes, kitchen racks, desk organizers, and small-home storage.',
+  description: 'Practical Sesoris comparison guides, including side-by-side comparisons of products we sell, for choosing storage boxes, shelving, shower shelves, shoe storage, kitchen racks, and desk organizers.',
   alternates: selfReferencingAlternates('/guides'),
 };
 

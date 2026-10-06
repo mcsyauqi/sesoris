@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 import { products, categories } from '@/data/products';
-import { comparisonGuides } from '@/data/comparison-guides';
+import { comparisonGuides, DEFAULT_GUIDE_DATE } from '@/data/comparison-guides';
 
 // ISR: regenerate sitemap every hour so scheduled blog publishes appear
 // without requiring a deploy (cycle #16 fix, 2026-05-25).
@@ -207,9 +207,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const comparisonGuidePages: MetadataRoute.Sitemap = comparisonGuides.map(({ slug }) => ({
+  const comparisonGuidePages: MetadataRoute.Sitemap = comparisonGuides.map(({ slug, dateModified, datePublished }) => ({
     url: `${baseUrl}/guides/${slug}`,
-    lastModified: '2026-08-12T00:00:00.000Z',
+    lastModified: `${dateModified ?? datePublished ?? DEFAULT_GUIDE_DATE}T00:00:00.000Z`,
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
