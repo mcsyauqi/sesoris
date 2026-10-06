@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!guide) return {};
   const path = `/guides/${guide.slug}`;
   return {
-    title: `${guide.title} | Sesoris`,
+    title: guide.title,
     description: guide.description,
     alternates: selfReferencingAlternates(path),
     openGraph: {
