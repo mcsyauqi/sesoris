@@ -230,6 +230,16 @@ export default async function ComparisonGuidePage({ params }: PageProps) {
             </article>
           ))}
         </div>
+        {guide.related && guide.related.length > 0 && (
+          <div className="mt-10" aria-labelledby="related-reading">
+            <h2 id="related-reading" className="text-2xl font-bold text-[var(--brand-deep)]">Related reading</h2>
+            <ul className="mt-4 space-y-2">
+              {guide.related.map((link) => (
+                <li key={link.href}><Link href={link.href} className="font-semibold text-[var(--brand)] underline underline-offset-4">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/shop" className="rounded-full bg-[var(--brand)] px-5 py-3 font-bold text-white">Browse home organizers</Link>
           <Link href="/blog" className="rounded-full border border-[var(--brand)] px-5 py-3 font-bold text-[var(--brand)]">Read more guides</Link>

@@ -19,6 +19,8 @@ export type ComparisonGuide = {
   faqs: Array<{ question: string; answer: string }>;
   /** How the comparison was scored. Shown on the page as the method section. */
   method?: string[];
+  /** Hand-picked internal links shown as a Related reading list at the end of the page. */
+  related?: Array<{ label: string; href: string }>;
   /** ISO dates (YYYY-MM-DD). Shown on the page and used for Article schema + sitemap lastmod. */
   datePublished?: string;
   dateModified?: string;
@@ -298,6 +300,9 @@ export const comparisonGuides: ComparisonGuide[] = [
       { title: 'Best for flexibility: freestanding', body: 'Freestanding racks can move with a renter and adapt to pantry, utility, or kitchen duty. Look for adjustable feet and shelf heights.' },
       { title: 'Best as a targeted fix: corner rack', body: 'Corner racks are useful only when the items remain easy to reach. Deep corner shelves can create a second layer of forgotten clutter.' },
     ],
+    related: [
+      { label: 'Best kitchen organizer products: 8 picks compared by load rating and cabinet fit', href: '/guides/best-kitchen-organizer-products' },
+    ],
     faqs: [
       { question: 'Which kitchen rack saves the most counter space?', answer: 'A wall-mounted rack saves the most counter space when it is installed safely and does not interfere with cabinets, outlets, or cooking ventilation.' },
       { question: 'Are freestanding kitchen racks safe for heavy appliances?', answer: 'Only when the manufacturer’s load rating, shelf dimensions, stability, and ventilation clearances support that appliance. Heavy items should stay low.' },
@@ -322,6 +327,9 @@ export const comparisonGuides: ComparisonGuide[] = [
       { title: 'Best budget choice: simple tray', body: 'A tray creates one defined landing zone for a small daily kit. It is inexpensive and makes excess items obvious instead of hiding them.' },
       { title: 'Best for supply-heavy work: drawers', body: 'Shallow labeled drawers separate cables, sticky notes, adapters, and writing tools without consuming the entire work surface.' },
       { title: 'Best long-term flexibility: modular system', body: 'Interlocking modules are useful when projects change. Buy only the modules needed now and expand after observing real friction.' },
+    ],
+    related: [
+      { label: 'Desk organizer recommendations: 5 picks compared by footprint and price', href: '/guides/desk-organizer-recommendations' },
     ],
     faqs: [
       { question: 'How large should a desk organizer be?', answer: 'It should fit the tools used in a normal week without reducing keyboard, mouse, writing, or device space. Measure the working zone before shopping.' },

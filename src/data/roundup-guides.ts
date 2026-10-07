@@ -366,6 +366,7 @@ export const roundupGuides: RoundupGuide[] = [
     ],
     related: [
       { label: 'Small bathroom storage ideas', href: '/blog/small-bathroom-storage-ideas' },
+      { label: 'Bathroom closet organization systems: zones, shelves, and bins', href: '/blog/bathroom-closet-organization-systems' },
       { label: 'Stainless steel vs plastic corner shower shelves', href: '/guides/stainless-steel-vs-plastic-corner-shower-shelves' },
       { label: 'Shop home and decor organizers', href: '/category/home-living' },
     ],

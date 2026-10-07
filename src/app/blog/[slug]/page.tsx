@@ -536,7 +536,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'shoe-storage-ideas-garage': 'sesoris-2026-10-04-answer-first-v1',
     'toy-storage-ideas-for-living-room-transform-family-space-2026': 'sesoris-2026-10-04-answer-first-v1',
     'small-home-office-organization-ideas': 'sesoris-2026-10-06-answer-first-v2',
-    'bathroom-closet-organization-systems': 'sesoris-2026-10-04-answer-first-v1',
+    'bathroom-closet-organization-systems': 'sesoris-2026-10-07-systems-rewrite-v1',
     'tool-storage-organization': 'sesoris-2026-08-27-scheduled-articles-v3',
     'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v2',
