@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 import { products, categories } from '@/data/products';
 import { comparisonGuides, DEFAULT_GUIDE_DATE } from '@/data/comparison-guides';
+import { roundupGuides } from '@/data/roundup-guides';
 
 // ISR: regenerate sitemap every hour so scheduled blog publishes appear
 // without requiring a deploy (cycle #16 fix, 2026-05-25).
@@ -214,6 +215,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const roundupGuidePages: MetadataRoute.Sitemap = roundupGuides.map(({ slug, dateModified }) => ({
+    url: `${baseUrl}/guides/${slug}`,
+    lastModified: `${dateModified}T00:00:00.000Z`,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
   // Blog article pages (date-filtered: only published, no future-dated)
   // Fixed 2026-05-21: switched from getAllSlugs() to getAllPosts() to prevent
   // GSC warnings on future-dated blog URLs (was causing 84 warnings).
@@ -226,5 +234,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...categoryPages, ...productPages, ...comparisonGuidePages, ...blogPages];
+  return [...staticPages, ...categoryPages, ...productPages, ...roundupGuidePages, ...comparisonGuidePages, ...blogPages];
 }

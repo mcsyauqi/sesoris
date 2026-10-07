@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { comparisonGuides, DEFAULT_GUIDE_DATE, getComparisonGuide } from '@/data/comparison-guides';
 import { getProductBySlug } from '@/data/products';
+import { getRoundupGuide, roundupGuides } from '@/data/roundup-guides';
+import RoundupGuideView from '@/components/guides/RoundupGuideView';
 
 function formatGuideDate(iso: string) {
   return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
@@ -13,11 +15,21 @@ import { selfReferencingAlternates } from '@/lib/seo-alternates';
 type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return comparisonGuides.map(({ slug }) => ({ slug }));
+  return [...roundupGuides, ...comparisonGuides].map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  const roundup = getRoundupGuide(slug);
+  if (roundup) {
+    const roundupPath = `/guides/${roundup.slug}`;
+    return {
+      title: roundup.title,
+      description: roundup.description,
+      alternates: selfReferencingAlternates(roundupPath),
+      openGraph: { title: roundup.title, description: roundup.description, url: `https://www.sesoris.com${roundupPath}`, siteName: 'Sesoris', type: 'article' },
+    };
+  }
   const guide = getComparisonGuide(slug);
   if (!guide) return {};
   const path = `/guides/${guide.slug}`;
@@ -37,6 +49,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ComparisonGuidePage({ params }: PageProps) {
   const { slug } = await params;
+  const roundup = getRoundupGuide(slug);
+  if (roundup) return <RoundupGuideView guide={roundup} />;
   const guide = getComparisonGuide(slug);
   if (!guide) notFound();
 
