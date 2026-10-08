@@ -49,7 +49,7 @@ export default function ContactPageClient() {
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>Contact Sesoris</h1>
           <p style={{ color: 'var(--ink-muted)', fontSize: '16px' }}>
-            Need help choosing the right organizer for your home, kitchen, desk, or travel gear? The Sesoris team is based in Yogyakarta and supports customers worldwide with product questions, orders, and wholesale inquiries.
+            Need help choosing the right organizer for your home, kitchen, desk, or travel gear? The Sesoris team is based in Yogyakarta and helps with product questions, orders, and wholesale inquiries. Orders ship to US addresses only.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function ContactPageClient() {
                   <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>Address</div>
                   <div style={{ color: 'var(--ink-muted)', lineHeight: 1.5 }}>
                     Yogyakarta, Special Region of Yogyakarta, Indonesia<br />
-                    Online store with worldwide shipping
+                    Online store shipping to US addresses
                   </div>
                 </div>
               </div>
@@ -242,7 +242,7 @@ export default function ContactPageClient() {
           <div style={{ textAlign: 'center' }}>
             <MapPin style={{ width: '32px', height: '32px', marginBottom: '12px', color: 'var(--brand)' }} />
             <div style={{ fontWeight: 600, color: 'var(--ink)' }}>Sesoris Online Store - Yogyakarta</div>
-            <div style={{ fontSize: '14px' }}>Worldwide shipping</div>
+            <div style={{ fontSize: '14px' }}>Ships to US addresses only</div>
           </div>
         </div>
 
@@ -256,7 +256,7 @@ export default function ContactPageClient() {
           <div>
             <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>Orders and Shipping</h2>
             <p style={{ color: 'var(--ink-2)', lineHeight: 1.7, fontSize: '15px' }}>
-              Reach out to check order status, shipping estimates, returns, or invoice requests. The Sesoris team supports customers worldwide.
+              Reach out to check order status, shipping estimates, returns, or invoice requests. Orders ship from a US warehouse to US addresses only.
             </p>
           </div>
           <div>

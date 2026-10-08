@@ -147,7 +147,7 @@ export default function TrackOrderPageClient() {
               After placing your order at Sesoris, you will receive a confirmation email with your order number. Once your order is shipped, we will send a tracking number that you can use to monitor your delivery in real time.
             </p>
             <p style={{ color: 'var(--ink-muted)', lineHeight: '1.7', marginBottom: '16px', fontSize: '14px' }}>
-              Standard delivery takes 5-7 business days, with express options available in 2-3 business days. All shipments are fully insured and trackable from our warehouse to your doorstep.
+              Orders ship from our US warehouse to US addresses only, and each product page shows its estimated delivery time. Every shipment comes with a tracking number.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Link href="/shipping" style={{ color: 'var(--brand)', fontSize: '14px', fontWeight: 500 }}>Shipping Policy</Link>

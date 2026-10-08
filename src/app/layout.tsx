@@ -112,7 +112,7 @@ export default function RootLayout({
                 '@type': 'Place',
                 name: 'Yogyakarta, Indonesia',
               },
-              areaServed: ['United States', 'Worldwide'],
+              areaServed: ['United States'],
               knowsAbout: ['Home organization', 'Storage solutions', 'Kitchen organization', 'Desk organization'],
               hasMerchantReturnPolicy: {
                 '@type': 'MerchantReturnPolicy',
@@ -123,14 +123,15 @@ export default function RootLayout({
               hasShippingService: {
                 '@type': 'ShippingService',
                 name: 'Sesoris Shipping',
-                serviceType: ['Standard', 'Express', 'Same Day'],
-                areaServed: 'Worldwide',
+                // Live checkout: one flat-rate standard service, US addresses only (src/lib/checkout.ts).
+                serviceType: ['Standard'],
+                areaServed: 'US',
               },
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+62-813-2610-2061',
                 contactType: 'customer service',
-                areaServed: ['ID', 'Worldwide'],
+                areaServed: ['US'],
                 availableLanguage: ['English', 'Indonesian'],
               },
               sameAs: SAME_AS,
