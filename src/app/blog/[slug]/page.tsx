@@ -530,6 +530,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'best-bedroom-nightstand-organizers-review-buying-guide-2026': 'sesoris-2026-10-08-daily-qa-v1',
+    'best-desk-organizer-accessories-review-2026': 'sesoris-2026-10-08-daily-qa-v1',
+    'bedroom-lifestyle-habits-keep-sleep-space-calm-organized-2026': 'sesoris-2026-10-08-daily-qa-v1',
+    'work-from-home-lifestyle-habits-home-office-2026': 'sesoris-2026-10-08-daily-qa-v1',
+    'how-to-set-up-home-office-desk-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v1',
+    'how-to-organize-your-bedroom-closet-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v1',
     'floating-shelf-ideas': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-organization-systems': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-storage-solutions-costco-complete-review-buying-guide-2026': 'sesoris-2026-10-06-answer-first-v2',
@@ -729,9 +735,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </header>
 
         <div className="container">
-          <div className="article-hero">
-            <Image src={post.image} alt={post.title} fill priority sizes="(max-width: 1100px) 100vw, 1040px" />
-          </div>
+          <figure style={{ margin: 0 }}>
+            <div className="article-hero">
+              <Image src={post.image} alt={post.imageCaption || post.title} fill priority sizes="(max-width: 1100px) 100vw, 1040px" />
+            </div>
+            {post.imageCaption && (
+              <figcaption style={{ fontSize: '14px', color: 'var(--ink-muted)', marginTop: '10px' }}>
+                {post.imageCaption}
+              </figcaption>
+            )}
+          </figure>
         </div>
 
         <div className="container">

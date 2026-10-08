@@ -8,6 +8,7 @@ export interface BlogPost {
   seoTitle?: string;
   excerpt: string;
   image: string;
+  imageCaption?: string;
   category: string;
   date: string;
   dateModified?: string;
