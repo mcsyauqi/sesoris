@@ -3,6 +3,11 @@ import { toUsdPrice } from '@/lib/utils';
 
 const SITE_URL = 'https://www.sesoris.com';
 
+/** Store SKU shown in on-page Product JSON-LD and used as the Merchant Center item id. */
+export function productSku(product: Product): string {
+  return `SES-${product.id.toString().padStart(4, '0')}`;
+}
+
 /**
  * Product prices are catalog prices rather than dated promotions. Keep the
  * validity window ahead of the build date so generated static JSON-LD does not
@@ -21,7 +26,7 @@ export function buildProductSchema(product: Product): Record<string, unknown> {
     name: product.name,
     description: product.description,
     image: product.images[0]?.url,
-    sku: `SES-${product.id.toString().padStart(4, '0')}`,
+    sku: productSku(product),
     brand: { '@type': 'Brand', name: 'Sesoris' },
     category: product.category.name,
     offers: {
