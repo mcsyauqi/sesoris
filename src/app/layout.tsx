@@ -5,6 +5,7 @@ import { AnalyticsScripts } from '@/components/layout/AnalyticsScripts';
 import { CartHydration } from '@/components/layout/CartHydration';
 import { Archivo } from 'next/font/google';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+import { SAME_AS, DOMAIN_REGISTERED, ORGANIZATION_ID } from '@/data/brand-facts';
 
 // One variable family; headings use the width axis (font-stretch) instead of a second font.
 const archivo = Archivo({
@@ -92,7 +93,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': ['Organization', 'OnlineStore'],
-              '@id': 'https://www.sesoris.com/#organization',
+              '@id': ORGANIZATION_ID,
               name: 'Sesoris',
               alternateName: ['Sesoris Home Organization', 'Sesoris Home Organizers'],
               url: 'https://www.sesoris.com',
@@ -105,6 +106,8 @@ export default function RootLayout({
                 addressRegion: 'Special Region of Yogyakarta',
                 addressCountry: 'ID',
               },
+              // Earliest verifiable year: sesoris.com registry record (see src/data/brand-facts.ts).
+              foundingDate: DOMAIN_REGISTERED.year,
               foundingLocation: {
                 '@type': 'Place',
                 name: 'Yogyakarta, Indonesia',
@@ -130,12 +133,7 @@ export default function RootLayout({
                 areaServed: ['ID', 'Worldwide'],
                 availableLanguage: ['English', 'Indonesian'],
               },
-              sameAs: [
-                'https://www.instagram.com/sesoris_com',
-                'https://www.facebook.com/sesoris',
-                'https://www.tiktok.com/@sesoris',
-                'https://www.youtube.com/@sesoris',
-              ],
+              sameAs: SAME_AS,
             }),
           }}
         />

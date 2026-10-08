@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Home, ChevronRight, Mail, Phone, MapPin, Clock, Send, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Home, ChevronRight, Mail, Phone, MapPin, Clock, Send, Facebook, Instagram, Youtube } from 'lucide-react';
 
 export default function ContactPageClient() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'general', message: '' });
@@ -110,9 +110,6 @@ export default function ContactPageClient() {
                 </a>
                 <a href="https://instagram.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Instagram style={{ width: '18px', height: '18px', color: 'var(--ink-2)' }} />
-                </a>
-                <a href="https://x.com/sesoris_com" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Twitter style={{ width: '18px', height: '18px', color: 'var(--ink-2)' }} />
                 </a>
                 <a href="https://youtube.com/@sesoris" target="_blank" rel="noopener noreferrer" style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Youtube style={{ width: '18px', height: '18px', color: 'var(--ink-2)' }} />

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ContactPageClient from './ContactPageClient';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+import { SAME_AS, ORGANIZATION_ID } from '@/data/brand-facts';
 
 export const metadata: Metadata = {
   title: 'Contact Sesoris | Home Organizer Store',
@@ -53,12 +54,8 @@ const localBusinessSchema = {
     areaServed: ['ID', 'Worldwide'],
     availableLanguage: ['English', 'Indonesian'],
   },
-  sameAs: [
-    'https://facebook.com/sesoris',
-    'https://instagram.com/sesoris_com',
-    'https://x.com/sesoris_com',
-    'https://youtube.com/@sesoris',
-  ],
+  parentOrganization: { '@id': ORGANIZATION_ID },
+  sameAs: SAME_AS,
 };
 
 export default function ContactPage() {

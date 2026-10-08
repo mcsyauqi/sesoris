@@ -24,6 +24,7 @@ const footerLinks = {
   ],
   company: [
     { name: 'About Us', href: '/about' },
+    { name: 'What Is Sesoris?', href: '/what-is-sesoris' },
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
     { name: 'Press', href: '/press' },

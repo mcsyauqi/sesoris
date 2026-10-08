@@ -94,13 +94,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: LAST_INFO_UPDATE,
+      lastModified: '2026-10-09T00:00:00.000Z',
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/what-is-sesoris`,
+      lastModified: '2026-10-09T00:00:00.000Z',
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: LAST_INFO_UPDATE,
+      lastModified: '2026-10-09T00:00:00.000Z',
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -174,7 +180,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/press`,
-      lastModified: LAST_INFO_UPDATE,
+      lastModified: '2026-10-09T00:00:00.000Z',
       changeFrequency: 'monthly',
       priority: 0.4,
     },

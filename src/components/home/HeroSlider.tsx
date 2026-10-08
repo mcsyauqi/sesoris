@@ -21,7 +21,7 @@ export function HeroSlider() {
       <div className="container hero-grid">
         <div>
           <h1 className="hero-title">
-            Home organizers that fit <em>the space you have.</em>
+            Sesoris home organizers that fit <em>the space you have.</em>
           </h1>
           <p className="hero-lede">
             Pull-out cabinet baskets, pantry racks, shoe storage, and travel organizers, each listed

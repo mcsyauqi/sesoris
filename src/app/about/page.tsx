@@ -1,16 +1,31 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, Heart, Globe, Users, Leaf, Award } from 'lucide-react';
+import { Home, ChevronRight, Heart, Globe, Users, Leaf, MapPin } from 'lucide-react';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+import { products, categories } from '@/data/products';
+import {
+  ORGANIZATION_ID,
+  DOMAIN_REGISTERED,
+  FIRST_ARCHIVED,
+  OFFICIAL_PROFILES,
+  SUPPORT_EMAIL,
+  SUPPORT_WHATSAPP,
+  SUPPORT_WHATSAPP_URL,
+} from '@/data/brand-facts';
+
+const TITLE = 'About Sesoris | Home Organizer Store from Yogyakarta';
+const DESCRIPTION =
+  'Sesoris is an independent home organizer store founded in Yogyakarta, Indonesia. Brand facts, product categories, policies, and official profiles.';
 
 export const metadata: Metadata = {
-  title: 'About Sesoris | Live More Organized',
-  description: 'Get to know Sesoris, a home organization store that helps households choose practical organizers for a more organized home.',
+  // absolute: the layout template would otherwise append a second "| Sesoris".
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   alternates: selfReferencingAlternates('/about'),
   openGraph: {
-    title: 'About Sesoris | Live More Organized | Sesoris',
-    description: 'Get to know Sesoris, a home organization store that helps households choose practical organizers for a more organized home.',
+    title: TITLE,
+    description: DESCRIPTION,
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
@@ -22,15 +37,29 @@ const values = [
 ];
 
 const stats = [
-  { value: 'DIY', label: 'Yogyakarta-based brand' },
+  { value: DOMAIN_REGISTERED.year, label: 'sesoris.com registered' },
   { value: '30', label: 'Day return window' },
-  { value: '4', label: 'Main organizer categories' },
+  { value: String(categories.length), label: 'Product categories' },
   { value: 'WA', label: 'Direct customer support' },
 ];
+
+const aboutPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': 'https://www.sesoris.com/about#webpage',
+  url: 'https://www.sesoris.com/about',
+  name: TITLE,
+  description: DESCRIPTION,
+  about: { '@id': ORGANIZATION_ID },
+  mainEntity: { '@id': ORGANIZATION_ID },
+  dateModified: '2026-10-09',
+};
 
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
+
       {/* Breadcrumb */}
       <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
         <div className="container">
@@ -62,8 +91,8 @@ export default function AboutPage() {
             <Leaf style={{ width: '14px', height: '14px' }} />
             Our Yogyakarta Story
           </span>
-          <h1 style={{ fontSize: '40px', fontWeight: 700, color: 'var(--ink)', marginBottom: '20px', maxWidth: '600px', margin: '0 auto 20px' }}>
-            Practical Home Organization from Yogyakarta
+          <h1 style={{ fontSize: '40px', fontWeight: 700, color: 'var(--ink)', marginBottom: '20px', maxWidth: '640px', margin: '0 auto 20px' }}>
+            About Sesoris: Practical Home Organization from Yogyakarta
           </h1>
           <p style={{ color: 'var(--ink-muted)', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
             Sesoris is a Yogyakarta-founded home organizer brand helping households choose practical storage, kitchen, desk, and travel products for calmer daily routines.
@@ -76,14 +105,14 @@ export default function AboutPage() {
         <div className="container">
           <div className="about-story-grid" style={{ display: 'grid', gap: '40px', alignItems: 'center' }}>
             <div style={{ position: 'relative' }}>
-              <div style={{ aspectRatio: '4/3', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ aspectRatio: '4/3', borderRadius: '20px', overflow: 'hidden', position: 'relative', background: 'var(--surface-2)' }}>
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop&q=75"
-                  alt="Our Team"
+                  src="/images/products/pull-out-under-sink-organizer-2-tier-black-1.webp"
+                  alt="Sesoris 2-tier pull-out under-sink organizer in black, lower basket slid out and holding cleaning bottles and sponges"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   loading="lazy"
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain', mixBlendMode: 'multiply', padding: '24px' }}
                 />
               </div>
               <div style={{
@@ -98,7 +127,7 @@ export default function AboutPage() {
                 alignItems: 'center',
                 gap: '10px'
               }}>
-                <Award style={{ width: '28px', height: '28px', color: 'var(--brand)' }} />
+                <MapPin style={{ width: '28px', height: '28px', color: 'var(--brand)' }} />
                 <div>
                   <div style={{ fontWeight: 700, color: 'var(--ink)' }}>Yogyakarta, Indonesia</div>
                   <div style={{ fontSize: '12px', color: 'var(--ink-muted)' }}>Online home organizer store</div>
@@ -124,6 +153,62 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Brand facts: every line is checkable from a public record or the live catalog */}
+      <section aria-labelledby="sesoris-facts" style={{ padding: '64px 0' }}>
+        <div className="container" style={{ maxWidth: '880px' }}>
+          <h2 id="sesoris-facts" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
+            Sesoris facts you can check
+          </h2>
+          <p style={{ color: 'var(--ink-muted)', lineHeight: 1.7, marginBottom: '24px' }}>
+            The short version, with sources. For ratings and reputation, see{' '}
+            <Link href="/what-is-sesoris" className="text-link">What Is Sesoris?</Link>
+          </p>
+          <ul style={{ display: 'grid', gap: '12px', paddingLeft: '20px', listStyle: 'disc', color: 'var(--ink-2)', lineHeight: 1.7, fontSize: '16px' }}>
+            <li>
+              <strong>Founded in:</strong> Yogyakarta, Indonesia. The team still works from there.
+            </li>
+            <li>
+              <strong>Online history:</strong> the sesoris.com domain was registered on {DOMAIN_REGISTERED.label} (
+              <a href={DOMAIN_REGISTERED.source} target="_blank" rel="noopener" className="text-link">registry record</a>
+              ), and the Internet Archive holds a Sesoris page at sesoris.com from {FIRST_ARCHIVED.label} (
+              <a href={FIRST_ARCHIVED.source} target="_blank" rel="noopener" className="text-link">archived copy</a>
+              ).
+            </li>
+            <li>
+              <strong>What we sell:</strong> {products.length} home organization products in {categories.length} categories:{' '}
+              {categories.map((c, i) => (
+                <span key={c.slug}>
+                  <Link href={`/category/${c.slug}`} className="text-link">{c.name}</Link>
+                  {i < categories.length - 1 ? ', ' : '.'}
+                </span>
+              ))}
+            </li>
+            <li>
+              <strong>Where we ship:</strong> US addresses only, from a US warehouse. See the{' '}
+              <Link href="/shipping" className="text-link">shipping policy</Link> and the 30-day{' '}
+              <Link href="/returns" className="text-link">returns policy</Link>.
+            </li>
+            <li>
+              <strong>Customer reviews:</strong> none published on sesoris.com yet. We do not write our own reviews or ratings.
+            </li>
+            <li>
+              <strong>Contact:</strong>{' '}
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="text-link">{SUPPORT_EMAIL}</a> or{' '}
+              <a href={SUPPORT_WHATSAPP_URL} className="text-link">WhatsApp {SUPPORT_WHATSAPP}</a>.
+            </li>
+            <li>
+              <strong>Official profiles:</strong>{' '}
+              {OFFICIAL_PROFILES.map((p, i) => (
+                <span key={p.url}>
+                  <a href={p.url} target="_blank" rel="noopener me" className="text-link">{p.network}</a>
+                  {i < OFFICIAL_PROFILES.length - 1 ? ', ' : '.'}
+                </span>
+              ))}
+            </li>
+          </ul>
         </div>
       </section>
 

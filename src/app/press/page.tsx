@@ -1,51 +1,33 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Home, ChevronRight, Newspaper, Download, ExternalLink, Mail } from 'lucide-react';
+import { Home, ChevronRight, Newspaper, Download, Mail } from 'lucide-react';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+import { products, categories } from '@/data/products';
+import { DOMAIN_REGISTERED, SUPPORT_EMAIL, BRAND_FACTS_CHECKED } from '@/data/brand-facts';
 
 export const metadata: Metadata = {
   title: 'Sesoris Press | Home Organization Brand Profile',
-  description: 'Press information for Sesoris: media inquiries, collaborations, and brand profile for our Live More Organized mission.',
+  description: 'Press information for Sesoris: verifiable brand facts, logo download, and media contact for the Yogyakarta-founded home organizer store.',
   alternates: selfReferencingAlternates('/press'),
   openGraph: {
-    title: 'Sesoris Press | Home Organization Brand Profile | Sesoris',
-    description: 'Press information for Sesoris: media inquiries, collaborations, and brand profile for our Live More Organized mission.',
+    title: 'Sesoris Press | Home Organization Brand Profile',
+    description: 'Press information for Sesoris: verifiable brand facts, logo download, and media contact for the Yogyakarta-founded home organizer store.',
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
 
-const pressReleases = [
-  {
-    id: 1,
-    title: 'Sesoris Wins Best Local Brand Award 2025',
-    date: 'December 15, 2025',
-    excerpt: 'Sesoris was named the best local brand in the home & living category at the Indonesia Brand Award 2025.',
-    image: 'https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=600&h=400&fit=crop',
-  },
-  {
-    id: 2,
-    title: 'Sesoris Expands to 5 Major Cities in Indonesia',
-    date: 'November 28, 2025',
-    excerpt: 'Sesoris opens 5 new experience stores in Jakarta, Surabaya, Bandung, Medan, and Makassar.',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'Sesoris x Yogyakarta Local Artisan Collaboration',
-    date: 'October 10, 2025',
-    excerpt: 'Launching a limited edition collection in collaboration with 20 local artisans from Yogyakarta.',
-    image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=600&h=400&fit=crop',
-  },
-];
-
-const mediaFeatures = [
-  { name: 'Kompas.com', logo: 'K' },
-  { name: 'Detik.com', logo: 'D' },
-  { name: 'CNN Indonesia', logo: 'CNN' },
-  { name: 'Tempo.co', logo: 'T' },
-  { name: 'Bisnis.com', logo: 'B' },
-  { name: 'IDN Times', logo: 'IDN' },
+// Only facts that a journalist can check. Earlier versions of this page listed press
+// releases, an award, store openings, and "Featured In" media logos that had no source;
+// they were removed on 2026-10-09. Add coverage here only with a link to the original article.
+const brandFacts = [
+  { label: 'Name', value: 'Sesoris' },
+  { label: 'Website', value: 'www.sesoris.com' },
+  { label: 'What it is', value: 'Independent online store for home organizers and storage products' },
+  { label: 'Founded in', value: 'Yogyakarta, Indonesia' },
+  { label: 'Domain registered', value: DOMAIN_REGISTERED.label },
+  { label: 'Catalog', value: `${products.length} products in ${categories.length} categories` },
+  { label: 'Ships to', value: 'US addresses, from a US warehouse' },
+  { label: 'Tagline', value: 'Live More Organized' },
 ];
 
 export default function PressPage() {
@@ -64,7 +46,7 @@ export default function PressPage() {
         </div>
       </div>
 
-      <div className="container" style={{ padding: '48px 16px 80px' }}>
+      <div className="container" style={{ padding: '48px 16px 80px', maxWidth: '880px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div style={{
             width: '64px',
@@ -79,156 +61,85 @@ export default function PressPage() {
             <Newspaper style={{ width: '32px', height: '32px', color: 'var(--brand)' }} />
           </div>
           <h1 style={{ fontSize: '36px', fontWeight: 700, color: 'var(--ink)', marginBottom: '12px' }}>
-            Press & Media
+            Sesoris Press &amp; Media
           </h1>
           <p style={{ color: 'var(--ink-muted)', fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
-            Latest news, press releases, and media coverage about Sesoris
+            Brand facts, logo, and media contact for writing about Sesoris.
           </p>
         </div>
 
-        {/* Media Features */}
-        <div style={{ marginBottom: '64px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--ink)', textAlign: 'center', marginBottom: '24px' }}>
-            Featured In
+        {/* Coverage */}
+        <section style={{ marginBottom: '48px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>
+            Media coverage
           </h2>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '32px', flexWrap: 'wrap' }}>
-            {mediaFeatures.map((media) => (
-              <div key={media.name} style={{
-                width: '80px',
-                height: '80px',
-                background: 'var(--surface-2)',
-                borderRadius: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 700,
-                color: 'var(--ink-muted)',
-                fontSize: '14px',
-              }}>
-                {media.logo}
-              </div>
-            ))}
-          </div>
-        </div>
+          <p style={{ color: 'var(--ink-2)', lineHeight: 1.7 }}>
+            Sesoris has not been covered by news media yet. When that changes, this page will link to the original
+            articles rather than show logos. For a plain summary of who we are, see{' '}
+            <Link href="/what-is-sesoris" className="text-link">What Is Sesoris?</Link>
+          </p>
+        </section>
 
-        {/* Press Releases */}
-        <div style={{ marginBottom: '64px' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '32px' }}>
-            Latest Press Releases
+        {/* Brand facts */}
+        <section style={{ marginBottom: '48px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '12px' }}>
+            Brand facts
           </h2>
-          <div className="press-releases-grid" style={{ display: 'grid', gap: '24px' }}>
-            {pressReleases.map((release) => (
-              <div key={release.id} style={{
-                background: 'white',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-              }}>
-                <div style={{ aspectRatio: '16/10', position: 'relative' }}>
-                  <Image src={release.image} alt={release.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
-                </div>
-                <div style={{ padding: '20px' }}>
-                  <div style={{ fontSize: '13px', color: 'var(--ink-muted)', marginBottom: '8px' }}>
-                    {release.date}
-                  </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ink)', marginBottom: '8px', lineHeight: 1.4 }}>
-                    {release.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--ink-muted)', lineHeight: 1.5, marginBottom: '16px' }}>
-                    {release.excerpt}
-                  </p>
-                  <button style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    color: 'var(--brand)',
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontSize: '14px',
-                    fontWeight: 500,
-                    padding: 0,
-                  }}>
-                    Read More
-                    <ExternalLink style={{ width: '14px', height: '14px' }} />
-                  </button>
-                </div>
+          <dl style={{ borderTop: '1px solid var(--line)', margin: 0 }}>
+            {brandFacts.map((f) => (
+              <div key={f.label} style={{ display: 'flex', flexWrap: 'wrap', gap: '4px 24px', padding: '12px 0', borderBottom: '1px solid var(--line)' }}>
+                <dt style={{ flex: '0 0 180px', maxWidth: '100%', color: 'var(--ink-muted)', fontSize: '15px' }}>{f.label}</dt>
+                <dd style={{ flex: '1 1 260px', margin: 0, color: 'var(--ink)', fontWeight: 600, fontSize: '15.5px' }}>{f.value}</dd>
               </div>
             ))}
-          </div>
-        </div>
+          </dl>
+          <p style={{ color: 'var(--ink-muted)', fontSize: '14px', marginTop: '12px' }}>
+            Checked on {BRAND_FACTS_CHECKED}. Sources for each fact are on the <Link href="/about" className="text-link">About page</Link>.
+          </p>
+        </section>
 
         {/* Press Kit */}
-        <div style={{
-          background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-strong) 100%)',
+        <section style={{
+          background: 'var(--brand-deep)',
           borderRadius: '16px',
           padding: 'clamp(24px, 4vw, 48px)',
           color: 'white',
-          marginBottom: '64px',
+          marginBottom: '48px',
         }}>
-          <div className="press-kit-grid" style={{ display: 'grid', gap: '32px', alignItems: 'center' }}>
-            <div>
-              <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '16px' }}>
-                Press Kit
-              </h2>
-              <p style={{ opacity: 0.9, marginBottom: '24px', lineHeight: 1.6 }}>
-                Download our press kit containing logos, high-resolution product photos,
-                company profile, and fact sheet for your publication needs.
-              </p>
-              <button style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                background: 'white',
-                color: 'var(--brand)',
-                padding: '14px 28px',
-                borderRadius: '10px',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 600,
-                fontSize: '15px',
-              }}>
-                <Download style={{ width: '18px', height: '18px' }} />
-                Download Press Kit
-              </button>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              {['Logo Package', 'Product Photos', 'Company Profile', 'Fact Sheet'].map((item) => (
-                <div key={item} style={{
-                  background: 'rgba(255,255,255,0.15)',
-                  padding: '16px',
-                  borderRadius: '10px',
-                  textAlign: 'center',
-                }}>
-                  <Download style={{ width: '24px', height: '24px', marginBottom: '8px', opacity: 0.9 }} />
-                  <div style={{ fontSize: '14px', fontWeight: 500 }}>{item}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+          <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '12px' }}>
+            Logo and assets
+          </h2>
+          <p style={{ opacity: 0.9, marginBottom: '24px', lineHeight: 1.6 }}>
+            Download the Sesoris logo below. For product photos or other assets, email us and tell us where they will appear.
+          </p>
+          <a href="/logo.webp" download="sesoris-logo.webp" className="btn btn-light">
+            <Download aria-hidden />
+            Download logo (WebP)
+          </a>
+        </section>
 
         {/* Media Contact */}
-        <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+        <section style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '16px' }}>
             Media Contact
           </h2>
           <p style={{ color: 'var(--ink-muted)', marginBottom: '24px', lineHeight: 1.6 }}>
-            For interviews, media collaborations, or further information,
-            please contact our Public Relations team.
+            For interviews, collaborations, or fact checks, email us directly.
           </p>
-          <div style={{
+          <a href={`mailto:${SUPPORT_EMAIL}`} style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
             background: 'var(--surface-2)',
             padding: '16px 24px',
             borderRadius: '10px',
+            color: 'var(--ink)',
+            fontWeight: 500,
           }}>
             <Mail style={{ width: '18px', height: '18px', color: 'var(--brand)' }} />
-            <span style={{ color: 'var(--ink)', fontWeight: 500 }}>admin@sesoris.com</span>
-          </div>
-        </div>
+            {SUPPORT_EMAIL}
+          </a>
+        </section>
       </div>
     </>
   );
