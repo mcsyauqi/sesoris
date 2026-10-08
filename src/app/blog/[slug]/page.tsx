@@ -521,6 +521,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const toc = generateTOC(post.content);
+  const contentBlocks = renderContentBlocks(post.content);
   // Related posts: slug-seeded rotation across the whole archive so internal
   // links are distributed evenly (fixes 89% orphaned posts -> 0%, which was
   // causing GSC "Discovered - currently not indexed"). 2026-06-04.
@@ -530,12 +531,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
-    'best-bedroom-nightstand-organizers-review-buying-guide-2026': 'sesoris-2026-10-08-daily-qa-v1',
-    'best-desk-organizer-accessories-review-2026': 'sesoris-2026-10-08-daily-qa-v1',
-    'bedroom-lifestyle-habits-keep-sleep-space-calm-organized-2026': 'sesoris-2026-10-08-daily-qa-v1',
-    'work-from-home-lifestyle-habits-home-office-2026': 'sesoris-2026-10-08-daily-qa-v1',
-    'how-to-set-up-home-office-desk-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v1',
-    'how-to-organize-your-bedroom-closet-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v1',
+    'best-bedroom-nightstand-organizers-review-buying-guide-2026': 'sesoris-2026-10-08-daily-qa-v2',
+    'best-desk-organizer-accessories-review-2026': 'sesoris-2026-10-08-daily-qa-v2',
+    'bedroom-lifestyle-habits-keep-sleep-space-calm-organized-2026': 'sesoris-2026-10-08-daily-qa-v2',
+    'work-from-home-lifestyle-habits-home-office-2026': 'sesoris-2026-10-08-daily-qa-v2',
+    'how-to-set-up-home-office-desk-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v2',
+    'how-to-organize-your-bedroom-closet-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v2',
     'floating-shelf-ideas': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-organization-systems': 'sesoris-2026-08-27-scheduled-articles-v3',
     'garage-storage-solutions-costco-complete-review-buying-guide-2026': 'sesoris-2026-10-06-answer-first-v2',
@@ -749,7 +750,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <div className="container">
           <div className="article-measure">
-            {/* Table of Contents */}
+            <div data-revision-marker={revisionMarker} data-article-content={post.slug} style={{ padding: '40px 0 48px' }}>
+            {contentBlocks.slice(0, 1)}
+            {/* Table of Contents follows the answer-first opening. */}
             {toc.length > 3 && (
               <nav aria-label="Table of contents" style={{
                 border: '1px solid var(--line)',
@@ -781,9 +784,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </nav>
             )}
 
-            {/* Content */}
-            <div data-revision-marker={revisionMarker} data-article-content={post.slug} style={{ padding: '40px 0 48px' }}>
-              {renderContentBlocks(post.content)}
+              {contentBlocks.slice(1)}
             </div>
 
             {/* Author box: honest team attribution, links to the author profile page */}
