@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { quote, shipToError, type ShipTo } from '@/lib/checkout';
 import { createPaypalOrder } from '@/lib/paypal';
 import { corsHeaders, storeById } from '@/lib/stores';
+import { welcomeCodeProblem, welcomeCoupons } from '@/lib/welcome-coupon';
 
 const Body = z.object({
   items: z.array(z.object({ slug: z.string().min(1).max(120), quantity: z.number().int() })).min(1).max(30),
@@ -32,10 +33,13 @@ async function handle(request: NextRequest) {
   }
   let q;
   try {
-    q = quote(body.items, body.coupon, storeById(body.store));
+    q = quote(body.items, body.coupon, storeById(body.store), welcomeCoupons);
   } catch (error) {
     return NextResponse.json({ error: (error as Error).message }, { status: 400 });
   }
+  // Welcome codes are one per subscriber: refuse one that has already paid for an order.
+  const couponProblem = await welcomeCodeProblem(q.coupon);
+  if (couponProblem) return NextResponse.json({ error: couponProblem }, { status: 400 });
   try {
     // preview=1 only prices the cart (coupon check) without opening a PayPal order.
     if (request.nextUrl.searchParams.get('preview')) return NextResponse.json({ subtotal: q.subtotal, discount: q.discount, shipping: q.shipping, total: q.total });

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { WELCOME_CODE_KEY } from '@/components/layout/NewsletterPopup';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -21,6 +22,15 @@ const CartUpsell = dynamic(
 export default function CartPageClient() {
   const { items, removeItem, updateQuantity, getSubtotal, getItemCount, coupon, setCoupon } = useCartStore();
   const [promoCode, setPromoCode] = useState('');
+  // Prefill the welcome code from the newsletter popup on this browser (the buyer still presses Apply).
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(WELCOME_CODE_KEY);
+      if (saved) setPromoCode((cur) => cur || saved);
+    } catch {
+      // storage blocked
+    }
+  }, []);
   const [promoError, setPromoError] = useState('');
   const [applying, setApplying] = useState(false);
 

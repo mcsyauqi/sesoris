@@ -44,11 +44,15 @@ export function shippingFor(subtotal: number): number {
   return subtotal > FREE_SHIPPING_MIN ? 0 : SHIPPING_FEE;
 }
 
+/** Extra coupon source for server routes (welcome codes); returns a percent, or undefined when it does not know the code. */
+export type CouponResolver = (code: string, storeId: string) => number | undefined;
+
 /**
  * Coupons live in the CHECKOUT_COUPONS env (server only): "CODE:PERCENT:YYYY-MM-DD,CODE2:...".
  * ponytail: no usage counter without a database; keep codes long, short-lived, and remove them after use.
+ * Per-subscriber welcome codes come in through `extra` (see welcome-coupon.ts, which also enforces one use).
  */
-function couponPercent(code: string): number {
+function couponPercent(code: string, storeId: string, extra?: CouponResolver): number {
   const now = new Date().toISOString().slice(0, 10);
   for (const entry of (process.env.CHECKOUT_COUPONS ?? '').split(',')) {
     const [c, pct, until] = entry.trim().split(':');
@@ -57,6 +61,8 @@ function couponPercent(code: string): number {
       if (n > 0 && n < 100) return n;
     }
   }
+  const n = extra?.(code, storeId);
+  if (n && n > 0 && n < 100) return n;
   throw new Error('This coupon code is not valid.');
 }
 
@@ -71,7 +77,7 @@ export const sesorisStore: Store = {
 };
 
 /** Prices always come from the store's own catalog, never from the client. Throws on unknown items, bad quantities or coupons. */
-export function quote(items: { slug: string; quantity: number }[], coupon?: string, store: Store = sesorisStore): Quote {
+export function quote(items: { slug: string; quantity: number }[], coupon?: string, store: Store = sesorisStore, extraCoupons?: CouponResolver): Quote {
   if (items.length === 0) throw new Error('Cart is empty');
   const lines = items.map(({ slug, quantity }) => {
     const product = store.lookup(slug);
@@ -81,7 +87,7 @@ export function quote(items: { slug: string; quantity: number }[], coupon?: stri
   });
   const subtotal = round2(lines.reduce((sum, l) => sum + l.lineTotal, 0));
   const code = coupon?.trim().toUpperCase() || undefined;
-  const discount = code ? round2((subtotal * couponPercent(code)) / 100) : 0;
+  const discount = code ? round2((subtotal * couponPercent(code, store.id, extraCoupons)) / 100) : 0;
   const shipping = store.shipping(subtotal);
   return { lines, subtotal, discount, coupon: code, shipping, total: round2(subtotal - discount + shipping), store };
 }

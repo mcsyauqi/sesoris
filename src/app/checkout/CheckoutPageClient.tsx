@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { WELCOME_CODE_KEY } from '@/components/layout/NewsletterPopup';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, ChevronRight, Truck, ShieldCheck, CheckCircle } from 'lucide-react';
@@ -48,6 +49,15 @@ export default function CheckoutPageClient({ clientId, sandbox }: { clientId?: s
   const [placed, setPlaced] = useState<{ id: string; total: number } | null>(null);
   const [error, setError] = useState('');
   const [couponInput, setCouponInput] = useState('');
+  // Prefill the welcome code from the newsletter popup on this browser (the buyer still presses Apply).
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(WELCOME_CODE_KEY);
+      if (saved) setCouponInput((cur) => cur || saved);
+    } catch {
+      // storage blocked
+    }
+  }, []);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const [shipTo, setShipTo] = useState<ShipTo>({ name: '', address1: '', address2: '', city: '', state: '', zip: '', phone: '' });
   // PayPal callbacks are created once per cart; the ref lets them read the latest form values.

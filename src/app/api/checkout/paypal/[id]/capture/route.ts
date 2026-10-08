@@ -3,6 +3,7 @@ import { quote, type Quote } from '@/lib/checkout';
 import { capturePaypalOrder, getPaypalOrder, isPaypalSandbox, type PaypalOrder } from '@/lib/paypal';
 import { createCjOrders } from '@/lib/cj';
 import { corsHeaders, decodeCustomId, storeById } from '@/lib/stores';
+import { markWelcomeCodeUsed, welcomeCodeProblem, welcomeCoupons } from '@/lib/welcome-coupon';
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[c]!);
 
@@ -33,7 +34,7 @@ function quoteFromOrder(order: PaypalOrder): Quote {
   const unit = order.purchase_units[0];
   const items = (unit?.items ?? []).map((i) => ({ slug: i.sku ?? '', quantity: Number(i.quantity) }));
   const { store, coupon } = decodeCustomId(unit?.custom_id);
-  const q = quote(items, coupon, storeById(store));
+  const q = quote(items, coupon, storeById(store), welcomeCoupons);
   // The amount PayPal will charge must match our own price for these items.
   if (Math.abs(Number(unit?.amount.value) - q.total) > 0.001) throw new Error(`Amount mismatch: ${unit?.amount.value} vs ${q.total}`);
   return q;
@@ -73,6 +74,10 @@ async function handle(_request: NextRequest, { params }: { params: Promise<{ id:
 
   // Replayed request: already captured and processed, so skip the supplier order and emails.
   if (order.status === 'COMPLETED') return NextResponse.json({ orderId: id, status: 'COMPLETED', total: q.total });
+
+  // A welcome code spent on another order since this one was opened: stop before any money moves.
+  const couponProblem = await welcomeCodeProblem(q.coupon, id);
+  if (couponProblem) return NextResponse.json({ error: `${couponProblem} You have not been charged.` }, { status: 400 });
 
   let captured: PaypalOrder;
   try {
@@ -128,7 +133,8 @@ async function handle(_request: NextRequest, { params }: { params: Promise<{ id:
     jobs.push(sendEmail(buyerEmail, `${tag}Your ${brand} order ${id}`,
       `<p>Hi ${esc(shipName || 'there')}, thank you for your ${esc(brand)} order. We will email you the tracking number as soon as it ships from our US warehouse.</p>${summaryHtml(q, id)}<p>Ship to: ${addr}</p>`, brand));
   }
-  for (const r of await Promise.allSettled(jobs)) if (r.status === 'rejected') console.error('[Checkout] email failed:', r.reason);
+  jobs.push(markWelcomeCodeUsed(q.coupon, id));
+  for (const r of await Promise.allSettled(jobs)) if (r.status === 'rejected') console.error('[Checkout] email or coupon bookkeeping failed:', r.reason);
 
   return NextResponse.json({ orderId: id, status: capture.status, total: q.total });
 }

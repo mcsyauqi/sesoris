@@ -1,19 +1,28 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { X, Mail } from 'lucide-react';
+import { X, Mail, Copy, Check } from 'lucide-react';
 
 const POPUP_SHOWN_KEY = 'sesoris_newsletter_popup_shown';
 const POPUP_COOLDOWN_DAYS = 7;
+/** Read by the cart and checkout pages to prefill the coupon box. */
+export const WELCOME_CODE_KEY = 'sesoris_welcome_code';
 
 export function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const [code, setCode] = useState('');
+  const [copied, setCopied] = useState(false);
 
   const showPopup = useCallback(() => {
-    const lastShown = localStorage.getItem(POPUP_SHOWN_KEY);
+    let lastShown: string | null = null;
+    try {
+      lastShown = localStorage.getItem(POPUP_SHOWN_KEY);
+    } catch {
+      // storage blocked: treat as never shown
+    }
     if (lastShown) {
       const daysSince = (Date.now() - parseInt(lastShown)) / (1000 * 60 * 60 * 24);
       if (daysSince < POPUP_COOLDOWN_DAYS) return;
@@ -43,7 +52,21 @@ export function NewsletterPopup() {
 
   function dismiss() {
     setIsVisible(false);
-    localStorage.setItem(POPUP_SHOWN_KEY, Date.now().toString());
+    try {
+      localStorage.setItem(POPUP_SHOWN_KEY, Date.now().toString());
+    } catch {
+      // storage blocked: the popup may show again next visit
+    }
+  }
+
+  async function copyCode() {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard blocked: the code stays selectable on screen
+    }
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -59,9 +82,21 @@ export function NewsletterPopup() {
       const data = await res.json();
       if (data.success) {
         setStatus('success');
-        setMessage(data.message || 'Subscribed!');
-        localStorage.setItem(POPUP_SHOWN_KEY, Date.now().toString());
-        setTimeout(() => setIsVisible(false), 3000);
+        setCode(data.code || '');
+        setMessage(
+          data.code
+            ? data.emailed
+              ? `We also emailed it to ${email}. Use it at checkout on your first order.`
+              : 'We could not email it right now, so please save it. Use it at checkout on your first order.'
+            : data.message || 'You are subscribed.',
+        );
+        try {
+          localStorage.setItem(POPUP_SHOWN_KEY, Date.now().toString());
+          if (data.code) localStorage.setItem(WELCOME_CODE_KEY, data.code);
+        } catch {
+          // storage blocked: the code is still on screen and in the email
+        }
+        // Stays open: the visitor needs time to copy the code.
       } else {
         setStatus('error');
         setMessage(data.error || 'Something went wrong.');
@@ -144,13 +179,10 @@ export function NewsletterPopup() {
         {/* Form section */}
         <div style={{ padding: '28px 32px 32px' }}>
           {status === 'success' ? (
-            <div style={{
-              textAlign: 'center',
-              padding: '20px',
-            }}>
+            <div role="status" style={{ textAlign: 'center', padding: '4px 0' }}>
               <div style={{
-                width: '56px',
-                height: '56px',
+                width: '48px',
+                height: '48px',
                 background: 'var(--brand-tint)',
                 borderRadius: '50%',
                 display: 'flex',
@@ -158,10 +190,42 @@ export function NewsletterPopup() {
                 justifyContent: 'center',
                 margin: '0 auto 12px',
               }}>
-                <Mail style={{ width: '24px', height: '24px', color: 'var(--brand)' }} />
+                <Mail style={{ width: '22px', height: '22px', color: 'var(--brand)' }} />
               </div>
-              <p style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>You&apos;re in!</p>
-              <p style={{ fontSize: '14px', color: 'var(--ink-muted)' }}>{message}</p>
+              <p style={{ fontWeight: 700, color: 'var(--ink)', marginBottom: code ? '14px' : '4px', fontSize: '17px' }}>
+                {code ? 'Your 10% code' : 'You’re in!'}
+              </p>
+              {code && (
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  border: '2px dashed var(--brand)',
+                  borderRadius: 'var(--radius)',
+                  padding: '10px 10px 10px 16px',
+                  marginBottom: '12px',
+                }}>
+                  <span style={{
+                    flex: 1,
+                    minWidth: 0,
+                    fontSize: '19px',
+                    fontWeight: 750,
+                    letterSpacing: '0.04em',
+                    color: 'var(--brand)',
+                    userSelect: 'all',
+                    overflowWrap: 'anywhere',
+                    textAlign: 'left',
+                  }}>{code}</span>
+                  <button type="button" onClick={copyCode} className="btn btn-primary" style={{ flexShrink: 0, minHeight: '40px', padding: '0 14px', gap: '6px' }}>
+                    {copied ? <Check style={{ width: '16px', height: '16px' }} /> : <Copy style={{ width: '16px', height: '16px' }} />}
+                    {copied ? 'Copied' : 'Copy'}
+                  </button>
+                </div>
+              )}
+              <p style={{ fontSize: '14px', color: 'var(--ink-muted)', lineHeight: 1.6 }}>{message}</p>
+              <a href="/shop" onClick={dismiss} className="btn btn-primary" style={{ marginTop: '18px', width: '100%' }}>
+                Start shopping
+              </a>
             </div>
           ) : (
             <>
