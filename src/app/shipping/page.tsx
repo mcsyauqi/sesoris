@@ -2,14 +2,28 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ChevronRight, Truck, Clock, MapPin, Package, CheckCircle } from 'lucide-react';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+import { products } from '@/data/products';
+import { FREE_SHIPPING_MIN, SHIPPING_FEE } from '@/lib/shipping';
+
+// Must match the live checkout (src/lib/checkout.ts): US addresses only (50 states + DC),
+// one flat rate, free over FREE_SHIPPING_MIN. Checked in the live checkout on 2026-10-09:
+// no country field, no express or same-day choice.
+const shipRanges = products
+  .map((p) => p.shipDays?.match(/^(\d+)-(\d+)$/))
+  .filter((m): m is RegExpMatchArray => m !== null && m !== undefined)
+  .map((m) => [Number(m[1]), Number(m[2])]);
+const MIN_DAYS = Math.min(...shipRanges.map((r) => r[0]));
+const MAX_DAYS = Math.max(...shipRanges.map((r) => r[1]));
+const FEE = `$${SHIPPING_FEE.toFixed(2)}`;
+const DESCRIPTION = `Sesoris ships to US addresses only, from a US warehouse: free on orders over $${FREE_SHIPPING_MIN}, otherwise a flat ${FEE}. Delivery estimates and tracking.`;
 
 export const metadata: Metadata = {
   title: 'Sesoris Shipping Info | Delivery Times & Costs',
-  description: 'Check Sesoris shipping information, estimated delivery times, carrier options, and shipping policy for home organizer orders.',
+  description: DESCRIPTION,
   alternates: selfReferencingAlternates('/shipping'),
   openGraph: {
-    title: 'Sesoris Shipping Info | Delivery Times & Costs | Sesoris',
-    description: 'Check Sesoris shipping information, estimated delivery times, carrier options, and shipping policy for home organizer orders.',
+    title: 'Sesoris Shipping Info | Delivery Times & Costs',
+    description: DESCRIPTION,
     images: [{ url: '/og-default.webp', width: 1200, height: 630 }],
   },
 };
@@ -53,37 +67,31 @@ export default function ShippingPage() {
             </p>
           </div>
 
-          {/* Shipping Options */}
+          {/* Shipping rate: one option, exactly what checkout charges */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>
-              Shipping Options
+              Shipping Rate
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {[
-                { name: 'Standard', time: '5-7 business days', price: '$5.99', desc: 'Standard shipping across all regions' },
-                { name: 'Express', time: '2-3 business days', price: '$12.99', desc: 'Fast shipping for urgent needs' },
-                { name: 'Same Day', time: 'Same day delivery', price: '$19.99', desc: 'Available in select metro areas only' },
-              ].map((option) => (
-                <div key={option.name} style={{
-                  padding: '20px',
-                  border: '1px solid var(--line)',
-                  borderRadius: '12px',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr auto',
-                  gap: '16px',
-                  alignItems: 'center',
-                }}>
-                  <div>
-                    <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>{option.name}</div>
-                    <div style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '4px' }}>{option.desc}</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--brand)' }}>
-                      <Clock style={{ width: '14px', height: '14px' }} />
-                      {option.time}
-                    </div>
-                  </div>
-                  <div style={{ fontWeight: 600, color: 'var(--brand)', fontSize: '18px' }}>{option.price}</div>
+            <div style={{
+              padding: '20px',
+              border: '1px solid var(--line)',
+              borderRadius: '12px',
+              display: 'grid',
+              gridTemplateColumns: '1fr auto',
+              gap: '16px',
+              alignItems: 'center',
+            }}>
+              <div>
+                <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>Standard shipping, US addresses only</div>
+                <div style={{ fontSize: '14px', color: 'var(--ink-muted)', marginBottom: '4px' }}>
+                  One rate for every order: free over ${FREE_SHIPPING_MIN}, otherwise a flat {FEE}. There is no faster paid option.
                 </div>
-              ))}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--brand)' }}>
+                  <Clock style={{ width: '14px', height: '14px' }} />
+                  Estimated {MIN_DAYS}-{MAX_DAYS} days, depending on the item (each product page shows its own estimate)
+                </div>
+              </div>
+              <div style={{ fontWeight: 600, color: 'var(--brand)', fontSize: '18px' }}>{FEE}</div>
             </div>
           </div>
 
@@ -100,7 +108,7 @@ export default function ShippingPage() {
               <h3 style={{ fontSize: '20px', fontWeight: 600, margin: 0 }}>Free Shipping!</h3>
             </div>
             <p style={{ opacity: 0.9, marginBottom: '16px' }}>
-              Enjoy free shipping on all orders over $50. No promo code needed!
+              Enjoy free shipping on all orders over ${FREE_SHIPPING_MIN}. No promo code needed!
             </p>
             <Link href="/shop" style={{
               display: 'inline-block',
@@ -118,51 +126,29 @@ export default function ShippingPage() {
           {/* Coverage Area */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>
-              Shipping Areas
+              Where We Ship
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              <div style={{ padding: '20px', background: 'var(--surface-2)', borderRadius: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <MapPin style={{ width: '18px', height: '18px', color: 'var(--brand)' }} />
-                  <span style={{ fontWeight: 600, color: 'var(--ink)' }}>Domestic</span>
-                </div>
-                <p style={{ fontSize: '14px', color: 'var(--ink-muted)', margin: 0 }}>
-                  Estimated 3-7 business days for standard shipping
-                </p>
+            <div style={{ padding: '20px', background: 'var(--surface-2)', borderRadius: '12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                <MapPin style={{ width: '18px', height: '18px', color: 'var(--brand)' }} />
+                <span style={{ fontWeight: 600, color: 'var(--ink)' }}>United States only</span>
               </div>
-              <div style={{ padding: '20px', background: 'var(--surface-2)', borderRadius: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <MapPin style={{ width: '18px', height: '18px', color: 'var(--brand)' }} />
-                  <span style={{ fontWeight: 600, color: 'var(--ink)' }}>International</span>
-                </div>
-                <p style={{ fontSize: '14px', color: 'var(--ink-muted)', margin: 0 }}>
-                  Estimated 10-14 business days for standard shipping
-                </p>
-              </div>
+              <p style={{ fontSize: '14px', color: 'var(--ink-muted)', margin: 0 }}>
+                We ship to addresses in all 50 states and Washington, DC. Checkout does not accept addresses outside the United States at the moment.
+              </p>
             </div>
           </div>
 
-          {/* Shipping Partners */}
+          {/* Carriers and tracking */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--ink)', marginBottom: '24px' }}>
-              Shipping Partners
+              Carriers and Tracking
             </h2>
-            <p style={{ color: 'var(--ink-muted)', marginBottom: '16px' }}>
-              We partner with trusted carriers to ensure your packages arrive safely:
+            <p style={{ color: 'var(--ink-muted)', lineHeight: 1.7 }}>
+              Orders are fulfilled from a US warehouse, and the carrier is chosen per order for your address. We email you
+              the tracking number as soon as your order ships, and you can also check it on the{' '}
+              <Link href="/track-order" style={{ color: 'var(--brand)', fontWeight: 500 }}>Track Order</Link> page.
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-              {['FedEx', 'UPS', 'DHL', 'USPS', 'Royal Mail', 'Australia Post'].map((partner) => (
-                <span key={partner} style={{
-                  padding: '8px 16px',
-                  background: 'var(--surface-2)',
-                  borderRadius: '8px',
-                  fontSize: '14px',
-                  color: 'var(--ink)',
-                }}>
-                  {partner}
-                </span>
-              ))}
-            </div>
           </div>
 
           {/* FAQ */}
@@ -173,7 +159,7 @@ export default function ShippingPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
                 { q: 'How can I track my order?', a: 'Once your order is shipped, you will receive an email with a tracking number. Use this number to track your package on our Track Order page or the carrier\'s website.' },
-                { q: 'Do you ship internationally?', a: 'Yes, we ship to most countries worldwide. International shipping costs and delivery times vary by location. Customers may be responsible for customs duties and taxes.' },
+                { q: 'Do you ship outside the United States?', a: 'Not at the moment. Sesoris ships only to addresses in the United States, and checkout accepts US addresses only.' },
                 { q: 'What if my package is damaged during shipping?', a: 'If your package arrives damaged, please contact us within 48 hours with photos of the damage. We will arrange a replacement or refund.' },
               ].map((item, i) => (
                 <div key={i} style={{ padding: '20px', background: 'var(--surface-2)', borderRadius: '12px' }}>

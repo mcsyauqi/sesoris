@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import FAQPageClient from './FAQPageClient';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
+import { SHIPPING_TIME_ANSWER, SHIPPING_COUNTRY_ANSWER } from '@/lib/shipping';
 
 export const metadata: Metadata = {
   title: 'Sesoris FAQ | Shopping & Organizer Questions',
@@ -22,7 +23,7 @@ const faqSchema = {
       name: 'How long does shipping take?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Standard shipping typically takes 5-7 business days. Express shipping is available for 2-3 business day delivery. International orders may take 10-14 business days.',
+        text: SHIPPING_TIME_ANSWER,
       },
     },
     {
@@ -35,10 +36,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Do you ship internationally?',
+      name: 'Do you ship outside the United States?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes! We ship to most countries worldwide. Shipping costs and delivery times vary by location. International customers may be responsible for customs duties and taxes.',
+        text: SHIPPING_COUNTRY_ANSWER,
       },
     },
     {

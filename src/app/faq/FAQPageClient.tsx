@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Home, ChevronRight, ChevronDown, Search, HelpCircle } from 'lucide-react';
+import { SHIPPING_TIME_ANSWER, SHIPPING_COUNTRY_ANSWER } from '@/lib/shipping';
 
 const faqs = [
   {
@@ -10,15 +11,15 @@ const faqs = [
     questions: [
       {
         q: 'How long does shipping take?',
-        a: 'Standard shipping typically takes 5-7 business days. Express shipping is available for 2-3 business day delivery. International orders may take 10-14 business days.',
+        a: SHIPPING_TIME_ANSWER,
       },
       {
         q: 'How can I track my order?',
         a: 'Once your order ships, you\'ll receive an email with a tracking number. You can also track your order by visiting our Track Order page and entering your order number.',
       },
       {
-        q: 'Do you ship internationally?',
-        a: 'Yes! We ship to most countries worldwide. Shipping costs and delivery times vary by location. International customers may be responsible for customs duties and taxes.',
+        q: 'Do you ship outside the United States?',
+        a: SHIPPING_COUNTRY_ANSWER,
       },
       {
         q: 'What if my package is lost or damaged?',
