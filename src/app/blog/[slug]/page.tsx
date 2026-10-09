@@ -409,8 +409,12 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
       continue;
     }
 
-    // Blockquote
+    // Blockquote. A multi-line entry ("> **Key Takeaways:**\n> - point\n> - point")
+    // renders its "- " lines as a real list instead of leaking raw "> -" markers.
     if (line.startsWith('> ')) {
+      const quoteLines = line.split('\n').map((l) => l.replace(/^>\s?/, '').trim()).filter(Boolean);
+      const leadLines = quoteLines.filter((l) => !/^[-•]\s/.test(l));
+      const listItems = quoteLines.filter((l) => /^[-•]\s/.test(l)).map((l) => l.replace(/^[-•]\s+/, ''));
       elements.push(
         <blockquote key={i} style={{
           margin: '32px 0',
@@ -422,7 +426,16 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
           fontWeight: 500,
           lineHeight: 1.6,
         }}>
-          {renderInline(line.replace('> ', ''))}
+          {leadLines.map((l, li) => (
+            <p key={li} style={{ margin: li === 0 ? 0 : '8px 0 0' }}>{renderInline(l)}</p>
+          ))}
+          {listItems.length > 0 && (
+            <ul style={{ margin: '10px 0 0', paddingLeft: '22px', listStyle: 'disc', fontSize: '17px', fontWeight: 400 }}>
+              {listItems.map((item, li) => (
+                <li key={li} style={{ marginBottom: '6px' }}>{renderInline(item)}</li>
+              ))}
+            </ul>
+          )}
         </blockquote>
       );
       i++;
