@@ -2,10 +2,19 @@ import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 import path from 'path';
 import { authors } from './authors';
-import { buildRichContentPrompt, getExistingPosts } from './blog-prompt';
+import { buildRichContentPrompt, getExistingPosts, getInternalLinksContext } from './blog-prompt';
 import { generateArticleImages } from './generate-image';
 // Brand-caption scrub, shared with process-trello-tasks.ts (cycle #66).
 import { scrubBrandsFromCaption, scrubBrandsFromImageLines } from './brand-scrub';
+// Article quality gate (2026-10-09). Same module the pre-publish guard runs, so
+// a pass here is a pass there. See scripts/article-quality.mjs.
+import { checkArticle } from './article-quality.mjs';
+
+// DRY_RUN=1: generate and gate one article without touching the keyword queue,
+// the ledger, or content/blog. Used by the workflow_dispatch dry_run input to
+// prove the generator meets the quality gate without publishing anything.
+const DRY_RUN = process.env.DRY_RUN === '1';
+const dryRunDir = path.join(process.cwd(), 'tmp', 'dry-run');
 
 const client = new Anthropic();
 const blogDir = path.join(process.cwd(), 'content', 'blog');
@@ -55,6 +64,7 @@ function readKeywordLedger(): KeywordConsumptionLedgerEntry[] {
 }
 
 function appendKeywordLedger(entry: KeywordConsumptionLedgerEntry): void {
+  if (DRY_RUN) return;
   const ledger = readKeywordLedger();
   ledger.push(entry);
   fs.writeFileSync(keywordConsumedPath, JSON.stringify(ledger, null, 2), 'utf-8');
@@ -66,6 +76,7 @@ function updateLatestKeywordLedgerStatus(
   status: KeywordConsumptionLedgerEntry['status'],
   note?: string,
 ): void {
+  if (DRY_RUN) return;
   const ledger = readKeywordLedger();
   for (let i = ledger.length - 1; i >= 0; i -= 1) {
     const entry = ledger[i];
@@ -149,7 +160,7 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
     slug = candidateSlug;
     break;
   }
-  fs.writeFileSync(keywordQueuePath, JSON.stringify(queue, null, 2), 'utf-8');
+  if (!DRY_RUN) fs.writeFileSync(keywordQueuePath, JSON.stringify(queue, null, 2), 'utf-8');
   if (!next) return null;
 
   // Record the consumed keyword in an append-only ledger.
@@ -159,6 +170,10 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
 
   // Provide a putback function to restore keyword if generation fails or duplicates an existing slug.
   const putback = (status: 'putback' | 'duplicate' = 'putback', note?: string) => {
+    if (DRY_RUN) {
+      console.log(`[dry-run] keyword "${consumed.keyword}" would be returned to queue (${status}${note ? `: ${note}` : ''})`);
+      return;
+    }
     const current: QueuedKeyword[] = fs.existsSync(keywordQueuePath)
       ? JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'))
       : [];
@@ -250,6 +265,60 @@ function resolvePublishDate(): Date {
     throw new Error(`PUBLISH_DATE is not a real date: ${raw}`);
   }
   return parsed;
+}
+
+// Dash lint: strip em/en dashes from all user-facing strings (writing rule: no em dash).
+const lintDashes = (s: string): string =>
+  s
+    .replace(/\s*—\s*/g, ' - ')
+    .replace(/([0-9A-Za-z])\s*–\s*([0-9A-Za-z])/g, '$1-$2')
+    .replace(/\s*–\s*/g, ' - ')
+    .replace(/&(mdash|#8212);/g, ' - ')
+    .replace(/&(ndash|#8211);/g, '-');
+const ID_FUNCTION_WORDS =
+  /\b(yang|untuk|dengan|dan|adalah|tidak|bisa|dari|pada|akan|atau|juga|karena|sudah|lebih|dalam|kamu|anda|ini|itu|agar|saja|bahwa|oleh|kita|banyak|sangat)\b/gi;
+
+async function repairArticle(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  post: any,
+  failures: string[],
+  keyword: string,
+): Promise<string[] | null> {
+  const needLinks = failures.some((f) => f.startsWith('internal links'));
+  const linkContext = needLinks
+    ? `\n\nINTERNAL LINK TARGETS (use only these URLs):\n${getInternalLinksContext(getExistingPosts())}`
+    : '';
+  const prompt = `You are revising a US English blog article for Sesoris (home organization store, https://www.sesoris.com).
+Target keyword: "${keyword}". The article failed these quality checks: ${failures.join('; ')}.
+
+Return ONLY JSON (no code fence): {"content": [ ...the full revised content array... ]}
+
+Rules:
+- Keep every existing line that starts with "![" EXACTLY as it is, in the same order. Do not add or remove image lines.
+- Keep every existing link and heading. Add material; do not delete sections.
+- FAQ: the article needs at least 8 questions inside a "## Frequently Asked Questions About ${keyword}" section, each
+  as one "**Q: Question?**" line followed by one plain answer line (40-80 words). Convert any FAQ in another format.
+- Table: if missing, add one markdown table as ONE string with rows joined by "\\n" (header, "| --- | --- |" separator,
+  at least 3 data rows) inside the most relevant section. Qualitative cells only unless the same section links the source.
+- Words: if under 2,000, expand the thinnest H2 sections with practical, specific guidance until the body is 2,200+ words.
+- Internal links: if under 10, add natural in-paragraph links to the URLs listed below.
+- Never invent statistics, prices, studies, experts or test results. No em dashes. 100% US English. Write as "we" (Sesoris Editorial Team), never "I".
+
+CURRENT CONTENT ARRAY:
+${JSON.stringify(post.content)}${linkContext}`;
+  const message = await client.messages.create({
+    model: 'claude-sonnet-4-6',
+    max_tokens: 20000,
+    messages: [{ role: 'user', content: prompt }],
+  });
+  const block = message.content.find((b) => b.type === 'text');
+  if (!block || block.type !== 'text' || message.stop_reason === 'max_tokens') return null;
+  let text = block.text.trim();
+  if (text.startsWith('```')) text = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+  const parsed = JSON.parse(text);
+  return Array.isArray(parsed?.content) && parsed.content.every((l: unknown) => typeof l === 'string')
+    ? parsed.content
+    : null;
 }
 
 async function generatePost() {
@@ -380,15 +449,6 @@ TOPIC CONTEXT:
     process.exit(0);
   }
 
-  // Dash lint: strip em/en dashes from all user-facing strings (writing rule: no em dash).
-  // Em dash -> " - ", en dash in ranges (8-10, 0-3M) -> "-", leftover en dash -> " - ".
-  const lintDashes = (s: string): string =>
-    s
-      .replace(/\s*—\s*/g, ' - ')
-      .replace(/([0-9A-Za-z])\s*–\s*([0-9A-Za-z])/g, '$1-$2')
-      .replace(/\s*–\s*/g, ' - ')
-      .replace(/&(mdash|#8212);/g, ' - ')
-      .replace(/&(ndash|#8211);/g, '-');
   generated.title = lintDashes(generated.title);
   generated.excerpt = lintDashes(generated.excerpt);
   generated.content = generated.content.map((line: string) => lintDashes(line));
@@ -399,8 +459,6 @@ TOPIC CONTEXT:
   // exit-code gate WILL be violated, so the output is measured, not trusted.
   // Threshold: Indonesian function words are near-absent in real English prose; even a
   // single "yang"/"dengan"/"adalah" per 1000 words means the article drifted.
-  const ID_FUNCTION_WORDS =
-    /\b(yang|untuk|dengan|dan|adalah|tidak|bisa|dari|pada|akan|atau|juga|karena|sudah|lebih|dalam|kamu|anda|ini|itu|agar|saja|bahwa|oleh|kita|banyak|sangat)\b/gi;
   const bodyForLangCheck = [generated.title, generated.excerpt, ...generated.content].join(' ');
   const idHits = (bodyForLangCheck.match(ID_FUNCTION_WORDS) || []).length;
   const wordCount = bodyForLangCheck.split(/\s+/).filter(Boolean).length;
@@ -464,6 +522,7 @@ TOPIC CONTEXT:
   let heroImage = DEFAULT_HERO;
   let contentArray: string[] = generated.content;
   let imageFailures: { filename: string; error: string }[] = [];
+  let generatedImageFiles: string[] = [];
 
   if (generated.image_prompts && generated.image_prompts.length > 0) {
     console.log(`Generating ${generated.image_prompts.length} images...`);
@@ -478,6 +537,7 @@ TOPIC CONTEXT:
 
     const { images, failures } = await generateArticleImages(generated.slug, imageDescs);
     imageFailures = failures;
+    generatedImageFiles = images.map((img) => img.path);
 
     // Replace PLACEHOLDER_IMAGE references in content with actual paths
     contentArray = generated.content.map((line: string) => {
@@ -544,8 +604,62 @@ TOPIC CONTEXT:
     dateFormatted: formatDate(today),
     readTime: generated.readTime,
     author,
-    content: contentArray,
+    content: contentArray as string[],
   };
+
+  // QUALITY GATE (2026-10-09). The prompt asks for 2,000+ words, 4+ images,
+  // 8 FAQ questions, a table and 10+ internal links, but prompts are wishes:
+  // cycles #73-#75 shipped 5 FAQ questions and no table on every article while
+  // the workflow stayed green. Measure the article; let the model repair text
+  // gaps (up to 2 tries); if it still fails, return the keyword and exit 1 so
+  // the run goes red instead of publishing a thin article.
+  let verdict = checkArticle(post);
+  const show = () =>
+    `${JSON.stringify(verdict.metrics)}${verdict.pass ? ' PASS' : ` FAIL: ${verdict.failures.join(', ')}`}`;
+  console.log(`  [Gate] ${show()}`);
+  for (let attempt = 1; !verdict.pass && attempt <= 2; attempt++) {
+    if (verdict.metrics.images < 4) break; // missing images cannot be repaired with text
+    console.log(`  [Gate] repair attempt ${attempt}/2`);
+    try {
+      const repaired = await repairArticle(post, verdict.failures, queuedKeyword?.keyword ?? post.title);
+      if (repaired) {
+        const imageLines = (lines: string[]) => lines.filter((l) => l.startsWith('![')).join('\n');
+        if (imageLines(repaired) !== imageLines(post.content)) {
+          console.log('  [Gate] repair changed the image lines, discarded');
+        } else {
+          post.content = repaired.map((line) => lintDashes(line));
+        }
+      }
+    } catch (err) {
+      console.log(`  [Gate] repair call failed: ${(err as Error).message.slice(0, 200)}`);
+    }
+    verdict = checkArticle(post);
+    console.log(`  [Gate] after repair ${attempt}: ${show()}`);
+  }
+  const finalText = [post.title, post.excerpt, ...post.content].join(' ');
+  const finalIdHits = (finalText.match(ID_FUNCTION_WORDS) || []).length;
+  if ((finalIdHits / Math.max(1, finalText.split(/\s+/).length)) * 1000 > 1) {
+    verdict = { ...verdict, pass: false, failures: [...verdict.failures, 'language drifted during repair'] };
+  }
+  if (!verdict.pass) {
+    // Do not leave the rejected article's images behind for `git add public/images/blog/`.
+    for (const file of generatedImageFiles) fs.rmSync(file, { force: true });
+    putbackKeyword?.('putback', `quality gate failed: ${verdict.failures.join(', ')}`);
+    console.error(
+      `QUALITY GATE FAILED: ${post.slug} is below the article standard (${verdict.failures.join(', ')}). ` +
+        `Keyword returned to queue; nothing was written.`,
+    );
+    process.exit(1);
+  }
+
+  if (DRY_RUN) {
+    fs.mkdirSync(dryRunDir, { recursive: true });
+    const dryPath = path.join(dryRunDir, `${post.slug}.json`);
+    fs.writeFileSync(dryPath, JSON.stringify(post, null, 2), 'utf-8');
+    console.log(`[dry-run] passed the quality gate; written to ${dryPath}, not content/blog`);
+    console.log(`[dry-run] metrics ${JSON.stringify(verdict.metrics)}`);
+    return;
+  }
 
   fs.writeFileSync(filePath, JSON.stringify(post, null, 2), 'utf-8');
   if (queuedKeyword) {

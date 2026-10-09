@@ -209,3 +209,45 @@ console.log(
   `OK — corpus ratchet: ${files.length} articles, 0 new placeholder heroes, 0 new brand-named captions ` +
     `(${heroDebt.size} hero + ${brandDebt.size} caption grandfathered).`
 );
+
+// ---------------------------------------------------------------------------
+// 6. Article quality gate (2026-10-09). Every article that is not live yet
+//    (dated after today) or is new in this checkout (untracked / added, which
+//    covers the workflow's freshly generated posts and agent-written posts)
+//    must meet the /artikel-seo standard: 2,000+ words, 4+ images, 7+ FAQ
+//    questions in the FAQPage-schema format, a real table, 10+ internal links.
+//    Cycles #73-#75 published 24 thin articles because nothing measured them.
+//    Already-live articles are not re-gated here, so a fix to an old post is
+//    never blocked by this check.
+// ---------------------------------------------------------------------------
+{
+  const { checkArticle } = await import('./article-quality.mjs');
+  const gateToday = new Date().toISOString().split('T')[0];
+  let newFiles = new Set();
+  try {
+    const porcelain = execFileSync('git', ['status', '--porcelain', '--', 'content/blog'], { encoding: 'utf-8' });
+    for (const line of porcelain.split(/\r?\n/)) {
+      const m = line.match(/^(\?\?|A[ M]?)\s+content\/blog\/(.+\.json)$/);
+      if (m) newFiles.add(m[2].trim());
+    }
+  } catch {
+    /* not a git checkout: future-dated posts are still gated */
+  }
+  const thin = [];
+  let gated = 0;
+  for (const f of files) {
+    const post = JSON.parse(fs.readFileSync(path.join(blogDir, f), 'utf-8'));
+    if (post.retired) continue;
+    if (!(String(post.date) > gateToday || newFiles.has(f))) continue;
+    gated++;
+    const verdict = checkArticle(post);
+    if (!verdict.pass) thin.push(`${f} (${post.date}): ${verdict.failures.join(', ')}`);
+  }
+  assert.strictEqual(
+    thin.length,
+    0,
+    'ARTICLE QUALITY GATE: these unpublished/new articles are below the standard. Expand them ' +
+      '(see scripts/article-quality.mjs) before pushing:\n' + thin.join('\n')
+  );
+  console.log(`OK — article quality gate: ${gated} unpublished/new article(s) meet 2000 words, 4 images, 7 FAQ, 1 table, 10 links.`);
+}

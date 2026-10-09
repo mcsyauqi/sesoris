@@ -71,7 +71,8 @@ IMPORTANT: Always use the year ${currentYear} in content. DO NOT use old years l
 ${basePrompt}
 
 CONTENT QUALITY GUIDELINES:
-- Articles should be 1500-2500 words, informative and comprehensive
+- Articles MUST be 2200-3000 words of body text, informative and comprehensive. Every H2 section carries 150-300 words
+- Start with a short answer-first paragraph, then use 6-9 H2 sections so the page gets a table of contents
 - CRITICAL: Write ENTIRELY in natural US English. Do not mix in any Bahasa Indonesia words or sentences
 - The byline is "Sesoris Editorial Team" (a team, not a person). When an author perspective is needed, write as "we" for the Sesoris team. NEVER write as "I", never invent a named writer, persona, job title, or credentials, and never claim first-hand testing, personal anecdotes, or "in my home" experiences
 - Do NOT add an "About the author" / "About Tim Sesoris" section; the site renders the author box itself
@@ -93,6 +94,18 @@ CONTENT FORMAT (array of strings):
 - "> Quote text", for blockquotes/highlights
 - "![Descriptive SEO alt text in US English](PLACEHOLDER_IMAGE)", image placeholder (will be auto-generated)
 - ":::read-also" followed by links, closed with ":::", for the "Also Read" box
+
+HARD QUALITY GATE (the article is measured after generation and REJECTED if any item is missing):
+- At least 2,000 body words (aim for 2,200-3,000)
+- Exactly 5 image_prompts (hero, section-1, section-2, section-3, section-4), and every one of them is placed in
+  "content" as its own "![alt](PLACEHOLDER_IMAGE_<filename>)" line, spread across different H2 sections
+- At least 1 markdown table, stored as ONE string with rows joined by "\\n": a header row, a separator row
+  ("| --- | --- |"), and at least 3 data rows. Use it for a real comparison (options, materials, steps, room by room).
+  Cells must be qualitative or come from a source you link in the same section; never invent numbers or prices
+- A "## Frequently Asked Questions About <keyword>" section with 8 questions, each written as one
+  "**Q: Question?**" line followed by one plain answer line (40-80 words). This exact format is what the site
+  turns into FAQPage schema; any other FAQ format is invisible to search engines and fails the gate
+- At least 10 internal links to the site pages and existing articles listed below (only those URLs)
 
 SEO GUIDELINES (IMPORTANT):
 - Image alt text MUST be descriptive and contain keywords naturally, in US English
@@ -129,7 +142,7 @@ HEALTH, SAFETY, AND MONEY CLAIMS (REQUIRED, the byline is a team, so the sources
 - If you cannot name such a source for a claim, leave the claim out. Never invent a source, a
   statistic, an expert, a credential, or a study.
 
-INTERNAL LINKING (REQUIRED, at least 5 internal links):
+INTERNAL LINKING (REQUIRED, at least 10 internal links):
 Insert internal links naturally within paragraphs using [text](url) format.
 Also add 1-2 "Related Articles" boxes between sections.
 
@@ -155,7 +168,10 @@ RESPOND ONLY in JSON format (without markdown code block):
       "filename": "section-1",
       "prompt": "Second photo description...",
       "alt": "Second alt text..."
-    }
+    },
+    { "filename": "section-2", "prompt": "...", "alt": "..." },
+    { "filename": "section-3", "prompt": "...", "alt": "..." },
+    { "filename": "section-4", "prompt": "...", "alt": "..." }
   ],
   "content": [
     "Engaging opening paragraph with **primary keyword** and hook...",
@@ -174,9 +190,17 @@ RESPOND ONLY in JSON format (without markdown code block):
     "1. First numbered item",
     "2. Second numbered item",
     "> Important quote or highlight",
-    "## FAQ: Frequently Asked Questions About [Keyword]",
-    "**Q: Common question?**",
-    "Detailed answer...",
+    "![Third image alt text](PLACEHOLDER_IMAGE_section-2)",
+    "## Comparison H2 Heading",
+    "| Option | Best for | Watch out for |\\n| --- | --- | --- |\\n| Option A | ... | ... |\\n| Option B | ... | ... |\\n| Option C | ... | ... |",
+    "![Fourth image alt text](PLACEHOLDER_IMAGE_section-3)",
+    "## Another H2 Heading",
+    "![Fifth image alt text](PLACEHOLDER_IMAGE_section-4)",
+    "## Frequently Asked Questions About [Keyword]",
+    "**Q: Common question 1?**",
+    "Detailed answer 1...",
+    "**Q: Common question 2?**",
+    "Detailed answer 2... (continue to 8 questions)",
     "## Conclusion",
     "Closing paragraph with CTA to [Sesoris](https://www.sesoris.com)..."
   ]

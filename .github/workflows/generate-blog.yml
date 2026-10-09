@@ -6,6 +6,11 @@ on:
     # Consolidated 2026-05-29 to cut Vercel Build CPU Minutes (~3 builds/day -> 1).
     - cron: '0 1 * * *'   # 01:00 UTC = 08:00 WIB
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Generate ONE article into tmp/dry-run, run the quality gate, publish nothing'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,7 +31,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Dry run (one article, quality gate only, nothing published)
+        if: github.event.inputs.dry_run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          PUBLISH_DATE=$(node scripts/next-publish-date.mjs --min-offset 1 --horizon 7)
+          DRY_RUN=1 PUBLISH_DATE=$PUBLISH_DATE npm run generate:blog
+          node scripts/article-quality.mjs tmp/dry-run/*.json
+          echo "=== nothing staged for publish ==="
+          git status --porcelain -- content/blog data/keyword-queue.json data/keyword-consumed.json
+
       - name: Generate blog posts (bootstrap buffer, then 3/day)
+        if: github.event.inputs.dry_run != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -62,26 +80,38 @@ jobs:
 
           # Each run pulls the next keyword and uses the earliest under-quota date
           # between tomorrow and D+7. That keeps at most 3 articles per publish date.
+          # A failed run (quality gate, hero gate, language gate, API error) keeps
+          # going so the good articles still publish, but it is COUNTED and the
+          # last step turns the workflow red. A swallowed failure here is how
+          # cycles #73-#75 published thin articles on a green workflow.
+          FAILED=0
           for i in $(seq 1 "$RUNS"); do
             PUBLISH_DATE=$(node scripts/next-publish-date.mjs --min-offset 1 --horizon 7)
             echo "run $i/$RUNS -> PUBLISH_DATE=$PUBLISH_DATE"
-            PUBLISH_DATE=$PUBLISH_DATE npm run generate:blog || echo "::warning::generate run $i failed, continuing"
+            if ! PUBLISH_DATE=$PUBLISH_DATE npm run generate:blog; then
+              FAILED=$((FAILED + 1))
+              echo "::error::generate run $i failed (see QUALITY/HERO/LANGUAGE GATE lines above), continuing"
+            fi
           done
+          echo "GEN_FAILED=$FAILED" >> "$GITHUB_ENV"
 
       - name: Verify generation produced files (cycle #9 audit)
+        if: github.event.inputs.dry_run != 'true'
         run: |
           echo "=== Untracked .json in content/blog ==="
           git ls-files --others --exclude-standard content/blog/ | head -5
           echo "=== Git status (porcelain) ==="
           git status --porcelain | head -20
 
-      - name: Pre-publish guard (dates, redirect/slug conflicts)
+      - name: Pre-publish guard (dates, redirect/slug conflicts, article quality gate)
+        if: github.event.inputs.dry_run != 'true'
         # Fails the run BEFORE anything is pushed if a generated article's
         # date format is wrong or its slug collides with a redirect source
         # (a collision would 301 the new article into /blog on deploy).
         run: node scripts/check-scheduled-publishing.mjs
 
       - name: Commit and push
+        if: github.event.inputs.dry_run != 'true'
         id: commit
         run: |
           git config user.name "github-actions[bot]"
@@ -119,3 +149,9 @@ jobs:
           else
             echo "No published article URLs found for IndexNow"
           fi
+
+      - name: Fail visibly when any generation run was rejected
+        if: always() && env.GEN_FAILED != '' && env.GEN_FAILED != '0'
+        run: |
+          echo "::error::$GEN_FAILED generation run(s) failed today. Passing articles were published; rejected keywords went back to the queue."
+          exit 1
