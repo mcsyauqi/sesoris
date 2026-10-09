@@ -544,12 +544,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
-    'how-to-build-custom-under-stair-storage-system-step-by-step-tutorial-2026': 'sesoris-2026-10-09-daily-qa-v1',
-    'how-to-build-diy-under-sink-storage-system-step-by-step-tutorial-2026': 'sesoris-2026-10-09-daily-qa-v1',
-    'best-under-stair-storage-solutions-review-buying-guide-2026': 'sesoris-2026-10-09-daily-qa-v1',
+    'how-to-build-custom-under-stair-storage-system-step-by-step-tutorial-2026': 'sesoris-2026-10-09-daily-qa-v2',
+    'how-to-build-diy-under-sink-storage-system-step-by-step-tutorial-2026': 'sesoris-2026-10-09-daily-qa-v2',
+    'best-under-stair-storage-solutions-review-buying-guide-2026': 'sesoris-2026-10-09-daily-qa-v2',
     'best-bedroom-nightstand-organizers-review-buying-guide-2026': 'sesoris-2026-10-08-daily-qa-v2',
     'best-desk-organizer-accessories-review-2026': 'sesoris-2026-10-08-daily-qa-v2',
-    'bedroom-lifestyle-habits-keep-sleep-space-calm-organized-2026': 'sesoris-2026-10-08-daily-qa-v2',
+    'bedroom-lifestyle-habits-keep-sleep-space-calm-organized-2026': 'sesoris-2026-10-09-daily-qa-v3',
     'work-from-home-lifestyle-habits-home-office-2026': 'sesoris-2026-10-08-daily-qa-v2',
     'how-to-set-up-home-office-desk-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v2',
     'how-to-organize-your-bedroom-closet-step-by-step-tutorial-2026': 'sesoris-2026-10-08-daily-qa-v2',
