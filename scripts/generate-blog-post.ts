@@ -499,7 +499,7 @@ TOPIC CONTEXT:
   }
 
   const filePath = path.join(blogDir, `${generated.slug}.json`);
-  if (fs.existsSync(filePath)) {
+  if (fs.existsSync(filePath) && !DRY_RUN) {
     if (queuedKeyword) {
       updateLatestKeywordLedgerStatus(
         queuedKeyword,
@@ -535,9 +535,28 @@ TOPIC CONTEXT:
       altText: scrubBrandsFromCaption(ip.alt),
     }));
 
-    const { images, failures } = await generateArticleImages(generated.slug, imageDescs);
+    // DRY_RUN_REUSE_IMAGES=1 (dry run only): skip the paid image call and point each
+    // placeholder at a distinct existing blog image, so the text half of the gate
+    // (words, FAQ, table, links, repair loop) can be proven while the image API is
+    // unavailable. Nothing from a dry run is ever written to content/blog.
+    const reuseImages = DRY_RUN && process.env.DRY_RUN_REUSE_IMAGES === '1';
+    const { images, failures } = reuseImages
+      ? {
+          images: fs
+            .readdirSync(path.join(process.cwd(), 'public', 'images', 'blog'))
+            .filter((f) => f.endsWith('.webp') && f !== 'default-hero.webp')
+            .slice(0, imageDescs.length)
+            .map((f: string, idx: number) => ({
+              filename: `${generated.slug}-${imageDescs[idx].filename}.webp`,
+              path: '',
+              publicPath: `/images/blog/${f}`,
+              altText: imageDescs[idx].altText,
+            })),
+          failures: [] as { filename: string; error: string }[],
+        }
+      : await generateArticleImages(generated.slug, imageDescs);
     imageFailures = failures;
-    generatedImageFiles = images.map((img) => img.path);
+    generatedImageFiles = images.map((img) => img.path).filter(Boolean);
 
     // Replace PLACEHOLDER_IMAGE references in content with actual paths
     contentArray = generated.content.map((line: string) => {
