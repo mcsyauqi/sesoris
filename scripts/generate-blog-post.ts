@@ -99,6 +99,30 @@ function slugify(text: string): string {
     .replace(/-{2,}/g, '-');
 }
 
+// Near-duplicate keyword gate (card Upi0lP7v, 2026-10-10). The exact-slug check
+// below misses reworded twins: "organization-laundry-room" vs
+// "laundry-room-organization-ideas", or "kitchen-organizer-ideas" vs
+// "kitchen-organizer-ideas-transform-cooking-space-2026". The 2026-10-10 GSC
+// sweep found 10 such pairs where Google indexed one and ignored the other.
+// coreKeyword() strips the generator's title tail ("-transform-...", "-2026",
+// "-complete-guide-..."), filler words and plural/organize variants, then
+// compares the remaining word SET, so word order does not matter.
+const CORE_TAIL = /-(transform|complete-guide|ultimate-guide|step-by-step|review-buying|buying-guide|tutorial-guide|smart-ideas|smart-home|stylish|perfect|durable|safe-|strong-|for-a-|keep-|creative-ideas|best-organization|proper-organization|guide-|tips-for|review-|2026).*$/;
+const CORE_FILLER = new Set(['ideas', 'idea', 'best', 'top', 'the', 'a', 'an', 'and', 'or', 'for', 'of', 'to', 'in', 'with', 'your', 'how', 'tips', 'guide', 'diy', 'simple', 'easy']);
+const CORE_STEM: Record<string, string> = {
+  shelves: 'shelf', racks: 'rack', containers: 'container', bins: 'bin', boxes: 'box', cubes: 'cube',
+  baskets: 'basket', drawers: 'drawer', closets: 'closet', walkin: 'walk',
+};
+function coreKeyword(slug: string): string {
+  const words = slug
+    .replace(CORE_TAIL, '')
+    .split('-')
+    .filter((t) => t && (t === '3' || (!CORE_FILLER.has(t) && !/^\d+$/.test(t))))
+    .map((t) => t.replace(/(organizers?|organization|organizing|organize)$/, 'organiz'))
+    .map((t) => CORE_STEM[t] ?? t);
+  return [...new Set(words)].sort().join(' ');
+}
+
 function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (status?: 'putback' | 'duplicate', note?: string) => void } | null {
   if (!fs.existsSync(keywordQueuePath)) return null;
   const queue: QueuedKeyword[] = JSON.parse(fs.readFileSync(keywordQueuePath, 'utf-8'));
@@ -117,6 +141,15 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
   // priority tier require an explicit business decision before they are encoded.
   // Keywords whose slug collides with a redirect source are dropped (never
   // publishable), logged to the ledger, and the next keyword is tried.
+  // Core keyword of every existing article file (live, scheduled and retired).
+  const existingCores = new Map<string, string>();
+  for (const f of fs.readdirSync(blogDir)) {
+    if (!f.endsWith('.json')) continue;
+    const existingSlug = f.slice(0, -5);
+    const core = coreKeyword(existingSlug);
+    if (core && !existingCores.has(core)) existingCores.set(core, existingSlug);
+  }
+
   let next: QueuedKeyword | undefined;
   let slug = '';
   while (queue.length > 0) {
@@ -154,6 +187,19 @@ function getNextKeyword(): { keyword: QueuedKeyword; slug: string; putback: (sta
         note: `Existing file found for slug: ${candidateSlug}; removed from queue before generation`,
       });
       console.log(`Skipping "${candidate.keyword}": article slug "${candidateSlug}" already exists.`);
+      continue;
+    }
+    const candidateCore = coreKeyword(candidateSlug);
+    const twin = candidateCore ? existingCores.get(candidateCore) : undefined;
+    if (twin) {
+      appendKeywordLedger({
+        ...candidate,
+        slug: candidateSlug,
+        date: toISODate(new Date()),
+        status: 'duplicate',
+        note: `Near-duplicate of existing article "${twin}" (same core keyword "${candidateCore}"); removed from queue before generation`,
+      });
+      console.log(`Skipping "${candidate.keyword}": same core keyword as existing article "${twin}".`);
       continue;
     }
     next = candidate;
