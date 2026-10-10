@@ -544,9 +544,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
-    'best-indoor-plant-pots-planters-home-organization-review-2026': 'sesoris-2026-10-10-citation-fix-v1',
-    'how-to-set-up-indoor-plant-watering-station-step-by-step-tutorial-2026': 'sesoris-2026-10-10-citation-fix-v1',
-    'indoor-plants-home-organization-lifestyle-guide-greener-tidier-home-2026': 'sesoris-2026-10-10-citation-fix-v1',
+    'best-indoor-plant-pots-planters-home-organization-review-2026': 'sesoris-2026-10-10-citation-fix-v2',
+    'how-to-set-up-indoor-plant-watering-station-step-by-step-tutorial-2026': 'sesoris-2026-10-10-citation-fix-v2',
+    'indoor-plants-home-organization-lifestyle-guide-greener-tidier-home-2026': 'sesoris-2026-10-10-citation-fix-v2',
     'how-to-build-custom-under-stair-storage-system-step-by-step-tutorial-2026': 'sesoris-2026-10-09-daily-qa-v2',
     'how-to-build-diy-under-sink-storage-system-step-by-step-tutorial-2026': 'sesoris-2026-10-09-daily-qa-v2',
     'best-under-stair-storage-solutions-review-buying-guide-2026': 'sesoris-2026-10-09-daily-qa-v2',
