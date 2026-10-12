@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+  <title id="t">Budget garage zone map</title>
+  <desc id="d">Top-down plan of a two-car garage with zones for daily items, tools and workbench, long-term storage, sports and bikes, lawn and garden, and a clear parking area.</desc>
+  <rect width="1200" height="675" fill="#F3F5F0"/>
+  <text x="60" y="60" font-family="Archivo, Arial, sans-serif" font-size="30" font-weight="700" fill="#16352A">Zone the garage before you buy storage</text>
+  <text x="60" y="90" font-family="Archivo, Arial, sans-serif" font-size="17" fill="#4A5A52">Top-down view of a two-car garage. Every category gets an address; the parking area stays clear.</text>
+  <g font-family="Archivo, Arial, sans-serif">
+    <!-- garage shell -->
+    <rect x="60" y="115" width="760" height="500" rx="6" fill="#FFFFFF" stroke="#4A5A52" stroke-width="4"/>
+    <!-- big door gap -->
+    <rect x="150" y="609" width="580" height="12" fill="#F3F5F0"/>
+    <text x="440" y="645" font-size="15" fill="#4A5A52" text-anchor="middle">Main garage door</text>
+    <!-- house door -->
+    <rect x="54" y="150" width="12" height="70" fill="#F3F5F0"/>
+    <text x="80" y="140" font-size="14" fill="#4A5A52">House door</text>
+    <!-- zones -->
+    <rect x="72" y="150" width="130" height="110" rx="6" fill="#DDEBE2"/>
+    <text x="137" y="196" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">Daily items</text>
+    <text x="137" y="218" font-size="13" fill="#4A5A52" text-anchor="middle">bags, leashes,</text>
+    <text x="137" y="236" font-size="13" fill="#4A5A52" text-anchor="middle">recycling</text>
+    <rect x="220" y="127" width="380" height="80" rx="6" fill="#F6E1D3"/>
+    <text x="410" y="162" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">Tools and workbench</text>
+    <text x="410" y="184" font-size="13" fill="#4A5A52" text-anchor="middle">pegboard, wall shelves, small parts jars</text>
+    <rect x="618" y="127" width="190" height="100" rx="6" fill="#E3E6EE"/>
+    <text x="713" y="162" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">Long-term storage</text>
+    <text x="713" y="184" font-size="13" fill="#4A5A52" text-anchor="middle">holiday and seasonal,</text>
+    <text x="713" y="202" font-size="13" fill="#4A5A52" text-anchor="middle">on high shelves</text>
+    <rect x="72" y="280" width="110" height="250" rx="6" fill="#FBEFC9"/>
+    <text x="127" y="390" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">Sports</text>
+    <text x="127" y="410" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">and bikes</text>
+    <text x="127" y="432" font-size="13" fill="#4A5A52" text-anchor="middle">wall hooks</text>
+    <rect x="698" y="280" width="110" height="250" rx="6" fill="#DDEBE2"/>
+    <text x="753" y="390" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">Lawn and</text>
+    <text x="753" y="410" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">garden</text>
+    <text x="753" y="432" font-size="13" fill="#4A5A52" text-anchor="middle">near the door</text>
+    <!-- parking -->
+    <rect x="215" y="235" width="460" height="355" rx="6" fill="none" stroke="#9DB3A6" stroke-width="2" stroke-dasharray="8 8"/>
+    <rect x="250" y="300" width="160" height="270" rx="40" fill="#C9D3CC"/>
+    <rect x="480" y="300" width="160" height="270" rx="40" fill="#C9D3CC"/>
+    <text x="445" y="270" font-size="16" font-weight="700" fill="#16352A" text-anchor="middle">Parking area: keep the floor clear</text>
+  </g>
+  <!-- legend -->
+  <g font-family="Archivo, Arial, sans-serif" fill="#16352A">
+    <text x="860" y="150" font-size="20" font-weight="700">How to place zones</text>
+    <text x="860" y="190" font-size="16">1. Daily items beside the house door.</text>
+    <text x="860" y="225" font-size="16">2. Tools on the back wall, at arm height.</text>
+    <text x="860" y="260" font-size="16">3. Rarely used items up high.</text>
+    <text x="860" y="295" font-size="16">4. Bikes and balls on one side wall.</text>
+    <text x="860" y="330" font-size="16">5. Lawn and garden gear by the</text>
+    <text x="880" y="352" font-size="16">main door.</text>
+    <text x="860" y="387" font-size="16">6. Nothing stored on the parking</text>
+    <text x="880" y="409" font-size="16">floor.</text>
+    <text x="860" y="470" font-size="14" fill="#6B7A72">Sesoris planning sketch. Not to scale.</text>
+  </g>
+</svg>

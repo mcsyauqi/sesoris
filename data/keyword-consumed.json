@@ -3599,5 +3599,17 @@
     "date": "2026-10-12",
     "status": "published",
     "note": "Created content/blog/floating-shelf-tv-wall-ideas.json (scheduled 2026-10-14). Hand-written by Claude Code (cycle #77) because the generator API key hit its usage limit until 2026-11-01 and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 640."
+  },
+  {
+    "keyword": "garage organization ideas on a budget",
+    "volume": 590,
+    "kd": 16,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "garage-organization-ideas-on-a-budget",
+    "date": "2026-10-12",
+    "status": "published",
+    "note": "Created content/blog/garage-organization-ideas-on-a-budget.json (scheduled 2026-10-15). Hand-written by Claude Code (cycle #77) because the generator API key hit its usage limit until 2026-11-01 and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 1045."
   }
 ]

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+  <title id="t">DIY 2x4 and plywood garage shelf plan</title>
+  <desc id="d">Front view of a homemade garage shelf unit with 2x4 uprights and plywood shelves sized to storage bins, with heavy bins low and the top anchored to a wall stud.</desc>
+  <rect width="1200" height="675" fill="#F3F5F0"/>
+  <text x="60" y="62" font-family="Archivo, Arial, sans-serif" font-size="30" font-weight="700" fill="#16352A">DIY garage shelf: size it to your bins</text>
+  <text x="60" y="92" font-family="Archivo, Arial, sans-serif" font-size="17" fill="#4A5A52">A simple 2x4 frame with plywood shelves. Measure the bins first, then set the shelf spacing.</text>
+  <!-- wall stud line -->
+  <line x1="120" y1="120" x2="120" y2="620" stroke="#9DB3A6" stroke-width="2" stroke-dasharray="6 8"/>
+  <!-- uprights -->
+  <g fill="#D9B98C" stroke="#8A6A43" stroke-width="2">
+    <rect x="140" y="125" width="24" height="490"/>
+    <rect x="676" y="125" width="24" height="490"/>
+    <rect x="408" y="125" width="24" height="490"/>
+  </g>
+  <!-- shelves -->
+  <g fill="#E8D3B0" stroke="#8A6A43" stroke-width="2">
+    <rect x="130" y="135" width="580" height="16"/>
+    <rect x="130" y="290" width="580" height="16"/>
+    <rect x="130" y="445" width="580" height="16"/>
+    <rect x="130" y="590" width="580" height="16"/>
+  </g>
+  <!-- bins -->
+  <g fill="#E9F0F5" stroke="#7F96A6" stroke-width="2">
+    <rect x="180" y="175" width="100" height="115" rx="6"/>
+    <rect x="292" y="175" width="100" height="115" rx="6"/>
+    <rect x="448" y="175" width="100" height="115" rx="6"/>
+    <rect x="560" y="175" width="100" height="115" rx="6"/>
+    <rect x="180" y="330" width="100" height="115" rx="6"/>
+    <rect x="292" y="330" width="100" height="115" rx="6"/>
+    <rect x="448" y="330" width="100" height="115" rx="6"/>
+    <rect x="560" y="330" width="100" height="115" rx="6"/>
+  </g>
+  <g fill="#C9D3CC" stroke="#4A5A52" stroke-width="2">
+    <rect x="180" y="475" width="212" height="115" rx="6"/>
+    <rect x="448" y="475" width="212" height="115" rx="6"/>
+  </g>
+  <g fill="#FFFFFF">
+    <rect x="205" y="200" width="50" height="18" rx="3"/><rect x="317" y="200" width="50" height="18" rx="3"/>
+    <rect x="473" y="200" width="50" height="18" rx="3"/><rect x="585" y="200" width="50" height="18" rx="3"/>
+    <rect x="205" y="355" width="50" height="18" rx="3"/><rect x="317" y="355" width="50" height="18" rx="3"/>
+    <rect x="473" y="355" width="50" height="18" rx="3"/><rect x="585" y="355" width="50" height="18" rx="3"/>
+  </g>
+  <!-- anchor -->
+  <line x1="120" y1="143" x2="150" y2="143" stroke="#1B5E3B" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="120" cy="143" r="7" fill="#1B5E3B"/>
+  <!-- spacing marker -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#E8743B"/>
+    </marker>
+  </defs>
+  <line x1="725" y1="153" x2="725" y2="288" stroke="#E8743B" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+  <!-- labels -->
+  <g font-family="Archivo, Arial, sans-serif" fill="#16352A">
+    <text x="760" y="150" font-size="18" font-weight="700">Anchor the top to a stud</text>
+    <text x="760" y="172" font-size="15" fill="#4A5A52">Tall units must not be able to tip.</text>
+    <text x="760" y="222" font-size="18" font-weight="700">Shelf gap = bin height</text>
+    <text x="760" y="244" font-size="15" fill="#4A5A52">plus a little room to lift the lid.</text>
+    <text x="760" y="294" font-size="18" font-weight="700">2x4 uprights</text>
+    <text x="760" y="316" font-size="15" fill="#4A5A52">A middle upright stops long</text>
+    <text x="760" y="336" font-size="15" fill="#4A5A52">plywood shelves from sagging.</text>
+    <text x="760" y="386" font-size="18" font-weight="700">Labels face out</text>
+    <text x="760" y="408" font-size="15" fill="#4A5A52">Tape and marker work fine.</text>
+    <text x="760" y="508" font-size="18" font-weight="700">Heaviest bins on the bottom</text>
+    <text x="760" y="530" font-size="15" fill="#4A5A52">Safer to lift, and the unit</text>
+    <text x="760" y="550" font-size="15" fill="#4A5A52">stays stable.</text>
+  </g>
+  <text x="60" y="648" font-family="Archivo, Arial, sans-serif" font-size="14" fill="#6B7A72">Sesoris planning sketch. Not to scale. Follow lumber and fastener guidance for the loads you store.</text>
+</svg>
