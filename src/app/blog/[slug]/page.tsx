@@ -544,7 +544,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
-    'best-modular-closet-systems-review-buying-guide-2026': 'sesoris-2026-10-12-citation-link-fix-v1',
+    'best-modular-closet-systems-review-buying-guide-2026': 'sesoris-2026-10-12-citation-link-fix-v2',
     'best-pantry-organization-containers-review-buying-guide-2026': 'sesoris-2026-10-11-citation-link-fix-v3',
     'home-organization-lifestyle-habits-calmer-organized-home-2026': 'sesoris-2026-10-12-citation-link-fix-v2',
     'how-to-organize-a-junk-drawer-step-by-step-tutorial-2026': 'sesoris-2026-10-11-citation-link-fix-v3',
