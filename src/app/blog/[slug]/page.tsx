@@ -546,10 +546,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const revisionMarker = {
     'best-modular-closet-systems-review-buying-guide-2026': 'sesoris-2026-10-12-citation-link-fix-v1',
     'best-pantry-organization-containers-review-buying-guide-2026': 'sesoris-2026-10-11-citation-link-fix-v3',
-    'home-organization-lifestyle-habits-calmer-organized-home-2026': 'sesoris-2026-10-12-citation-link-fix-v1',
+    'home-organization-lifestyle-habits-calmer-organized-home-2026': 'sesoris-2026-10-12-citation-link-fix-v2',
     'how-to-organize-a-junk-drawer-step-by-step-tutorial-2026': 'sesoris-2026-10-11-citation-link-fix-v3',
     'slow-living-at-home-lifestyle-guide-2026': 'sesoris-2026-10-11-citation-link-fix-v3',
-    'how-to-organize-your-pantry-step-by-step-tutorial-2026': 'sesoris-2026-10-12-citation-link-fix-v1',
+    'how-to-organize-your-pantry-step-by-step-tutorial-2026': 'sesoris-2026-10-12-citation-link-fix-v2',
     'how-to-get-smell-out-of-food-storage-containers': 'sesoris-2026-10-11-citation-link-fix-v3',
     'best-indoor-plant-pots-planters-home-organization-review-2026': 'sesoris-2026-10-10-citation-fix-v2',
     'how-to-set-up-indoor-plant-watering-station-step-by-step-tutorial-2026': 'sesoris-2026-10-10-citation-fix-v2',
