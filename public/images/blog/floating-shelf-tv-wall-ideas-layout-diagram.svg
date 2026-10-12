@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+  <title id="t">Four floating shelf TV wall layouts</title>
+  <desc id="d">Single shelf under the TV, asymmetric pair, full frame and wraparound layouts with spacing notes.</desc>
+  <rect width="1200" height="675" fill="#F3F5F0"/>
+  <text x="60" y="62" font-family="Archivo, Arial, sans-serif" font-size="30" font-weight="700" fill="#16352A">Four floating shelf TV wall layouts</text>
+  <text x="60" y="92" font-family="Archivo, Arial, sans-serif" font-size="17" fill="#4A5A52">Line up at least one edge with the TV and leave open wall around the screen.</text>
+  <g font-family="Archivo, Arial, sans-serif">
+    <!-- panel 1 -->
+    <rect x="60" y="120" width="520" height="250" rx="10" fill="#FFFFFF" stroke="#C9D3CC" stroke-width="2"/>
+    <rect x="230" y="160" width="180" height="100" rx="5" fill="#1E2623"/>
+    <rect x="220" y="285" width="200" height="12" rx="2" fill="#B98A5E"/>
+    <text x="84" y="340" font-size="20" font-weight="700" fill="#16352A">1. Single shelf under the TV</text>
+    <text x="84" y="362" font-size="15" fill="#4A5A52">Best for small rooms and media gear.</text>
+    <!-- panel 2 -->
+    <rect x="620" y="120" width="520" height="250" rx="10" fill="#FFFFFF" stroke="#C9D3CC" stroke-width="2"/>
+    <rect x="760" y="160" width="180" height="100" rx="5" fill="#1E2623"/>
+    <rect x="975" y="170" width="110" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="975" y="240" width="110" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="680" y="210" width="40" height="80" rx="20" fill="#9DB3A6"/>
+    <text x="644" y="340" font-size="20" font-weight="700" fill="#16352A">2. Asymmetric pair</text>
+    <text x="644" y="362" font-size="15" fill="#4A5A52">Balance two shelves with a lamp or plant.</text>
+    <!-- panel 3 -->
+    <rect x="60" y="395" width="520" height="250" rx="10" fill="#FFFFFF" stroke="#C9D3CC" stroke-width="2"/>
+    <rect x="230" y="455" width="180" height="100" rx="5" fill="#1E2623"/>
+    <rect x="220" y="420" width="200" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="110" y="455" width="90" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="110" y="510" width="90" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="440" y="455" width="90" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="440" y="510" width="90" height="12" rx="2" fill="#B98A5E"/>
+    <text x="84" y="600" font-size="20" font-weight="700" fill="#16352A">3. Full frame</text>
+    <text x="84" y="622" font-size="15" fill="#4A5A52">Shelves on both sides and above. Classic media wall.</text>
+    <!-- panel 4 -->
+    <rect x="620" y="395" width="520" height="250" rx="10" fill="#FFFFFF" stroke="#C9D3CC" stroke-width="2"/>
+    <rect x="790" y="435" width="180" height="100" rx="5" fill="#1E2623"/>
+    <rect x="660" y="555" width="440" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="660" y="480" width="100" height="12" rx="2" fill="#B98A5E"/>
+    <rect x="1000" y="480" width="100" height="12" rx="2" fill="#B98A5E"/>
+    <text x="644" y="600" font-size="20" font-weight="700" fill="#16352A">4. Wraparound</text>
+    <text x="644" y="622" font-size="15" fill="#4A5A52">One long shelf runs past both sides of the TV.</text>
+  </g>
+</svg>
