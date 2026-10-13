@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+<title id="t">Home office wall layout by reach</title>
+<desc id="d">Front view of a desk wall: a pegboard or rail with daily tools directly above the desk within seated reach, paper pockets to the side, a high shelf for books and archive boxes, a small display area, and cables routed below the desk.</desc>
+<rect width="1200" height="675" fill="#F3F5F0"/>
+<g font-family="Archivo, Arial, sans-serif">
+<text x="60" y="60" font-size="30" font-weight="700" fill="#16352A">Plan the wall around your seated reach</text>
+<text x="60" y="90" font-size="17" fill="#4A5A52">Daily tools within arm's length of the chair, paper to the side, reference up high, cables below.</text>
+<rect x="60" y="115" width="780" height="520" rx="6" fill="#FFFFFF" stroke="#4A5A52" stroke-width="4"/>
+<line x1="100" y1="470" x2="700" y2="470" stroke="#1B5E3B" stroke-width="10"/>
+<line x1="130" y1="470" x2="130" y2="630" stroke="#4A5A52" stroke-width="5"/>
+<line x1="670" y1="470" x2="670" y2="630" stroke="#4A5A52" stroke-width="5"/>
+<line x1="130" y1="175" x2="610" y2="175" stroke="#1B5E3B" stroke-width="6"/>
+<rect x="130" y="125" width="480" height="45" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="370" y="159.5" font-size="15" font-weight="700" fill="#16352A" text-anchor="middle">Reference shelf: books, binders, archive boxes</text>
+<rect x="150" y="215" width="360" height="200" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="330" y="298.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Reach zone</text>
+<text x="330" y="319.5" font-size="14" fill="#4A5A52" text-anchor="middle">pegboard or rail:</text>
+<text x="330" y="340.5" font-size="14" fill="#4A5A52" text-anchor="middle">pens, scissors, headphones,</text>
+<text x="330" y="361.5" font-size="14" fill="#4A5A52" text-anchor="middle">sticky notes, chargers</text>
+<rect x="540" y="215" width="150" height="200" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="615" y="298.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Paper</text>
+<text x="615" y="319.5" font-size="14" fill="#4A5A52" text-anchor="middle">pockets for</text>
+<text x="615" y="340.5" font-size="14" fill="#4A5A52" text-anchor="middle">mail and</text>
+<text x="615" y="361.5" font-size="14" fill="#4A5A52" text-anchor="middle">current notes</text>
+<rect x="720" y="215" width="105" height="120" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="772.5" y="277.5" font-size="15" font-weight="700" fill="#16352A" text-anchor="middle">Display</text>
+<text x="772.5" y="298.5" font-size="14" fill="#4A5A52" text-anchor="middle">calendar</text>
+<rect x="290" y="420" width="220" height="45" rx="8" fill="#FFFFFF" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="400" y="454.5" font-size="14" font-weight="700" fill="#16352A" text-anchor="middle">Laptop or monitor</text>
+<rect x="170" y="520" width="470" height="90" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="405" y="567.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Cable zone</text>
+<text x="405" y="588.5" font-size="14" fill="#4A5A52" text-anchor="middle">cords routed and bundled under the desk</text>
+<rect x="880" y="140" width="270" height="110" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="188" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Reach zone</text>
+<text x="1015" y="209" font-size="14" fill="#4A5A52" text-anchor="middle">items used many</text>
+<text x="1015" y="230" font-size="14" fill="#4A5A52" text-anchor="middle">times a day</text>
+<rect x="880" y="270" width="270" height="110" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="318" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Paper zone</text>
+<text x="1015" y="339" font-size="14" fill="#4A5A52" text-anchor="middle">upright, not piled</text>
+<text x="1015" y="360" font-size="14" fill="#4A5A52" text-anchor="middle">on the desk</text>
+<rect x="880" y="400" width="270" height="110" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="448" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">High shelf</text>
+<text x="1015" y="469" font-size="14" fill="#4A5A52" text-anchor="middle">occasional reference;</text>
+<text x="1015" y="490" font-size="14" fill="#4A5A52" text-anchor="middle">mount into studs</text>
+<rect x="880" y="530" width="270" height="90" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="577.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Tape first</text>
+<text x="1015" y="598.5" font-size="14" fill="#4A5A52" text-anchor="middle">test the reach seated</text>
+</g>
+</svg>
