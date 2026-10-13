@@ -84,6 +84,48 @@ if (post.date > today) notFound();
 Tracked as a follow-up; not applied here because scheduling is not in use yet
 and a wrong-way date edge could 404 a legitimately published post.
 
+> **Update 2026-10-14:** the caveat above is closed. `BlogPostPage` now calls
+> `isPostPublished(post.date)` and returns 404 for future-dated posts, so
+> pre-written articles stay private until their UTC date. Verified live in
+> cycle #77/#78: a future slug returns 404 and is absent from `/blog`,
+> `sitemap.xml` and `feed.xml`.
+
+## When the image API is capped (subscription fallback)
+
+`generate-blog.yml` runs `scripts/image-api-preflight.mjs` first. If the Google
+AI Studio project behind `GEMINI_API_KEY` is over its monthly spending cap
+(HTTP 429 "exceeded its monthly spending cap"), the workflow skips generation
+with a warning instead of paying for Claude articles that then fail the hero
+gate. Until the cap is raised at https://ai.studio/spend or resets, the buffer
+is filled by hand from a local machine:
+
+1. Pick keywords from the Keyword Data sheet (tab `Keyword Database` of
+   `1MY7gCk8Yy3Ebxmqn8eQjTKlVvhhPJbJN1m7AnAkBBbg`) that have no live article,
+   checking near-duplicates with the same `coreKeyword()` rule as the generator.
+2. Write the article JSON in `content/blog/<slug>.json` with `date` set to the
+   target day. Standard: 2000+ words, 4+ body images, 7+ `**Q:**` FAQ, 1+ table,
+   10+ internal links that are already live (not future-dated).
+3. Images, no paid API:
+   - Hero and lifestyle shots: render through the Gemini web subscription
+     (`gemini-web-pp-cli image generate`, via the shared lock helper
+     `temp/cycle70/gemini-render.mjs` in the Creativism workspace) or the ChatGPT
+     web subscription (`chatgpt-web-pp-cli image generate --aspect widescreen`).
+     Photorealistic interior style, no text, logos or watermark. Look at every
+     result before using it, then convert to WebP 1200x675 under 100 KB with
+     sharp, named `public/images/blog/<slug>-hero.webp`.
+   - Body images: Sesoris catalog photos from `public/images/products/`
+     (copied under a per-article name, caption ends with
+     "Photo: Sesoris product catalog") and hand-made SVG diagrams for anything
+     with text. Never reuse one file across articles.
+4. Append a `published` entry to `data/keyword-consumed.json`.
+5. Run `node scripts/article-quality.mjs content/blog/<slug>.json` and
+   `node scripts/check-scheduled-publishing.mjs`, then commit and push.
+
+To let the generator itself use pre-rendered subscription images later, the
+hook point is `generateArticleImages()` in `scripts/generate-image.ts`: it could
+read from a local folder of pre-rendered WebP files before calling the API.
+That is not implemented yet.
+
 ## Convention (do this)
 
 1. **Always** write `date` as `YYYY-MM-DD`, no time component.

@@ -54,6 +54,27 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          # Image API preflight (cycle #78, 2026-10-14). When the Google AI Studio
+          # project behind GEMINI_API_KEY is over its monthly spending cap, every
+          # run would still pay for a full Claude article and then die at the hero
+          # gate (2026-10-13: 7 paid articles, 0 published, red run). Exit 10 means
+          # "capped": skip generation, spend nothing, leave a visible warning.
+          # Any other result (including an inconclusive check) generates as usual.
+          set +e
+          node scripts/image-api-preflight.mjs
+          PREFLIGHT=$?
+          set -e
+          if [ "$PREFLIGHT" -eq 10 ]; then
+            echo "::warning::Image API is over its monthly spending cap (HTTP 429). Generation skipped, 0 Claude calls made. Raise the cap at https://ai.studio/spend or fill the buffer locally (docs/scheduled-publishing.md, 'When the image API is capped')."
+            {
+              echo "### Generation skipped: image API spending cap"
+              echo "The GEMINI_API_KEY project returned 429 (monthly spending cap). No articles were generated and no Claude calls were made."
+              echo "Fill the schedule with hand-written articles using subscription images, see docs/scheduled-publishing.md."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "GEN_FAILED=0" >> "$GITHUB_ENV"
+            exit 0
+          fi
+
           # Keep the production buffer above the card's >15 acceptance gate without
           # changing the publishing cadence. When the forward buffer is low, bootstrap
           # enough future slots in this run; once healthy, return to 3 generated posts/day.
