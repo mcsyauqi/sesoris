@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+<title id="t">Pot rack clearance and placement</title>
+<desc id="d">Side view of a kitchen: a ceiling rack fixed into joists above an island with pans hanging above head height, and a wall rail mounted into studs beside the stove, offset from the burners, with notes on weight limits.</desc>
+<rect width="1200" height="675" fill="#F3F5F0"/>
+<g font-family="Archivo, Arial, sans-serif">
+<text x="60" y="60" font-size="30" font-weight="700" fill="#16352A">Plan headroom and reach before you drill</text>
+<text x="60" y="90" font-size="17" fill="#4A5A52">Side view. Ceiling racks go into joists, wall rails into studs, and pans hang beside the burners, not over them.</text>
+<rect x="60" y="115" width="780" height="520" rx="6" fill="#FFFFFF" stroke="#4A5A52" stroke-width="4"/>
+<line x1="60" y1="140" x2="840" y2="140" stroke="#C9B79C" stroke-width="8"/>
+<line x1="230" y1="140" x2="230" y2="190" stroke="#4A5A52" stroke-width="3"/>
+<line x1="430" y1="140" x2="430" y2="190" stroke="#4A5A52" stroke-width="3"/>
+<line x1="200" y1="190" x2="460" y2="190" stroke="#1B5E3B" stroke-width="8"/>
+<line x1="250" y1="190" x2="250" y2="240" stroke="#4A5A52" stroke-width="2"/>
+<line x1="330" y1="190" x2="330" y2="255" stroke="#4A5A52" stroke-width="2"/>
+<line x1="410" y1="190" x2="410" y2="240" stroke="#4A5A52" stroke-width="2"/>
+<line x1="150" y1="330" x2="520" y2="330" stroke="#1B5E3B" stroke-width="2"/>
+<line x1="835" y1="120" x2="835" y2="630" stroke="#C9B79C" stroke-width="8"/>
+<line x1="740" y1="300" x2="825" y2="300" stroke="#1B5E3B" stroke-width="8"/>
+<line x1="760" y1="300" x2="760" y2="350" stroke="#4A5A52" stroke-width="2"/>
+<line x1="805" y1="300" x2="805" y2="345" stroke="#4A5A52" stroke-width="2"/>
+<rect x="225" y="240" width="50" height="30" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="250" y="267" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle"></text>
+<rect x="300" y="255" width="60" height="36" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="330" y="285" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle"></text>
+<rect x="385" y="240" width="50" height="30" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="410" y="267" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle"></text>
+<rect x="150" y="470" width="370" height="160" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="335" y="552.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Island</text>
+<text x="335" y="573.5" font-size="14" fill="#4A5A52" text-anchor="middle">prep area under the rack</text>
+<rect x="545" y="470" width="175" height="160" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="632.5" y="552.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Stove</text>
+<text x="632.5" y="573.5" font-size="14" fill="#4A5A52" text-anchor="middle">no pans over burners</text>
+<rect x="735" y="350" width="40" height="30" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="755" y="377" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle"></text>
+<rect x="785" y="345" width="40" height="34" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="805" y="374" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle"></text>
+<rect x="160" y="340" width="350" height="56" rx="8" fill="#FFFFFF" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="335" y="370.5" font-size="15" font-weight="700" fill="#16352A" text-anchor="middle">Headroom line</text>
+<text x="335" y="391.5" font-size="14" fill="#4A5A52" text-anchor="middle">lowest pan stays above it</text>
+<rect x="520" y="150" width="300" height="56" rx="8" fill="#FFFFFF" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="670" y="180.5" font-size="15" font-weight="700" fill="#16352A" text-anchor="middle">Ceiling joists</text>
+<text x="670" y="201.5" font-size="14" fill="#4A5A52" text-anchor="middle">fix the rack hardware here</text>
+<rect x="560" y="230" width="200" height="56" rx="8" fill="#FFFFFF" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="660" y="260.5" font-size="15" font-weight="700" fill="#16352A" text-anchor="middle">Wall rail</text>
+<text x="660" y="281.5" font-size="14" fill="#4A5A52" text-anchor="middle">into studs, beside stove</text>
+<rect x="880" y="140" width="270" height="110" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="188" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Headroom</text>
+<text x="1015" y="209" font-size="14" fill="#4A5A52" text-anchor="middle">pans clear the tallest</text>
+<text x="1015" y="230" font-size="14" fill="#4A5A52" text-anchor="middle">regular cook</text>
+<rect x="880" y="270" width="270" height="110" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="318" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Reach</text>
+<text x="1015" y="339" font-size="14" fill="#4A5A52" text-anchor="middle">handles reachable</text>
+<text x="1015" y="360" font-size="14" fill="#4A5A52" text-anchor="middle">without a stool</text>
+<rect x="880" y="400" width="270" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="448" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Heat and grease</text>
+<text x="1015" y="469" font-size="14" fill="#4A5A52" text-anchor="middle">hang beside the cooktop,</text>
+<text x="1015" y="490" font-size="14" fill="#4A5A52" text-anchor="middle">not above it</text>
+<rect x="880" y="530" width="270" height="90" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="577.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Weight limit</text>
+<text x="1015" y="598.5" font-size="14" fill="#4A5A52" text-anchor="middle">follow the rack instructions</text>
+</g>
+</svg>

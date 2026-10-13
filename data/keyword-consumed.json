@@ -3671,5 +3671,17 @@
     "date": "2026-10-14",
     "status": "published",
     "note": "Created content/blog/home-office-wall-organization-systems.json (scheduled 2026-10-21). Hand-written by Claude Code (cycle #78) because the generator's image API hit its Google AI Studio monthly spend cap and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 884. Images: subscription render (gemini-web) hero, Sesoris catalog photos and hand-made SVG diagrams."
+  },
+  {
+    "keyword": "kitchen pot rack ideas",
+    "volume": 50,
+    "kd": 6,
+    "category": "kitchen rack ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3",
+    "slug": "kitchen-pot-rack-ideas",
+    "date": "2026-10-14",
+    "status": "published",
+    "note": "Created content/blog/kitchen-pot-rack-ideas.json (scheduled 2026-10-20). Hand-written by Claude Code (cycle #78) because the generator's image API hit its Google AI Studio monthly spend cap and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 906. Images: subscription render (gemini-web) hero, Sesoris catalog photos and hand-made SVG diagrams."
   }
 ]
