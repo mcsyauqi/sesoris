@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+<title id="t">Sliding door closet zone plan</title>
+<desc id="d">Front view of a reach-in closet with two bypass doors: left half for daily clothes with double rods, right half for occasional and long items, top shelf bins narrower than one opening, a shoe zone on the floor set back from the track, and the center overlap marked for low-use items.</desc>
+<rect width="1200" height="675" fill="#F3F5F0"/>
+<g font-family="Archivo, Arial, sans-serif">
+<text x="60" y="60" font-size="30" font-weight="700" fill="#16352A">Treat a sliding closet as two closets</text>
+<text x="60" y="90" font-size="17" fill="#4A5A52">Each door opens half the closet. Give each half one job and keep the overlap for low-use items.</text>
+<rect x="60" y="115" width="780" height="520" rx="6" fill="#FFFFFF" stroke="#4A5A52" stroke-width="4"/>
+<rect x="400" y="120" width="100" height="510" rx="6" fill="#E7E3DC" stroke="#4A5A52" stroke-width="2" stroke-dasharray="10 8"/>
+<line x1="60" y1="215" x2="840" y2="215" stroke="#4A5A52" stroke-width="4"/>
+<line x1="75" y1="255" x2="395" y2="255" stroke="#1B5E3B" stroke-width="6"/>
+<line x1="75" y1="375" x2="395" y2="375" stroke="#1B5E3B" stroke-width="6"/>
+<line x1="505" y1="255" x2="825" y2="255" stroke="#1B5E3B" stroke-width="6"/>
+<line x1="60" y1="628" x2="840" y2="628" stroke="#4A5A52" stroke-width="6"/>
+<rect x="75" y="125" width="150" height="80" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="150" y="167.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Bin</text>
+<text x="150" y="188.5" font-size="14" fill="#4A5A52" text-anchor="middle">seasonal</text>
+<rect x="240" y="125" width="150" height="80" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="315" y="167.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Bin</text>
+<text x="315" y="188.5" font-size="14" fill="#4A5A52" text-anchor="middle">bedding</text>
+<rect x="510" y="125" width="150" height="80" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="585" y="167.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Bin</text>
+<text x="585" y="188.5" font-size="14" fill="#4A5A52" text-anchor="middle">keepsakes</text>
+<rect x="675" y="125" width="150" height="80" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="750" y="167.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Bin</text>
+<text x="750" y="188.5" font-size="14" fill="#4A5A52" text-anchor="middle">travel</text>
+<rect x="85" y="265" width="300" height="95" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="235" y="315" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Daily: shirts, jackets</text>
+<text x="235" y="336" font-size="14" fill="#4A5A52" text-anchor="middle">upper rod</text>
+<rect x="85" y="385" width="300" height="95" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="235" y="435" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Daily: trousers, skirts</text>
+<text x="235" y="456" font-size="14" fill="#4A5A52" text-anchor="middle">second rod</text>
+<rect x="510" y="265" width="310" height="215" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="665" y="365.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Occasional and long</text>
+<text x="665" y="386.5" font-size="14" fill="#4A5A52" text-anchor="middle">dresses, coats,</text>
+<text x="665" y="407.5" font-size="14" fill="#4A5A52" text-anchor="middle">formalwear</text>
+<rect x="405" y="330" width="90" height="110" rx="8" fill="#FFFFFF" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="450" y="387.5" font-size="15" font-weight="700" fill="#16352A" text-anchor="middle">Overlap</text>
+<text x="450" y="408.5" font-size="13" fill="#4A5A52" text-anchor="middle">low use</text>
+<rect x="85" y="500" width="300" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="235" y="557.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Shoe rack</text>
+<text x="235" y="578.5" font-size="14" fill="#4A5A52" text-anchor="middle">set back from the track</text>
+<rect x="510" y="500" width="310" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="665" y="557.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Shoe boxes, bags</text>
+<text x="665" y="578.5" font-size="14" fill="#4A5A52" text-anchor="middle">handles, fit one opening</text>
+<rect x="880" y="140" width="270" height="110" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="197.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Left door = daily</text>
+<text x="1015" y="218.5" font-size="14" fill="#4A5A52" text-anchor="middle">the side you reach first</text>
+<rect x="880" y="270" width="270" height="110" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="327.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Right door = occasional</text>
+<text x="1015" y="348.5" font-size="14" fill="#4A5A52" text-anchor="middle">long hang and storage</text>
+<rect x="880" y="400" width="270" height="110" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="457.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Bins under half width</text>
+<text x="1015" y="478.5" font-size="14" fill="#4A5A52" text-anchor="middle">so they fit one opening</text>
+<rect x="880" y="530" width="270" height="90" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="577.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Track stays clear</text>
+<text x="1015" y="598.5" font-size="14" fill="#4A5A52" text-anchor="middle">nothing past the doors</text>
+</g>
+</svg>

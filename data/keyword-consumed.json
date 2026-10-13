@@ -3647,5 +3647,17 @@
     "date": "2026-10-14",
     "status": "published",
     "note": "Created content/blog/how-to-organize-spice-drawer.json (scheduled 2026-10-18). Hand-written by Claude Code (cycle #78) because the generator's image API hit its Google AI Studio monthly spend cap and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 1058. Images: subscription render (gemini-web) hero, Sesoris catalog photos and hand-made SVG diagrams."
+  },
+  {
+    "keyword": "sliding door closet organization ideas",
+    "volume": 140,
+    "kd": 1,
+    "category": "closet organization ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "sliding-door-closet-organization-ideas",
+    "date": "2026-10-14",
+    "status": "published",
+    "note": "Created content/blog/sliding-door-closet-organization-ideas.json (scheduled 2026-10-19). Hand-written by Claude Code (cycle #78) because the generator's image API hit its Google AI Studio monthly spend cap and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 730. Images: subscription render (gemini-web) hero, Sesoris catalog photos and hand-made SVG diagrams."
   }
 ]
