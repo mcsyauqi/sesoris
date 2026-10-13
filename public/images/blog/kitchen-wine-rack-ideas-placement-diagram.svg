@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+<title id="t">Where to put a kitchen wine rack</title>
+<desc id="d">Top-down kitchen plan marking warm zones at the oven, dishwasher, refrigerator top and sunny window, and good wine rack spots at the island end, a cabinet on the cooler wall and the narrow gap beside a cabinet, with notes to store corked bottles on their side and keep glasses nearby.</desc>
+<rect width="1200" height="675" fill="#F3F5F0"/>
+<g font-family="Archivo, Arial, sans-serif">
+<text x="60" y="60" font-size="30" font-weight="700" fill="#16352A">Keep bottles away from heat and sun</text>
+<text x="60" y="90" font-size="17" fill="#4A5A52">Top-down kitchen plan. Orange = warm or bright zones. Green = good spots for a wine rack.</text>
+<rect x="60" y="115" width="780" height="520" rx="6" fill="#FFFFFF" stroke="#4A5A52" stroke-width="4"/>
+<rect x="75" y="130" width="130" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="140" y="187.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Oven</text>
+<text x="140" y="208.5" font-size="14" fill="#4A5A52" text-anchor="middle">warm</text>
+<rect x="215" y="130" width="130" height="110" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="280" y="187.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Prep</text>
+<text x="280" y="208.5" font-size="14" fill="#4A5A52" text-anchor="middle">counter</text>
+<rect x="355" y="130" width="130" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="420" y="187.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Dishwasher</text>
+<text x="420" y="208.5" font-size="14" fill="#4A5A52" text-anchor="middle">warm, steam</text>
+<rect x="495" y="130" width="150" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="570" y="187.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Sunny window</text>
+<text x="570" y="208.5" font-size="14" fill="#4A5A52" text-anchor="middle">direct light</text>
+<rect x="655" y="130" width="170" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="740" y="187.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Refrigerator</text>
+<text x="740" y="208.5" font-size="14" fill="#4A5A52" text-anchor="middle">top runs warm</text>
+<rect x="75" y="260" width="130" height="200" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="140" y="353" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Cooler wall</text>
+<text x="140" y="374" font-size="14" fill="#4A5A52" text-anchor="middle">cabinet</text>
+<text x="140" y="395" font-size="14" fill="#4A5A52" text-anchor="middle">rack</text>
+<rect x="280" y="330" width="340" height="150" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="450" y="407.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Island</text>
+<text x="450" y="428.5" font-size="14" fill="#4A5A52" text-anchor="middle">seating side</text>
+<rect x="620" y="330" width="110" height="150" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="675" y="398" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Island end</text>
+<text x="675" y="419" font-size="14" fill="#4A5A52" text-anchor="middle">cubbies</text>
+<text x="675" y="440" font-size="14" fill="#4A5A52" text-anchor="middle">face out</text>
+<rect x="655" y="250" width="60" height="70" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="685" y="297" font-size="14" font-weight="700" fill="#16352A" text-anchor="middle">Gap</text>
+<rect x="280" y="520" width="440" height="95" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="500" y="570" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Glasses and openers nearby</text>
+<text x="500" y="591" font-size="14" fill="#4A5A52" text-anchor="middle">rail under cabinets, drawer for accessories</text>
+<rect x="880" y="140" width="270" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="188" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Avoid</text>
+<text x="1015" y="209" font-size="14" fill="#4A5A52" text-anchor="middle">oven, dishwasher, fridge</text>
+<text x="1015" y="230" font-size="14" fill="#4A5A52" text-anchor="middle">top, sunny walls</text>
+<rect x="880" y="270" width="270" height="110" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="318" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Good spots</text>
+<text x="1015" y="339" font-size="14" fill="#4A5A52" text-anchor="middle">cool wall, island end,</text>
+<text x="1015" y="360" font-size="14" fill="#4A5A52" text-anchor="middle">narrow gaps</text>
+<rect x="880" y="400" width="270" height="110" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="448" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">On their side</text>
+<text x="1015" y="469" font-size="14" fill="#4A5A52" text-anchor="middle">keeps natural</text>
+<text x="1015" y="490" font-size="14" fill="#4A5A52" text-anchor="middle">corks moist</text>
+<rect x="880" y="530" width="270" height="90" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="577.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Short term</text>
+<text x="1015" y="598.5" font-size="14" fill="#4A5A52" text-anchor="middle">weeks to months</text>
+</g>
+</svg>
