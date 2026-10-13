@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+  <title id="t">Bamboo or plastic: a three-question decision diagram</title>
+  <desc id="d">Start with where the container lives, then how often it is washed, then how many categories it must hold. Visible dry countertop storage points to bamboo; damp areas, frequent rinsing, or many small categories point to plastic.</desc>
+  <rect width="1200" height="675" fill="#f6f3ec"/>
+  <text x="600" y="62" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#1B5E3B">Bamboo or plastic? Answer three questions</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="70" y="110" width="320" height="150" rx="14" fill="#ffffff" stroke="#1B5E3B" stroke-width="3"/>
+    <text x="230" y="150" text-anchor="middle" font-size="24" font-weight="700" fill="#1f2a24">1. Where does it live?</text>
+    <text x="230" y="190" text-anchor="middle" font-size="20" fill="#3c4a42">Dry and visible counter</text>
+    <text x="230" y="222" text-anchor="middle" font-size="20" fill="#3c4a42">or damp, busy utility area?</text>
+    <rect x="440" y="110" width="320" height="150" rx="14" fill="#ffffff" stroke="#1B5E3B" stroke-width="3"/>
+    <text x="600" y="150" text-anchor="middle" font-size="24" font-weight="700" fill="#1f2a24">2. How is it cleaned?</text>
+    <text x="600" y="190" text-anchor="middle" font-size="20" fill="#3c4a42">Wiped and dried</text>
+    <text x="600" y="222" text-anchor="middle" font-size="20" fill="#3c4a42">or rinsed often?</text>
+    <rect x="810" y="110" width="320" height="150" rx="14" fill="#ffffff" stroke="#1B5E3B" stroke-width="3"/>
+    <text x="970" y="150" text-anchor="middle" font-size="24" font-weight="700" fill="#1f2a24">3. How many categories?</text>
+    <text x="970" y="190" text-anchor="middle" font-size="20" fill="#3c4a42">One grouped category</text>
+    <text x="970" y="222" text-anchor="middle" font-size="20" fill="#3c4a42">or many small ones?</text>
+    <path d="M390 185 H430" stroke="#1B5E3B" stroke-width="4"/><path d="M430 185 l-12 -8 v16 z" fill="#1B5E3B"/>
+    <path d="M760 185 H800" stroke="#1B5E3B" stroke-width="4"/><path d="M800 185 l-12 -8 v16 z" fill="#1B5E3B"/>
+    <rect x="110" y="330" width="460" height="270" rx="16" fill="#efe2c8" stroke="#a9773a" stroke-width="3"/>
+    <text x="340" y="378" text-anchor="middle" font-size="28" font-weight="700" fill="#6b4520">Choose bamboo when</text>
+    <text x="150" y="430" font-size="21" fill="#3d2a16">- it stays on a dry, visible counter</text>
+    <text x="150" y="472" font-size="21" fill="#3d2a16">- a wipe and quick dry is enough</text>
+    <text x="150" y="514" font-size="21" fill="#3d2a16">- one category, such as bread</text>
+    <text x="150" y="556" font-size="21" fill="#3d2a16">- looks matter as much as capacity</text>
+    <rect x="630" y="330" width="460" height="270" rx="16" fill="#dbe7f5" stroke="#2f5d9a" stroke-width="3"/>
+    <text x="860" y="378" text-anchor="middle" font-size="28" font-weight="700" fill="#1f3f6b">Choose plastic when</text>
+    <text x="670" y="430" font-size="21" fill="#1a2c45">- the area sees spills or moisture</text>
+    <text x="670" y="472" font-size="21" fill="#1a2c45">- containers get rinsed often</text>
+    <text x="670" y="514" font-size="21" fill="#1a2c45">- many small categories need homes</text>
+    <text x="670" y="556" font-size="21" fill="#1a2c45">- you rearrange the system often</text>
+    <text x="600" y="645" text-anchor="middle" font-size="18" fill="#5b665f">Mixed answers? Use both: bamboo for the visible zone, plastic for the working shelves.</text>
+  </g>
+</svg>
