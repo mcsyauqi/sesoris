@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+<title id="t">Dining room shelf spacing above a sideboard</title>
+<desc id="d">Wall elevation showing a sideboard with a lamp, two shelves above set higher than the tallest sideboard item plus clearance, shelves narrower than the sideboard, and mounting points on wall studs.</desc>
+<rect width="1200" height="675" fill="#F3F5F0"/>
+<g font-family="Archivo, Arial, sans-serif">
+<text x="60" y="60" font-size="30" font-weight="700" fill="#16352A">Plan spacing before you drill</text>
+<text x="60" y="90" font-size="17" fill="#4A5A52">Measure your tallest items, add clearance, and fix heavy shelves into studs.</text>
+<rect x="60" y="115" width="760" height="520" rx="6" fill="#FFFFFF" stroke="#4A5A52" stroke-width="3"/>
+<line x1="200" y1="115" x2="200" y2="635" stroke="#C9B79C" stroke-width="3"/>
+<line x1="440" y1="115" x2="440" y2="635" stroke="#C9B79C" stroke-width="3"/>
+<line x1="680" y1="115" x2="680" y2="635" stroke="#C9B79C" stroke-width="3"/>
+<line x1="170" y1="215" x2="710" y2="215" stroke="#1B5E3B" stroke-width="9"/>
+<line x1="170" y1="330" x2="710" y2="330" stroke="#1B5E3B" stroke-width="9"/>
+<rect x="120" y="470" width="640" height="150" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="440" y="547.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Sideboard (closed storage)</text>
+<text x="440" y="568.5" font-size="14" fill="#4A5A52" text-anchor="middle">linens, candles, spare napkins</text>
+<rect x="150" y="385" width="60" height="85" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="180" y="439.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle"></text>
+<rect x="600" y="405" width="80" height="65" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="640" y="449.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle"></text>
+<rect x="230" y="255" width="200" height="60" rx="8" fill="#FFFFFF" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="330" y="287.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Clearance</text>
+<text x="330" y="308.5" font-size="14" fill="#4A5A52" text-anchor="middle">tallest item + a hand</text>
+<rect x="450" y="140" width="220" height="60" rx="8" fill="#FFFFFF" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="560" y="172.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Tallest stored item</text>
+<text x="560" y="193.5" font-size="14" fill="#4A5A52" text-anchor="middle">+ room to lift it off</text>
+<rect x="880" y="140" width="270" height="110" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="188" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Narrower than below</text>
+<text x="1015" y="209" font-size="14" fill="#4A5A52" text-anchor="middle">shelves slightly shorter</text>
+<text x="1015" y="230" font-size="14" fill="#4A5A52" text-anchor="middle">than the sideboard</text>
+<rect x="880" y="270" width="270" height="110" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="318" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Into the studs</text>
+<text x="1015" y="339" font-size="14" fill="#4A5A52" text-anchor="middle">tan lines = wall studs;</text>
+<text x="1015" y="360" font-size="14" fill="#4A5A52" text-anchor="middle">plates are heavy</text>
+<rect x="880" y="400" width="270" height="110" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="448" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Tape it first</text>
+<text x="1015" y="469" font-size="14" fill="#4A5A52" text-anchor="middle">check the outline from</text>
+<text x="1015" y="490" font-size="14" fill="#4A5A52" text-anchor="middle">a seated position</text>
+<rect x="880" y="530" width="270" height="90" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="577.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Walkway check</text>
+<text x="1015" y="598.5" font-size="14" fill="#4A5A52" text-anchor="middle">shallow shelves near doors</text>
+<line x1="330" y1="330" x2="330" y2="375" stroke="#1B5E3B" stroke-width="3"/>
+<polygon points="330,375 335.21958640933474,364.1946347717679 324.78041359066526,364.1946347717679" fill="#1B5E3B"/>
+<line x1="560" y1="215" x2="560" y2="320" stroke="#1B5E3B" stroke-width="3"/>
+<polygon points="560,320 565.2195864093347,309.1946347717679 554.7804135906653,309.1946347717679" fill="#1B5E3B"/>
+</g>
+</svg>
