@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+<title id="t">Men's closet zone map</title>
+<desc id="d">Front view of a reach-in closet: seasonal bags on the top shelf, daily shirts at eye level in the center of the rod, occasional suits at the ends, folded knitwear and an accessory drawer on the right, and a shoe rack on the floor.</desc>
+<rect width="1200" height="675" fill="#F3F5F0"/>
+<g font-family="Archivo, Arial, sans-serif">
+<text x="60" y="60" font-size="30" font-weight="700" fill="#16352A">Give the best space to what you wear most</text>
+<text x="60" y="90" font-size="17" fill="#4A5A52">Front view of a reach-in closet. Eye level is for daily wear; edges, top and floor hold the rest.</text>
+<rect x="60" y="115" width="780" height="520" rx="6" fill="none" stroke="#4A5A52" stroke-width="4"/>
+<line x1="60" y1="215" x2="840" y2="215" stroke="#4A5A52" stroke-width="4"/>
+<line x1="80" y1="250" x2="600" y2="250" stroke="#1B5E3B" stroke-width="6"/>
+<line x1="620" y1="115" x2="620" y2="505" stroke="#4A5A52" stroke-width="4"/>
+<rect x="75" y="125" width="530" height="80" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="340" y="167.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Seasonal zone</text>
+<text x="340" y="188.5" font-size="14" fill="#4A5A52" text-anchor="middle">off-season coats and knits in lidded bags</text>
+<rect x="635" y="125" width="190" height="80" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="730" y="167.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Travel gear</text>
+<text x="730" y="188.5" font-size="14" fill="#4A5A52" text-anchor="middle">bags, spare bedding</text>
+<rect x="75" y="265" width="110" height="230" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="130" y="363.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Occasional</text>
+<text x="130" y="384.5" font-size="14" fill="#4A5A52" text-anchor="middle">suits</text>
+<text x="130" y="405.5" font-size="14" fill="#4A5A52" text-anchor="middle">formal</text>
+<text x="130" y="426.5" font-size="14" fill="#4A5A52" text-anchor="middle">shirts</text>
+<rect x="195" y="265" width="300" height="230" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="345" y="354" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Daily zone</text>
+<text x="345" y="375" font-size="14" fill="#4A5A52" text-anchor="middle">work shirts, everyday</text>
+<text x="345" y="396" font-size="14" fill="#4A5A52" text-anchor="middle">trousers, main jacket</text>
+<text x="345" y="417" font-size="14" fill="#4A5A52" text-anchor="middle">sorted by type, then</text>
+<text x="345" y="438" font-size="14" fill="#4A5A52" text-anchor="middle">light to dark</text>
+<rect x="505" y="265" width="100" height="230" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="555" y="363.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Occasional</text>
+<text x="555" y="384.5" font-size="14" fill="#4A5A52" text-anchor="middle">blazers</text>
+<text x="555" y="405.5" font-size="14" fill="#4A5A52" text-anchor="middle">garment</text>
+<text x="555" y="426.5" font-size="14" fill="#4A5A52" text-anchor="middle">bags</text>
+<rect x="635" y="230" width="190" height="150" rx="8" fill="#F4EBC8" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="730" y="288.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Folded zone</text>
+<text x="730" y="309.5" font-size="14" fill="#4A5A52" text-anchor="middle">sweaters, jeans,</text>
+<text x="730" y="330.5" font-size="14" fill="#4A5A52" text-anchor="middle">T-shirts in short</text>
+<text x="730" y="351.5" font-size="14" fill="#4A5A52" text-anchor="middle">even stacks</text>
+<rect x="635" y="395" width="190" height="100" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="730" y="438" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Accessories</text>
+<text x="730" y="459" font-size="14" fill="#4A5A52" text-anchor="middle">watch box, belts,</text>
+<text x="730" y="480" font-size="14" fill="#4A5A52" text-anchor="middle">ties, wallets</text>
+<rect x="75" y="515" width="750" height="105" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="450" y="570" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Shoe zone</text>
+<text x="450" y="591" font-size="14" fill="#4A5A52" text-anchor="middle">this week's pairs on a low rack, toes out; care kit beside them</text>
+<rect x="880" y="140" width="270" height="110" rx="8" fill="#DDEBE2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="188" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Eye level</text>
+<text x="1015" y="209" font-size="14" fill="#4A5A52" text-anchor="middle">daily wear, reach</text>
+<text x="1015" y="230" font-size="14" fill="#4A5A52" text-anchor="middle">without stretching</text>
+<rect x="880" y="270" width="270" height="110" rx="8" fill="#E3E8F2" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="318" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Rod ends</text>
+<text x="1015" y="339" font-size="14" fill="#4A5A52" text-anchor="middle">occasional pieces</text>
+<text x="1015" y="360" font-size="14" fill="#4A5A52" text-anchor="middle">that need a hanger</text>
+<rect x="880" y="400" width="270" height="110" rx="8" fill="#E7E3DC" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="448" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Top shelf</text>
+<text x="1015" y="469" font-size="14" fill="#4A5A52" text-anchor="middle">least used, stored</text>
+<text x="1015" y="490" font-size="14" fill="#4A5A52" text-anchor="middle">in labeled containers</text>
+<rect x="880" y="530" width="270" height="90" rx="8" fill="#F6E1D3" stroke="#1B5E3B" stroke-opacity="0.35" stroke-width="2"/>
+<text x="1015" y="577.5" font-size="17" font-weight="700" fill="#16352A" text-anchor="middle">Floor and drawer</text>
+<text x="1015" y="598.5" font-size="14" fill="#4A5A52" text-anchor="middle">shoes and small items</text>
+</g>
+</svg>
