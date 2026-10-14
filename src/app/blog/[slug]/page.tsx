@@ -546,7 +546,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const revisionMarker = {
     'floating-shelf-tv-wall-ideas': 'sesoris-20261014-d5069a1-safety-v2',
     'how-to-store-food-to-last-longer': 'sesoris-20261014-d5069a1-safety-v2',
-    'kitchen-lifestyle-habits-organized-home-2026': 'sesoris-2026-10-13-fc32c3b-source-v1',
+    'kitchen-lifestyle-habits-organized-home-2026': 'sesoris-20261014-d5069a1-safety-v2',
     'best-modular-closet-systems-review-buying-guide-2026': 'sesoris-2026-10-13-fc32c3b-source-v1',
     'best-pantry-organization-containers-review-buying-guide-2026': 'sesoris-2026-10-11-citation-link-fix-v4',
     'home-organization-lifestyle-habits-calmer-organized-home-2026': 'sesoris-2026-10-13-fc32c3b-source-v1',
