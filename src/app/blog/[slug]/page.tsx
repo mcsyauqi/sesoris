@@ -544,6 +544,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'men-s-closet-organization-ideas': 'sesoris-20261016-881ab94-closet-sources-v1',
+    'glass-vs-plastic-vs-stainless-steel-food-storage-containers': 'sesoris-20261016-881ab94-materials-safety-v1',
     'garage-organization-ideas-on-a-budget': 'sesoris-20261015-d370bd3-garage-v1',
     'containers-for-dog-food-storage-keep-pet-food-fresh-2026': 'sesoris-20261015-d370bd3-safety-v1-dog-food',
     'essential-cleaning-supplies-organization-transform-home-storage-system-2026': 'sesoris-20261015-d370bd3-safety-v1-cleaning-supplies',
