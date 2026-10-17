@@ -544,6 +544,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'dining-room-wall-shelf-ideas': 'sesoris-20261017-ecbd5e7-dining-safety-v1',
     'men-s-closet-organization-ideas': 'sesoris-20261016-881ab94-closet-sources-v1',
     'glass-vs-plastic-vs-stainless-steel-food-storage-containers': 'sesoris-20261016-881ab94-materials-safety-v1',
     'garage-organization-ideas-on-a-budget': 'sesoris-20261015-d370bd3-garage-v1',
@@ -553,9 +554,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'how-to-store-food-to-last-longer': 'sesoris-20261014-d5069a1-safety-v2',
     'kitchen-lifestyle-habits-organized-home-2026': 'sesoris-20261014-d5069a1-safety-v2',
     'best-modular-closet-systems-review-buying-guide-2026': 'sesoris-2026-10-13-fc32c3b-source-v1',
-    'best-pantry-organization-containers-review-buying-guide-2026': 'sesoris-2026-10-11-citation-link-fix-v4',
+    'best-pantry-organization-containers-review-buying-guide-2026': 'sesoris-20261017-ecbd5e7-pantry-safety-v1',
     'home-organization-lifestyle-habits-calmer-organized-home-2026': 'sesoris-2026-10-13-fc32c3b-source-v1',
-    'how-to-organize-a-junk-drawer-step-by-step-tutorial-2026': 'sesoris-2026-10-11-citation-link-fix-v4',
+    'how-to-organize-a-junk-drawer-step-by-step-tutorial-2026': 'sesoris-20261017-ecbd5e7-drawer-safety-v1',
     'slow-living-at-home-lifestyle-guide-2026': 'sesoris-2026-10-11-citation-link-fix-v4',
     'how-to-organize-your-pantry-step-by-step-tutorial-2026': 'sesoris-2026-10-12-citation-link-fix-v3',
     'how-to-get-smell-out-of-food-storage-containers': 'sesoris-2026-10-11-citation-link-fix-v4',
