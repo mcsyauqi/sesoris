@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+  <title id="t">Bedroom habit rhythm: morning, evening, and weekly</title>
+  <desc id="d">Three columns of bedroom habits. Morning: make the bed, do a two-minute floor sweep, put clothes away. Evening: reset the nightstand, do a five-minute pre-sleep tidy, set out tomorrow's clothes. Weekly reset of thirty to forty-five minutes: fresh linens, return items, wipe surfaces, vacuum, reassess surfaces.</desc>
+  <rect width="1200" height="675" fill="#f6f3ec"/>
+  <text x="600" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#1B5E3B">A calm bedroom runs on three small rhythms</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="60" y="110" width="340" height="500" rx="16" fill="#ffffff" stroke="#1B5E3B" stroke-width="3"/>
+    <rect x="60" y="110" width="340" height="74" rx="16" fill="#1B5E3B"/>
+    <rect x="60" y="160" width="340" height="24" fill="#1B5E3B"/>
+    <text x="230" y="146" text-anchor="middle" font-size="28" font-weight="700" fill="#ffffff">Every morning</text>
+    <text x="230" y="174" text-anchor="middle" font-size="18" fill="#dfeee5">five minutes or less</text>
+    <circle cx="100" cy="246" r="18" fill="#e4efe8" stroke="#1B5E3B" stroke-width="2"/><text x="100" y="253" text-anchor="middle" font-size="20" font-weight="700" fill="#1B5E3B">1</text>
+    <text x="132" y="254" font-size="22" fill="#1f2a24">Make the bed</text>
+    <circle cx="100" cy="326" r="18" fill="#e4efe8" stroke="#1B5E3B" stroke-width="2"/><text x="100" y="333" text-anchor="middle" font-size="20" font-weight="700" fill="#1B5E3B">2</text>
+    <text x="132" y="322" font-size="22" fill="#1f2a24">Two-minute</text>
+    <text x="132" y="350" font-size="22" fill="#1f2a24">floor sweep</text>
+    <circle cx="100" cy="416" r="18" fill="#e4efe8" stroke="#1B5E3B" stroke-width="2"/><text x="100" y="423" text-anchor="middle" font-size="20" font-weight="700" fill="#1B5E3B">3</text>
+    <text x="132" y="412" font-size="22" fill="#1f2a24">Put clothes away</text>
+    <text x="132" y="440" font-size="22" fill="#1f2a24">right after dressing</text>
+
+    <rect x="430" y="110" width="340" height="500" rx="16" fill="#ffffff" stroke="#1B5E3B" stroke-width="3"/>
+    <rect x="430" y="110" width="340" height="74" rx="16" fill="#2f4a3c"/>
+    <rect x="430" y="160" width="340" height="24" fill="#2f4a3c"/>
+    <text x="600" y="146" text-anchor="middle" font-size="28" font-weight="700" fill="#ffffff">Every evening</text>
+    <text x="600" y="174" text-anchor="middle" font-size="18" fill="#dfeee5">before you get into bed</text>
+    <circle cx="470" cy="246" r="18" fill="#e4efe8" stroke="#1B5E3B" stroke-width="2"/><text x="470" y="253" text-anchor="middle" font-size="20" font-weight="700" fill="#1B5E3B">1</text>
+    <text x="502" y="242" font-size="22" fill="#1f2a24">Reset the nightstand</text>
+    <text x="502" y="270" font-size="22" fill="#1f2a24">in sixty seconds</text>
+    <circle cx="470" cy="336" r="18" fill="#e4efe8" stroke="#1B5E3B" stroke-width="2"/><text x="470" y="343" text-anchor="middle" font-size="20" font-weight="700" fill="#1B5E3B">2</text>
+    <text x="502" y="332" font-size="22" fill="#1f2a24">Five-minute</text>
+    <text x="502" y="360" font-size="22" fill="#1f2a24">pre-sleep tidy</text>
+    <circle cx="470" cy="426" r="18" fill="#e4efe8" stroke="#1B5E3B" stroke-width="2"/><text x="470" y="433" text-anchor="middle" font-size="20" font-weight="700" fill="#1B5E3B">3</text>
+    <text x="502" y="422" font-size="22" fill="#1f2a24">Set out tomorrow's</text>
+    <text x="502" y="450" font-size="22" fill="#1f2a24">clothes</text>
+
+    <rect x="800" y="110" width="340" height="500" rx="16" fill="#efe2c8" stroke="#a9773a" stroke-width="3"/>
+    <rect x="800" y="110" width="340" height="74" rx="16" fill="#7a4f1d"/>
+    <rect x="800" y="160" width="340" height="24" fill="#7a4f1d"/>
+    <text x="970" y="146" text-anchor="middle" font-size="28" font-weight="700" fill="#ffffff">Once a week</text>
+    <text x="970" y="174" text-anchor="middle" font-size="18" fill="#fbf1de">30 to 45 minutes</text>
+    <text x="840" y="250" font-size="22" fill="#4a3216">1. Strip and remake the bed</text>
+    <text x="840" y="310" font-size="22" fill="#4a3216">2. Return items to their home</text>
+    <text x="840" y="370" font-size="22" fill="#4a3216">3. Wipe down surfaces</text>
+    <text x="840" y="430" font-size="22" fill="#4a3216">4. Vacuum or sweep the floor</text>
+    <text x="840" y="490" font-size="22" fill="#4a3216">5. Reassess nightstand</text>
+    <text x="868" y="518" font-size="22" fill="#4a3216">and dresser top</text>
+  </g>
+</svg>
