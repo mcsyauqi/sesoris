@@ -544,6 +544,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'how-to-organize-spice-drawer': 'sesoris-20261018-c7f23e1-spice-sources-v1',
+    'storage-containers-dog-food': 'sesoris-20261018-c7f23e1-pet-safety-v1',
+    'small-closet-organization-ideas': 'sesoris-20261018-c7f23e1-closet-distinct-v1',
     'dining-room-wall-shelf-ideas': 'sesoris-20261017-ecbd5e7-dining-safety-v1',
     'men-s-closet-organization-ideas': 'sesoris-20261016-881ab94-closet-sources-v1',
     'glass-vs-plastic-vs-stainless-steel-food-storage-containers': 'sesoris-20261016-881ab94-materials-safety-v1',
