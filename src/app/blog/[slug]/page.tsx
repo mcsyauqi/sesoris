@@ -198,7 +198,7 @@ function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
               src={imgMatch[2]}
               alt={imgMatch[1]}
               loading="eager"
-              style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: 'var(--radius-lg)', display: 'block' }}
+              className="article-inline-img"
             />
             {imgMatch[1] && (
               <figcaption style={{

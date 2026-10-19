@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-inline-image-crop.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "generate:blog": "tsx scripts/generate-blog-post.ts",
     "process:trello": "tsx scripts/process-trello-tasks.ts",
     "check:publishing": "node scripts/check-scheduled-publishing.mjs",
+    "check:inline-images": "node scripts/check-inline-image-crop.mjs",
     "check:product-jsonld": "tsx scripts/check-product-jsonld.ts"
   },
   "dependencies": {

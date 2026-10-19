@@ -2486,6 +2486,21 @@ summary:focus-visible {
   object-fit: cover;
 }
 
+/* Images inside the article body are never cropped: the box follows the file's own
+   ratio (square product photos stay square, 16:9 diagrams stay 16:9). Forced crop is
+   only for the hero and index cards. Guard: scripts/check-inline-image-crop.mjs */
+.article-inline-img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(80vh, 720px);
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+}
+
 .toc-link {
   text-decoration: underline;
   text-decoration-color: transparent;
