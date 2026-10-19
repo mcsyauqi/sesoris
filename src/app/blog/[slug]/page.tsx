@@ -544,7 +544,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
-    'sliding-door-closet-organization-ideas': 'sesoris-20261019-0823b1f-closet-sources-v1',
+    'sliding-door-closet-organization-ideas': 'sesoris-20261019-12173e7-closet-distinct-v2',
     'how-to-organize-spice-drawer': 'sesoris-20261018-c7f23e1-spice-sources-v1',
     'storage-containers-dog-food': 'sesoris-20261018-c7f23e1-pet-safety-v1',
     'small-closet-organization-ideas': 'sesoris-20261018-c7f23e1-closet-distinct-v1',
