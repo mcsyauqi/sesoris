@@ -10,9 +10,7 @@
 // Instead of trusting a fixed offset, pick the earliest day inside the window
 // [today + MIN_OFFSET, today + HORIZON] that is still under quota. That backfills an
 // existing hole and cannot open a new one. If every day in the window is already at
-// quota, fall back to the far edge (today + HORIZON): an article never lands later than
-// D+HORIZON, and PER_DAY is a cadence target rather than a cap, so one extra article on
-// the edge day is harmless.
+// quota, continue to the first later date with room: PER_DAY is a hard cap (max 3).
 //
 // Hybrid schedule used by generate-blog.yml (`--min-offset 1 --horizon 7`):
 //   - never write into today: today's slot was filled by an earlier run, so a missed run
@@ -38,7 +36,9 @@ function flag(name, fallback) {
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
-const PER_DAY = flag('--per-day', Number(process.env.POSTS_PER_DAY || 3));
+// Hard cap (Syauqi 2026-10-19): never more than 3 articles on one publish date.
+const DAILY_CAP = 3;
+const PER_DAY = Math.min(flag('--per-day', Number(process.env.POSTS_PER_DAY || 3)), DAILY_CAP);
 const HORIZON = flag('--horizon', Number(process.env.BUFFER_DAYS || 7));
 const MIN_OFFSET = flag('--min-offset', Number(process.env.MIN_OFFSET_DAYS || 0));
 if (MIN_OFFSET > HORIZON) {
@@ -78,5 +78,15 @@ for (let i = MIN_OFFSET; i <= HORIZON; i++) {
   }
 }
 
-// Every day in the window is at quota: stay on the far edge rather than pushing the buffer out.
-process.stdout.write(dayAt(HORIZON));
+// Every day in the window is at quota. PER_DAY is now a HARD cap (max 3/day, Syauqi
+// 2026-10-19), so the old "one extra on the edge day" fallback is gone: continue past
+// the horizon to the first date that still has room.
+for (let i = HORIZON + 1; i <= HORIZON + 3650; i++) {
+  const key = dayAt(i);
+  if ((counts.get(key) || 0) < PER_DAY) {
+    process.stdout.write(key);
+    process.exit(0);
+  }
+}
+console.error('no date with room in the next 10 years');
+process.exit(1);

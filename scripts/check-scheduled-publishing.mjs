@@ -39,6 +39,27 @@ assert.ok(!isPublished(`${today}T00:00:00`, today), 'time-suffixed date would be
 
 console.log(`OK — ${files.length} posts, all YYYY-MM-DD, UTC gate boundary correct (today=${today}).`);
 
+// 2b. Hard cap (Syauqi 2026-10-19): at most 3 non-retired articles per publish date,
+//     from today to the end of the queue. Dates before today are history, not checked.
+//     Dry-run: CAP_DRY_RUN_ADD=2026-11-02,2026-11-02 simulates extra articles (writes nothing).
+const DAILY_CAP = 3;
+const perDate = new Map();
+for (const f of files) {
+  const p = JSON.parse(fs.readFileSync(path.join(blogDir, f), 'utf-8'));
+  if (p.retired || !DATE_RE.test(p.date) || p.date < today) continue;
+  perDate.set(p.date, (perDate.get(p.date) || 0) + 1);
+}
+for (const extra of (process.env.CAP_DRY_RUN_ADD || '').split(',').filter(Boolean)) {
+  perDate.set(extra, (perDate.get(extra) || 0) + 1);
+}
+const overCap = [...perDate].filter(([, n]) => n > DAILY_CAP).sort();
+assert.strictEqual(
+  overCap.length,
+  0,
+  `Dates over the ${DAILY_CAP}/day cap (move extras to the next free date, node scripts/next-publish-date.mjs):\n${overCap.map(([d, n]) => `${d}: ${n}`).join('\n')}`
+);
+console.log(`OK, daily cap: ${perDate.size} date(s) from ${today}, max ${Math.max(0, ...perDate.values())}/day (cap ${DAILY_CAP}).`);
+
 // ---------------------------------------------------------------------------
 // 3. Redirect safety: no redirect may ever catch a live article.
 //    History: broad `/blog/:path(.*token.*)` matchers killed live articles

@@ -1,0 +1,35 @@
+# Batas keras Syauqi 2026-10-19: maksimal 3 artikel per tanggal terbit.
+# generate-blog.yml dan process-trello-tasks.yml sudah menjalankan guard ini sebelum commit;
+# workflow ini menutup jalur ketiga: artikel yang di-push manual (agen/backfill). Merah = ada
+# tanggal (hari ini ke depan) dengan > 3 artikel. Uji: CAP_DRY_RUN_ADD=YYYY-MM-DD node scripts/check-scheduled-publishing.mjs
+name: Schedule cap (max 3 per day)
+
+on:
+  push:
+    paths:
+      - 'content/blog/**'
+      - 'scripts/check-scheduled-publishing.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Max 3 articles per publish date
+        run: |
+          node -e '
+          const fs=require("fs");const today=new Date().toISOString().slice(0,10);const per={};
+          for(const f of fs.readdirSync("content/blog")){if(!f.endsWith(".json"))continue;const p=JSON.parse(fs.readFileSync("content/blog/"+f,"utf8"));
+            if(p.retired||!(p.date>=today))continue;const d=String(p.date).slice(0,10);per[d]=(per[d]||0)+1}
+          const over=Object.entries(per).filter(([,n])=>n>3).sort();
+          for(const [d,n] of over)console.log("::error::"+d+": "+n+" artikel, batas 3/hari");
+          console.log(over.length?"GAGAL":"LOLOS: maks "+Math.max(0,...Object.values(per))+"/hari dari "+today);
+          process.exit(over.length?1:0)'

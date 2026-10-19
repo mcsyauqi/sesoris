@@ -367,8 +367,32 @@ ${JSON.stringify(post.content)}${linkContext}`;
     : null;
 }
 
+// Hard cap (Syauqi 2026-10-19): at most 3 articles per publish date. Counts every
+// non-retired post already carrying that date (cron, Trello, hand-written backfill).
+// A full date moves the article to the next date with room instead of stacking it.
+const DAILY_CAP = 3;
+function capPublishDate(date: Date): Date {
+  const counts = new Map<string, number>();
+  for (const f of fs.readdirSync(blogDir)) {
+    if (!f.endsWith('.json')) continue;
+    try {
+      const p = JSON.parse(fs.readFileSync(path.join(blogDir, f), 'utf-8'));
+      if (p.retired) continue;
+      const d = String(p.date || '').slice(0, 10);
+      counts.set(d, (counts.get(d) || 0) + 1);
+    } catch {
+      continue;
+    }
+  }
+  const d = new Date(date);
+  const start = toISODate(d);
+  while ((counts.get(toISODate(d)) || 0) >= DAILY_CAP) d.setUTCDate(d.getUTCDate() + 1);
+  if (toISODate(d) !== start) console.log(`DAILY CAP: ${start} already has ${DAILY_CAP} articles, using ${toISODate(d)}`);
+  return d;
+}
+
 async function generatePost() {
-  const today = resolvePublishDate();
+  const today = capPublishDate(resolvePublishDate());
   const dayOfWeek = today.getDay();
   const topicBias = topicsByDay[dayOfWeek] || 'home-organization';
   const existing = getExistingPosts();

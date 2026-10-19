@@ -136,3 +136,10 @@ That is not implemented yet.
 4. Do not hand-edit a post to a date earlier than "today WIB" expecting it live
    *before* 07:00 WIB — the UTC gate opens at 07:00 WIB, not WIB midnight.
 5. Run `node scripts/check-scheduled-publishing.mjs` after bulk date edits.
+
+## Daily cap (hard rule, Syauqi 2026-10-19)
+
+- Maximum 3 articles per publish date (`date` field, non-retired). Normal day = 1-3 from the cron; never stack hand-written or Trello articles on a date that already has 3.
+- Before adding an article by hand: `node scripts/next-publish-date.mjs --min-offset 1 --horizon 7` gives the first date with room.
+- Guards: `next-publish-date.mjs` (hard cap, searches past the horizon instead of overfilling the edge day), `generate-blog-post.ts` (`capPublishDate`), `check-scheduled-publishing.mjs` (fails on any date from today with > 3; dry-run `CAP_DRY_RUN_ADD=YYYY-MM-DD`), `.github/workflows/schedule-cap.yml` (push to content/blog).
+- Never change the date of a live article.
