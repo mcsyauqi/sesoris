@@ -545,7 +545,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
     'kitchen-pot-rack-ideas': 'sesoris-20261020-5664a65-safety-v1-pot-rack',
-    'pyrex-food-storage-containers': 'sesoris-20261020-5664a65-safety-v1-pyrex',
+    'pyrex-food-storage-containers': 'sesoris-20261020-2f0de44-safety-v2-pyrex',
     'sliding-door-closet-organization-ideas': 'sesoris-20261019-12173e7-closet-distinct-v2',
     'how-to-organize-spice-drawer': 'sesoris-20261018-c7f23e1-spice-sources-v1',
     'storage-containers-dog-food': 'sesoris-20261018-c7f23e1-pet-safety-v1',
