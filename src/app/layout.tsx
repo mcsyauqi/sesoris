@@ -3,6 +3,7 @@ import './globals.css';
 import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/layout';
 import { AnalyticsScripts } from '@/components/layout/AnalyticsScripts';
 import { CartHydration } from '@/components/layout/CartHydration';
+import ScrollUX from '@/components/layout/ScrollUX';
 import { Archivo } from 'next/font/google';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 import { SAME_AS, DOMAIN_REGISTERED, ORGANIZATION_ID } from '@/data/brand-facts';
@@ -168,6 +169,7 @@ export default function RootLayout({
           <main style={{ flex: 1 }}>{children}</main>
           <Footer />
           <NewsletterPopup />
+          <ScrollUX />
         </div>
       </body>
     </html>

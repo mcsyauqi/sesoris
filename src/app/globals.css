@@ -2547,3 +2547,64 @@ summary:focus-visible {
   color: var(--brand) !important;
   text-decoration-color: currentColor;
 }
+
+/* ScrollUX: progress baca + tombol kembali ke atas (src: ScrollUX component, 2026-10-21) */
+.sux-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  pointer-events: none;
+}
+.sux-progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--brand);
+}
+.sux-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--brand);
+  color: #FFFFFF;
+  box-shadow: 0 10px 24px -10px rgb(10 24 17 / 0.45);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s, background-color 0.2s ease;
+}
+.sux-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.sux-top:hover {
+  background: var(--brand-strong);
+}
+.sux-top:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sux-top {
+    transition: none;
+  }
+}
+@media print {
+  .sux-progress,
+  .sux-top {
+    display: none;
+  }
+}
