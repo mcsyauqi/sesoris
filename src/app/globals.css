@@ -1570,6 +1570,41 @@ summary:focus-visible {
   line-height: 1.7;
 }
 
+/* Blog article FAQ accordion (renderer in app/blog/[slug]/page.tsx).
+   Reuses .faq-item above; these rules only adapt it to the article column. */
+.blog-faq-list {
+  margin: 8px 0 32px;
+  border-top: 1px solid var(--line);
+}
+
+.blog-faq-item {
+  scroll-margin-top: 96px;
+}
+
+.blog-faq-item summary {
+  padding: 18px 0;
+  align-items: flex-start;
+}
+
+.blog-faq-item summary svg {
+  margin-top: 1px;
+}
+
+.blog-faq-item summary:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.blog-faq-answer {
+  max-width: none;
+  padding: 0 36px 20px 0;
+}
+
+.blog-faq-answer > :last-child {
+  margin-bottom: 0 !important;
+}
+
 @media (min-width: 1024px) {
   .faq-grid {
     grid-template-columns: 0.75fr 1.25fr;

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, ChevronRight, ArrowLeft, ArrowRight, Facebook, Linkedin, BookOpen } from 'lucide-react';
+import { Home, ChevronRight, ArrowLeft, ArrowRight, Facebook, Linkedin, BookOpen, Plus } from 'lucide-react';
 import { notFound, redirect, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { getPostBySlug, getAllPosts, findClosestSlug, getBlogSeoTitle, getRelatedPosts, getArchiveDeepLinks } from '@/lib/blog';
@@ -138,13 +138,86 @@ function flattenContentBlocks(content: string[]): string[] {
   });
 }
 
+// --- Collapsible FAQ (2026-10-21) ---
+// Every FAQ question in an article renders as a native <details class="faq-item">,
+// closed by default, no JavaScript. Detection mirrors the FAQPage JSON-LD extraction in
+// BlogPostPage exactly (generated `**Q:**` blocks anywhere, plus legacy `### ...?` H3s
+// under an FAQ H2), so the visible FAQ and the structured data describe the same items.
+// The JSON-LD itself is built separately from the raw content and is untouched by this.
+const FAQ_H2 = /\bfaq\b|frequently asked questions|common questions/i;
+
+function isGeneratedFaqQuestion(line: string): boolean {
+  return line.startsWith('**Q:') || line.startsWith('**Q :');
+}
+
+function isFaqQuestion(line: string, inFaqSection: boolean): boolean {
+  return isGeneratedFaqQuestion(line)
+    || (inFaqSection && line.startsWith('### ') && line.trim().endsWith('?'));
+}
+
+function headingAnchor(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+}
+
+/**
+ * Collect the answer blocks that follow a question at `start`. The first block is the
+ * answer (the same one the JSON-LD uses). Further blocks join it while another question
+ * follows (multi-paragraph answers, bullet lists). After the LAST question of a run only
+ * list items are absorbed, so a closing paragraph stays visible outside the accordion.
+ */
+function collectFaqAnswer(content: string[], start: number, inFaqSection: boolean): { blocks: string[]; next: number } {
+  const stops = (l: string) => l.startsWith('#') || isFaqQuestion(l, inFaqSection) || l.startsWith(':::') || l.startsWith('![');
+  let end = start;
+  while (end < content.length && !stops(content[end])) end++;
+  const nextIsQuestion = end < content.length && isFaqQuestion(content[end], inFaqSection);
+  if (!nextIsQuestion) {
+    // Keep the first real answer block + blank/list blocks right after it.
+    let k = start;
+    while (k < end && content[k].trim() === '') k++;
+    if (k < end) k++;
+    while (k < end && (content[k].trim() === '' || /^([-•]\s|\d+\.\s)/.test(content[k]))) k++;
+    end = k;
+  }
+  return { blocks: content.slice(start, end).filter((b) => b.trim() !== ''), next: end };
+}
+
 function renderContentBlocks(rawContent: string[]): React.ReactNode[] {
   const content = flattenContentBlocks(rawContent);
   const elements: React.ReactNode[] = [];
   let i = 0;
+  let inFaqSection = false;
 
   while (i < content.length) {
     const line = content[i];
+
+    if (line.startsWith('## ')) {
+      inFaqSection = FAQ_H2.test(plainText(line.split('\n')[0]));
+    }
+
+    // FAQ: group consecutive questions into one accordion list.
+    if (isFaqQuestion(line, inFaqSection)) {
+      const items: React.ReactNode[] = [];
+      while (i < content.length && isFaqQuestion(content[i], inFaqSection)) {
+        const qLine = content[i].split('\n')[0];
+        const isGenerated = isGeneratedFaqQuestion(qLine);
+        const question = isGenerated
+          ? qLine.replace(/^\*\*Q\s*:\s*/, '').replace(/\*\*\s*$/, '')
+          : qLine.replace(/^###\s+/, '');
+        const { blocks, next } = collectFaqAnswer(content, i + 1, inFaqSection);
+        items.push(
+          <details key={`faq-${i}`} className="faq-item blog-faq-item" id={isGenerated ? undefined : headingAnchor(question)}>
+            <summary>
+              <span>{renderInline(question, `fq${i}-`)}</span>
+              <Plus aria-hidden="true" />
+            </summary>
+            <div className="faq-answer blog-faq-answer">{renderContentBlocks(blocks)}</div>
+          </details>
+        );
+        i = next;
+      }
+      elements.push(<div key={`faq-list-${i}`} className="blog-faq-list">{items}</div>);
+      continue;
+    }
 
     // H2 heading
     if (line.startsWith('## ')) {
