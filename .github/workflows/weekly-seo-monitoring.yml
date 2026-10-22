@@ -1,8 +1,14 @@
 name: Weekly SEO Monitoring
 
 on:
-  schedule:
-    - cron: '17 2 * * 1'
+  # Jadwal harian dipindah ke cron VPS pada 2026-10-22 untuk menghentikan
+  # tagihan GitHub Actions. Langkah-langkah di bawah TIDAK berubah dan berkas
+  # ini tetap jadi satu-satunya definisi: runner di VPS membaca berkas ini
+  # apa adanya lewat /home/ubuntu/gha-runner/jalankan.sh.
+  # Jadwal lama: 17 2 * * 1
+  # Mengembalikan ke GitHub: hidupkan lagi blok schedule di bawah ini,
+  # lalu matikan barisnya di crontab user ubuntu.
+  # - cron: '17 2 * * 1'
   workflow_dispatch:
 
 jobs:
