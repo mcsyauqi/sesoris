@@ -1,9 +1,15 @@
 name: Process Trello Tasks
 
 on:
-  schedule:
-    # 00:00 UTC = 07:00 WIB — runs before blog generation
-    - cron: '0 0 * * *'
+  # Jadwal harian dipindah ke cron VPS pada 2026-10-22 untuk menghentikan
+  # tagihan GitHub Actions. Langkah-langkah di bawah TIDAK berubah dan berkas
+  # ini tetap jadi satu-satunya definisi: runner di VPS membaca berkas ini
+  # apa adanya lewat /home/ubuntu/gha-runner/jalankan.sh.
+  # Jadwal lama: 0 0 * * *
+  # Mengembalikan ke GitHub: hidupkan lagi blok schedule di bawah ini,
+  # lalu matikan barisnya di crontab user ubuntu.
+  # # 00:00 UTC = 07:00 WIB — runs before blog generation
+  # - cron: '0 0 * * *'
   workflow_dispatch:
 
 permissions:
