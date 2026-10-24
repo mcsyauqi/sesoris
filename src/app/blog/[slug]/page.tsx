@@ -718,6 +718,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'storage-boxes-for-home': 'sesoris-2026-10-06-answer-first-v2',
     'garage-bike-storage-ideas': 'sesoris-2026-10-06-answer-first-v2',
     'rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026': 'sesoris-2026-10-06-answer-first-v2',
+    'storage-containers-for-food-bpa-free-complete-tutorial-guide-2026': 'sesoris-20261024-safety-audit-bpa-v1',
   }[post.slug];
 
   // Byline resolves through the author registry (no personas, see src/data/authors.ts)
