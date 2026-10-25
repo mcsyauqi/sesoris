@@ -617,6 +617,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'lidded-food-storage-containers': 'sesoris-20261025-6c4ed18-lidded-safety-v1',
     'kitchen-pot-rack-ideas': 'sesoris-20261020-5664a65-safety-v1-pot-rack',
     'pyrex-food-storage-containers': 'sesoris-20261020-2f0de44-safety-v2-pyrex',
     'sliding-door-closet-organization-ideas': 'sesoris-20261019-12173e7-closet-distinct-v2',
@@ -657,7 +658,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'shoe-storage-ideas-garage': 'sesoris-2026-10-04-answer-first-v1',
     'toy-storage-ideas-for-living-room-transform-family-space-2026': 'sesoris-2026-10-04-answer-first-v1',
     'small-home-office-organization-ideas': 'sesoris-2026-10-06-answer-first-v2',
-    'bathroom-closet-organization-systems': 'sesoris-20261022-rbi-h2-v1',
+    'bathroom-closet-organization-systems': 'sesoris-20261025-6c4ed18-bathroom-15-ideas-v1',
     'tool-storage-organization': 'sesoris-2026-08-27-scheduled-articles-v3',
     'bathroom-shelf-ideas': 'sesoris-2026-09-01-content-gate-v2',
     'corner-cabinet-kitchen-ideas': 'sesoris-2026-09-01-content-gate-v2',
