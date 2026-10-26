@@ -617,13 +617,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'bathroom-vanity-storage-solutions': 'sesoris-20261026-efeb2aa-vanity-safety-v1',
+    'storage-containers-for-food-bpa-free': 'sesoris-20261026-efeb2aa-fda-citations-v1',
+    'glass-food-storage-containers-with-glass-lids': 'sesoris-20261026-efeb2aa-fda-citations-v1',
+    'glass-food-storage-containers-with-lid': 'sesoris-20261026-efeb2aa-fda-citations-v1',
+    'glassware-food-storage-containers': 'sesoris-20261026-efeb2aa-fda-citations-v1',
+    'food-storage-containers-with-lids': 'sesoris-20261026-efeb2aa-fda-citations-v1',
     'lidded-food-storage-containers': 'sesoris-20261025-13cb98f-lidded-safety-v2',
     'kitchen-pot-rack-ideas': 'sesoris-20261020-5664a65-safety-v1-pot-rack',
     'pyrex-food-storage-containers': 'sesoris-20261020-2f0de44-safety-v2-pyrex',
     'sliding-door-closet-organization-ideas': 'sesoris-20261019-12173e7-closet-distinct-v2',
     'how-to-organize-spice-drawer': 'sesoris-20261018-c7f23e1-spice-sources-v1',
     'storage-containers-dog-food': 'sesoris-20261018-c7f23e1-pet-safety-v1',
-    'small-closet-organization-ideas': 'sesoris-20261018-c7f23e1-closet-distinct-v1',
+    'small-closet-organization-ideas': 'sesoris-20261026-efeb2aa-closet-15-ideas-v1',
     'dining-room-wall-shelf-ideas': 'sesoris-20261017-ecbd5e7-dining-safety-v1',
     'men-s-closet-organization-ideas': 'sesoris-20261016-881ab94-closet-sources-v1',
     'glass-vs-plastic-vs-stainless-steel-food-storage-containers': 'sesoris-20261016-881ab94-materials-safety-v1',
