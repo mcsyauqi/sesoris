@@ -3622,7 +3622,7 @@
     "slug": "men-s-closet-organization-ideas",
     "date": "2026-10-14",
     "status": "published",
-    "note": "Created content/blog/men-s-closet-organization-ideas.json (scheduled 2026-10-16). Hand-written by Claude Code (cycle #78) because the generator's image API hit its Google AI Studio monthly spend cap and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 750. Images: subscription render (gemini-web) hero, Sesoris catalog photos and hand-made SVG diagrams."
+    "note": "Created content/blog/men-s-closet-organization-ideas.json (scheduled 2026-10-16). Hand-written by Claude Code (cycle #78) because the generator's image API hit its Google AI Studio monthly spend cap and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 749. Images: subscription render (gemini-web) hero, Sesoris catalog photos and hand-made SVG diagrams."
   },
   {
     "keyword": "dining room wall shelf ideas",
@@ -3731,5 +3731,29 @@
     "date": "2026-10-26",
     "status": "published",
     "note": "Created content/blog/bathroom-vanity-storage-solutions.json (dated 2026-10-25). Hand-written by Claude Code (cycle #83 /cek-daily-artikel backfill) because the generator image API is over its Google AI Studio monthly spend cap (runner logs 23-26 Oct: preflight HTTP 429, generation skipped) and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 722. Images: licensed Wikimedia Commons photos (hero, credited on page; gemini-web and chatgpt-web image generation were both unavailable), Sesoris catalog photos and hand-made SVG diagrams."
+  },
+  {
+    "keyword": "deep kitchen drawer organizer ideas",
+    "volume": 110,
+    "kd": 0,
+    "category": "kitchen organizer ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "deep-kitchen-drawer-organizer-ideas",
+    "date": "2026-10-28",
+    "status": "published",
+    "note": "Created content/blog/deep-kitchen-drawer-organizer-ideas.json (dated 2026-10-26). Hand-written by Claude Code (cycle #84 /cek-daily-artikel backfill) because the generator image API is still over its Google AI Studio monthly spend cap (runner logs 26-27 Oct: preflight HTTP 429, generation skipped) and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 749. Images: hero rendered via the Google Flow (Gemini Pro) subscription, Sesoris catalog photos and hand-made SVG diagrams (PNG)."
+  },
+  {
+    "keyword": "kitchen island organizer ideas",
+    "volume": 140,
+    "kd": 7,
+    "category": "kitchen organizer ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "kitchen-island-organizer-ideas",
+    "date": "2026-10-28",
+    "status": "published",
+    "note": "Created content/blog/kitchen-island-organizer-ideas.json (dated 2026-10-27). Hand-written by Claude Code (cycle #84 /cek-daily-artikel backfill) because the generator image API is still over its Google AI Studio monthly spend cap (runner logs 26-27 Oct: preflight HTTP 429, generation skipped) and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 717. Images: hero rendered via the Google Flow (Gemini Pro) subscription, Sesoris catalog photos and hand-made SVG diagrams (PNG)."
   }
 ]
