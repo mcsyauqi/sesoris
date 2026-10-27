@@ -617,6 +617,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'home-decluttering-tips-calm-organized-home-2026': 'sesoris-20261027-safety-audit-v1',
+    'closet-storage-and-organization-ideas-transform-wardrobe-2026': 'sesoris-20261027-closet-distinct-v2',
+    'best-food-storage-containers-glass': 'sesoris-20261027-comparison-links-v1',
+    'best-storage-food-containers': 'sesoris-20261027-comparison-links-v1',
+    'best-food-storage-solutions-complete-guide-organizing-kitchen-2026': 'sesoris-20261027-comparison-links-v1',
+    'kitchen-food-storage-containers': 'sesoris-20261027-comparison-links-v1',
+    'freezable-food-storage-containers': 'sesoris-20261027-comparison-links-v1',
     'bathroom-vanity-storage-solutions': 'sesoris-20261026-efeb2aa-vanity-safety-v1',
     'storage-containers-for-food-bpa-free': 'sesoris-20261026-efeb2aa-fda-citations-v1',
     'glass-food-storage-containers-with-glass-lids': 'sesoris-20261026-efeb2aa-fda-citations-v1',
