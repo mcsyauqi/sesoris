@@ -4,16 +4,19 @@ import { Header, Footer, AnnouncementBar, NewsletterPopup } from '@/components/l
 import { AnalyticsScripts } from '@/components/layout/AnalyticsScripts';
 import { CartHydration } from '@/components/layout/CartHydration';
 import ScrollUX from '@/components/layout/ScrollUX';
-import { Archivo } from 'next/font/google';
+// Font disimpan di repo (next/font/local), bukan next/font/google: unduhan Google Fonts
+// saat build sering gagal di server Coolify dan menggagalkan seluruh build.
+import localFont from "next/font/local";
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 import { SAME_AS, DOMAIN_REGISTERED, ORGANIZATION_ID } from '@/data/brand-facts';
 
 // One variable family; headings use the width axis (font-stretch) instead of a second font.
-const archivo = Archivo({
-  subsets: ['latin'],
-  axes: ['wdth'],
-  variable: '--font-body',
-  display: 'swap',
+const archivo = localFont({
+  src: [
+    { path: "./fonts/archivo-100-900.woff2", weight: "100 900", style: "normal" },
+  ],
+  variable: "--font-body",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
