@@ -3755,5 +3755,29 @@
     "date": "2026-10-28",
     "status": "published",
     "note": "Created content/blog/kitchen-island-organizer-ideas.json (dated 2026-10-27). Hand-written by Claude Code (cycle #84 /cek-daily-artikel backfill) because the generator image API is still over its Google AI Studio monthly spend cap (runner logs 26-27 Oct: preflight HTTP 429, generation skipped) and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 717. Images: hero rendered via the Google Flow (Gemini Pro) subscription, Sesoris catalog photos and hand-made SVG diagrams (PNG)."
+  },
+  {
+    "keyword": "office closet organization ideas",
+    "volume": 210,
+    "kd": 10,
+    "category": "closet organization ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "office-closet-organization-ideas",
+    "date": "2026-10-30",
+    "status": "published",
+    "note": "Created content/blog/office-closet-organization-ideas.json (dated 2026-10-28). Hand-written by Claude Code (cycle #85 /cek-daily-artikel backfill) because the generator image API is still over its Google AI Studio monthly spend cap (runner logs 28-29 Oct: no new blog post generated) and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 649. Images: hero rendered via a subscription channel (no paid API), Sesoris catalog photos and hand-made SVG diagrams (PNG)."
+  },
+  {
+    "keyword": "shoe storage ideas for bedroom",
+    "volume": 170,
+    "kd": 4,
+    "category": "shoe storage ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "shoe-storage-ideas-for-bedroom",
+    "date": "2026-10-30",
+    "status": "published",
+    "note": "Created content/blog/shoe-storage-ideas-for-bedroom.json (dated 2026-10-29). Hand-written by Claude Code (cycle #85 /cek-daily-artikel backfill) because the generator image API is still over its Google AI Studio monthly spend cap (runner logs 28-29 Oct: no new blog post generated) and keyword-queue.json is empty; keyword from Keyword Data sheet tab Keyword Database row 712. Images: hero rendered via a subscription channel (no paid API), Sesoris catalog photos and hand-made SVG diagrams (PNG)."
   }
 ]
