@@ -23,7 +23,7 @@ const localBusinessSchema = {
   image: 'https://www.sesoris.com/og-default.webp',
   description: 'Sesoris is a Yogyakarta-based online store for home organizers, kitchen storage, office desk products, and travel storage accessories, shipping to US addresses only.',
   email: 'admin@sesoris.com',
-  telephone: '+62-813-2610-2061',
+  telephone: '+62-851-3621-2005',
   priceRange: '$$',
   areaServed: ['US'],
   address: {
@@ -50,7 +50,7 @@ const localBusinessSchema = {
     '@type': 'ContactPoint',
     contactType: 'customer service',
     email: 'admin@sesoris.com',
-    telephone: '+62-813-2610-2061',
+    telephone: '+62-851-3621-2005',
     areaServed: ['US'],
     availableLanguage: ['English', 'Indonesian'],
   },

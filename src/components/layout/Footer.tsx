@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
 import { NewsletterForm } from './NewsletterForm';
+import { WhatsAppLink } from '@/components/common/WhatsAppLink';
 
 const footerLinks = {
   shop: [
@@ -91,7 +92,7 @@ export function Footer() {
               <LinkColumn title="Company" links={footerLinks.company} />
               <div className="footer-contact">
                 <div><Mail aria-hidden /> <a href="mailto:admin@sesoris.com">admin@sesoris.com</a></div>
-                <div><Phone aria-hidden /> <a href="https://wa.me/6281326102061">+62 813 2610 2061 (WhatsApp)</a></div>
+                <div><Phone aria-hidden /> <WhatsAppLink intent="I have a question about Sesoris products.">+62 851 3621 2005 (WhatsApp)</WhatsAppLink></div>
                 <div><MapPin aria-hidden /> <span>Yogyakarta, Indonesia</span></div>
               </div>
             </div>

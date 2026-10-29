@@ -133,7 +133,7 @@ export default function RootLayout({
               },
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+62-813-2610-2061',
+                telephone: '+62-851-3621-2005',
                 contactType: 'customer service',
                 areaServed: ['US'],
                 availableLanguage: ['English', 'Indonesian'],

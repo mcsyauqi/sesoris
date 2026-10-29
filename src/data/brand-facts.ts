@@ -43,8 +43,9 @@ export const OFFICIAL_PROFILES = [
 export const SAME_AS: string[] = OFFICIAL_PROFILES.map((p) => p.url);
 
 export const SUPPORT_EMAIL = 'admin@sesoris.com';
-export const SUPPORT_WHATSAPP = '+62-813-2610-2061';
-export const SUPPORT_WHATSAPP_URL = 'https://wa.me/6281326102061';
+export const SUPPORT_WHATSAPP = '+62-851-3621-2005';
+export const SUPPORT_WHATSAPP_NUMBER = '6285136212005';
+export const SUPPORT_WHATSAPP_URL = `https://wa.me/${SUPPORT_WHATSAPP_NUMBER}`;
 
 /** SmartCustomer (formerly Sitejabber) listing for sesoris.com: 0 reviews on 2026-10-09. */
 export const SMARTCUSTOMER_PROFILE = 'https://www.smartcustomer.com/reviews/sesoris.com';

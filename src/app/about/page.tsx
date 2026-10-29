@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WhatsAppLink } from '@/components/common/WhatsAppLink';
 import Image from 'next/image';
 import { Home, ChevronRight, Heart, Globe, Users, Leaf, MapPin } from 'lucide-react';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
@@ -11,7 +12,6 @@ import {
   OFFICIAL_PROFILES,
   SUPPORT_EMAIL,
   SUPPORT_WHATSAPP,
-  SUPPORT_WHATSAPP_URL,
 } from '@/data/brand-facts';
 
 const TITLE = 'About Sesoris | Home Organizer Store from Yogyakarta';
@@ -197,7 +197,7 @@ export default function AboutPage() {
             <li>
               <strong>Contact:</strong>{' '}
               <a href={`mailto:${SUPPORT_EMAIL}`} className="text-link">{SUPPORT_EMAIL}</a> or{' '}
-              <a href={SUPPORT_WHATSAPP_URL} className="text-link">WhatsApp {SUPPORT_WHATSAPP}</a>.
+              <WhatsAppLink intent={"I'd like to know more about Sesoris."} className="text-link">WhatsApp {SUPPORT_WHATSAPP}</WhatsAppLink>.
             </li>
             <li>
               <strong>Official profiles:</strong>{' '}

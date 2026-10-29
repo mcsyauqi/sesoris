@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WhatsAppLink } from '@/components/common/WhatsAppLink';
 import { Home, ChevronRight, ExternalLink } from 'lucide-react';
 import { selfReferencingAlternates } from '@/lib/seo-alternates';
 import { products, categories } from '@/data/products';
@@ -12,7 +13,6 @@ import {
   OFFICIAL_PROFILES,
   SUPPORT_EMAIL,
   SUPPORT_WHATSAPP,
-  SUPPORT_WHATSAPP_URL,
   SMARTCUSTOMER_PROFILE,
 } from '@/data/brand-facts';
 
@@ -196,7 +196,7 @@ export default function WhatIsSesorisPage() {
               {f.q === 'How do I contact Sesoris?' && (
                 <p style={{ fontSize: '16px', marginTop: '8px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                   <a href={`mailto:${SUPPORT_EMAIL}`} className="text-link">{SUPPORT_EMAIL}</a>
-                  <a href={SUPPORT_WHATSAPP_URL} className="text-link">WhatsApp {SUPPORT_WHATSAPP}</a>
+                  <WhatsAppLink intent={'I have a question about Sesoris.'} className="text-link">WhatsApp {SUPPORT_WHATSAPP}</WhatsAppLink>
                   <Link href="/contact" className="text-link">Contact page</Link>
                 </p>
               )}

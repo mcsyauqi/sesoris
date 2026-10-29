@@ -2,15 +2,35 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Home, ChevronRight, Mail, Phone, MapPin, Clock, Send, Facebook, Instagram, Youtube } from 'lucide-react';
+import { buildWhatsAppUrl } from '@/lib/whatsapp';
+
+const SUBJECT_LABELS: Record<string, string> = {
+  general: 'General Inquiry',
+  order: 'Order Question',
+  return: 'Return & Refund',
+  feedback: 'Feedback',
+  business: 'Partnership / Wholesale',
+};
 
 export default function ContactPageClient() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'general', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'fallback'>('idle');
+  const pathname = usePathname();
 
+  // Only include the fields the visitor actually filled in, so an empty form
+  // never produces "I'm  ()." in the prefilled WhatsApp message.
   const whatsappUrl = () => {
-    const text = `Hi Sesoris! I'm ${formData.name} (${formData.email}).\nTopic: ${formData.subject}\n\n${formData.message}`;
-    return `https://wa.me/6281326102061?text=${encodeURIComponent(text)}`;
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+    const extra: string[] = [];
+    if (name) extra.push(`My name is ${name}${email ? ` (${email})` : ''}.`);
+    else if (email) extra.push(`My email is ${email}.`);
+    if (message) extra.push('', message);
+    const topic = SUBJECT_LABELS[formData.subject] ?? 'General Inquiry';
+    return buildWhatsAppUrl(pathname, `I have a question about: ${topic}.`, extra.join('\n'));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -71,9 +91,9 @@ export default function ContactPageClient() {
                 <Phone style={{ width: '20px', height: '20px', color: 'var(--brand)', marginTop: '2px' }} />
                 <div>
                   <div style={{ fontWeight: 600, color: 'var(--ink)', marginBottom: '4px' }}>Phone</div>
-                  <a href="tel:+6281326102061" style={{ color: 'var(--ink-muted)' }}>+62 813 2610 2061</a>
+                  <a href="tel:+6285136212005" style={{ color: 'var(--ink-muted)' }}>+62 851 3621 2005</a>
                   <div style={{ fontSize: '13px', color: 'var(--ink-muted)', marginTop: '4px' }}>
-                    WhatsApp: +62 813 2610 2061
+                    WhatsApp: +62 851 3621 2005
                   </div>
                 </div>
               </div>

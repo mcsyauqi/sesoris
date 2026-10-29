@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: 'Can I return or exchange a product?',
-    answer: 'Yes. You can return a product within 30 days if it is still in its original condition. Contact us by email at admin@sesoris.com or on WhatsApp at +62-813-2610-2061 and we will arrange the return or exchange.',
+    answer: 'Yes. You can return a product within 30 days if it is still in its original condition. Contact us by email at admin@sesoris.com or on WhatsApp at +62-851-3621-2005 and we will arrange the return or exchange.',
   },
   {
     question: 'Where is Sesoris based?',
