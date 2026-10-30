@@ -127,6 +127,25 @@ const nextConfig: NextConfig = {
         destination: '/shop',
         permanent: true,
       },
+      // Exact legacy blog redirects from the Bing 404 audit. Keep these
+      // one-to-one so they cannot catch unrelated future article slugs.
+      {
+        source: '/blog/monitor-stand-organizer',
+        destination: '/blog/best-bedroom-nightstand-organizers-review-buying-guide-2026',
+        permanent: true,
+      },
+      {
+        source: '/blog/best-home-organization-hacks-2027',
+        destination: '/blog/best-indoor-plant-pots-planters-home-organization-review-2026',
+        permanent: true,
+      },
+      {
+        source: '/blog/organized-home-tour-2027',
+        destination: '/blog/kitchen-lifestyle-habits-organized-home-2026',
+        permanent: true,
+      },
+      // /blog/how-to-organize-spice-drawer is a live article and must not
+      // be redirected to the retired junk-drawer URL.
       // Pre-existing redirect now pointed to /blog (old destination was
       // also Indonesian and has been removed)
       {
