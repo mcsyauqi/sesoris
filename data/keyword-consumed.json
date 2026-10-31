@@ -3791,5 +3791,17 @@
     "date": "2026-10-31",
     "status": "published",
     "note": "Created content/blog/knife-organizer.json (dated 2026-10-30). Hand-written by Claude Code (cycle #86 /cek-daily-artikel) because the image API project is over its monthly spending cap. Keyword Database row 318."
+  },
+  {
+    "keyword": "vertical garden",
+    "volume": 9900,
+    "kd": 13,
+    "category": "plants",
+    "intent": "Head",
+    "priority": "",
+    "slug": "vertical-garden",
+    "date": "2026-11-01",
+    "status": "published",
+    "note": "Created content/blog/vertical-garden.json (dated 2026-10-31). Hand-written by Claude Code (cycle #87 /cek-daily-artikel backfill) because the generator image API is still over its Google AI Studio monthly spend cap. Keyword Database row 327. Images: Wikimedia Commons photos (credited) and hand-made SVG diagrams (PNG); Gemini web render channel unauthenticated, so the hero is a credited Commons photo."
   }
 ]
