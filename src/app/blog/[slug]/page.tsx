@@ -577,9 +577,10 @@ function extractItemListItems(post: { slug: string; title: string; content: stri
   const blocks = flattenContentBlocks(post.content);
   let bestRun: string[] = [];
   for (let i = 0; i < blocks.length; i++) {
-    if (!/^1\.\s/.test(blocks[i])) continue;
+    const first = blocks[i].match(/^(\d+)\.\s+(.+)$/);
+    if (!first) continue;
     const run: string[] = [];
-    let expected = 1;
+    let expected = Number(first[1]);
     for (let j = i; j < blocks.length; j++) {
       const match = blocks[j].match(/^(\d+)\.\s+(.+)$/);
       if (!match || Number(match[1]) !== expected) break;
