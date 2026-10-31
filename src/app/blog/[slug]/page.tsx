@@ -571,6 +571,32 @@ function generateTOC(content: string[]): { text: string; id: string; level: numb
     });
 }
 
+function extractItemListItems(post: { slug: string; title: string; content: string[] }): { name: string; position: number; url: string }[] {
+  if (!/\b(ideas|best|top)\b/i.test(`${post.slug} ${post.title}`)) return [];
+
+  const blocks = flattenContentBlocks(post.content);
+  let bestRun: string[] = [];
+  for (let i = 0; i < blocks.length; i++) {
+    if (!/^1\.\s/.test(blocks[i])) continue;
+    const run: string[] = [];
+    let expected = 1;
+    for (let j = i; j < blocks.length; j++) {
+      const match = blocks[j].match(/^(\d+)\.\s+(.+)$/);
+      if (!match || Number(match[1]) !== expected) break;
+      run.push(match[2]);
+      expected++;
+    }
+    if (run.length > bestRun.length) bestRun = run;
+  }
+
+  return bestRun.map((name, index) => ({
+    '@type': 'ListItem',
+    name: plainText(name),
+    position: index + 1,
+    url: `https://www.sesoris.com/blog/${post.slug}#item-${index + 1}`,
+  }));
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -810,6 +836,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       acceptedAnswer: { '@type': 'Answer', text: faq.answer },
     })),
   } : null;
+  const itemListItems = extractItemListItems(post);
+  const itemListLd = itemListItems.length >= 3 ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: post.title,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: itemListItems.length,
+    itemListElement: itemListItems,
+  } : null;
 
   return (
     <>
@@ -817,6 +852,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
+      {itemListLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />}
 
       {/* Breadcrumb */}
       <div style={{ background: 'var(--surface-2)', padding: '12px 0' }}>
