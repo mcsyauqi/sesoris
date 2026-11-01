@@ -3803,5 +3803,17 @@
     "date": "2026-11-01",
     "status": "published",
     "note": "Created content/blog/vertical-garden.json (dated 2026-10-31). Hand-written by Claude Code (cycle #87 /cek-daily-artikel backfill) because the generator image API is still over its Google AI Studio monthly spend cap. Keyword Database row 327. Images: Wikimedia Commons photos (credited) and hand-made SVG diagrams (PNG); Gemini web render channel unauthenticated, so the hero is a credited Commons photo."
+  },
+  {
+    "keyword": "recessed wall shelf ideas",
+    "volume": 210,
+    "kd": 2,
+    "category": "wall shelf ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "recessed-wall-shelf-ideas",
+    "date": "2026-11-02",
+    "status": "published",
+    "note": "Created content/blog/recessed-wall-shelf-ideas.json (dated 2026-11-01). Hand-written by Claude Code (cycle #88 /cek-daily-artikel backfill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 667. Images: Wikimedia Commons photos (CC BY 2.0, credited, cropped) and hand-made SVG diagrams; gemini-web shared lock timed out, so no AI render."
   }
 ]
