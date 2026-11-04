@@ -3815,5 +3815,29 @@
     "date": "2026-11-02",
     "status": "published",
     "note": "Created content/blog/recessed-wall-shelf-ideas.json (dated 2026-11-01). Hand-written by Claude Code (cycle #88 /cek-daily-artikel backfill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 667. Images: Wikimedia Commons photos (CC BY 2.0, credited, cropped) and hand-made SVG diagrams; gemini-web shared lock timed out, so no AI render."
+  },
+  {
+    "keyword": "how to organize a small apartment",
+    "volume": 260,
+    "kd": 0,
+    "category": "Tips",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "how-to-organize-a-small-apartment",
+    "date": "2026-11-04",
+    "status": "published",
+    "note": "Created content/blog/how-to-organize-a-small-apartment.json (dated 2026-11-02). Hand-written by Claude Code (cycle #89 /cek-daily-artikel backfill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 1034. Images: Wikimedia Commons photos (credited), Sesoris catalog photos and hand-made diagrams."
+  },
+  {
+    "keyword": "office wall shelf ideas",
+    "volume": 170,
+    "kd": 1,
+    "category": "wall shelf ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "office-wall-shelf-ideas",
+    "date": "2026-11-04",
+    "status": "published",
+    "note": "Created content/blog/office-wall-shelf-ideas.json (dated 2026-11-03). Hand-written by Claude Code (cycle #89 /cek-daily-artikel backfill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 691. Images: Wikimedia Commons photos (credited), Sesoris catalog photos and hand-made diagrams."
   }
 ]
