@@ -3839,5 +3839,17 @@
     "date": "2026-11-04",
     "status": "published",
     "note": "Created content/blog/office-wall-shelf-ideas.json (dated 2026-11-03). Hand-written by Claude Code (cycle #89 /cek-daily-artikel backfill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 691. Images: Wikimedia Commons photos (credited), Sesoris catalog photos and hand-made diagrams."
+  },
+  {
+    "keyword": "microwave wall shelf ideas",
+    "volume": 110,
+    "kd": 0,
+    "category": "wall shelf ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "microwave-wall-shelf-ideas",
+    "date": "2026-11-05",
+    "status": "published",
+    "note": "Created content/blog/microwave-wall-shelf-ideas.json (dated 2026-11-04). Hand-written by Claude Code (cycle #90 /cek-daily-artikel backfill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 742. Images: Google Flow renders (subscription), Sesoris catalog photo and hand-made diagrams."
   }
 ]
