@@ -3851,5 +3851,29 @@
     "date": "2026-11-05",
     "status": "published",
     "note": "Created content/blog/microwave-wall-shelf-ideas.json (dated 2026-11-04). Hand-written by Claude Code (cycle #90 /cek-daily-artikel backfill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 742. Images: Google Flow renders (subscription), Sesoris catalog photo and hand-made diagrams."
+  },
+  {
+    "keyword": "liquor wall shelf ideas",
+    "volume": 140,
+    "kd": 0,
+    "category": "wall shelf ideas",
+    "intent": "Body",
+    "priority": "Tier 2",
+    "slug": "liquor-wall-shelf-ideas",
+    "date": "2026-11-07",
+    "status": "published",
+    "note": "Created content/blog/liquor-wall-shelf-ideas.json (dated 2026-11-05). Hand-written by Claude Code (cycle #91 /cek-daily-artikel gap fill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 744. Images: Google Flow renders (subscription) and hand-made diagrams."
+  },
+  {
+    "keyword": "wire shelf pantry organization ideas",
+    "volume": 50,
+    "kd": 0,
+    "category": "pantry organization ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3",
+    "slug": "wire-shelf-pantry-organization-ideas",
+    "date": "2026-11-07",
+    "status": "published",
+    "note": "Created content/blog/wire-shelf-pantry-organization-ideas.json (dated 2026-11-06). Hand-written by Claude Code (cycle #91 /cek-daily-artikel gap fill): generator image API still over the Google AI Studio spend cap. Keyword Database row 948. Images: Google Flow renders (subscription), Sesoris catalog photos and hand-made diagrams."
   }
 ]
