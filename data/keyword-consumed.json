@@ -3887,5 +3887,17 @@
     "date": "2026-11-08",
     "status": "published",
     "note": "Created content/blog/deep-pantry-organization-ideas.json (dated 2026-11-07). Hand-written by Claude Code (cycle #92 /cek-daily-artikel gap fill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 848. Images: Google Flow renders (subscription), Sesoris catalog photos and hand-made diagrams."
+  },
+  {
+    "keyword": "outdoor shoe storage ideas",
+    "volume": 210,
+    "kd": 0,
+    "category": "shoe storage ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3",
+    "slug": "outdoor-shoe-storage-ideas",
+    "date": "2026-11-09",
+    "status": "published",
+    "note": "Created content/blog/outdoor-shoe-storage-ideas.json (dated 2026-11-08). Hand-written by Claude Code (cycle #93 /cek-daily-artikel gap fill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 662. Images: Google Flow renders (subscription), Sesoris catalog photo and hand-made diagrams."
   }
 ]
