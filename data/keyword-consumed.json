@@ -3875,5 +3875,17 @@
     "date": "2026-11-07",
     "status": "published",
     "note": "Created content/blog/wire-shelf-pantry-organization-ideas.json (dated 2026-11-06). Hand-written by Claude Code (cycle #91 /cek-daily-artikel gap fill): generator image API still over the Google AI Studio spend cap. Keyword Database row 948. Images: Google Flow renders (subscription), Sesoris catalog photos and hand-made diagrams."
+  },
+  {
+    "keyword": "deep pantry organization ideas",
+    "volume": 70,
+    "kd": 0,
+    "category": "pantry organization ideas",
+    "intent": "Long-tail",
+    "priority": "Tier 3",
+    "slug": "deep-pantry-organization-ideas",
+    "date": "2026-11-08",
+    "status": "published",
+    "note": "Created content/blog/deep-pantry-organization-ideas.json (dated 2026-11-07). Hand-written by Claude Code (cycle #92 /cek-daily-artikel gap fill): generator image API still over the Google AI Studio spend cap (Syauqi: do not raise). Keyword Database row 848. Images: Google Flow renders (subscription), Sesoris catalog photos and hand-made diagrams."
   }
 ]
