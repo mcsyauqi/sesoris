@@ -644,6 +644,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'holiday-decoration-storage-hacks': 'sesoris-20261117-holiday-safety-v1',
     'home-decluttering-tips-calm-organized-home-2026': 'sesoris-20261027-safety-audit-v1',
     'closet-storage-and-organization-ideas-transform-wardrobe-2026': 'sesoris-20261027-closet-distinct-v2',
     'best-food-storage-containers-glass': 'sesoris-20261027-comparison-links-v1',
