@@ -88,6 +88,18 @@ if (fs.existsSync(legacyPath)) {
     redirectSources.add(slug);
   }
 }
+// 3c. Every target in the explicit legacy 301 map must be an existing,
+//     non-retired article (a 301 into a missing or retired page is a chain).
+const legacy301Path = path.join(process.cwd(), 'data', 'legacy-blog-301-map.json');
+if (fs.existsSync(legacy301Path)) {
+  const badTargets = Object.entries(JSON.parse(fs.readFileSync(legacy301Path, 'utf-8')))
+    .filter(([, to]) => {
+      const file = path.join(process.cwd(), 'content', 'blog', `${to}.json`);
+      return !fs.existsSync(file) || JSON.parse(fs.readFileSync(file, 'utf-8')).retired;
+    })
+    .map(([from, to]) => `${from} -> ${to}`);
+  assert.strictEqual(badTargets.length, 0, `Legacy 301 target missing or retired:\n${badTargets.join('\n')}`);
+}
 const collisions = [...redirectSources].filter((slug) => liveSlugs.has(slug));
 assert.strictEqual(
   collisions.length,

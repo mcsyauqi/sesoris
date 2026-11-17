@@ -15,9 +15,15 @@ import path from "path";
 // one-to-one source path. scripts/check-scheduled-publishing.mjs
 // verifies no redirect source collides with a live article slug.
 // ---------------------------------------------------------------
-const legacyBlogSlugs: string[] = JSON.parse(
-  readFileSync(path.join(process.cwd(), "data", "legacy-blog-redirects.json"), "utf-8")
+// Slugs with a clear live English equivalent get an explicit 301 in
+// src/middleware.ts (data/legacy-blog-301-map.json). Config redirects run
+// before middleware, so those slugs must be skipped here.
+const legacyBlog301Map: Record<string, string> = JSON.parse(
+  readFileSync(path.join(process.cwd(), "data", "legacy-blog-301-map.json"), "utf-8")
 );
+const legacyBlogSlugs: string[] = (JSON.parse(
+  readFileSync(path.join(process.cwd(), "data", "legacy-blog-redirects.json"), "utf-8")
+) as string[]).filter((slug) => !(slug in legacyBlog301Map));
 
 // High-impression legacy URLs should not fall back to /blog when a relevant
 // live replacement exists. These overrides are exact-source only, so they do
