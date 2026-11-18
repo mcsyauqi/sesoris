@@ -646,7 +646,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const revisionMarker = {
     'holiday-decoration-storage-hacks': 'sesoris-20261117-holiday-safety-v1',
     'home-decluttering-tips-calm-organized-home-2026': 'sesoris-20261027-safety-audit-v1',
-    'closet-storage-and-organization-ideas-transform-wardrobe-2026': 'sesoris-20261027-closet-distinct-v2',
+    'closet-storage-and-organization-ideas-transform-wardrobe-2026': 'sesoris-20261118-closet15-v1',
     'best-food-storage-containers-glass': 'sesoris-20261027-comparison-links-v1',
     'best-storage-food-containers': 'sesoris-20261027-comparison-links-v1',
     'best-food-storage-solutions-complete-guide-organizing-kitchen-2026': 'sesoris-20261027-comparison-links-v1',
@@ -762,6 +762,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026': 'sesoris-2026-10-06-answer-first-v2',
     'storage-containers-for-food-bpa-free-complete-tutorial-guide-2026': 'sesoris-20261024-safety-audit-bpa-v2',
     'smart-home-organization-guide': 'sesoris-20261116-smart-home-organization-v2',
+    'monitor-stand-organizer-ideas': 'sesoris-20261118-monitor-images-v1',
   }[post.slug];
 
   // Byline resolves through the author registry (no personas, see src/data/authors.ts)
