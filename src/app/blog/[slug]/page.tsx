@@ -644,6 +644,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const archiveDeepLinks = getArchiveDeepLinks(post, 8);
   const shopLinks = getShopLinksForPost(post, 2);
   const revisionMarker = {
+    'kitchen-bakers-rack-ideas': 'sesoris-20261119-9181b5c-rack-qa-v1',
     'holiday-decoration-storage-hacks': 'sesoris-20261117-holiday-safety-v1',
     'home-decluttering-tips-calm-organized-home-2026': 'sesoris-20261027-safety-audit-v1',
     'closet-storage-and-organization-ideas-transform-wardrobe-2026': 'sesoris-20261118-closet15-v2',
@@ -762,7 +763,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     'rak-bumbu-dapur-3-susun-review-3-tier-spice-rack-2026': 'sesoris-2026-10-06-answer-first-v2',
     'storage-containers-for-food-bpa-free-complete-tutorial-guide-2026': 'sesoris-20261024-safety-audit-bpa-v2',
     'smart-home-organization-guide': 'sesoris-20261116-smart-home-organization-v2',
-    'monitor-stand-organizer-ideas': 'sesoris-20261118-monitor-images-v2',
+    'monitor-stand-organizer-ideas': 'sesoris-20261119-9181b5c-monitor-list-v3',
   }[post.slug];
 
   // Byline resolves through the author registry (no personas, see src/data/authors.ts)
