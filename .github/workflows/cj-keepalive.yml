@@ -1,0 +1,22 @@
+name: CJ keepalive + catalog check
+
+# CJ freezes API access after 30 days without an API order. Twice a month this creates one
+# sandbox unpaid order when no order happened in 14 days, and fails (GitHub emails the owner)
+# if any in-stock product is no longer sold by CJ. Details: scripts/cj-keepalive.mjs
+on:
+  schedule:
+    - cron: '0 2 1,15 * *'
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/cj-keepalive.mjs
+        env:
+          CJ_API_KEY: ${{ secrets.CJ_API_KEY }}
