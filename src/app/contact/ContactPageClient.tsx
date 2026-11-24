@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, ChevronRight, Mail, Phone, MapPin, Clock, Send, Facebook, Instagram, Youtube } from 'lucide-react';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
+import { trackGenerateLead } from '@/lib/analytics';
 
 const SUBJECT_LABELS: Record<string, string> = {
   general: 'General Inquiry',
@@ -43,6 +44,7 @@ export default function ContactPageClient() {
         body: JSON.stringify(formData),
       });
       if (!response.ok) throw new Error('Contact email unavailable');
+      trackGenerateLead('contact', { subject: formData.subject });
       setStatus('sent');
       setFormData({ name: '', email: '', subject: 'general', message: '' });
     } catch {

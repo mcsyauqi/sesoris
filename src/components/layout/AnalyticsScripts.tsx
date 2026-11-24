@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { installLinkTracking } from '@/lib/analytics';
 
 const GA_MEASUREMENT_ID = 'G-V2Y9KVBKFP';
 const CLARITY_PROJECT_ID = 'xutrh8d0dz';
@@ -13,9 +14,12 @@ type ClarityQueue = {
 type AnalyticsWindow = Window & {
   dataLayer?: unknown[];
   clarity?: ClarityQueue;
+  gtag?: (...args: unknown[]) => void;
 };
 
 export function AnalyticsScripts() {
+  useEffect(() => installLinkTracking(), []);
+
   useEffect(() => {
     const hostname = window.location.hostname;
     if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '[::1]' || hostname.endsWith('.local')) {
@@ -38,6 +42,11 @@ export function AnalyticsScripts() {
       } as (...args: unknown[]) => void;
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID, { page_path: window.location.pathname });
+      // Expose gtag only AFTER config is queued: src/lib/analytics.ts buffers
+      // e-commerce events until window.gtag exists, so this is what releases
+      // view_item / add_to_cart / begin_checkout / purchase. Without it they
+      // were dropped after 30s (none reached GA4 in 90 days).
+      analyticsWindow.gtag = analyticsWindow.gtag || gtag;
 
       const ga = document.createElement('script');
       ga.async = true;

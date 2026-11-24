@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackGenerateLead } from '@/lib/analytics';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
@@ -27,6 +28,7 @@ export function NewsletterForm({ source, formClass, buttonClass, buttonLabel = '
       });
       const data = await res.json();
       if (data.success) {
+        trackGenerateLead('newsletter', { source });
         setStatus('success');
         setMessage(data.message || 'You are subscribed.');
         setEmail('');

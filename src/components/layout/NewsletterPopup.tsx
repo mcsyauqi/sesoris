@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { X, Mail, Copy, Check } from 'lucide-react';
+import { trackGenerateLead } from '@/lib/analytics';
 
 const POPUP_SHOWN_KEY = 'sesoris_newsletter_popup_shown';
 const POPUP_COOLDOWN_DAYS = 7;
@@ -81,6 +82,7 @@ export function NewsletterPopup() {
       });
       const data = await res.json();
       if (data.success) {
+        trackGenerateLead('newsletter', { source: 'exit_popup' });
         setStatus('success');
         setCode(data.code || '');
         setMessage(

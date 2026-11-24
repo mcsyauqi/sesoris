@@ -179,6 +179,50 @@ export function trackPurchase(args: {
   });
 }
 
+/** GA4 `generate_lead`, fired only after the form backend confirmed success. */
+export function trackGenerateLead(formName: 'contact' | 'newsletter', extra: Record<string, unknown> = {}): void {
+  gaEvent('generate_lead', { form_name: formName, ...extra });
+}
+
+const WA_LINK = /^(https?:\/\/)?(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\b|^whatsapp:/i;
+
+function linkPlacement(link: Element): string {
+  const tagged = link.closest('[data-placement]');
+  if (tagged) return tagged.getAttribute('data-placement') || '';
+  const section = link.closest('header, nav, footer, aside, [id]');
+  if (!section) return 'content';
+  return section.id || section.tagName.toLowerCase();
+}
+
+/**
+ * One delegated, capture-phase listener for contact links: wa_click,
+ * email_click, phone_click. Installed once from AnalyticsScripts. Returns the
+ * cleanup function for useEffect.
+ */
+export function installLinkTracking(): () => void {
+  const onClick = (event: MouseEvent) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const link = target?.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    const name = WA_LINK.test(href)
+      ? 'wa_click'
+      : /^mailto:/i.test(href)
+        ? 'email_click'
+        : /^tel:/i.test(href)
+          ? 'phone_click'
+          : '';
+    if (!name) return;
+    gaEvent(name, {
+      link_url: name === 'wa_click' ? href : href.split('?')[0],
+      link_text: (link.textContent || link.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim().slice(0, 100),
+      placement: linkPlacement(link),
+    });
+  };
+  document.addEventListener('click', onClick, true);
+  return () => document.removeEventListener('click', onClick, true);
+}
+
 /** Client-side mock order id. Replace when a real order backend issues ids. */
 export function createMockTransactionId(): string {
   return `SES-MOCK-${Date.now().toString(36).toUpperCase()}`;
